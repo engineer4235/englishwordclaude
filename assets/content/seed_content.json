@@ -1,0 +1,440 @@
+{
+ "version": 1,
+ "note": "Örnek MVP içeriği. Cümleler bu proje için yazılmıştır. Asıl içerik CNT-2 ile genişletilecek.",
+ "levels": [
+  {
+   "code": "A1",
+   "title": "Başlangıç"
+  },
+  {
+   "code": "A2",
+   "title": "Temel"
+  },
+  {
+   "code": "B1",
+   "title": "Orta Öncesi"
+  },
+  {
+   "code": "B2",
+   "title": "Orta"
+  },
+  {
+   "code": "C1",
+   "title": "İleri"
+  },
+  {
+   "code": "C2",
+   "title": "Ustalık"
+  }
+ ],
+ "units": [
+  {
+   "level": "A1",
+   "title": "Aile",
+   "theme": "family",
+   "icon": "family",
+   "words": [
+    {
+     "lemma": "mother",
+     "ipa": "/ˈmʌðər/",
+     "pos": "noun",
+     "tr": "anne",
+     "examples": [
+      [
+       "My mother works in a hospital.",
+       "Annem bir hastanede çalışıyor."
+      ],
+      [
+       "Call your mother tonight.",
+       "Bu akşam anneni ara."
+      ]
+     ]
+    },
+    {
+     "lemma": "father",
+     "ipa": "/ˈfɑːðər/",
+     "pos": "noun",
+     "tr": "baba",
+     "examples": [
+      [
+       "My father likes coffee.",
+       "Babam kahveyi sever."
+      ],
+      [
+       "His father is very tall.",
+       "Onun babası çok uzun."
+      ]
+     ]
+    },
+    {
+     "lemma": "sister",
+     "ipa": "/ˈsɪstər/",
+     "pos": "noun",
+     "tr": "kız kardeş",
+     "examples": [
+      [
+       "I have one sister.",
+       "Bir kız kardeşim var."
+      ],
+      [
+       "My sister lives in Ankara.",
+       "Kız kardeşim Ankara'da yaşıyor."
+      ]
+     ]
+    },
+    {
+     "lemma": "brother",
+     "ipa": "/ˈbrʌðər/",
+     "pos": "noun",
+     "tr": "erkek kardeş",
+     "examples": [
+      [
+       "My brother is ten years old.",
+       "Erkek kardeşim on yaşında."
+      ],
+      [
+       "Do you have a brother?",
+       "Erkek kardeşin var mı?"
+      ]
+     ]
+    },
+    {
+     "lemma": "son",
+     "ipa": "/sʌn/",
+     "pos": "noun",
+     "tr": "oğul",
+     "examples": [
+      [
+       "Their son plays football.",
+       "Oğulları futbol oynuyor."
+      ],
+      [
+       "She has a son and a daughter.",
+       "Onun bir oğlu ve bir kızı var."
+      ]
+     ]
+    },
+    {
+     "lemma": "daughter",
+     "ipa": "/ˈdɔːtər/",
+     "pos": "noun",
+     "tr": "kız evlat",
+     "examples": [
+      [
+       "Our daughter loves books.",
+       "Kızımız kitapları çok seviyor."
+      ],
+      [
+       "His daughter is a doctor.",
+       "Onun kızı doktor."
+      ]
+     ]
+    },
+    {
+     "lemma": "baby",
+     "ipa": "/ˈbeɪbi/",
+     "pos": "noun",
+     "tr": "bebek",
+     "examples": [
+      [
+       "The baby is sleeping.",
+       "Bebek uyuyor."
+      ],
+      [
+       "They have a new baby.",
+       "Yeni bir bebekleri var."
+      ]
+     ]
+    },
+    {
+     "lemma": "family",
+     "ipa": "/ˈfæməli/",
+     "pos": "noun",
+     "tr": "aile",
+     "examples": [
+      [
+       "My family is big.",
+       "Ailem kalabalık."
+      ],
+      [
+       "We eat dinner as a family.",
+       "Akşam yemeğini aile olarak yeriz."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "level": "A1",
+   "title": "Renkler",
+   "theme": "colors",
+   "icon": "palette",
+   "words": [
+    {
+     "lemma": "red",
+     "ipa": "/red/",
+     "pos": "adjective",
+     "tr": "kırmızı",
+     "examples": [
+      [
+       "I have a red bag.",
+       "Kırmızı bir çantam var."
+      ],
+      [
+       "The apple is red.",
+       "Elma kırmızı."
+      ]
+     ]
+    },
+    {
+     "lemma": "blue",
+     "ipa": "/bluː/",
+     "pos": "adjective",
+     "tr": "mavi",
+     "examples": [
+      [
+       "The sky is blue today.",
+       "Bugün gökyüzü mavi."
+      ],
+      [
+       "She wears a blue dress.",
+       "Mavi bir elbise giyiyor."
+      ]
+     ]
+    },
+    {
+     "lemma": "green",
+     "ipa": "/ɡriːn/",
+     "pos": "adjective",
+     "tr": "yeşil",
+     "examples": [
+      [
+       "The grass is green.",
+       "Çimen yeşil."
+      ],
+      [
+       "I like green tea.",
+       "Yeşil çayı severim."
+      ]
+     ]
+    },
+    {
+     "lemma": "yellow",
+     "ipa": "/ˈjeləʊ/",
+     "pos": "adjective",
+     "tr": "sarı",
+     "examples": [
+      [
+       "The taxi is yellow.",
+       "Taksi sarı."
+      ],
+      [
+       "She has a yellow pencil.",
+       "Sarı bir kalemi var."
+      ]
+     ]
+    },
+    {
+     "lemma": "black",
+     "ipa": "/blæk/",
+     "pos": "adjective",
+     "tr": "siyah",
+     "examples": [
+      [
+       "My cat is black.",
+       "Kedim siyah."
+      ],
+      [
+       "He drinks black coffee.",
+       "Sade kahve içer."
+      ]
+     ]
+    },
+    {
+     "lemma": "white",
+     "ipa": "/waɪt/",
+     "pos": "adjective",
+     "tr": "beyaz",
+     "examples": [
+      [
+       "The wall is white.",
+       "Duvar beyaz."
+      ],
+      [
+       "I need a white shirt.",
+       "Beyaz bir gömleğe ihtiyacım var."
+      ]
+     ]
+    },
+    {
+     "lemma": "orange",
+     "ipa": "/ˈɒrɪndʒ/",
+     "pos": "adjective",
+     "tr": "turuncu",
+     "examples": [
+      [
+       "The leaves are orange in autumn.",
+       "Sonbaharda yapraklar turuncu olur."
+      ],
+      [
+       "He has an orange car.",
+       "Turuncu bir arabası var."
+      ]
+     ]
+    },
+    {
+     "lemma": "brown",
+     "ipa": "/braʊn/",
+     "pos": "adjective",
+     "tr": "kahverengi",
+     "examples": [
+      [
+       "Her eyes are brown.",
+       "Gözleri kahverengi."
+      ],
+      [
+       "The table is brown.",
+       "Masa kahverengi."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "level": "A1",
+   "title": "Sayılar",
+   "theme": "numbers",
+   "icon": "numbers",
+   "words": [
+    {
+     "lemma": "one",
+     "ipa": "/wʌn/",
+     "pos": "number",
+     "tr": "bir",
+     "examples": [
+      [
+       "I have one brother.",
+       "Bir erkek kardeşim var."
+      ],
+      [
+       "Wait one minute, please.",
+       "Bir dakika bekleyin lütfen."
+      ]
+     ]
+    },
+    {
+     "lemma": "two",
+     "ipa": "/tuː/",
+     "pos": "number",
+     "tr": "iki",
+     "examples": [
+      [
+       "We have two cats.",
+       "İki kedimiz var."
+      ],
+      [
+       "The film starts at two.",
+       "Film saat ikide başlıyor."
+      ]
+     ]
+    },
+    {
+     "lemma": "three",
+     "ipa": "/θriː/",
+     "pos": "number",
+     "tr": "üç",
+     "examples": [
+      [
+       "She has three children.",
+       "Üç çocuğu var."
+      ],
+      [
+       "I drink three glasses of water.",
+       "Üç bardak su içerim."
+      ]
+     ]
+    },
+    {
+     "lemma": "four",
+     "ipa": "/fɔːr/",
+     "pos": "number",
+     "tr": "dört",
+     "examples": [
+      [
+       "A car has four wheels.",
+       "Bir arabanın dört tekerleği vardır."
+      ],
+      [
+       "The class ends at four.",
+       "Ders saat dörtte bitiyor."
+      ]
+     ]
+    },
+    {
+     "lemma": "five",
+     "ipa": "/faɪv/",
+     "pos": "number",
+     "tr": "beş",
+     "examples": [
+      [
+       "I work five days a week.",
+       "Haftada beş gün çalışırım."
+      ],
+      [
+       "Give me five apples, please.",
+       "Bana beş elma verin lütfen."
+      ]
+     ]
+    },
+    {
+     "lemma": "six",
+     "ipa": "/sɪks/",
+     "pos": "number",
+     "tr": "altı",
+     "examples": [
+      [
+       "The shop opens at six.",
+       "Dükkan altıda açılıyor."
+      ],
+      [
+       "There are six eggs in the box.",
+       "Kutuda altı yumurta var."
+      ]
+     ]
+    },
+    {
+     "lemma": "ten",
+     "ipa": "/ten/",
+     "pos": "number",
+     "tr": "on",
+     "examples": [
+      [
+       "I have ten fingers.",
+       "On parmağım var."
+      ],
+      [
+       "The bus comes in ten minutes.",
+       "Otobüs on dakika içinde geliyor."
+      ]
+     ]
+    },
+    {
+     "lemma": "hundred",
+     "ipa": "/ˈhʌndrəd/",
+     "pos": "number",
+     "tr": "yüz",
+     "examples": [
+      [
+       "The book has a hundred pages.",
+       "Kitap yüz sayfa."
+      ],
+      [
+       "It costs one hundred lira.",
+       "Yüz lira tutuyor."
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
