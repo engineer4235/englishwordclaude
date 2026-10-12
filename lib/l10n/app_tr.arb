@@ -77,5 +77,102 @@
   "posVerb": "fiil",
   "posAdjective": "sıfat",
   "posAdverb": "zarf",
-  "posNumber": "sayı"
+  "posNumber": "sayı",
+  "startPractice": "Alıştırmaya başla",
+  "unitExam": "Ünite sınavı",
+  "levelExam": "Seviye sınavına gir",
+  "exChooseMeaning": "Doğru anlamı seç",
+  "exChooseWord": "İngilizcesini seç",
+  "exListen": "Dinle ve doğru yazımı seç",
+  "exFillBlank": "Boşluğa uygun kelimeyi seç",
+  "exType": "İngilizcesini yaz",
+  "exMatch": "Kelimeleri anlamlarıyla eşleştir",
+  "check": "Kontrol et",
+  "continueLabel": "Devam",
+  "correctFeedback": "Doğru!",
+  "wrongFeedback": "Yanlış. Doğru cevap: {answer}",
+  "@wrongFeedback": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "almostFeedback": "Neredeyse doğru! Doğrusu: {answer}",
+  "@almostFeedback": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "typingHint": "Cevabını yaz",
+  "replay": "Tekrar dinle",
+  "questionPosition": "Soru {current}/{total}",
+  "@questionPosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "resultLesson": "Alıştırma tamamlandı",
+  "resultUnitPassed": "Ünite tamamlandı! Sıradaki ünite açıldı.",
+  "resultUnitFailed": "Sıradaki üniteyi açmak için en az %70 gerekiyor. Tekrar dene!",
+  "resultLevelPassed": "Tebrikler! {level} seviyesini tamamladın.",
+  "@resultLevelPassed": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "resultLevelFailed": "Seviye sınavını 24 saat sonra tekrar deneyebilirsin. Yanlış kelimeler tekrar listene eklendi.",
+  "scorePercent": "%{score}",
+  "@scorePercent": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "correctCount": "{correct}/{total} doğru",
+  "@correctCount": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "wrongWordsTitle": "Tekrar etmen gereken kelimeler",
+  "examNeedLearned": "Seviye sınavı için kelimelerin en az %80'ini öğrenmelisin (şu an %{percent}).",
+  "@examNeedLearned": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examRetryAt": "Seviye sınavını {time} sonrasında tekrar deneyebilirsin.",
+  "@examRetryAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "levelBadge": "{level} rozeti kazanıldı",
+  "@levelBadge": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  }
 }

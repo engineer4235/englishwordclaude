@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:drift/drift.dart';
@@ -7,6 +8,7 @@ import 'package:english_word_learning/core/tts/tts_service.dart';
 import 'package:english_word_learning/data/content/content_seeder.dart';
 import 'package:english_word_learning/data/db/app_database.dart';
 import 'package:english_word_learning/data/providers.dart';
+import 'package:english_word_learning/domain/models/word.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -37,4 +39,34 @@ Widget testApp(AppDatabase db, {FakeTts? tts, Widget? child}) {
     ],
     child: child ?? const EnglishWordApp(),
   );
+}
+
+/// İçerik paketindeki kelimeler (veritabanı kimlikleri yükleme sırasıyla aynı).
+List<Word> seedWords({String? unitTitle}) {
+  final data = jsonDecode(seedJson) as Map<String, dynamic>;
+  var id = 0;
+  var unitId = 0;
+  final words = <Word>[];
+  for (final unit in (data['units'] as List).cast<Map<String, dynamic>>()) {
+    unitId++;
+    for (final w in (unit['words'] as List).cast<Map<String, dynamic>>()) {
+      id++;
+      if (unitTitle != null && unit['title'] != unitTitle) continue;
+      words.add(
+        Word(
+          id: id,
+          unitId: unitId,
+          lemma: w['lemma'] as String,
+          partOfSpeech: w['pos'] as String,
+          meaningTr: w['tr'] as String,
+          ipa: w['ipa'] as String?,
+          examples: [
+            for (final e in (w['examples'] as List).cast<List<dynamic>>())
+              Example(en: e[0] as String, tr: e[1] as String),
+          ],
+        ),
+      );
+    }
+  }
+  return words;
 }

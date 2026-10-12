@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/lesson/presentation/unit_screen.dart';
 import '../../features/level_map/presentation/level_map_screen.dart';
+import '../../features/practice/presentation/practice_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/stats/presentation/stats_screen.dart';
 import '../../features/word_lists/presentation/words_screen.dart';
@@ -43,6 +44,29 @@ GoRouter createRouter() {
                     path: 'unite/:unitId',
                     builder: (context, state) => UnitScreen(
                       unitId: int.parse(state.pathParameters['unitId']!),
+                    ),
+                    routes: [
+                      GoRoute(
+                        path: 'alistirma',
+                        builder: (context, state) => PracticeScreen(
+                          mode: PracticeMode.lesson,
+                          unitId: int.parse(state.pathParameters['unitId']!),
+                        ),
+                      ),
+                      GoRoute(
+                        path: 'sinav',
+                        builder: (context, state) => PracticeScreen(
+                          mode: PracticeMode.unitExam,
+                          unitId: int.parse(state.pathParameters['unitId']!),
+                        ),
+                      ),
+                    ],
+                  ),
+                  GoRoute(
+                    path: 'seviye/:levelId/sinav',
+                    builder: (context, state) => PracticeScreen(
+                      mode: PracticeMode.levelExam,
+                      levelId: int.parse(state.pathParameters['levelId']!),
                     ),
                   ),
                 ],

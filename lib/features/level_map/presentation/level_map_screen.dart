@@ -92,9 +92,64 @@ class _LevelCard extends StatelessWidget {
             else ...[
               const SizedBox(height: 8),
               for (final unit in level.units) _UnitTile(unit: unit),
+              if (level.status == ProgressStatus.open &&
+                  level.allUnitsCompleted)
+                _LevelExamButton(levelId: level.level.id),
             ],
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Seviye atlama sınavı girişi ve koşulları (FR-23, FR-24).
+class _LevelExamButton extends ConsumerWidget {
+  const _LevelExamButton({required this.levelId});
+
+  final int levelId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final eligibility = switch (ref.watch(
+      levelExamEligibilityProvider(levelId),
+    )) {
+      AsyncData(:final value) => value,
+      _ => null,
+    };
+    if (eligibility == null) return const SizedBox.shrink();
+    final retryAt = eligibility.retryAvailableAt;
+    final String? reason;
+    if (retryAt != null) {
+      String two(int n) => n.toString().padLeft(2, '0');
+      reason = l10n.examRetryAt(
+        '${two(retryAt.day)}.${two(retryAt.month)} '
+        '${two(retryAt.hour)}:${two(retryAt.minute)}',
+      );
+    } else if (eligibility.learnedRatio < 0.8) {
+      reason = l10n.examNeedLearned((eligibility.learnedRatio * 100).round());
+    } else {
+      reason = null;
+    }
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          FilledButton.icon(
+            icon: const Icon(Icons.workspace_premium_outlined),
+            label: Text(l10n.levelExam),
+            onPressed: eligibility.canStart
+                ? () => context.go(AppRoutes.levelExam(levelId))
+                : null,
+          ),
+          if (reason != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(reason, style: Theme.of(context).textTheme.bodySmall),
+            ),
+        ],
       ),
     );
   }

@@ -24,6 +24,14 @@ class ReviewRepository {
     return row == null ? ReviewState.initial : _toState(row);
   }
 
+  /// Verilen kelimelerin durumları. Kaydı olmayan kelime "Yeni" sayılır.
+  Future<Map<int, CardState>> statesFor(List<int> wordIds) async {
+    final rows = await (_db.select(
+      _db.reviewCards,
+    )..where((t) => t.wordId.isIn(wordIds))).get();
+    return {for (final r in rows) r.wordId: CardState.fromDb(r.state)};
+  }
+
   /// Cevabı kaydeder, yeni durumu hesaplar ve günlüğe yazar. Her cevap anında
   /// veritabanına yazılır (NFR-05).
   Future<ReviewState> recordAnswer({
