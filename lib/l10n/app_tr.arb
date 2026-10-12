@@ -1,12 +1,81 @@
 {
   "@@locale": "tr",
   "appTitle": "İngilizce Kelime",
-  "@appTitle": {"description": "Uygulama adı"},
+  "@appTitle": {
+    "description": "Uygulama adı"
+  },
   "navHome": "Ana Sayfa",
   "navMap": "Harita",
   "navWords": "Kelimelerim",
   "navStats": "İstatistik",
   "navProfile": "Profil",
   "comingSoon": "Bu bölüm yakında hazır olacak.",
-  "@comingSoon": {"description": "Henüz geliştirilmemiş ekranlarda gösterilen metin"}
+  "@comingSoon": {
+    "description": "Henüz geliştirilmemiş ekranlarda gösterilen metin"
+  },
+  "loadError": "İçerik yüklenemedi. Lütfen tekrar deneyin.",
+  "levelProgress": "%{percent} öğrenildi",
+  "@levelProgress": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "levelLocked": "Bu seviye, önceki seviyenin sınavı geçilince açılır.",
+  "unitWords": "{learned}/{total} kelime öğrenildi",
+  "@unitWords": {
+    "placeholders": {
+      "learned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "statusLocked": "Kilitli",
+  "statusOpen": "Açık",
+  "statusCompleted": "Tamamlandı",
+  "bestScore": "En iyi: %{score}",
+  "@bestScore": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "listen": "Dinle",
+  "addFavorite": "Favorilere ekle",
+  "removeFavorite": "Favorilerden çıkar",
+  "examples": "Örnek cümleler",
+  "iKnowThis": "Bunu zaten biliyorum",
+  "markedKnown": "\"{word}\" uzun aralıklı tekrara alındı.",
+  "@markedKnown": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "previous": "Önceki",
+  "next": "Sonraki",
+  "backToMap": "Haritaya dön",
+  "noWords": "Bu ünitede henüz kelime yok.",
+  "wordPosition": "{current} / {total}",
+  "@wordPosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "posNoun": "isim",
+  "posVerb": "fiil",
+  "posAdjective": "sıfat",
+  "posAdverb": "zarf",
+  "posNumber": "sayı"
 }

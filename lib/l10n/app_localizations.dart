@@ -135,6 +135,150 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bu bölüm yakında hazır olacak.'**
   String get comingSoon;
+
+  /// No description provided for @loadError.
+  ///
+  /// In tr, this message translates to:
+  /// **'İçerik yüklenemedi. Lütfen tekrar deneyin.'**
+  String get loadError;
+
+  /// No description provided for @levelProgress.
+  ///
+  /// In tr, this message translates to:
+  /// **'%{percent} öğrenildi'**
+  String levelProgress(int percent);
+
+  /// No description provided for @levelLocked.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu seviye, önceki seviyenin sınavı geçilince açılır.'**
+  String get levelLocked;
+
+  /// No description provided for @unitWords.
+  ///
+  /// In tr, this message translates to:
+  /// **'{learned}/{total} kelime öğrenildi'**
+  String unitWords(int learned, int total);
+
+  /// No description provided for @statusLocked.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kilitli'**
+  String get statusLocked;
+
+  /// No description provided for @statusOpen.
+  ///
+  /// In tr, this message translates to:
+  /// **'Açık'**
+  String get statusOpen;
+
+  /// No description provided for @statusCompleted.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tamamlandı'**
+  String get statusCompleted;
+
+  /// No description provided for @bestScore.
+  ///
+  /// In tr, this message translates to:
+  /// **'En iyi: %{score}'**
+  String bestScore(int score);
+
+  /// No description provided for @listen.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dinle'**
+  String get listen;
+
+  /// No description provided for @addFavorite.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favorilere ekle'**
+  String get addFavorite;
+
+  /// No description provided for @removeFavorite.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favorilerden çıkar'**
+  String get removeFavorite;
+
+  /// No description provided for @examples.
+  ///
+  /// In tr, this message translates to:
+  /// **'Örnek cümleler'**
+  String get examples;
+
+  /// No description provided for @iKnowThis.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bunu zaten biliyorum'**
+  String get iKnowThis;
+
+  /// No description provided for @markedKnown.
+  ///
+  /// In tr, this message translates to:
+  /// **'\"{word}\" uzun aralıklı tekrara alındı.'**
+  String markedKnown(String word);
+
+  /// No description provided for @previous.
+  ///
+  /// In tr, this message translates to:
+  /// **'Önceki'**
+  String get previous;
+
+  /// No description provided for @next.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonraki'**
+  String get next;
+
+  /// No description provided for @backToMap.
+  ///
+  /// In tr, this message translates to:
+  /// **'Haritaya dön'**
+  String get backToMap;
+
+  /// No description provided for @noWords.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu ünitede henüz kelime yok.'**
+  String get noWords;
+
+  /// No description provided for @wordPosition.
+  ///
+  /// In tr, this message translates to:
+  /// **'{current} / {total}'**
+  String wordPosition(int current, int total);
+
+  /// No description provided for @posNoun.
+  ///
+  /// In tr, this message translates to:
+  /// **'isim'**
+  String get posNoun;
+
+  /// No description provided for @posVerb.
+  ///
+  /// In tr, this message translates to:
+  /// **'fiil'**
+  String get posVerb;
+
+  /// No description provided for @posAdjective.
+  ///
+  /// In tr, this message translates to:
+  /// **'sıfat'**
+  String get posAdjective;
+
+  /// No description provided for @posAdverb.
+  ///
+  /// In tr, this message translates to:
+  /// **'zarf'**
+  String get posAdverb;
+
+  /// No description provided for @posNumber.
+  ///
+  /// In tr, this message translates to:
+  /// **'sayı'**
+  String get posNumber;
 }
 
 class _AppLocalizationsDelegate

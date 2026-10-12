@@ -54,6 +54,18 @@ class DriftContentRepository implements ContentRepository {
       ..where((t) => t.unitId.equals(unitId))
       ..orderBy([(t) => OrderingTerm.asc(t.id)]);
     final rows = await query.get();
+    final ids = [for (final r in rows) r.id];
+    final exampleRows =
+        await (_db.select(_db.examples)
+              ..where((t) => t.wordId.isIn(ids))
+              ..orderBy([(t) => OrderingTerm.asc(t.id)]))
+            .get();
+    final examples = <int, List<Example>>{};
+    for (final e in exampleRows) {
+      examples
+          .putIfAbsent(e.wordId, () => [])
+          .add(Example(en: e.sentenceEn, tr: e.sentenceTr));
+    }
     return [
       for (final r in rows)
         Word(
@@ -63,6 +75,7 @@ class DriftContentRepository implements ContentRepository {
           partOfSpeech: r.pos,
           meaningTr: r.meaningTr,
           ipa: r.ipa,
+          examples: examples[r.id] ?? const [],
         ),
     ];
   }

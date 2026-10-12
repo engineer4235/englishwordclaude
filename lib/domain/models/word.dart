@@ -1,3 +1,11 @@
+/// Bir örnek cümle ve çevirisi.
+class Example {
+  const Example({required this.en, required this.tr});
+
+  final String en;
+  final String tr;
+}
+
 /// Öğrenilecek bir kelime (FR-30).
 class Word {
   const Word({
@@ -7,6 +15,7 @@ class Word {
     required this.partOfSpeech,
     required this.meaningTr,
     this.ipa,
+    this.examples = const [],
   });
 
   final int id;
@@ -15,4 +24,5 @@ class Word {
   final String partOfSpeech;
   final String meaningTr;
   final String? ipa;
+  final List<Example> examples;
 }

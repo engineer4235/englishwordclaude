@@ -5,4 +5,6 @@ abstract final class AppRoutes {
   static const words = '/kelimelerim';
   static const stats = '/istatistik';
   static const profile = '/profil';
+
+  static String unit(int unitId) => '$levelMap/unite/$unitId';
 }

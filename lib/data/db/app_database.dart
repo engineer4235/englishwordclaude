@@ -20,6 +20,7 @@ part 'app_database.g.dart';
     DailyStats,
     UserProfile,
     Badges,
+    Favorites,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -28,11 +29,16 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'english_word_learning'));
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (m) => m.createAll(),
+    onUpgrade: (m, from, to) async {
+      if (from < 2) {
+        await m.createTable(favorites);
+      }
+    },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
     },
