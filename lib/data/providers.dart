@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../domain/exercise/exercise_generator.dart';
 import '../domain/models/level.dart';
 import '../domain/models/progress.dart';
 import '../domain/models/word.dart';
@@ -80,3 +81,30 @@ final favoriteIdsProvider = FutureProvider<Set<int>>((ref) async {
   await ref.watch(appStartupProvider.future);
   return ref.watch(favoritesRepositoryProvider).ids();
 });
+
+final exerciseGeneratorProvider = Provider<ExerciseGenerator>(
+  (ref) => ExerciseGenerator(),
+);
+
+/// Bir seviyenin tüm kelimeleri (çeldirici havuzu ve seviye sınavı için).
+final levelWordsProvider = FutureProvider.family<List<Word>, int>((
+  ref,
+  levelId,
+) async {
+  await ref.watch(appStartupProvider.future);
+  final content = ref.watch(contentRepositoryProvider);
+  final words = <Word>[];
+  for (final unit in await content.getUnits(levelId)) {
+    words.addAll(await content.getWords(unit.id));
+  }
+  return words;
+});
+
+/// Seviye sınavına girme koşulları (FR-23, FR-24).
+final levelExamEligibilityProvider =
+    FutureProvider.family<LevelExamEligibility, int>((ref, levelId) async {
+      await ref.watch(levelOverviewProvider.future);
+      return ref
+          .watch(progressRepositoryProvider)
+          .levelExamEligibility(levelId);
+    });

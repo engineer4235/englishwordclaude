@@ -112,4 +112,108 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get posNumber => 'sayı';
+
+  @override
+  String get startPractice => 'Alıştırmaya başla';
+
+  @override
+  String get unitExam => 'Ünite sınavı';
+
+  @override
+  String get levelExam => 'Seviye sınavına gir';
+
+  @override
+  String get exChooseMeaning => 'Doğru anlamı seç';
+
+  @override
+  String get exChooseWord => 'İngilizcesini seç';
+
+  @override
+  String get exListen => 'Dinle ve doğru yazımı seç';
+
+  @override
+  String get exFillBlank => 'Boşluğa uygun kelimeyi seç';
+
+  @override
+  String get exType => 'İngilizcesini yaz';
+
+  @override
+  String get exMatch => 'Kelimeleri anlamlarıyla eşleştir';
+
+  @override
+  String get check => 'Kontrol et';
+
+  @override
+  String get continueLabel => 'Devam';
+
+  @override
+  String get correctFeedback => 'Doğru!';
+
+  @override
+  String wrongFeedback(String answer) {
+    return 'Yanlış. Doğru cevap: $answer';
+  }
+
+  @override
+  String almostFeedback(String answer) {
+    return 'Neredeyse doğru! Doğrusu: $answer';
+  }
+
+  @override
+  String get typingHint => 'Cevabını yaz';
+
+  @override
+  String get replay => 'Tekrar dinle';
+
+  @override
+  String questionPosition(int current, int total) {
+    return 'Soru $current/$total';
+  }
+
+  @override
+  String get resultLesson => 'Alıştırma tamamlandı';
+
+  @override
+  String get resultUnitPassed => 'Ünite tamamlandı! Sıradaki ünite açıldı.';
+
+  @override
+  String get resultUnitFailed =>
+      'Sıradaki üniteyi açmak için en az %70 gerekiyor. Tekrar dene!';
+
+  @override
+  String resultLevelPassed(String level) {
+    return 'Tebrikler! $level seviyesini tamamladın.';
+  }
+
+  @override
+  String get resultLevelFailed =>
+      'Seviye sınavını 24 saat sonra tekrar deneyebilirsin. Yanlış kelimeler tekrar listene eklendi.';
+
+  @override
+  String scorePercent(int score) {
+    return '%$score';
+  }
+
+  @override
+  String correctCount(int correct, int total) {
+    return '$correct/$total doğru';
+  }
+
+  @override
+  String get wrongWordsTitle => 'Tekrar etmen gereken kelimeler';
+
+  @override
+  String examNeedLearned(int percent) {
+    return 'Seviye sınavı için kelimelerin en az %80\'ini öğrenmelisin (şu an %$percent).';
+  }
+
+  @override
+  String examRetryAt(String time) {
+    return 'Seviye sınavını $time sonrasında tekrar deneyebilirsin.';
+  }
+
+  @override
+  String levelBadge(String level) {
+    return '$level rozeti kazanıldı';
+  }
 }

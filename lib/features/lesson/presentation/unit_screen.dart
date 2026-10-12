@@ -46,7 +46,16 @@ class _UnitScreenState extends ConsumerState<UnitScreen> {
     final words = ref.watch(unitWordsProvider(widget.unitId));
 
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(
+        title: Text(title),
+        actions: [
+          IconButton(
+            tooltip: l10n.unitExam,
+            icon: const Icon(Icons.quiz_outlined),
+            onPressed: () => context.go(AppRoutes.unitExam(widget.unitId)),
+          ),
+        ],
+      ),
       body: switch (words) {
         AsyncData(:final value) when value.isEmpty => Center(
           child: Text(l10n.noWords),
@@ -98,9 +107,9 @@ class _UnitScreenState extends ConsumerState<UnitScreen> {
                 const Spacer(),
                 FilledButton(
                   onPressed: isLast
-                      ? () => context.go(AppRoutes.levelMap)
+                      ? () => context.go(AppRoutes.unitPractice(widget.unitId))
                       : () => _goTo(_index + 1),
-                  child: Text(isLast ? l10n.backToMap : l10n.next),
+                  child: Text(isLast ? l10n.startPractice : l10n.next),
                 ),
               ],
             ),

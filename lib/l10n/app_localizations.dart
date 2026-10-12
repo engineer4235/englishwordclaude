@@ -279,6 +279,174 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'sayı'**
   String get posNumber;
+
+  /// No description provided for @startPractice.
+  ///
+  /// In tr, this message translates to:
+  /// **'Alıştırmaya başla'**
+  String get startPractice;
+
+  /// No description provided for @unitExam.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ünite sınavı'**
+  String get unitExam;
+
+  /// No description provided for @levelExam.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye sınavına gir'**
+  String get levelExam;
+
+  /// No description provided for @exChooseMeaning.
+  ///
+  /// In tr, this message translates to:
+  /// **'Doğru anlamı seç'**
+  String get exChooseMeaning;
+
+  /// No description provided for @exChooseWord.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizcesini seç'**
+  String get exChooseWord;
+
+  /// No description provided for @exListen.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dinle ve doğru yazımı seç'**
+  String get exListen;
+
+  /// No description provided for @exFillBlank.
+  ///
+  /// In tr, this message translates to:
+  /// **'Boşluğa uygun kelimeyi seç'**
+  String get exFillBlank;
+
+  /// No description provided for @exType.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizcesini yaz'**
+  String get exType;
+
+  /// No description provided for @exMatch.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kelimeleri anlamlarıyla eşleştir'**
+  String get exMatch;
+
+  /// No description provided for @check.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kontrol et'**
+  String get check;
+
+  /// No description provided for @continueLabel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Devam'**
+  String get continueLabel;
+
+  /// No description provided for @correctFeedback.
+  ///
+  /// In tr, this message translates to:
+  /// **'Doğru!'**
+  String get correctFeedback;
+
+  /// No description provided for @wrongFeedback.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yanlış. Doğru cevap: {answer}'**
+  String wrongFeedback(String answer);
+
+  /// No description provided for @almostFeedback.
+  ///
+  /// In tr, this message translates to:
+  /// **'Neredeyse doğru! Doğrusu: {answer}'**
+  String almostFeedback(String answer);
+
+  /// No description provided for @typingHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevabını yaz'**
+  String get typingHint;
+
+  /// No description provided for @replay.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar dinle'**
+  String get replay;
+
+  /// No description provided for @questionPosition.
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru {current}/{total}'**
+  String questionPosition(int current, int total);
+
+  /// No description provided for @resultLesson.
+  ///
+  /// In tr, this message translates to:
+  /// **'Alıştırma tamamlandı'**
+  String get resultLesson;
+
+  /// No description provided for @resultUnitPassed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ünite tamamlandı! Sıradaki ünite açıldı.'**
+  String get resultUnitPassed;
+
+  /// No description provided for @resultUnitFailed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sıradaki üniteyi açmak için en az %70 gerekiyor. Tekrar dene!'**
+  String get resultUnitFailed;
+
+  /// No description provided for @resultLevelPassed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tebrikler! {level} seviyesini tamamladın.'**
+  String resultLevelPassed(String level);
+
+  /// No description provided for @resultLevelFailed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye sınavını 24 saat sonra tekrar deneyebilirsin. Yanlış kelimeler tekrar listene eklendi.'**
+  String get resultLevelFailed;
+
+  /// No description provided for @scorePercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'%{score}'**
+  String scorePercent(int score);
+
+  /// No description provided for @correctCount.
+  ///
+  /// In tr, this message translates to:
+  /// **'{correct}/{total} doğru'**
+  String correctCount(int correct, int total);
+
+  /// No description provided for @wrongWordsTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar etmen gereken kelimeler'**
+  String get wrongWordsTitle;
+
+  /// No description provided for @examNeedLearned.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye sınavı için kelimelerin en az %80\'ini öğrenmelisin (şu an %{percent}).'**
+  String examNeedLearned(int percent);
+
+  /// No description provided for @examRetryAt.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye sınavını {time} sonrasında tekrar deneyebilirsin.'**
+  String examRetryAt(String time);
+
+  /// No description provided for @levelBadge.
+  ///
+  /// In tr, this message translates to:
+  /// **'{level} rozeti kazanıldı'**
+  String levelBadge(String level);
 }
 
 class _AppLocalizationsDelegate
