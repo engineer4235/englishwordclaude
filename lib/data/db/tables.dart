@@ -45,7 +45,9 @@ class Examples extends Table {
 /// type: synonym, antonym veya family.
 @DataClassName('WordRelationRow')
 class WordRelations extends Table {
+  @ReferenceName('outgoingRelations')
   IntColumn get wordId => integer().references(Words, #id)();
+  @ReferenceName('incomingRelations')
   IntColumn get relatedWordId => integer().references(Words, #id)();
   TextColumn get type => text()();
 
@@ -141,4 +143,14 @@ class Badges extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get code => text().unique()();
   DateTimeColumn get earnedAt => dateTime().withDefault(currentDateAndTime)();
+}
+
+/// Favori kelimeler (FR-35).
+@DataClassName('FavoriteRow')
+class Favorites extends Table {
+  IntColumn get wordId => integer().references(Words, #id)();
+  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
+
+  @override
+  Set<Column<Object>> get primaryKey => {wordId};
 }

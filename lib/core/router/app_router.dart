@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/home_screen.dart';
+import '../../features/lesson/presentation/unit_screen.dart';
 import '../../features/level_map/presentation/level_map_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/stats/presentation/stats_screen.dart';
@@ -37,6 +38,14 @@ GoRouter createRouter() {
               GoRoute(
                 path: AppRoutes.levelMap,
                 builder: (context, state) => const LevelMapScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'unite/:unitId',
+                    builder: (context, state) => UnitScreen(
+                      unitId: int.parse(state.pathParameters['unitId']!),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
