@@ -1,0 +1,12 @@
+{
+  "@@locale": "tr",
+  "appTitle": "İngilizce Kelime",
+  "@appTitle": {"description": "Uygulama adı"},
+  "navHome": "Ana Sayfa",
+  "navMap": "Harita",
+  "navWords": "Kelimelerim",
+  "navStats": "İstatistik",
+  "navProfile": "Profil",
+  "comingSoon": "Bu bölüm yakında hazır olacak.",
+  "@comingSoon": {"description": "Henüz geliştirilmemiş ekranlarda gösterilen metin"}
+}
