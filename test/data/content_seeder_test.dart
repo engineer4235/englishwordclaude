@@ -40,7 +40,7 @@ void main() {
     expect(levels.map((l) => l.code), ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']);
 
     final units = await repo.getUnits(levels.first.id);
-    expect(units, hasLength(18), reason: 'A1 içeriği (CNT-2)');
+    expect(units, hasLength(25), reason: 'A1 içeriği (CNT-2)');
     expect(units.take(3).map((u) => u.title), ['Aile', 'Renkler', 'Sayılar']);
     expect(await repo.getUnits(levels[1].id), hasLength(25));
     final b1 = await repo.getUnits(levels[2].id);
@@ -82,11 +82,11 @@ void main() {
           ),
         );
 
-    expect(await seeder.addMissingUnits(json), 50);
+    expect(await seeder.addMissingUnits(json), 57);
     expect(await seeder.addMissingUnits(json), 0);
 
     final units = await repo.getUnits(a1.id);
-    expect(units, hasLength(18));
+    expect(units, hasLength(25));
     expect(units[3].title, 'Yiyecek ve İçecek');
     final progress = {
       for (final p in await db.select(db.unitProgress).get()) p.unitId: p,
