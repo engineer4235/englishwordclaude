@@ -44,7 +44,7 @@ void main() {
     expect(units.take(3).map((u) => u.title), ['Aile', 'Renkler', 'Sayılar']);
     expect(await repo.getUnits(levels[1].id), hasLength(25));
     final b1 = await repo.getUnits(levels[2].id);
-    expect(b1, hasLength(10), reason: 'B1 içeriği (CNT-4)');
+    expect(b1, hasLength(15), reason: 'B1 içeriği (CNT-4)');
     expect(b1.first.title, 'İş Hayatı');
     expect(await repo.getWords(units.first.id), hasLength(8));
 
@@ -82,7 +82,7 @@ void main() {
           ),
         );
 
-    expect(await seeder.addMissingUnits(json), 57);
+    expect(await seeder.addMissingUnits(json), 62);
     expect(await seeder.addMissingUnits(json), 0);
 
     final units = await repo.getUnits(a1.id);
@@ -124,7 +124,7 @@ void main() {
           ),
         );
 
-    expect(await seeder.addMissingUnits(json), 10);
+    expect(await seeder.addMissingUnits(json), 15);
     final units = await repo.getUnits(b1.id);
     final progress = {
       for (final p in await db.select(db.unitProgress).get()) p.unitId: p,
@@ -147,7 +147,7 @@ void main() {
         ],
       }),
     );
-    expect(await seeder.addMissingUnits(json), 10);
+    expect(await seeder.addMissingUnits(json), 15);
     final b1 = (await DriftContentRepository(db).getLevels())[2];
     final unitIds = {
       for (final u in await DriftContentRepository(db).getUnits(b1.id)) u.id,
