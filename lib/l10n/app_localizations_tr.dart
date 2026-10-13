@@ -634,6 +634,31 @@ class AppLocalizationsTr extends AppLocalizations {
   String get practiceDifficult => 'Zorlandıklarımı çalış';
 
   @override
+  String get myLists => 'Listelerim';
+
+  @override
+  String get newList => 'Yeni liste';
+
+  @override
+  String get renameList => 'Yeniden adlandır';
+
+  @override
+  String get deleteList => 'Listeyi sil';
+
+  @override
+  String get practiceList => 'Listeyle çalış';
+
+  @override
+  String get addToList => 'Listeye ekle';
+
+  @override
+  String get listNameHint => 'Liste adı';
+
+  @override
+  String get noLists =>
+      'Henüz listen yok. Kelimeleri kendi listelerinde toplamak için yeni bir liste oluştur.';
+
+  @override
   String get searchHint => 'İngilizce ya da Türkçe ara';
 
   @override

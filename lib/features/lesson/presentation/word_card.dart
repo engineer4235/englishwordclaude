@@ -6,6 +6,7 @@ import '../../../data/providers.dart';
 import '../../../data/repositories/notes_repository.dart';
 import '../../../domain/models/word.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../word_lists/presentation/word_lists_screen.dart';
 
 /// Kelime kartı: kelime, okunuş, anlam, kişisel not ve örnek cümleler
 /// (FR-30, FR-31, FR-33, FR-34, FR-35, FR-36).
@@ -45,6 +46,16 @@ class WordCard extends ConsumerWidget {
                   tooltip: l10n.listen,
                   icon: const Icon(Icons.volume_up),
                   onPressed: () => tts.speak(word.lemma),
+                ),
+                IconButton(
+                  key: const Key('add-to-list'),
+                  tooltip: l10n.addToList,
+                  icon: const Icon(Icons.playlist_add),
+                  onPressed: () => showModalBottomSheet<void>(
+                    context: context,
+                    showDragHandle: true,
+                    builder: (context) => AddToListSheet(wordId: word.id),
+                  ),
                 ),
                 IconButton(
                   tooltip: isFavorite ? l10n.removeFavorite : l10n.addFavorite,

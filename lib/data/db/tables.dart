@@ -191,3 +191,23 @@ class WordNotes extends Table {
   @override
   Set<Column<Object>> get primaryKey => {wordId};
 }
+
+/// Kullanıcının oluşturduğu kelime listesi (FR-91). Şema 6.
+@DataClassName('WordListRow')
+class WordLists extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get name => text().withLength(min: 1, max: 40)();
+  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
+}
+
+/// Listedeki kelimeler (FR-91). Şema 6.
+@DataClassName('WordListItemRow')
+class WordListItems extends Table {
+  IntColumn get listId =>
+      integer().references(WordLists, #id, onDelete: KeyAction.cascade)();
+  IntColumn get wordId => integer().references(Words, #id)();
+  DateTimeColumn get addedAt => dateTime().withDefault(currentDateAndTime)();
+
+  @override
+  Set<Column<Object>> get primaryKey => {listId, wordId};
+}

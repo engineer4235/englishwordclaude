@@ -11,6 +11,7 @@ import '../../features/placement/presentation/placement_screen.dart';
 import '../../features/practice/presentation/practice_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/stats/presentation/stats_screen.dart';
+import '../../features/word_lists/presentation/word_lists_screen.dart';
 import '../../features/word_lists/presentation/words_screen.dart';
 import 'app_routes.dart';
 import 'app_shell.dart';
@@ -139,6 +140,17 @@ GoRouter createRouter({
                     path: 'alistirma/zorlandiklarim',
                     builder: (context, state) =>
                         const PracticeScreen(mode: PracticeMode.difficult),
+                  ),
+                  GoRoute(
+                    path: 'alistirma/liste/:listId',
+                    builder: (context, state) => PracticeScreen(
+                      mode: PracticeMode.wordList,
+                      listId: int.parse(state.pathParameters['listId']!),
+                    ),
+                  ),
+                  GoRoute(
+                    path: 'listeler',
+                    builder: (context, state) => const WordListsScreen(),
                   ),
                 ],
               ),

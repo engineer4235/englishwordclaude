@@ -1186,6 +1186,54 @@ abstract class AppLocalizations {
   /// **'Zorlandıklarımı çalış'**
   String get practiceDifficult;
 
+  /// No description provided for @myLists.
+  ///
+  /// In tr, this message translates to:
+  /// **'Listelerim'**
+  String get myLists;
+
+  /// No description provided for @newList.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni liste'**
+  String get newList;
+
+  /// No description provided for @renameList.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeniden adlandır'**
+  String get renameList;
+
+  /// No description provided for @deleteList.
+  ///
+  /// In tr, this message translates to:
+  /// **'Listeyi sil'**
+  String get deleteList;
+
+  /// No description provided for @practiceList.
+  ///
+  /// In tr, this message translates to:
+  /// **'Listeyle çalış'**
+  String get practiceList;
+
+  /// No description provided for @addToList.
+  ///
+  /// In tr, this message translates to:
+  /// **'Listeye ekle'**
+  String get addToList;
+
+  /// No description provided for @listNameHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Liste adı'**
+  String get listNameHint;
+
+  /// No description provided for @noLists.
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz listen yok. Kelimeleri kendi listelerinde toplamak için yeni bir liste oluştur.'**
+  String get noLists;
+
   /// No description provided for @searchHint.
   ///
   /// In tr, this message translates to:

@@ -9,6 +9,7 @@ void main() {
     expect(AppRoutes.isFocused(AppRoutes.levelExam(1)), isTrue);
     expect(AppRoutes.isFocused(AppRoutes.favoritesPractice), isTrue);
     expect(AppRoutes.isFocused(AppRoutes.difficultPractice), isTrue);
+    expect(AppRoutes.isFocused(AppRoutes.wordListPractice(4)), isTrue);
   });
 
   test('ana sekmelerde ve kelime kartlarında alt menü görünür', () {
@@ -17,6 +18,7 @@ void main() {
       AppRoutes.levelMap,
       AppRoutes.unit(3),
       AppRoutes.words,
+      AppRoutes.wordLists,
       AppRoutes.stats,
       AppRoutes.profile,
     ]) {
