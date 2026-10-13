@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "note": "MVP içeriği: A1'de 13, A2'de 4, B1'de 4 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 4,
+  "note": "MVP içeriği: A1'de 13, A2'de 4, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -2883,6 +2883,822 @@
           ]
         }
       ]
+    },
+    {
+      "level": "B1",
+      "title": "Eğitim",
+      "theme": "education",
+      "icon": "school",
+      "words": [
+        {
+          "lemma": "degree",
+          "ipa": "/dɪˈɡriː/",
+          "pos": "noun",
+          "tr": "diploma, derece",
+          "examples": [
+            [
+              "She has a degree in chemistry.",
+              "Kimya alanında bir diploması var."
+            ],
+            [
+              "He finished his degree last summer.",
+              "Diplomasını geçen yaz tamamladı."
+            ]
+          ]
+        },
+        {
+          "lemma": "research",
+          "ipa": "/ˈriːsɜːrtʃ/",
+          "pos": "noun",
+          "tr": "araştırma",
+          "examples": [
+            [
+              "The research took three years.",
+              "Araştırma üç yıl sürdü."
+            ],
+            [
+              "She is doing research on sleep.",
+              "Uyku üzerine araştırma yapıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "knowledge",
+          "ipa": "/ˈnɑːlɪdʒ/",
+          "pos": "noun",
+          "tr": "bilgi",
+          "examples": [
+            [
+              "He has a good knowledge of history.",
+              "Tarih konusunda iyi bir bilgisi var."
+            ],
+            [
+              "Reading is the best way to gain knowledge.",
+              "Okumak bilgi edinmenin en iyi yoludur."
+            ]
+          ]
+        },
+        {
+          "lemma": "graduate",
+          "ipa": "/ˈɡrædʒueɪt/",
+          "pos": "verb",
+          "tr": "mezun olmak",
+          "examples": [
+            [
+              "She will graduate from university next year.",
+              "Gelecek yıl üniversiteden mezun olacak."
+            ],
+            [
+              "Many students graduate in June.",
+              "Birçok öğrenci haziranda mezun olur."
+            ]
+          ]
+        },
+        {
+          "lemma": "lecture",
+          "ipa": "/ˈlektʃər/",
+          "pos": "noun",
+          "tr": "ders, konferans",
+          "examples": [
+            [
+              "The lecture starts at nine o'clock.",
+              "Ders saat dokuzda başlıyor."
+            ],
+            [
+              "I took notes during the lecture.",
+              "Ders sırasında not aldım."
+            ]
+          ]
+        },
+        {
+          "lemma": "improve",
+          "ipa": "/ɪmˈpruːv/",
+          "pos": "verb",
+          "tr": "geliştirmek, iyileştirmek",
+          "examples": [
+            [
+              "I want to improve my English.",
+              "İngilizcemi geliştirmek istiyorum."
+            ],
+            [
+              "Exercise can improve your mood.",
+              "Egzersiz ruh halini iyileştirebilir."
+            ]
+          ]
+        },
+        {
+          "lemma": "skill",
+          "ipa": "/skɪl/",
+          "pos": "noun",
+          "tr": "beceri",
+          "examples": [
+            [
+              "Cooking is a useful skill.",
+              "Yemek yapmak faydalı bir beceridir."
+            ],
+            [
+              "This job needs good computer skill.",
+              "Bu iş iyi bilgisayar becerisi gerektirir."
+            ]
+          ]
+        },
+        {
+          "lemma": "subject",
+          "ipa": "/ˈsʌbdʒɪkt/",
+          "pos": "noun",
+          "tr": "ders, konu",
+          "examples": [
+            [
+              "Math is my favorite subject.",
+              "Matematik en sevdiğim derstir."
+            ],
+            [
+              "Let's change the subject.",
+              "Konuyu değiştirelim."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Medya ve Haberler",
+      "theme": "media",
+      "icon": "news",
+      "words": [
+        {
+          "lemma": "news",
+          "ipa": "/nuːz/",
+          "pos": "noun",
+          "tr": "haber(ler)",
+          "examples": [
+            [
+              "I watch the news every evening.",
+              "Her akşam haberleri izlerim."
+            ],
+            [
+              "That is good news!",
+              "Bu iyi bir haber!"
+            ]
+          ]
+        },
+        {
+          "lemma": "article",
+          "ipa": "/ˈɑːrtɪkəl/",
+          "pos": "noun",
+          "tr": "makale, yazı",
+          "examples": [
+            [
+              "I read an interesting article about space.",
+              "Uzay hakkında ilginç bir makale okudum."
+            ],
+            [
+              "She writes an article every week.",
+              "Her hafta bir makale yazıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "journalist",
+          "ipa": "/ˈdʒɜːrnəlɪst/",
+          "pos": "noun",
+          "tr": "gazeteci",
+          "examples": [
+            [
+              "The journalist asked the minister a question.",
+              "Gazeteci bakana bir soru sordu."
+            ],
+            [
+              "My aunt works as a journalist.",
+              "Teyzem gazeteci olarak çalışıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "advertisement",
+          "ipa": "/ˌædvərˈtaɪzmənt/",
+          "pos": "noun",
+          "tr": "reklam, ilan",
+          "examples": [
+            [
+              "I saw an advertisement for a new phone.",
+              "Yeni bir telefonun reklamını gördüm."
+            ],
+            [
+              "They put an advertisement in the newspaper.",
+              "Gazeteye bir ilan verdiler."
+            ]
+          ]
+        },
+        {
+          "lemma": "channel",
+          "ipa": "/ˈtʃænəl/",
+          "pos": "noun",
+          "tr": "kanal",
+          "examples": [
+            [
+              "Which channel is the match on?",
+              "Maç hangi kanalda?"
+            ],
+            [
+              "He started a cooking channel online.",
+              "İnternette bir yemek kanalı açtı."
+            ]
+          ]
+        },
+        {
+          "lemma": "publish",
+          "ipa": "/ˈpʌblɪʃ/",
+          "pos": "verb",
+          "tr": "yayımlamak",
+          "examples": [
+            [
+              "They will publish her first book in May.",
+              "İlk kitabını mayısta yayımlayacaklar."
+            ],
+            [
+              "The newspaper did not publish the photo.",
+              "Gazete fotoğrafı yayımlamadı."
+            ]
+          ]
+        },
+        {
+          "lemma": "audience",
+          "ipa": "/ˈɔːdiəns/",
+          "pos": "noun",
+          "tr": "seyirci, izleyici kitlesi",
+          "examples": [
+            [
+              "The audience clapped for a long time.",
+              "Seyirciler uzun süre alkışladı."
+            ],
+            [
+              "The show has a young audience.",
+              "Programın genç bir izleyici kitlesi var."
+            ]
+          ]
+        },
+        {
+          "lemma": "headline",
+          "ipa": "/ˈhedlaɪn/",
+          "pos": "noun",
+          "tr": "manşet, başlık",
+          "examples": [
+            [
+              "The headline was about the election.",
+              "Manşet seçimle ilgiliydi."
+            ],
+            [
+              "I only read the headline.",
+              "Sadece başlığı okudum."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Şehir Hayatı",
+      "theme": "city",
+      "icon": "city",
+      "words": [
+        {
+          "lemma": "traffic",
+          "ipa": "/ˈtræfɪk/",
+          "pos": "noun",
+          "tr": "trafik",
+          "examples": [
+            [
+              "The traffic is terrible in the morning.",
+              "Sabahları trafik berbat."
+            ],
+            [
+              "We were late because of the traffic.",
+              "Trafik yüzünden geç kaldık."
+            ]
+          ]
+        },
+        {
+          "lemma": "crowded",
+          "ipa": "/ˈkraʊdɪd/",
+          "pos": "adjective",
+          "tr": "kalabalık",
+          "examples": [
+            [
+              "The bus was very crowded today.",
+              "Otobüs bugün çok kalabalıktı."
+            ],
+            [
+              "I don't like crowded places.",
+              "Kalabalık yerleri sevmem."
+            ]
+          ]
+        },
+        {
+          "lemma": "district",
+          "ipa": "/ˈdɪstrɪkt/",
+          "pos": "noun",
+          "tr": "semt, ilçe",
+          "examples": [
+            [
+              "We live in a quiet district.",
+              "Sakin bir semtte yaşıyoruz."
+            ],
+            [
+              "This district has many old houses.",
+              "Bu ilçede çok sayıda eski ev var."
+            ]
+          ]
+        },
+        {
+          "lemma": "public",
+          "ipa": "/ˈpʌblɪk/",
+          "pos": "adjective",
+          "tr": "halka açık, kamu",
+          "examples": [
+            [
+              "The library is open to the public.",
+              "Kütüphane halka açıktır."
+            ],
+            [
+              "There is a public park near my office.",
+              "Ofisimin yakınında bir halk parkı var."
+            ]
+          ]
+        },
+        {
+          "lemma": "transport",
+          "ipa": "/ˈtrænspɔːrt/",
+          "pos": "noun",
+          "tr": "ulaşım",
+          "examples": [
+            [
+              "Public transport is cheap in this city.",
+              "Bu şehirde toplu ulaşım ucuzdur."
+            ],
+            [
+              "What kind of transport do you use?",
+              "Ne tür bir ulaşım aracı kullanıyorsun?"
+            ]
+          ]
+        },
+        {
+          "lemma": "rent",
+          "ipa": "/rent/",
+          "pos": "noun",
+          "tr": "kira",
+          "examples": [
+            [
+              "The rent is due on the first day of the month.",
+              "Kira ayın ilk günü ödenir."
+            ],
+            [
+              "Our rent went up this year.",
+              "Bu yıl kiramız arttı."
+            ]
+          ]
+        },
+        {
+          "lemma": "noise",
+          "ipa": "/nɔɪz/",
+          "pos": "noun",
+          "tr": "gürültü",
+          "examples": [
+            [
+              "I can't sleep because of the noise.",
+              "Gürültü yüzünden uyuyamıyorum."
+            ],
+            [
+              "The children made a lot of noise.",
+              "Çocuklar çok gürültü yaptı."
+            ]
+          ]
+        },
+        {
+          "lemma": "building",
+          "ipa": "/ˈbɪldɪŋ/",
+          "pos": "noun",
+          "tr": "bina",
+          "examples": [
+            [
+              "Our office is in a tall building.",
+              "Ofisimiz yüksek bir binada."
+            ],
+            [
+              "They are building a new school.",
+              "Yeni bir okul inşa ediyorlar."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Para",
+      "theme": "money",
+      "icon": "wallet",
+      "words": [
+        {
+          "lemma": "budget",
+          "ipa": "/ˈbʌdʒɪt/",
+          "pos": "noun",
+          "tr": "bütçe",
+          "examples": [
+            [
+              "We need to plan our budget for the trip.",
+              "Gezi için bütçemizi planlamamız gerekiyor."
+            ],
+            [
+              "The project is over budget.",
+              "Proje bütçeyi aştı."
+            ]
+          ]
+        },
+        {
+          "lemma": "loan",
+          "ipa": "/loʊn/",
+          "pos": "noun",
+          "tr": "kredi, borç",
+          "examples": [
+            [
+              "They took a loan to buy a car.",
+              "Araba almak için kredi çektiler."
+            ],
+            [
+              "He paid back the loan in two years.",
+              "Borcu iki yılda geri ödedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "borrow",
+          "ipa": "/ˈbɑːroʊ/",
+          "pos": "verb",
+          "tr": "ödünç almak",
+          "examples": [
+            [
+              "Can I borrow your pen?",
+              "Kalemini ödünç alabilir miyim?"
+            ],
+            [
+              "She had to borrow money from her brother.",
+              "Kardeşinden borç para almak zorunda kaldı."
+            ]
+          ]
+        },
+        {
+          "lemma": "earn",
+          "ipa": "/ɜːrn/",
+          "pos": "verb",
+          "tr": "kazanmak",
+          "examples": [
+            [
+              "How much do you earn a month?",
+              "Ayda ne kadar kazanıyorsun?"
+            ],
+            [
+              "Students can earn money in the summer.",
+              "Öğrenciler yazın para kazanabilir."
+            ]
+          ]
+        },
+        {
+          "lemma": "afford",
+          "ipa": "/əˈfɔːrd/",
+          "pos": "verb",
+          "tr": "(parası) yetmek, karşılayabilmek",
+          "examples": [
+            [
+              "We can't afford a new car.",
+              "Yeni bir arabaya paramız yetmez."
+            ],
+            [
+              "Can you afford to travel this year?",
+              "Bu yıl seyahat etmeye gücün yetiyor mu?"
+            ]
+          ]
+        },
+        {
+          "lemma": "cash",
+          "ipa": "/kæʃ/",
+          "pos": "noun",
+          "tr": "nakit",
+          "examples": [
+            [
+              "Do you have any cash?",
+              "Hiç nakit paran var mı?"
+            ],
+            [
+              "This shop only takes cash.",
+              "Bu dükkân yalnızca nakit kabul ediyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "discount",
+          "ipa": "/ˈdɪskaʊnt/",
+          "pos": "noun",
+          "tr": "indirim",
+          "examples": [
+            [
+              "Students get a discount at the cinema.",
+              "Öğrenciler sinemada indirim alır."
+            ],
+            [
+              "Is there a discount on these shoes?",
+              "Bu ayakkabılarda indirim var mı?"
+            ]
+          ]
+        },
+        {
+          "lemma": "save",
+          "ipa": "/seɪv/",
+          "pos": "verb",
+          "tr": "biriktirmek, tasarruf etmek",
+          "examples": [
+            [
+              "I save some money every month.",
+              "Her ay biraz para biriktiriyorum."
+            ],
+            [
+              "We save time by taking the train.",
+              "Trene binerek zaman kazanıyoruz."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Spor",
+      "theme": "sports",
+      "icon": "sports",
+      "words": [
+        {
+          "lemma": "competition",
+          "ipa": "/ˌkɑːmpəˈtɪʃən/",
+          "pos": "noun",
+          "tr": "yarışma, rekabet",
+          "examples": [
+            [
+              "She won the swimming competition.",
+              "Yüzme yarışmasını kazandı."
+            ],
+            [
+              "There is a lot of competition for this job.",
+              "Bu iş için çok fazla rekabet var."
+            ]
+          ]
+        },
+        {
+          "lemma": "coach",
+          "ipa": "/koʊtʃ/",
+          "pos": "noun",
+          "tr": "antrenör, koç",
+          "examples": [
+            [
+              "The coach was happy with the team.",
+              "Antrenör takımdan memnundu."
+            ],
+            [
+              "Our coach makes us run every day.",
+              "Koçumuz bizi her gün koşturuyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "compete",
+          "ipa": "/kəmˈpiːt/",
+          "pos": "verb",
+          "tr": "yarışmak",
+          "examples": [
+            [
+              "Twenty runners will compete in the race.",
+              "Yarışta yirmi koşucu yarışacak."
+            ],
+            [
+              "Small shops can't compete with big stores.",
+              "Küçük dükkânlar büyük mağazalarla rekabet edemez."
+            ]
+          ]
+        },
+        {
+          "lemma": "score",
+          "ipa": "/skɔːr/",
+          "pos": "noun",
+          "tr": "skor, puan",
+          "examples": [
+            [
+              "What was the final score?",
+              "Son skor neydi?"
+            ],
+            [
+              "Her score on the test was very high.",
+              "Sınavdaki puanı çok yüksekti."
+            ]
+          ]
+        },
+        {
+          "lemma": "injury",
+          "ipa": "/ˈɪndʒəri/",
+          "pos": "noun",
+          "tr": "sakatlık, yaralanma",
+          "examples": [
+            [
+              "He missed the game because of an injury.",
+              "Bir sakatlık yüzünden maçı kaçırdı."
+            ],
+            [
+              "The injury was not serious.",
+              "Yaralanma ciddi değildi."
+            ]
+          ]
+        },
+        {
+          "lemma": "fit",
+          "ipa": "/fɪt/",
+          "pos": "adjective",
+          "tr": "formda, zinde",
+          "examples": [
+            [
+              "I go to the gym to stay fit.",
+              "Formda kalmak için spor salonuna gidiyorum."
+            ],
+            [
+              "My grandfather is still very fit.",
+              "Dedem hâlâ çok zinde."
+            ]
+          ]
+        },
+        {
+          "lemma": "team",
+          "ipa": "/tiːm/",
+          "pos": "noun",
+          "tr": "takım, ekip",
+          "examples": [
+            [
+              "Which team do you support?",
+              "Hangi takımı tutuyorsun?"
+            ],
+            [
+              "Our team won the cup.",
+              "Takımımız kupayı kazandı."
+            ]
+          ]
+        },
+        {
+          "lemma": "champion",
+          "ipa": "/ˈtʃæmpiən/",
+          "pos": "noun",
+          "tr": "şampiyon",
+          "examples": [
+            [
+              "She is the national tennis champion.",
+              "Ulusal tenis şampiyonu o."
+            ],
+            [
+              "The champion lifted the trophy.",
+              "Şampiyon kupayı kaldırdı."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Kültür ve Sanat",
+      "theme": "culture",
+      "icon": "museum",
+      "words": [
+        {
+          "lemma": "exhibition",
+          "ipa": "/ˌeksɪˈbɪʃən/",
+          "pos": "noun",
+          "tr": "sergi",
+          "examples": [
+            [
+              "We visited a photo exhibition.",
+              "Bir fotoğraf sergisini gezdik."
+            ],
+            [
+              "The exhibition opens on Monday.",
+              "Sergi pazartesi açılıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "festival",
+          "ipa": "/ˈfestɪvəl/",
+          "pos": "noun",
+          "tr": "festival",
+          "examples": [
+            [
+              "The music festival lasts three days.",
+              "Müzik festivali üç gün sürüyor."
+            ],
+            [
+              "Thousands of people came to the festival.",
+              "Festivale binlerce kişi geldi."
+            ]
+          ]
+        },
+        {
+          "lemma": "tradition",
+          "ipa": "/trəˈdɪʃən/",
+          "pos": "noun",
+          "tr": "gelenek",
+          "examples": [
+            [
+              "It is a tradition to eat sweets at the holiday.",
+              "Bayramda tatlı yemek bir gelenektir."
+            ],
+            [
+              "Every country has its own tradition.",
+              "Her ülkenin kendi geleneği vardır."
+            ]
+          ]
+        },
+        {
+          "lemma": "painting",
+          "ipa": "/ˈpeɪntɪŋ/",
+          "pos": "noun",
+          "tr": "tablo, resim",
+          "examples": [
+            [
+              "There is a beautiful painting on the wall.",
+              "Duvarda güzel bir tablo var."
+            ],
+            [
+              "This painting is two hundred years old.",
+              "Bu tablo iki yüz yıllık."
+            ]
+          ]
+        },
+        {
+          "lemma": "author",
+          "ipa": "/ˈɔːθər/",
+          "pos": "noun",
+          "tr": "yazar",
+          "examples": [
+            [
+              "Who is the author of this book?",
+              "Bu kitabın yazarı kim?"
+            ],
+            [
+              "The author signed my copy.",
+              "Yazar kitabımı imzaladı."
+            ]
+          ]
+        },
+        {
+          "lemma": "perform",
+          "ipa": "/pərˈfɔːrm/",
+          "pos": "verb",
+          "tr": "sahne almak, icra etmek",
+          "examples": [
+            [
+              "The band will perform tonight.",
+              "Grup bu akşam sahne alacak."
+            ],
+            [
+              "The students perform a play every year.",
+              "Öğrenciler her yıl bir oyun sahneler."
+            ]
+          ]
+        },
+        {
+          "lemma": "gallery",
+          "ipa": "/ˈɡæləri/",
+          "pos": "noun",
+          "tr": "galeri",
+          "examples": [
+            [
+              "The gallery is free on Sundays.",
+              "Galeri pazar günleri ücretsizdir."
+            ],
+            [
+              "Her photos are in a small gallery.",
+              "Fotoğrafları küçük bir galeride."
+            ]
+          ]
+        },
+        {
+          "lemma": "museum",
+          "ipa": "/mjuˈziːəm/",
+          "pos": "noun",
+          "tr": "müze",
+          "examples": [
+            [
+              "We went to the museum on Saturday.",
+              "Cumartesi müzeye gittik."
+            ],
+            [
+              "The museum has many old coins.",
+              "Müzede çok sayıda eski sikke var."
+            ]
+          ]
+        }
+      ]
     }
   ],
   "relations": [
@@ -2984,6 +3800,11 @@
     [
       "eat",
       "drink",
+      "family"
+    ],
+    [
+      "compete",
+      "competition",
       "family"
     ]
   ]
