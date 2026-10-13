@@ -87,10 +87,42 @@ void main() {
     await tester.tap(find.text('Haritaya dön'));
     await tester.pumpAndSettle();
     expect(find.byType(NavigationBar), findsOneWidget);
-    final renkler = tester.widget<ListTile>(
-      find.ancestor(of: find.text('Renkler'), matching: find.byType(ListTile)),
+    expect(unitLocked('Renkler'), isFalse);
+  });
+
+  testWidgets('kilitli ünite hızlı geçiş sınavıyla tamamlanır (FR-27)', (
+    tester,
+  ) async {
+    final db = memoryDatabase();
+    addTearDown(db.close);
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final tts = FakeTts();
+    await tester.pumpWidget(testApp(db, tts: tts));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Harita'));
+    await tester.pumpAndSettle();
+    expect(unitLocked('Renkler'), isTrue);
+
+    await tester.tap(find.text('Renkler'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('%90'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('quick-pass-start')));
+    await tester.pumpAndSettle();
+    expect(find.text('Hızlı geçiş sınavı: Renkler'), findsOneWidget);
+    expect(find.byType(NavigationBar), findsNothing, reason: 'odak modu');
+
+    await answerAllCorrectly(tester, tts, seedWords(unitTitle: 'Renkler'));
+    expect(
+      find.text('Harika! Ünite tamamlandı, sonraki ünite açıldı.'),
+      findsOneWidget,
     );
-    expect(renkler.enabled, isTrue);
+
+    await tester.tap(find.text('Haritaya dön'));
+    await tester.pumpAndSettle();
+    expect(unitLocked('Renkler'), isFalse);
+    expect(unitLocked('Sayılar'), isFalse);
   });
 
   testWidgets('cevaptan sonra geri bildirim ve Devam düğmesi gösterilir', (

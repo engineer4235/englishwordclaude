@@ -18,6 +18,9 @@ abstract final class AppRoutes {
 
   static String unitExam(int unitId) => '${unit(unitId)}/sinav';
 
+  /// Kilitli üniteye hızlı geçiş sınavı (FR-27).
+  static String quickPass(int unitId) => '${unit(unitId)}/gecis/sinav';
+
   static String levelExam(int levelId) => '$levelMap/seviye/$levelId/sinav';
 
   /// Favori kelimeler alıştırması (FR-93).

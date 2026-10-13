@@ -547,5 +547,28 @@
     }
   },
   "delete": "Sil",
-  "posOther": "kendi kelimem"
+  "posOther": "kendi kelimem",
+  "quickPassExam": "Hızlı geçiş sınavı",
+  "quickPassInfo": "\"{unit}\" ünitesi henüz kilitli. Kelimelerini zaten biliyorsan hızlı geçiş sınavına girebilirsin: %{score} ve üzeri alırsan ünite tamamlanır ve sonraki ünite açılır.",
+  "@quickPassInfo": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "startExam": "Sınava başla",
+  "resultQuickPassPassed": "Harika! Ünite tamamlandı, sonraki ünite açıldı.",
+  "resultQuickPassFailed": "Ünitenin açılması için %{score} gerekiyordu. Üniteye sırası gelince adım adım çalışabilirsin.",
+  "@resultQuickPassFailed": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "backToWords": "Kelimelerime dön"
 }

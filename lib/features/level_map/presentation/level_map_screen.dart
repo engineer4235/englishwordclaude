@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
 import '../../../data/providers.dart';
+import '../../../data/repositories/progress_repository.dart';
 import '../../../domain/models/progress.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -167,13 +168,46 @@ class _UnitTile extends StatelessWidget {
     final score = unit.bestScore;
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      enabled: !locked,
       leading: _StatusIcon(status: unit.status),
       title: Text(unit.title),
       subtitle: Text(l10n.unitWords(unit.learnedCount, unit.wordCount)),
-      trailing: score != null && score > 0 ? Text(l10n.bestScore(score)) : null,
-      onTap: locked ? null : () => context.go(AppRoutes.unit(unit.id)),
+      trailing: locked
+          ? Icon(Icons.fast_forward, semanticLabel: l10n.quickPassExam)
+          : score != null && score > 0
+          ? Text(l10n.bestScore(score))
+          : null,
+      onTap: locked
+          ? () => _offerQuickPass(context)
+          : () => context.go(AppRoutes.unit(unit.id)),
     );
+  }
+
+  /// Kilitli ünite için hızlı geçiş sınavı önerisi (FR-27).
+  Future<void> _offerQuickPass(BuildContext context) async {
+    final l10n = AppLocalizations.of(context);
+    final start = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.quickPassExam),
+        content: Text(
+          l10n.quickPassInfo(unit.title, ProgressRepository.quickPassScore),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            key: const Key('quick-pass-start'),
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(l10n.startExam),
+          ),
+        ],
+      ),
+    );
+    if (start == true && context.mounted) {
+      context.go(AppRoutes.quickPass(unit.id));
+    }
   }
 }
 

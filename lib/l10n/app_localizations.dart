@@ -1461,6 +1461,42 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'kendi kelimem'**
   String get posOther;
+
+  /// No description provided for @quickPassExam.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hızlı geçiş sınavı'**
+  String get quickPassExam;
+
+  /// No description provided for @quickPassInfo.
+  ///
+  /// In tr, this message translates to:
+  /// **'\"{unit}\" ünitesi henüz kilitli. Kelimelerini zaten biliyorsan hızlı geçiş sınavına girebilirsin: %{score} ve üzeri alırsan ünite tamamlanır ve sonraki ünite açılır.'**
+  String quickPassInfo(String unit, int score);
+
+  /// No description provided for @startExam.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınava başla'**
+  String get startExam;
+
+  /// No description provided for @resultQuickPassPassed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Harika! Ünite tamamlandı, sonraki ünite açıldı.'**
+  String get resultQuickPassPassed;
+
+  /// No description provided for @resultQuickPassFailed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ünitenin açılması için %{score} gerekiyordu. Üniteye sırası gelince adım adım çalışabilirsin.'**
+  String resultQuickPassFailed(int score);
+
+  /// No description provided for @backToWords.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kelimelerime dön'**
+  String get backToWords;
 }
 
 class _AppLocalizationsDelegate

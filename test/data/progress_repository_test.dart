@@ -53,6 +53,23 @@ void main() {
     expect(after[1].status, ProgressStatus.open);
   });
 
+  test('hızlı geçiş: %90 altı kilitli üniteyi değiştirmez (FR-27)', () async {
+    final units = (await a1()).units;
+    expect(units[1].status, ProgressStatus.locked);
+
+    expect(await repo.recordQuickPass(units[1].id, 85), isFalse);
+    var after = (await a1()).units;
+    expect(after[1].status, ProgressStatus.locked);
+    expect(after[1].bestScore, isNull);
+
+    expect(await repo.recordQuickPass(units[1].id, 90), isTrue);
+    after = (await a1()).units;
+    expect(after[1].status, ProgressStatus.completed);
+    expect(after[1].bestScore, 90);
+    expect(after[2].status, ProgressStatus.open);
+    expect(after[0].status, ProgressStatus.open, reason: 'önceki ünite aynı');
+  });
+
   test('seviye sınavı koşulları ve 24 saat bekleme (kabul 3, FR-24)', () async {
     final level = await a1();
     var eligibility = await repo.levelExamEligibility(level.level.id);

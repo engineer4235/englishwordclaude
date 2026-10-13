@@ -11,8 +11,9 @@ import 'package:english_word_learning/data/content/content_seeder.dart';
 import 'package:english_word_learning/data/db/app_database.dart';
 import 'package:english_word_learning/data/providers.dart';
 import 'package:english_word_learning/domain/models/word.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 /// Testlerde kullanılan sabit içerik paketi (3 A1 ünitesi, 24 kelime).
 /// Uygulamanın asıl içeriği büyüdükçe testler etkilenmesin diye ayrıdır.
@@ -111,3 +112,12 @@ List<Word> seedWords({String? unitTitle}) {
   }
   return words;
 }
+
+/// Ünite satırında kilit simgesi var mı.
+bool unitLocked(String title) => find
+    .descendant(
+      of: find.ancestor(of: find.text(title), matching: find.byType(ListTile)),
+      matching: find.byIcon(Icons.lock_outline),
+    )
+    .evaluate()
+    .isNotEmpty;
