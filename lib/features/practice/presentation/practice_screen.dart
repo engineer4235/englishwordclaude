@@ -7,6 +7,7 @@ import '../../../core/tts/tts_service.dart';
 import '../../../core/widgets/badge_labels.dart';
 import '../../../data/providers.dart';
 import '../../../data/repositories/progress_repository.dart';
+import '../../../domain/daily/study_time.dart';
 import '../../../domain/exercise/exercise.dart';
 import '../../../domain/exercise/exercise_generator.dart';
 import '../../../domain/models/word.dart';
@@ -77,7 +78,9 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
   String _title = '';
   String _levelCode = '';
   int _xp = 0;
-  Duration _studyTime = Duration.zero;
+
+  /// Henüz veritabanına yazılmamış çalışma süresi (NFR-05).
+  Duration _unsavedStudyTime = Duration.zero;
 
   @override
   void initState() {
@@ -170,6 +173,14 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     }
   }
 
+  /// Biriken çalışma süresinin tam dakikalarını, oturum bitince tamamını
+  /// kaydeder (NFR-05).
+  Future<void> _saveStudyTime({required bool finished}) async {
+    final split = splitStudyTime(_unsavedStudyTime, finished: finished);
+    _unsavedStudyTime = split.keep;
+    await ref.read(studyRepositoryProvider).addStudyTime(split.save);
+  }
+
   /// Her cevap anında kaydedilir (NFR-05).
   Future<void> _onOutcome(Exercise exercise, ExerciseOutcome outcome) async {
     setState(() {
@@ -187,7 +198,8 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
         widget.mode == PracticeMode.unitExam ||
         widget.mode == PracticeMode.levelExam ||
         widget.mode == PracticeMode.quickPass;
-    _studyTime += outcome.elapsed;
+    _unsavedStudyTime += outcome.elapsed;
+    await _saveStudyTime(finished: false);
     // Oturum içi tekrarlar aralıklı tekrar takvimini değiştirmez (FR-62).
     if (exercise.isRepeat) return;
     for (final answer in outcome.answers) {
@@ -245,7 +257,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           result.scorePercent,
         );
     }
-    await ref.read(studyRepositoryProvider).addStudyTime(_studyTime);
+    await _saveStudyTime(finished: true);
     final badges = await ref.read(badgeRepositoryProvider).check();
     if (!mounted) return;
     ref.invalidate(earnedBadgesProvider);
