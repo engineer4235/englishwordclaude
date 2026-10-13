@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 11,
+  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 15 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -8187,6 +8187,686 @@
           ]
         }
       ]
+    },
+    {
+      "level": "B1",
+      "title": "Sağlık ve Tedavi",
+      "theme": "medical",
+      "icon": "health",
+      "words": [
+        {
+          "lemma": "patient",
+          "ipa": "/ˈpeɪʃənt/",
+          "pos": "noun",
+          "tr": "hasta",
+          "examples": [
+            [
+              "The doctor is talking to a patient.",
+              "Doktor bir hastayla konuşuyor."
+            ],
+            [
+              "Every patient waits in this room.",
+              "Her hasta bu odada bekler."
+            ]
+          ]
+        },
+        {
+          "lemma": "symptom",
+          "ipa": "/ˈsɪmptəm/",
+          "pos": "noun",
+          "tr": "belirti",
+          "examples": [
+            [
+              "A cough is a common symptom of a cold.",
+              "Öksürük, soğuk algınlığının yaygın bir belirtisidir."
+            ],
+            [
+              "Tell the doctor about every symptom.",
+              "Doktora her belirtiyi anlat."
+            ]
+          ]
+        },
+        {
+          "lemma": "treatment",
+          "ipa": "/ˈtriːtmənt/",
+          "pos": "noun",
+          "tr": "tedavi",
+          "examples": [
+            [
+              "The treatment takes two weeks.",
+              "Tedavi iki hafta sürüyor."
+            ],
+            [
+              "She is happy with her treatment.",
+              "Tedavisinden memnun."
+            ]
+          ]
+        },
+        {
+          "lemma": "recover",
+          "ipa": "/rɪˈkʌvər/",
+          "pos": "verb",
+          "tr": "iyileşmek",
+          "examples": [
+            [
+              "It takes time to recover from the flu.",
+              "Gripten iyileşmek zaman alır."
+            ],
+            [
+              "I hope you recover soon.",
+              "Umarım yakında iyileşirsin."
+            ]
+          ]
+        },
+        {
+          "lemma": "emergency",
+          "ipa": "/ɪˈmɜːrdʒənsi/",
+          "pos": "noun",
+          "tr": "acil durum",
+          "examples": [
+            [
+              "Call this number in an emergency.",
+              "Acil bir durumda bu numarayı ara."
+            ],
+            [
+              "The emergency room is open all night.",
+              "Acil servis bütün gece açık."
+            ]
+          ]
+        },
+        {
+          "lemma": "prescription",
+          "ipa": "/prɪˈskrɪpʃən/",
+          "pos": "noun",
+          "tr": "reçete",
+          "examples": [
+            [
+              "You need a prescription for this medicine.",
+              "Bu ilaç için reçeteye ihtiyacın var."
+            ],
+            [
+              "The doctor wrote a prescription.",
+              "Doktor bir reçete yazdı."
+            ]
+          ]
+        },
+        {
+          "lemma": "pain",
+          "ipa": "/peɪn/",
+          "pos": "noun",
+          "tr": "ağrı, acı",
+          "examples": [
+            [
+              "I have a pain in my back.",
+              "Sırtımda bir ağrı var."
+            ],
+            [
+              "The pain stopped after an hour.",
+              "Ağrı bir saat sonra geçti."
+            ]
+          ]
+        },
+        {
+          "lemma": "cure",
+          "ipa": "/kjʊr/",
+          "pos": "noun",
+          "tr": "çare, şifa",
+          "examples": [
+            [
+              "There is no cure for the common cold.",
+              "Soğuk algınlığının bir çaresi yok."
+            ],
+            [
+              "Scientists are looking for a cure.",
+              "Bilim insanları bir çare arıyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Turizm",
+      "theme": "tourism",
+      "icon": "flight",
+      "words": [
+        {
+          "lemma": "destination",
+          "ipa": "/ˌdestɪˈneɪʃən/",
+          "pos": "noun",
+          "tr": "varış yeri, gidilecek yer",
+          "examples": [
+            [
+              "Rome is a popular destination for tourists.",
+              "Roma, turistlerin gözde gidilecek yerlerinden biri."
+            ],
+            [
+              "We reached our destination at night.",
+              "Varış yerimize gece ulaştık."
+            ]
+          ]
+        },
+        {
+          "lemma": "reservation",
+          "ipa": "/ˌrezərˈveɪʃən/",
+          "pos": "noun",
+          "tr": "rezervasyon",
+          "examples": [
+            [
+              "I made a reservation for two nights.",
+              "İki gecelik rezervasyon yaptım."
+            ],
+            [
+              "Do you have a reservation?",
+              "Rezervasyonunuz var mı?"
+            ]
+          ]
+        },
+        {
+          "lemma": "tourist",
+          "ipa": "/ˈtʊrɪst/",
+          "pos": "noun",
+          "tr": "turist",
+          "examples": [
+            [
+              "Every tourist visits the old castle.",
+              "Her turist eski kaleyi ziyaret eder."
+            ],
+            [
+              "A tourist asked me for directions.",
+              "Bir turist bana yol sordu."
+            ]
+          ]
+        },
+        {
+          "lemma": "guide",
+          "ipa": "/ɡaɪd/",
+          "pos": "noun",
+          "tr": "rehber",
+          "examples": [
+            [
+              "Our guide speaks three languages.",
+              "Rehberimiz üç dil konuşuyor."
+            ],
+            [
+              "We bought a guide to the city.",
+              "Bir şehir rehberi aldık."
+            ]
+          ]
+        },
+        {
+          "lemma": "delay",
+          "ipa": "/dɪˈleɪ/",
+          "pos": "noun",
+          "tr": "gecikme",
+          "examples": [
+            [
+              "There is a delay because of the snow.",
+              "Kar yüzünden bir gecikme var."
+            ],
+            [
+              "Sorry for the delay.",
+              "Gecikme için özür dileriz."
+            ]
+          ]
+        },
+        {
+          "lemma": "departure",
+          "ipa": "/dɪˈpɑːrtʃər/",
+          "pos": "noun",
+          "tr": "kalkış, hareket",
+          "examples": [
+            [
+              "Our departure time is six o'clock.",
+              "Kalkış saatimiz altı."
+            ],
+            [
+              "Check the departure board.",
+              "Kalkış panosuna bak."
+            ]
+          ]
+        },
+        {
+          "lemma": "souvenir",
+          "ipa": "/ˌsuːvəˈnɪr/",
+          "pos": "noun",
+          "tr": "hediyelik eşya",
+          "examples": [
+            [
+              "I bought a souvenir for my mother.",
+              "Annem için hediyelik bir eşya aldım."
+            ],
+            [
+              "This souvenir is from Japan.",
+              "Bu hediyelik eşya Japonya'dan."
+            ]
+          ]
+        },
+        {
+          "lemma": "sightseeing",
+          "ipa": "/ˈsaɪtsiːɪŋ/",
+          "pos": "noun",
+          "tr": "gezip görme",
+          "examples": [
+            [
+              "We went sightseeing in Rome.",
+              "Roma'da gezip görmeye çıktık."
+            ],
+            [
+              "Sightseeing is tiring but fun.",
+              "Gezip görmek yorucu ama eğlenceli."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Duygu Durumları",
+      "theme": "emotions",
+      "icon": "mood",
+      "words": [
+        {
+          "lemma": "confident",
+          "ipa": "/ˈkɑːnfɪdənt/",
+          "pos": "adjective",
+          "tr": "kendinden emin",
+          "examples": [
+            [
+              "She feels confident before the exam.",
+              "Sınavdan önce kendinden emin hissediyor."
+            ],
+            [
+              "Be confident when you speak.",
+              "Konuşurken kendinden emin ol."
+            ]
+          ]
+        },
+        {
+          "lemma": "nervous",
+          "ipa": "/ˈnɜːrvəs/",
+          "pos": "adjective",
+          "tr": "gergin, endişeli",
+          "examples": [
+            [
+              "I am nervous about the interview.",
+              "Mülakat yüzünden gerginim."
+            ],
+            [
+              "He gets nervous on planes.",
+              "Uçakta gerginleşir."
+            ]
+          ]
+        },
+        {
+          "lemma": "jealous",
+          "ipa": "/ˈdʒeləs/",
+          "pos": "adjective",
+          "tr": "kıskanç",
+          "examples": [
+            [
+              "My brother is jealous of my new bike.",
+              "Kardeşim yeni bisikletimi kıskanıyor."
+            ],
+            [
+              "Don't be jealous of your friends.",
+              "Arkadaşlarını kıskanma."
+            ]
+          ]
+        },
+        {
+          "lemma": "proud",
+          "ipa": "/praʊd/",
+          "pos": "adjective",
+          "tr": "gururlu",
+          "examples": [
+            [
+              "Her parents are proud of her.",
+              "Ailesi onunla gurur duyuyor."
+            ],
+            [
+              "I am proud of my team.",
+              "Takımımla gurur duyuyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "disappointed",
+          "ipa": "/ˌdɪsəˈpɔɪntɪd/",
+          "pos": "adjective",
+          "tr": "hayal kırıklığına uğramış",
+          "examples": [
+            [
+              "He was disappointed with the result.",
+              "Sonuç yüzünden hayal kırıklığına uğradı."
+            ],
+            [
+              "Don't be disappointed, try again.",
+              "Hayal kırıklığına uğrama, yeniden dene."
+            ]
+          ]
+        },
+        {
+          "lemma": "generous",
+          "ipa": "/ˈdʒenərəs/",
+          "pos": "adjective",
+          "tr": "cömert",
+          "examples": [
+            [
+              "My grandfather is very generous.",
+              "Dedem çok cömerttir."
+            ],
+            [
+              "It was generous of you to pay for dinner.",
+              "Akşam yemeğini ödemen çok cömertçeydi."
+            ]
+          ]
+        },
+        {
+          "lemma": "calm",
+          "ipa": "/kɑːm/",
+          "pos": "adjective",
+          "tr": "sakin",
+          "examples": [
+            [
+              "Stay calm and listen to me.",
+              "Sakin ol ve beni dinle."
+            ],
+            [
+              "The sea is calm today.",
+              "Deniz bugün sakin."
+            ]
+          ]
+        },
+        {
+          "lemma": "curious",
+          "ipa": "/ˈkjʊriəs/",
+          "pos": "adjective",
+          "tr": "meraklı",
+          "examples": [
+            [
+              "Children are curious about everything.",
+              "Çocuklar her şeyi merak eder."
+            ],
+            [
+              "I am curious about your trip.",
+              "Geziyi çok merak ediyorum."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Tüketici Hayatı",
+      "theme": "consumer",
+      "icon": "shopping",
+      "words": [
+        {
+          "lemma": "customer",
+          "ipa": "/ˈkʌstəmər/",
+          "pos": "noun",
+          "tr": "müşteri",
+          "examples": [
+            [
+              "The customer wants to speak to the manager.",
+              "Müşteri müdürle konuşmak istiyor."
+            ],
+            [
+              "Every customer gets a free coffee.",
+              "Her müşteri bedava kahve alır."
+            ]
+          ]
+        },
+        {
+          "lemma": "refund",
+          "ipa": "/ˈriːfʌnd/",
+          "pos": "noun",
+          "tr": "para iadesi",
+          "examples": [
+            [
+              "Can I get a refund for these shoes?",
+              "Bu ayakkabılar için para iadesi alabilir miyim?"
+            ],
+            [
+              "The shop gave me a full refund.",
+              "Mağaza paramın tamamını iade etti."
+            ]
+          ]
+        },
+        {
+          "lemma": "brand",
+          "ipa": "/brænd/",
+          "pos": "noun",
+          "tr": "marka",
+          "examples": [
+            [
+              "What brand is your phone?",
+              "Telefonun hangi marka?"
+            ],
+            [
+              "This brand is very popular.",
+              "Bu marka çok popüler."
+            ]
+          ]
+        },
+        {
+          "lemma": "quality",
+          "ipa": "/ˈkwɑːləti/",
+          "pos": "noun",
+          "tr": "kalite",
+          "examples": [
+            [
+              "The quality of this bag is excellent.",
+              "Bu çantanın kalitesi mükemmel."
+            ],
+            [
+              "Good quality costs more.",
+              "İyi kalite daha pahalıdır."
+            ]
+          ]
+        },
+        {
+          "lemma": "deliver",
+          "ipa": "/dɪˈlɪvər/",
+          "pos": "verb",
+          "tr": "teslim etmek",
+          "examples": [
+            [
+              "They deliver the sofa on Friday.",
+              "Kanepeyi cuma günü teslim ediyorlar."
+            ],
+            [
+              "Can you deliver it to my office?",
+              "Ofisime teslim edebilir misiniz?"
+            ]
+          ]
+        },
+        {
+          "lemma": "compare",
+          "ipa": "/kəmˈper/",
+          "pos": "verb",
+          "tr": "karşılaştırmak",
+          "examples": [
+            [
+              "Always compare prices before you buy.",
+              "Satın almadan önce her zaman fiyatları karşılaştır."
+            ],
+            [
+              "Let's compare these two phones.",
+              "Bu iki telefonu karşılaştıralım."
+            ]
+          ]
+        },
+        {
+          "lemma": "bargain",
+          "ipa": "/ˈbɑːrɡən/",
+          "pos": "noun",
+          "tr": "kelepir",
+          "examples": [
+            [
+              "This jacket was a real bargain.",
+              "Bu ceket tam bir kelepirdi."
+            ],
+            [
+              "I found a bargain at the market.",
+              "Pazarda bir kelepir buldum."
+            ]
+          ]
+        },
+        {
+          "lemma": "available",
+          "ipa": "/əˈveɪləbəl/",
+          "pos": "adjective",
+          "tr": "mevcut, satışta",
+          "examples": [
+            [
+              "This size is not available.",
+              "Bu beden mevcut değil."
+            ],
+            [
+              "The new model is available online.",
+              "Yeni model internette satışta."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Doğal Olaylar",
+      "theme": "nature_events",
+      "icon": "park",
+      "words": [
+        {
+          "lemma": "temperature",
+          "ipa": "/ˈtemprətʃər/",
+          "pos": "noun",
+          "tr": "sıcaklık",
+          "examples": [
+            [
+              "The temperature will drop tonight.",
+              "Sıcaklık bu gece düşecek."
+            ],
+            [
+              "What is the temperature outside?",
+              "Dışarıda sıcaklık kaç derece?"
+            ]
+          ]
+        },
+        {
+          "lemma": "storm",
+          "ipa": "/stɔːrm/",
+          "pos": "noun",
+          "tr": "fırtına",
+          "examples": [
+            [
+              "The storm closed the roads.",
+              "Fırtına yolları kapattı."
+            ],
+            [
+              "A big storm is coming.",
+              "Büyük bir fırtına geliyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "flood",
+          "ipa": "/flʌd/",
+          "pos": "noun",
+          "tr": "sel",
+          "examples": [
+            [
+              "The flood destroyed many houses.",
+              "Sel birçok evi yıktı."
+            ],
+            [
+              "There was a flood in the village last year.",
+              "Geçen yıl köyde sel oldu."
+            ]
+          ]
+        },
+        {
+          "lemma": "earthquake",
+          "ipa": "/ˈɜːrθkweɪk/",
+          "pos": "noun",
+          "tr": "deprem",
+          "examples": [
+            [
+              "The earthquake happened at night.",
+              "Deprem gece oldu."
+            ],
+            [
+              "Our school has an earthquake drill every year.",
+              "Okulumuzda her yıl deprem tatbikatı yapılır."
+            ]
+          ]
+        },
+        {
+          "lemma": "desert",
+          "ipa": "/ˈdezərt/",
+          "pos": "noun",
+          "tr": "çöl",
+          "examples": [
+            [
+              "It rarely rains in the desert.",
+              "Çölde nadiren yağmur yağar."
+            ],
+            [
+              "Camels can live in the desert.",
+              "Develer çölde yaşayabilir."
+            ]
+          ]
+        },
+        {
+          "lemma": "valley",
+          "ipa": "/ˈvæli/",
+          "pos": "noun",
+          "tr": "vadi",
+          "examples": [
+            [
+              "A small river runs through the valley.",
+              "Vadiden küçük bir nehir geçer."
+            ],
+            [
+              "The village is in a green valley.",
+              "Köy yeşil bir vadide."
+            ]
+          ]
+        },
+        {
+          "lemma": "coast",
+          "ipa": "/koʊst/",
+          "pos": "noun",
+          "tr": "kıyı, sahil",
+          "examples": [
+            [
+              "We drove along the coast.",
+              "Sahil boyunca araba sürdük."
+            ],
+            [
+              "The town is on the south coast.",
+              "Kasaba güney kıyısında."
+            ]
+          ]
+        },
+        {
+          "lemma": "wildlife",
+          "ipa": "/ˈwaɪldlaɪf/",
+          "pos": "noun",
+          "tr": "yaban hayatı",
+          "examples": [
+            [
+              "The park protects local wildlife.",
+              "Park, bölgedeki yaban hayatını korur."
+            ],
+            [
+              "Pollution is dangerous for wildlife.",
+              "Kirlilik yaban hayatı için tehlikelidir."
+            ]
+          ]
+        }
+      ]
     }
   ],
   "relations": [
@@ -8363,6 +9043,11 @@
     [
       "sit",
       "stand",
+      "antonym"
+    ],
+    [
+      "calm",
+      "nervous",
       "antonym"
     ]
   ]
