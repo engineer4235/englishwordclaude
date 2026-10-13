@@ -1,3 +1,5 @@
+import 'package:drift/drift.dart' show Value;
+import 'package:english_word_learning/data/db/app_database.dart';
 import 'package:english_word_learning/data/providers.dart';
 import 'package:english_word_learning/data/repositories/progress_repository.dart';
 import 'package:flutter/material.dart';
@@ -72,5 +74,40 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(unitLocked('Renkler'), isFalse);
+  });
+
+  testWidgets('sıradaki ünite vurgulanır, tamamlanan seviye katlanır', (
+    tester,
+  ) async {
+    final db = memoryDatabase();
+    addTearDown(db.close);
+    await tester.pumpWidget(testApp(db));
+    await openMap(tester);
+
+    expect(find.text('Sıradaki'), findsOneWidget);
+    expect(find.text('0/3 ünite tamamlandı'), findsOneWidget);
+
+    // A1 seviyesi tamamlanmış olsun.
+    final container = ProviderScope.containerOf(
+      tester.element(find.byType(Scaffold).first),
+    );
+    final a1 = (await container.read(levelOverviewProvider.future)).first;
+    await tester.runAsync(
+      () => db
+          .into(db.levelProgress)
+          .insertOnConflictUpdate(
+            LevelProgressCompanion.insert(
+              levelId: Value(a1.level.id),
+              status: const Value('completed'),
+            ),
+          ),
+    );
+    container.invalidate(levelOverviewProvider);
+    await tester.pumpAndSettle();
+    expect(find.text('Aile'), findsNothing, reason: 'katlanmış');
+
+    await tester.tap(find.byKey(const ValueKey('toggle-A1')));
+    await tester.pumpAndSettle();
+    expect(find.text('Aile'), findsOneWidget);
   });
 }

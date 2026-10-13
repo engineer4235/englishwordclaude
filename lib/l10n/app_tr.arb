@@ -571,5 +571,19 @@
     }
   },
   "backToWords": "Kelimelerime dön",
-  "posInterjection": "ünlem"
+  "posInterjection": "ünlem",
+  "unitsCompleted": "{done}/{total} ünite tamamlandı",
+  "@unitsCompleted": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "showUnits": "Üniteleri göster",
+  "hideUnits": "Üniteleri gizle",
+  "nextUnitBadge": "Sıradaki"
 }

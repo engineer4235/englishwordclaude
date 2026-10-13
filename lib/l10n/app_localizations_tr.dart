@@ -816,4 +816,18 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get posInterjection => 'ünlem';
+
+  @override
+  String unitsCompleted(int done, int total) {
+    return '$done/$total ünite tamamlandı';
+  }
+
+  @override
+  String get showUnits => 'Üniteleri göster';
+
+  @override
+  String get hideUnits => 'Üniteleri gizle';
+
+  @override
+  String get nextUnitBadge => 'Sıradaki';
 }

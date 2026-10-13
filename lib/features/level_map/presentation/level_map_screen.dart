@@ -31,74 +31,175 @@ class LevelMapScreen extends ConsumerWidget {
   }
 }
 
-class _LevelCard extends StatelessWidget {
+/// Bir seviyenin kartı: ilerleme halkası, tamamlanan ünite sayısı ve
+/// üniteler. Tamamlanan seviyelerin üniteleri katlanmış başlar.
+class _LevelCard extends StatefulWidget {
   const _LevelCard({required this.level});
 
   final LevelOverview level;
 
   @override
+  State<_LevelCard> createState() => _LevelCardState();
+}
+
+class _LevelCardState extends State<_LevelCard> {
+  late bool _expanded = widget.level.status != ProgressStatus.completed;
+
+  @override
+  void didUpdateWidget(_LevelCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.level.status != widget.level.status) {
+      _expanded = widget.level.status != ProgressStatus.completed;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final level = widget.level;
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
     final locked = level.status == ProgressStatus.locked;
+    final completed = level.status == ProgressStatus.completed;
     final percent = (level.progress * 100).round();
+    final doneUnits = level.units
+        .where((u) => u.status == ProgressStatus.completed)
+        .length;
+    // Sıradaki çalışılacak ünite: açık olup henüz tamamlanmamış ilk ünite.
+    final nextUnitId = level.units
+        .where((u) => u.status == ProgressStatus.open)
+        .map((u) => u.id)
+        .firstOrNull;
+    final accent = locked
+        ? scheme.outline
+        : completed
+        ? scheme.tertiary
+        : scheme.primary;
 
     return Card(
+      key: ValueKey('level-${level.level.code}'),
       margin: const EdgeInsets.only(bottom: 12),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(height: 4, color: accent),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                CircleAvatar(
-                  backgroundColor: locked
-                      ? theme.colorScheme.surfaceContainerHighest
-                      : theme.colorScheme.primaryContainer,
-                  child: Text(level.level.code),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        level.level.title,
-                        style: theme.textTheme.titleMedium,
+                Row(
+                  children: [
+                    _ProgressRing(
+                      value: level.progress,
+                      label: level.level.code,
+                      color: accent,
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            level.level.title,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            l10n.levelProgress(percent),
+                            style: theme.textTheme.bodySmall,
+                          ),
+                          if (!locked && level.units.isNotEmpty)
+                            Text(
+                              l10n.unitsCompleted(
+                                doneUnits,
+                                level.units.length,
+                              ),
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                        ],
                       ),
-                      Text(
-                        l10n.levelProgress(percent),
-                        style: theme.textTheme.bodySmall,
-                      ),
-                    ],
-                  ),
+                    ),
+                    if (completed)
+                      IconButton(
+                        key: ValueKey('toggle-${level.level.code}'),
+                        tooltip: _expanded ? l10n.hideUnits : l10n.showUnits,
+                        icon: Icon(
+                          _expanded ? Icons.expand_less : Icons.expand_more,
+                        ),
+                        onPressed: () => setState(() => _expanded = !_expanded),
+                      )
+                    else
+                      _StatusIcon(status: level.status),
+                  ],
                 ),
-                _StatusIcon(status: level.status),
+                if (locked)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 12),
+                    child: Text(
+                      l10n.levelLocked,
+                      style: theme.textTheme.bodyMedium,
+                    ),
+                  )
+                else if (_expanded) ...[
+                  const SizedBox(height: 8),
+                  for (final unit in level.units)
+                    _UnitTile(unit: unit, isNext: unit.id == nextUnitId),
+                  if (level.status == ProgressStatus.open &&
+                      level.allUnitsCompleted)
+                    _LevelExamButton(levelId: level.level.id),
+                ],
               ],
             ),
-            const SizedBox(height: 12),
-            LinearProgressIndicator(
-              value: level.progress,
-              semanticsLabel: l10n.levelProgress(percent),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Seviye kodunu çevreleyen ilerleme halkası.
+class _ProgressRing extends StatelessWidget {
+  const _ProgressRing({
+    required this.value,
+    required this.label,
+    required this.color,
+  });
+
+  final double value;
+  final String label;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return SizedBox(
+      width: 56,
+      height: 56,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SizedBox.expand(
+            child: CircularProgressIndicator(
+              value: value,
+              strokeWidth: 5,
+              color: color,
+              backgroundColor: theme.colorScheme.surfaceContainerHighest,
             ),
-            if (locked)
-              Padding(
-                padding: const EdgeInsets.only(top: 12),
-                child: Text(
-                  l10n.levelLocked,
-                  style: theme.textTheme.bodyMedium,
-                ),
-              )
-            else ...[
-              const SizedBox(height: 8),
-              for (final unit in level.units) _UnitTile(unit: unit),
-              if (level.status == ProgressStatus.open &&
-                  level.allUnitsCompleted)
-                _LevelExamButton(levelId: level.level.id),
-            ],
-          ],
-        ),
+          ),
+          Text(
+            label,
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: color,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -157,28 +258,61 @@ class _LevelExamButton extends ConsumerWidget {
 }
 
 class _UnitTile extends StatelessWidget {
-  const _UnitTile({required this.unit});
+  const _UnitTile({required this.unit, this.isNext = false});
 
   final UnitOverview unit;
+
+  /// Sıradaki çalışılacak ünite vurgulanır.
+  final bool isNext;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final scheme = Theme.of(context).colorScheme;
     final locked = unit.status == ProgressStatus.locked;
     final score = unit.bestScore;
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      leading: _StatusIcon(status: unit.status),
-      title: Text(unit.title),
-      subtitle: Text(l10n.unitWords(unit.learnedCount, unit.wordCount)),
-      trailing: locked
-          ? Icon(Icons.fast_forward, semanticLabel: l10n.quickPassExam)
-          : score != null && score > 0
-          ? Text(l10n.bestScore(score))
-          : null,
-      onTap: locked
-          ? () => _offerQuickPass(context)
-          : () => context.go(AppRoutes.unit(unit.id)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        tileColor: isNext ? scheme.primaryContainer.withAlpha(110) : null,
+        leading: _StatusIcon(status: unit.status),
+        title: Text(
+          unit.title,
+          style: isNext ? const TextStyle(fontWeight: FontWeight.w600) : null,
+        ),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(l10n.unitWords(unit.learnedCount, unit.wordCount)),
+            if (!locked && unit.learnedCount > 0)
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(2),
+                  child: LinearProgressIndicator(
+                    value: unit.progress,
+                    minHeight: 3,
+                  ),
+                ),
+              ),
+          ],
+        ),
+        trailing: locked
+            ? Icon(Icons.fast_forward, semanticLabel: l10n.quickPassExam)
+            : isNext
+            ? Chip(
+                label: Text(l10n.nextUnitBadge),
+                visualDensity: VisualDensity.compact,
+              )
+            : score != null && score > 0
+            ? Text(l10n.bestScore(score))
+            : null,
+        onTap: locked
+            ? () => _offerQuickPass(context)
+            : () => context.go(AppRoutes.unit(unit.id)),
+      ),
     );
   }
 
