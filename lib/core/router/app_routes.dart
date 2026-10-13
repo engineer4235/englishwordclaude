@@ -25,4 +25,12 @@ abstract final class AppRoutes {
 
   /// Zorlanılan kelimeler alıştırması (FR-66, FR-93).
   static const difficultPractice = '$words/alistirma/zorlandiklarim';
+
+  /// Alıştırma, sınav ve tekrar oturumları: alt menü gizlenir, kullanıcı
+  /// oturuma odaklanır ve geri düğmesiyle çıkar.
+  static bool isFocused(String path) =>
+      path == review ||
+      path.endsWith('/alistirma') ||
+      path.endsWith('/sinav') ||
+      path.contains('/alistirma/');
 }
