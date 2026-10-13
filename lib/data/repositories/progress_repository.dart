@@ -5,6 +5,7 @@ import 'package:drift/drift.dart';
 import '../../domain/models/level.dart';
 import '../../domain/models/progress.dart';
 import '../db/app_database.dart';
+import 'custom_word_repository.dart';
 import 'review_repository.dart';
 
 /// Seviye ve ünite ilerlemesi, kilit açma kuralları (FR-22..FR-25).
@@ -26,9 +27,14 @@ class ProgressRepository {
 
   /// Tüm seviyeler, üniteleri ve ilerleme durumları.
   Future<List<LevelOverview>> overview() async {
-    final levels = await (_db.select(
-      _db.levels,
-    )..orderBy([(t) => OrderingTerm.asc(t.sortOrder)])).get();
+    // Kendi kelimelerin gizli seviyesi haritada görünmez (FR-92).
+    final levels =
+        await (_db.select(_db.levels)
+              ..where(
+                (t) => t.code.equals(CustomWordRepository.levelCode).not(),
+              )
+              ..orderBy([(t) => OrderingTerm.asc(t.sortOrder)]))
+            .get();
     final units = await (_db.select(
       _db.units,
     )..orderBy([(t) => OrderingTerm.asc(t.sortOrder)])).get();
@@ -183,7 +189,11 @@ class ProgressRepository {
         )..where((t) => t.id.equals(levelId))).getSingle();
         final next =
             await (_db.select(_db.levels)
-                  ..where((t) => t.sortOrder.isBiggerThanValue(level.sortOrder))
+                  ..where(
+                    (t) =>
+                        t.sortOrder.isBiggerThanValue(level.sortOrder) &
+                        t.code.equals(CustomWordRepository.levelCode).not(),
+                  )
                   ..orderBy([(t) => OrderingTerm.asc(t.sortOrder)])
                   ..limit(1))
                 .getSingleOrNull();

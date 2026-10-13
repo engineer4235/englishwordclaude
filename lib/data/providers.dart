@@ -18,6 +18,7 @@ import 'content/content_seeder.dart';
 import 'db/app_database.dart';
 import 'repositories/badge_repository.dart';
 import 'repositories/content_repository.dart';
+import 'repositories/custom_word_repository.dart';
 import 'repositories/favorites_repository.dart';
 import 'repositories/notes_repository.dart';
 import 'repositories/word_list_repository.dart';
@@ -62,6 +63,16 @@ final progressRepositoryProvider = Provider<ProgressRepository>(
 final favoritesRepositoryProvider = Provider<FavoritesRepository>(
   (ref) => FavoritesRepository(ref.watch(appDatabaseProvider)),
 );
+
+final customWordRepositoryProvider = Provider<CustomWordRepository>(
+  (ref) => CustomWordRepository(ref.watch(appDatabaseProvider)),
+);
+
+/// Kendi kelimelerin ünitesi; henüz kelime eklenmediyse `null` (FR-92).
+final customUnitIdProvider = FutureProvider<int?>((ref) async {
+  await ref.watch(appStartupProvider.future);
+  return ref.watch(customWordRepositoryProvider).unitId();
+});
 
 final wordListRepositoryProvider = Provider<WordListRepository>(
   (ref) => WordListRepository(ref.watch(appDatabaseProvider)),
@@ -263,7 +274,7 @@ final wordEntriesProvider = FutureProvider<List<WordEntry>>((ref) async {
     for (final w in words)
       WordEntry(
         word: w,
-        levelCode: levelOfUnit[w.unitId] ?? '',
+        levelCode: levelOfUnit[w.unitId] ?? CustomWordRepository.levelCode,
         state: states[w.id] ?? CardState.newCard,
         favorite: favorites.contains(w.id),
         difficult: difficult.contains(w.id),
