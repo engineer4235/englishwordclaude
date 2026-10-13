@@ -216,4 +216,74 @@ class AppLocalizationsTr extends AppLocalizations {
   String levelBadge(String level) {
     return '$level rozeti kazanıldı';
   }
+
+  @override
+  String streakDays(int count) {
+    return '$count gün seri';
+  }
+
+  @override
+  String xpTotal(int xp) {
+    return '$xp XP';
+  }
+
+  @override
+  String get dailyGoal => 'Günlük hedef';
+
+  @override
+  String dailyGoalProgress(int done, int target) {
+    return '$done/$target yeni kelime';
+  }
+
+  @override
+  String get goalDone => 'Bugünkü hedef tamamlandı!';
+
+  @override
+  String dueToday(int count) {
+    return 'Bugün tekrar edilecek $count kelime';
+  }
+
+  @override
+  String get startReview => 'Tekrarlara başla';
+
+  @override
+  String get noReviews => 'Şu an tekrar edilecek kelime yok.';
+
+  @override
+  String nextUnit(String title) {
+    return 'Sıradaki ünite: $title';
+  }
+
+  @override
+  String get learnNewWords => 'Yeni kelimeler';
+
+  @override
+  String get reviewOverload =>
+      'Çok fazla tekrar birikti. Bugün yeni kelime sayısı azaltıldı; önce tekrarları bitir.';
+
+  @override
+  String newWordQuota(int count) {
+    return 'Bugün $count yeni kelime daha öğrenebilirsin.';
+  }
+
+  @override
+  String get reviewsFirst => 'Önce tekrarlarını bitirmeni öneririz.';
+
+  @override
+  String get reviewTitle => 'Tekrar';
+
+  @override
+  String get resultReview => 'Tekrar tamamlandı';
+
+  @override
+  String xpGained(int xp) {
+    return '+$xp XP';
+  }
+
+  @override
+  String get allUnitsDone =>
+      'Açık tüm üniteleri tamamladın. Haritadan seviye sınavına girebilirsin.';
+
+  @override
+  String get backToHome => 'Ana sayfaya dön';
 }

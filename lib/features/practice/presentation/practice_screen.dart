@@ -12,7 +12,10 @@ import '../../../domain/srs/answer_quality.dart';
 import '../../../l10n/app_localizations.dart';
 import 'exercise_views.dart';
 
-enum PracticeMode { lesson, unitExam, levelExam }
+enum PracticeMode { lesson, unitExam, levelExam, review }
+
+/// Bir tekrar oturumundaki en fazla kelime.
+const reviewSessionSize = 20;
 
 /// Alıştırma, ünite sınavı ve seviye sınavı oturumu.
 class PracticeScreen extends ConsumerStatefulWidget {
@@ -42,6 +45,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
   bool? _passed;
   String _title = '';
   String _levelCode = '';
+  int _xp = 0;
 
   @override
   void initState() {
@@ -53,6 +57,32 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     try {
       final levels = await ref.read(levelOverviewProvider.future);
       final generator = ref.read(exerciseGeneratorProvider);
+      if (widget.mode == PracticeMode.review) {
+        final ids = await ref
+            .read(reviewRepositoryProvider)
+            .dueWordIds(limit: reviewSessionSize);
+        final words = await ref
+            .read(contentRepositoryProvider)
+            .getWordsByIds(ids);
+        final levelOfUnit = {
+          for (final l in levels)
+            for (final u in l.units) u.id: l.level.id,
+        };
+        final pool = <Word>[];
+        for (final levelId in {for (final w in words) levelOfUnit[w.unitId]}) {
+          if (levelId != null) {
+            pool.addAll(await ref.read(levelWordsProvider(levelId).future));
+          }
+        }
+        final exercises = generator.lesson(
+          words,
+          await ref.read(reviewRepositoryProvider).statesFor(ids),
+          pool: pool,
+        );
+        if (!mounted) return;
+        setState(() => _exercises = exercises);
+        return;
+      }
       final int levelId;
       final List<Word> words;
       if (widget.mode == PracticeMode.levelExam) {
@@ -77,7 +107,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           pool: pool,
         ),
         PracticeMode.unitExam => generator.exam(words, pool: pool),
-        PracticeMode.levelExam => generator.exam(
+        PracticeMode.levelExam || PracticeMode.review => generator.exam(
           words,
           count: levelExamQuestionCount,
           pool: pool,
@@ -102,10 +132,15 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
         );
       }
     });
-    final reviews = ref.read(reviewRepositoryProvider);
+    final study = ref.read(studyRepositoryProvider);
+    final exam =
+        widget.mode == PracticeMode.unitExam ||
+        widget.mode == PracticeMode.levelExam;
     for (final answer in outcome.answers) {
-      await reviews.recordAnswer(
+      _xp += await study.recordAnswer(
         wordId: answer.word.id,
+        correct: answer.correct,
+        exam: exam,
         quality: answerQuality(
           correct: answer.correct,
           almostCorrect: answer.almostCorrect,
@@ -135,6 +170,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     bool? passed;
     switch (widget.mode) {
       case PracticeMode.lesson:
+      case PracticeMode.review:
         break;
       case PracticeMode.unitExam:
         passed = await progress.recordUnitExam(
@@ -150,6 +186,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     if (!mounted) return;
     ref.invalidate(levelOverviewProvider);
     ref.invalidate(levelExamEligibilityProvider);
+    ref.invalidate(homeSummaryProvider);
     setState(() {
       _result = result;
       _passed = passed;
@@ -164,6 +201,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
       PracticeMode.lesson => _title,
       PracticeMode.unitExam => '${l10n.unitExam}: $_title',
       PracticeMode.levelExam => '$_levelCode ${l10n.levelExam}',
+      PracticeMode.review => l10n.reviewTitle,
     };
 
     Widget body;
@@ -177,6 +215,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
         result: _result!,
         passed: _passed,
         levelCode: _levelCode,
+        xp: _xp,
       );
     } else if (exercises.isEmpty) {
       body = Center(child: Text(l10n.noWords));
@@ -241,9 +280,11 @@ class _ResultView extends StatelessWidget {
     required this.result,
     required this.passed,
     required this.levelCode,
+    required this.xp,
   });
 
   final PracticeMode mode;
+  final int xp;
   final SessionResult result;
   final bool? passed;
   final String levelCode;
@@ -255,6 +296,7 @@ class _ResultView extends StatelessWidget {
     final celebrate = mode == PracticeMode.levelExam && passed == true;
     final message = switch (mode) {
       PracticeMode.lesson => l10n.resultLesson,
+      PracticeMode.review => l10n.resultReview,
       PracticeMode.unitExam =>
         passed == true ? l10n.resultUnitPassed : l10n.resultUnitFailed,
       PracticeMode.levelExam =>
@@ -283,6 +325,16 @@ class _ResultView extends StatelessWidget {
           l10n.correctCount(result.correct, result.total),
           textAlign: TextAlign.center,
         ),
+        if (xp > 0)
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: Center(
+              child: Chip(
+                avatar: const Icon(Icons.bolt),
+                label: Text(l10n.xpGained(xp)),
+              ),
+            ),
+          ),
         const SizedBox(height: 16),
         Text(
           message,
@@ -312,8 +364,12 @@ class _ResultView extends StatelessWidget {
         ],
         const SizedBox(height: 24),
         FilledButton(
-          onPressed: () => context.go(AppRoutes.levelMap),
-          child: Text(l10n.backToMap),
+          onPressed: () => context.go(
+            mode == PracticeMode.review ? AppRoutes.home : AppRoutes.levelMap,
+          ),
+          child: Text(
+            mode == PracticeMode.review ? l10n.backToHome : l10n.backToMap,
+          ),
         ),
       ],
     );

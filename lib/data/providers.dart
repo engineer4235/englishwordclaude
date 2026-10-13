@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/exercise/exercise_generator.dart';
+import '../domain/models/home_summary.dart';
 import '../domain/models/level.dart';
 import '../domain/models/progress.dart';
 import '../domain/models/word.dart';
@@ -11,6 +12,7 @@ import 'repositories/content_repository.dart';
 import 'repositories/favorites_repository.dart';
 import 'repositories/progress_repository.dart';
 import 'repositories/review_repository.dart';
+import 'repositories/study_repository.dart';
 
 /// Uygulamayla gelen içerik paketi.
 const seedContentAsset = 'assets/content/seed_content.json';
@@ -108,3 +110,13 @@ final levelExamEligibilityProvider =
           .watch(progressRepositoryProvider)
           .levelExamEligibility(levelId);
     });
+
+final studyRepositoryProvider = Provider<StudyRepository>(
+  (ref) => StudyRepository(ref.watch(appDatabaseProvider)),
+);
+
+/// Ana ekran özeti (FR-64, FR-65, FR-70, FR-71).
+final homeSummaryProvider = FutureProvider<HomeSummary>((ref) async {
+  await ref.watch(appStartupProvider.future);
+  return ref.watch(studyRepositoryProvider).summary();
+});

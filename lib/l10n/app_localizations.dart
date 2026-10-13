@@ -447,6 +447,114 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'{level} rozeti kazanıldı'**
   String levelBadge(String level);
+
+  /// No description provided for @streakDays.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} gün seri'**
+  String streakDays(int count);
+
+  /// No description provided for @xpTotal.
+  ///
+  /// In tr, this message translates to:
+  /// **'{xp} XP'**
+  String xpTotal(int xp);
+
+  /// No description provided for @dailyGoal.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük hedef'**
+  String get dailyGoal;
+
+  /// No description provided for @dailyGoalProgress.
+  ///
+  /// In tr, this message translates to:
+  /// **'{done}/{target} yeni kelime'**
+  String dailyGoalProgress(int done, int target);
+
+  /// No description provided for @goalDone.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugünkü hedef tamamlandı!'**
+  String get goalDone;
+
+  /// No description provided for @dueToday.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün tekrar edilecek {count} kelime'**
+  String dueToday(int count);
+
+  /// No description provided for @startReview.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrarlara başla'**
+  String get startReview;
+
+  /// No description provided for @noReviews.
+  ///
+  /// In tr, this message translates to:
+  /// **'Şu an tekrar edilecek kelime yok.'**
+  String get noReviews;
+
+  /// No description provided for @nextUnit.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sıradaki ünite: {title}'**
+  String nextUnit(String title);
+
+  /// No description provided for @learnNewWords.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni kelimeler'**
+  String get learnNewWords;
+
+  /// No description provided for @reviewOverload.
+  ///
+  /// In tr, this message translates to:
+  /// **'Çok fazla tekrar birikti. Bugün yeni kelime sayısı azaltıldı; önce tekrarları bitir.'**
+  String get reviewOverload;
+
+  /// No description provided for @newWordQuota.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün {count} yeni kelime daha öğrenebilirsin.'**
+  String newWordQuota(int count);
+
+  /// No description provided for @reviewsFirst.
+  ///
+  /// In tr, this message translates to:
+  /// **'Önce tekrarlarını bitirmeni öneririz.'**
+  String get reviewsFirst;
+
+  /// No description provided for @reviewTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar'**
+  String get reviewTitle;
+
+  /// No description provided for @resultReview.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar tamamlandı'**
+  String get resultReview;
+
+  /// No description provided for @xpGained.
+  ///
+  /// In tr, this message translates to:
+  /// **'+{xp} XP'**
+  String xpGained(int xp);
+
+  /// No description provided for @allUnitsDone.
+  ///
+  /// In tr, this message translates to:
+  /// **'Açık tüm üniteleri tamamladın. Haritadan seviye sınavına girebilirsin.'**
+  String get allUnitsDone;
+
+  /// No description provided for @backToHome.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ana sayfaya dön'**
+  String get backToHome;
 }
 
 class _AppLocalizationsDelegate

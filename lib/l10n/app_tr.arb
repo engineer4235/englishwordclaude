@@ -174,5 +174,75 @@
         "type": "String"
       }
     }
-  }
+  },
+  "streakDays": "{count} gün seri",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "xpTotal": "{xp} XP",
+  "@xpTotal": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "dailyGoal": "Günlük hedef",
+  "dailyGoalProgress": "{done}/{target} yeni kelime",
+  "@dailyGoalProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "goalDone": "Bugünkü hedef tamamlandı!",
+  "dueToday": "Bugün tekrar edilecek {count} kelime",
+  "@dueToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "startReview": "Tekrarlara başla",
+  "noReviews": "Şu an tekrar edilecek kelime yok.",
+  "nextUnit": "Sıradaki ünite: {title}",
+  "@nextUnit": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "learnNewWords": "Yeni kelimeler",
+  "reviewOverload": "Çok fazla tekrar birikti. Bugün yeni kelime sayısı azaltıldı; önce tekrarları bitir.",
+  "newWordQuota": "Bugün {count} yeni kelime daha öğrenebilirsin.",
+  "@newWordQuota": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewsFirst": "Önce tekrarlarını bitirmeni öneririz.",
+  "reviewTitle": "Tekrar",
+  "resultReview": "Tekrar tamamlandı",
+  "xpGained": "+{xp} XP",
+  "@xpGained": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "allUnitsDone": "Açık tüm üniteleri tamamladın. Haritadan seviye sınavına girebilirsin.",
+  "backToHome": "Ana sayfaya dön"
 }
