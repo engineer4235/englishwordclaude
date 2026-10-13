@@ -1095,6 +1095,66 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bildirim izni verilmedi. Hatırlatmalar için izni cihaz ayarlarından açabilirsin.'**
   String get notifPermissionDenied;
+
+  /// No description provided for @badgesTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Rozetler'**
+  String get badgesTitle;
+
+  /// No description provided for @badgeFirstWord.
+  ///
+  /// In tr, this message translates to:
+  /// **'İlk kelime'**
+  String get badgeFirstWord;
+
+  /// No description provided for @badgeWords.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} kelime'**
+  String badgeWords(int count);
+
+  /// No description provided for @badgeStreak.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} günlük seri'**
+  String badgeStreak(int count);
+
+  /// No description provided for @badgeLevel.
+  ///
+  /// In tr, this message translates to:
+  /// **'{level} tamamlandı'**
+  String badgeLevel(String level);
+
+  /// No description provided for @newBadge.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni rozet: {name}'**
+  String newBadge(String name);
+
+  /// No description provided for @badgeEarned.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kazanıldı'**
+  String get badgeEarned;
+
+  /// No description provided for @badgeLocked.
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz kazanılmadı'**
+  String get badgeLocked;
+
+  /// No description provided for @matchTimeLeft.
+  ///
+  /// In tr, this message translates to:
+  /// **'{seconds} sn'**
+  String matchTimeLeft(int seconds);
+
+  /// No description provided for @matchTimeUp.
+  ///
+  /// In tr, this message translates to:
+  /// **'Süre doldu!'**
+  String get matchTimeUp;
 }
 
 class _AppLocalizationsDelegate
