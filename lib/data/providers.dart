@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/notifications/notification_plan.dart';
 
+import '../domain/daily/word_of_day.dart';
 import '../domain/exercise/exercise_generator.dart';
 import '../domain/models/home_summary.dart';
 import '../domain/models/level.dart';
@@ -222,6 +223,22 @@ final wordEntriesProvider = FutureProvider<List<WordEntry>>((ref) async {
         difficult: difficult.contains(w.id),
       ),
   ];
+});
+
+/// Günün kelimesi: açık seviyelerdeki kelimelerden seçilir (FR-75).
+final wordOfDayProvider = FutureProvider<Word?>((ref) async {
+  final levels = await ref.watch(levelOverviewProvider.future);
+  final words = await ref.watch(contentRepositoryProvider).getAllWords();
+  final openUnits = {
+    for (final l in levels)
+      if (l.status != ProgressStatus.locked)
+        for (final u in l.units) u.id,
+  };
+  final candidates = [
+    for (final w in words)
+      if (openUnits.contains(w.unitId)) w,
+  ];
+  return pickWordOfDay(candidates.isEmpty ? words : candidates, DateTime.now());
 });
 
 /// Ayarlara ve bugünkü duruma göre planlanan bildirimler (FR-100..102).

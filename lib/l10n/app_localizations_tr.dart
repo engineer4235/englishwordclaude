@@ -532,6 +532,17 @@ class AppLocalizationsTr extends AppLocalizations {
   String get statsNoActivity => 'Bu dönemde çalışma yok.';
 
   @override
+  String get statsHeatmap => 'Çalışma takvimi';
+
+  @override
+  String statsHeatmapSummary(int count) {
+    return 'Son 12 haftada $count gün çalıştın';
+  }
+
+  @override
+  String get wordOfDay => 'Günün kelimesi';
+
+  @override
   String get statsAccuracy => 'Doğruluk oranı';
 
   @override
