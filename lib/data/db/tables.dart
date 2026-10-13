@@ -116,6 +116,9 @@ class DailyStats extends Table {
   IntColumn get minutes => integer().withDefault(const Constant(0))();
   BoolColumn get goalMet => boolean().withDefault(const Constant(false))();
 
+  /// Şema 5: gün seri koruması harcanarak kurtarıldı (FR-72).
+  BoolColumn get frozen => boolean().withDefault(const Constant(false))();
+
   @override
   Set<Column<Object>> get primaryKey => {day};
 }
@@ -154,6 +157,9 @@ class UserProfile extends Table {
   TextColumn get quietStart => text().withDefault(const Constant('22:00'))();
   TextColumn get quietEnd => text().withDefault(const Constant('08:00'))();
 
+  // Şema 5: seri koruması (FR-72).
+  IntColumn get streakFreezes => integer().withDefault(const Constant(0))();
+
   @override
   Set<Column<Object>> get primaryKey => {id};
 }
@@ -170,6 +176,17 @@ class Badges extends Table {
 class Favorites extends Table {
   IntColumn get wordId => integer().references(Words, #id)();
   DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
+
+  @override
+  Set<Column<Object>> get primaryKey => {wordId};
+}
+
+/// Kullanıcının kelimeye eklediği kişisel not (FR-36). Şema 5.
+@DataClassName('WordNoteRow')
+class WordNotes extends Table {
+  IntColumn get wordId => integer().references(Words, #id)();
+  TextColumn get note => text()();
+  DateTimeColumn get updatedAt => dateTime().withDefault(currentDateAndTime)();
 
   @override
   Set<Column<Object>> get primaryKey => {wordId};

@@ -224,6 +224,30 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String streakFreezes(int count) {
+    return '$count seri koruması';
+  }
+
+  @override
+  String get streakFreezeHint =>
+      'Her 7 günlük seride bir koruma kazanırsın (en fazla 2). Bir günü kaçırırsan koruma serini kurtarır.';
+
+  @override
+  String get noteTitle => 'Notum';
+
+  @override
+  String get noteHint => 'Bu kelimeyle ilgili kendi notun';
+
+  @override
+  String get addNote => 'Not ekle';
+
+  @override
+  String get editNote => 'Notu düzenle';
+
+  @override
+  String get saveNote => 'Kaydet';
+
+  @override
   String streakDays(int count) {
     return '$count gün seri';
   }

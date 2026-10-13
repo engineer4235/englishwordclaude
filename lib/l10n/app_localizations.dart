@@ -460,6 +460,48 @@ abstract class AppLocalizations {
   /// **'{level} rozeti kazanıldı'**
   String levelBadge(String level);
 
+  /// No description provided for @streakFreezes.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} seri koruması'**
+  String streakFreezes(int count);
+
+  /// No description provided for @streakFreezeHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Her 7 günlük seride bir koruma kazanırsın (en fazla 2). Bir günü kaçırırsan koruma serini kurtarır.'**
+  String get streakFreezeHint;
+
+  /// No description provided for @noteTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Notum'**
+  String get noteTitle;
+
+  /// No description provided for @noteHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kelimeyle ilgili kendi notun'**
+  String get noteHint;
+
+  /// No description provided for @addNote.
+  ///
+  /// In tr, this message translates to:
+  /// **'Not ekle'**
+  String get addNote;
+
+  /// No description provided for @editNote.
+  ///
+  /// In tr, this message translates to:
+  /// **'Notu düzenle'**
+  String get editNote;
+
+  /// No description provided for @saveNote.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydet'**
+  String get saveNote;
+
   /// No description provided for @streakDays.
   ///
   /// In tr, this message translates to:

@@ -331,6 +331,7 @@ class ProgressRepository {
             const UserProfileCompanion(
               streak: Value(0),
               longestStreak: Value(0),
+              streakFreezes: Value(0),
               totalXp: Value(0),
               currentLevelId: Value(null),
             ),

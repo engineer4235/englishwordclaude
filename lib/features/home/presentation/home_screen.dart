@@ -79,6 +79,14 @@ class _HomeBody extends StatelessWidget {
               avatar: const Icon(Icons.bolt),
               label: Text(l10n.xpTotal(summary.totalXp)),
             ),
+            Tooltip(
+              message: l10n.streakFreezeHint,
+              child: Chip(
+                key: const ValueKey('streak-freezes'),
+                avatar: const Icon(Icons.ac_unit),
+                label: Text(l10n.streakFreezes(summary.streakFreezes)),
+              ),
+            ),
           ],
         ),
         const SizedBox(height: 12),
