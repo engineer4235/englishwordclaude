@@ -70,6 +70,7 @@ void main() {
     await tester.tap(find.byTooltip('Ünite sınavı'));
     await tester.pumpAndSettle();
     expect(find.text('Soru 1/8'), findsOneWidget);
+    expect(find.byType(NavigationBar), findsNothing, reason: 'odak modu');
 
     final count = await answerAllCorrectly(
       tester,
@@ -85,6 +86,7 @@ void main() {
 
     await tester.tap(find.text('Haritaya dön'));
     await tester.pumpAndSettle();
+    expect(find.byType(NavigationBar), findsOneWidget);
     final renkler = tester.widget<ListTile>(
       find.ancestor(of: find.text('Renkler'), matching: find.byType(ListTile)),
     );
