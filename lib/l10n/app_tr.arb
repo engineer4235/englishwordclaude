@@ -177,6 +177,20 @@
       }
     }
   },
+  "streakFreezes": "{count} seri koruması",
+  "@streakFreezes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakFreezeHint": "Her 7 günlük seride bir koruma kazanırsın (en fazla 2). Bir günü kaçırırsan koruma serini kurtarır.",
+  "noteTitle": "Notum",
+  "noteHint": "Bu kelimeyle ilgili kendi notun",
+  "addNote": "Not ekle",
+  "editNote": "Notu düzenle",
+  "saveNote": "Kaydet",
   "streakDays": "{count} gün seri",
   "@streakDays": {
     "placeholders": {

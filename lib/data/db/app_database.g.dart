@@ -3515,6 +3515,19 @@ class $DailyStatsTable extends DailyStats
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _frozenMeta = const VerificationMeta('frozen');
+  @override
+  late final GeneratedColumn<bool> frozen = GeneratedColumn<bool>(
+    'frozen',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("frozen" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     day,
@@ -3524,6 +3537,7 @@ class $DailyStatsTable extends DailyStats
     xp,
     minutes,
     goalMet,
+    frozen,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -3578,6 +3592,12 @@ class $DailyStatsTable extends DailyStats
         goalMet.isAcceptableOrUnknown(data['goal_met']!, _goalMetMeta),
       );
     }
+    if (data.containsKey('frozen')) {
+      context.handle(
+        _frozenMeta,
+        frozen.isAcceptableOrUnknown(data['frozen']!, _frozenMeta),
+      );
+    }
     return context;
   }
 
@@ -3615,6 +3635,10 @@ class $DailyStatsTable extends DailyStats
         DriftSqlType.bool,
         data['${effectivePrefix}goal_met'],
       )!,
+      frozen: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}frozen'],
+      )!,
     );
   }
 
@@ -3632,6 +3656,9 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
   final int xp;
   final int minutes;
   final bool goalMet;
+
+  /// Şema 5: gün seri koruması harcanarak kurtarıldı (FR-72).
+  final bool frozen;
   const DailyStatRow({
     required this.day,
     required this.newWords,
@@ -3640,6 +3667,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
     required this.xp,
     required this.minutes,
     required this.goalMet,
+    required this.frozen,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -3651,6 +3679,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
     map['xp'] = Variable<int>(xp);
     map['minutes'] = Variable<int>(minutes);
     map['goal_met'] = Variable<bool>(goalMet);
+    map['frozen'] = Variable<bool>(frozen);
     return map;
   }
 
@@ -3663,6 +3692,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
       xp: Value(xp),
       minutes: Value(minutes),
       goalMet: Value(goalMet),
+      frozen: Value(frozen),
     );
   }
 
@@ -3679,6 +3709,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
       xp: serializer.fromJson<int>(json['xp']),
       minutes: serializer.fromJson<int>(json['minutes']),
       goalMet: serializer.fromJson<bool>(json['goalMet']),
+      frozen: serializer.fromJson<bool>(json['frozen']),
     );
   }
   @override
@@ -3692,6 +3723,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
       'xp': serializer.toJson<int>(xp),
       'minutes': serializer.toJson<int>(minutes),
       'goalMet': serializer.toJson<bool>(goalMet),
+      'frozen': serializer.toJson<bool>(frozen),
     };
   }
 
@@ -3703,6 +3735,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
     int? xp,
     int? minutes,
     bool? goalMet,
+    bool? frozen,
   }) => DailyStatRow(
     day: day ?? this.day,
     newWords: newWords ?? this.newWords,
@@ -3711,6 +3744,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
     xp: xp ?? this.xp,
     minutes: minutes ?? this.minutes,
     goalMet: goalMet ?? this.goalMet,
+    frozen: frozen ?? this.frozen,
   );
   DailyStatRow copyWithCompanion(DailyStatsCompanion data) {
     return DailyStatRow(
@@ -3721,6 +3755,7 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
       xp: data.xp.present ? data.xp.value : this.xp,
       minutes: data.minutes.present ? data.minutes.value : this.minutes,
       goalMet: data.goalMet.present ? data.goalMet.value : this.goalMet,
+      frozen: data.frozen.present ? data.frozen.value : this.frozen,
     );
   }
 
@@ -3733,14 +3768,23 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
           ..write('correct: $correct, ')
           ..write('xp: $xp, ')
           ..write('minutes: $minutes, ')
-          ..write('goalMet: $goalMet')
+          ..write('goalMet: $goalMet, ')
+          ..write('frozen: $frozen')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode =>
-      Object.hash(day, newWords, reviews, correct, xp, minutes, goalMet);
+  int get hashCode => Object.hash(
+    day,
+    newWords,
+    reviews,
+    correct,
+    xp,
+    minutes,
+    goalMet,
+    frozen,
+  );
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -3751,7 +3795,8 @@ class DailyStatRow extends DataClass implements Insertable<DailyStatRow> {
           other.correct == this.correct &&
           other.xp == this.xp &&
           other.minutes == this.minutes &&
-          other.goalMet == this.goalMet);
+          other.goalMet == this.goalMet &&
+          other.frozen == this.frozen);
 }
 
 class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
@@ -3762,6 +3807,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
   final Value<int> xp;
   final Value<int> minutes;
   final Value<bool> goalMet;
+  final Value<bool> frozen;
   final Value<int> rowid;
   const DailyStatsCompanion({
     this.day = const Value.absent(),
@@ -3771,6 +3817,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
     this.xp = const Value.absent(),
     this.minutes = const Value.absent(),
     this.goalMet = const Value.absent(),
+    this.frozen = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   DailyStatsCompanion.insert({
@@ -3781,6 +3828,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
     this.xp = const Value.absent(),
     this.minutes = const Value.absent(),
     this.goalMet = const Value.absent(),
+    this.frozen = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : day = Value(day);
   static Insertable<DailyStatRow> custom({
@@ -3791,6 +3839,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
     Expression<int>? xp,
     Expression<int>? minutes,
     Expression<bool>? goalMet,
+    Expression<bool>? frozen,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -3801,6 +3850,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
       if (xp != null) 'xp': xp,
       if (minutes != null) 'minutes': minutes,
       if (goalMet != null) 'goal_met': goalMet,
+      if (frozen != null) 'frozen': frozen,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -3813,6 +3863,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
     Value<int>? xp,
     Value<int>? minutes,
     Value<bool>? goalMet,
+    Value<bool>? frozen,
     Value<int>? rowid,
   }) {
     return DailyStatsCompanion(
@@ -3823,6 +3874,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
       xp: xp ?? this.xp,
       minutes: minutes ?? this.minutes,
       goalMet: goalMet ?? this.goalMet,
+      frozen: frozen ?? this.frozen,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -3851,6 +3903,9 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
     if (goalMet.present) {
       map['goal_met'] = Variable<bool>(goalMet.value);
     }
+    if (frozen.present) {
+      map['frozen'] = Variable<bool>(frozen.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -3867,6 +3922,7 @@ class DailyStatsCompanion extends UpdateCompanion<DailyStatRow> {
           ..write('xp: $xp, ')
           ..write('minutes: $minutes, ')
           ..write('goalMet: $goalMet, ')
+          ..write('frozen: $frozen, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -4119,6 +4175,18 @@ class $UserProfileTable extends UserProfile
     requiredDuringInsert: false,
     defaultValue: const Constant('08:00'),
   );
+  static const VerificationMeta _streakFreezesMeta = const VerificationMeta(
+    'streakFreezes',
+  );
+  @override
+  late final GeneratedColumn<int> streakFreezes = GeneratedColumn<int>(
+    'streak_freezes',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -4140,6 +4208,7 @@ class $UserProfileTable extends UserProfile
     quietHoursEnabled,
     quietStart,
     quietEnd,
+    streakFreezes,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -4288,6 +4357,15 @@ class $UserProfileTable extends UserProfile
         quietEnd.isAcceptableOrUnknown(data['quiet_end']!, _quietEndMeta),
       );
     }
+    if (data.containsKey('streak_freezes')) {
+      context.handle(
+        _streakFreezesMeta,
+        streakFreezes.isAcceptableOrUnknown(
+          data['streak_freezes']!,
+          _streakFreezesMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -4373,6 +4451,10 @@ class $UserProfileTable extends UserProfile
         DriftSqlType.string,
         data['${effectivePrefix}quiet_end'],
       )!,
+      streakFreezes: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}streak_freezes'],
+      )!,
     );
   }
 
@@ -4404,6 +4486,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
   final bool quietHoursEnabled;
   final String quietStart;
   final String quietEnd;
+  final int streakFreezes;
   const UserProfileRow({
     required this.id,
     required this.goalType,
@@ -4424,6 +4507,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     required this.quietHoursEnabled,
     required this.quietStart,
     required this.quietEnd,
+    required this.streakFreezes,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -4451,6 +4535,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     map['quiet_hours_enabled'] = Variable<bool>(quietHoursEnabled);
     map['quiet_start'] = Variable<String>(quietStart);
     map['quiet_end'] = Variable<String>(quietEnd);
+    map['streak_freezes'] = Variable<int>(streakFreezes);
     return map;
   }
 
@@ -4479,6 +4564,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       quietHoursEnabled: Value(quietHoursEnabled),
       quietStart: Value(quietStart),
       quietEnd: Value(quietEnd),
+      streakFreezes: Value(streakFreezes),
     );
   }
 
@@ -4509,6 +4595,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       quietHoursEnabled: serializer.fromJson<bool>(json['quietHoursEnabled']),
       quietStart: serializer.fromJson<String>(json['quietStart']),
       quietEnd: serializer.fromJson<String>(json['quietEnd']),
+      streakFreezes: serializer.fromJson<int>(json['streakFreezes']),
     );
   }
   @override
@@ -4534,6 +4621,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       'quietHoursEnabled': serializer.toJson<bool>(quietHoursEnabled),
       'quietStart': serializer.toJson<String>(quietStart),
       'quietEnd': serializer.toJson<String>(quietEnd),
+      'streakFreezes': serializer.toJson<int>(streakFreezes),
     };
   }
 
@@ -4557,6 +4645,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     bool? quietHoursEnabled,
     String? quietStart,
     String? quietEnd,
+    int? streakFreezes,
   }) => UserProfileRow(
     id: id ?? this.id,
     goalType: goalType ?? this.goalType,
@@ -4579,6 +4668,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     quietHoursEnabled: quietHoursEnabled ?? this.quietHoursEnabled,
     quietStart: quietStart ?? this.quietStart,
     quietEnd: quietEnd ?? this.quietEnd,
+    streakFreezes: streakFreezes ?? this.streakFreezes,
   );
   UserProfileRow copyWithCompanion(UserProfileCompanion data) {
     return UserProfileRow(
@@ -4623,6 +4713,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           ? data.quietStart.value
           : this.quietStart,
       quietEnd: data.quietEnd.present ? data.quietEnd.value : this.quietEnd,
+      streakFreezes: data.streakFreezes.present
+          ? data.streakFreezes.value
+          : this.streakFreezes,
     );
   }
 
@@ -4647,7 +4740,8 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           ..write('streakWarningEnabled: $streakWarningEnabled, ')
           ..write('quietHoursEnabled: $quietHoursEnabled, ')
           ..write('quietStart: $quietStart, ')
-          ..write('quietEnd: $quietEnd')
+          ..write('quietEnd: $quietEnd, ')
+          ..write('streakFreezes: $streakFreezes')
           ..write(')'))
         .toString();
   }
@@ -4673,6 +4767,7 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     quietHoursEnabled,
     quietStart,
     quietEnd,
+    streakFreezes,
   );
   @override
   bool operator ==(Object other) =>
@@ -4696,7 +4791,8 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           other.streakWarningEnabled == this.streakWarningEnabled &&
           other.quietHoursEnabled == this.quietHoursEnabled &&
           other.quietStart == this.quietStart &&
-          other.quietEnd == this.quietEnd);
+          other.quietEnd == this.quietEnd &&
+          other.streakFreezes == this.streakFreezes);
 }
 
 class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
@@ -4719,6 +4815,7 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
   final Value<bool> quietHoursEnabled;
   final Value<String> quietStart;
   final Value<String> quietEnd;
+  final Value<int> streakFreezes;
   const UserProfileCompanion({
     this.id = const Value.absent(),
     this.goalType = const Value.absent(),
@@ -4739,6 +4836,7 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     this.quietHoursEnabled = const Value.absent(),
     this.quietStart = const Value.absent(),
     this.quietEnd = const Value.absent(),
+    this.streakFreezes = const Value.absent(),
   });
   UserProfileCompanion.insert({
     this.id = const Value.absent(),
@@ -4760,6 +4858,7 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     this.quietHoursEnabled = const Value.absent(),
     this.quietStart = const Value.absent(),
     this.quietEnd = const Value.absent(),
+    this.streakFreezes = const Value.absent(),
   });
   static Insertable<UserProfileRow> custom({
     Expression<int>? id,
@@ -4781,6 +4880,7 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     Expression<bool>? quietHoursEnabled,
     Expression<String>? quietStart,
     Expression<String>? quietEnd,
+    Expression<int>? streakFreezes,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -4803,6 +4903,7 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
       if (quietHoursEnabled != null) 'quiet_hours_enabled': quietHoursEnabled,
       if (quietStart != null) 'quiet_start': quietStart,
       if (quietEnd != null) 'quiet_end': quietEnd,
+      if (streakFreezes != null) 'streak_freezes': streakFreezes,
     });
   }
 
@@ -4826,6 +4927,7 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     Value<bool>? quietHoursEnabled,
     Value<String>? quietStart,
     Value<String>? quietEnd,
+    Value<int>? streakFreezes,
   }) {
     return UserProfileCompanion(
       id: id ?? this.id,
@@ -4847,6 +4949,7 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
       quietHoursEnabled: quietHoursEnabled ?? this.quietHoursEnabled,
       quietStart: quietStart ?? this.quietStart,
       quietEnd: quietEnd ?? this.quietEnd,
+      streakFreezes: streakFreezes ?? this.streakFreezes,
     );
   }
 
@@ -4912,6 +5015,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     if (quietEnd.present) {
       map['quiet_end'] = Variable<String>(quietEnd.value);
     }
+    if (streakFreezes.present) {
+      map['streak_freezes'] = Variable<int>(streakFreezes.value);
+    }
     return map;
   }
 
@@ -4936,7 +5042,8 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
           ..write('streakWarningEnabled: $streakWarningEnabled, ')
           ..write('quietHoursEnabled: $quietHoursEnabled, ')
           ..write('quietStart: $quietStart, ')
-          ..write('quietEnd: $quietEnd')
+          ..write('quietEnd: $quietEnd, ')
+          ..write('streakFreezes: $streakFreezes')
           ..write(')'))
         .toString();
   }
@@ -5391,6 +5498,255 @@ class FavoritesCompanion extends UpdateCompanion<FavoriteRow> {
   }
 }
 
+class $WordNotesTable extends WordNotes
+    with TableInfo<$WordNotesTable, WordNoteRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $WordNotesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _wordIdMeta = const VerificationMeta('wordId');
+  @override
+  late final GeneratedColumn<int> wordId = GeneratedColumn<int>(
+    'word_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES words (id)',
+    ),
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+    defaultValue: currentDateAndTime,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [wordId, note, updatedAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'word_notes';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<WordNoteRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('word_id')) {
+      context.handle(
+        _wordIdMeta,
+        wordId.isAcceptableOrUnknown(data['word_id']!, _wordIdMeta),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_noteMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {wordId};
+  @override
+  WordNoteRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return WordNoteRow(
+      wordId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}word_id'],
+      )!,
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $WordNotesTable createAlias(String alias) {
+    return $WordNotesTable(attachedDatabase, alias);
+  }
+}
+
+class WordNoteRow extends DataClass implements Insertable<WordNoteRow> {
+  final int wordId;
+  final String note;
+  final DateTime updatedAt;
+  const WordNoteRow({
+    required this.wordId,
+    required this.note,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['word_id'] = Variable<int>(wordId);
+    map['note'] = Variable<String>(note);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  WordNotesCompanion toCompanion(bool nullToAbsent) {
+    return WordNotesCompanion(
+      wordId: Value(wordId),
+      note: Value(note),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory WordNoteRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return WordNoteRow(
+      wordId: serializer.fromJson<int>(json['wordId']),
+      note: serializer.fromJson<String>(json['note']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'wordId': serializer.toJson<int>(wordId),
+      'note': serializer.toJson<String>(note),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  WordNoteRow copyWith({int? wordId, String? note, DateTime? updatedAt}) =>
+      WordNoteRow(
+        wordId: wordId ?? this.wordId,
+        note: note ?? this.note,
+        updatedAt: updatedAt ?? this.updatedAt,
+      );
+  WordNoteRow copyWithCompanion(WordNotesCompanion data) {
+    return WordNoteRow(
+      wordId: data.wordId.present ? data.wordId.value : this.wordId,
+      note: data.note.present ? data.note.value : this.note,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('WordNoteRow(')
+          ..write('wordId: $wordId, ')
+          ..write('note: $note, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(wordId, note, updatedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is WordNoteRow &&
+          other.wordId == this.wordId &&
+          other.note == this.note &&
+          other.updatedAt == this.updatedAt);
+}
+
+class WordNotesCompanion extends UpdateCompanion<WordNoteRow> {
+  final Value<int> wordId;
+  final Value<String> note;
+  final Value<DateTime> updatedAt;
+  const WordNotesCompanion({
+    this.wordId = const Value.absent(),
+    this.note = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+  });
+  WordNotesCompanion.insert({
+    this.wordId = const Value.absent(),
+    required String note,
+    this.updatedAt = const Value.absent(),
+  }) : note = Value(note);
+  static Insertable<WordNoteRow> custom({
+    Expression<int>? wordId,
+    Expression<String>? note,
+    Expression<DateTime>? updatedAt,
+  }) {
+    return RawValuesInsertable({
+      if (wordId != null) 'word_id': wordId,
+      if (note != null) 'note': note,
+      if (updatedAt != null) 'updated_at': updatedAt,
+    });
+  }
+
+  WordNotesCompanion copyWith({
+    Value<int>? wordId,
+    Value<String>? note,
+    Value<DateTime>? updatedAt,
+  }) {
+    return WordNotesCompanion(
+      wordId: wordId ?? this.wordId,
+      note: note ?? this.note,
+      updatedAt: updatedAt ?? this.updatedAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (wordId.present) {
+      map['word_id'] = Variable<int>(wordId.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('WordNotesCompanion(')
+          ..write('wordId: $wordId, ')
+          ..write('note: $note, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -5407,6 +5763,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $UserProfileTable userProfile = $UserProfileTable(this);
   late final $BadgesTable badges = $BadgesTable(this);
   late final $FavoritesTable favorites = $FavoritesTable(this);
+  late final $WordNotesTable wordNotes = $WordNotesTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -5425,6 +5782,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     userProfile,
     badges,
     favorites,
+    wordNotes,
   ];
 }
 
@@ -6560,6 +6918,24 @@ final class $$WordsTableReferences
       manager.$state.copyWith(prefetchedData: cache),
     );
   }
+
+  static MultiTypedResultKey<$WordNotesTable, List<WordNoteRow>>
+  _wordNotesRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.wordNotes,
+    aliasName: 'words__id__word_notes__word_id',
+  );
+
+  $$WordNotesTableProcessedTableManager get wordNotesRefs {
+    final manager = $$WordNotesTableTableManager(
+      $_db,
+      $_db.wordNotes,
+    ).filter((f) => f.wordId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_wordNotesRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
 }
 
 class $$WordsTableFilterComposer extends Composer<_$AppDatabase, $WordsTable> {
@@ -6774,6 +7150,31 @@ class $$WordsTableFilterComposer extends Composer<_$AppDatabase, $WordsTable> {
           }) => $$FavoritesTableFilterComposer(
             $db: $db,
             $table: $db.favorites,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> wordNotesRefs(
+    Expression<bool> Function($$WordNotesTableFilterComposer f) f,
+  ) {
+    final $$WordNotesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.wordNotes,
+      getReferencedColumn: (t) => t.wordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordNotesTableFilterComposer(
+            $db: $db,
+            $table: $db.wordNotes,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -7064,6 +7465,31 @@ class $$WordsTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> wordNotesRefs<T extends Object>(
+    Expression<T> Function($$WordNotesTableAnnotationComposer a) f,
+  ) {
+    final $$WordNotesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.wordNotes,
+      getReferencedColumn: (t) => t.wordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordNotesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.wordNotes,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$WordsTableTableManager
@@ -7087,6 +7513,7 @@ class $$WordsTableTableManager
             bool reviewCardsRefs,
             bool reviewLogsRefs,
             bool favoritesRefs,
+            bool wordNotesRefs,
           })
         > {
   $$WordsTableTableManager(_$AppDatabase db, $WordsTable table)
@@ -7161,6 +7588,7 @@ class $$WordsTableTableManager
                 reviewCardsRefs = false,
                 reviewLogsRefs = false,
                 favoritesRefs = false,
+                wordNotesRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
@@ -7171,6 +7599,7 @@ class $$WordsTableTableManager
                     if (reviewCardsRefs) db.reviewCards,
                     if (reviewLogsRefs) db.reviewLogs,
                     if (favoritesRefs) db.favorites,
+                    if (wordNotesRefs) db.wordNotes,
                   ],
                   addJoins:
                       <
@@ -7330,6 +7759,27 @@ class $$WordsTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (wordNotesRefs)
+                        await $_getPrefetchedData<
+                          WordRow,
+                          $WordsTable,
+                          WordNoteRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$WordsTableReferences
+                              ._wordNotesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$WordsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).wordNotesRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.wordId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -7358,6 +7808,7 @@ typedef $$WordsTableProcessedTableManager =
         bool reviewCardsRefs,
         bool reviewLogsRefs,
         bool favoritesRefs,
+        bool wordNotesRefs,
       })
     >;
 typedef $$ExamplesTableCreateCompanionBuilder = ExamplesCompanion Function({
@@ -9341,6 +9792,7 @@ typedef $$DailyStatsTableCreateCompanionBuilder = DailyStatsCompanion Function({
   Value<int> xp,
   Value<int> minutes,
   Value<bool> goalMet,
+  Value<bool> frozen,
   Value<int> rowid,
 });
 typedef $$DailyStatsTableUpdateCompanionBuilder = DailyStatsCompanion Function({
@@ -9351,6 +9803,7 @@ typedef $$DailyStatsTableUpdateCompanionBuilder = DailyStatsCompanion Function({
   Value<int> xp,
   Value<int> minutes,
   Value<bool> goalMet,
+  Value<bool> frozen,
   Value<int> rowid,
 });
 
@@ -9395,6 +9848,11 @@ class $$DailyStatsTableFilterComposer
 
   ColumnFilters<bool> get goalMet => $composableBuilder(
     column: $table.goalMet,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get frozen => $composableBuilder(
+    column: $table.frozen,
     builder: (column) => ColumnFilters(column),
   );
 }
@@ -9442,6 +9900,11 @@ class $$DailyStatsTableOrderingComposer
     column: $table.goalMet,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<bool> get frozen => $composableBuilder(
+    column: $table.frozen,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$DailyStatsTableAnnotationComposer
@@ -9473,6 +9936,9 @@ class $$DailyStatsTableAnnotationComposer
 
   GeneratedColumn<bool> get goalMet =>
       $composableBuilder(column: $table.goalMet, builder: (column) => column);
+
+  GeneratedColumn<bool> get frozen =>
+      $composableBuilder(column: $table.frozen, builder: (column) => column);
 }
 
 class $$DailyStatsTableTableManager
@@ -9513,6 +9979,7 @@ class $$DailyStatsTableTableManager
                 Value<int> xp = const Value.absent(),
                 Value<int> minutes = const Value.absent(),
                 Value<bool> goalMet = const Value.absent(),
+                Value<bool> frozen = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => DailyStatsCompanion(
                 day: day,
@@ -9522,6 +9989,7 @@ class $$DailyStatsTableTableManager
                 xp: xp,
                 minutes: minutes,
                 goalMet: goalMet,
+                frozen: frozen,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -9533,6 +10001,7 @@ class $$DailyStatsTableTableManager
                 Value<int> xp = const Value.absent(),
                 Value<int> minutes = const Value.absent(),
                 Value<bool> goalMet = const Value.absent(),
+                Value<bool> frozen = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => DailyStatsCompanion.insert(
                 day: day,
@@ -9542,6 +10011,7 @@ class $$DailyStatsTableTableManager
                 xp: xp,
                 minutes: minutes,
                 goalMet: goalMet,
+                frozen: frozen,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
@@ -9599,6 +10069,7 @@ typedef $$UserProfileTableCreateCompanionBuilder =
       Value<bool> quietHoursEnabled,
       Value<String> quietStart,
       Value<String> quietEnd,
+      Value<int> streakFreezes,
     });
 typedef $$UserProfileTableUpdateCompanionBuilder =
     UserProfileCompanion Function({
@@ -9621,6 +10092,7 @@ typedef $$UserProfileTableUpdateCompanionBuilder =
       Value<bool> quietHoursEnabled,
       Value<String> quietStart,
       Value<String> quietEnd,
+      Value<int> streakFreezes,
     });
 
 final class $$UserProfileTableReferences
@@ -9741,6 +10213,11 @@ class $$UserProfileTableFilterComposer
 
   ColumnFilters<String> get quietEnd => $composableBuilder(
     column: $table.quietEnd,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get streakFreezes => $composableBuilder(
+    column: $table.streakFreezes,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -9867,6 +10344,11 @@ class $$UserProfileTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<int> get streakFreezes => $composableBuilder(
+    column: $table.streakFreezes,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   $$LevelsTableOrderingComposer get currentLevelId {
     final $$LevelsTableOrderingComposer composer = $composerBuilder(
       composer: this,
@@ -9974,6 +10456,11 @@ class $$UserProfileTableAnnotationComposer
   GeneratedColumn<String> get quietEnd =>
       $composableBuilder(column: $table.quietEnd, builder: (column) => column);
 
+  GeneratedColumn<int> get streakFreezes => $composableBuilder(
+    column: $table.streakFreezes,
+    builder: (column) => column,
+  );
+
   $$LevelsTableAnnotationComposer get currentLevelId {
     final $$LevelsTableAnnotationComposer composer = $composerBuilder(
       composer: this,
@@ -10045,6 +10532,7 @@ class $$UserProfileTableTableManager
                 Value<bool> quietHoursEnabled = const Value.absent(),
                 Value<String> quietStart = const Value.absent(),
                 Value<String> quietEnd = const Value.absent(),
+                Value<int> streakFreezes = const Value.absent(),
               }) => UserProfileCompanion(
                 id: id,
                 goalType: goalType,
@@ -10065,6 +10553,7 @@ class $$UserProfileTableTableManager
                 quietHoursEnabled: quietHoursEnabled,
                 quietStart: quietStart,
                 quietEnd: quietEnd,
+                streakFreezes: streakFreezes,
               ),
           createCompanionCallback:
               ({
@@ -10087,6 +10576,7 @@ class $$UserProfileTableTableManager
                 Value<bool> quietHoursEnabled = const Value.absent(),
                 Value<String> quietStart = const Value.absent(),
                 Value<String> quietEnd = const Value.absent(),
+                Value<int> streakFreezes = const Value.absent(),
               }) => UserProfileCompanion.insert(
                 id: id,
                 goalType: goalType,
@@ -10107,6 +10597,7 @@ class $$UserProfileTableTableManager
                 quietHoursEnabled: quietHoursEnabled,
                 quietStart: quietStart,
                 quietEnd: quietEnd,
+                streakFreezes: streakFreezes,
               ),
           withReferenceMapper: (p0) => p0
               .map(
@@ -10562,6 +11053,275 @@ typedef $$FavoritesTableProcessedTableManager =
       FavoriteRow,
       PrefetchHooks Function({bool wordId})
     >;
+typedef $$WordNotesTableCreateCompanionBuilder = WordNotesCompanion Function({
+  Value<int> wordId,
+  required String note,
+  Value<DateTime> updatedAt,
+});
+typedef $$WordNotesTableUpdateCompanionBuilder = WordNotesCompanion Function({
+  Value<int> wordId,
+  Value<String> note,
+  Value<DateTime> updatedAt,
+});
+
+final class $$WordNotesTableReferences
+    extends BaseReferences<_$AppDatabase, $WordNotesTable, WordNoteRow> {
+  $$WordNotesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $WordsTable _wordIdTable(_$AppDatabase db) =>
+      db.words.createAlias('word_notes__word_id__words__id');
+
+  $$WordsTableProcessedTableManager get wordId {
+    final $_column = $_itemColumn<int>('word_id')!;
+
+    final manager = $$WordsTableTableManager(
+      $_db,
+      $_db.words,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_wordIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$WordNotesTableFilterComposer
+    extends Composer<_$AppDatabase, $WordNotesTable> {
+  $$WordNotesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$WordsTableFilterComposer get wordId {
+    final $$WordsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.wordId,
+      referencedTable: $db.words,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordsTableFilterComposer(
+            $db: $db,
+            $table: $db.words,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$WordNotesTableOrderingComposer
+    extends Composer<_$AppDatabase, $WordNotesTable> {
+  $$WordNotesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$WordsTableOrderingComposer get wordId {
+    final $$WordsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.wordId,
+      referencedTable: $db.words,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordsTableOrderingComposer(
+            $db: $db,
+            $table: $db.words,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$WordNotesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $WordNotesTable> {
+  $$WordNotesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$WordsTableAnnotationComposer get wordId {
+    final $$WordsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.wordId,
+      referencedTable: $db.words,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.words,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$WordNotesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $WordNotesTable,
+          WordNoteRow,
+          $$WordNotesTableFilterComposer,
+          $$WordNotesTableOrderingComposer,
+          $$WordNotesTableAnnotationComposer,
+          $$WordNotesTableCreateCompanionBuilder,
+          $$WordNotesTableUpdateCompanionBuilder,
+          (WordNoteRow, $$WordNotesTableReferences),
+          WordNoteRow,
+          PrefetchHooks Function({bool wordId})
+        > {
+  $$WordNotesTableTableManager(_$AppDatabase db, $WordNotesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$WordNotesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$WordNotesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$WordNotesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> wordId = const Value.absent(),
+                Value<String> note = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+              }) => WordNotesCompanion(
+                wordId: wordId,
+                note: note,
+                updatedAt: updatedAt,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> wordId = const Value.absent(),
+                required String note,
+                Value<DateTime> updatedAt = const Value.absent(),
+              }) => WordNotesCompanion.insert(
+                wordId: wordId,
+                note: note,
+                updatedAt: updatedAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$WordNotesTable, WordNoteRow>(table),
+                  $$WordNotesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({wordId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (wordId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.wordId,
+                        referencedTable: $$WordNotesTableReferences
+                            ._wordIdTable(db),
+                        referencedColumn: $$WordNotesTableReferences
+                            ._wordIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$WordNotesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $WordNotesTable,
+      WordNoteRow,
+      $$WordNotesTableFilterComposer,
+      $$WordNotesTableOrderingComposer,
+      $$WordNotesTableAnnotationComposer,
+      $$WordNotesTableCreateCompanionBuilder,
+      $$WordNotesTableUpdateCompanionBuilder,
+      (WordNoteRow, $$WordNotesTableReferences),
+      WordNoteRow,
+      PrefetchHooks Function({bool wordId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -10592,4 +11352,6 @@ class $AppDatabaseManager {
       $$BadgesTableTableManager(_db, _db.badges);
   $$FavoritesTableTableManager get favorites =>
       $$FavoritesTableTableManager(_db, _db.favorites);
+  $$WordNotesTableTableManager get wordNotes =>
+      $$WordNotesTableTableManager(_db, _db.wordNotes);
 }

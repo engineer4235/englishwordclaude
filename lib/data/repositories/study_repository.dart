@@ -5,8 +5,8 @@ import '../../domain/srs/card_state.dart';
 import '../db/app_database.dart';
 import 'review_repository.dart';
 
-/// Cevapları kaydeder; XP, günlük hedef ve seriyi günceller
-/// (FR-64, FR-65, FR-70, FR-71).
+/// Cevapları kaydeder; XP, günlük hedef, seri ve seri korumasını günceller
+/// (FR-64, FR-65, FR-70, FR-71, FR-72).
 class StudyRepository {
   StudyRepository(AppDatabase db, {DateTime Function()? clock})
     : _db = db,
@@ -24,6 +24,12 @@ class StudyRepository {
   /// Bu sayının üzerinde tekrar birikirse yeni kelime kotası yarıya iner.
   static const reviewOverloadThreshold = 100;
 
+  /// Biriktirilebilecek en fazla seri koruması (FR-72).
+  static const maxStreakFreezes = 2;
+
+  /// Serinin her bu kadar gününde bir seri koruması kazanılır.
+  static const freezeEarnEvery = 7;
+
   static String dayKey(DateTime d) {
     String two(int n) => n.toString().padLeft(2, '0');
     return '${d.year}-${two(d.month)}-${two(d.day)}';
@@ -39,6 +45,43 @@ class StudyRepository {
   Future<DailyStatRow?> _day(DateTime d) => (_db.select(
     _db.dailyStats,
   )..where((t) => t.day.equals(dayKey(d)))).getSingleOrNull();
+
+  /// Hedefi tamamlanmış ya da seri korumasıyla kurtarılmış gün.
+  static bool _protected(DailyStatRow? r) =>
+      (r?.goalMet ?? false) || (r?.frozen ?? false);
+
+  /// Dünden geriye, korunan ilk güne kadar kaçırılan günler. [limit]'ten
+  /// fazla gün kaçırılmışsa liste [limit]+1 elemanla döner: seri kurtarılamaz.
+  Future<List<DateTime>> _missedDays(DateTime now, int limit) async {
+    final missed = <DateTime>[];
+    var day = _yesterday(now);
+    while (missed.length <= limit) {
+      if (_protected(await _day(day))) return missed;
+      missed.add(day);
+      day = _yesterday(day);
+    }
+    return missed;
+  }
+
+  /// Kaçırılan günleri seri korumasıyla işaretler.
+  Future<void> _freeze(List<DateTime> days) async {
+    for (final d in days) {
+      final updated =
+          await (_db.update(_db.dailyStats)
+                ..where((t) => t.day.equals(dayKey(d))))
+              .write(const DailyStatsCompanion(frozen: Value(true)));
+      if (updated == 0) {
+        await _db
+            .into(_db.dailyStats)
+            .insert(
+              DailyStatsCompanion.insert(
+                day: dayKey(d),
+                frozen: const Value(true),
+              ),
+            );
+      }
+    }
+  }
 
   /// Cevabı aralıklı tekrara yazar ve kazanılan XP'yi döner.
   Future<int> recordAnswer({
@@ -97,9 +140,22 @@ class StudyRepository {
         );
 
     var streak = user.streak;
+    var freezes = user.streakFreezes;
     if (reachedGoal) {
-      final yesterday = await _day(_yesterday(now));
-      streak = (yesterday?.goalMet ?? false) ? user.streak + 1 : 1;
+      final missed = await _missedDays(now, freezes);
+      if (missed.isEmpty) {
+        streak = user.streak + 1;
+      } else if (user.streak > 0 && missed.length <= freezes) {
+        // Kaçırılan günler seri korumasıyla kurtarılır (FR-72).
+        await _freeze(missed);
+        freezes -= missed.length;
+        streak = user.streak + 1;
+      } else {
+        streak = 1;
+      }
+      if (streak % freezeEarnEvery == 0 && freezes < maxStreakFreezes) {
+        freezes++;
+      }
     }
     await (_db.update(
       _db.userProfile,
@@ -107,6 +163,7 @@ class StudyRepository {
       UserProfileCompanion(
         totalXp: Value(user.totalXp + xp),
         streak: Value(streak),
+        streakFreezes: Value(freezes),
         longestStreak: Value(
           streak > user.longestStreak ? streak : user.longestStreak,
         ),
@@ -134,7 +191,6 @@ class StudyRepository {
     final now = _clock();
     final user = await profile();
     final today = await _day(now);
-    final yesterday = await _day(_yesterday(now));
     final due = await _reviews.countDue();
     final todayNew = today?.newWords ?? 0;
     final remaining = user.dailyTarget - todayNew;
@@ -144,8 +200,12 @@ class StudyRepository {
         : overload
         ? remaining ~/ 2
         : remaining;
+    // Seri, kaçırılan günler seri korumasıyla kapatılabildiği sürece sürer.
     final streakAlive =
-        (today?.goalMet ?? false) || (yesterday?.goalMet ?? false);
+        _protected(today) ||
+        (user.streak > 0 &&
+            (await _missedDays(now, user.streakFreezes)).length <=
+                user.streakFreezes);
 
     return HomeSummary(
       dueCount: due,
@@ -155,6 +215,7 @@ class StudyRepository {
       totalXp: user.totalXp,
       streak: streakAlive ? user.streak : 0,
       longestStreak: user.longestStreak,
+      streakFreezes: user.streakFreezes,
       goalMet: today?.goalMet ?? false,
       reviewOverload: overload,
       newWordQuota: quota,

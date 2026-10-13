@@ -1,4 +1,4 @@
-/// Ana ekran özeti (FR-64, FR-65, FR-70, FR-71).
+/// Ana ekran özeti (FR-64, FR-65, FR-70, FR-71, FR-72).
 class HomeSummary {
   const HomeSummary({
     required this.dueCount,
@@ -8,6 +8,7 @@ class HomeSummary {
     required this.totalXp,
     required this.streak,
     required this.longestStreak,
+    this.streakFreezes = 0,
     required this.goalMet,
     required this.reviewOverload,
     required this.newWordQuota,
@@ -20,9 +21,12 @@ class HomeSummary {
   final int todayXp;
   final int totalXp;
 
-  /// Gösterilen seri: bugün ya da dün hedef tamamlanmadıysa 0.
+  /// Gösterilen seri: kaçırılan günler seri korumasıyla kapatılamıyorsa 0.
   final int streak;
   final int longestStreak;
+
+  /// Kullanılmayı bekleyen seri koruması (FR-72).
+  final int streakFreezes;
   final bool goalMet;
 
   /// Tekrar yığılması: yeni kelime kotası azaltıldı (FR-65).

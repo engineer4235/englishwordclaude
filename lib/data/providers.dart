@@ -18,6 +18,7 @@ import 'db/app_database.dart';
 import 'repositories/badge_repository.dart';
 import 'repositories/content_repository.dart';
 import 'repositories/favorites_repository.dart';
+import 'repositories/notes_repository.dart';
 import 'repositories/profile_repository.dart';
 import 'repositories/progress_repository.dart';
 import 'repositories/review_repository.dart';
@@ -58,6 +59,19 @@ final progressRepositoryProvider = Provider<ProgressRepository>(
 final favoritesRepositoryProvider = Provider<FavoritesRepository>(
   (ref) => FavoritesRepository(ref.watch(appDatabaseProvider)),
 );
+
+final notesRepositoryProvider = Provider<NotesRepository>(
+  (ref) => NotesRepository(ref.watch(appDatabaseProvider)),
+);
+
+/// Bir kelimenin kişisel notu (FR-36).
+final wordNoteProvider = FutureProvider.family<String?, int>((
+  ref,
+  wordId,
+) async {
+  await ref.watch(appStartupProvider.future);
+  return ref.watch(notesRepositoryProvider).get(wordId);
+});
 
 final levelsProvider = FutureProvider<List<Level>>((ref) async {
   await ref.watch(appStartupProvider.future);

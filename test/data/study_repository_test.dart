@@ -1,5 +1,6 @@
 import 'package:english_word_learning/data/content/content_seeder.dart';
 import 'package:english_word_learning/data/db/app_database.dart';
+import 'package:drift/drift.dart' show Value;
 import 'package:english_word_learning/data/repositories/study_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -72,6 +73,60 @@ void main() {
       expect((await repo.summary()).streak, 0, reason: 'hedef henüz yok');
     },
   );
+
+  test(
+    '7 günlük seri koruma kazandırır, kaçırılan gün kurtarılır (FR-72)',
+    () async {
+      await db.ensureProfile();
+      await db
+          .update(db.userProfile)
+          .write(const UserProfileCompanion(dailyTarget: Value(1)));
+      var word = 0;
+      Future<void> studyDay() => answer(wordIds[word++]);
+
+      for (var day = 0; day < 7; day++) {
+        if (day > 0) now = now.add(const Duration(days: 1));
+        await studyDay();
+      }
+      var s = await repo.summary();
+      expect(s.streak, 7);
+      expect(s.streakFreezes, 1);
+
+      // Bir gün kaçırılır: koruma olduğu için seri görünmeye devam eder.
+      now = now.add(const Duration(days: 2));
+      s = await repo.summary();
+      expect(s.streak, 7, reason: 'koruma kaçırılan günü kapatır');
+
+      await studyDay();
+      s = await repo.summary();
+      expect(s.streak, 8);
+      expect(s.streakFreezes, 0, reason: 'koruma harcandı');
+      final frozen = await (db.select(
+        db.dailyStats,
+      )..where((t) => t.frozen.equals(true))).get();
+      expect(frozen, hasLength(1));
+
+      // Koruma kalmadığı için kaçırılan gün seriyi sıfırlar.
+      now = now.add(const Duration(days: 2));
+      expect((await repo.summary()).streak, 0);
+      await studyDay();
+      expect((await repo.summary()).streak, 1);
+    },
+  );
+
+  test('en fazla 2 seri koruması birikir', () async {
+    await db.ensureProfile();
+    await db
+        .update(db.userProfile)
+        .write(const UserProfileCompanion(dailyTarget: Value(1)));
+    for (var day = 0; day < 21; day++) {
+      if (day > 0) now = now.add(const Duration(days: 1));
+      await answer(wordIds[day]);
+    }
+    final s = await repo.summary();
+    expect(s.streak, 21);
+    expect(s.streakFreezes, StudyRepository.maxStreakFreezes);
+  });
 
   test('zamanı gelen tekrarlar sayılır (FR-64)', () async {
     await learnNew(3);

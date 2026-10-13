@@ -16,6 +16,7 @@ void main() {
 
     expect(find.text('0 gün seri'), findsOneWidget);
     expect(find.text('0 XP'), findsOneWidget);
+    expect(find.text('0 seri koruması'), findsOneWidget);
     expect(find.text('0/10 yeni kelime'), findsOneWidget);
     expect(find.text('Şu an tekrar edilecek kelime yok.'), findsOneWidget);
     expect(find.text('Sıradaki ünite: Aile'), findsOneWidget);

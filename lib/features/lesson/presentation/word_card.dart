@@ -3,11 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/tts/tts_service.dart';
 import '../../../data/providers.dart';
+import '../../../data/repositories/notes_repository.dart';
 import '../../../domain/models/word.dart';
 import '../../../l10n/app_localizations.dart';
 
-/// Kelime kartı: kelime, okunuş, anlam, örnek cümleler (FR-30, FR-31,
-/// FR-34, FR-35).
+/// Kelime kartı: kelime, okunuş, anlam, kişisel not ve örnek cümleler
+/// (FR-30, FR-31, FR-34, FR-35, FR-36).
 class WordCard extends ConsumerWidget {
   const WordCard({super.key, required this.word});
 
@@ -72,6 +73,8 @@ class WordCard extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             Text(word.meaningTr, style: theme.textTheme.titleLarge),
+            const SizedBox(height: 8),
+            _NoteSection(wordId: word.id),
             const Divider(height: 32),
             Text(l10n.examples, style: theme.textTheme.titleSmall),
             for (final example in word.examples)
@@ -101,6 +104,110 @@ class WordCard extends ConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Kelimeye eklenen kişisel not ve düzenleme düğmesi (FR-36).
+class _NoteSection extends ConsumerWidget {
+  const _NoteSection({required this.wordId});
+
+  final int wordId;
+
+  Future<void> _edit(
+    BuildContext context,
+    WidgetRef ref,
+    String? current,
+  ) async {
+    final result = await showDialog<String>(
+      context: context,
+      builder: (context) => _NoteDialog(initial: current ?? ''),
+    );
+    if (result == null || !context.mounted) return;
+    await ref.read(notesRepositoryProvider).save(wordId, result);
+    ref.invalidate(wordNoteProvider(wordId));
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final note = ref.watch(wordNoteProvider(wordId)).value;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (note != null)
+          Container(
+            key: const Key('note-text'),
+            width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: theme.colorScheme.secondaryContainer,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(l10n.noteTitle, style: theme.textTheme.labelMedium),
+                const SizedBox(height: 4),
+                Text(note),
+              ],
+            ),
+          ),
+        TextButton.icon(
+          key: const Key('note-edit'),
+          icon: const Icon(Icons.edit_note),
+          label: Text(note == null ? l10n.addNote : l10n.editNote),
+          onPressed: () => _edit(context, ref, note),
+        ),
+      ],
+    );
+  }
+}
+
+/// Not düzenleme penceresi; metin denetleyicisinin ömrünü kendisi yönetir.
+class _NoteDialog extends StatefulWidget {
+  const _NoteDialog({required this.initial});
+
+  final String initial;
+
+  @override
+  State<_NoteDialog> createState() => _NoteDialogState();
+}
+
+class _NoteDialogState extends State<_NoteDialog> {
+  late final _controller = TextEditingController(text: widget.initial);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return AlertDialog(
+      title: Text(l10n.noteTitle),
+      content: TextField(
+        key: const Key('note-field'),
+        controller: _controller,
+        autofocus: true,
+        maxLines: 4,
+        maxLength: NotesRepository.maxLength,
+        decoration: InputDecoration(hintText: l10n.noteHint),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(l10n.cancel),
+        ),
+        FilledButton(
+          key: const Key('note-save'),
+          onPressed: () => Navigator.pop(context, _controller.text),
+          child: Text(l10n.saveNote),
+        ),
+      ],
     );
   }
 }
