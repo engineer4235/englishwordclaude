@@ -12,6 +12,8 @@ abstract interface class ContentRepository {
   Future<List<LearningUnit>> getUnits(int levelId);
 
   Future<List<Word>> getWords(int unitId);
+
+  Future<List<Word>> getWordsByIds(List<int> ids);
 }
 
 class DriftContentRepository implements ContentRepository {
@@ -49,10 +51,24 @@ class DriftContentRepository implements ContentRepository {
   }
 
   @override
-  Future<List<Word>> getWords(int unitId) async {
-    final query = _db.select(_db.words)
+  Future<List<Word>> getWords(int unitId) => _words(
+    _db.select(_db.words)
       ..where((t) => t.unitId.equals(unitId))
-      ..orderBy([(t) => OrderingTerm.asc(t.id)]);
+      ..orderBy([(t) => OrderingTerm.asc(t.id)]),
+  );
+
+  @override
+  Future<List<Word>> getWordsByIds(List<int> ids) async {
+    final words = await _words(
+      _db.select(_db.words)..where((t) => t.id.isIn(ids)),
+    );
+    final order = {for (var i = 0; i < ids.length; i++) ids[i]: i};
+    return words..sort((a, b) => order[a.id]!.compareTo(order[b.id]!));
+  }
+
+  Future<List<Word>> _words(
+    SimpleSelectStatement<$WordsTable, WordRow> query,
+  ) async {
     final rows = await query.get();
     final ids = [for (final r in rows) r.id];
     final exampleRows =

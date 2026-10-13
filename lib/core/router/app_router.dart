@@ -31,6 +31,13 @@ GoRouter createRouter() {
               GoRoute(
                 path: AppRoutes.home,
                 builder: (context, state) => const HomeScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'tekrar',
+                    builder: (context, state) =>
+                        const PracticeScreen(mode: PracticeMode.review),
+                  ),
+                ],
               ),
             ],
           ),

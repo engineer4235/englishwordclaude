@@ -1,6 +1,7 @@
 /// Uygulamadaki rota yolları.
 abstract final class AppRoutes {
   static const home = '/';
+  static const review = '/tekrar';
   static const levelMap = '/harita';
   static const words = '/kelimelerim';
   static const stats = '/istatistik';
