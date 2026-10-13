@@ -153,20 +153,29 @@ class ContentSeeder {
         await _insertWords(unitId, unit);
         added++;
 
-        if (last != null) {
+        // Seviyenin önceki son ünitesi tamamlandıysa ya da seviye açık ama
+        // henüz hiç ünitesi yoksa ilk yeni ünite açılır.
+        final bool open;
+        if (last == null) {
+          final level = await (_db.select(
+            _db.levelProgress,
+          )..where((t) => t.levelId.equals(levelId))).getSingleOrNull();
+          open = level != null && level.status != 'locked';
+        } else {
           final progress = await (_db.select(
             _db.unitProgress,
           )..where((t) => t.unitId.equals(last.id))).getSingleOrNull();
-          if (progress?.status == 'completed') {
-            await _db
-                .into(_db.unitProgress)
-                .insertOnConflictUpdate(
-                  UnitProgressCompanion.insert(
-                    unitId: Value(unitId),
-                    status: const Value('open'),
-                  ),
-                );
-          }
+          open = progress?.status == 'completed';
+        }
+        if (open) {
+          await _db
+              .into(_db.unitProgress)
+              .insertOnConflictUpdate(
+                UnitProgressCompanion.insert(
+                  unitId: Value(unitId),
+                  status: const Value('open'),
+                ),
+              );
         }
       }
     });
