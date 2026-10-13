@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "note": "MVP içeriği: A1'de 13, A2'de 4 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 3,
+  "note": "MVP içeriği: A1'de 13, A2'de 4, B1'de 4 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -2335,6 +2335,550 @@
             [
               "Don't be worried, everything is fine.",
               "Endişelenme, her şey yolunda."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "İş Hayatı",
+      "theme": "work",
+      "icon": "business",
+      "words": [
+        {
+          "lemma": "career",
+          "ipa": "/kəˈrɪr/",
+          "pos": "noun",
+          "tr": "kariyer",
+          "examples": [
+            [
+              "She wants a career in medicine.",
+              "Tıp alanında bir kariyer istiyor."
+            ],
+            [
+              "He started his career as a teacher.",
+              "Kariyerine öğretmen olarak başladı."
+            ]
+          ]
+        },
+        {
+          "lemma": "salary",
+          "ipa": "/ˈsæləri/",
+          "pos": "noun",
+          "tr": "maaş",
+          "examples": [
+            [
+              "The salary is paid every month.",
+              "Maaş her ay ödenir."
+            ],
+            [
+              "She asked for a higher salary.",
+              "Daha yüksek bir maaş istedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "colleague",
+          "ipa": "/ˈkɑːliːɡ/",
+          "pos": "noun",
+          "tr": "iş arkadaşı",
+          "examples": [
+            [
+              "My colleague helped me with the report.",
+              "İş arkadaşım rapor konusunda bana yardım etti."
+            ],
+            [
+              "I had lunch with a colleague.",
+              "Bir iş arkadaşımla öğle yemeği yedim."
+            ]
+          ]
+        },
+        {
+          "lemma": "interview",
+          "ipa": "/ˈɪntərvjuː/",
+          "pos": "noun",
+          "tr": "mülakat, görüşme",
+          "examples": [
+            [
+              "I have a job interview tomorrow.",
+              "Yarın bir iş mülakatım var."
+            ],
+            [
+              "The interview lasted one hour.",
+              "Mülakat bir saat sürdü."
+            ]
+          ]
+        },
+        {
+          "lemma": "employ",
+          "ipa": "/ɪmˈplɔɪ/",
+          "pos": "verb",
+          "tr": "istihdam etmek, işe almak",
+          "examples": [
+            [
+              "The factory will employ fifty workers.",
+              "Fabrika elli işçi istihdam edecek."
+            ],
+            [
+              "Small shops often employ students.",
+              "Küçük dükkânlar çoğu zaman öğrencileri işe alır."
+            ]
+          ]
+        },
+        {
+          "lemma": "deadline",
+          "ipa": "/ˈdedlaɪn/",
+          "pos": "noun",
+          "tr": "son teslim tarihi",
+          "examples": [
+            [
+              "The deadline for the project is Friday.",
+              "Projenin son teslim tarihi cuma."
+            ],
+            [
+              "We worked late to meet the deadline.",
+              "Son teslim tarihine yetişmek için geç saate kadar çalıştık."
+            ]
+          ]
+        },
+        {
+          "lemma": "manage",
+          "ipa": "/ˈmænɪdʒ/",
+          "pos": "verb",
+          "tr": "yönetmek",
+          "examples": [
+            [
+              "She will manage the new team.",
+              "Yeni ekibi o yönetecek."
+            ],
+            [
+              "It is hard to manage a big hotel.",
+              "Büyük bir oteli yönetmek zordur."
+            ]
+          ]
+        },
+        {
+          "lemma": "experience",
+          "ipa": "/ɪkˈspɪriəns/",
+          "pos": "noun",
+          "tr": "deneyim",
+          "examples": [
+            [
+              "He has a lot of experience in sales.",
+              "Satışta çok deneyimi var."
+            ],
+            [
+              "Do you have any experience with children?",
+              "Çocuklarla ilgili deneyimin var mı?"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Teknoloji",
+      "theme": "technology",
+      "icon": "devices",
+      "words": [
+        {
+          "lemma": "device",
+          "ipa": "/dɪˈvaɪs/",
+          "pos": "noun",
+          "tr": "cihaz",
+          "examples": [
+            [
+              "Turn off every device before the exam.",
+              "Sınavdan önce her cihazı kapat."
+            ],
+            [
+              "This small device measures the temperature.",
+              "Bu küçük cihaz sıcaklığı ölçer."
+            ]
+          ]
+        },
+        {
+          "lemma": "download",
+          "ipa": "/ˈdaʊnloʊd/",
+          "pos": "verb",
+          "tr": "indirmek",
+          "examples": [
+            [
+              "You can download the app for free.",
+              "Uygulamayı ücretsiz indirebilirsin."
+            ],
+            [
+              "It takes a minute to download the file.",
+              "Dosyayı indirmek bir dakika sürer."
+            ]
+          ]
+        },
+        {
+          "lemma": "password",
+          "ipa": "/ˈpæswɜːrd/",
+          "pos": "noun",
+          "tr": "şifre, parola",
+          "examples": [
+            [
+              "Never share your password with anyone.",
+              "Şifreni asla kimseyle paylaşma."
+            ],
+            [
+              "I forgot my password again.",
+              "Şifremi yine unuttum."
+            ]
+          ]
+        },
+        {
+          "lemma": "screen",
+          "ipa": "/skriːn/",
+          "pos": "noun",
+          "tr": "ekran",
+          "examples": [
+            [
+              "The screen on this phone is very bright.",
+              "Bu telefonun ekranı çok parlak."
+            ],
+            [
+              "Don't sit too close to the screen.",
+              "Ekrana çok yakın oturma."
+            ]
+          ]
+        },
+        {
+          "lemma": "software",
+          "ipa": "/ˈsɔːftwer/",
+          "pos": "noun",
+          "tr": "yazılım",
+          "examples": [
+            [
+              "The company makes software for schools.",
+              "Şirket okullar için yazılım yapıyor."
+            ],
+            [
+              "Please update the software tonight.",
+              "Lütfen yazılımı bu akşam güncelle."
+            ]
+          ]
+        },
+        {
+          "lemma": "connect",
+          "ipa": "/kəˈnekt/",
+          "pos": "verb",
+          "tr": "bağlamak, bağlanmak",
+          "examples": [
+            [
+              "You need to connect the printer to your laptop.",
+              "Yazıcıyı dizüstü bilgisayarına bağlaman gerekiyor."
+            ],
+            [
+              "I can't connect to the internet.",
+              "İnternete bağlanamıyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "battery",
+          "ipa": "/ˈbætəri/",
+          "pos": "noun",
+          "tr": "pil, batarya",
+          "examples": [
+            [
+              "My phone battery is almost empty.",
+              "Telefonumun pili neredeyse bitti."
+            ],
+            [
+              "This battery lasts two days.",
+              "Bu pil iki gün dayanıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "online",
+          "ipa": "/ˌɑːnˈlaɪn/",
+          "pos": "adverb",
+          "tr": "çevrimiçi, internette",
+          "examples": [
+            [
+              "I usually buy books online.",
+              "Kitapları genellikle internetten alırım."
+            ],
+            [
+              "We met online last year.",
+              "Geçen yıl internette tanıştık."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Çevre",
+      "theme": "environment",
+      "icon": "eco",
+      "words": [
+        {
+          "lemma": "pollution",
+          "ipa": "/pəˈluːʃən/",
+          "pos": "noun",
+          "tr": "kirlilik",
+          "examples": [
+            [
+              "Air pollution is a big problem in cities.",
+              "Hava kirliliği şehirlerde büyük bir sorundur."
+            ],
+            [
+              "Cars cause a lot of pollution.",
+              "Arabalar çok fazla kirliliğe neden olur."
+            ]
+          ]
+        },
+        {
+          "lemma": "recycle",
+          "ipa": "/ˌriːˈsaɪkəl/",
+          "pos": "verb",
+          "tr": "geri dönüştürmek",
+          "examples": [
+            [
+              "We recycle paper and glass at home.",
+              "Evde kâğıt ve camı geri dönüştürüyoruz."
+            ],
+            [
+              "It is easy to recycle plastic bottles.",
+              "Plastik şişeleri geri dönüştürmek kolaydır."
+            ]
+          ]
+        },
+        {
+          "lemma": "climate",
+          "ipa": "/ˈklaɪmət/",
+          "pos": "noun",
+          "tr": "iklim",
+          "examples": [
+            [
+              "The climate here is warm and dry.",
+              "Buranın iklimi sıcak ve kurudur."
+            ],
+            [
+              "Scientists study the changing climate.",
+              "Bilim insanları değişen iklimi inceliyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "energy",
+          "ipa": "/ˈenərdʒi/",
+          "pos": "noun",
+          "tr": "enerji",
+          "examples": [
+            [
+              "Solar energy is clean and cheap.",
+              "Güneş enerjisi temiz ve ucuzdur."
+            ],
+            [
+              "Turn off the lights to save energy.",
+              "Enerji tasarrufu için ışıkları kapat."
+            ]
+          ]
+        },
+        {
+          "lemma": "waste",
+          "ipa": "/weɪst/",
+          "pos": "noun",
+          "tr": "atık, çöp",
+          "examples": [
+            [
+              "The factory puts its waste into the river.",
+              "Fabrika atığını nehre bırakıyor."
+            ],
+            [
+              "We should reduce plastic waste.",
+              "Plastik atığı azaltmalıyız."
+            ]
+          ]
+        },
+        {
+          "lemma": "protect",
+          "ipa": "/prəˈtekt/",
+          "pos": "verb",
+          "tr": "korumak",
+          "examples": [
+            [
+              "Trees protect the soil from rain.",
+              "Ağaçlar toprağı yağmurdan korur."
+            ],
+            [
+              "We must protect wild animals.",
+              "Vahşi hayvanları korumalıyız."
+            ]
+          ]
+        },
+        {
+          "lemma": "forest",
+          "ipa": "/ˈfɔːrɪst/",
+          "pos": "noun",
+          "tr": "orman",
+          "examples": [
+            [
+              "They walked through the forest.",
+              "Ormanın içinden yürüdüler."
+            ],
+            [
+              "The forest is home to many birds.",
+              "Orman birçok kuşa ev sahipliği yapar."
+            ]
+          ]
+        },
+        {
+          "lemma": "natural",
+          "ipa": "/ˈnætʃərəl/",
+          "pos": "adjective",
+          "tr": "doğal",
+          "examples": [
+            [
+              "This juice has only natural sugar.",
+              "Bu meyve suyunda yalnızca doğal şeker var."
+            ],
+            [
+              "The park keeps its natural beauty.",
+              "Park doğal güzelliğini koruyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "İlişkiler",
+      "theme": "relationships",
+      "icon": "people",
+      "words": [
+        {
+          "lemma": "trust",
+          "ipa": "/trʌst/",
+          "pos": "noun",
+          "tr": "güven",
+          "examples": [
+            [
+              "A friendship needs trust.",
+              "Bir arkadaşlık güvene ihtiyaç duyar."
+            ],
+            [
+              "She lost my trust after that lie.",
+              "O yalandan sonra güvenimi kaybetti."
+            ]
+          ]
+        },
+        {
+          "lemma": "argue",
+          "ipa": "/ˈɑːrɡjuː/",
+          "pos": "verb",
+          "tr": "tartışmak",
+          "examples": [
+            [
+              "My brothers argue about everything.",
+              "Erkek kardeşlerim her şey hakkında tartışır."
+            ],
+            [
+              "Let's not argue about money.",
+              "Para konusunda tartışmayalım."
+            ]
+          ]
+        },
+        {
+          "lemma": "support",
+          "ipa": "/səˈpɔːrt/",
+          "pos": "verb",
+          "tr": "desteklemek",
+          "examples": [
+            [
+              "My parents always support my decisions.",
+              "Annem ve babam kararlarımı her zaman destekler."
+            ],
+            [
+              "Friends support each other in hard times.",
+              "Arkadaşlar zor zamanlarda birbirini destekler."
+            ]
+          ]
+        },
+        {
+          "lemma": "relationship",
+          "ipa": "/rɪˈleɪʃənʃɪp/",
+          "pos": "noun",
+          "tr": "ilişki",
+          "examples": [
+            [
+              "They have a good relationship with their neighbors.",
+              "Komşularıyla iyi bir ilişkileri var."
+            ],
+            [
+              "Their relationship started at university.",
+              "İlişkileri üniversitede başladı."
+            ]
+          ]
+        },
+        {
+          "lemma": "neighbor",
+          "ipa": "/ˈneɪbər/",
+          "pos": "noun",
+          "tr": "komşu",
+          "examples": [
+            [
+              "Our neighbor has a big dog.",
+              "Komşumuzun büyük bir köpeği var."
+            ],
+            [
+              "I asked my neighbor for some salt.",
+              "Komşumdan biraz tuz istedim."
+            ]
+          ]
+        },
+        {
+          "lemma": "apologize",
+          "ipa": "/əˈpɑːlədʒaɪz/",
+          "pos": "verb",
+          "tr": "özür dilemek",
+          "examples": [
+            [
+              "You should apologize to your sister.",
+              "Kız kardeşinden özür dilemelisin."
+            ],
+            [
+              "He did not apologize for being late.",
+              "Geç kaldığı için özür dilemedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "respect",
+          "ipa": "/rɪˈspekt/",
+          "pos": "noun",
+          "tr": "saygı",
+          "examples": [
+            [
+              "Students show respect to their teachers.",
+              "Öğrenciler öğretmenlerine saygı gösterir."
+            ],
+            [
+              "Everyone deserves respect.",
+              "Herkes saygıyı hak eder."
+            ]
+          ]
+        },
+        {
+          "lemma": "honest",
+          "ipa": "/ˈɑːnɪst/",
+          "pos": "adjective",
+          "tr": "dürüst",
+          "examples": [
+            [
+              "Please give me an honest answer.",
+              "Lütfen bana dürüst bir cevap ver."
+            ],
+            [
+              "He is an honest and kind man.",
+              "O dürüst ve nazik bir adam."
             ]
           ]
         }

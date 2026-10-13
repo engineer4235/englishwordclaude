@@ -43,6 +43,9 @@ void main() {
     expect(units, hasLength(13), reason: 'A1 içeriği (CNT-2)');
     expect(units.take(3).map((u) => u.title), ['Aile', 'Renkler', 'Sayılar']);
     expect(await repo.getUnits(levels[1].id), hasLength(4));
+    final b1 = await repo.getUnits(levels[2].id);
+    expect(b1, hasLength(4), reason: 'B1 içeriği (CNT-4)');
+    expect(b1.first.title, 'İş Hayatı');
     expect(await repo.getWords(units.first.id), hasLength(8));
 
     final openUnits = await db.select(db.unitProgress).get();
@@ -79,7 +82,7 @@ void main() {
           ),
         );
 
-    expect(await seeder.addMissingUnits(json), 14);
+    expect(await seeder.addMissingUnits(json), 18);
     expect(await seeder.addMissingUnits(json), 0);
 
     final units = await repo.getUnits(a1.id);
@@ -91,6 +94,66 @@ void main() {
     expect(progress[units[3].id]?.status, 'open');
     expect(progress[units[4].id], isNull, reason: 'sonraki yeni ünite kilitli');
     expect(await repo.getWords(units[3].id), hasLength(8));
+  });
+
+  test('açık ama ünitesiz seviyeye gelen ilk ünite açılır', () async {
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+    final seeder = ContentSeeder(db);
+    // Yalnız A1-A2 içeren eski paket; B1 seviyesi var ama ünitesi yok.
+    final data = jsonDecode(json) as Map<String, dynamic>;
+    final old = {
+      ...data,
+      'units': [
+        for (final u in data['units'] as List)
+          if ((u as Map)['level'] != 'B1') u,
+      ],
+    };
+    await seeder.seedIfEmpty(jsonEncode(old));
+    final repo = DriftContentRepository(db);
+    final b1 = (await repo.getLevels())[2];
+    expect(await repo.getUnits(b1.id), isEmpty);
+
+    // Kullanıcı A2'yi geçmiş, B1 açılmış.
+    await db
+        .into(db.levelProgress)
+        .insertOnConflictUpdate(
+          LevelProgressCompanion.insert(
+            levelId: Value(b1.id),
+            status: const Value('open'),
+          ),
+        );
+
+    expect(await seeder.addMissingUnits(json), 4);
+    final units = await repo.getUnits(b1.id);
+    final progress = {
+      for (final p in await db.select(db.unitProgress).get()) p.unitId: p,
+    };
+    expect(progress[units[0].id]?.status, 'open');
+    expect(progress[units[1].id], isNull);
+  });
+
+  test('kilitli seviyeye gelen üniteler kilitli kalır', () async {
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+    final seeder = ContentSeeder(db);
+    final data = jsonDecode(json) as Map<String, dynamic>;
+    await seeder.seedIfEmpty(
+      jsonEncode({
+        ...data,
+        'units': [
+          for (final u in data['units'] as List)
+            if ((u as Map)['level'] != 'B1') u,
+        ],
+      }),
+    );
+    expect(await seeder.addMissingUnits(json), 4);
+    final b1 = (await DriftContentRepository(db).getLevels())[2];
+    final unitIds = {
+      for (final u in await DriftContentRepository(db).getUnits(b1.id)) u.id,
+    };
+    final progress = await db.select(db.unitProgress).get();
+    expect(progress.where((p) => unitIds.contains(p.unitId)), isEmpty);
   });
 
   test(
