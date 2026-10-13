@@ -8,12 +8,16 @@ class WordEntry {
     required this.levelCode,
     this.state = CardState.newCard,
     this.favorite = false,
+    this.difficult = false,
   });
 
   final Word word;
   final String levelCode;
   final CardState state;
   final bool favorite;
+
+  /// Zorlanılan kelime (FR-66).
+  final bool difficult;
 }
 
 /// Arama filtreleri (FR-90).
@@ -23,6 +27,7 @@ class WordFilter {
     this.levelCode,
     this.state,
     this.favoritesOnly = false,
+    this.difficultOnly = false,
   });
 
   final String query;
@@ -34,16 +39,21 @@ class WordFilter {
   final CardState? state;
   final bool favoritesOnly;
 
+  /// Yalnız zorlanılan kelimeler (FR-66).
+  final bool difficultOnly;
+
   WordFilter copyWith({
     String? query,
     String? Function()? levelCode,
     CardState? Function()? state,
     bool? favoritesOnly,
+    bool? difficultOnly,
   }) => WordFilter(
     query: query ?? this.query,
     levelCode: levelCode != null ? levelCode() : this.levelCode,
     state: state != null ? state() : this.state,
     favoritesOnly: favoritesOnly ?? this.favoritesOnly,
+    difficultOnly: difficultOnly ?? this.difficultOnly,
   );
 }
 
@@ -74,7 +84,8 @@ String foldText(String text) {
   return buffer.toString();
 }
 
-/// İngilizce ve Türkçe arama, seviye, durum ve favori filtresi (FR-90).
+/// İngilizce ve Türkçe arama; seviye, durum, favori ve zorlanılan kelime
+/// filtresi (FR-90, FR-66).
 /// Tam ve baştan eşleşmeler önce, sonra alfabetik sıralanır.
 List<WordEntry> searchWords(List<WordEntry> entries, WordFilter filter) {
   final q = foldText(filter.query);
@@ -93,6 +104,7 @@ List<WordEntry> searchWords(List<WordEntry> entries, WordFilter filter) {
     if (filter.levelCode != null && e.levelCode != filter.levelCode) continue;
     if (filter.state != null && e.state != filter.state) continue;
     if (filter.favoritesOnly && !e.favorite) continue;
+    if (filter.difficultOnly && !e.difficult) continue;
     final r = rank(e);
     if (r >= 0) matches.add((r, e));
   }
