@@ -530,4 +530,27 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get statsNoActivity => 'Bu dönemde çalışma yok.';
+
+  @override
+  String get searchHint => 'İngilizce ya da Türkçe ara';
+
+  @override
+  String get clearSearch => 'Aramayı temizle';
+
+  @override
+  String get filterFavorites => 'Favoriler';
+
+  @override
+  String get filterAllLevels => 'Tüm seviyeler';
+
+  @override
+  String get filterAllStates => 'Tüm durumlar';
+
+  @override
+  String resultCount(int count) {
+    return '$count kelime';
+  }
+
+  @override
+  String get noResults => 'Sonuç bulunamadı.';
 }

@@ -999,6 +999,48 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bu dönemde çalışma yok.'**
   String get statsNoActivity;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizce ya da Türkçe ara'**
+  String get searchHint;
+
+  /// No description provided for @clearSearch.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aramayı temizle'**
+  String get clearSearch;
+
+  /// No description provided for @filterFavorites.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favoriler'**
+  String get filterFavorites;
+
+  /// No description provided for @filterAllLevels.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm seviyeler'**
+  String get filterAllLevels;
+
+  /// No description provided for @filterAllStates.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm durumlar'**
+  String get filterAllStates;
+
+  /// No description provided for @resultCount.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} kelime'**
+  String resultCount(int count);
+
+  /// No description provided for @noResults.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonuç bulunamadı.'**
+  String get noResults;
 }
 
 class _AppLocalizationsDelegate
