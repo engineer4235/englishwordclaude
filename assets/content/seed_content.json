@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "note": "MVP içeriği: A1'de 13, A2'de 10, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 6,
+  "note": "MVP içeriği: A1'de 13, A2'de 15, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -3157,6 +3157,686 @@
       ]
     },
     {
+      "level": "A2",
+      "title": "Ulaşım Araçları",
+      "theme": "vehicles",
+      "icon": "directions_bus",
+      "words": [
+        {
+          "lemma": "bus",
+          "ipa": "/bʌs/",
+          "pos": "noun",
+          "tr": "otobüs",
+          "examples": [
+            [
+              "I take the bus to school.",
+              "Okula otobüsle giderim."
+            ],
+            [
+              "The bus is late again.",
+              "Otobüs yine gecikti."
+            ]
+          ]
+        },
+        {
+          "lemma": "train",
+          "ipa": "/treɪn/",
+          "pos": "noun",
+          "tr": "tren",
+          "examples": [
+            [
+              "The train leaves at six.",
+              "Tren altıda kalkıyor."
+            ],
+            [
+              "We traveled by train to Ankara.",
+              "Ankara'ya trenle gittik."
+            ]
+          ]
+        },
+        {
+          "lemma": "bicycle",
+          "ipa": "/ˈbaɪsɪkəl/",
+          "pos": "noun",
+          "tr": "bisiklet",
+          "examples": [
+            [
+              "My sister rides a bicycle to work.",
+              "Kız kardeşim işe bisikletle gider."
+            ],
+            [
+              "I got a new bicycle for my birthday.",
+              "Doğum günümde yeni bir bisiklet aldım."
+            ]
+          ]
+        },
+        {
+          "lemma": "car",
+          "ipa": "/kɑːr/",
+          "pos": "noun",
+          "tr": "araba",
+          "examples": [
+            [
+              "Our car is in the garage.",
+              "Arabamız garajda."
+            ],
+            [
+              "Can you drive a car?",
+              "Araba kullanabilir misin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "plane",
+          "ipa": "/pleɪn/",
+          "pos": "noun",
+          "tr": "uçak",
+          "examples": [
+            [
+              "The plane landed on time.",
+              "Uçak zamanında indi."
+            ],
+            [
+              "It is my first time on a plane.",
+              "İlk kez uçağa biniyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "boat",
+          "ipa": "/boʊt/",
+          "pos": "noun",
+          "tr": "tekne, kayık",
+          "examples": [
+            [
+              "We crossed the lake by boat.",
+              "Gölü tekneyle geçtik."
+            ],
+            [
+              "My uncle has a small fishing boat.",
+              "Amcamın küçük bir balıkçı teknesi var."
+            ]
+          ]
+        },
+        {
+          "lemma": "taxi",
+          "ipa": "/ˈtæksi/",
+          "pos": "noun",
+          "tr": "taksi",
+          "examples": [
+            [
+              "Let's take a taxi to the hotel.",
+              "Otele taksiyle gidelim."
+            ],
+            [
+              "The taxi was very expensive.",
+              "Taksi çok pahalıydı."
+            ]
+          ]
+        },
+        {
+          "lemma": "station",
+          "ipa": "/ˈsteɪʃən/",
+          "pos": "noun",
+          "tr": "istasyon",
+          "examples": [
+            [
+              "Meet me at the train station.",
+              "Benimle tren istasyonunda buluş."
+            ],
+            [
+              "The station is ten minutes away.",
+              "İstasyon on dakika uzaklıkta."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Ev Eşyaları",
+      "theme": "furniture",
+      "icon": "chair",
+      "words": [
+        {
+          "lemma": "sofa",
+          "ipa": "/ˈsoʊfə/",
+          "pos": "noun",
+          "tr": "kanepe",
+          "examples": [
+            [
+              "The cat is sleeping on the sofa.",
+              "Kedi kanepede uyuyor."
+            ],
+            [
+              "We bought a new sofa for the living room.",
+              "Oturma odası için yeni bir kanepe aldık."
+            ]
+          ]
+        },
+        {
+          "lemma": "lamp",
+          "ipa": "/læmp/",
+          "pos": "noun",
+          "tr": "lamba",
+          "examples": [
+            [
+              "Turn on the lamp, please.",
+              "Lütfen lambayı aç."
+            ],
+            [
+              "There is a lamp next to my bed.",
+              "Yatağımın yanında bir lamba var."
+            ]
+          ]
+        },
+        {
+          "lemma": "shelf",
+          "ipa": "/ʃelf/",
+          "pos": "noun",
+          "tr": "raf",
+          "examples": [
+            [
+              "Put the books on the shelf.",
+              "Kitapları rafa koy."
+            ],
+            [
+              "The top shelf is empty.",
+              "En üst raf boş."
+            ]
+          ]
+        },
+        {
+          "lemma": "mirror",
+          "ipa": "/ˈmɪrər/",
+          "pos": "noun",
+          "tr": "ayna",
+          "examples": [
+            [
+              "She looked in the mirror.",
+              "Aynaya baktı."
+            ],
+            [
+              "The mirror in the bathroom is broken.",
+              "Banyodaki ayna kırık."
+            ]
+          ]
+        },
+        {
+          "lemma": "carpet",
+          "ipa": "/ˈkɑːrpɪt/",
+          "pos": "noun",
+          "tr": "halı",
+          "examples": [
+            [
+              "This carpet is from my grandmother.",
+              "Bu halı büyükannemden."
+            ],
+            [
+              "Don't walk on the carpet with your shoes.",
+              "Halının üzerinde ayakkabıyla yürüme."
+            ]
+          ]
+        },
+        {
+          "lemma": "fridge",
+          "ipa": "/frɪdʒ/",
+          "pos": "noun",
+          "tr": "buzdolabı",
+          "examples": [
+            [
+              "The milk is in the fridge.",
+              "Süt buzdolabında."
+            ],
+            [
+              "Our fridge is almost empty.",
+              "Buzdolabımız neredeyse boş."
+            ]
+          ]
+        },
+        {
+          "lemma": "oven",
+          "ipa": "/ˈʌvən/",
+          "pos": "noun",
+          "tr": "fırın",
+          "examples": [
+            [
+              "Put the cake in the oven.",
+              "Pastayı fırına koy."
+            ],
+            [
+              "The oven is very hot.",
+              "Fırın çok sıcak."
+            ]
+          ]
+        },
+        {
+          "lemma": "cupboard",
+          "ipa": "/ˈkʌbərd/",
+          "pos": "noun",
+          "tr": "dolap",
+          "examples": [
+            [
+              "The cups are in the cupboard.",
+              "Fincanlar dolapta."
+            ],
+            [
+              "This cupboard is full of old toys.",
+              "Bu dolap eski oyuncaklarla dolu."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "İletişim",
+      "theme": "communication",
+      "icon": "phone",
+      "words": [
+        {
+          "lemma": "phone",
+          "ipa": "/foʊn/",
+          "pos": "noun",
+          "tr": "telefon",
+          "examples": [
+            [
+              "My phone is ringing.",
+              "Telefonum çalıyor."
+            ],
+            [
+              "Can I use your phone?",
+              "Telefonunu kullanabilir miyim?"
+            ]
+          ]
+        },
+        {
+          "lemma": "call",
+          "ipa": "/kɔːl/",
+          "pos": "verb",
+          "tr": "(telefonla) aramak",
+          "examples": [
+            [
+              "I will call you tonight.",
+              "Bu akşam seni arayacağım."
+            ],
+            [
+              "Please call a doctor.",
+              "Lütfen bir doktor çağır."
+            ]
+          ]
+        },
+        {
+          "lemma": "message",
+          "ipa": "/ˈmesɪdʒ/",
+          "pos": "noun",
+          "tr": "mesaj",
+          "examples": [
+            [
+              "I sent you a message this morning.",
+              "Bu sabah sana bir mesaj gönderdim."
+            ],
+            [
+              "Did you get my message?",
+              "Mesajımı aldın mı?"
+            ]
+          ]
+        },
+        {
+          "lemma": "letter",
+          "ipa": "/ˈletər/",
+          "pos": "noun",
+          "tr": "mektup; harf",
+          "examples": [
+            [
+              "She wrote a letter to her friend.",
+              "Arkadaşına bir mektup yazdı."
+            ],
+            [
+              "The word starts with the letter B.",
+              "Kelime B harfiyle başlıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "email",
+          "ipa": "/ˈiːmeɪl/",
+          "pos": "noun",
+          "tr": "e-posta",
+          "examples": [
+            [
+              "Check your email every day.",
+              "E-postanı her gün kontrol et."
+            ],
+            [
+              "I got an email from my teacher.",
+              "Öğretmenimden bir e-posta aldım."
+            ]
+          ]
+        },
+        {
+          "lemma": "address",
+          "ipa": "/ˈædres/",
+          "pos": "noun",
+          "tr": "adres",
+          "examples": [
+            [
+              "What is your home address?",
+              "Ev adresin ne?"
+            ],
+            [
+              "Write the address on the envelope.",
+              "Adresi zarfın üzerine yaz."
+            ]
+          ]
+        },
+        {
+          "lemma": "send",
+          "ipa": "/send/",
+          "pos": "verb",
+          "tr": "göndermek",
+          "examples": [
+            [
+              "Can you send me the photos?",
+              "Fotoğrafları bana gönderebilir misin?"
+            ],
+            [
+              "I send a card to my grandmother every year.",
+              "Her yıl büyükanneme bir kart gönderirim."
+            ]
+          ]
+        },
+        {
+          "lemma": "reply",
+          "ipa": "/rɪˈplaɪ/",
+          "pos": "verb",
+          "tr": "cevap vermek, yanıtlamak",
+          "examples": [
+            [
+              "Please reply to my email.",
+              "Lütfen e-postama cevap ver."
+            ],
+            [
+              "He did not reply to my message.",
+              "Mesajıma cevap vermedi."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Mevsimler",
+      "theme": "seasons",
+      "icon": "wb_sunny",
+      "words": [
+        {
+          "lemma": "spring",
+          "ipa": "/sprɪŋ/",
+          "pos": "noun",
+          "tr": "ilkbahar",
+          "examples": [
+            [
+              "Flowers open in spring.",
+              "Çiçekler ilkbaharda açar."
+            ],
+            [
+              "Spring is my favorite time of year.",
+              "İlkbahar yılın en sevdiğim zamanı."
+            ]
+          ]
+        },
+        {
+          "lemma": "summer",
+          "ipa": "/ˈsʌmər/",
+          "pos": "noun",
+          "tr": "yaz",
+          "examples": [
+            [
+              "We go to the sea every summer.",
+              "Her yaz denize gideriz."
+            ],
+            [
+              "The summer was very hot this year.",
+              "Bu yıl yaz çok sıcaktı."
+            ]
+          ]
+        },
+        {
+          "lemma": "autumn",
+          "ipa": "/ˈɔːtəm/",
+          "pos": "noun",
+          "tr": "sonbahar",
+          "examples": [
+            [
+              "The leaves fall in autumn.",
+              "Yapraklar sonbaharda düşer."
+            ],
+            [
+              "School starts in autumn.",
+              "Okul sonbaharda başlar."
+            ]
+          ]
+        },
+        {
+          "lemma": "winter",
+          "ipa": "/ˈwɪntər/",
+          "pos": "noun",
+          "tr": "kış",
+          "examples": [
+            [
+              "It snows a lot in winter.",
+              "Kışın çok kar yağar."
+            ],
+            [
+              "I love hot soup in winter.",
+              "Kışın sıcak çorbaya bayılırım."
+            ]
+          ]
+        },
+        {
+          "lemma": "season",
+          "ipa": "/ˈsiːzən/",
+          "pos": "noun",
+          "tr": "mevsim",
+          "examples": [
+            [
+              "Which season do you like best?",
+              "En çok hangi mevsimi seversin?"
+            ],
+            [
+              "Summer is the busy season for hotels.",
+              "Yaz oteller için yoğun mevsimdir."
+            ]
+          ]
+        },
+        {
+          "lemma": "holiday",
+          "ipa": "/ˈhɑːlədeɪ/",
+          "pos": "noun",
+          "tr": "tatil, bayram",
+          "examples": [
+            [
+              "We are going on holiday next week.",
+              "Gelecek hafta tatile gidiyoruz."
+            ],
+            [
+              "Monday is a public holiday.",
+              "Pazartesi resmî tatil."
+            ]
+          ]
+        },
+        {
+          "lemma": "sunny",
+          "ipa": "/ˈsʌni/",
+          "pos": "adjective",
+          "tr": "güneşli",
+          "examples": [
+            [
+              "It is a sunny day today.",
+              "Bugün güneşli bir gün."
+            ],
+            [
+              "The weather will be sunny tomorrow.",
+              "Yarın hava güneşli olacak."
+            ]
+          ]
+        },
+        {
+          "lemma": "windy",
+          "ipa": "/ˈwɪndi/",
+          "pos": "adjective",
+          "tr": "rüzgârlı",
+          "examples": [
+            [
+              "It was too windy to go sailing.",
+              "Yelken açmak için hava fazla rüzgârlıydı."
+            ],
+            [
+              "This city is windy in autumn.",
+              "Bu şehir sonbaharda rüzgârlıdır."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Kişilik",
+      "theme": "personality",
+      "icon": "face",
+      "words": [
+        {
+          "lemma": "friendly",
+          "ipa": "/ˈfrendli/",
+          "pos": "adjective",
+          "tr": "arkadaş canlısı, cana yakın",
+          "examples": [
+            [
+              "Our neighbors are very friendly.",
+              "Komşularımız çok cana yakın."
+            ],
+            [
+              "She has a friendly smile.",
+              "Sıcak bir gülümsemesi var."
+            ]
+          ]
+        },
+        {
+          "lemma": "lazy",
+          "ipa": "/ˈleɪzi/",
+          "pos": "adjective",
+          "tr": "tembel",
+          "examples": [
+            [
+              "Don't be lazy, help me clean.",
+              "Tembellik etme, temizliğe yardım et."
+            ],
+            [
+              "My cat is fat and lazy.",
+              "Kedim şişman ve tembel."
+            ]
+          ]
+        },
+        {
+          "lemma": "funny",
+          "ipa": "/ˈfʌni/",
+          "pos": "adjective",
+          "tr": "komik",
+          "examples": [
+            [
+              "He told a funny story.",
+              "Komik bir hikâye anlattı."
+            ],
+            [
+              "My uncle is a very funny man.",
+              "Amcam çok komik bir adam."
+            ]
+          ]
+        },
+        {
+          "lemma": "kind",
+          "ipa": "/kaɪnd/",
+          "pos": "adjective",
+          "tr": "nazik, iyi kalpli",
+          "examples": [
+            [
+              "It was kind of you to help me.",
+              "Bana yardım etmen çok naziklikti."
+            ],
+            [
+              "She is kind to everyone.",
+              "Herkese karşı naziktir."
+            ]
+          ]
+        },
+        {
+          "lemma": "shy",
+          "ipa": "/ʃaɪ/",
+          "pos": "adjective",
+          "tr": "utangaç",
+          "examples": [
+            [
+              "The new student is a little shy.",
+              "Yeni öğrenci biraz utangaç."
+            ],
+            [
+              "Don't be shy, come in!",
+              "Utanma, içeri gel!"
+            ]
+          ]
+        },
+        {
+          "lemma": "clever",
+          "ipa": "/ˈklevər/",
+          "pos": "adjective",
+          "tr": "zeki, akıllı",
+          "examples": [
+            [
+              "She is a clever girl.",
+              "O zeki bir kız."
+            ],
+            [
+              "That was a clever idea.",
+              "Bu akıllıca bir fikirdi."
+            ]
+          ]
+        },
+        {
+          "lemma": "polite",
+          "ipa": "/pəˈlaɪt/",
+          "pos": "adjective",
+          "tr": "kibar",
+          "examples": [
+            [
+              "Always be polite to older people.",
+              "Yaşlılara karşı her zaman kibar ol."
+            ],
+            [
+              "The waiter was very polite.",
+              "Garson çok kibardı."
+            ]
+          ]
+        },
+        {
+          "lemma": "rude",
+          "ipa": "/ruːd/",
+          "pos": "adjective",
+          "tr": "kaba",
+          "examples": [
+            [
+              "It is rude to talk with your mouth full.",
+              "Ağzın doluyken konuşmak kabalıktır."
+            ],
+            [
+              "I am sorry, I didn't mean to be rude.",
+              "Özür dilerim, kaba olmak istemedim."
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "level": "B1",
       "title": "İş Hayatı",
       "theme": "work",
@@ -4631,6 +5311,16 @@
     [
       "near",
       "far",
+      "antonym"
+    ],
+    [
+      "polite",
+      "rude",
+      "antonym"
+    ],
+    [
+      "summer",
+      "winter",
       "antonym"
     ]
   ]

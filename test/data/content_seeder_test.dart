@@ -42,7 +42,7 @@ void main() {
     final units = await repo.getUnits(levels.first.id);
     expect(units, hasLength(13), reason: 'A1 içeriği (CNT-2)');
     expect(units.take(3).map((u) => u.title), ['Aile', 'Renkler', 'Sayılar']);
-    expect(await repo.getUnits(levels[1].id), hasLength(10));
+    expect(await repo.getUnits(levels[1].id), hasLength(15));
     final b1 = await repo.getUnits(levels[2].id);
     expect(b1, hasLength(10), reason: 'B1 içeriği (CNT-4)');
     expect(b1.first.title, 'İş Hayatı');
@@ -82,7 +82,7 @@ void main() {
           ),
         );
 
-    expect(await seeder.addMissingUnits(json), 30);
+    expect(await seeder.addMissingUnits(json), 35);
     expect(await seeder.addMissingUnits(json), 0);
 
     final units = await repo.getUnits(a1.id);
