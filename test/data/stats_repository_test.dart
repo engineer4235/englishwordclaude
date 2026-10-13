@@ -60,6 +60,52 @@ void main() {
     expect(stats.last30Days.first.total, 0);
   });
 
+  test('doğruluk oranı ve gelecek tekrar yükü (FR-83, FR-85)', () async {
+    Future<void> record(
+      StudyRepository study,
+      int wordId,
+      String type, {
+      required bool correct,
+    }) => study.recordAnswer(
+      wordId: wordId,
+      quality: correct ? 5 : 1,
+      correct: correct,
+      exerciseType: type,
+      responseMs: 1000,
+    );
+
+    final earlier = StudyRepository(
+      db,
+      clock: () => now.subtract(const Duration(days: 3)),
+    );
+    await record(earlier, wordIds[3], 'listen', correct: true);
+    final today = StudyRepository(db, clock: () => now);
+    await record(today, wordIds[0], 'mc_en_tr', correct: true);
+    await record(today, wordIds[1], 'mc_en_tr', correct: false);
+    await record(today, wordIds[2], 'typing', correct: true);
+    await ReviewRepository(db, clock: () => now).markKnown(wordIds[4]);
+
+    final stats = await StatsRepository(db, clock: () => now).stats();
+
+    expect(stats.accuracyByType['mc_en_tr']!.correct, 1);
+    expect(stats.accuracyByType['mc_en_tr']!.total, 2);
+    expect(stats.accuracyByType['mc_en_tr']!.percent, 50);
+    expect(stats.accuracyByType['typing']!.percent, 100);
+    expect(stats.overallAccuracy.total, 4);
+    expect(stats.overallAccuracy.percent, 75);
+
+    expect(stats.upcoming, hasLength(7));
+    expect(stats.upcoming[0], 1, reason: 'gecikmiş kart bugüne sayılır');
+    expect(stats.upcoming[1], 3);
+    expect(stats.upcoming.fold(0, (a, b) => a + b), 4);
+
+    final difficult = await ReviewRepository(
+      db,
+      clock: () => now,
+    ).difficultWordIds();
+    expect(difficult, {wordIds[1]});
+  });
+
   test('ilerleme sıfırlanır, ayarlar korunur (FR-123)', () async {
     final study = StudyRepository(db, clock: () => now);
     await answer(study, wordIds[0]);

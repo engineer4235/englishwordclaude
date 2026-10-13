@@ -1000,6 +1000,84 @@ abstract class AppLocalizations {
   /// **'Bu dönemde çalışma yok.'**
   String get statsNoActivity;
 
+  /// No description provided for @statsAccuracy.
+  ///
+  /// In tr, this message translates to:
+  /// **'Doğruluk oranı'**
+  String get statsAccuracy;
+
+  /// No description provided for @statsAccuracyOverall.
+  ///
+  /// In tr, this message translates to:
+  /// **'Son 30 günde %{percent} doğru ({count} cevap)'**
+  String statsAccuracyOverall(int percent, int count);
+
+  /// No description provided for @statsNoAnswers.
+  ///
+  /// In tr, this message translates to:
+  /// **'Son 30 günde cevap yok.'**
+  String get statsNoAnswers;
+
+  /// No description provided for @statsForecast.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gelecek tekrarlar'**
+  String get statsForecast;
+
+  /// No description provided for @statsForecastSummary.
+  ///
+  /// In tr, this message translates to:
+  /// **'Önümüzdeki 7 günde {count} tekrar planlandı'**
+  String statsForecastSummary(int count);
+
+  /// No description provided for @statsForecastToday.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün'**
+  String get statsForecastToday;
+
+  /// No description provided for @exLabelMcEnTr.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizce → Türkçe'**
+  String get exLabelMcEnTr;
+
+  /// No description provided for @exLabelMcTrEn.
+  ///
+  /// In tr, this message translates to:
+  /// **'Türkçe → İngilizce'**
+  String get exLabelMcTrEn;
+
+  /// No description provided for @exLabelListen.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dinleme'**
+  String get exLabelListen;
+
+  /// No description provided for @exLabelTyping.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yazma'**
+  String get exLabelTyping;
+
+  /// No description provided for @exLabelFillBlank.
+  ///
+  /// In tr, this message translates to:
+  /// **'Boşluk doldurma'**
+  String get exLabelFillBlank;
+
+  /// No description provided for @exLabelMatching.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eşleştirme'**
+  String get exLabelMatching;
+
+  /// No description provided for @filterDifficult.
+  ///
+  /// In tr, this message translates to:
+  /// **'Zorlandıklarım'**
+  String get filterDifficult;
+
   /// No description provided for @searchHint.
   ///
   /// In tr, this message translates to:

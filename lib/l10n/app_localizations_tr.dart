@@ -532,6 +532,49 @@ class AppLocalizationsTr extends AppLocalizations {
   String get statsNoActivity => 'Bu dönemde çalışma yok.';
 
   @override
+  String get statsAccuracy => 'Doğruluk oranı';
+
+  @override
+  String statsAccuracyOverall(int percent, int count) {
+    return 'Son 30 günde %$percent doğru ($count cevap)';
+  }
+
+  @override
+  String get statsNoAnswers => 'Son 30 günde cevap yok.';
+
+  @override
+  String get statsForecast => 'Gelecek tekrarlar';
+
+  @override
+  String statsForecastSummary(int count) {
+    return 'Önümüzdeki 7 günde $count tekrar planlandı';
+  }
+
+  @override
+  String get statsForecastToday => 'Bugün';
+
+  @override
+  String get exLabelMcEnTr => 'İngilizce → Türkçe';
+
+  @override
+  String get exLabelMcTrEn => 'Türkçe → İngilizce';
+
+  @override
+  String get exLabelListen => 'Dinleme';
+
+  @override
+  String get exLabelTyping => 'Yazma';
+
+  @override
+  String get exLabelFillBlank => 'Boşluk doldurma';
+
+  @override
+  String get exLabelMatching => 'Eşleştirme';
+
+  @override
+  String get filterDifficult => 'Zorlandıklarım';
+
+  @override
   String get searchHint => 'İngilizce ya da Türkçe ara';
 
   @override

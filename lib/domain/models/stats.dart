@@ -17,15 +17,51 @@ class DayActivity {
   int get total => newWords + reviews;
 }
 
-/// İstatistik ekranı verisi (FR-80, FR-81).
+/// Bir alıştırma türündeki doğru cevap oranı (FR-83).
+class AccuracyStat {
+  const AccuracyStat({this.correct = 0, this.total = 0});
+
+  final int correct;
+  final int total;
+
+  /// 0–1 arası oran; hiç cevap yoksa 0.
+  double get ratio => total == 0 ? 0 : correct / total;
+
+  int get percent => (ratio * 100).round();
+
+  AccuracyStat add({required bool isCorrect}) =>
+      AccuracyStat(correct: correct + (isCorrect ? 1 : 0), total: total + 1);
+}
+
+/// İstatistik ekranı verisi (FR-80, FR-81, FR-83, FR-85).
 class LearningStats {
-  const LearningStats({required this.byState, required this.last30Days});
+  const LearningStats({
+    required this.byState,
+    required this.last30Days,
+    this.accuracyByType = const {},
+    this.upcoming = const [],
+  });
 
   /// Durumlara göre kelime sayısı (FR-80).
   final Map<CardState, int> byState;
 
   /// Son 30 gün, en eski önce; son eleman bugün.
   final List<DayActivity> last30Days;
+
+  /// Son 30 günde alıştırma türüne göre doğruluk; anahtar alıştırma kimliği
+  /// (FR-83).
+  final Map<String, AccuracyStat> accuracyByType;
+
+  /// Bugünden başlayarak 7 günün tekrar yükü; bugün gecikmiş kartları da
+  /// içerir (FR-85).
+  final List<int> upcoming;
+
+  /// Tüm türlerin toplam doğruluğu.
+  AccuracyStat get overallAccuracy => accuracyByType.values.fold(
+    const AccuracyStat(),
+    (a, b) =>
+        AccuracyStat(correct: a.correct + b.correct, total: a.total + b.total),
+  );
 
   /// Tekrar ya da ustalık aşamasındaki kelimeler öğrenilmiş sayılır.
   int get learned =>

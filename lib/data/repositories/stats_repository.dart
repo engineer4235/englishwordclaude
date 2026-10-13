@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:drift/drift.dart';
 
 import '../../domain/models/stats.dart';
@@ -5,7 +7,7 @@ import '../../domain/srs/card_state.dart';
 import '../db/app_database.dart';
 import 'study_repository.dart';
 
-/// İstatistikler (FR-80, FR-81).
+/// İstatistikler (FR-80, FR-81, FR-83, FR-85).
 class StatsRepository {
   StatsRepository(this._db, {DateTime Function()? clock})
     : _clock = clock ?? DateTime.now;
@@ -32,8 +34,44 @@ class StatsRepository {
         r.day: r,
     };
 
+    final accuracy = <String, AccuracyStat>{};
+    final logs = await (_db.select(
+      _db.reviewLogs,
+    )..where((t) => t.createdAt.isBiggerOrEqualValue(days.first))).get();
+    for (final log in logs) {
+      accuracy[log.exerciseType] =
+          (accuracy[log.exerciseType] ?? const AccuracyStat()).add(
+            isCorrect: log.quality >= 3,
+          );
+    }
+
+    final today = days.last;
+    final upcoming = List.filled(7, 0);
+    final dueCards =
+        await (_db.select(_db.reviewCards)..where(
+              (t) => t.dueAt.isSmallerThanValue(
+                DateTime(today.year, today.month, today.day + 7),
+              ),
+            ))
+            .get();
+    for (final card in dueCards) {
+      final due = card.dueAt;
+      if (due == null) continue;
+      final index = math.max(
+        0,
+        DateTime.utc(
+          due.year,
+          due.month,
+          due.day,
+        ).difference(DateTime.utc(today.year, today.month, today.day)).inDays,
+      );
+      if (index < 7) upcoming[index]++;
+    }
+
     return LearningStats(
       byState: byState,
+      accuracyByType: accuracy,
+      upcoming: upcoming,
       last30Days: [
         for (final day in days)
           if (rows[StudyRepository.dayKey(day)] case final r?)

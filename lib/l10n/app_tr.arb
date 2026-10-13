@@ -384,6 +384,36 @@
   },
   "statsLevels": "Seviye ilerlemesi",
   "statsNoActivity": "Bu dönemde çalışma yok.",
+  "statsAccuracy": "Doğruluk oranı",
+  "statsAccuracyOverall": "Son 30 günde %{percent} doğru ({count} cevap)",
+  "@statsAccuracyOverall": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statsNoAnswers": "Son 30 günde cevap yok.",
+  "statsForecast": "Gelecek tekrarlar",
+  "statsForecastSummary": "Önümüzdeki 7 günde {count} tekrar planlandı",
+  "@statsForecastSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statsForecastToday": "Bugün",
+  "exLabelMcEnTr": "İngilizce → Türkçe",
+  "exLabelMcTrEn": "Türkçe → İngilizce",
+  "exLabelListen": "Dinleme",
+  "exLabelTyping": "Yazma",
+  "exLabelFillBlank": "Boşluk doldurma",
+  "exLabelMatching": "Eşleştirme",
+  "filterDifficult": "Zorlandıklarım",
   "searchHint": "İngilizce ya da Türkçe ara",
   "clearSearch": "Aramayı temizle",
   "filterFavorites": "Favoriler",

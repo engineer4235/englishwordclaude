@@ -1,6 +1,7 @@
 import 'package:drift/drift.dart';
 
 import '../../domain/srs/card_state.dart';
+import '../../domain/srs/difficulty.dart';
 import '../../domain/srs/review_state.dart';
 import '../../domain/srs/spaced_repetition_scheduler.dart';
 import '../db/app_database.dart';
@@ -36,6 +37,12 @@ class ReviewRepository {
   Future<Map<int, CardState>> allStates() async => {
     for (final r in await _db.select(_db.reviewCards).get())
       r.wordId: CardState.fromDb(r.state),
+  };
+
+  /// Zorlanılan kelimeler (FR-66).
+  Future<Set<int>> difficultWordIds() async => {
+    for (final r in await _db.select(_db.reviewCards).get())
+      if (isDifficult(_toState(r))) r.wordId,
   };
 
   /// Cevabı kaydeder, yeni durumu hesaplar ve günlüğe yazar. Her cevap anında

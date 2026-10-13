@@ -205,6 +205,9 @@ final wordEntriesProvider = FutureProvider<List<WordEntry>>((ref) async {
   final favorites = await ref.watch(favoriteIdsProvider.future);
   final words = await ref.watch(contentRepositoryProvider).getAllWords();
   final states = await ref.watch(reviewRepositoryProvider).allStates();
+  final difficult = await ref
+      .watch(reviewRepositoryProvider)
+      .difficultWordIds();
   final levelOfUnit = {
     for (final l in levels)
       for (final u in l.units) u.id: l.level.code,
@@ -216,6 +219,7 @@ final wordEntriesProvider = FutureProvider<List<WordEntry>>((ref) async {
         levelCode: levelOfUnit[w.unitId] ?? '',
         state: states[w.id] ?? CardState.newCard,
         favorite: favorites.contains(w.id),
+        difficult: difficult.contains(w.id),
       ),
   ];
 });

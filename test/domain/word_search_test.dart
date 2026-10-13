@@ -12,6 +12,7 @@ void main() {
         levelCode: w.unitId == 3 ? 'A2' : 'A1',
         state: w.lemma == 'red' ? CardState.learning : CardState.newCard,
         favorite: w.lemma == 'blue' || w.lemma == 'mother',
+        difficult: w.lemma == 'red',
       ),
   ];
 
@@ -44,6 +45,12 @@ void main() {
     expect(lemmas(const WordFilter(favoritesOnly: true)), ['blue', 'mother']);
     const f = WordFilter(levelCode: 'A1', favoritesOnly: true);
     expect(lemmas(f.copyWith(levelCode: () => null)), ['blue', 'mother']);
+  });
+
+  test('zorlanılan kelime filtresi (FR-66)', () {
+    expect(lemmas(const WordFilter(difficultOnly: true)), ['red']);
+    const f = WordFilter(difficultOnly: true);
+    expect(lemmas(f.copyWith(difficultOnly: false)), hasLength(24));
   });
 
   test('foldText büyük harf ve Türkçe harfleri sadeleştirir', () {

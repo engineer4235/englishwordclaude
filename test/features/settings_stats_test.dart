@@ -39,6 +39,8 @@ void main() {
     expect(find.text('3 kelime çalışıldı'), findsOneWidget);
     expect(find.text('3 yeni kelime, 0 tekrar, 0 dakika'), findsOneWidget);
     expect(find.byKey(const ValueKey('stats-level-A1')), findsOneWidget);
+    expect(find.text('Son 30 günde %100 doğru (3 cevap)'), findsOneWidget);
+    expect(find.text('Önümüzdeki 7 günde 3 tekrar planlandı'), findsOneWidget);
 
     await tester.tap(find.text('30 gün'));
     await tester.pumpAndSettle();

@@ -7,8 +7,8 @@ import '../../../domain/srs/card_state.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../lesson/presentation/word_card.dart';
 
-/// Kelimelerim: tüm kelimelerde arama, seviye, durum ve favori filtresi
-/// (FR-90, FR-35).
+/// Kelimelerim: tüm kelimelerde arama; seviye, durum, favori ve zorlanılan
+/// kelime filtresi (FR-90, FR-35, FR-66).
 class WordsScreen extends ConsumerStatefulWidget {
   const WordsScreen({super.key});
 
@@ -105,6 +105,16 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                 selected: _filter.favoritesOnly,
                 onSelected: (v) => setState(
                   () => _filter = _filter.copyWith(favoritesOnly: v),
+                ),
+              ),
+              const SizedBox(width: 8),
+              FilterChip(
+                key: const ValueKey('filter-difficult'),
+                avatar: const Icon(Icons.warning_amber_rounded, size: 18),
+                label: Text(l10n.filterDifficult),
+                selected: _filter.difficultOnly,
+                onSelected: (v) => setState(
+                  () => _filter = _filter.copyWith(difficultOnly: v),
                 ),
               ),
               const SizedBox(width: 8),
