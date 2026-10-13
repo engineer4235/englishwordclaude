@@ -114,6 +114,22 @@ class StudyRepository {
     );
   }
 
+  /// Oturumda geçen süreyi bugünün kaydına ekler (FR-81).
+  Future<void> addStudyTime(Duration duration) async {
+    if (duration <= Duration.zero) return;
+    final now = _clock();
+    final today = await _day(now);
+    final minutes = (duration.inSeconds + 59) ~/ 60;
+    await _db
+        .into(_db.dailyStats)
+        .insertOnConflictUpdate(
+          DailyStatsCompanion.insert(
+            day: dayKey(now),
+            minutes: Value((today?.minutes ?? 0) + minutes),
+          ),
+        );
+  }
+
   Future<HomeSummary> summary() async {
     final now = _clock();
     final user = await profile();

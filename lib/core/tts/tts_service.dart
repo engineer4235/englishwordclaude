@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
+import '../../data/providers.dart';
+
 /// Metinden sese (FR-31).
 abstract interface class TtsService {
   Future<void> speak(String text);
@@ -32,4 +34,11 @@ class FlutterTtsService implements TtsService {
   }
 }
 
-final ttsServiceProvider = Provider<TtsService>((ref) => FlutterTtsService());
+/// Aksan ve konuşma hızı ayarlardan gelir (FR-120).
+final ttsServiceProvider = Provider<TtsService>((ref) {
+  final profile = ref.watch(profileSettingsProvider).value;
+  return FlutterTtsService(
+    language: profile?.accent == 'uk' ? 'en-GB' : 'en-US',
+    rate: profile?.speechRate ?? 0.45,
+  );
+});

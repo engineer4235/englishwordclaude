@@ -759,6 +759,246 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir.'**
   String get retakePlacementHint;
+
+  /// No description provided for @sectionLearning.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenme'**
+  String get sectionLearning;
+
+  /// No description provided for @sectionNotifications.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirimler'**
+  String get sectionNotifications;
+
+  /// No description provided for @sectionSoundTheme.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ses ve görünüm'**
+  String get sectionSoundTheme;
+
+  /// No description provided for @sectionData.
+  ///
+  /// In tr, this message translates to:
+  /// **'Veri'**
+  String get sectionData;
+
+  /// No description provided for @settingDailyTarget.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük yeni kelime hedefi'**
+  String get settingDailyTarget;
+
+  /// No description provided for @settingReminder.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük hatırlatma'**
+  String get settingReminder;
+
+  /// No description provided for @settingReminderTime.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hatırlatma saati'**
+  String get settingReminderTime;
+
+  /// No description provided for @settingStreakWarning.
+  ///
+  /// In tr, this message translates to:
+  /// **'Akşam seri uyarısı'**
+  String get settingStreakWarning;
+
+  /// No description provided for @settingAccent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aksan'**
+  String get settingAccent;
+
+  /// No description provided for @accentUs.
+  ///
+  /// In tr, this message translates to:
+  /// **'Amerikan'**
+  String get accentUs;
+
+  /// No description provided for @accentUk.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngiliz'**
+  String get accentUk;
+
+  /// No description provided for @settingSpeechRate.
+  ///
+  /// In tr, this message translates to:
+  /// **'Konuşma hızı'**
+  String get settingSpeechRate;
+
+  /// No description provided for @settingTheme.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tema'**
+  String get settingTheme;
+
+  /// No description provided for @themeSystem.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sistem'**
+  String get themeSystem;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In tr, this message translates to:
+  /// **'Açık'**
+  String get themeLight;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In tr, this message translates to:
+  /// **'Koyu'**
+  String get themeDark;
+
+  /// No description provided for @settingSound.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ses efektleri'**
+  String get settingSound;
+
+  /// No description provided for @settingHaptics.
+  ///
+  /// In tr, this message translates to:
+  /// **'Titreşim'**
+  String get settingHaptics;
+
+  /// No description provided for @resetProgress.
+  ///
+  /// In tr, this message translates to:
+  /// **'İlerlemeyi sıfırla'**
+  String get resetProgress;
+
+  /// No description provided for @resetProgressHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenme geçmişi, XP ve seri silinir. Ayarlar ve favoriler korunur.'**
+  String get resetProgressHint;
+
+  /// No description provided for @resetConfirmTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'İlerleme sıfırlansın mı?'**
+  String get resetConfirmTitle;
+
+  /// No description provided for @resetConfirmBody.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu işlem geri alınamaz.'**
+  String get resetConfirmBody;
+
+  /// No description provided for @cancel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Vazgeç'**
+  String get cancel;
+
+  /// No description provided for @resetAction.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sıfırla'**
+  String get resetAction;
+
+  /// No description provided for @resetDone.
+  ///
+  /// In tr, this message translates to:
+  /// **'İlerleme sıfırlandı.'**
+  String get resetDone;
+
+  /// No description provided for @statsLearned.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenilen kelime'**
+  String get statsLearned;
+
+  /// No description provided for @statsStudied.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} kelime çalışıldı'**
+  String statsStudied(int count);
+
+  /// No description provided for @stateNew.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni'**
+  String get stateNew;
+
+  /// No description provided for @stateLearning.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğreniliyor'**
+  String get stateLearning;
+
+  /// No description provided for @stateReview.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrarda'**
+  String get stateReview;
+
+  /// No description provided for @stateMastered.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ustalaşıldı'**
+  String get stateMastered;
+
+  /// No description provided for @statsActivity.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük aktivite'**
+  String get statsActivity;
+
+  /// No description provided for @stats7Days.
+  ///
+  /// In tr, this message translates to:
+  /// **'7 gün'**
+  String get stats7Days;
+
+  /// No description provided for @stats30Days.
+  ///
+  /// In tr, this message translates to:
+  /// **'30 gün'**
+  String get stats30Days;
+
+  /// No description provided for @statsNewWords.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni'**
+  String get statsNewWords;
+
+  /// No description provided for @statsReviews.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar'**
+  String get statsReviews;
+
+  /// No description provided for @statsMinutes.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} dk'**
+  String statsMinutes(int count);
+
+  /// No description provided for @statsActivitySummary.
+  ///
+  /// In tr, this message translates to:
+  /// **'{newWords} yeni kelime, {reviews} tekrar, {minutes} dakika'**
+  String statsActivitySummary(int newWords, int reviews, int minutes);
+
+  /// No description provided for @statsLevels.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye ilerlemesi'**
+  String get statsLevels;
+
+  /// No description provided for @statsNoActivity.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu dönemde çalışma yok.'**
+  String get statsNoActivity;
 }
 
 class _AppLocalizationsDelegate

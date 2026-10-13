@@ -12,3 +12,10 @@ class ThemeModeNotifier extends Notifier<ThemeMode> {
 final themeModeProvider = NotifierProvider<ThemeModeNotifier, ThemeMode>(
   ThemeModeNotifier.new,
 );
+
+/// Veritabanındaki tema değeri (system, light, dark).
+ThemeMode themeModeFromDb(String? value) => switch (value) {
+  'light' => ThemeMode.light,
+  'dark' => ThemeMode.dark,
+  _ => ThemeMode.system,
+};

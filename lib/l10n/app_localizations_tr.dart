@@ -403,4 +403,131 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get retakePlacementHint =>
       'Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir.';
+
+  @override
+  String get sectionLearning => 'Öğrenme';
+
+  @override
+  String get sectionNotifications => 'Bildirimler';
+
+  @override
+  String get sectionSoundTheme => 'Ses ve görünüm';
+
+  @override
+  String get sectionData => 'Veri';
+
+  @override
+  String get settingDailyTarget => 'Günlük yeni kelime hedefi';
+
+  @override
+  String get settingReminder => 'Günlük hatırlatma';
+
+  @override
+  String get settingReminderTime => 'Hatırlatma saati';
+
+  @override
+  String get settingStreakWarning => 'Akşam seri uyarısı';
+
+  @override
+  String get settingAccent => 'Aksan';
+
+  @override
+  String get accentUs => 'Amerikan';
+
+  @override
+  String get accentUk => 'İngiliz';
+
+  @override
+  String get settingSpeechRate => 'Konuşma hızı';
+
+  @override
+  String get settingTheme => 'Tema';
+
+  @override
+  String get themeSystem => 'Sistem';
+
+  @override
+  String get themeLight => 'Açık';
+
+  @override
+  String get themeDark => 'Koyu';
+
+  @override
+  String get settingSound => 'Ses efektleri';
+
+  @override
+  String get settingHaptics => 'Titreşim';
+
+  @override
+  String get resetProgress => 'İlerlemeyi sıfırla';
+
+  @override
+  String get resetProgressHint =>
+      'Öğrenme geçmişi, XP ve seri silinir. Ayarlar ve favoriler korunur.';
+
+  @override
+  String get resetConfirmTitle => 'İlerleme sıfırlansın mı?';
+
+  @override
+  String get resetConfirmBody => 'Bu işlem geri alınamaz.';
+
+  @override
+  String get cancel => 'Vazgeç';
+
+  @override
+  String get resetAction => 'Sıfırla';
+
+  @override
+  String get resetDone => 'İlerleme sıfırlandı.';
+
+  @override
+  String get statsLearned => 'Öğrenilen kelime';
+
+  @override
+  String statsStudied(int count) {
+    return '$count kelime çalışıldı';
+  }
+
+  @override
+  String get stateNew => 'Yeni';
+
+  @override
+  String get stateLearning => 'Öğreniliyor';
+
+  @override
+  String get stateReview => 'Tekrarda';
+
+  @override
+  String get stateMastered => 'Ustalaşıldı';
+
+  @override
+  String get statsActivity => 'Günlük aktivite';
+
+  @override
+  String get stats7Days => '7 gün';
+
+  @override
+  String get stats30Days => '30 gün';
+
+  @override
+  String get statsNewWords => 'Yeni';
+
+  @override
+  String get statsReviews => 'Tekrar';
+
+  @override
+  String statsMinutes(int count) {
+    return '$count dk';
+  }
+
+  @override
+  String statsActivitySummary(int newWords, int reviews, int minutes) {
+    return '$newWords yeni kelime, $reviews tekrar, $minutes dakika';
+  }
+
+  @override
+  String get statsLevels => 'Seviye ilerlemesi';
+
+  @override
+  String get statsNoActivity => 'Bu dönemde çalışma yok.';
 }

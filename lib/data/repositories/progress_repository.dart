@@ -290,6 +290,54 @@ class ProgressRepository {
     });
   }
 
+  /// Tüm öğrenme ilerlemesini siler (FR-123). Ayarlar, tanıtım durumu ve
+  /// favoriler korunur; ilk seviye ve ilk ünitesi yeniden açılır.
+  Future<void> resetProgress() {
+    return _db.transaction(() async {
+      await _db.delete(_db.reviewLogs).go();
+      await _db.delete(_db.reviewCards).go();
+      await _db.delete(_db.unitProgress).go();
+      await _db.delete(_db.levelProgress).go();
+      await _db.delete(_db.dailyStats).go();
+      await _db.delete(_db.badges).go();
+
+      final first =
+          await (_db.select(_db.levels)
+                ..orderBy([(t) => OrderingTerm.asc(t.sortOrder)])
+                ..limit(1))
+              .getSingleOrNull();
+      if (first != null) {
+        await _db
+            .into(_db.levelProgress)
+            .insert(
+              LevelProgressCompanion.insert(
+                levelId: Value(first.id),
+                status: Value(ProgressStatus.open.dbValue),
+              ),
+            );
+        final firstUnit =
+            await (_db.select(_db.units)
+                  ..where((t) => t.levelId.equals(first.id))
+                  ..orderBy([(t) => OrderingTerm.asc(t.sortOrder)])
+                  ..limit(1))
+                .getSingleOrNull();
+        if (firstUnit != null) await _openUnit(firstUnit.id);
+      }
+
+      await _db.ensureProfile();
+      await _db
+          .update(_db.userProfile)
+          .write(
+            const UserProfileCompanion(
+              streak: Value(0),
+              longestStreak: Value(0),
+              totalXp: Value(0),
+              currentLevelId: Value(null),
+            ),
+          );
+    });
+  }
+
   Future<void> _openUnit(int unitId) async {
     final existing = await (_db.select(
       _db.unitProgress,
