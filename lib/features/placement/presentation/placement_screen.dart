@@ -102,10 +102,32 @@ class _PlacementScreenState extends ConsumerState<PlacementScreen> {
         automaticallyImplyLeading: !widget.fromOnboarding,
       ),
       body: SafeArea(
-        child: Padding(padding: const EdgeInsets.all(24), child: body),
+        child: body is _Result
+            ? Padding(padding: const EdgeInsets.all(24), child: body)
+            : _FillScroll(child: body),
       ),
     );
   }
+}
+
+/// Ekranı dolduran ama büyük yazı boyutunda kaydırılabilen gövde (NFR-07).
+class _FillScroll extends StatelessWidget {
+  const _FillScroll({required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, constraints) => SingleChildScrollView(
+      padding: const EdgeInsets.all(24),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: (constraints.maxHeight - 48).clamp(0, double.infinity),
+        ),
+        child: IntrinsicHeight(child: child),
+      ),
+    ),
+  );
 }
 
 class _Intro extends StatelessWidget {
