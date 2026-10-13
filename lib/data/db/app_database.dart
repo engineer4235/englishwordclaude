@@ -22,6 +22,8 @@ part 'app_database.g.dart';
     Badges,
     Favorites,
     WordNotes,
+    WordLists,
+    WordListItems,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -30,7 +32,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'english_word_learning'));
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   /// Tek satırlık kullanıcı profilini döner, yoksa oluşturur. Kimlik her
   /// zaman 1 olduğundan eş zamanlı çağrılar ikinci satır oluşturmaz.
@@ -75,6 +77,10 @@ class AppDatabase extends _$AppDatabase {
         await m.createTable(wordNotes);
         await m.addColumn(userProfile, userProfile.streakFreezes);
         await m.addColumn(dailyStats, dailyStats.frozen);
+      }
+      if (from < 6) {
+        await m.createTable(wordLists);
+        await m.createTable(wordListItems);
       }
     },
     beforeOpen: (details) async {

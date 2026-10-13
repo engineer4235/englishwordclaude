@@ -26,6 +26,13 @@ abstract final class AppRoutes {
   /// Zorlanılan kelimeler alıştırması (FR-66, FR-93).
   static const difficultPractice = '$words/alistirma/zorlandiklarim';
 
+  /// Kişisel listeler (FR-91).
+  static const wordLists = '$words/listeler';
+
+  /// Kişisel liste alıştırması (FR-93).
+  static String wordListPractice(int listId) =>
+      '$words/alistirma/liste/$listId';
+
   /// Alıştırma, sınav ve tekrar oturumları: alt menü gizlenir, kullanıcı
   /// oturuma odaklanır ve geri düğmesiyle çıkar.
   static bool isFocused(String path) =>

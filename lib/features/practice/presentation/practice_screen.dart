@@ -23,11 +23,17 @@ enum PracticeMode {
   favorites,
 
   /// Zorlanılan kelimelerle alıştırma (FR-66, FR-93).
-  difficult;
+  difficult,
+
+  /// Kişisel listeyle alıştırma (FR-93).
+  wordList;
 
   /// Belirli bir kelime kümesiyle yapılan, sınav olmayan oturumlar.
   bool get isWordSet =>
-      this == review || this == favorites || this == difficult;
+      this == review ||
+      this == favorites ||
+      this == difficult ||
+      this == wordList;
 }
 
 /// Bir tekrar oturumundaki en fazla kelime.
@@ -40,11 +46,15 @@ class PracticeScreen extends ConsumerStatefulWidget {
     required this.mode,
     this.unitId,
     this.levelId,
+    this.listId,
   });
 
   final PracticeMode mode;
   final int? unitId;
   final int? levelId;
+
+  /// [PracticeMode.wordList] için liste kimliği.
+  final int? listId;
 
   @override
   ConsumerState<PracticeScreen> createState() => _PracticeScreenState();
@@ -76,6 +86,11 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
       final levels = await ref.read(levelOverviewProvider.future);
       final generator = ref.read(exerciseGeneratorProvider);
       if (widget.mode.isWordSet) {
+        if (widget.mode == PracticeMode.wordList) {
+          _title =
+              await ref.read(wordListRepositoryProvider).name(widget.listId!) ??
+              '';
+        }
         final ids = (switch (widget.mode) {
           PracticeMode.favorites =>
             (await ref.read(favoritesRepositoryProvider).ids()).toList()
@@ -83,6 +98,9 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           PracticeMode.difficult =>
             (await ref.read(reviewRepositoryProvider).difficultWordIds())
                 .toList()
+              ..shuffle(),
+          PracticeMode.wordList =>
+            (await ref.read(wordListRepositoryProvider).wordIds(widget.listId!))
               ..shuffle(),
           _ =>
             await ref
@@ -200,6 +218,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
       case PracticeMode.review:
       case PracticeMode.favorites:
       case PracticeMode.difficult:
+      case PracticeMode.wordList:
         break;
       case PracticeMode.unitExam:
         passed = await progress.recordUnitExam(
@@ -238,6 +257,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
       PracticeMode.review => l10n.reviewTitle,
       PracticeMode.favorites => l10n.practiceFavorites,
       PracticeMode.difficult => l10n.practiceDifficult,
+      PracticeMode.wordList => _title,
     };
 
     Widget body;
@@ -346,7 +366,8 @@ class _ResultView extends StatelessWidget {
       PracticeMode.lesson => l10n.resultLesson,
       PracticeMode.review ||
       PracticeMode.favorites ||
-      PracticeMode.difficult => l10n.resultReview,
+      PracticeMode.difficult ||
+      PracticeMode.wordList => l10n.resultReview,
       PracticeMode.unitExam =>
         passed == true ? l10n.resultUnitPassed : l10n.resultUnitFailed,
       PracticeMode.levelExam =>
@@ -428,6 +449,7 @@ class _ResultView extends StatelessWidget {
           onPressed: () => context.go(switch (mode) {
             PracticeMode.review => AppRoutes.home,
             PracticeMode.favorites || PracticeMode.difficult => AppRoutes.words,
+            PracticeMode.wordList => AppRoutes.wordLists,
             _ => AppRoutes.levelMap,
           }),
           child: Text(

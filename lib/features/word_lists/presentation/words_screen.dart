@@ -53,7 +53,17 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
     final entries = ref.watch(wordEntriesProvider);
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.navWords)),
+      appBar: AppBar(
+        title: Text(l10n.navWords),
+        actions: [
+          IconButton(
+            key: const ValueKey('open-lists'),
+            tooltip: l10n.myLists,
+            icon: const Icon(Icons.playlist_play),
+            onPressed: () => context.go(AppRoutes.wordLists),
+          ),
+        ],
+      ),
       body: switch (entries) {
         AsyncData(:final value) => _body(l10n, value),
         AsyncError() => Center(child: Text(l10n.loadError)),

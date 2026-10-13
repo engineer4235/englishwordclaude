@@ -10,6 +10,7 @@ import '../domain/models/level.dart';
 import '../domain/models/progress.dart';
 import '../domain/models/stats.dart';
 import '../domain/models/word.dart';
+import '../domain/models/word_list.dart';
 import '../domain/placement/placement_exam.dart';
 import '../domain/search/word_search.dart';
 import '../domain/srs/card_state.dart';
@@ -19,6 +20,7 @@ import 'repositories/badge_repository.dart';
 import 'repositories/content_repository.dart';
 import 'repositories/favorites_repository.dart';
 import 'repositories/notes_repository.dart';
+import 'repositories/word_list_repository.dart';
 import 'repositories/profile_repository.dart';
 import 'repositories/progress_repository.dart';
 import 'repositories/review_repository.dart';
@@ -60,6 +62,25 @@ final progressRepositoryProvider = Provider<ProgressRepository>(
 final favoritesRepositoryProvider = Provider<FavoritesRepository>(
   (ref) => FavoritesRepository(ref.watch(appDatabaseProvider)),
 );
+
+final wordListRepositoryProvider = Provider<WordListRepository>(
+  (ref) => WordListRepository(ref.watch(appDatabaseProvider)),
+);
+
+/// Kişisel kelime listeleri (FR-91).
+final wordListsProvider = FutureProvider<List<WordList>>((ref) async {
+  await ref.watch(appStartupProvider.future);
+  return ref.watch(wordListRepositoryProvider).lists();
+});
+
+/// Bir kelimenin bulunduğu listeler.
+final listsOfWordProvider = FutureProvider.family<Set<int>, int>((
+  ref,
+  wordId,
+) async {
+  await ref.watch(appStartupProvider.future);
+  return ref.watch(wordListRepositoryProvider).listsOf(wordId);
+});
 
 final notesRepositoryProvider = Provider<NotesRepository>(
   (ref) => NotesRepository(ref.watch(appDatabaseProvider)),

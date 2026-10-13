@@ -5747,6 +5747,523 @@ class WordNotesCompanion extends UpdateCompanion<WordNoteRow> {
   }
 }
 
+class $WordListsTable extends WordLists
+    with TableInfo<$WordListsTable, WordListRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $WordListsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    additionalChecks: GeneratedColumn.checkTextLength(
+      minTextLength: 1,
+      maxTextLength: 40,
+    ),
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+    defaultValue: currentDateAndTime,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [id, name, createdAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'word_lists';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<WordListRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  WordListRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return WordListRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $WordListsTable createAlias(String alias) {
+    return $WordListsTable(attachedDatabase, alias);
+  }
+}
+
+class WordListRow extends DataClass implements Insertable<WordListRow> {
+  final int id;
+  final String name;
+  final DateTime createdAt;
+  const WordListRow({
+    required this.id,
+    required this.name,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['name'] = Variable<String>(name);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  WordListsCompanion toCompanion(bool nullToAbsent) {
+    return WordListsCompanion(
+      id: Value(id),
+      name: Value(name),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory WordListRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return WordListRow(
+      id: serializer.fromJson<int>(json['id']),
+      name: serializer.fromJson<String>(json['name']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'name': serializer.toJson<String>(name),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  WordListRow copyWith({int? id, String? name, DateTime? createdAt}) =>
+      WordListRow(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        createdAt: createdAt ?? this.createdAt,
+      );
+  WordListRow copyWithCompanion(WordListsCompanion data) {
+    return WordListRow(
+      id: data.id.present ? data.id.value : this.id,
+      name: data.name.present ? data.name.value : this.name,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('WordListRow(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, name, createdAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is WordListRow &&
+          other.id == this.id &&
+          other.name == this.name &&
+          other.createdAt == this.createdAt);
+}
+
+class WordListsCompanion extends UpdateCompanion<WordListRow> {
+  final Value<int> id;
+  final Value<String> name;
+  final Value<DateTime> createdAt;
+  const WordListsCompanion({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    this.createdAt = const Value.absent(),
+  });
+  WordListsCompanion.insert({
+    this.id = const Value.absent(),
+    required String name,
+    this.createdAt = const Value.absent(),
+  }) : name = Value(name);
+  static Insertable<WordListRow> custom({
+    Expression<int>? id,
+    Expression<String>? name,
+    Expression<DateTime>? createdAt,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (createdAt != null) 'created_at': createdAt,
+    });
+  }
+
+  WordListsCompanion copyWith({
+    Value<int>? id,
+    Value<String>? name,
+    Value<DateTime>? createdAt,
+  }) {
+    return WordListsCompanion(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('WordListsCompanion(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $WordListItemsTable extends WordListItems
+    with TableInfo<$WordListItemsTable, WordListItemRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $WordListItemsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _listIdMeta = const VerificationMeta('listId');
+  @override
+  late final GeneratedColumn<int> listId = GeneratedColumn<int>(
+    'list_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES word_lists (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _wordIdMeta = const VerificationMeta('wordId');
+  @override
+  late final GeneratedColumn<int> wordId = GeneratedColumn<int>(
+    'word_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES words (id)',
+    ),
+  );
+  static const VerificationMeta _addedAtMeta = const VerificationMeta(
+    'addedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> addedAt = GeneratedColumn<DateTime>(
+    'added_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+    defaultValue: currentDateAndTime,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [listId, wordId, addedAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'word_list_items';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<WordListItemRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('list_id')) {
+      context.handle(
+        _listIdMeta,
+        listId.isAcceptableOrUnknown(data['list_id']!, _listIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_listIdMeta);
+    }
+    if (data.containsKey('word_id')) {
+      context.handle(
+        _wordIdMeta,
+        wordId.isAcceptableOrUnknown(data['word_id']!, _wordIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_wordIdMeta);
+    }
+    if (data.containsKey('added_at')) {
+      context.handle(
+        _addedAtMeta,
+        addedAt.isAcceptableOrUnknown(data['added_at']!, _addedAtMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {listId, wordId};
+  @override
+  WordListItemRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return WordListItemRow(
+      listId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}list_id'],
+      )!,
+      wordId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}word_id'],
+      )!,
+      addedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}added_at'],
+      )!,
+    );
+  }
+
+  @override
+  $WordListItemsTable createAlias(String alias) {
+    return $WordListItemsTable(attachedDatabase, alias);
+  }
+}
+
+class WordListItemRow extends DataClass implements Insertable<WordListItemRow> {
+  final int listId;
+  final int wordId;
+  final DateTime addedAt;
+  const WordListItemRow({
+    required this.listId,
+    required this.wordId,
+    required this.addedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['list_id'] = Variable<int>(listId);
+    map['word_id'] = Variable<int>(wordId);
+    map['added_at'] = Variable<DateTime>(addedAt);
+    return map;
+  }
+
+  WordListItemsCompanion toCompanion(bool nullToAbsent) {
+    return WordListItemsCompanion(
+      listId: Value(listId),
+      wordId: Value(wordId),
+      addedAt: Value(addedAt),
+    );
+  }
+
+  factory WordListItemRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return WordListItemRow(
+      listId: serializer.fromJson<int>(json['listId']),
+      wordId: serializer.fromJson<int>(json['wordId']),
+      addedAt: serializer.fromJson<DateTime>(json['addedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'listId': serializer.toJson<int>(listId),
+      'wordId': serializer.toJson<int>(wordId),
+      'addedAt': serializer.toJson<DateTime>(addedAt),
+    };
+  }
+
+  WordListItemRow copyWith({int? listId, int? wordId, DateTime? addedAt}) =>
+      WordListItemRow(
+        listId: listId ?? this.listId,
+        wordId: wordId ?? this.wordId,
+        addedAt: addedAt ?? this.addedAt,
+      );
+  WordListItemRow copyWithCompanion(WordListItemsCompanion data) {
+    return WordListItemRow(
+      listId: data.listId.present ? data.listId.value : this.listId,
+      wordId: data.wordId.present ? data.wordId.value : this.wordId,
+      addedAt: data.addedAt.present ? data.addedAt.value : this.addedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('WordListItemRow(')
+          ..write('listId: $listId, ')
+          ..write('wordId: $wordId, ')
+          ..write('addedAt: $addedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(listId, wordId, addedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is WordListItemRow &&
+          other.listId == this.listId &&
+          other.wordId == this.wordId &&
+          other.addedAt == this.addedAt);
+}
+
+class WordListItemsCompanion extends UpdateCompanion<WordListItemRow> {
+  final Value<int> listId;
+  final Value<int> wordId;
+  final Value<DateTime> addedAt;
+  final Value<int> rowid;
+  const WordListItemsCompanion({
+    this.listId = const Value.absent(),
+    this.wordId = const Value.absent(),
+    this.addedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  WordListItemsCompanion.insert({
+    required int listId,
+    required int wordId,
+    this.addedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : listId = Value(listId),
+       wordId = Value(wordId);
+  static Insertable<WordListItemRow> custom({
+    Expression<int>? listId,
+    Expression<int>? wordId,
+    Expression<DateTime>? addedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (listId != null) 'list_id': listId,
+      if (wordId != null) 'word_id': wordId,
+      if (addedAt != null) 'added_at': addedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  WordListItemsCompanion copyWith({
+    Value<int>? listId,
+    Value<int>? wordId,
+    Value<DateTime>? addedAt,
+    Value<int>? rowid,
+  }) {
+    return WordListItemsCompanion(
+      listId: listId ?? this.listId,
+      wordId: wordId ?? this.wordId,
+      addedAt: addedAt ?? this.addedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (listId.present) {
+      map['list_id'] = Variable<int>(listId.value);
+    }
+    if (wordId.present) {
+      map['word_id'] = Variable<int>(wordId.value);
+    }
+    if (addedAt.present) {
+      map['added_at'] = Variable<DateTime>(addedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('WordListItemsCompanion(')
+          ..write('listId: $listId, ')
+          ..write('wordId: $wordId, ')
+          ..write('addedAt: $addedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -5764,6 +6281,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $BadgesTable badges = $BadgesTable(this);
   late final $FavoritesTable favorites = $FavoritesTable(this);
   late final $WordNotesTable wordNotes = $WordNotesTable(this);
+  late final $WordListsTable wordLists = $WordListsTable(this);
+  late final $WordListItemsTable wordListItems = $WordListItemsTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -5783,7 +6302,19 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     badges,
     favorites,
     wordNotes,
+    wordLists,
+    wordListItems,
   ];
+  @override
+  StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'word_lists',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('word_list_items', kind: UpdateKind.delete)],
+    ),
+  ]);
 }
 
 typedef $$LevelsTableCreateCompanionBuilder = LevelsCompanion Function({
@@ -6936,6 +7467,24 @@ final class $$WordsTableReferences
       manager.$state.copyWith(prefetchedData: cache),
     );
   }
+
+  static MultiTypedResultKey<$WordListItemsTable, List<WordListItemRow>>
+  _wordListItemsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.wordListItems,
+    aliasName: 'words__id__word_list_items__word_id',
+  );
+
+  $$WordListItemsTableProcessedTableManager get wordListItemsRefs {
+    final manager = $$WordListItemsTableTableManager(
+      $_db,
+      $_db.wordListItems,
+    ).filter((f) => f.wordId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_wordListItemsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
 }
 
 class $$WordsTableFilterComposer extends Composer<_$AppDatabase, $WordsTable> {
@@ -7175,6 +7724,31 @@ class $$WordsTableFilterComposer extends Composer<_$AppDatabase, $WordsTable> {
           }) => $$WordNotesTableFilterComposer(
             $db: $db,
             $table: $db.wordNotes,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> wordListItemsRefs(
+    Expression<bool> Function($$WordListItemsTableFilterComposer f) f,
+  ) {
+    final $$WordListItemsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.wordListItems,
+      getReferencedColumn: (t) => t.wordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordListItemsTableFilterComposer(
+            $db: $db,
+            $table: $db.wordListItems,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -7490,6 +8064,31 @@ class $$WordsTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> wordListItemsRefs<T extends Object>(
+    Expression<T> Function($$WordListItemsTableAnnotationComposer a) f,
+  ) {
+    final $$WordListItemsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.wordListItems,
+      getReferencedColumn: (t) => t.wordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordListItemsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.wordListItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$WordsTableTableManager
@@ -7514,6 +8113,7 @@ class $$WordsTableTableManager
             bool reviewLogsRefs,
             bool favoritesRefs,
             bool wordNotesRefs,
+            bool wordListItemsRefs,
           })
         > {
   $$WordsTableTableManager(_$AppDatabase db, $WordsTable table)
@@ -7589,6 +8189,7 @@ class $$WordsTableTableManager
                 reviewLogsRefs = false,
                 favoritesRefs = false,
                 wordNotesRefs = false,
+                wordListItemsRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
@@ -7600,6 +8201,7 @@ class $$WordsTableTableManager
                     if (reviewLogsRefs) db.reviewLogs,
                     if (favoritesRefs) db.favorites,
                     if (wordNotesRefs) db.wordNotes,
+                    if (wordListItemsRefs) db.wordListItems,
                   ],
                   addJoins:
                       <
@@ -7780,6 +8382,27 @@ class $$WordsTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (wordListItemsRefs)
+                        await $_getPrefetchedData<
+                          WordRow,
+                          $WordsTable,
+                          WordListItemRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$WordsTableReferences
+                              ._wordListItemsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$WordsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).wordListItemsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.wordId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -7809,6 +8432,7 @@ typedef $$WordsTableProcessedTableManager =
         bool reviewLogsRefs,
         bool favoritesRefs,
         bool wordNotesRefs,
+        bool wordListItemsRefs,
       })
     >;
 typedef $$ExamplesTableCreateCompanionBuilder = ExamplesCompanion Function({
@@ -11322,6 +11946,624 @@ typedef $$WordNotesTableProcessedTableManager =
       WordNoteRow,
       PrefetchHooks Function({bool wordId})
     >;
+typedef $$WordListsTableCreateCompanionBuilder = WordListsCompanion Function({
+  Value<int> id,
+  required String name,
+  Value<DateTime> createdAt,
+});
+typedef $$WordListsTableUpdateCompanionBuilder = WordListsCompanion Function({
+  Value<int> id,
+  Value<String> name,
+  Value<DateTime> createdAt,
+});
+
+final class $$WordListsTableReferences
+    extends BaseReferences<_$AppDatabase, $WordListsTable, WordListRow> {
+  $$WordListsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static MultiTypedResultKey<$WordListItemsTable, List<WordListItemRow>>
+  _wordListItemsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.wordListItems,
+    aliasName: 'word_lists__id__word_list_items__list_id',
+  );
+
+  $$WordListItemsTableProcessedTableManager get wordListItemsRefs {
+    final manager = $$WordListItemsTableTableManager(
+      $_db,
+      $_db.wordListItems,
+    ).filter((f) => f.listId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_wordListItemsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$WordListsTableFilterComposer
+    extends Composer<_$AppDatabase, $WordListsTable> {
+  $$WordListsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  Expression<bool> wordListItemsRefs(
+    Expression<bool> Function($$WordListItemsTableFilterComposer f) f,
+  ) {
+    final $$WordListItemsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.wordListItems,
+      getReferencedColumn: (t) => t.listId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordListItemsTableFilterComposer(
+            $db: $db,
+            $table: $db.wordListItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$WordListsTableOrderingComposer
+    extends Composer<_$AppDatabase, $WordListsTable> {
+  $$WordListsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$WordListsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $WordListsTable> {
+  $$WordListsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  Expression<T> wordListItemsRefs<T extends Object>(
+    Expression<T> Function($$WordListItemsTableAnnotationComposer a) f,
+  ) {
+    final $$WordListItemsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.wordListItems,
+      getReferencedColumn: (t) => t.listId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordListItemsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.wordListItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$WordListsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $WordListsTable,
+          WordListRow,
+          $$WordListsTableFilterComposer,
+          $$WordListsTableOrderingComposer,
+          $$WordListsTableAnnotationComposer,
+          $$WordListsTableCreateCompanionBuilder,
+          $$WordListsTableUpdateCompanionBuilder,
+          (WordListRow, $$WordListsTableReferences),
+          WordListRow,
+          PrefetchHooks Function({bool wordListItemsRefs})
+        > {
+  $$WordListsTableTableManager(_$AppDatabase db, $WordListsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$WordListsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$WordListsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$WordListsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<int> id = const Value.absent(),
+            Value<String> name = const Value.absent(),
+            Value<DateTime> createdAt = const Value.absent(),
+          }) => WordListsCompanion(id: id, name: name, createdAt: createdAt),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String name,
+                Value<DateTime> createdAt = const Value.absent(),
+              }) => WordListsCompanion.insert(
+                id: id,
+                name: name,
+                createdAt: createdAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$WordListsTable, WordListRow>(table),
+                  $$WordListsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({wordListItemsRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [
+                if (wordListItemsRefs) db.wordListItems,
+              ],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (wordListItemsRefs)
+                    await $_getPrefetchedData<
+                      WordListRow,
+                      $WordListsTable,
+                      WordListItemRow
+                    >(
+                      currentTable: table,
+                      referencedTable: $$WordListsTableReferences
+                          ._wordListItemsRefsTable(db),
+                      managerFromTypedResult: (p0) =>
+                          $$WordListsTableReferences(
+                            db,
+                            table,
+                            p0,
+                          ).wordListItemsRefs,
+                      referencedItemsForCurrentItem: (item, referencedItems) =>
+                          referencedItems.where((e) => e.listId == item.id),
+                      typedResults: items,
+                    ),
+                ];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$WordListsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $WordListsTable,
+      WordListRow,
+      $$WordListsTableFilterComposer,
+      $$WordListsTableOrderingComposer,
+      $$WordListsTableAnnotationComposer,
+      $$WordListsTableCreateCompanionBuilder,
+      $$WordListsTableUpdateCompanionBuilder,
+      (WordListRow, $$WordListsTableReferences),
+      WordListRow,
+      PrefetchHooks Function({bool wordListItemsRefs})
+    >;
+typedef $$WordListItemsTableCreateCompanionBuilder =
+    WordListItemsCompanion Function({
+      required int listId,
+      required int wordId,
+      Value<DateTime> addedAt,
+      Value<int> rowid,
+    });
+typedef $$WordListItemsTableUpdateCompanionBuilder =
+    WordListItemsCompanion Function({
+      Value<int> listId,
+      Value<int> wordId,
+      Value<DateTime> addedAt,
+      Value<int> rowid,
+    });
+
+final class $$WordListItemsTableReferences
+    extends
+        BaseReferences<_$AppDatabase, $WordListItemsTable, WordListItemRow> {
+  $$WordListItemsTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $WordListsTable _listIdTable(_$AppDatabase db) =>
+      db.wordLists.createAlias('word_list_items__list_id__word_lists__id');
+
+  $$WordListsTableProcessedTableManager get listId {
+    final $_column = $_itemColumn<int>('list_id')!;
+
+    final manager = $$WordListsTableTableManager(
+      $_db,
+      $_db.wordLists,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_listIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static $WordsTable _wordIdTable(_$AppDatabase db) =>
+      db.words.createAlias('word_list_items__word_id__words__id');
+
+  $$WordsTableProcessedTableManager get wordId {
+    final $_column = $_itemColumn<int>('word_id')!;
+
+    final manager = $$WordsTableTableManager(
+      $_db,
+      $_db.words,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_wordIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$WordListItemsTableFilterComposer
+    extends Composer<_$AppDatabase, $WordListItemsTable> {
+  $$WordListItemsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<DateTime> get addedAt => $composableBuilder(
+    column: $table.addedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$WordListsTableFilterComposer get listId {
+    final $$WordListsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.listId,
+      referencedTable: $db.wordLists,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordListsTableFilterComposer(
+            $db: $db,
+            $table: $db.wordLists,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$WordsTableFilterComposer get wordId {
+    final $$WordsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.wordId,
+      referencedTable: $db.words,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordsTableFilterComposer(
+            $db: $db,
+            $table: $db.words,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$WordListItemsTableOrderingComposer
+    extends Composer<_$AppDatabase, $WordListItemsTable> {
+  $$WordListItemsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<DateTime> get addedAt => $composableBuilder(
+    column: $table.addedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$WordListsTableOrderingComposer get listId {
+    final $$WordListsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.listId,
+      referencedTable: $db.wordLists,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordListsTableOrderingComposer(
+            $db: $db,
+            $table: $db.wordLists,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$WordsTableOrderingComposer get wordId {
+    final $$WordsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.wordId,
+      referencedTable: $db.words,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordsTableOrderingComposer(
+            $db: $db,
+            $table: $db.words,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$WordListItemsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $WordListItemsTable> {
+  $$WordListItemsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<DateTime> get addedAt =>
+      $composableBuilder(column: $table.addedAt, builder: (column) => column);
+
+  $$WordListsTableAnnotationComposer get listId {
+    final $$WordListsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.listId,
+      referencedTable: $db.wordLists,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordListsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.wordLists,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$WordsTableAnnotationComposer get wordId {
+    final $$WordsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.wordId,
+      referencedTable: $db.words,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$WordsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.words,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$WordListItemsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $WordListItemsTable,
+          WordListItemRow,
+          $$WordListItemsTableFilterComposer,
+          $$WordListItemsTableOrderingComposer,
+          $$WordListItemsTableAnnotationComposer,
+          $$WordListItemsTableCreateCompanionBuilder,
+          $$WordListItemsTableUpdateCompanionBuilder,
+          (WordListItemRow, $$WordListItemsTableReferences),
+          WordListItemRow,
+          PrefetchHooks Function({bool listId, bool wordId})
+        > {
+  $$WordListItemsTableTableManager(_$AppDatabase db, $WordListItemsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$WordListItemsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$WordListItemsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$WordListItemsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> listId = const Value.absent(),
+                Value<int> wordId = const Value.absent(),
+                Value<DateTime> addedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => WordListItemsCompanion(
+                listId: listId,
+                wordId: wordId,
+                addedAt: addedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required int listId,
+                required int wordId,
+                Value<DateTime> addedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => WordListItemsCompanion.insert(
+                listId: listId,
+                wordId: wordId,
+                addedAt: addedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$WordListItemsTable, WordListItemRow>(table),
+                  $$WordListItemsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({listId = false, wordId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (listId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.listId,
+                        referencedTable: $$WordListItemsTableReferences
+                            ._listIdTable(db),
+                        referencedColumn: $$WordListItemsTableReferences
+                            ._listIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+                    if (wordId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.wordId,
+                        referencedTable: $$WordListItemsTableReferences
+                            ._wordIdTable(db),
+                        referencedColumn: $$WordListItemsTableReferences
+                            ._wordIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$WordListItemsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $WordListItemsTable,
+      WordListItemRow,
+      $$WordListItemsTableFilterComposer,
+      $$WordListItemsTableOrderingComposer,
+      $$WordListItemsTableAnnotationComposer,
+      $$WordListItemsTableCreateCompanionBuilder,
+      $$WordListItemsTableUpdateCompanionBuilder,
+      (WordListItemRow, $$WordListItemsTableReferences),
+      WordListItemRow,
+      PrefetchHooks Function({bool listId, bool wordId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -11354,4 +12596,8 @@ class $AppDatabaseManager {
       $$FavoritesTableTableManager(_db, _db.favorites);
   $$WordNotesTableTableManager get wordNotes =>
       $$WordNotesTableTableManager(_db, _db.wordNotes);
+  $$WordListsTableTableManager get wordLists =>
+      $$WordListsTableTableManager(_db, _db.wordLists);
+  $$WordListItemsTableTableManager get wordListItems =>
+      $$WordListItemsTableTableManager(_db, _db.wordListItems);
 }
