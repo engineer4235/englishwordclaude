@@ -17,6 +17,9 @@ abstract interface class ContentRepository {
 
   /// Tüm kelimeler (arama için, FR-90).
   Future<List<Word>> getAllWords();
+
+  /// Kelimenin eş/zıt anlamlıları ve kelime ailesi (FR-33).
+  Future<WordRelationSet> getRelations(int wordId);
 }
 
 class DriftContentRepository implements ContentRepository {
@@ -67,6 +70,30 @@ class DriftContentRepository implements ContentRepository {
     );
     final order = {for (var i = 0; i < ids.length; i++) ids[i]: i};
     return words..sort((a, b) => order[a.id]!.compareTo(order[b.id]!));
+  }
+
+  @override
+  Future<WordRelationSet> getRelations(int wordId) async {
+    final rows = await (_db.select(
+      _db.wordRelations,
+    )..where((t) => t.wordId.equals(wordId))).get();
+    if (rows.isEmpty) return WordRelationSet.empty;
+    final words = {
+      for (final w in await getWordsByIds([
+        for (final r in rows) r.relatedWordId,
+      ]))
+        w.id: w,
+    };
+    List<Word> ofType(String type) => [
+      for (final r in rows)
+        if (r.type == type && words[r.relatedWordId] != null)
+          words[r.relatedWordId]!,
+    ]..sort((a, b) => a.lemma.compareTo(b.lemma));
+    return WordRelationSet(
+      synonyms: ofType('synonym'),
+      antonyms: ofType('antonym'),
+      family: ofType('family'),
+    );
   }
 
   @override

@@ -478,6 +478,24 @@ abstract class AppLocalizations {
   /// **'Notum'**
   String get noteTitle;
 
+  /// No description provided for @synonyms.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eş anlamlı'**
+  String get synonyms;
+
+  /// No description provided for @antonyms.
+  ///
+  /// In tr, this message translates to:
+  /// **'Zıt anlamlı'**
+  String get antonyms;
+
+  /// No description provided for @wordFamily.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kelime ailesi'**
+  String get wordFamily;
+
   /// No description provided for @noteHint.
   ///
   /// In tr, this message translates to:

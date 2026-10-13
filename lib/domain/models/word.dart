@@ -26,3 +26,22 @@ class Word {
   final String? ipa;
   final List<Example> examples;
 }
+
+/// Bir kelimeyle ilişkili kelimeler (FR-33).
+class WordRelationSet {
+  const WordRelationSet({
+    this.synonyms = const [],
+    this.antonyms = const [],
+    this.family = const [],
+  });
+
+  static const empty = WordRelationSet();
+
+  final List<Word> synonyms;
+  final List<Word> antonyms;
+
+  /// Aynı kökten ya da aynı kelime ailesinden kelimeler.
+  final List<Word> family;
+
+  bool get isEmpty => synonyms.isEmpty && antonyms.isEmpty && family.isEmpty;
+}

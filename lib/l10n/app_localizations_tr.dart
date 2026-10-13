@@ -236,6 +236,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noteTitle => 'Notum';
 
   @override
+  String get synonyms => 'Eş anlamlı';
+
+  @override
+  String get antonyms => 'Zıt anlamlı';
+
+  @override
+  String get wordFamily => 'Kelime ailesi';
+
+  @override
   String get noteHint => 'Bu kelimeyle ilgili kendi notun';
 
   @override

@@ -8,7 +8,7 @@ import '../../../domain/models/word.dart';
 import '../../../l10n/app_localizations.dart';
 
 /// Kelime kartı: kelime, okunuş, anlam, kişisel not ve örnek cümleler
-/// (FR-30, FR-31, FR-34, FR-35, FR-36).
+/// (FR-30, FR-31, FR-33, FR-34, FR-35, FR-36).
 class WordCard extends ConsumerWidget {
   const WordCard({super.key, required this.word});
 
@@ -75,6 +75,7 @@ class WordCard extends ConsumerWidget {
             Text(word.meaningTr, style: theme.textTheme.titleLarge),
             const SizedBox(height: 8),
             _NoteSection(wordId: word.id),
+            _RelationsSection(wordId: word.id),
             const Divider(height: 32),
             Text(l10n.examples, style: theme.textTheme.titleSmall),
             for (final example in word.examples)
@@ -160,6 +161,58 @@ class _NoteSection extends ConsumerWidget {
           label: Text(note == null ? l10n.addNote : l10n.editNote),
           onPressed: () => _edit(context, ref, note),
         ),
+      ],
+    );
+  }
+}
+
+/// Eş anlamlı, zıt anlamlı ve aynı ailedeki kelimeler (FR-33).
+class _RelationsSection extends ConsumerWidget {
+  const _RelationsSection({required this.wordId});
+
+  final int wordId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final relations =
+        ref.watch(wordRelationsProvider(wordId)).value ?? WordRelationSet.empty;
+    if (relations.isEmpty) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final tts = ref.watch(ttsServiceProvider);
+
+    Widget group(String key, String title, List<Word> words) => Padding(
+      key: Key('relations-$key'),
+      padding: const EdgeInsets.only(top: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: theme.textTheme.titleSmall),
+          const SizedBox(height: 4),
+          Wrap(
+            spacing: 8,
+            runSpacing: 4,
+            children: [
+              for (final w in words)
+                ActionChip(
+                  label: Text('${w.lemma} · ${w.meaningTr}'),
+                  onPressed: () => tts.speak(w.lemma),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (relations.synonyms.isNotEmpty)
+          group('synonym', l10n.synonyms, relations.synonyms),
+        if (relations.antonyms.isNotEmpty)
+          group('antonym', l10n.antonyms, relations.antonyms),
+        if (relations.family.isNotEmpty)
+          group('family', l10n.wordFamily, relations.family),
       ],
     );
   }

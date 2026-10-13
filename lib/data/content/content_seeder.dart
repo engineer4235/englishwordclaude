@@ -172,4 +172,41 @@ class ContentSeeder {
     });
     return added;
   }
+
+  /// İçerik paketindeki kelime ilişkilerini (eş anlam, zıt anlam, kelime
+  /// ailesi) ekler (FR-33). İlişkiler iki yönlü kaydedilir; zaten var olanlar
+  /// atlanır. Her açılışta çalışabilir. Bulunan ilişki sayısını döner.
+  Future<int> syncRelations(String json) async {
+    final data = jsonDecode(json) as Map<String, dynamic>;
+    final relations = (data['relations'] as List? ?? const [])
+        .cast<List<dynamic>>();
+    if (relations.isEmpty) return 0;
+    var found = 0;
+    await _db.transaction(() async {
+      final ids = <String, int>{};
+      for (final w in await _db.select(_db.words).get()) {
+        ids.putIfAbsent(w.lemma.toLowerCase(), () => w.id);
+      }
+      for (final r in relations) {
+        final a = ids[(r[0] as String).toLowerCase()];
+        final b = ids[(r[1] as String).toLowerCase()];
+        final type = r[2] as String;
+        if (a == null || b == null || a == b) continue;
+        found++;
+        for (final (from, to) in [(a, b), (b, a)]) {
+          await _db
+              .into(_db.wordRelations)
+              .insert(
+                WordRelationsCompanion.insert(
+                  wordId: from,
+                  relatedWordId: to,
+                  type: type,
+                ),
+                mode: InsertMode.insertOrIgnore,
+              );
+        }
+      }
+    });
+    return found;
+  }
 }

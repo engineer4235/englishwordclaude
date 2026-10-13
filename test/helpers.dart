@@ -68,9 +68,11 @@ Widget testApp(
     overrides: [
       if (onboarded) onboardingStatusProvider.overrideWith(_Onboarded.new),
       appDatabaseProvider.overrideWithValue(db),
-      appStartupProvider.overrideWith(
-        (ref) => ContentSeeder(db).seedIfEmpty(seedJson),
-      ),
+      appStartupProvider.overrideWith((ref) async {
+        final seeder = ContentSeeder(db);
+        await seeder.seedIfEmpty(seedJson);
+        await seeder.syncRelations(seedJson);
+      }),
       ttsServiceProvider.overrideWithValue(tts ?? FakeTts()),
       notificationServiceProvider.overrideWithValue(
         notifications ?? FakeNotifications(),
