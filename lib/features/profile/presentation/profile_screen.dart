@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/notifications/notification_service.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/theme_mode_provider.dart';
 import '../../../data/db/app_database.dart';
@@ -34,8 +35,14 @@ class _Settings extends ConsumerWidget {
 
   final UserProfileRow profile;
 
-  Future<void> _pickTime(BuildContext context, WidgetRef ref) async {
-    final parts = (profile.notifyTime ?? '20:00').split(':');
+  /// Saat seçer ve [toCompanion] ile kaydeder.
+  Future<void> _pickTime(
+    BuildContext context,
+    WidgetRef ref,
+    String? current,
+    UserProfileCompanion Function(String time) toCompanion,
+  ) async {
+    final parts = (current ?? '20:00').split(':');
     final picked = await showTimePicker(
       context: context,
       initialTime: TimeOfDay(
@@ -47,12 +54,25 @@ class _Settings extends ConsumerWidget {
     String two(int n) => n.toString().padLeft(2, '0');
     await ref
         .read(profileSettingsProvider.notifier)
-        .save(
-          UserProfileCompanion(
-            notifyTime: Value('${two(picked.hour)}:${two(picked.minute)}'),
-            reminderEnabled: const Value(true),
-          ),
-        );
+        .save(toCompanion('${two(picked.hour)}:${two(picked.minute)}'));
+  }
+
+  /// Hatırlatma açılırken bildirim izni istenir (FR-04, FR-100).
+  Future<void> _setReminder(
+    BuildContext context,
+    WidgetRef ref,
+    bool enabled,
+  ) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final denied = AppLocalizations.of(context).notifPermissionDenied;
+    await ref
+        .read(profileSettingsProvider.notifier)
+        .save(UserProfileCompanion(reminderEnabled: Value(enabled)));
+    if (!enabled) return;
+    final granted = await ref
+        .read(notificationServiceProvider)
+        .requestPermission();
+    if (!granted) messenger.showSnackBar(SnackBar(content: Text(denied)));
   }
 
   Future<void> _reset(BuildContext context, WidgetRef ref) async {
@@ -134,14 +154,21 @@ class _Settings extends ConsumerWidget {
           key: const ValueKey('setting-reminder'),
           title: Text(l10n.settingReminder),
           value: profile.reminderEnabled,
-          onChanged: (v) =>
-              settings.save(UserProfileCompanion(reminderEnabled: Value(v))),
+          onChanged: (v) => _setReminder(context, ref, v),
         ),
         ListTile(
           enabled: profile.reminderEnabled,
           title: Text(l10n.settingReminderTime),
           trailing: Text(profile.notifyTime ?? '20:00'),
-          onTap: () => _pickTime(context, ref),
+          onTap: () => _pickTime(
+            context,
+            ref,
+            profile.notifyTime,
+            (t) => UserProfileCompanion(
+              notifyTime: Value(t),
+              reminderEnabled: const Value(true),
+            ),
+          ),
         ),
         SwitchListTile(
           key: const ValueKey('setting-streak-warning'),
@@ -151,6 +178,38 @@ class _Settings extends ConsumerWidget {
             UserProfileCompanion(streakWarningEnabled: Value(v)),
           ),
         ),
+        SwitchListTile(
+          key: const ValueKey('setting-quiet'),
+          title: Text(l10n.settingQuietHours),
+          subtitle: Text(l10n.settingQuietHoursHint),
+          value: profile.quietHoursEnabled,
+          onChanged: (v) =>
+              settings.save(UserProfileCompanion(quietHoursEnabled: Value(v))),
+        ),
+        if (profile.quietHoursEnabled) ...[
+          ListTile(
+            key: const ValueKey('setting-quiet-start'),
+            title: Text(l10n.settingQuietStart),
+            trailing: Text(profile.quietStart),
+            onTap: () => _pickTime(
+              context,
+              ref,
+              profile.quietStart,
+              (t) => UserProfileCompanion(quietStart: Value(t)),
+            ),
+          ),
+          ListTile(
+            key: const ValueKey('setting-quiet-end'),
+            title: Text(l10n.settingQuietEnd),
+            trailing: Text(profile.quietEnd),
+            onTap: () => _pickTime(
+              context,
+              ref,
+              profile.quietEnd,
+              (t) => UserProfileCompanion(quietEnd: Value(t)),
+            ),
+          ),
+        ],
         header(l10n.sectionSoundTheme),
         ListTile(
           title: Text(l10n.settingAccent),

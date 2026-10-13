@@ -1,6 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../core/notifications/notification_plan.dart';
+
 import '../domain/exercise/exercise_generator.dart';
 import '../domain/models/home_summary.dart';
 import '../domain/models/level.dart';
@@ -213,4 +215,24 @@ final wordEntriesProvider = FutureProvider<List<WordEntry>>((ref) async {
         favorite: favorites.contains(w.id),
       ),
   ];
+});
+
+/// Ayarlara ve bugünkü duruma göre planlanan bildirimler (FR-100..102).
+final notificationPlanProvider = FutureProvider<NotificationPlan>((ref) async {
+  final profile = await ref.watch(profileSettingsProvider.future);
+  final summary = await ref.watch(homeSummaryProvider.future);
+  final quietStart = ClockTime.tryParse(profile.quietStart);
+  final quietEnd = ClockTime.tryParse(profile.quietEnd);
+  return planNotifications(
+    now: DateTime.now(),
+    reminderEnabled: profile.reminderEnabled,
+    reminderTime: profile.notifyTime,
+    streakWarningEnabled: profile.streakWarningEnabled,
+    streak: summary.streak,
+    goalMetToday: summary.goalMet,
+    quietHours:
+        profile.quietHoursEnabled && quietStart != null && quietEnd != null
+        ? QuietHours(quietStart, quietEnd)
+        : null,
+  );
 });

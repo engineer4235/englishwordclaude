@@ -1041,6 +1041,60 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Sonuç bulunamadı.'**
   String get noResults;
+
+  /// No description provided for @notifReminderTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kelime zamanı!'**
+  String get notifReminderTitle;
+
+  /// No description provided for @notifReminderBody.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugünkü kelimelerin ve tekrarların seni bekliyor.'**
+  String get notifReminderBody;
+
+  /// No description provided for @notifStreakTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Serin tehlikede!'**
+  String get notifStreakTitle;
+
+  /// No description provided for @notifStreakBody.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugünkü hedefini henüz tamamlamadın. Birkaç dakika ayır, serini koru.'**
+  String get notifStreakBody;
+
+  /// No description provided for @settingQuietHours.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sessiz saatler'**
+  String get settingQuietHours;
+
+  /// No description provided for @settingQuietHoursHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu saatlerde bildirim gönderilmez.'**
+  String get settingQuietHoursHint;
+
+  /// No description provided for @settingQuietStart.
+  ///
+  /// In tr, this message translates to:
+  /// **'Başlangıç'**
+  String get settingQuietStart;
+
+  /// No description provided for @settingQuietEnd.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bitiş'**
+  String get settingQuietEnd;
+
+  /// No description provided for @notifPermissionDenied.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirim izni verilmedi. Hatırlatmalar için izni cihaz ayarlarından açabilirsin.'**
+  String get notifPermissionDenied;
 }
 
 class _AppLocalizationsDelegate
