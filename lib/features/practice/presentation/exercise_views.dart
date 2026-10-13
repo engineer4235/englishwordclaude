@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -352,12 +354,18 @@ class MatchingExerciseView extends StatefulWidget {
   final OutcomeCallback onOutcome;
   final VoidCallback onContinue;
 
+  /// Eşleştirme süresi (FR-45).
+  static const timeLimit = Duration(seconds: 60);
+
   @override
   State<MatchingExerciseView> createState() => _MatchingExerciseViewState();
 }
 
 class _MatchingExerciseViewState extends State<MatchingExerciseView> {
   final _stopwatch = Stopwatch()..start();
+  Timer? _timer;
+  late int _secondsLeft = MatchingExerciseView.timeLimit.inSeconds;
+  bool _timedOut = false;
   late final List<Word> _left = [...widget.exercise.words]..shuffle();
   late final List<Word> _right = [...widget.exercise.words]..shuffle();
   final _matched = <int>{};
@@ -365,11 +373,53 @@ class _MatchingExerciseViewState extends State<MatchingExerciseView> {
   Word? _selected;
   int? _wrongFlash;
 
-  bool get _done => _matched.length == widget.exercise.words.length;
+  bool get _done =>
+      _timedOut || _matched.length == widget.exercise.words.length;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (!mounted || _done) return;
+      setState(() => _secondsLeft--);
+      if (_secondsLeft <= 0) _timeUp();
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  void _report() {
+    _timer?.cancel();
+    widget.onOutcome(
+      ExerciseOutcome([
+        for (final w in widget.exercise.words)
+          WordAnswer(
+            w,
+            correct: _matched.contains(w.id) && !_mistakes.contains(w.id),
+          ),
+      ], _stopwatch.elapsed),
+    );
+  }
+
+  /// Süre dolunca eşleştirilmeyen kelimeler yanlış sayılır (FR-45).
+  void _timeUp() {
+    setState(() {
+      _timedOut = true;
+      _selected = null;
+      for (final w in widget.exercise.words) {
+        if (!_matched.contains(w.id)) _mistakes.add(w.id);
+      }
+    });
+    _report();
+  }
 
   void _tapRight(Word word) {
     final selected = _selected;
-    if (selected == null || _matched.contains(word.id)) return;
+    if (_done || selected == null || _matched.contains(word.id)) return;
     setState(() {
       if (selected.id == word.id) {
         _matched.add(word.id);
@@ -380,14 +430,7 @@ class _MatchingExerciseViewState extends State<MatchingExerciseView> {
         _wrongFlash = word.id;
       }
     });
-    if (_done) {
-      widget.onOutcome(
-        ExerciseOutcome([
-          for (final w in widget.exercise.words)
-            WordAnswer(w, correct: !_mistakes.contains(w.id)),
-        ], _stopwatch.elapsed),
-      );
-    }
+    if (_done) _report();
   }
 
   @override
@@ -412,7 +455,7 @@ class _MatchingExerciseViewState extends State<MatchingExerciseView> {
                 ? scheme.errorContainer
                 : null,
           ),
-          onPressed: matched
+          onPressed: matched || _timedOut
               ? null
               : left
               ? () => setState(() {
@@ -433,7 +476,26 @@ class _MatchingExerciseViewState extends State<MatchingExerciseView> {
       key: const Key('exercise-matching'),
       padding: const EdgeInsets.all(16),
       children: [
-        Text(l10n.exMatch, style: Theme.of(context).textTheme.titleMedium),
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                l10n.exMatch,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            Icon(Icons.timer_outlined, color: scheme.primary),
+            const SizedBox(width: 4),
+            Text(
+              l10n.matchTimeLeft(_secondsLeft),
+              key: const Key('match-timer'),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        LinearProgressIndicator(
+          value: _secondsLeft / MatchingExerciseView.timeLimit.inSeconds,
+        ),
         const SizedBox(height: 16),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -460,12 +522,13 @@ class _MatchingExerciseViewState extends State<MatchingExerciseView> {
             correct: _mistakes.isEmpty,
             message: _mistakes.isEmpty
                 ? l10n.correctFeedback
-                : l10n.wrongFeedback(
-                    widget.exercise.words
-                        .where((w) => _mistakes.contains(w.id))
-                        .map((w) => '${w.lemma} = ${w.meaningTr}')
-                        .join(', '),
-                  ),
+                : (_timedOut ? '${l10n.matchTimeUp} ' : '') +
+                      l10n.wrongFeedback(
+                        widget.exercise.words
+                            .where((w) => _mistakes.contains(w.id))
+                            .map((w) => '${w.lemma} = ${w.meaningTr}')
+                            .join(', '),
+                      ),
             onContinue: widget.onContinue,
           ),
       ],

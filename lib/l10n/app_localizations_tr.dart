@@ -583,4 +583,44 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get notifPermissionDenied =>
       'Bildirim izni verilmedi. Hatırlatmalar için izni cihaz ayarlarından açabilirsin.';
+
+  @override
+  String get badgesTitle => 'Rozetler';
+
+  @override
+  String get badgeFirstWord => 'İlk kelime';
+
+  @override
+  String badgeWords(int count) {
+    return '$count kelime';
+  }
+
+  @override
+  String badgeStreak(int count) {
+    return '$count günlük seri';
+  }
+
+  @override
+  String badgeLevel(String level) {
+    return '$level tamamlandı';
+  }
+
+  @override
+  String newBadge(String name) {
+    return 'Yeni rozet: $name';
+  }
+
+  @override
+  String get badgeEarned => 'Kazanıldı';
+
+  @override
+  String get badgeLocked => 'Henüz kazanılmadı';
+
+  @override
+  String matchTimeLeft(int seconds) {
+    return '$seconds sn';
+  }
+
+  @override
+  String get matchTimeUp => 'Süre doldu!';
 }

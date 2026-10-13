@@ -23,6 +23,9 @@ class ExerciseGenerator {
   static const optionCount = 4;
   static const matchingSize = 5;
 
+  /// Yeni kelimenin aynı oturumda kaç kez daha sorulacağı (FR-62).
+  static const inSessionRepeats = 2;
+
   /// Ders alıştırmaları. Tür, kelimenin durumuna göre zorlaşır (FR-50):
   /// yeni kelimede tanıma, ileri aşamada yazma ve boşluk doldurma.
   List<Exercise> lesson(
@@ -53,6 +56,26 @@ class ExerciseGenerator {
       exercises.add(
         MatchingExercise(words: picked.take(matchingSize).toList()),
       );
+    }
+
+    // Yeni kelimeler oturumun ilerleyen bölümlerinde, araya başka sorular
+    // girerek iki kez daha sorulur (FR-62).
+    final fresh = [
+      for (final w in words)
+        if ((states[w.id] ?? CardState.newCard) == CardState.newCard) w,
+    ];
+    const repeatTypes = [ExerciseType.mcTrEn, ExerciseType.fillBlank];
+    for (var round = 0; round < inSessionRepeats; round++) {
+      final repeats = [
+        for (final w in fresh)
+          _build(
+            repeatTypes[round % repeatTypes.length],
+            w,
+            all,
+            isRepeat: true,
+          ),
+      ]..shuffle(_random);
+      exercises.addAll(repeats);
     }
     return exercises;
   }
@@ -96,10 +119,15 @@ class ExerciseGenerator {
     ];
   }
 
-  Exercise _build(ExerciseType type, Word target, List<Word> pool) {
+  Exercise _build(
+    ExerciseType type,
+    Word target,
+    List<Word> pool, {
+    bool isRepeat = false,
+  }) {
     switch (type) {
       case ExerciseType.typing:
-        return TypingExercise(target: target);
+        return TypingExercise(target: target, isRepeat: isRepeat);
       case ExerciseType.fillBlank:
         for (final example in target.examples) {
           final blanked = blankOut(example.en, target.lemma);
@@ -111,10 +139,11 @@ class ExerciseGenerator {
               prompt: blanked,
               hint: example.tr,
               answerOf: (w) => w.lemma,
+              isRepeat: isRepeat,
             );
           }
         }
-        return _build(ExerciseType.mcEnTr, target, pool);
+        return _build(ExerciseType.mcEnTr, target, pool, isRepeat: isRepeat);
       case ExerciseType.mcEnTr:
         return _choice(
           type,
@@ -122,6 +151,7 @@ class ExerciseGenerator {
           pool,
           prompt: target.lemma,
           answerOf: (w) => w.meaningTr,
+          isRepeat: isRepeat,
         );
       case ExerciseType.mcTrEn:
         return _choice(
@@ -130,6 +160,7 @@ class ExerciseGenerator {
           pool,
           prompt: target.meaningTr,
           answerOf: (w) => w.lemma,
+          isRepeat: isRepeat,
         );
       case ExerciseType.listenChoose:
         return _choice(
@@ -138,6 +169,7 @@ class ExerciseGenerator {
           pool,
           prompt: target.lemma,
           answerOf: (w) => w.lemma,
+          isRepeat: isRepeat,
         );
       case ExerciseType.matching:
         throw ArgumentError('Eşleştirme tek kelimeyle kurulamaz');
@@ -153,6 +185,7 @@ class ExerciseGenerator {
     required String prompt,
     required String Function(Word) answerOf,
     String? hint,
+    bool isRepeat = false,
   }) {
     final correct = answerOf(target);
     final others = pool.where((w) => w.id != target.id).toList()
@@ -178,6 +211,7 @@ class ExerciseGenerator {
       options: options,
       correctIndex: options.indexOf(correct),
       hint: hint,
+      isRepeat: isRepeat,
     );
   }
 }

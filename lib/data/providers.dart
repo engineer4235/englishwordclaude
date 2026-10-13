@@ -14,6 +14,7 @@ import '../domain/search/word_search.dart';
 import '../domain/srs/card_state.dart';
 import 'content/content_seeder.dart';
 import 'db/app_database.dart';
+import 'repositories/badge_repository.dart';
 import 'repositories/content_repository.dart';
 import 'repositories/favorites_repository.dart';
 import 'repositories/profile_repository.dart';
@@ -235,4 +236,16 @@ final notificationPlanProvider = FutureProvider<NotificationPlan>((ref) async {
         ? QuietHours(quietStart, quietEnd)
         : null,
   );
+});
+
+final badgeRepositoryProvider = Provider<BadgeRepository>(
+  (ref) => BadgeRepository(ref.watch(appDatabaseProvider)),
+);
+
+/// Kazanılan rozetler: kod → kazanılma zamanı (FR-73).
+final earnedBadgesProvider = FutureProvider<Map<String, DateTime>>((ref) async {
+  await ref.watch(appStartupProvider.future);
+  final badges = ref.watch(badgeRepositoryProvider);
+  await badges.check();
+  return badges.earned();
 });

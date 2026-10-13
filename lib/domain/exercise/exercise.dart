@@ -16,9 +16,13 @@ enum ExerciseType {
 }
 
 sealed class Exercise {
-  const Exercise(this.type);
+  const Exercise(this.type, {this.isRepeat = false});
 
   final ExerciseType type;
+
+  /// Aynı oturumdaki kısa aralıklı tekrar (FR-62). Aralıklı tekrar
+  /// takvimini değiştirmez, yalnız oturum puanına sayılır.
+  final bool isRepeat;
 }
 
 /// Dört seçenekli soru: EN→TR, TR→EN, dinle-seç, boşluk doldurma.
@@ -30,6 +34,7 @@ class ChoiceExercise extends Exercise {
     required this.options,
     required this.correctIndex,
     this.hint,
+    super.isRepeat,
   }) : super(type);
 
   final Word target;
@@ -47,7 +52,8 @@ class ChoiceExercise extends Exercise {
 
 /// Türkçe anlamı verilen kelimeyi yazma (FR-43).
 class TypingExercise extends Exercise {
-  const TypingExercise({required this.target}) : super(ExerciseType.typing);
+  const TypingExercise({required this.target, super.isRepeat})
+    : super(ExerciseType.typing);
 
   final Word target;
 }

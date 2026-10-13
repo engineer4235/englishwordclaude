@@ -406,5 +406,50 @@
   "settingQuietHoursHint": "Bu saatlerde bildirim gönderilmez.",
   "settingQuietStart": "Başlangıç",
   "settingQuietEnd": "Bitiş",
-  "notifPermissionDenied": "Bildirim izni verilmedi. Hatırlatmalar için izni cihaz ayarlarından açabilirsin."
+  "notifPermissionDenied": "Bildirim izni verilmedi. Hatırlatmalar için izni cihaz ayarlarından açabilirsin.",
+  "badgesTitle": "Rozetler",
+  "badgeFirstWord": "İlk kelime",
+  "badgeWords": "{count} kelime",
+  "@badgeWords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "badgeStreak": "{count} günlük seri",
+  "@badgeStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "badgeLevel": "{level} tamamlandı",
+  "@badgeLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "newBadge": "Yeni rozet: {name}",
+  "@newBadge": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "badgeEarned": "Kazanıldı",
+  "badgeLocked": "Henüz kazanılmadı",
+  "matchTimeLeft": "{seconds} sn",
+  "@matchTimeLeft": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "matchTimeUp": "Süre doldu!"
 }

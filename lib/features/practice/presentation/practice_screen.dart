@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
 import '../../../core/tts/tts_service.dart';
+import '../../../core/widgets/badge_labels.dart';
 import '../../../data/providers.dart';
 import '../../../domain/exercise/exercise.dart';
 import '../../../domain/exercise/exercise_generator.dart';
@@ -43,6 +44,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
   bool _answered = false;
   SessionResult? _result;
   bool? _passed;
+  List<String> _newBadges = const [];
   String _title = '';
   String _levelCode = '';
   int _xp = 0;
@@ -138,6 +140,8 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
         widget.mode == PracticeMode.unitExam ||
         widget.mode == PracticeMode.levelExam;
     _studyTime += outcome.elapsed;
+    // Oturum içi tekrarlar aralıklı tekrar takvimini değiştirmez (FR-62).
+    if (exercise.isRepeat) return;
     for (final answer in outcome.answers) {
       _xp += await study.recordAnswer(
         wordId: answer.word.id,
@@ -186,7 +190,9 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
         );
     }
     await ref.read(studyRepositoryProvider).addStudyTime(_studyTime);
+    final badges = await ref.read(badgeRepositoryProvider).check();
     if (!mounted) return;
+    ref.invalidate(earnedBadgesProvider);
     ref.invalidate(levelOverviewProvider);
     ref.invalidate(levelExamEligibilityProvider);
     ref.invalidate(homeSummaryProvider);
@@ -194,6 +200,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     setState(() {
       _result = result;
       _passed = passed;
+      _newBadges = badges;
     });
   }
 
@@ -220,6 +227,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
         passed: _passed,
         levelCode: _levelCode,
         xp: _xp,
+        newBadges: _newBadges,
       );
     } else if (exercises.isEmpty) {
       body = Center(child: Text(l10n.noWords));
@@ -285,10 +293,14 @@ class _ResultView extends StatelessWidget {
     required this.passed,
     required this.levelCode,
     required this.xp,
+    this.newBadges = const [],
   });
 
   final PracticeMode mode;
   final int xp;
+
+  /// Bu oturumda kazanılan rozetler (FR-73).
+  final List<String> newBadges;
   final SessionResult result;
   final bool? passed;
   final String levelCode;
@@ -354,6 +366,17 @@ class _ResultView extends StatelessWidget {
             ),
           ),
         ],
+        for (final code in newBadges)
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: Center(
+              child: Chip(
+                key: ValueKey('new-badge-$code'),
+                avatar: Icon(badgeIcon(code)),
+                label: Text(l10n.newBadge(badgeName(l10n, code))),
+              ),
+            ),
+          ),
         if (result.wrongWords.isNotEmpty) ...[
           const SizedBox(height: 24),
           Text(l10n.wrongWordsTitle, style: theme.textTheme.titleSmall),

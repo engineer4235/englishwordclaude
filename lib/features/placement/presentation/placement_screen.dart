@@ -49,7 +49,8 @@ class _PlacementScreenState extends ConsumerState<PlacementScreen> {
     await ref.read(progressRepositoryProvider).applyPlacement(level.id);
     ref
       ..invalidate(levelOverviewProvider)
-      ..invalidate(homeSummaryProvider);
+      ..invalidate(homeSummaryProvider)
+      ..invalidate(earnedBadgesProvider);
     if (widget.fromOnboarding) {
       await ref.read(onboardingStatusProvider.notifier).complete();
     }

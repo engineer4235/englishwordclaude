@@ -6,9 +6,11 @@ import 'package:go_router/go_router.dart';
 import '../../../core/notifications/notification_service.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/theme_mode_provider.dart';
+import '../../../core/widgets/badge_labels.dart';
 import '../../../data/db/app_database.dart';
 import '../../../data/providers.dart';
 import '../../../data/repositories/profile_repository.dart';
+import '../../../domain/models/badge.dart';
 import '../../../l10n/app_localizations.dart';
 
 /// Profil ve ayarlar (FR-14, FR-120..123).
@@ -102,6 +104,7 @@ class _Settings extends ConsumerWidget {
       ..invalidate(levelOverviewProvider)
       ..invalidate(homeSummaryProvider)
       ..invalidate(statsProvider)
+      ..invalidate(earnedBadgesProvider)
       ..invalidate(profileSettingsProvider);
     messenger.showSnackBar(SnackBar(content: Text(l10n.resetDone)));
   }
@@ -124,6 +127,8 @@ class _Settings extends ConsumerWidget {
 
     return ListView(
       children: [
+        header(l10n.badgesTitle),
+        const _Badges(),
         header(l10n.sectionLearning),
         ListTile(
           title: Text(l10n.settingDailyTarget),
@@ -293,6 +298,46 @@ class _Settings extends ConsumerWidget {
         ),
         const SizedBox(height: 24),
       ],
+    );
+  }
+}
+
+/// Kazanılan ve henüz kazanılmayan rozetler (FR-73).
+class _Badges extends ConsumerWidget {
+  const _Badges();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final scheme = Theme.of(context).colorScheme;
+    final earned = ref.watch(earnedBadgesProvider).value ?? const {};
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Wrap(
+        spacing: 8,
+        runSpacing: 8,
+        children: [
+          for (final badge in badgeDefs)
+            Tooltip(
+              message: earned.containsKey(badge.code)
+                  ? l10n.badgeEarned
+                  : l10n.badgeLocked,
+              child: Chip(
+                key: ValueKey('badge-${badge.code}'),
+                avatar: Icon(
+                  badgeIcon(badge.code),
+                  color: earned.containsKey(badge.code)
+                      ? scheme.primary
+                      : scheme.outline,
+                ),
+                label: Text(badgeName(l10n, badge.code)),
+                backgroundColor: earned.containsKey(badge.code)
+                    ? scheme.primaryContainer
+                    : null,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:english_word_learning/domain/exercise/exercise.dart';
 import 'package:english_word_learning/domain/exercise/exercise_generator.dart';
+import 'package:english_word_learning/domain/models/word.dart';
 import 'package:english_word_learning/domain/srs/card_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -61,7 +62,10 @@ void main() {
     final newOnes = generator.lesson(family, const {}, pool: all);
     expect(newOnes.whereType<MatchingExercise>().single.words, hasLength(5));
     expect(
-      newOnes.where((e) => e is! MatchingExercise).map((e) => e.type).toSet(),
+      newOnes
+          .where((e) => e is! MatchingExercise && !e.isRepeat)
+          .map((e) => e.type)
+          .toSet(),
       everyElement(isIn([ExerciseType.mcEnTr, ExerciseType.listenChoose])),
     );
 
@@ -79,5 +83,34 @@ void main() {
         .exam(all, count: levelExamQuestionCount, pool: all);
     expect(exam, hasLength(40));
     expect(exam, everyElement(isA<ChoiceExercise>()));
+  });
+
+  test('yeni kelimeler oturum içinde iki kez daha sorulur (FR-62)', () {
+    final generator = ExerciseGenerator(Random(9));
+    final family = all.take(8).toList();
+    final lesson = generator.lesson(family, const {}, pool: all);
+    final repeats = lesson.where((e) => e.isRepeat).toList();
+    expect(repeats, hasLength(family.length * 2));
+
+    Word target(Exercise e) => switch (e) {
+      ChoiceExercise() => e.target,
+      TypingExercise() => e.target,
+      MatchingExercise() => throw StateError('eşleştirme'),
+    };
+    for (final word in family) {
+      final positions = [
+        for (var i = 0; i < lesson.length; i++)
+          if (lesson[i] is! MatchingExercise && target(lesson[i]).id == word.id)
+            i,
+      ];
+      expect(positions, hasLength(3), reason: word.lemma);
+      expect(lesson[positions.first].isRepeat, isFalse);
+      expect(positions[1] - positions[0], greaterThan(1));
+    }
+
+    final reviewed = generator.lesson(family, {
+      for (final w in family) w.id: CardState.review,
+    }, pool: all);
+    expect(reviewed.where((e) => e.isRepeat), isEmpty);
   });
 }
