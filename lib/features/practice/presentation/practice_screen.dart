@@ -6,6 +6,7 @@ import '../../../core/router/app_routes.dart';
 import '../../../core/tts/tts_service.dart';
 import '../../../core/widgets/badge_labels.dart';
 import '../../../data/providers.dart';
+import '../../../data/repositories/progress_repository.dart';
 import '../../../domain/exercise/exercise.dart';
 import '../../../domain/exercise/exercise_generator.dart';
 import '../../../domain/models/word.dart';
@@ -18,6 +19,9 @@ enum PracticeMode {
   unitExam,
   levelExam,
   review,
+
+  /// Kilitli üniteye hızlı geçiş sınavı (FR-27).
+  quickPass,
 
   /// Favori kelimelerle alıştırma (FR-93).
   favorites,
@@ -155,7 +159,8 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           ]),
           pool: pool,
         ),
-        PracticeMode.unitExam => generator.exam(words, pool: pool),
+        PracticeMode.unitExam ||
+        PracticeMode.quickPass => generator.exam(words, pool: pool),
         _ => generator.exam(words, count: levelExamQuestionCount, pool: pool),
       };
       if (!mounted) return;
@@ -180,7 +185,8 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     final study = ref.read(studyRepositoryProvider);
     final exam =
         widget.mode == PracticeMode.unitExam ||
-        widget.mode == PracticeMode.levelExam;
+        widget.mode == PracticeMode.levelExam ||
+        widget.mode == PracticeMode.quickPass;
     _studyTime += outcome.elapsed;
     // Oturum içi tekrarlar aralıklı tekrar takvimini değiştirmez (FR-62).
     if (exercise.isRepeat) return;
@@ -228,6 +234,11 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           widget.unitId!,
           result.scorePercent,
         );
+      case PracticeMode.quickPass:
+        passed = await progress.recordQuickPass(
+          widget.unitId!,
+          result.scorePercent,
+        );
       case PracticeMode.levelExam:
         passed = await progress.recordLevelExam(
           widget.levelId!,
@@ -256,6 +267,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     final title = switch (widget.mode) {
       PracticeMode.lesson => _title,
       PracticeMode.unitExam => '${l10n.unitExam}: $_title',
+      PracticeMode.quickPass => '${l10n.quickPassExam}: $_title',
       PracticeMode.levelExam => '$_levelCode ${l10n.levelExam}',
       PracticeMode.review => l10n.reviewTitle,
       PracticeMode.favorites => l10n.practiceFavorites,
@@ -373,6 +385,10 @@ class _ResultView extends StatelessWidget {
       PracticeMode.wordList => l10n.resultReview,
       PracticeMode.unitExam =>
         passed == true ? l10n.resultUnitPassed : l10n.resultUnitFailed,
+      PracticeMode.quickPass =>
+        passed == true
+            ? l10n.resultQuickPassPassed
+            : l10n.resultQuickPassFailed(ProgressRepository.quickPassScore),
       PracticeMode.levelExam =>
         passed == true
             ? l10n.resultLevelPassed(levelCode)
@@ -455,9 +471,13 @@ class _ResultView extends StatelessWidget {
             PracticeMode.wordList => AppRoutes.wordLists,
             _ => AppRoutes.levelMap,
           }),
-          child: Text(
-            mode == PracticeMode.review ? l10n.backToHome : l10n.backToMap,
-          ),
+          child: Text(switch (mode) {
+            PracticeMode.review => l10n.backToHome,
+            PracticeMode.favorites ||
+            PracticeMode.difficult ||
+            PracticeMode.wordList => l10n.backToWords,
+            _ => l10n.backToMap,
+          }),
         ),
       ],
     );

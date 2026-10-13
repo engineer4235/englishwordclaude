@@ -19,6 +19,10 @@ class ProgressRepository {
   /// Bir sonraki üniteyi açmak için gereken mini sınav puanı (FR-22).
   static const unitPassScore = 70;
 
+  /// Kilitli üniteyi hızlı geçiş sınavıyla tamamlamak için gereken puan
+  /// (FR-27).
+  static const quickPassScore = 90;
+
   /// Seviye atlama sınavı geçme puanı (FR-23).
   static const levelPassScore = 80;
 
@@ -131,6 +135,14 @@ class ProgressRepository {
       }
       return passed;
     });
+  }
+
+  /// Hızlı geçiş sınavı sonucu (FR-27). [quickPassScore] ve üzeri puan
+  /// üniteyi tamamlar ve sonraki üniteyi açar; başarısız denemede ünitenin
+  /// durumu değişmez.
+  Future<bool> recordQuickPass(int unitId, int scorePercent) async {
+    if (scorePercent < quickPassScore) return false;
+    return recordUnitExam(unitId, scorePercent);
   }
 
   /// Seviye atlama sınavına girme koşulları (FR-23, FR-24).

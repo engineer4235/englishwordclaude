@@ -790,4 +790,27 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get posOther => 'kendi kelimem';
+
+  @override
+  String get quickPassExam => 'Hızlı geçiş sınavı';
+
+  @override
+  String quickPassInfo(String unit, int score) {
+    return '\"$unit\" ünitesi henüz kilitli. Kelimelerini zaten biliyorsan hızlı geçiş sınavına girebilirsin: %$score ve üzeri alırsan ünite tamamlanır ve sonraki ünite açılır.';
+  }
+
+  @override
+  String get startExam => 'Sınava başla';
+
+  @override
+  String get resultQuickPassPassed =>
+      'Harika! Ünite tamamlandı, sonraki ünite açıldı.';
+
+  @override
+  String resultQuickPassFailed(int score) {
+    return 'Ünitenin açılması için %$score gerekiyordu. Üniteye sırası gelince adım adım çalışabilirsin.';
+  }
+
+  @override
+  String get backToWords => 'Kelimelerime dön';
 }

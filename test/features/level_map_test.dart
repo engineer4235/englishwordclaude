@@ -25,10 +25,7 @@ void main() {
     expect(find.text('Aile'), findsOneWidget);
     expect(find.byIcon(Icons.play_circle_outline), findsWidgets);
 
-    final renkler = tester.widget<ListTile>(
-      find.ancestor(of: find.text('Renkler'), matching: find.byType(ListTile)),
-    );
-    expect(renkler.enabled, isFalse);
+    expect(unitLocked('Renkler'), isTrue);
   });
 
   testWidgets('üniteye girilir, kart gezilir ve kelime seslendirilir', (
@@ -74,9 +71,6 @@ void main() {
     container.invalidate(levelOverviewProvider);
     await tester.pumpAndSettle();
 
-    final renkler = tester.widget<ListTile>(
-      find.ancestor(of: find.text('Renkler'), matching: find.byType(ListTile)),
-    );
-    expect(renkler.enabled, isTrue);
+    expect(unitLocked('Renkler'), isFalse);
   });
 }

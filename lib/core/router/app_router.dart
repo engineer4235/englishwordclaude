@@ -112,6 +112,13 @@ GoRouter createRouter({
                           unitId: int.parse(state.pathParameters['unitId']!),
                         ),
                       ),
+                      GoRoute(
+                        path: 'gecis/sinav',
+                        builder: (context, state) => PracticeScreen(
+                          mode: PracticeMode.quickPass,
+                          unitId: int.parse(state.pathParameters['unitId']!),
+                        ),
+                      ),
                     ],
                   ),
                   GoRoute(
