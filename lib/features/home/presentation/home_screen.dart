@@ -3,12 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
+import '../../../core/tts/tts_service.dart';
 import '../../../data/providers.dart';
 import '../../../domain/models/home_summary.dart';
 import '../../../domain/models/progress.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../lesson/presentation/word_card.dart';
 
-/// Ana ekran: seri, XP, günlük hedef, bugünkü tekrarlar ve yeni kelimeler.
+/// Ana ekran: seri, XP, günlük hedef, bugünkü tekrarlar, yeni kelimeler ve
+/// günün kelimesi.
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -184,7 +187,59 @@ class _HomeBody extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(height: 12),
+        const _WordOfDayCard(),
       ],
+    );
+  }
+}
+
+/// Günün kelimesi kartı (FR-75).
+class _WordOfDayCard extends ConsumerWidget {
+  const _WordOfDayCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final word = ref.watch(wordOfDayProvider).value;
+    if (word == null) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    return Card(
+      key: const ValueKey('word-of-day'),
+      child: InkWell(
+        onTap: () => showModalBottomSheet<void>(
+          context: context,
+          isScrollControlled: true,
+          showDragHandle: true,
+          builder: (context) => FractionallySizedBox(
+            heightFactor: 0.85,
+            child: WordCard(word: word),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(l10n.wordOfDay, style: theme.textTheme.labelLarge),
+                    const SizedBox(height: 4),
+                    Text(word.lemma, style: theme.textTheme.headlineSmall),
+                    Text(word.meaningTr),
+                  ],
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.volume_up),
+                tooltip: l10n.listen,
+                onPressed: () => ref.read(ttsServiceProvider).speak(word.lemma),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

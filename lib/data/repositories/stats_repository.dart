@@ -24,7 +24,8 @@ class StatsRepository {
 
     final now = _clock();
     final days = [
-      for (var i = 29; i >= 0; i--) DateTime(now.year, now.month, now.day - i),
+      for (var i = LearningStats.historyDays - 1; i >= 0; i--)
+        DateTime(now.year, now.month, now.day - i),
     ];
     final first = StudyRepository.dayKey(days.first);
     final rows = {
@@ -35,9 +36,11 @@ class StatsRepository {
     };
 
     final accuracy = <String, AccuracyStat>{};
-    final logs = await (_db.select(
-      _db.reviewLogs,
-    )..where((t) => t.createdAt.isBiggerOrEqualValue(days.first))).get();
+    final logs =
+        await (_db.select(_db.reviewLogs)..where(
+              (t) => t.createdAt.isBiggerOrEqualValue(days[days.length - 30]),
+            ))
+            .get();
     for (final log in logs) {
       accuracy[log.exerciseType] =
           (accuracy[log.exerciseType] ?? const AccuracyStat()).add(
@@ -68,22 +71,24 @@ class StatsRepository {
       if (index < 7) upcoming[index]++;
     }
 
+    final history = [
+      for (final day in days)
+        if (rows[StudyRepository.dayKey(day)] case final r?)
+          DayActivity(
+            day: day,
+            newWords: r.newWords,
+            reviews: r.reviews,
+            minutes: r.minutes,
+          )
+        else
+          DayActivity(day: day),
+    ];
+
     return LearningStats(
       byState: byState,
       accuracyByType: accuracy,
       upcoming: upcoming,
-      last30Days: [
-        for (final day in days)
-          if (rows[StudyRepository.dayKey(day)] case final r?)
-            DayActivity(
-              day: day,
-              newWords: r.newWords,
-              reviews: r.reviews,
-              minutes: r.minutes,
-            )
-          else
-            DayActivity(day: day),
-      ],
+      history: history,
     );
   }
 }

@@ -384,6 +384,16 @@
   },
   "statsLevels": "Seviye ilerlemesi",
   "statsNoActivity": "Bu dönemde çalışma yok.",
+  "statsHeatmap": "Çalışma takvimi",
+  "statsHeatmapSummary": "Son 12 haftada {count} gün çalıştın",
+  "@statsHeatmapSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "wordOfDay": "Günün kelimesi",
   "statsAccuracy": "Doğruluk oranı",
   "statsAccuracyOverall": "Son 30 günde %{percent} doğru ({count} cevap)",
   "@statsAccuracyOverall": {

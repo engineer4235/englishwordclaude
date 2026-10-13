@@ -10,8 +10,8 @@ import '../../../domain/models/stats.dart';
 import '../../../domain/srs/card_state.dart';
 import '../../../l10n/app_localizations.dart';
 
-/// İstatistikler: öğrenilen kelimeler, günlük aktivite, doğruluk, tekrar yükü
-/// ve seviye ilerlemesi (FR-80..FR-83, FR-85).
+/// İstatistikler: öğrenilen kelimeler, günlük aktivite, doğruluk, tekrar yükü,
+/// ısı haritası ve seviye ilerlemesi (FR-80..FR-85).
 class StatsScreen extends ConsumerStatefulWidget {
   const StatsScreen({super.key});
 
@@ -47,6 +47,8 @@ class _StatsScreenState extends ConsumerState<StatsScreen> {
                   selected: _days,
                   onSelect: (d) => setState(() => _days = d),
                 ),
+                const SizedBox(height: 12),
+                _HeatmapCard(stats: s),
                 const SizedBox(height: 12),
                 _AccuracyCard(stats: s),
                 const SizedBox(height: 12),
@@ -242,6 +244,80 @@ class _Legend extends StatelessWidget {
         const SizedBox(width: 4),
         Text(label),
       ],
+    );
+  }
+}
+
+/// Son 12 haftanın çalışma ısı haritası (FR-84). Her sütun bir hafta, her
+/// kare bir gündür; renk koyulaştıkça o gün daha çok kelime çalışılmıştır.
+class _HeatmapCard extends StatelessWidget {
+  const _HeatmapCard({required this.stats});
+
+  final LearningStats stats;
+
+  static double _intensity(int total) => switch (total) {
+    0 => 0,
+    < 5 => 0.3,
+    < 10 => 0.55,
+    < 20 => 0.8,
+    _ => 1,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final days = stats.history;
+    final weeks = (days.length / 7).ceil();
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(l10n.statsHeatmap, style: theme.textTheme.titleMedium),
+            const SizedBox(height: 4),
+            Text(
+              l10n.statsHeatmapSummary(stats.activeDays),
+              key: const ValueKey('stats-heatmap'),
+            ),
+            const SizedBox(height: 12),
+            ExcludeSemantics(
+              child: Center(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    for (var w = 0; w < weeks; w++)
+                      Column(
+                        children: [
+                          for (
+                            var d = w * 7;
+                            d < w * 7 + 7 && d < days.length;
+                            d++
+                          )
+                            Container(
+                              width: 16,
+                              height: 16,
+                              margin: const EdgeInsets.all(1.5),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(3),
+                                color: days[d].total == 0
+                                    ? scheme.surfaceContainerHighest
+                                    : scheme.primary.withValues(
+                                        alpha: _intensity(days[d].total),
+                                      ),
+                              ),
+                            ),
+                        ],
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

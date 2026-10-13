@@ -58,4 +58,26 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Soru 1/2'), findsOneWidget);
   });
+
+  testWidgets('ana ekranda günün kelimesi gösterilir (FR-75)', (tester) async {
+    final db = memoryDatabase();
+    addTearDown(db.close);
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+
+    await tester.pumpWidget(testApp(db));
+    await tester.pumpAndSettle();
+
+    final card = find.byKey(const ValueKey('word-of-day'));
+    expect(card, findsOneWidget);
+    expect(
+      find.descendant(of: card, matching: find.text('Günün kelimesi')),
+      findsOneWidget,
+    );
+
+    await tester.tap(card);
+    await tester.pumpAndSettle();
+    expect(find.byType(BottomSheet), findsOneWidget);
+  });
 }

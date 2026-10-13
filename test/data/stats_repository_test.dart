@@ -58,6 +58,9 @@ void main() {
     expect(stats.last30Days.last.minutes, 2);
     expect(stats.last30Days[28].newWords, 1);
     expect(stats.last30Days.first.total, 0);
+    expect(stats.history, hasLength(84), reason: '12 haftalık ısı haritası');
+    expect(stats.history.last.day, DateTime(2026, 10, 13));
+    expect(stats.activeDays, 2);
   });
 
   test('doğruluk oranı ve gelecek tekrar yükü (FR-83, FR-85)', () async {

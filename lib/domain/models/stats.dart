@@ -37,7 +37,7 @@ class AccuracyStat {
 class LearningStats {
   const LearningStats({
     required this.byState,
-    required this.last30Days,
+    required this.history,
     this.accuracyByType = const {},
     this.upcoming = const [],
   });
@@ -45,8 +45,18 @@ class LearningStats {
   /// Durumlara göre kelime sayısı (FR-80).
   final Map<CardState, int> byState;
 
+  /// Isı haritası için tutulan gün sayısı: 12 hafta (FR-84).
+  static const historyDays = 84;
+
+  /// Son [historyDays] gün, en eski önce; son eleman bugün.
+  final List<DayActivity> history;
+
   /// Son 30 gün, en eski önce; son eleman bugün.
-  final List<DayActivity> last30Days;
+  List<DayActivity> get last30Days =>
+      history.length <= 30 ? history : history.sublist(history.length - 30);
+
+  /// Çalışma yapılan gün sayısı (ısı haritası özeti).
+  int get activeDays => history.where((d) => d.total > 0).length;
 
   /// Son 30 günde alıştırma türüne göre doğruluk; anahtar alıştırma kimliği
   /// (FR-83).

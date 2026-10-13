@@ -1000,6 +1000,24 @@ abstract class AppLocalizations {
   /// **'Bu dönemde çalışma yok.'**
   String get statsNoActivity;
 
+  /// No description provided for @statsHeatmap.
+  ///
+  /// In tr, this message translates to:
+  /// **'Çalışma takvimi'**
+  String get statsHeatmap;
+
+  /// No description provided for @statsHeatmapSummary.
+  ///
+  /// In tr, this message translates to:
+  /// **'Son 12 haftada {count} gün çalıştın'**
+  String statsHeatmapSummary(int count);
+
+  /// No description provided for @wordOfDay.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günün kelimesi'**
+  String get wordOfDay;
+
   /// No description provided for @statsAccuracy.
   ///
   /// In tr, this message translates to:
