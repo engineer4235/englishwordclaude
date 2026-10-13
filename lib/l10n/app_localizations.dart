@@ -334,6 +334,18 @@ abstract class AppLocalizations {
   /// **'Kelimeleri anlamlarıyla eşleştir'**
   String get exMatch;
 
+  /// No description provided for @exScramble.
+  ///
+  /// In tr, this message translates to:
+  /// **'Harfleri doğru sıraya diz'**
+  String get exScramble;
+
+  /// No description provided for @clearLetters.
+  ///
+  /// In tr, this message translates to:
+  /// **'Temizle'**
+  String get clearLetters;
+
   /// No description provided for @check.
   ///
   /// In tr, this message translates to:
@@ -1089,6 +1101,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Eşleştirme'**
   String get exLabelMatching;
+
+  /// No description provided for @exLabelScramble.
+  ///
+  /// In tr, this message translates to:
+  /// **'Harf karıştırma'**
+  String get exLabelScramble;
 
   /// No description provided for @filterDifficult.
   ///

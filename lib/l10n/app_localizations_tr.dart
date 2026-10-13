@@ -141,6 +141,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get exMatch => 'Kelimeleri anlamlarıyla eşleştir';
 
   @override
+  String get exScramble => 'Harfleri doğru sıraya diz';
+
+  @override
+  String get clearLetters => 'Temizle';
+
+  @override
   String get check => 'Kontrol et';
 
   @override
@@ -581,6 +587,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get exLabelMatching => 'Eşleştirme';
+
+  @override
+  String get exLabelScramble => 'Harf karıştırma';
 
   @override
   String get filterDifficult => 'Zorlandıklarım';

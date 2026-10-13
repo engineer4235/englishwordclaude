@@ -341,6 +341,139 @@ class _TypingExerciseViewState extends State<TypingExerciseView> {
   }
 }
 
+/// Karışık harflerden kelimeyi kurma (FR-47). Harflere sırayla dokunulur;
+/// tüm harfler yerleşince cevap kontrol edilir.
+class ScrambleExerciseView extends StatefulWidget {
+  const ScrambleExerciseView({
+    super.key,
+    required this.exercise,
+    required this.tts,
+    required this.onOutcome,
+    required this.onContinue,
+  });
+
+  final ScrambleExercise exercise;
+  final TtsService tts;
+  final OutcomeCallback onOutcome;
+  final VoidCallback onContinue;
+
+  @override
+  State<ScrambleExerciseView> createState() => _ScrambleExerciseViewState();
+}
+
+class _ScrambleExerciseViewState extends State<ScrambleExerciseView> {
+  final _stopwatch = Stopwatch()..start();
+
+  /// Seçilen harflerin [ScrambleExercise.letters] içindeki sırası.
+  final _picked = <int>[];
+  bool? _correct;
+
+  List<String> get _letters => widget.exercise.letters;
+
+  String get _answer => [for (final i in _picked) _letters[i]].join();
+
+  void _pick(int index) {
+    if (_correct != null || _picked.contains(index)) return;
+    setState(() => _picked.add(index));
+    if (_picked.length == _letters.length) _check();
+  }
+
+  void _unpick(int index) {
+    if (_correct != null) return;
+    setState(() => _picked.remove(index));
+  }
+
+  void _check() {
+    final target = widget.exercise.target;
+    final correct = _answer == target.lemma.toLowerCase();
+    setState(() => _correct = correct);
+    widget.onOutcome(
+      ExerciseOutcome([
+        WordAnswer(target, correct: correct),
+      ], _stopwatch.elapsed),
+    );
+    widget.tts.speak(target.lemma);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final target = widget.exercise.target;
+    final correct = _correct;
+
+    return ListView(
+      key: const Key('exercise-scramble'),
+      padding: const EdgeInsets.all(16),
+      children: [
+        Text(l10n.exScramble, style: theme.textTheme.titleMedium),
+        const SizedBox(height: 16),
+        Text(
+          target.meaningTr,
+          key: const Key('prompt'),
+          textAlign: TextAlign.center,
+          style: theme.textTheme.headlineSmall,
+        ),
+        const SizedBox(height: 24),
+        Semantics(
+          label: _answer,
+          child: Container(
+            key: const Key('scramble-answer'),
+            constraints: const BoxConstraints(minHeight: 56),
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              border: Border.all(color: theme.colorScheme.outline),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 6,
+              runSpacing: 6,
+              children: [
+                for (final i in _picked)
+                  FilledButton.tonal(
+                    key: Key('picked-$i'),
+                    onPressed: correct == null ? () => _unpick(i) : null,
+                    child: Text(_letters[i]),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 6,
+          runSpacing: 6,
+          children: [
+            for (var i = 0; i < _letters.length; i++)
+              if (!_picked.contains(i))
+                OutlinedButton(
+                  key: Key('letter-$i'),
+                  onPressed: correct == null ? () => _pick(i) : null,
+                  child: Text(_letters[i]),
+                ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        if (correct == null)
+          TextButton(
+            onPressed: _picked.isEmpty ? null : () => setState(_picked.clear),
+            child: Text(l10n.clearLetters),
+          )
+        else
+          FeedbackBar(
+            correct: correct,
+            message: correct
+                ? l10n.correctFeedback
+                : l10n.wrongFeedback(target.lemma),
+            onContinue: widget.onContinue,
+          ),
+      ],
+    );
+  }
+}
+
 /// Kelime–anlam eşleştirme (FR-45).
 class MatchingExerciseView extends StatefulWidget {
   const MatchingExerciseView({

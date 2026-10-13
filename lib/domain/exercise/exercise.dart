@@ -7,7 +7,8 @@ enum ExerciseType {
   listenChoose('listen'),
   typing('typing'),
   fillBlank('fill_blank'),
-  matching('matching');
+  matching('matching'),
+  scramble('scramble');
 
   const ExerciseType(this.id);
 
@@ -56,6 +57,20 @@ class TypingExercise extends Exercise {
     : super(ExerciseType.typing);
 
   final Word target;
+}
+
+/// Karışık harflerden kelimeyi kurma (FR-47).
+class ScrambleExercise extends Exercise {
+  const ScrambleExercise({
+    required this.target,
+    required this.letters,
+    super.isRepeat,
+  }) : super(ExerciseType.scramble);
+
+  final Word target;
+
+  /// Karıştırılmış harfler (küçük harf).
+  final List<String> letters;
 }
 
 /// Beş kelimeyi anlamlarıyla eşleştirme (FR-45).
