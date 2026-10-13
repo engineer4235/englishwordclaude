@@ -316,5 +316,72 @@
   "placementLower": "Daha düşük bir seviye seç",
   "placementNoContent": "Seviye tespiti için henüz yeterli kelime yok.",
   "retakePlacement": "Seviye tespit sınavını yeniden yap",
-  "retakePlacementHint": "Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir."
+  "retakePlacementHint": "Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir.",
+  "sectionLearning": "Öğrenme",
+  "sectionNotifications": "Bildirimler",
+  "sectionSoundTheme": "Ses ve görünüm",
+  "sectionData": "Veri",
+  "settingDailyTarget": "Günlük yeni kelime hedefi",
+  "settingReminder": "Günlük hatırlatma",
+  "settingReminderTime": "Hatırlatma saati",
+  "settingStreakWarning": "Akşam seri uyarısı",
+  "settingAccent": "Aksan",
+  "accentUs": "Amerikan",
+  "accentUk": "İngiliz",
+  "settingSpeechRate": "Konuşma hızı",
+  "settingTheme": "Tema",
+  "themeSystem": "Sistem",
+  "themeLight": "Açık",
+  "themeDark": "Koyu",
+  "settingSound": "Ses efektleri",
+  "settingHaptics": "Titreşim",
+  "resetProgress": "İlerlemeyi sıfırla",
+  "resetProgressHint": "Öğrenme geçmişi, XP ve seri silinir. Ayarlar ve favoriler korunur.",
+  "resetConfirmTitle": "İlerleme sıfırlansın mı?",
+  "resetConfirmBody": "Bu işlem geri alınamaz.",
+  "cancel": "Vazgeç",
+  "resetAction": "Sıfırla",
+  "resetDone": "İlerleme sıfırlandı.",
+  "statsLearned": "Öğrenilen kelime",
+  "statsStudied": "{count} kelime çalışıldı",
+  "@statsStudied": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stateNew": "Yeni",
+  "stateLearning": "Öğreniliyor",
+  "stateReview": "Tekrarda",
+  "stateMastered": "Ustalaşıldı",
+  "statsActivity": "Günlük aktivite",
+  "stats7Days": "7 gün",
+  "stats30Days": "30 gün",
+  "statsNewWords": "Yeni",
+  "statsReviews": "Tekrar",
+  "statsMinutes": "{count} dk",
+  "@statsMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statsActivitySummary": "{newWords} yeni kelime, {reviews} tekrar, {minutes} dakika",
+  "@statsActivitySummary": {
+    "placeholders": {
+      "newWords": {
+        "type": "int"
+      },
+      "reviews": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "statsLevels": "Seviye ilerlemesi",
+  "statsNoActivity": "Bu dönemde çalışma yok."
 }

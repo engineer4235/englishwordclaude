@@ -46,6 +46,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
   String _title = '';
   String _levelCode = '';
   int _xp = 0;
+  Duration _studyTime = Duration.zero;
 
   @override
   void initState() {
@@ -136,6 +137,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     final exam =
         widget.mode == PracticeMode.unitExam ||
         widget.mode == PracticeMode.levelExam;
+    _studyTime += outcome.elapsed;
     for (final answer in outcome.answers) {
       _xp += await study.recordAnswer(
         wordId: answer.word.id,
@@ -183,10 +185,12 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           result.scorePercent,
         );
     }
+    await ref.read(studyRepositoryProvider).addStudyTime(_studyTime);
     if (!mounted) return;
     ref.invalidate(levelOverviewProvider);
     ref.invalidate(levelExamEligibilityProvider);
     ref.invalidate(homeSummaryProvider);
+    ref.invalidate(statsProvider);
     setState(() {
       _result = result;
       _passed = passed;

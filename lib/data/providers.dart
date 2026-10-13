@@ -5,6 +5,7 @@ import '../domain/exercise/exercise_generator.dart';
 import '../domain/models/home_summary.dart';
 import '../domain/models/level.dart';
 import '../domain/models/progress.dart';
+import '../domain/models/stats.dart';
 import '../domain/models/word.dart';
 import '../domain/placement/placement_exam.dart';
 import 'content/content_seeder.dart';
@@ -14,6 +15,7 @@ import 'repositories/favorites_repository.dart';
 import 'repositories/profile_repository.dart';
 import 'repositories/progress_repository.dart';
 import 'repositories/review_repository.dart';
+import 'repositories/stats_repository.dart';
 import 'repositories/study_repository.dart';
 
 /// Uygulamayla gelen içerik paketi.
@@ -159,4 +161,32 @@ final placementLevelsProvider = FutureProvider<List<PlacementLevel>>((
         await ref.watch(levelWordsProvider(level.id).future),
       ),
   ];
+});
+
+/// Kullanıcı ayarları (FR-120..122).
+class ProfileSettings extends AsyncNotifier<UserProfileRow> {
+  @override
+  Future<UserProfileRow> build() async {
+    await ref.watch(appStartupProvider.future);
+    return ref.watch(profileRepositoryProvider).get();
+  }
+
+  Future<void> save(UserProfileCompanion changes) async {
+    final updated = await ref.read(profileRepositoryProvider).update(changes);
+    state = AsyncData(updated);
+    ref.invalidate(homeSummaryProvider);
+  }
+}
+
+final profileSettingsProvider =
+    AsyncNotifierProvider<ProfileSettings, UserProfileRow>(ProfileSettings.new);
+
+final statsRepositoryProvider = Provider<StatsRepository>(
+  (ref) => StatsRepository(ref.watch(appDatabaseProvider)),
+);
+
+/// İstatistik ekranı verisi (FR-80, FR-81).
+final statsProvider = FutureProvider<LearningStats>((ref) async {
+  await ref.watch(appStartupProvider.future);
+  return ref.watch(statsRepositoryProvider).stats();
 });
