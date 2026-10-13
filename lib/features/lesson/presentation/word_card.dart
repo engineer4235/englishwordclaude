@@ -323,6 +323,7 @@ String partOfSpeechLabel(AppLocalizations l10n, String pos) => switch (pos) {
   'adjective' => l10n.posAdjective,
   'adverb' => l10n.posAdverb,
   'number' => l10n.posNumber,
+  'interjection' => l10n.posInterjection,
   'other' => l10n.posOther,
   _ => pos,
 };

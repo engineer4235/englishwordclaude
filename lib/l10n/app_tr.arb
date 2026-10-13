@@ -570,5 +570,6 @@
       }
     }
   },
-  "backToWords": "Kelimelerime dön"
+  "backToWords": "Kelimelerime dön",
+  "posInterjection": "ünlem"
 }
