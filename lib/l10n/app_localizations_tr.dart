@@ -628,6 +628,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get filterDifficult => 'Zorlandıklarım';
 
   @override
+  String get practiceFavorites => 'Favorileri çalış';
+
+  @override
+  String get practiceDifficult => 'Zorlandıklarımı çalış';
+
+  @override
   String get searchHint => 'İngilizce ya da Türkçe ara';
 
   @override

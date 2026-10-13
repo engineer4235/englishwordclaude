@@ -74,7 +74,7 @@ class _PlacementScreenState extends ConsumerState<PlacementScreen> {
               ? () => _choose(value.first.level)
               : null,
         ),
-        AsyncError(:final error) => Center(child: Text('$error')),
+        AsyncError() => Center(child: Text(l10n.loadError)),
         _ => const Center(child: CircularProgressIndicator()),
       };
     } else if (question != null) {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../core/router/app_routes.dart';
 import '../../../data/providers.dart';
 import '../../../domain/search/word_search.dart';
 import '../../../domain/srs/card_state.dart';
@@ -8,7 +10,7 @@ import '../../../l10n/app_localizations.dart';
 import '../../lesson/presentation/word_card.dart';
 
 /// Kelimelerim: tüm kelimelerde arama; seviye, durum, favori ve zorlanılan
-/// kelime filtresi (FR-90, FR-35, FR-66).
+/// kelime filtresi ve bu listelerle alıştırma (FR-90, FR-35, FR-66, FR-93).
 class WordsScreen extends ConsumerStatefulWidget {
   const WordsScreen({super.key});
 
@@ -147,6 +149,30 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                 onChanged: (state) => setState(
                   () => _filter = _filter.copyWith(state: () => state),
                 ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          child: Wrap(
+            spacing: 8,
+            children: [
+              ActionChip(
+                key: const ValueKey('practice-favorites'),
+                avatar: const Icon(Icons.play_arrow, size: 18),
+                label: Text(l10n.practiceFavorites),
+                onPressed: all.any((e) => e.favorite)
+                    ? () => context.go(AppRoutes.favoritesPractice)
+                    : null,
+              ),
+              ActionChip(
+                key: const ValueKey('practice-difficult'),
+                avatar: const Icon(Icons.play_arrow, size: 18),
+                label: Text(l10n.practiceDifficult),
+                onPressed: all.any((e) => e.difficult)
+                    ? () => context.go(AppRoutes.difficultPractice)
+                    : null,
               ),
             ],
           ),
