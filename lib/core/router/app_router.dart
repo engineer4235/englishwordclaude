@@ -127,6 +127,18 @@ GoRouter createRouter({
               GoRoute(
                 path: AppRoutes.words,
                 builder: (context, state) => const WordsScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'alistirma/favoriler',
+                    builder: (context, state) =>
+                        const PracticeScreen(mode: PracticeMode.favorites),
+                  ),
+                  GoRoute(
+                    path: 'alistirma/zorlandiklarim',
+                    builder: (context, state) =>
+                        const PracticeScreen(mode: PracticeMode.difficult),
+                  ),
+                ],
               ),
             ],
           ),

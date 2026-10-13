@@ -19,4 +19,10 @@ abstract final class AppRoutes {
   static String unitExam(int unitId) => '${unit(unitId)}/sinav';
 
   static String levelExam(int levelId) => '$levelMap/seviye/$levelId/sinav';
+
+  /// Favori kelimeler alıştırması (FR-93).
+  static const favoritesPractice = '$words/alistirma/favoriler';
+
+  /// Zorlanılan kelimeler alıştırması (FR-66, FR-93).
+  static const difficultPractice = '$words/alistirma/zorlandiklarim';
 }

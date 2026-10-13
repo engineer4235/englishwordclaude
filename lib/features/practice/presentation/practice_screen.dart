@@ -13,7 +13,22 @@ import '../../../domain/srs/answer_quality.dart';
 import '../../../l10n/app_localizations.dart';
 import 'exercise_views.dart';
 
-enum PracticeMode { lesson, unitExam, levelExam, review }
+enum PracticeMode {
+  lesson,
+  unitExam,
+  levelExam,
+  review,
+
+  /// Favori kelimelerle alıştırma (FR-93).
+  favorites,
+
+  /// Zorlanılan kelimelerle alıştırma (FR-66, FR-93).
+  difficult;
+
+  /// Belirli bir kelime kümesiyle yapılan, sınav olmayan oturumlar.
+  bool get isWordSet =>
+      this == review || this == favorites || this == difficult;
+}
 
 /// Bir tekrar oturumundaki en fazla kelime.
 const reviewSessionSize = 20;
@@ -60,10 +75,20 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     try {
       final levels = await ref.read(levelOverviewProvider.future);
       final generator = ref.read(exerciseGeneratorProvider);
-      if (widget.mode == PracticeMode.review) {
-        final ids = await ref
-            .read(reviewRepositoryProvider)
-            .dueWordIds(limit: reviewSessionSize);
+      if (widget.mode.isWordSet) {
+        final ids = (switch (widget.mode) {
+          PracticeMode.favorites =>
+            (await ref.read(favoritesRepositoryProvider).ids()).toList()
+              ..shuffle(),
+          PracticeMode.difficult =>
+            (await ref.read(reviewRepositoryProvider).difficultWordIds())
+                .toList()
+              ..shuffle(),
+          _ =>
+            await ref
+                .read(reviewRepositoryProvider)
+                .dueWordIds(limit: reviewSessionSize),
+        }).take(reviewSessionSize).toList();
         final words = await ref
             .read(contentRepositoryProvider)
             .getWordsByIds(ids);
@@ -110,11 +135,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           pool: pool,
         ),
         PracticeMode.unitExam => generator.exam(words, pool: pool),
-        PracticeMode.levelExam || PracticeMode.review => generator.exam(
-          words,
-          count: levelExamQuestionCount,
-          pool: pool,
-        ),
+        _ => generator.exam(words, count: levelExamQuestionCount, pool: pool),
       };
       if (!mounted) return;
       setState(() => _exercises = exercises);
@@ -177,6 +198,8 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     switch (widget.mode) {
       case PracticeMode.lesson:
       case PracticeMode.review:
+      case PracticeMode.favorites:
+      case PracticeMode.difficult:
         break;
       case PracticeMode.unitExam:
         passed = await progress.recordUnitExam(
@@ -213,6 +236,8 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
       PracticeMode.unitExam => '${l10n.unitExam}: $_title',
       PracticeMode.levelExam => '$_levelCode ${l10n.levelExam}',
       PracticeMode.review => l10n.reviewTitle,
+      PracticeMode.favorites => l10n.practiceFavorites,
+      PracticeMode.difficult => l10n.practiceDifficult,
     };
 
     Widget body;
@@ -319,7 +344,9 @@ class _ResultView extends StatelessWidget {
     final celebrate = mode == PracticeMode.levelExam && passed == true;
     final message = switch (mode) {
       PracticeMode.lesson => l10n.resultLesson,
-      PracticeMode.review => l10n.resultReview,
+      PracticeMode.review ||
+      PracticeMode.favorites ||
+      PracticeMode.difficult => l10n.resultReview,
       PracticeMode.unitExam =>
         passed == true ? l10n.resultUnitPassed : l10n.resultUnitFailed,
       PracticeMode.levelExam =>
@@ -398,9 +425,11 @@ class _ResultView extends StatelessWidget {
         ],
         const SizedBox(height: 24),
         FilledButton(
-          onPressed: () => context.go(
-            mode == PracticeMode.review ? AppRoutes.home : AppRoutes.levelMap,
-          ),
+          onPressed: () => context.go(switch (mode) {
+            PracticeMode.review => AppRoutes.home,
+            PracticeMode.favorites || PracticeMode.difficult => AppRoutes.words,
+            _ => AppRoutes.levelMap,
+          }),
           child: Text(
             mode == PracticeMode.review ? l10n.backToHome : l10n.backToMap,
           ),

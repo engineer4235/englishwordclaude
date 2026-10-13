@@ -1174,6 +1174,18 @@ abstract class AppLocalizations {
   /// **'Zorlandıklarım'**
   String get filterDifficult;
 
+  /// No description provided for @practiceFavorites.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favorileri çalış'**
+  String get practiceFavorites;
+
+  /// No description provided for @practiceDifficult.
+  ///
+  /// In tr, this message translates to:
+  /// **'Zorlandıklarımı çalış'**
+  String get practiceDifficult;
+
   /// No description provided for @searchHint.
   ///
   /// In tr, this message translates to:
