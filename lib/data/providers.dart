@@ -42,6 +42,7 @@ final appStartupProvider = FutureProvider<void>((ref) async {
   final seeder = ContentSeeder(db);
   // Güncellemeyle gelen yeni üniteler mevcut kurulumlara eklenir (CNT-5).
   if (!await seeder.seedIfEmpty(json)) await seeder.addMissingUnits(json);
+  await seeder.syncRelations(json);
 });
 
 final contentRepositoryProvider = Provider<ContentRepository>(
@@ -63,6 +64,16 @@ final favoritesRepositoryProvider = Provider<FavoritesRepository>(
 final notesRepositoryProvider = Provider<NotesRepository>(
   (ref) => NotesRepository(ref.watch(appDatabaseProvider)),
 );
+
+/// Bir kelimenin eş anlamlı, zıt anlamlı ve aynı ailedeki kelimeleri
+/// (FR-33).
+final wordRelationsProvider = FutureProvider.family<WordRelationSet, int>((
+  ref,
+  wordId,
+) async {
+  await ref.watch(appStartupProvider.future);
+  return ref.watch(contentRepositoryProvider).getRelations(wordId);
+});
 
 /// Bir kelimenin kişisel notu (FR-36).
 final wordNoteProvider = FutureProvider.family<String?, int>((

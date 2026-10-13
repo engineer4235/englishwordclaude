@@ -92,4 +92,52 @@ void main() {
     expect(progress[units[4].id], isNull, reason: 'sonraki yeni ünite kilitli');
     expect(await repo.getWords(units[3].id), hasLength(8));
   });
+
+  test(
+    'kelime ilişkileri iki yönlü eklenir ve tekrar edilmez (FR-33)',
+    () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final seeder = ContentSeeder(db);
+      await seeder.seedIfEmpty(json);
+
+      final relations =
+          (jsonDecode(json) as Map<String, dynamic>)['relations'] as List;
+      expect(
+        await seeder.syncRelations(json),
+        relations.length,
+        reason: 'tüm ilişkiler içerikteki kelimeleri gösterir',
+      );
+      final rows = await db.select(db.wordRelations).get();
+      expect(rows, hasLength(relations.length * 2));
+
+      await seeder.syncRelations(json);
+      expect(await db.select(db.wordRelations).get(), hasLength(rows.length));
+
+      final repo = DriftContentRepository(db);
+      final words = await repo.getAllWords();
+      final big = words.firstWhere((w) => w.lemma == 'big');
+      final set = await repo.getRelations(big.id);
+      expect([for (final w in set.antonyms) w.lemma], ['small']);
+      expect(set.synonyms, isEmpty);
+      final small = words.firstWhere((w) => w.lemma == 'small');
+      expect(
+        [for (final w in (await repo.getRelations(small.id)).antonyms) w.lemma],
+        ['big'],
+      );
+      final hot = words.firstWhere((w) => w.lemma == 'hot');
+      final hotSet = await repo.getRelations(hot.id);
+      expect([for (final w in hotSet.antonyms) w.lemma], ['cold']);
+      expect([for (final w in hotSet.synonyms) w.lemma], ['warm']);
+    },
+  );
+
+  test('ilişkisi olmayan kelimede boş küme döner', () async {
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+    await ContentSeeder(db).seedIfEmpty(json);
+    final repo = DriftContentRepository(db);
+    final word = (await repo.getAllWords()).firstWhere((w) => w.lemma == 'red');
+    expect((await repo.getRelations(word.id)).isEmpty, isTrue);
+  });
 }

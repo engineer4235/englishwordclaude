@@ -436,5 +436,11 @@
     }
    ]
   }
+ ],
+ "relations": [
+  ["mother", "father", "antonym"],
+  ["brother", "sister", "antonym"],
+  ["black", "white", "antonym"],
+  ["baby", "son", "family"]
  ]
 }
