@@ -5,6 +5,7 @@ import 'package:drift/drift.dart';
 import '../../domain/models/level.dart';
 import '../../domain/models/progress.dart';
 import '../db/app_database.dart';
+import 'review_repository.dart';
 
 /// Seviye ve ünite ilerlemesi, kilit açma kuralları (FR-22..FR-25).
 class ProgressRepository {
@@ -210,6 +211,82 @@ class ProgressRepository {
         }
       }
       return passed;
+    });
+  }
+
+  /// Seviye tespit sonucunu uygular (FR-12, FR-13): alt seviyeler ve
+  /// üniteleri tamamlanmış sayılır, kelimeleri "biliniyor" olarak ara sıra
+  /// kontrol tekrarına alınır. Seçilen seviye ve ilk ünitesi açılır.
+  Future<void> applyPlacement(int levelId) {
+    return _db.transaction(() async {
+      final target = await (_db.select(
+        _db.levels,
+      )..where((t) => t.id.equals(levelId))).getSingle();
+      final lower = await (_db.select(
+        _db.levels,
+      )..where((t) => t.sortOrder.isSmallerThanValue(target.sortOrder))).get();
+      final reviews = ReviewRepository(_db, clock: _clock);
+      final known = {
+        for (final r in await _db.select(_db.reviewCards).get()) r.wordId,
+      };
+
+      for (final level in lower) {
+        await _db
+            .into(_db.levelProgress)
+            .insertOnConflictUpdate(
+              LevelProgressCompanion.insert(
+                levelId: Value(level.id),
+                status: Value(ProgressStatus.completed.dbValue),
+              ),
+            );
+        final units = await (_db.select(
+          _db.units,
+        )..where((t) => t.levelId.equals(level.id))).get();
+        for (final unit in units) {
+          await _db
+              .into(_db.unitProgress)
+              .insertOnConflictUpdate(
+                UnitProgressCompanion.insert(
+                  unitId: Value(unit.id),
+                  status: Value(ProgressStatus.completed.dbValue),
+                  completedAt: Value(_clock()),
+                ),
+              );
+          final words = await (_db.select(
+            _db.words,
+          )..where((t) => t.unitId.equals(unit.id))).get();
+          for (final word in words) {
+            if (!known.contains(word.id)) await reviews.markKnown(word.id);
+          }
+        }
+      }
+
+      final targetProgress = await (_db.select(
+        _db.levelProgress,
+      )..where((t) => t.levelId.equals(levelId))).getSingleOrNull();
+      if (targetProgress == null ||
+          targetProgress.status == ProgressStatus.locked.dbValue) {
+        await _db
+            .into(_db.levelProgress)
+            .insertOnConflictUpdate(
+              LevelProgressCompanion.insert(
+                levelId: Value(levelId),
+                status: Value(ProgressStatus.open.dbValue),
+              ),
+            );
+      }
+      final firstUnit =
+          await (_db.select(_db.units)
+                ..where((t) => t.levelId.equals(levelId))
+                ..orderBy([(t) => OrderingTerm.asc(t.sortOrder)])
+                ..limit(1))
+              .getSingleOrNull();
+      if (firstUnit != null) await _openUnit(firstUnit.id);
+
+      await _db.ensureProfile();
+      await _db
+          .update(_db.userProfile)
+          .write(UserProfileCompanion(currentLevelId: Value(levelId)));
     });
   }
 

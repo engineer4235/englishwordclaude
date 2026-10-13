@@ -6,6 +6,11 @@ abstract final class AppRoutes {
   static const words = '/kelimelerim';
   static const stats = '/istatistik';
   static const profile = '/profil';
+  static const onboarding = '/hosgeldin';
+  static const placement = '/seviye-tespit';
+
+  /// Tanıtımın son adımından açılan seviye tespit sınavı.
+  static const placementFromOnboarding = '$placement?ilk=1';
 
   static String unit(int unitId) => '$levelMap/unite/$unitId';
 

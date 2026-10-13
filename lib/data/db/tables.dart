@@ -134,6 +134,20 @@ class UserProfile extends Table {
   IntColumn get longestStreak => integer().withDefault(const Constant(0))();
   IntColumn get totalXp => integer().withDefault(const Constant(0))();
 
+  // Şema 3: tanıtım ve ayarlar (FR-01..05, FR-120..122).
+  BoolColumn get onboardingDone =>
+      boolean().withDefault(const Constant(false))();
+
+  /// system, light veya dark.
+  TextColumn get themeMode => text().withDefault(const Constant('system'))();
+  RealColumn get speechRate => real().withDefault(const Constant(0.5))();
+  BoolColumn get soundEffects => boolean().withDefault(const Constant(true))();
+  BoolColumn get haptics => boolean().withDefault(const Constant(true))();
+  BoolColumn get reminderEnabled =>
+      boolean().withDefault(const Constant(true))();
+  BoolColumn get streakWarningEnabled =>
+      boolean().withDefault(const Constant(true))();
+
   @override
   Set<Column<Object>> get primaryKey => {id};
 }

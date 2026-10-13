@@ -3982,6 +3982,104 @@ class $UserProfileTable extends UserProfile
     requiredDuringInsert: false,
     defaultValue: const Constant(0),
   );
+  static const VerificationMeta _onboardingDoneMeta = const VerificationMeta(
+    'onboardingDone',
+  );
+  @override
+  late final GeneratedColumn<bool> onboardingDone = GeneratedColumn<bool>(
+    'onboarding_done',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("onboarding_done" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _themeModeMeta = const VerificationMeta(
+    'themeMode',
+  );
+  @override
+  late final GeneratedColumn<String> themeMode = GeneratedColumn<String>(
+    'theme_mode',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('system'),
+  );
+  static const VerificationMeta _speechRateMeta = const VerificationMeta(
+    'speechRate',
+  );
+  @override
+  late final GeneratedColumn<double> speechRate = GeneratedColumn<double>(
+    'speech_rate',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0.5),
+  );
+  static const VerificationMeta _soundEffectsMeta = const VerificationMeta(
+    'soundEffects',
+  );
+  @override
+  late final GeneratedColumn<bool> soundEffects = GeneratedColumn<bool>(
+    'sound_effects',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("sound_effects" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _hapticsMeta = const VerificationMeta(
+    'haptics',
+  );
+  @override
+  late final GeneratedColumn<bool> haptics = GeneratedColumn<bool>(
+    'haptics',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("haptics" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _reminderEnabledMeta = const VerificationMeta(
+    'reminderEnabled',
+  );
+  @override
+  late final GeneratedColumn<bool> reminderEnabled = GeneratedColumn<bool>(
+    'reminder_enabled',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("reminder_enabled" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _streakWarningEnabledMeta =
+      const VerificationMeta('streakWarningEnabled');
+  @override
+  late final GeneratedColumn<bool> streakWarningEnabled = GeneratedColumn<bool>(
+    'streak_warning_enabled',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("streak_warning_enabled" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -3993,6 +4091,13 @@ class $UserProfileTable extends UserProfile
     streak,
     longestStreak,
     totalXp,
+    onboardingDone,
+    themeMode,
+    speechRate,
+    soundEffects,
+    haptics,
+    reminderEnabled,
+    streakWarningEnabled,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -4066,6 +4171,60 @@ class $UserProfileTable extends UserProfile
         totalXp.isAcceptableOrUnknown(data['total_xp']!, _totalXpMeta),
       );
     }
+    if (data.containsKey('onboarding_done')) {
+      context.handle(
+        _onboardingDoneMeta,
+        onboardingDone.isAcceptableOrUnknown(
+          data['onboarding_done']!,
+          _onboardingDoneMeta,
+        ),
+      );
+    }
+    if (data.containsKey('theme_mode')) {
+      context.handle(
+        _themeModeMeta,
+        themeMode.isAcceptableOrUnknown(data['theme_mode']!, _themeModeMeta),
+      );
+    }
+    if (data.containsKey('speech_rate')) {
+      context.handle(
+        _speechRateMeta,
+        speechRate.isAcceptableOrUnknown(data['speech_rate']!, _speechRateMeta),
+      );
+    }
+    if (data.containsKey('sound_effects')) {
+      context.handle(
+        _soundEffectsMeta,
+        soundEffects.isAcceptableOrUnknown(
+          data['sound_effects']!,
+          _soundEffectsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('haptics')) {
+      context.handle(
+        _hapticsMeta,
+        haptics.isAcceptableOrUnknown(data['haptics']!, _hapticsMeta),
+      );
+    }
+    if (data.containsKey('reminder_enabled')) {
+      context.handle(
+        _reminderEnabledMeta,
+        reminderEnabled.isAcceptableOrUnknown(
+          data['reminder_enabled']!,
+          _reminderEnabledMeta,
+        ),
+      );
+    }
+    if (data.containsKey('streak_warning_enabled')) {
+      context.handle(
+        _streakWarningEnabledMeta,
+        streakWarningEnabled.isAcceptableOrUnknown(
+          data['streak_warning_enabled']!,
+          _streakWarningEnabledMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -4111,6 +4270,34 @@ class $UserProfileTable extends UserProfile
         DriftSqlType.int,
         data['${effectivePrefix}total_xp'],
       )!,
+      onboardingDone: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}onboarding_done'],
+      )!,
+      themeMode: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}theme_mode'],
+      )!,
+      speechRate: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}speech_rate'],
+      )!,
+      soundEffects: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}sound_effects'],
+      )!,
+      haptics: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}haptics'],
+      )!,
+      reminderEnabled: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}reminder_enabled'],
+      )!,
+      streakWarningEnabled: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}streak_warning_enabled'],
+      )!,
     );
   }
 
@@ -4130,6 +4317,15 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
   final int streak;
   final int longestStreak;
   final int totalXp;
+  final bool onboardingDone;
+
+  /// system, light veya dark.
+  final String themeMode;
+  final double speechRate;
+  final bool soundEffects;
+  final bool haptics;
+  final bool reminderEnabled;
+  final bool streakWarningEnabled;
   const UserProfileRow({
     required this.id,
     required this.goalType,
@@ -4140,6 +4336,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     required this.streak,
     required this.longestStreak,
     required this.totalXp,
+    required this.onboardingDone,
+    required this.themeMode,
+    required this.speechRate,
+    required this.soundEffects,
+    required this.haptics,
+    required this.reminderEnabled,
+    required this.streakWarningEnabled,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -4157,6 +4360,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     map['streak'] = Variable<int>(streak);
     map['longest_streak'] = Variable<int>(longestStreak);
     map['total_xp'] = Variable<int>(totalXp);
+    map['onboarding_done'] = Variable<bool>(onboardingDone);
+    map['theme_mode'] = Variable<String>(themeMode);
+    map['speech_rate'] = Variable<double>(speechRate);
+    map['sound_effects'] = Variable<bool>(soundEffects);
+    map['haptics'] = Variable<bool>(haptics);
+    map['reminder_enabled'] = Variable<bool>(reminderEnabled);
+    map['streak_warning_enabled'] = Variable<bool>(streakWarningEnabled);
     return map;
   }
 
@@ -4175,6 +4385,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       streak: Value(streak),
       longestStreak: Value(longestStreak),
       totalXp: Value(totalXp),
+      onboardingDone: Value(onboardingDone),
+      themeMode: Value(themeMode),
+      speechRate: Value(speechRate),
+      soundEffects: Value(soundEffects),
+      haptics: Value(haptics),
+      reminderEnabled: Value(reminderEnabled),
+      streakWarningEnabled: Value(streakWarningEnabled),
     );
   }
 
@@ -4193,6 +4410,15 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       streak: serializer.fromJson<int>(json['streak']),
       longestStreak: serializer.fromJson<int>(json['longestStreak']),
       totalXp: serializer.fromJson<int>(json['totalXp']),
+      onboardingDone: serializer.fromJson<bool>(json['onboardingDone']),
+      themeMode: serializer.fromJson<String>(json['themeMode']),
+      speechRate: serializer.fromJson<double>(json['speechRate']),
+      soundEffects: serializer.fromJson<bool>(json['soundEffects']),
+      haptics: serializer.fromJson<bool>(json['haptics']),
+      reminderEnabled: serializer.fromJson<bool>(json['reminderEnabled']),
+      streakWarningEnabled: serializer.fromJson<bool>(
+        json['streakWarningEnabled'],
+      ),
     );
   }
   @override
@@ -4208,6 +4434,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       'streak': serializer.toJson<int>(streak),
       'longestStreak': serializer.toJson<int>(longestStreak),
       'totalXp': serializer.toJson<int>(totalXp),
+      'onboardingDone': serializer.toJson<bool>(onboardingDone),
+      'themeMode': serializer.toJson<String>(themeMode),
+      'speechRate': serializer.toJson<double>(speechRate),
+      'soundEffects': serializer.toJson<bool>(soundEffects),
+      'haptics': serializer.toJson<bool>(haptics),
+      'reminderEnabled': serializer.toJson<bool>(reminderEnabled),
+      'streakWarningEnabled': serializer.toJson<bool>(streakWarningEnabled),
     };
   }
 
@@ -4221,6 +4454,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     int? streak,
     int? longestStreak,
     int? totalXp,
+    bool? onboardingDone,
+    String? themeMode,
+    double? speechRate,
+    bool? soundEffects,
+    bool? haptics,
+    bool? reminderEnabled,
+    bool? streakWarningEnabled,
   }) => UserProfileRow(
     id: id ?? this.id,
     goalType: goalType ?? this.goalType,
@@ -4233,6 +4473,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     streak: streak ?? this.streak,
     longestStreak: longestStreak ?? this.longestStreak,
     totalXp: totalXp ?? this.totalXp,
+    onboardingDone: onboardingDone ?? this.onboardingDone,
+    themeMode: themeMode ?? this.themeMode,
+    speechRate: speechRate ?? this.speechRate,
+    soundEffects: soundEffects ?? this.soundEffects,
+    haptics: haptics ?? this.haptics,
+    reminderEnabled: reminderEnabled ?? this.reminderEnabled,
+    streakWarningEnabled: streakWarningEnabled ?? this.streakWarningEnabled,
   );
   UserProfileRow copyWithCompanion(UserProfileCompanion data) {
     return UserProfileRow(
@@ -4253,6 +4500,23 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           ? data.longestStreak.value
           : this.longestStreak,
       totalXp: data.totalXp.present ? data.totalXp.value : this.totalXp,
+      onboardingDone: data.onboardingDone.present
+          ? data.onboardingDone.value
+          : this.onboardingDone,
+      themeMode: data.themeMode.present ? data.themeMode.value : this.themeMode,
+      speechRate: data.speechRate.present
+          ? data.speechRate.value
+          : this.speechRate,
+      soundEffects: data.soundEffects.present
+          ? data.soundEffects.value
+          : this.soundEffects,
+      haptics: data.haptics.present ? data.haptics.value : this.haptics,
+      reminderEnabled: data.reminderEnabled.present
+          ? data.reminderEnabled.value
+          : this.reminderEnabled,
+      streakWarningEnabled: data.streakWarningEnabled.present
+          ? data.streakWarningEnabled.value
+          : this.streakWarningEnabled,
     );
   }
 
@@ -4267,7 +4531,14 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           ..write('currentLevelId: $currentLevelId, ')
           ..write('streak: $streak, ')
           ..write('longestStreak: $longestStreak, ')
-          ..write('totalXp: $totalXp')
+          ..write('totalXp: $totalXp, ')
+          ..write('onboardingDone: $onboardingDone, ')
+          ..write('themeMode: $themeMode, ')
+          ..write('speechRate: $speechRate, ')
+          ..write('soundEffects: $soundEffects, ')
+          ..write('haptics: $haptics, ')
+          ..write('reminderEnabled: $reminderEnabled, ')
+          ..write('streakWarningEnabled: $streakWarningEnabled')
           ..write(')'))
         .toString();
   }
@@ -4283,6 +4554,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     streak,
     longestStreak,
     totalXp,
+    onboardingDone,
+    themeMode,
+    speechRate,
+    soundEffects,
+    haptics,
+    reminderEnabled,
+    streakWarningEnabled,
   );
   @override
   bool operator ==(Object other) =>
@@ -4296,7 +4574,14 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           other.currentLevelId == this.currentLevelId &&
           other.streak == this.streak &&
           other.longestStreak == this.longestStreak &&
-          other.totalXp == this.totalXp);
+          other.totalXp == this.totalXp &&
+          other.onboardingDone == this.onboardingDone &&
+          other.themeMode == this.themeMode &&
+          other.speechRate == this.speechRate &&
+          other.soundEffects == this.soundEffects &&
+          other.haptics == this.haptics &&
+          other.reminderEnabled == this.reminderEnabled &&
+          other.streakWarningEnabled == this.streakWarningEnabled);
 }
 
 class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
@@ -4309,6 +4594,13 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
   final Value<int> streak;
   final Value<int> longestStreak;
   final Value<int> totalXp;
+  final Value<bool> onboardingDone;
+  final Value<String> themeMode;
+  final Value<double> speechRate;
+  final Value<bool> soundEffects;
+  final Value<bool> haptics;
+  final Value<bool> reminderEnabled;
+  final Value<bool> streakWarningEnabled;
   const UserProfileCompanion({
     this.id = const Value.absent(),
     this.goalType = const Value.absent(),
@@ -4319,6 +4611,13 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     this.streak = const Value.absent(),
     this.longestStreak = const Value.absent(),
     this.totalXp = const Value.absent(),
+    this.onboardingDone = const Value.absent(),
+    this.themeMode = const Value.absent(),
+    this.speechRate = const Value.absent(),
+    this.soundEffects = const Value.absent(),
+    this.haptics = const Value.absent(),
+    this.reminderEnabled = const Value.absent(),
+    this.streakWarningEnabled = const Value.absent(),
   });
   UserProfileCompanion.insert({
     this.id = const Value.absent(),
@@ -4330,6 +4629,13 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     this.streak = const Value.absent(),
     this.longestStreak = const Value.absent(),
     this.totalXp = const Value.absent(),
+    this.onboardingDone = const Value.absent(),
+    this.themeMode = const Value.absent(),
+    this.speechRate = const Value.absent(),
+    this.soundEffects = const Value.absent(),
+    this.haptics = const Value.absent(),
+    this.reminderEnabled = const Value.absent(),
+    this.streakWarningEnabled = const Value.absent(),
   });
   static Insertable<UserProfileRow> custom({
     Expression<int>? id,
@@ -4341,6 +4647,13 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     Expression<int>? streak,
     Expression<int>? longestStreak,
     Expression<int>? totalXp,
+    Expression<bool>? onboardingDone,
+    Expression<String>? themeMode,
+    Expression<double>? speechRate,
+    Expression<bool>? soundEffects,
+    Expression<bool>? haptics,
+    Expression<bool>? reminderEnabled,
+    Expression<bool>? streakWarningEnabled,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -4352,6 +4665,14 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
       if (streak != null) 'streak': streak,
       if (longestStreak != null) 'longest_streak': longestStreak,
       if (totalXp != null) 'total_xp': totalXp,
+      if (onboardingDone != null) 'onboarding_done': onboardingDone,
+      if (themeMode != null) 'theme_mode': themeMode,
+      if (speechRate != null) 'speech_rate': speechRate,
+      if (soundEffects != null) 'sound_effects': soundEffects,
+      if (haptics != null) 'haptics': haptics,
+      if (reminderEnabled != null) 'reminder_enabled': reminderEnabled,
+      if (streakWarningEnabled != null)
+        'streak_warning_enabled': streakWarningEnabled,
     });
   }
 
@@ -4365,6 +4686,13 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     Value<int>? streak,
     Value<int>? longestStreak,
     Value<int>? totalXp,
+    Value<bool>? onboardingDone,
+    Value<String>? themeMode,
+    Value<double>? speechRate,
+    Value<bool>? soundEffects,
+    Value<bool>? haptics,
+    Value<bool>? reminderEnabled,
+    Value<bool>? streakWarningEnabled,
   }) {
     return UserProfileCompanion(
       id: id ?? this.id,
@@ -4376,6 +4704,13 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
       streak: streak ?? this.streak,
       longestStreak: longestStreak ?? this.longestStreak,
       totalXp: totalXp ?? this.totalXp,
+      onboardingDone: onboardingDone ?? this.onboardingDone,
+      themeMode: themeMode ?? this.themeMode,
+      speechRate: speechRate ?? this.speechRate,
+      soundEffects: soundEffects ?? this.soundEffects,
+      haptics: haptics ?? this.haptics,
+      reminderEnabled: reminderEnabled ?? this.reminderEnabled,
+      streakWarningEnabled: streakWarningEnabled ?? this.streakWarningEnabled,
     );
   }
 
@@ -4409,6 +4744,29 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     if (totalXp.present) {
       map['total_xp'] = Variable<int>(totalXp.value);
     }
+    if (onboardingDone.present) {
+      map['onboarding_done'] = Variable<bool>(onboardingDone.value);
+    }
+    if (themeMode.present) {
+      map['theme_mode'] = Variable<String>(themeMode.value);
+    }
+    if (speechRate.present) {
+      map['speech_rate'] = Variable<double>(speechRate.value);
+    }
+    if (soundEffects.present) {
+      map['sound_effects'] = Variable<bool>(soundEffects.value);
+    }
+    if (haptics.present) {
+      map['haptics'] = Variable<bool>(haptics.value);
+    }
+    if (reminderEnabled.present) {
+      map['reminder_enabled'] = Variable<bool>(reminderEnabled.value);
+    }
+    if (streakWarningEnabled.present) {
+      map['streak_warning_enabled'] = Variable<bool>(
+        streakWarningEnabled.value,
+      );
+    }
     return map;
   }
 
@@ -4423,7 +4781,14 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
           ..write('currentLevelId: $currentLevelId, ')
           ..write('streak: $streak, ')
           ..write('longestStreak: $longestStreak, ')
-          ..write('totalXp: $totalXp')
+          ..write('totalXp: $totalXp, ')
+          ..write('onboardingDone: $onboardingDone, ')
+          ..write('themeMode: $themeMode, ')
+          ..write('speechRate: $speechRate, ')
+          ..write('soundEffects: $soundEffects, ')
+          ..write('haptics: $haptics, ')
+          ..write('reminderEnabled: $reminderEnabled, ')
+          ..write('streakWarningEnabled: $streakWarningEnabled')
           ..write(')'))
         .toString();
   }
@@ -9076,6 +9441,13 @@ typedef $$UserProfileTableCreateCompanionBuilder =
       Value<int> streak,
       Value<int> longestStreak,
       Value<int> totalXp,
+      Value<bool> onboardingDone,
+      Value<String> themeMode,
+      Value<double> speechRate,
+      Value<bool> soundEffects,
+      Value<bool> haptics,
+      Value<bool> reminderEnabled,
+      Value<bool> streakWarningEnabled,
     });
 typedef $$UserProfileTableUpdateCompanionBuilder =
     UserProfileCompanion Function({
@@ -9088,6 +9460,13 @@ typedef $$UserProfileTableUpdateCompanionBuilder =
       Value<int> streak,
       Value<int> longestStreak,
       Value<int> totalXp,
+      Value<bool> onboardingDone,
+      Value<String> themeMode,
+      Value<double> speechRate,
+      Value<bool> soundEffects,
+      Value<bool> haptics,
+      Value<bool> reminderEnabled,
+      Value<bool> streakWarningEnabled,
     });
 
 final class $$UserProfileTableReferences
@@ -9158,6 +9537,41 @@ class $$UserProfileTableFilterComposer
 
   ColumnFilters<int> get totalXp => $composableBuilder(
     column: $table.totalXp,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get onboardingDone => $composableBuilder(
+    column: $table.onboardingDone,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get themeMode => $composableBuilder(
+    column: $table.themeMode,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get speechRate => $composableBuilder(
+    column: $table.speechRate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get soundEffects => $composableBuilder(
+    column: $table.soundEffects,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get haptics => $composableBuilder(
+    column: $table.haptics,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get reminderEnabled => $composableBuilder(
+    column: $table.reminderEnabled,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get streakWarningEnabled => $composableBuilder(
+    column: $table.streakWarningEnabled,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -9234,6 +9648,41 @@ class $$UserProfileTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<bool> get onboardingDone => $composableBuilder(
+    column: $table.onboardingDone,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get themeMode => $composableBuilder(
+    column: $table.themeMode,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get speechRate => $composableBuilder(
+    column: $table.speechRate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get soundEffects => $composableBuilder(
+    column: $table.soundEffects,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get haptics => $composableBuilder(
+    column: $table.haptics,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get reminderEnabled => $composableBuilder(
+    column: $table.reminderEnabled,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get streakWarningEnabled => $composableBuilder(
+    column: $table.streakWarningEnabled,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   $$LevelsTableOrderingComposer get currentLevelId {
     final $$LevelsTableOrderingComposer composer = $composerBuilder(
       composer: this,
@@ -9297,6 +9746,37 @@ class $$UserProfileTableAnnotationComposer
   GeneratedColumn<int> get totalXp =>
       $composableBuilder(column: $table.totalXp, builder: (column) => column);
 
+  GeneratedColumn<bool> get onboardingDone => $composableBuilder(
+    column: $table.onboardingDone,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get themeMode =>
+      $composableBuilder(column: $table.themeMode, builder: (column) => column);
+
+  GeneratedColumn<double> get speechRate => $composableBuilder(
+    column: $table.speechRate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get soundEffects => $composableBuilder(
+    column: $table.soundEffects,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get haptics =>
+      $composableBuilder(column: $table.haptics, builder: (column) => column);
+
+  GeneratedColumn<bool> get reminderEnabled => $composableBuilder(
+    column: $table.reminderEnabled,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get streakWarningEnabled => $composableBuilder(
+    column: $table.streakWarningEnabled,
+    builder: (column) => column,
+  );
+
   $$LevelsTableAnnotationComposer get currentLevelId {
     final $$LevelsTableAnnotationComposer composer = $composerBuilder(
       composer: this,
@@ -9358,6 +9838,13 @@ class $$UserProfileTableTableManager
                 Value<int> streak = const Value.absent(),
                 Value<int> longestStreak = const Value.absent(),
                 Value<int> totalXp = const Value.absent(),
+                Value<bool> onboardingDone = const Value.absent(),
+                Value<String> themeMode = const Value.absent(),
+                Value<double> speechRate = const Value.absent(),
+                Value<bool> soundEffects = const Value.absent(),
+                Value<bool> haptics = const Value.absent(),
+                Value<bool> reminderEnabled = const Value.absent(),
+                Value<bool> streakWarningEnabled = const Value.absent(),
               }) => UserProfileCompanion(
                 id: id,
                 goalType: goalType,
@@ -9368,6 +9855,13 @@ class $$UserProfileTableTableManager
                 streak: streak,
                 longestStreak: longestStreak,
                 totalXp: totalXp,
+                onboardingDone: onboardingDone,
+                themeMode: themeMode,
+                speechRate: speechRate,
+                soundEffects: soundEffects,
+                haptics: haptics,
+                reminderEnabled: reminderEnabled,
+                streakWarningEnabled: streakWarningEnabled,
               ),
           createCompanionCallback:
               ({
@@ -9380,6 +9874,13 @@ class $$UserProfileTableTableManager
                 Value<int> streak = const Value.absent(),
                 Value<int> longestStreak = const Value.absent(),
                 Value<int> totalXp = const Value.absent(),
+                Value<bool> onboardingDone = const Value.absent(),
+                Value<String> themeMode = const Value.absent(),
+                Value<double> speechRate = const Value.absent(),
+                Value<bool> soundEffects = const Value.absent(),
+                Value<bool> haptics = const Value.absent(),
+                Value<bool> reminderEnabled = const Value.absent(),
+                Value<bool> streakWarningEnabled = const Value.absent(),
               }) => UserProfileCompanion.insert(
                 id: id,
                 goalType: goalType,
@@ -9390,6 +9891,13 @@ class $$UserProfileTableTableManager
                 streak: streak,
                 longestStreak: longestStreak,
                 totalXp: totalXp,
+                onboardingDone: onboardingDone,
+                themeMode: themeMode,
+                speechRate: speechRate,
+                soundEffects: soundEffects,
+                haptics: haptics,
+                reminderEnabled: reminderEnabled,
+                streakWarningEnabled: streakWarningEnabled,
               ),
           withReferenceMapper: (p0) => p0
               .map(

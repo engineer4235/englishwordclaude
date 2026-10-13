@@ -83,6 +83,11 @@ class ExerciseGenerator {
     ];
   }
 
+  /// "Kelimenin Türkçe anlamını seç" sorusu (seviye tespit sınavı, FR-11).
+  ChoiceExercise meaningChoice(Word target, List<Word> pool) =>
+      _build(ExerciseType.mcEnTr, target, _merge([target], pool))
+          as ChoiceExercise;
+
   List<Word> _merge(List<Word> words, List<Word> pool) {
     final seen = <int>{};
     return [

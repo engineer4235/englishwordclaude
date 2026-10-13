@@ -286,4 +286,121 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get backToHome => 'Ana sayfaya dön';
+
+  @override
+  String get onboardingSkip => 'Atla';
+
+  @override
+  String get onboardingNext => 'İleri';
+
+  @override
+  String get intro1Title => 'Seviye seviye ilerle';
+
+  @override
+  String get intro1Body =>
+      'A1\'den C2\'ye kadar kelimeleri ünite ünite öğren. Her seviyenin sonunda bir sınavla bir üst seviyenin kilidini aç.';
+
+  @override
+  String get intro2Title => 'Unutmadan öğren';
+
+  @override
+  String get intro2Body =>
+      'Aralıklı tekrar sistemi, her kelimeyi tam unutmak üzereyken karşına çıkarır.';
+
+  @override
+  String get intro3Title => 'Her gün biraz';
+
+  @override
+  String get intro3Body => 'Günlük hedefini tamamla, serini koru ve XP kazan.';
+
+  @override
+  String get goalQuestion => 'İngilizceyi ne için öğreniyorsun?';
+
+  @override
+  String get goalGeneral => 'Genel';
+
+  @override
+  String get goalTravel => 'Seyahat';
+
+  @override
+  String get goalWork => 'İş';
+
+  @override
+  String get goalExam => 'Sınav';
+
+  @override
+  String get targetQuestion => 'Günde kaç yeni kelime öğrenmek istersin?';
+
+  @override
+  String targetOption(int count) {
+    return 'Günde $count kelime';
+  }
+
+  @override
+  String get notifyQuestion => 'Sana ne zaman hatırlatalım?';
+
+  @override
+  String get notifyNone => 'Hatırlatma istemiyorum';
+
+  @override
+  String get notifyPick => 'Başka bir saat seç';
+
+  @override
+  String get startQuestion => 'Nereden başlamak istersin?';
+
+  @override
+  String get startPlacement => 'Seviye tespit sınavına gir';
+
+  @override
+  String get startPlacementHint => 'En fazla 30 soru, yaklaşık 5 dakika.';
+
+  @override
+  String get startFromA1 => 'A1\'den başla';
+
+  @override
+  String get placementTitle => 'Seviye tespit sınavı';
+
+  @override
+  String get placementIntro =>
+      'Sana İngilizce kelimeler göstereceğiz, Türkçe anlamını seç. Doğru bildikçe sorular zorlaşır, yanlışta kolaylaşır. Bilmediğin soruda tahmin yapmak yerine \"Bilmiyorum\"u seçebilirsin.';
+
+  @override
+  String get placementStart => 'Sınava başla';
+
+  @override
+  String get placementDontKnow => 'Bilmiyorum';
+
+  @override
+  String placementQuestion(int current) {
+    return 'Soru $current';
+  }
+
+  @override
+  String placementResultTitle(String level) {
+    return 'Önerilen seviye: $level';
+  }
+
+  @override
+  String placementResultBody(int correct, int total) {
+    return '$correct/$total soruyu doğru cevapladın. Bu seviyeden başlayabilir ya da daha düşük bir seviye seçebilirsin.';
+  }
+
+  @override
+  String placementAccept(String level) {
+    return '$level seviyesinden başla';
+  }
+
+  @override
+  String get placementLower => 'Daha düşük bir seviye seç';
+
+  @override
+  String get placementNoContent =>
+      'Seviye tespiti için henüz yeterli kelime yok.';
+
+  @override
+  String get retakePlacement => 'Seviye tespit sınavını yeniden yap';
+
+  @override
+  String get retakePlacementHint =>
+      'Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir.';
 }

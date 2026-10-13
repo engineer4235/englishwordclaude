@@ -27,10 +27,23 @@ class FakeTts implements TtsService {
   Future<void> speak(String text) async => spoken.add(text);
 }
 
-/// Bellek içi veritabanı ve sahte TTS ile uygulama.
-Widget testApp(AppDatabase db, {FakeTts? tts, Widget? child}) {
+/// Tanıtımı tamamlamış kullanıcı.
+class _Onboarded extends OnboardingStatus {
+  @override
+  Future<bool> build() async => true;
+}
+
+/// Bellek içi veritabanı ve sahte TTS ile uygulama. [onboarded] `false`
+/// verilirse tanıtım ekranı gösterilir.
+Widget testApp(
+  AppDatabase db, {
+  FakeTts? tts,
+  Widget? child,
+  bool onboarded = true,
+}) {
   return ProviderScope(
     overrides: [
+      if (onboarded) onboardingStatusProvider.overrideWith(_Onboarded.new),
       appDatabaseProvider.overrideWithValue(db),
       appStartupProvider.overrideWith(
         (ref) => ContentSeeder(db).seedIfEmpty(seedJson),
