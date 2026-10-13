@@ -1,6 +1,6 @@
 {
-  "version": 6,
-  "note": "MVP içeriği: A1'de 13, A2'de 15, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 7,
+  "note": "MVP içeriği: A1'de 13, A2'de 20, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -3837,6 +3837,686 @@
       ]
     },
     {
+      "level": "A2",
+      "title": "Kutlamalar",
+      "theme": "celebrations",
+      "icon": "cake",
+      "words": [
+        {
+          "lemma": "birthday",
+          "ipa": "/ˈbɜːrθdeɪ/",
+          "pos": "noun",
+          "tr": "doğum günü",
+          "examples": [
+            [
+              "Happy birthday to you!",
+              "Doğum günün kutlu olsun!"
+            ],
+            [
+              "My birthday is in May.",
+              "Doğum günüm mayısta."
+            ]
+          ]
+        },
+        {
+          "lemma": "party",
+          "ipa": "/ˈpɑːrti/",
+          "pos": "noun",
+          "tr": "parti",
+          "examples": [
+            [
+              "We are having a party on Friday.",
+              "Cuma günü parti veriyoruz."
+            ],
+            [
+              "Did you enjoy the party?",
+              "Partiden hoşlandın mı?"
+            ]
+          ]
+        },
+        {
+          "lemma": "gift",
+          "ipa": "/ɡɪft/",
+          "pos": "noun",
+          "tr": "hediye",
+          "examples": [
+            [
+              "I bought a gift for my mother.",
+              "Annem için bir hediye aldım."
+            ],
+            [
+              "Thank you for the lovely gift.",
+              "Güzel hediye için teşekkürler."
+            ]
+          ]
+        },
+        {
+          "lemma": "cake",
+          "ipa": "/keɪk/",
+          "pos": "noun",
+          "tr": "pasta, kek",
+          "examples": [
+            [
+              "She made a chocolate cake.",
+              "Çikolatalı bir pasta yaptı."
+            ],
+            [
+              "Can I have another piece of cake?",
+              "Bir dilim daha pasta alabilir miyim?"
+            ]
+          ]
+        },
+        {
+          "lemma": "invite",
+          "ipa": "/ɪnˈvaɪt/",
+          "pos": "verb",
+          "tr": "davet etmek",
+          "examples": [
+            [
+              "I want to invite all my friends.",
+              "Bütün arkadaşlarımı davet etmek istiyorum."
+            ],
+            [
+              "They didn't invite us to the wedding.",
+              "Bizi düğüne davet etmediler."
+            ]
+          ]
+        },
+        {
+          "lemma": "celebrate",
+          "ipa": "/ˈseləbreɪt/",
+          "pos": "verb",
+          "tr": "kutlamak",
+          "examples": [
+            [
+              "We celebrate New Year with our family.",
+              "Yeni yılı ailemizle kutlarız."
+            ],
+            [
+              "Let's celebrate your new job!",
+              "Yeni işini kutlayalım!"
+            ]
+          ]
+        },
+        {
+          "lemma": "candle",
+          "ipa": "/ˈkændəl/",
+          "pos": "noun",
+          "tr": "mum",
+          "examples": [
+            [
+              "There is one candle on the cake.",
+              "Pastanın üzerinde bir mum var."
+            ],
+            [
+              "Light a candle, the room is dark.",
+              "Bir mum yak, oda karanlık."
+            ]
+          ]
+        },
+        {
+          "lemma": "guest",
+          "ipa": "/ɡest/",
+          "pos": "noun",
+          "tr": "misafir",
+          "examples": [
+            [
+              "We have a guest for dinner tonight.",
+              "Bu akşam yemeğe bir misafirimiz var."
+            ],
+            [
+              "The guest room is upstairs.",
+              "Misafir odası üst katta."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Spor Aktiviteleri",
+      "theme": "activities",
+      "icon": "sports_soccer",
+      "words": [
+        {
+          "lemma": "swim",
+          "ipa": "/swɪm/",
+          "pos": "verb",
+          "tr": "yüzmek",
+          "examples": [
+            [
+              "Can you swim?",
+              "Yüzebilir misin?"
+            ],
+            [
+              "We swim in the pool every Saturday.",
+              "Her cumartesi havuzda yüzeriz."
+            ]
+          ]
+        },
+        {
+          "lemma": "run",
+          "ipa": "/rʌn/",
+          "pos": "verb",
+          "tr": "koşmak",
+          "examples": [
+            [
+              "I run in the park every morning.",
+              "Her sabah parkta koşarım."
+            ],
+            [
+              "Don't run in the hall!",
+              "Koridorda koşma!"
+            ]
+          ]
+        },
+        {
+          "lemma": "ball",
+          "ipa": "/bɔːl/",
+          "pos": "noun",
+          "tr": "top",
+          "examples": [
+            [
+              "Throw the ball to me.",
+              "Topu bana at."
+            ],
+            [
+              "The ball went over the wall.",
+              "Top duvarın üzerinden geçti."
+            ]
+          ]
+        },
+        {
+          "lemma": "football",
+          "ipa": "/ˈfʊtbɔːl/",
+          "pos": "noun",
+          "tr": "futbol",
+          "examples": [
+            [
+              "They play football after school.",
+              "Okuldan sonra futbol oynarlar."
+            ],
+            [
+              "Football is very popular in Turkey.",
+              "Futbol Türkiye'de çok popülerdir."
+            ]
+          ]
+        },
+        {
+          "lemma": "win",
+          "ipa": "/wɪn/",
+          "pos": "verb",
+          "tr": "kazanmak",
+          "examples": [
+            [
+              "I hope our team will win.",
+              "Umarım takımımız kazanır."
+            ],
+            [
+              "She wants to win the race.",
+              "Yarışı kazanmak istiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "lose",
+          "ipa": "/luːz/",
+          "pos": "verb",
+          "tr": "kaybetmek",
+          "examples": [
+            [
+              "Nobody likes to lose a game.",
+              "Kimse oyun kaybetmeyi sevmez."
+            ],
+            [
+              "Don't lose your keys again.",
+              "Anahtarlarını yine kaybetme."
+            ]
+          ]
+        },
+        {
+          "lemma": "gym",
+          "ipa": "/dʒɪm/",
+          "pos": "noun",
+          "tr": "spor salonu",
+          "examples": [
+            [
+              "I go to the gym three times a week.",
+              "Haftada üç kez spor salonuna giderim."
+            ],
+            [
+              "The new gym is very big.",
+              "Yeni spor salonu çok büyük."
+            ]
+          ]
+        },
+        {
+          "lemma": "race",
+          "ipa": "/reɪs/",
+          "pos": "noun",
+          "tr": "yarış",
+          "examples": [
+            [
+              "He came first in the race.",
+              "Yarışta birinci oldu."
+            ],
+            [
+              "The race starts at ten.",
+              "Yarış saat onda başlıyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Müzik ve Sinema",
+      "theme": "music_film",
+      "icon": "movie",
+      "words": [
+        {
+          "lemma": "music",
+          "ipa": "/ˈmjuːzɪk/",
+          "pos": "noun",
+          "tr": "müzik",
+          "examples": [
+            [
+              "What kind of music do you like?",
+              "Ne tür müzik seversin?"
+            ],
+            [
+              "I listen to music on the bus.",
+              "Otobüste müzik dinlerim."
+            ]
+          ]
+        },
+        {
+          "lemma": "song",
+          "ipa": "/sɔːŋ/",
+          "pos": "noun",
+          "tr": "şarkı",
+          "examples": [
+            [
+              "This is my favorite song.",
+              "Bu en sevdiğim şarkı."
+            ],
+            [
+              "She sang a song for us.",
+              "Bizim için bir şarkı söyledi."
+            ]
+          ]
+        },
+        {
+          "lemma": "sing",
+          "ipa": "/sɪŋ/",
+          "pos": "verb",
+          "tr": "şarkı söylemek",
+          "examples": [
+            [
+              "My little sister likes to sing.",
+              "Küçük kız kardeşim şarkı söylemeyi sever."
+            ],
+            [
+              "Can you sing in English?",
+              "İngilizce şarkı söyleyebilir misin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "singer",
+          "ipa": "/ˈsɪŋər/",
+          "pos": "noun",
+          "tr": "şarkıcı",
+          "examples": [
+            [
+              "She is a famous singer.",
+              "O ünlü bir şarkıcı."
+            ],
+            [
+              "The singer came on stage at nine.",
+              "Şarkıcı sahneye dokuzda çıktı."
+            ]
+          ]
+        },
+        {
+          "lemma": "film",
+          "ipa": "/fɪlm/",
+          "pos": "noun",
+          "tr": "film",
+          "examples": [
+            [
+              "We watched a funny film last night.",
+              "Dün akşam komik bir film izledik."
+            ],
+            [
+              "The film was too long.",
+              "Film çok uzundu."
+            ]
+          ]
+        },
+        {
+          "lemma": "actor",
+          "ipa": "/ˈæktər/",
+          "pos": "noun",
+          "tr": "oyuncu, aktör",
+          "examples": [
+            [
+              "He is my favorite actor.",
+              "O en sevdiğim oyuncu."
+            ],
+            [
+              "The actor won a big prize.",
+              "Oyuncu büyük bir ödül kazandı."
+            ]
+          ]
+        },
+        {
+          "lemma": "cinema",
+          "ipa": "/ˈsɪnəmə/",
+          "pos": "noun",
+          "tr": "sinema",
+          "examples": [
+            [
+              "Let's go to the cinema tonight.",
+              "Bu akşam sinemaya gidelim."
+            ],
+            [
+              "The cinema is next to the mall.",
+              "Sinema alışveriş merkezinin yanında."
+            ]
+          ]
+        },
+        {
+          "lemma": "concert",
+          "ipa": "/ˈkɑːnsərt/",
+          "pos": "noun",
+          "tr": "konser",
+          "examples": [
+            [
+              "We have tickets for the concert.",
+              "Konser için biletlerimiz var."
+            ],
+            [
+              "The concert ended at midnight.",
+              "Konser gece yarısı bitti."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Meyveler",
+      "theme": "fruit",
+      "icon": "nutrition",
+      "words": [
+        {
+          "lemma": "fruit",
+          "ipa": "/fruːt/",
+          "pos": "noun",
+          "tr": "meyve",
+          "examples": [
+            [
+              "Eat more fruit and vegetables.",
+              "Daha çok meyve ve sebze ye."
+            ],
+            [
+              "Which fruit do you like best?",
+              "En çok hangi meyveyi seversin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "banana",
+          "ipa": "/bəˈnænə/",
+          "pos": "noun",
+          "tr": "muz",
+          "examples": [
+            [
+              "I eat a banana every morning.",
+              "Her sabah bir muz yerim."
+            ],
+            [
+              "This banana is not ripe yet.",
+              "Bu muz henüz olmamış."
+            ]
+          ]
+        },
+        {
+          "lemma": "grape",
+          "ipa": "/ɡreɪp/",
+          "pos": "noun",
+          "tr": "üzüm",
+          "examples": [
+            [
+              "This grape is very sweet.",
+              "Bu üzüm çok tatlı."
+            ],
+            [
+              "He picked a grape from the bowl.",
+              "Kâseden bir üzüm aldı."
+            ]
+          ]
+        },
+        {
+          "lemma": "lemon",
+          "ipa": "/ˈlemən/",
+          "pos": "noun",
+          "tr": "limon",
+          "examples": [
+            [
+              "Add some lemon to the salad.",
+              "Salataya biraz limon ekle."
+            ],
+            [
+              "I drink tea with lemon.",
+              "Çayı limonla içerim."
+            ]
+          ]
+        },
+        {
+          "lemma": "strawberry",
+          "ipa": "/ˈstrɔːberi/",
+          "pos": "noun",
+          "tr": "çilek",
+          "examples": [
+            [
+              "She loves strawberry ice cream.",
+              "Çilekli dondurmaya bayılır."
+            ],
+            [
+              "Put a strawberry on top of the cake.",
+              "Pastanın üstüne bir çilek koy."
+            ]
+          ]
+        },
+        {
+          "lemma": "peach",
+          "ipa": "/piːtʃ/",
+          "pos": "noun",
+          "tr": "şeftali",
+          "examples": [
+            [
+              "This peach is soft and sweet.",
+              "Bu şeftali yumuşak ve tatlı."
+            ],
+            [
+              "There is a peach tree in our garden.",
+              "Bahçemizde bir şeftali ağacı var."
+            ]
+          ]
+        },
+        {
+          "lemma": "cherry",
+          "ipa": "/ˈtʃeri/",
+          "pos": "noun",
+          "tr": "kiraz",
+          "examples": [
+            [
+              "This cherry is dark red.",
+              "Bu kiraz koyu kırmızı."
+            ],
+            [
+              "There is a cherry on the cake.",
+              "Pastanın üzerinde bir kiraz var."
+            ]
+          ]
+        },
+        {
+          "lemma": "watermelon",
+          "ipa": "/ˈwɔːtərmelən/",
+          "pos": "noun",
+          "tr": "karpuz",
+          "examples": [
+            [
+              "Watermelon is perfect in summer.",
+              "Karpuz yazın harikadır."
+            ],
+            [
+              "He cut the watermelon into pieces.",
+              "Karpuzu dilimlere ayırdı."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Ofiste",
+      "theme": "office",
+      "icon": "work",
+      "words": [
+        {
+          "lemma": "office",
+          "ipa": "/ˈɔːfɪs/",
+          "pos": "noun",
+          "tr": "ofis, büro",
+          "examples": [
+            [
+              "I work in an office in the city center.",
+              "Şehir merkezindeki bir ofiste çalışıyorum."
+            ],
+            [
+              "The office closes at six.",
+              "Ofis altıda kapanıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "boss",
+          "ipa": "/bɔːs/",
+          "pos": "noun",
+          "tr": "patron, şef",
+          "examples": [
+            [
+              "My boss is very kind.",
+              "Patronum çok nazik."
+            ],
+            [
+              "I need to talk to my boss.",
+              "Patronumla konuşmam gerekiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "meeting",
+          "ipa": "/ˈmiːtɪŋ/",
+          "pos": "noun",
+          "tr": "toplantı",
+          "examples": [
+            [
+              "We have a meeting at ten.",
+              "Saat onda bir toplantımız var."
+            ],
+            [
+              "The meeting was very long.",
+              "Toplantı çok uzundu."
+            ]
+          ]
+        },
+        {
+          "lemma": "job",
+          "ipa": "/dʒɑːb/",
+          "pos": "noun",
+          "tr": "iş",
+          "examples": [
+            [
+              "She found a new job.",
+              "Yeni bir iş buldu."
+            ],
+            [
+              "What is your job?",
+              "Mesleğin ne?"
+            ]
+          ]
+        },
+        {
+          "lemma": "work",
+          "ipa": "/wɜːrk/",
+          "pos": "verb",
+          "tr": "çalışmak",
+          "examples": [
+            [
+              "I work from nine to five.",
+              "Dokuzdan beşe kadar çalışırım."
+            ],
+            [
+              "My father doesn't work on Sundays.",
+              "Babam pazar günleri çalışmaz."
+            ]
+          ]
+        },
+        {
+          "lemma": "desk",
+          "ipa": "/desk/",
+          "pos": "noun",
+          "tr": "çalışma masası",
+          "examples": [
+            [
+              "My desk is near the window.",
+              "Masam pencerenin yanında."
+            ],
+            [
+              "Clean your desk before you go home.",
+              "Eve gitmeden önce masanı topla."
+            ]
+          ]
+        },
+        {
+          "lemma": "computer",
+          "ipa": "/kəmˈpjuːtər/",
+          "pos": "noun",
+          "tr": "bilgisayar",
+          "examples": [
+            [
+              "My computer is very slow.",
+              "Bilgisayarım çok yavaş."
+            ],
+            [
+              "She works on the computer all day.",
+              "Bütün gün bilgisayarda çalışıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "printer",
+          "ipa": "/ˈprɪntər/",
+          "pos": "noun",
+          "tr": "yazıcı",
+          "examples": [
+            [
+              "The printer is out of paper.",
+              "Yazıcının kâğıdı bitti."
+            ],
+            [
+              "Is the printer working?",
+              "Yazıcı çalışıyor mu?"
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "level": "B1",
       "title": "İş Hayatı",
       "theme": "work",
@@ -5322,6 +6002,21 @@
       "summer",
       "winter",
       "antonym"
+    ],
+    [
+      "win",
+      "lose",
+      "antonym"
+    ],
+    [
+      "sing",
+      "singer",
+      "family"
+    ],
+    [
+      "sing",
+      "song",
+      "family"
     ]
   ]
 }
