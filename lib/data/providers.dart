@@ -8,6 +8,8 @@ import '../domain/models/progress.dart';
 import '../domain/models/stats.dart';
 import '../domain/models/word.dart';
 import '../domain/placement/placement_exam.dart';
+import '../domain/search/word_search.dart';
+import '../domain/srs/card_state.dart';
 import 'content/content_seeder.dart';
 import 'db/app_database.dart';
 import 'repositories/content_repository.dart';
@@ -189,4 +191,26 @@ final statsRepositoryProvider = Provider<StatsRepository>(
 final statsProvider = FutureProvider<LearningStats>((ref) async {
   await ref.watch(appStartupProvider.future);
   return ref.watch(statsRepositoryProvider).stats();
+});
+
+/// Kelimelerim ekranındaki tüm kelimeler; seviye, durum ve favori bilgisiyle
+/// (FR-90).
+final wordEntriesProvider = FutureProvider<List<WordEntry>>((ref) async {
+  final levels = await ref.watch(levelOverviewProvider.future);
+  final favorites = await ref.watch(favoriteIdsProvider.future);
+  final words = await ref.watch(contentRepositoryProvider).getAllWords();
+  final states = await ref.watch(reviewRepositoryProvider).allStates();
+  final levelOfUnit = {
+    for (final l in levels)
+      for (final u in l.units) u.id: l.level.code,
+  };
+  return [
+    for (final w in words)
+      WordEntry(
+        word: w,
+        levelCode: levelOfUnit[w.unitId] ?? '',
+        state: states[w.id] ?? CardState.newCard,
+        favorite: favorites.contains(w.id),
+      ),
+  ];
 });

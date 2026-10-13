@@ -32,6 +32,12 @@ class ReviewRepository {
     return {for (final r in rows) r.wordId: CardState.fromDb(r.state)};
   }
 
+  /// Kartı olan tüm kelimelerin durumu.
+  Future<Map<int, CardState>> allStates() async => {
+    for (final r in await _db.select(_db.reviewCards).get())
+      r.wordId: CardState.fromDb(r.state),
+  };
+
   /// Cevabı kaydeder, yeni durumu hesaplar ve günlüğe yazar. Her cevap anında
   /// veritabanına yazılır (NFR-05).
   Future<ReviewState> recordAnswer({

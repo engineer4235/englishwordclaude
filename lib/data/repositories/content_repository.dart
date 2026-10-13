@@ -14,6 +14,9 @@ abstract interface class ContentRepository {
   Future<List<Word>> getWords(int unitId);
 
   Future<List<Word>> getWordsByIds(List<int> ids);
+
+  /// Tüm kelimeler (arama için, FR-90).
+  Future<List<Word>> getAllWords();
 }
 
 class DriftContentRepository implements ContentRepository {
@@ -65,6 +68,10 @@ class DriftContentRepository implements ContentRepository {
     final order = {for (var i = 0; i < ids.length; i++) ids[i]: i};
     return words..sort((a, b) => order[a.id]!.compareTo(order[b.id]!));
   }
+
+  @override
+  Future<List<Word>> getAllWords() =>
+      _words(_db.select(_db.words)..orderBy([(t) => OrderingTerm.asc(t.id)]));
 
   Future<List<Word>> _words(
     SimpleSelectStatement<$WordsTable, WordRow> query,

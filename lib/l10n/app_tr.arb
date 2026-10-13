@@ -383,5 +383,19 @@
     }
   },
   "statsLevels": "Seviye ilerlemesi",
-  "statsNoActivity": "Bu dönemde çalışma yok."
+  "statsNoActivity": "Bu dönemde çalışma yok.",
+  "searchHint": "İngilizce ya da Türkçe ara",
+  "clearSearch": "Aramayı temizle",
+  "filterFavorites": "Favoriler",
+  "filterAllLevels": "Tüm seviyeler",
+  "filterAllStates": "Tüm durumlar",
+  "resultCount": "{count} kelime",
+  "@resultCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noResults": "Sonuç bulunamadı."
 }
