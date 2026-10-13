@@ -4080,6 +4080,45 @@ class $UserProfileTable extends UserProfile
     ),
     defaultValue: const Constant(true),
   );
+  static const VerificationMeta _quietHoursEnabledMeta = const VerificationMeta(
+    'quietHoursEnabled',
+  );
+  @override
+  late final GeneratedColumn<bool> quietHoursEnabled = GeneratedColumn<bool>(
+    'quiet_hours_enabled',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("quiet_hours_enabled" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _quietStartMeta = const VerificationMeta(
+    'quietStart',
+  );
+  @override
+  late final GeneratedColumn<String> quietStart = GeneratedColumn<String>(
+    'quiet_start',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('22:00'),
+  );
+  static const VerificationMeta _quietEndMeta = const VerificationMeta(
+    'quietEnd',
+  );
+  @override
+  late final GeneratedColumn<String> quietEnd = GeneratedColumn<String>(
+    'quiet_end',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('08:00'),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -4098,6 +4137,9 @@ class $UserProfileTable extends UserProfile
     haptics,
     reminderEnabled,
     streakWarningEnabled,
+    quietHoursEnabled,
+    quietStart,
+    quietEnd,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -4225,6 +4267,27 @@ class $UserProfileTable extends UserProfile
         ),
       );
     }
+    if (data.containsKey('quiet_hours_enabled')) {
+      context.handle(
+        _quietHoursEnabledMeta,
+        quietHoursEnabled.isAcceptableOrUnknown(
+          data['quiet_hours_enabled']!,
+          _quietHoursEnabledMeta,
+        ),
+      );
+    }
+    if (data.containsKey('quiet_start')) {
+      context.handle(
+        _quietStartMeta,
+        quietStart.isAcceptableOrUnknown(data['quiet_start']!, _quietStartMeta),
+      );
+    }
+    if (data.containsKey('quiet_end')) {
+      context.handle(
+        _quietEndMeta,
+        quietEnd.isAcceptableOrUnknown(data['quiet_end']!, _quietEndMeta),
+      );
+    }
     return context;
   }
 
@@ -4298,6 +4361,18 @@ class $UserProfileTable extends UserProfile
         DriftSqlType.bool,
         data['${effectivePrefix}streak_warning_enabled'],
       )!,
+      quietHoursEnabled: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}quiet_hours_enabled'],
+      )!,
+      quietStart: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}quiet_start'],
+      )!,
+      quietEnd: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}quiet_end'],
+      )!,
     );
   }
 
@@ -4326,6 +4401,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
   final bool haptics;
   final bool reminderEnabled;
   final bool streakWarningEnabled;
+  final bool quietHoursEnabled;
+  final String quietStart;
+  final String quietEnd;
   const UserProfileRow({
     required this.id,
     required this.goalType,
@@ -4343,6 +4421,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     required this.haptics,
     required this.reminderEnabled,
     required this.streakWarningEnabled,
+    required this.quietHoursEnabled,
+    required this.quietStart,
+    required this.quietEnd,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -4367,6 +4448,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     map['haptics'] = Variable<bool>(haptics);
     map['reminder_enabled'] = Variable<bool>(reminderEnabled);
     map['streak_warning_enabled'] = Variable<bool>(streakWarningEnabled);
+    map['quiet_hours_enabled'] = Variable<bool>(quietHoursEnabled);
+    map['quiet_start'] = Variable<String>(quietStart);
+    map['quiet_end'] = Variable<String>(quietEnd);
     return map;
   }
 
@@ -4392,6 +4476,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       haptics: Value(haptics),
       reminderEnabled: Value(reminderEnabled),
       streakWarningEnabled: Value(streakWarningEnabled),
+      quietHoursEnabled: Value(quietHoursEnabled),
+      quietStart: Value(quietStart),
+      quietEnd: Value(quietEnd),
     );
   }
 
@@ -4419,6 +4506,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       streakWarningEnabled: serializer.fromJson<bool>(
         json['streakWarningEnabled'],
       ),
+      quietHoursEnabled: serializer.fromJson<bool>(json['quietHoursEnabled']),
+      quietStart: serializer.fromJson<String>(json['quietStart']),
+      quietEnd: serializer.fromJson<String>(json['quietEnd']),
     );
   }
   @override
@@ -4441,6 +4531,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       'haptics': serializer.toJson<bool>(haptics),
       'reminderEnabled': serializer.toJson<bool>(reminderEnabled),
       'streakWarningEnabled': serializer.toJson<bool>(streakWarningEnabled),
+      'quietHoursEnabled': serializer.toJson<bool>(quietHoursEnabled),
+      'quietStart': serializer.toJson<String>(quietStart),
+      'quietEnd': serializer.toJson<String>(quietEnd),
     };
   }
 
@@ -4461,6 +4554,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     bool? haptics,
     bool? reminderEnabled,
     bool? streakWarningEnabled,
+    bool? quietHoursEnabled,
+    String? quietStart,
+    String? quietEnd,
   }) => UserProfileRow(
     id: id ?? this.id,
     goalType: goalType ?? this.goalType,
@@ -4480,6 +4576,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     haptics: haptics ?? this.haptics,
     reminderEnabled: reminderEnabled ?? this.reminderEnabled,
     streakWarningEnabled: streakWarningEnabled ?? this.streakWarningEnabled,
+    quietHoursEnabled: quietHoursEnabled ?? this.quietHoursEnabled,
+    quietStart: quietStart ?? this.quietStart,
+    quietEnd: quietEnd ?? this.quietEnd,
   );
   UserProfileRow copyWithCompanion(UserProfileCompanion data) {
     return UserProfileRow(
@@ -4517,6 +4616,13 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
       streakWarningEnabled: data.streakWarningEnabled.present
           ? data.streakWarningEnabled.value
           : this.streakWarningEnabled,
+      quietHoursEnabled: data.quietHoursEnabled.present
+          ? data.quietHoursEnabled.value
+          : this.quietHoursEnabled,
+      quietStart: data.quietStart.present
+          ? data.quietStart.value
+          : this.quietStart,
+      quietEnd: data.quietEnd.present ? data.quietEnd.value : this.quietEnd,
     );
   }
 
@@ -4538,7 +4644,10 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           ..write('soundEffects: $soundEffects, ')
           ..write('haptics: $haptics, ')
           ..write('reminderEnabled: $reminderEnabled, ')
-          ..write('streakWarningEnabled: $streakWarningEnabled')
+          ..write('streakWarningEnabled: $streakWarningEnabled, ')
+          ..write('quietHoursEnabled: $quietHoursEnabled, ')
+          ..write('quietStart: $quietStart, ')
+          ..write('quietEnd: $quietEnd')
           ..write(')'))
         .toString();
   }
@@ -4561,6 +4670,9 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
     haptics,
     reminderEnabled,
     streakWarningEnabled,
+    quietHoursEnabled,
+    quietStart,
+    quietEnd,
   );
   @override
   bool operator ==(Object other) =>
@@ -4581,7 +4693,10 @@ class UserProfileRow extends DataClass implements Insertable<UserProfileRow> {
           other.soundEffects == this.soundEffects &&
           other.haptics == this.haptics &&
           other.reminderEnabled == this.reminderEnabled &&
-          other.streakWarningEnabled == this.streakWarningEnabled);
+          other.streakWarningEnabled == this.streakWarningEnabled &&
+          other.quietHoursEnabled == this.quietHoursEnabled &&
+          other.quietStart == this.quietStart &&
+          other.quietEnd == this.quietEnd);
 }
 
 class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
@@ -4601,6 +4716,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
   final Value<bool> haptics;
   final Value<bool> reminderEnabled;
   final Value<bool> streakWarningEnabled;
+  final Value<bool> quietHoursEnabled;
+  final Value<String> quietStart;
+  final Value<String> quietEnd;
   const UserProfileCompanion({
     this.id = const Value.absent(),
     this.goalType = const Value.absent(),
@@ -4618,6 +4736,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     this.haptics = const Value.absent(),
     this.reminderEnabled = const Value.absent(),
     this.streakWarningEnabled = const Value.absent(),
+    this.quietHoursEnabled = const Value.absent(),
+    this.quietStart = const Value.absent(),
+    this.quietEnd = const Value.absent(),
   });
   UserProfileCompanion.insert({
     this.id = const Value.absent(),
@@ -4636,6 +4757,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     this.haptics = const Value.absent(),
     this.reminderEnabled = const Value.absent(),
     this.streakWarningEnabled = const Value.absent(),
+    this.quietHoursEnabled = const Value.absent(),
+    this.quietStart = const Value.absent(),
+    this.quietEnd = const Value.absent(),
   });
   static Insertable<UserProfileRow> custom({
     Expression<int>? id,
@@ -4654,6 +4778,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     Expression<bool>? haptics,
     Expression<bool>? reminderEnabled,
     Expression<bool>? streakWarningEnabled,
+    Expression<bool>? quietHoursEnabled,
+    Expression<String>? quietStart,
+    Expression<String>? quietEnd,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -4673,6 +4800,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
       if (reminderEnabled != null) 'reminder_enabled': reminderEnabled,
       if (streakWarningEnabled != null)
         'streak_warning_enabled': streakWarningEnabled,
+      if (quietHoursEnabled != null) 'quiet_hours_enabled': quietHoursEnabled,
+      if (quietStart != null) 'quiet_start': quietStart,
+      if (quietEnd != null) 'quiet_end': quietEnd,
     });
   }
 
@@ -4693,6 +4823,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
     Value<bool>? haptics,
     Value<bool>? reminderEnabled,
     Value<bool>? streakWarningEnabled,
+    Value<bool>? quietHoursEnabled,
+    Value<String>? quietStart,
+    Value<String>? quietEnd,
   }) {
     return UserProfileCompanion(
       id: id ?? this.id,
@@ -4711,6 +4844,9 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
       haptics: haptics ?? this.haptics,
       reminderEnabled: reminderEnabled ?? this.reminderEnabled,
       streakWarningEnabled: streakWarningEnabled ?? this.streakWarningEnabled,
+      quietHoursEnabled: quietHoursEnabled ?? this.quietHoursEnabled,
+      quietStart: quietStart ?? this.quietStart,
+      quietEnd: quietEnd ?? this.quietEnd,
     );
   }
 
@@ -4767,6 +4903,15 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
         streakWarningEnabled.value,
       );
     }
+    if (quietHoursEnabled.present) {
+      map['quiet_hours_enabled'] = Variable<bool>(quietHoursEnabled.value);
+    }
+    if (quietStart.present) {
+      map['quiet_start'] = Variable<String>(quietStart.value);
+    }
+    if (quietEnd.present) {
+      map['quiet_end'] = Variable<String>(quietEnd.value);
+    }
     return map;
   }
 
@@ -4788,7 +4933,10 @@ class UserProfileCompanion extends UpdateCompanion<UserProfileRow> {
           ..write('soundEffects: $soundEffects, ')
           ..write('haptics: $haptics, ')
           ..write('reminderEnabled: $reminderEnabled, ')
-          ..write('streakWarningEnabled: $streakWarningEnabled')
+          ..write('streakWarningEnabled: $streakWarningEnabled, ')
+          ..write('quietHoursEnabled: $quietHoursEnabled, ')
+          ..write('quietStart: $quietStart, ')
+          ..write('quietEnd: $quietEnd')
           ..write(')'))
         .toString();
   }
@@ -9448,6 +9596,9 @@ typedef $$UserProfileTableCreateCompanionBuilder =
       Value<bool> haptics,
       Value<bool> reminderEnabled,
       Value<bool> streakWarningEnabled,
+      Value<bool> quietHoursEnabled,
+      Value<String> quietStart,
+      Value<String> quietEnd,
     });
 typedef $$UserProfileTableUpdateCompanionBuilder =
     UserProfileCompanion Function({
@@ -9467,6 +9618,9 @@ typedef $$UserProfileTableUpdateCompanionBuilder =
       Value<bool> haptics,
       Value<bool> reminderEnabled,
       Value<bool> streakWarningEnabled,
+      Value<bool> quietHoursEnabled,
+      Value<String> quietStart,
+      Value<String> quietEnd,
     });
 
 final class $$UserProfileTableReferences
@@ -9572,6 +9726,21 @@ class $$UserProfileTableFilterComposer
 
   ColumnFilters<bool> get streakWarningEnabled => $composableBuilder(
     column: $table.streakWarningEnabled,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get quietHoursEnabled => $composableBuilder(
+    column: $table.quietHoursEnabled,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get quietStart => $composableBuilder(
+    column: $table.quietStart,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get quietEnd => $composableBuilder(
+    column: $table.quietEnd,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -9683,6 +9852,21 @@ class $$UserProfileTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<bool> get quietHoursEnabled => $composableBuilder(
+    column: $table.quietHoursEnabled,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get quietStart => $composableBuilder(
+    column: $table.quietStart,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get quietEnd => $composableBuilder(
+    column: $table.quietEnd,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   $$LevelsTableOrderingComposer get currentLevelId {
     final $$LevelsTableOrderingComposer composer = $composerBuilder(
       composer: this,
@@ -9777,6 +9961,19 @@ class $$UserProfileTableAnnotationComposer
     builder: (column) => column,
   );
 
+  GeneratedColumn<bool> get quietHoursEnabled => $composableBuilder(
+    column: $table.quietHoursEnabled,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get quietStart => $composableBuilder(
+    column: $table.quietStart,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get quietEnd =>
+      $composableBuilder(column: $table.quietEnd, builder: (column) => column);
+
   $$LevelsTableAnnotationComposer get currentLevelId {
     final $$LevelsTableAnnotationComposer composer = $composerBuilder(
       composer: this,
@@ -9845,6 +10042,9 @@ class $$UserProfileTableTableManager
                 Value<bool> haptics = const Value.absent(),
                 Value<bool> reminderEnabled = const Value.absent(),
                 Value<bool> streakWarningEnabled = const Value.absent(),
+                Value<bool> quietHoursEnabled = const Value.absent(),
+                Value<String> quietStart = const Value.absent(),
+                Value<String> quietEnd = const Value.absent(),
               }) => UserProfileCompanion(
                 id: id,
                 goalType: goalType,
@@ -9862,6 +10062,9 @@ class $$UserProfileTableTableManager
                 haptics: haptics,
                 reminderEnabled: reminderEnabled,
                 streakWarningEnabled: streakWarningEnabled,
+                quietHoursEnabled: quietHoursEnabled,
+                quietStart: quietStart,
+                quietEnd: quietEnd,
               ),
           createCompanionCallback:
               ({
@@ -9881,6 +10084,9 @@ class $$UserProfileTableTableManager
                 Value<bool> haptics = const Value.absent(),
                 Value<bool> reminderEnabled = const Value.absent(),
                 Value<bool> streakWarningEnabled = const Value.absent(),
+                Value<bool> quietHoursEnabled = const Value.absent(),
+                Value<String> quietStart = const Value.absent(),
+                Value<String> quietEnd = const Value.absent(),
               }) => UserProfileCompanion.insert(
                 id: id,
                 goalType: goalType,
@@ -9898,6 +10104,9 @@ class $$UserProfileTableTableManager
                 haptics: haptics,
                 reminderEnabled: reminderEnabled,
                 streakWarningEnabled: streakWarningEnabled,
+                quietHoursEnabled: quietHoursEnabled,
+                quietStart: quietStart,
+                quietEnd: quietEnd,
               ),
           withReferenceMapper: (p0) => p0
               .map(

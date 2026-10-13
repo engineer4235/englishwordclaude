@@ -148,6 +148,12 @@ class UserProfile extends Table {
   BoolColumn get streakWarningEnabled =>
       boolean().withDefault(const Constant(true))();
 
+  // Şema 4: sessiz saatler (FR-102).
+  BoolColumn get quietHoursEnabled =>
+      boolean().withDefault(const Constant(false))();
+  TextColumn get quietStart => text().withDefault(const Constant('22:00'))();
+  TextColumn get quietEnd => text().withDefault(const Constant('08:00'))();
+
   @override
   Set<Column<Object>> get primaryKey => {id};
 }

@@ -397,5 +397,14 @@
       }
     }
   },
-  "noResults": "Sonuç bulunamadı."
+  "noResults": "Sonuç bulunamadı.",
+  "notifReminderTitle": "Kelime zamanı!",
+  "notifReminderBody": "Bugünkü kelimelerin ve tekrarların seni bekliyor.",
+  "notifStreakTitle": "Serin tehlikede!",
+  "notifStreakBody": "Bugünkü hedefini henüz tamamlamadın. Birkaç dakika ayır, serini koru.",
+  "settingQuietHours": "Sessiz saatler",
+  "settingQuietHoursHint": "Bu saatlerde bildirim gönderilmez.",
+  "settingQuietStart": "Başlangıç",
+  "settingQuietEnd": "Bitiş",
+  "notifPermissionDenied": "Bildirim izni verilmedi. Hatırlatmalar için izni cihaz ayarlarından açabilirsin."
 }

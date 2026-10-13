@@ -553,4 +553,34 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get noResults => 'Sonuç bulunamadı.';
+
+  @override
+  String get notifReminderTitle => 'Kelime zamanı!';
+
+  @override
+  String get notifReminderBody =>
+      'Bugünkü kelimelerin ve tekrarların seni bekliyor.';
+
+  @override
+  String get notifStreakTitle => 'Serin tehlikede!';
+
+  @override
+  String get notifStreakBody =>
+      'Bugünkü hedefini henüz tamamlamadın. Birkaç dakika ayır, serini koru.';
+
+  @override
+  String get settingQuietHours => 'Sessiz saatler';
+
+  @override
+  String get settingQuietHoursHint => 'Bu saatlerde bildirim gönderilmez.';
+
+  @override
+  String get settingQuietStart => 'Başlangıç';
+
+  @override
+  String get settingQuietEnd => 'Bitiş';
+
+  @override
+  String get notifPermissionDenied =>
+      'Bildirim izni verilmedi. Hatırlatmalar için izni cihaz ayarlarından açabilirsin.';
 }

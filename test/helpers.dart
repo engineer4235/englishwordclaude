@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:english_word_learning/app.dart';
+import 'package:english_word_learning/core/notifications/notification_plan.dart';
+import 'package:english_word_learning/core/notifications/notification_service.dart';
 import 'package:english_word_learning/core/tts/tts_service.dart';
 import 'package:english_word_learning/data/content/content_seeder.dart';
 import 'package:english_word_learning/data/db/app_database.dart';
@@ -27,6 +29,22 @@ class FakeTts implements TtsService {
   Future<void> speak(String text) async => spoken.add(text);
 }
 
+class FakeNotifications implements NotificationService {
+  final plans = <NotificationPlan>[];
+  int permissionRequests = 0;
+  bool grant = true;
+
+  @override
+  Future<bool> requestPermission() async {
+    permissionRequests++;
+    return grant;
+  }
+
+  @override
+  Future<void> apply(NotificationPlan plan, NotificationTexts texts) async =>
+      plans.add(plan);
+}
+
 /// Tanıtımı tamamlamış kullanıcı.
 class _Onboarded extends OnboardingStatus {
   @override
@@ -38,6 +56,7 @@ class _Onboarded extends OnboardingStatus {
 Widget testApp(
   AppDatabase db, {
   FakeTts? tts,
+  FakeNotifications? notifications,
   Widget? child,
   bool onboarded = true,
 }) {
@@ -49,6 +68,9 @@ Widget testApp(
         (ref) => ContentSeeder(db).seedIfEmpty(seedJson),
       ),
       ttsServiceProvider.overrideWithValue(tts ?? FakeTts()),
+      notificationServiceProvider.overrideWithValue(
+        notifications ?? FakeNotifications(),
+      ),
     ],
     child: child ?? const EnglishWordApp(),
   );

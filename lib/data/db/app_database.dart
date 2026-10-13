@@ -29,7 +29,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'english_word_learning'));
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   /// Tek satırlık kullanıcı profilini döner, yoksa oluşturur. Kimlik her
   /// zaman 1 olduğundan eş zamanlı çağrılar ikinci satır oluşturmaz.
@@ -57,6 +57,15 @@ class AppDatabase extends _$AppDatabase {
           userProfile.haptics,
           userProfile.reminderEnabled,
           userProfile.streakWarningEnabled,
+        ]) {
+          await m.addColumn(userProfile, column);
+        }
+      }
+      if (from < 4) {
+        for (final column in [
+          userProfile.quietHoursEnabled,
+          userProfile.quietStart,
+          userProfile.quietEnd,
         ]) {
           await m.addColumn(userProfile, column);
         }

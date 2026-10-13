@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/notifications/notification_service.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../data/providers.dart';
 import '../../../data/repositories/profile_repository.dart';
@@ -32,7 +33,13 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   String? _notifyTime = '20:00';
   bool _saving = false;
 
-  void _next() => setState(() => _step++);
+  void _next() {
+    // Hatırlatma saati seçildiyse bildirim izni istenir (FR-04).
+    if (_step == _notifyStep && _notifyTime != null) {
+      ref.read(notificationServiceProvider).requestPermission();
+    }
+    setState(() => _step++);
+  }
 
   Future<void> _pickTime() async {
     final picked = await showTimePicker(
