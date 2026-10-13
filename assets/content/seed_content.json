@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "note": "MVP içeriği: A1'de 18, A2'de 25, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 10,
+  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -2471,6 +2471,958 @@
             [
               "We bought a blue balloon.",
               "Mavi bir balon aldık."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Sebzeler",
+      "theme": "vegetables",
+      "icon": "eco",
+      "words": [
+        {
+          "lemma": "tomato",
+          "ipa": "/təˈmeɪtoʊ/",
+          "pos": "noun",
+          "tr": "domates",
+          "examples": [
+            [
+              "This tomato is very red.",
+              "Bu domates çok kırmızı."
+            ],
+            [
+              "Cut a tomato for the salad.",
+              "Salata için bir domates doğra."
+            ]
+          ]
+        },
+        {
+          "lemma": "potato",
+          "ipa": "/pəˈteɪtoʊ/",
+          "pos": "noun",
+          "tr": "patates",
+          "examples": [
+            [
+              "I like potato soup.",
+              "Patates çorbasını severim."
+            ],
+            [
+              "Peel the potato first.",
+              "Önce patatesi soy."
+            ]
+          ]
+        },
+        {
+          "lemma": "carrot",
+          "ipa": "/ˈkærət/",
+          "pos": "noun",
+          "tr": "havuç",
+          "examples": [
+            [
+              "The rabbit is eating a carrot.",
+              "Tavşan havuç yiyor."
+            ],
+            [
+              "A carrot is orange.",
+              "Havuç turuncudur."
+            ]
+          ]
+        },
+        {
+          "lemma": "onion",
+          "ipa": "/ˈʌnjən/",
+          "pos": "noun",
+          "tr": "soğan",
+          "examples": [
+            [
+              "Cutting an onion makes me cry.",
+              "Soğan doğramak beni ağlatır."
+            ],
+            [
+              "Put one onion in the pot.",
+              "Tencereye bir soğan koy."
+            ]
+          ]
+        },
+        {
+          "lemma": "cucumber",
+          "ipa": "/ˈkjuːkʌmbər/",
+          "pos": "noun",
+          "tr": "salatalık",
+          "examples": [
+            [
+              "I eat cucumber with cheese.",
+              "Salatalığı peynirle yerim."
+            ],
+            [
+              "This cucumber is fresh.",
+              "Bu salatalık taze."
+            ]
+          ]
+        },
+        {
+          "lemma": "pepper",
+          "ipa": "/ˈpepər/",
+          "pos": "noun",
+          "tr": "biber",
+          "examples": [
+            [
+              "The green pepper is not hot.",
+              "Yeşil biber acı değil."
+            ],
+            [
+              "Add some black pepper.",
+              "Biraz karabiber ekle."
+            ]
+          ]
+        },
+        {
+          "lemma": "salad",
+          "ipa": "/ˈsæləd/",
+          "pos": "noun",
+          "tr": "salata",
+          "examples": [
+            [
+              "I want a salad for lunch.",
+              "Öğle yemeğinde salata istiyorum."
+            ],
+            [
+              "The salad is very fresh.",
+              "Salata çok taze."
+            ]
+          ]
+        },
+        {
+          "lemma": "bean",
+          "ipa": "/biːn/",
+          "pos": "noun",
+          "tr": "fasulye",
+          "examples": [
+            [
+              "My mother cooks bean soup.",
+              "Annem fasulye çorbası pişirir."
+            ],
+            [
+              "This bean is green.",
+              "Bu fasulye yeşil."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Sınıf Eşyaları",
+      "theme": "classroom",
+      "icon": "edit",
+      "words": [
+        {
+          "lemma": "pencil",
+          "ipa": "/ˈpensəl/",
+          "pos": "noun",
+          "tr": "kurşun kalem",
+          "examples": [
+            [
+              "Write your name with a pencil.",
+              "Adını kurşun kalemle yaz."
+            ],
+            [
+              "My pencil is broken.",
+              "Kalemim kırık."
+            ]
+          ]
+        },
+        {
+          "lemma": "eraser",
+          "ipa": "/ɪˈreɪsər/",
+          "pos": "noun",
+          "tr": "silgi",
+          "examples": [
+            [
+              "Can I use your eraser?",
+              "Silgini kullanabilir miyim?"
+            ],
+            [
+              "The eraser is under the desk.",
+              "Silgi sıranın altında."
+            ]
+          ]
+        },
+        {
+          "lemma": "ruler",
+          "ipa": "/ˈruːlər/",
+          "pos": "noun",
+          "tr": "cetvel",
+          "examples": [
+            [
+              "Draw a line with a ruler.",
+              "Cetvelle bir çizgi çiz."
+            ],
+            [
+              "My ruler is thirty centimeters long.",
+              "Cetvelim otuz santimetre uzunluğunda."
+            ]
+          ]
+        },
+        {
+          "lemma": "notebook",
+          "ipa": "/ˈnoʊtbʊk/",
+          "pos": "noun",
+          "tr": "defter",
+          "examples": [
+            [
+              "Open your notebook, please.",
+              "Lütfen defterini aç."
+            ],
+            [
+              "I have a blue notebook.",
+              "Mavi bir defterim var."
+            ]
+          ]
+        },
+        {
+          "lemma": "board",
+          "ipa": "/bɔːrd/",
+          "pos": "noun",
+          "tr": "tahta, pano",
+          "examples": [
+            [
+              "The teacher writes on the board.",
+              "Öğretmen tahtaya yazıyor."
+            ],
+            [
+              "Look at the board, please.",
+              "Lütfen tahtaya bakın."
+            ]
+          ]
+        },
+        {
+          "lemma": "paper",
+          "ipa": "/ˈpeɪpər/",
+          "pos": "noun",
+          "tr": "kâğıt",
+          "examples": [
+            [
+              "Give me a piece of paper.",
+              "Bana bir parça kâğıt ver."
+            ],
+            [
+              "Write it on the paper.",
+              "Onu kâğıda yaz."
+            ]
+          ]
+        },
+        {
+          "lemma": "scissors",
+          "ipa": "/ˈsɪzərz/",
+          "pos": "noun",
+          "tr": "makas",
+          "examples": [
+            [
+              "Cut the paper with scissors.",
+              "Kâğıdı makasla kes."
+            ],
+            [
+              "Where are the scissors?",
+              "Makas nerede?"
+            ]
+          ]
+        },
+        {
+          "lemma": "glue",
+          "ipa": "/ɡluː/",
+          "pos": "noun",
+          "tr": "yapıştırıcı",
+          "examples": [
+            [
+              "I need some glue for my project.",
+              "Projem için biraz yapıştırıcıya ihtiyacım var."
+            ],
+            [
+              "The glue is on the table.",
+              "Yapıştırıcı masanın üstünde."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Hareket Fiilleri",
+      "theme": "actions",
+      "icon": "directions_walk",
+      "words": [
+        {
+          "lemma": "walk",
+          "ipa": "/wɔːk/",
+          "pos": "verb",
+          "tr": "yürümek",
+          "examples": [
+            [
+              "I walk to school every day.",
+              "Her gün okula yürürüm."
+            ],
+            [
+              "Let's walk in the park.",
+              "Parkta yürüyelim."
+            ]
+          ]
+        },
+        {
+          "lemma": "sit",
+          "ipa": "/sɪt/",
+          "pos": "verb",
+          "tr": "oturmak",
+          "examples": [
+            [
+              "Please sit here.",
+              "Lütfen buraya otur."
+            ],
+            [
+              "We sit next to the window.",
+              "Pencerenin yanında otururuz."
+            ]
+          ]
+        },
+        {
+          "lemma": "stand",
+          "ipa": "/stænd/",
+          "pos": "verb",
+          "tr": "ayakta durmak",
+          "examples": [
+            [
+              "Please stand up.",
+              "Lütfen ayağa kalkın."
+            ],
+            [
+              "Don't stand in the door.",
+              "Kapıda durma."
+            ]
+          ]
+        },
+        {
+          "lemma": "open",
+          "ipa": "/ˈoʊpən/",
+          "pos": "verb",
+          "tr": "açmak",
+          "examples": [
+            [
+              "Open the window, please.",
+              "Pencereyi aç lütfen."
+            ],
+            [
+              "Can you open this box?",
+              "Bu kutuyu açabilir misin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "close",
+          "ipa": "/kloʊz/",
+          "pos": "verb",
+          "tr": "kapatmak",
+          "examples": [
+            [
+              "Close the door, please.",
+              "Kapıyı kapat lütfen."
+            ],
+            [
+              "Close your eyes.",
+              "Gözlerini kapat."
+            ]
+          ]
+        },
+        {
+          "lemma": "jump",
+          "ipa": "/dʒʌmp/",
+          "pos": "verb",
+          "tr": "zıplamak, atlamak",
+          "examples": [
+            [
+              "The children jump in the garden.",
+              "Çocuklar bahçede zıplıyor."
+            ],
+            [
+              "Can you jump over the wall?",
+              "Duvarın üzerinden atlayabilir misin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "wait",
+          "ipa": "/weɪt/",
+          "pos": "verb",
+          "tr": "beklemek",
+          "examples": [
+            [
+              "Wait for me!",
+              "Beni bekle!"
+            ],
+            [
+              "We wait for the bus every morning.",
+              "Her sabah otobüsü bekleriz."
+            ]
+          ]
+        },
+        {
+          "lemma": "climb",
+          "ipa": "/klaɪm/",
+          "pos": "verb",
+          "tr": "tırmanmak",
+          "examples": [
+            [
+              "Cats can climb trees.",
+              "Kediler ağaçlara tırmanabilir."
+            ],
+            [
+              "Don't climb on the table!",
+              "Masanın üstüne tırmanma!"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Böcekler",
+      "theme": "insects",
+      "icon": "bug_report",
+      "words": [
+        {
+          "lemma": "insect",
+          "ipa": "/ˈɪnsekt/",
+          "pos": "noun",
+          "tr": "böcek",
+          "examples": [
+            [
+              "An ant is a small insect.",
+              "Karınca küçük bir böcektir."
+            ],
+            [
+              "There is an insect on the window.",
+              "Pencerede bir böcek var."
+            ]
+          ]
+        },
+        {
+          "lemma": "bee",
+          "ipa": "/biː/",
+          "pos": "noun",
+          "tr": "arı",
+          "examples": [
+            [
+              "A bee makes honey.",
+              "Arı bal yapar."
+            ],
+            [
+              "Be careful, there is a bee!",
+              "Dikkat et, arı var!"
+            ]
+          ]
+        },
+        {
+          "lemma": "butterfly",
+          "ipa": "/ˈbʌtərflaɪ/",
+          "pos": "noun",
+          "tr": "kelebek",
+          "examples": [
+            [
+              "A butterfly is on the flower.",
+              "Çiçeğin üzerinde bir kelebek var."
+            ],
+            [
+              "This butterfly is yellow.",
+              "Bu kelebek sarı."
+            ]
+          ]
+        },
+        {
+          "lemma": "ant",
+          "ipa": "/ænt/",
+          "pos": "noun",
+          "tr": "karınca",
+          "examples": [
+            [
+              "The ant is carrying food.",
+              "Karınca yiyecek taşıyor."
+            ],
+            [
+              "I saw an ant in the kitchen.",
+              "Mutfakta bir karınca gördüm."
+            ]
+          ]
+        },
+        {
+          "lemma": "spider",
+          "ipa": "/ˈspaɪdər/",
+          "pos": "noun",
+          "tr": "örümcek",
+          "examples": [
+            [
+              "I am afraid of the spider.",
+              "Örümcekten korkuyorum."
+            ],
+            [
+              "The spider is very big.",
+              "Örümcek çok büyük."
+            ]
+          ]
+        },
+        {
+          "lemma": "mosquito",
+          "ipa": "/məˈskiːtoʊ/",
+          "pos": "noun",
+          "tr": "sivrisinek",
+          "examples": [
+            [
+              "A mosquito bit me.",
+              "Beni bir sivrisinek ısırdı."
+            ],
+            [
+              "There is a mosquito in my room.",
+              "Odamda bir sivrisinek var."
+            ]
+          ]
+        },
+        {
+          "lemma": "frog",
+          "ipa": "/frɑːɡ/",
+          "pos": "noun",
+          "tr": "kurbağa",
+          "examples": [
+            [
+              "The frog is green.",
+              "Kurbağa yeşil."
+            ],
+            [
+              "A frog lives in the pond.",
+              "Gölette bir kurbağa yaşıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "snake",
+          "ipa": "/sneɪk/",
+          "pos": "noun",
+          "tr": "yılan",
+          "examples": [
+            [
+              "The snake is long and thin.",
+              "Yılan uzun ve ince."
+            ],
+            [
+              "I saw a snake in the garden.",
+              "Bahçede bir yılan gördüm."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "İnsanlar",
+      "theme": "people",
+      "icon": "group",
+      "words": [
+        {
+          "lemma": "man",
+          "ipa": "/mæn/",
+          "pos": "noun",
+          "tr": "adam",
+          "examples": [
+            [
+              "The man is tall.",
+              "Adam uzun boylu."
+            ],
+            [
+              "That man is my uncle.",
+              "O adam benim amcam."
+            ]
+          ]
+        },
+        {
+          "lemma": "woman",
+          "ipa": "/ˈwʊmən/",
+          "pos": "noun",
+          "tr": "kadın",
+          "examples": [
+            [
+              "The woman is a doctor.",
+              "Kadın bir doktor."
+            ],
+            [
+              "Who is that woman?",
+              "O kadın kim?"
+            ]
+          ]
+        },
+        {
+          "lemma": "boy",
+          "ipa": "/bɔɪ/",
+          "pos": "noun",
+          "tr": "erkek çocuk",
+          "examples": [
+            [
+              "The boy is playing football.",
+              "Çocuk futbol oynuyor."
+            ],
+            [
+              "He is a happy boy.",
+              "O mutlu bir çocuk."
+            ]
+          ]
+        },
+        {
+          "lemma": "girl",
+          "ipa": "/ɡɜːrl/",
+          "pos": "noun",
+          "tr": "kız çocuk",
+          "examples": [
+            [
+              "The girl has long hair.",
+              "Kızın uzun saçları var."
+            ],
+            [
+              "That girl is my sister.",
+              "O kız benim kız kardeşim."
+            ]
+          ]
+        },
+        {
+          "lemma": "child",
+          "ipa": "/tʃaɪld/",
+          "pos": "noun",
+          "tr": "çocuk",
+          "examples": [
+            [
+              "The child is sleeping.",
+              "Çocuk uyuyor."
+            ],
+            [
+              "Every child likes toys.",
+              "Her çocuk oyuncakları sever."
+            ]
+          ]
+        },
+        {
+          "lemma": "person",
+          "ipa": "/ˈpɜːrsən/",
+          "pos": "noun",
+          "tr": "kişi",
+          "examples": [
+            [
+              "She is a very kind person.",
+              "O çok nazik bir kişi."
+            ],
+            [
+              "Only one person came.",
+              "Sadece bir kişi geldi."
+            ]
+          ]
+        },
+        {
+          "lemma": "people",
+          "ipa": "/ˈpiːpəl/",
+          "pos": "noun",
+          "tr": "insanlar",
+          "examples": [
+            [
+              "Many people live in this city.",
+              "Bu şehirde çok insan yaşıyor."
+            ],
+            [
+              "The people here are friendly.",
+              "Buradaki insanlar cana yakın."
+            ]
+          ]
+        },
+        {
+          "lemma": "friend",
+          "ipa": "/frend/",
+          "pos": "noun",
+          "tr": "arkadaş",
+          "examples": [
+            [
+              "He is my best friend.",
+              "O benim en iyi arkadaşım."
+            ],
+            [
+              "I am going out with a friend.",
+              "Bir arkadaşımla dışarı çıkıyorum."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Şekiller",
+      "theme": "shapes",
+      "icon": "category",
+      "words": [
+        {
+          "lemma": "circle",
+          "ipa": "/ˈsɜːrkəl/",
+          "pos": "noun",
+          "tr": "daire",
+          "examples": [
+            [
+              "Draw a circle on the paper.",
+              "Kâğıda bir daire çiz."
+            ],
+            [
+              "The children sit in a circle.",
+              "Çocuklar daire şeklinde oturuyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "square",
+          "ipa": "/skwer/",
+          "pos": "noun",
+          "tr": "kare",
+          "examples": [
+            [
+              "A square has four sides.",
+              "Karenin dört kenarı vardır."
+            ],
+            [
+              "The box is a square.",
+              "Kutu kare şeklinde."
+            ]
+          ]
+        },
+        {
+          "lemma": "triangle",
+          "ipa": "/ˈtraɪæŋɡəl/",
+          "pos": "noun",
+          "tr": "üçgen",
+          "examples": [
+            [
+              "A triangle has three sides.",
+              "Üçgenin üç kenarı vardır."
+            ],
+            [
+              "Cut the paper into a triangle.",
+              "Kâğıdı üçgen şeklinde kes."
+            ]
+          ]
+        },
+        {
+          "lemma": "line",
+          "ipa": "/laɪn/",
+          "pos": "noun",
+          "tr": "çizgi; sıra",
+          "examples": [
+            [
+              "Draw a straight line.",
+              "Düz bir çizgi çiz."
+            ],
+            [
+              "Wait in line, please.",
+              "Lütfen sırada bekleyin."
+            ]
+          ]
+        },
+        {
+          "lemma": "long",
+          "ipa": "/lɔːŋ/",
+          "pos": "adjective",
+          "tr": "uzun",
+          "examples": [
+            [
+              "This road is very long.",
+              "Bu yol çok uzun."
+            ],
+            [
+              "She has long hair.",
+              "Uzun saçları var."
+            ]
+          ]
+        },
+        {
+          "lemma": "short",
+          "ipa": "/ʃɔːrt/",
+          "pos": "adjective",
+          "tr": "kısa",
+          "examples": [
+            [
+              "The film was short.",
+              "Film kısaydı."
+            ],
+            [
+              "My brother is short.",
+              "Erkek kardeşim kısa boylu."
+            ]
+          ]
+        },
+        {
+          "lemma": "tall",
+          "ipa": "/tɔːl/",
+          "pos": "adjective",
+          "tr": "uzun boylu, yüksek",
+          "examples": [
+            [
+              "My father is very tall.",
+              "Babam çok uzun boylu."
+            ],
+            [
+              "There is a tall tree in the park.",
+              "Parkta yüksek bir ağaç var."
+            ]
+          ]
+        },
+        {
+          "lemma": "round",
+          "ipa": "/raʊnd/",
+          "pos": "adjective",
+          "tr": "yuvarlak",
+          "examples": [
+            [
+              "The table is round.",
+              "Masa yuvarlak."
+            ],
+            [
+              "The ball is round.",
+              "Top yuvarlaktır."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Duyular",
+      "theme": "senses",
+      "icon": "visibility",
+      "words": [
+        {
+          "lemma": "see",
+          "ipa": "/siː/",
+          "pos": "verb",
+          "tr": "görmek",
+          "examples": [
+            [
+              "I can see the sea from my window.",
+              "Penceremden denizi görebiliyorum."
+            ],
+            [
+              "Did you see my keys?",
+              "Anahtarlarımı gördün mü?"
+            ]
+          ]
+        },
+        {
+          "lemma": "hear",
+          "ipa": "/hɪr/",
+          "pos": "verb",
+          "tr": "duymak",
+          "examples": [
+            [
+              "Can you hear me?",
+              "Beni duyabiliyor musun?"
+            ],
+            [
+              "I hear music.",
+              "Müzik duyuyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "smell",
+          "ipa": "/smel/",
+          "pos": "verb",
+          "tr": "koklamak; kokmak",
+          "examples": [
+            [
+              "I smell something nice.",
+              "Güzel bir şey kokluyorum."
+            ],
+            [
+              "The flowers smell good.",
+              "Çiçekler güzel kokuyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "taste",
+          "ipa": "/teɪst/",
+          "pos": "verb",
+          "tr": "tadına bakmak",
+          "examples": [
+            [
+              "Taste this soup.",
+              "Bu çorbanın tadına bak."
+            ],
+            [
+              "The cake will taste sweet.",
+              "Pastanın tadı tatlı olacak."
+            ]
+          ]
+        },
+        {
+          "lemma": "touch",
+          "ipa": "/tʌtʃ/",
+          "pos": "verb",
+          "tr": "dokunmak",
+          "examples": [
+            [
+              "Don't touch the oven!",
+              "Fırına dokunma!"
+            ],
+            [
+              "Can I touch your cat?",
+              "Kedine dokunabilir miyim?"
+            ]
+          ]
+        },
+        {
+          "lemma": "look",
+          "ipa": "/lʊk/",
+          "pos": "verb",
+          "tr": "bakmak",
+          "examples": [
+            [
+              "Look at the sky!",
+              "Gökyüzüne bak!"
+            ],
+            [
+              "I look at the photos.",
+              "Fotoğraflara bakıyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "listen",
+          "ipa": "/ˈlɪsən/",
+          "pos": "verb",
+          "tr": "dinlemek",
+          "examples": [
+            [
+              "Listen to the teacher.",
+              "Öğretmeni dinle."
+            ],
+            [
+              "I listen to the radio.",
+              "Radyo dinlerim."
+            ]
+          ]
+        },
+        {
+          "lemma": "feel",
+          "ipa": "/fiːl/",
+          "pos": "verb",
+          "tr": "hissetmek",
+          "examples": [
+            [
+              "I feel happy today.",
+              "Bugün kendimi mutlu hissediyorum."
+            ],
+            [
+              "How do you feel?",
+              "Kendini nasıl hissediyorsun?"
             ]
           ]
         }
@@ -7396,6 +8348,21 @@
     [
       "hello",
       "goodbye",
+      "antonym"
+    ],
+    [
+      "open",
+      "close",
+      "antonym"
+    ],
+    [
+      "long",
+      "short",
+      "antonym"
+    ],
+    [
+      "sit",
+      "stand",
       "antonym"
     ]
   ]
