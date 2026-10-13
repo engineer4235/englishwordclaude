@@ -14,8 +14,12 @@ import 'package:english_word_learning/domain/models/word.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// Testlerde kullanılan içerik paketi.
-final seedJson = File(seedContentAsset).readAsStringSync();
+/// Testlerde kullanılan sabit içerik paketi (3 A1 ünitesi, 24 kelime).
+/// Uygulamanın asıl içeriği büyüdükçe testler etkilenmesin diye ayrıdır.
+final seedJson = File('test/fixtures/seed_content.json').readAsStringSync();
+
+/// Uygulamayla gelen asıl içerik paketi.
+final appContentJson = File(seedContentAsset).readAsStringSync();
 
 AppDatabase memoryDatabase() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;

@@ -63,31 +63,7 @@ class ContentSeeder {
           firstUnitId = unitId;
         }
 
-        for (final word
-            in (unit['words'] as List).cast<Map<String, dynamic>>()) {
-          final wordId = await _db
-              .into(_db.words)
-              .insert(
-                WordsCompanion.insert(
-                  unitId: unitId,
-                  lemma: word['lemma'] as String,
-                  pos: word['pos'] as String,
-                  meaningTr: word['tr'] as String,
-                  ipa: Value(word['ipa'] as String?),
-                ),
-              );
-          for (final ex in (word['examples'] as List).cast<List<dynamic>>()) {
-            await _db
-                .into(_db.examples)
-                .insert(
-                  ExamplesCompanion.insert(
-                    wordId: wordId,
-                    sentenceEn: ex[0] as String,
-                    sentenceTr: ex[1] as String,
-                  ),
-                );
-          }
-        }
+        await _insertWords(unitId, unit);
       }
 
       final firstLevelId = levelIds[levels.first['code']]!;
@@ -111,5 +87,89 @@ class ContentSeeder {
       }
     });
     return true;
+  }
+
+  Future<void> _insertWords(int unitId, Map<String, dynamic> unit) async {
+    for (final word in (unit['words'] as List).cast<Map<String, dynamic>>()) {
+      final wordId = await _db
+          .into(_db.words)
+          .insert(
+            WordsCompanion.insert(
+              unitId: unitId,
+              lemma: word['lemma'] as String,
+              pos: word['pos'] as String,
+              meaningTr: word['tr'] as String,
+              ipa: Value(word['ipa'] as String?),
+            ),
+          );
+      for (final ex in (word['examples'] as List).cast<List<dynamic>>()) {
+        await _db
+            .into(_db.examples)
+            .insert(
+              ExamplesCompanion.insert(
+                wordId: wordId,
+                sentenceEn: ex[0] as String,
+                sentenceTr: ex[1] as String,
+              ),
+            );
+      }
+    }
+  }
+
+  /// İçerik paketinde olup veritabanında olmayan üniteleri (seviye kodu ve
+  /// başlığa göre) ekler; uygulama güncellemesinde yeni içerik böyle gelir.
+  /// Seviyenin son ünitesi tamamlandıysa ilk yeni ünite açılır. Eklenen
+  /// ünite sayısını döner.
+  Future<int> addMissingUnits(String json) async {
+    final data = jsonDecode(json) as Map<String, dynamic>;
+    final units = (data['units'] as List).cast<Map<String, dynamic>>();
+    var added = 0;
+    await _db.transaction(() async {
+      final levels = {
+        for (final l in await _db.select(_db.levels).get()) l.code: l.id,
+      };
+      for (final unit in units) {
+        final levelId = levels[unit['level'] as String];
+        if (levelId == null) continue;
+        final title = unit['title'] as String;
+        final existing = await (_db.select(
+          _db.units,
+        )..where((t) => t.levelId.equals(levelId))).get();
+        if (existing.any((u) => u.titleTr == title)) continue;
+
+        existing.sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
+        final last = existing.isEmpty ? null : existing.last;
+        final unitId = await _db
+            .into(_db.units)
+            .insert(
+              UnitsCompanion.insert(
+                levelId: levelId,
+                sortOrder: (last?.sortOrder ?? 0) + 1,
+                titleTr: title,
+                theme: unit['theme'] as String,
+                icon: Value(unit['icon'] as String?),
+              ),
+            );
+        await _insertWords(unitId, unit);
+        added++;
+
+        if (last != null) {
+          final progress = await (_db.select(
+            _db.unitProgress,
+          )..where((t) => t.unitId.equals(last.id))).getSingleOrNull();
+          if (progress?.status == 'completed') {
+            await _db
+                .into(_db.unitProgress)
+                .insertOnConflictUpdate(
+                  UnitProgressCompanion.insert(
+                    unitId: Value(unitId),
+                    status: const Value('open'),
+                  ),
+                );
+          }
+        }
+      }
+    });
+    return added;
   }
 }
