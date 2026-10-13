@@ -1503,6 +1503,30 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'ünlem'**
   String get posInterjection;
+
+  /// No description provided for @unitsCompleted.
+  ///
+  /// In tr, this message translates to:
+  /// **'{done}/{total} ünite tamamlandı'**
+  String unitsCompleted(int done, int total);
+
+  /// No description provided for @showUnits.
+  ///
+  /// In tr, this message translates to:
+  /// **'Üniteleri göster'**
+  String get showUnits;
+
+  /// No description provided for @hideUnits.
+  ///
+  /// In tr, this message translates to:
+  /// **'Üniteleri gizle'**
+  String get hideUnits;
+
+  /// No description provided for @nextUnitBadge.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sıradaki'**
+  String get nextUnitBadge;
 }
 
 class _AppLocalizationsDelegate
