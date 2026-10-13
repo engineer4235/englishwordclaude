@@ -521,5 +521,31 @@
       }
     }
   },
-  "matchTimeUp": "Süre doldu!"
+  "matchTimeUp": "Süre doldu!",
+  "save": "Kaydet",
+  "addWord": "Kelime ekle",
+  "wordEnLabel": "İngilizce kelime",
+  "wordTrLabel": "Türkçe anlamı",
+  "exampleEnLabel": "Örnek cümle (isteğe bağlı)",
+  "exampleTrLabel": "Cümlenin çevirisi (isteğe bağlı)",
+  "duplicateWord": "Bu kelime zaten var.",
+  "wordAdded": "\"{lemma}\" eklendi",
+  "@wordAdded": {
+    "placeholders": {
+      "lemma": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteWord": "Kelimeyi sil",
+  "deleteWordConfirm": "\"{lemma}\" ve çalışma geçmişi silinsin mi?",
+  "@deleteWordConfirm": {
+    "placeholders": {
+      "lemma": {
+        "type": "String"
+      }
+    }
+  },
+  "delete": "Sil",
+  "posOther": "kendi kelimem"
 }

@@ -750,4 +750,44 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get matchTimeUp => 'Süre doldu!';
+
+  @override
+  String get save => 'Kaydet';
+
+  @override
+  String get addWord => 'Kelime ekle';
+
+  @override
+  String get wordEnLabel => 'İngilizce kelime';
+
+  @override
+  String get wordTrLabel => 'Türkçe anlamı';
+
+  @override
+  String get exampleEnLabel => 'Örnek cümle (isteğe bağlı)';
+
+  @override
+  String get exampleTrLabel => 'Cümlenin çevirisi (isteğe bağlı)';
+
+  @override
+  String get duplicateWord => 'Bu kelime zaten var.';
+
+  @override
+  String wordAdded(String lemma) {
+    return '\"$lemma\" eklendi';
+  }
+
+  @override
+  String get deleteWord => 'Kelimeyi sil';
+
+  @override
+  String deleteWordConfirm(String lemma) {
+    return '\"$lemma\" ve çalışma geçmişi silinsin mi?';
+  }
+
+  @override
+  String get delete => 'Sil';
+
+  @override
+  String get posOther => 'kendi kelimem';
 }

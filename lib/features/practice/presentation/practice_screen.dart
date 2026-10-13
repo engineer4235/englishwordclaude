@@ -115,11 +115,14 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
             for (final u in l.units) u.id: l.level.id,
         };
         final pool = <Word>[];
-        for (final levelId in {for (final w in words) levelOfUnit[w.unitId]}) {
-          if (levelId != null) {
-            pool.addAll(await ref.read(levelWordsProvider(levelId).future));
-          }
+        // Kendi eklenen kelimelerin seviyesi yoktur; seçenek havuzu için ilk
+        // seviyenin kelimeleri kullanılır.
+        for (final levelId in {
+          for (final w in words) levelOfUnit[w.unitId] ?? levels.first.level.id,
+        }) {
+          pool.addAll(await ref.read(levelWordsProvider(levelId).future));
         }
+        pool.addAll(words.where((w) => levelOfUnit[w.unitId] == null));
         final exercises = generator.lesson(
           words,
           await ref.read(reviewRepositoryProvider).statesFor(ids),

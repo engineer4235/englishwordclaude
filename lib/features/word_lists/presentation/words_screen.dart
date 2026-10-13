@@ -8,9 +8,11 @@ import '../../../domain/search/word_search.dart';
 import '../../../domain/srs/card_state.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../lesson/presentation/word_card.dart';
+import 'add_word_dialog.dart';
 
 /// Kelimelerim: tüm kelimelerde arama; seviye, durum, favori ve zorlanılan
-/// kelime filtresi ve bu listelerle alıştırma (FR-90, FR-35, FR-66, FR-93).
+/// kelime filtresi, bu listelerle alıştırma ve kendi kelimeni ekleme
+/// (FR-90, FR-35, FR-66, FR-92, FR-93).
 class WordsScreen extends ConsumerStatefulWidget {
   const WordsScreen({super.key});
 
@@ -47,6 +49,13 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
     );
   }
 
+  Future<void> _add(AppLocalizations l10n) async {
+    final lemma = await showAddWordDialog(context);
+    if (lemma == null || !mounted) return;
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(l10n.wordAdded(lemma))));
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -63,6 +72,12 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
             onPressed: () => context.go(AppRoutes.wordLists),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        key: const ValueKey('add-word'),
+        tooltip: l10n.addWord,
+        onPressed: () => _add(l10n),
+        child: const Icon(Icons.add),
       ),
       body: switch (entries) {
         AsyncData(:final value) => _body(l10n, value),

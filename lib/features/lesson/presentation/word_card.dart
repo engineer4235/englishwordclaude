@@ -6,6 +6,7 @@ import '../../../data/providers.dart';
 import '../../../data/repositories/notes_repository.dart';
 import '../../../domain/models/word.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../word_lists/presentation/add_word_dialog.dart';
 import '../../word_lists/presentation/word_lists_screen.dart';
 
 /// Kelime kartı: kelime, okunuş, anlam, kişisel not ve örnek cümleler
@@ -14,6 +15,33 @@ class WordCard extends ConsumerWidget {
   const WordCard({super.key, required this.word});
 
   final Word word;
+
+  Future<void> _delete(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context);
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.deleteWord),
+        content: Text(l10n.deleteWordConfirm(word.lemma)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            key: const Key('delete-word-confirm'),
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(l10n.delete),
+          ),
+        ],
+      ),
+    );
+    if (ok != true || !context.mounted) return;
+    await ref.read(customWordRepositoryProvider).delete(word.id);
+    if (!context.mounted) return;
+    invalidateCustomWords(ref);
+    Navigator.of(context).maybePop();
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,6 +52,7 @@ class WordCard extends ConsumerWidget {
       AsyncData(:final value) => value.contains(word.id),
       _ => false,
     };
+    final isCustom = word.unitId == ref.watch(customUnitIdProvider).value;
 
     return Card(
       margin: const EdgeInsets.all(16),
@@ -101,6 +130,18 @@ class WordCard extends ConsumerWidget {
                 ),
               ),
             const SizedBox(height: 16),
+            if (isCustom) ...[
+              TextButton.icon(
+                key: const Key('delete-word'),
+                icon: const Icon(Icons.delete_outline),
+                label: Text(l10n.deleteWord),
+                style: TextButton.styleFrom(
+                  foregroundColor: theme.colorScheme.error,
+                ),
+                onPressed: () => _delete(context, ref),
+              ),
+              const SizedBox(height: 8),
+            ],
             OutlinedButton.icon(
               icon: const Icon(Icons.check),
               label: Text(l10n.iKnowThis),
@@ -282,5 +323,6 @@ String partOfSpeechLabel(AppLocalizations l10n, String pos) => switch (pos) {
   'adjective' => l10n.posAdjective,
   'adverb' => l10n.posAdverb,
   'number' => l10n.posNumber,
+  'other' => l10n.posOther,
   _ => pos,
 };

@@ -4,6 +4,7 @@ import '../../domain/models/learning_unit.dart';
 import '../../domain/models/level.dart';
 import '../../domain/models/word.dart';
 import '../db/app_database.dart';
+import 'custom_word_repository.dart';
 
 /// Seviye, ünite ve kelime içeriğine erişim.
 abstract interface class ContentRepository {
@@ -29,7 +30,9 @@ class DriftContentRepository implements ContentRepository {
 
   @override
   Future<List<Level>> getLevels() async {
+    // Kendi kelimelerin gizli seviyesi listelenmez (FR-92).
     final query = _db.select(_db.levels)
+      ..where((t) => t.code.equals(CustomWordRepository.levelCode).not())
       ..orderBy([(t) => OrderingTerm.asc(t.sortOrder)]);
     final rows = await query.get();
     return [

@@ -1389,6 +1389,78 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Süre doldu!'**
   String get matchTimeUp;
+
+  /// No description provided for @save.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydet'**
+  String get save;
+
+  /// No description provided for @addWord.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kelime ekle'**
+  String get addWord;
+
+  /// No description provided for @wordEnLabel.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizce kelime'**
+  String get wordEnLabel;
+
+  /// No description provided for @wordTrLabel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Türkçe anlamı'**
+  String get wordTrLabel;
+
+  /// No description provided for @exampleEnLabel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Örnek cümle (isteğe bağlı)'**
+  String get exampleEnLabel;
+
+  /// No description provided for @exampleTrLabel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Cümlenin çevirisi (isteğe bağlı)'**
+  String get exampleTrLabel;
+
+  /// No description provided for @duplicateWord.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kelime zaten var.'**
+  String get duplicateWord;
+
+  /// No description provided for @wordAdded.
+  ///
+  /// In tr, this message translates to:
+  /// **'\"{lemma}\" eklendi'**
+  String wordAdded(String lemma);
+
+  /// No description provided for @deleteWord.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kelimeyi sil'**
+  String get deleteWord;
+
+  /// No description provided for @deleteWordConfirm.
+  ///
+  /// In tr, this message translates to:
+  /// **'\"{lemma}\" ve çalışma geçmişi silinsin mi?'**
+  String deleteWordConfirm(String lemma);
+
+  /// No description provided for @delete.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sil'**
+  String get delete;
+
+  /// No description provided for @posOther.
+  ///
+  /// In tr, this message translates to:
+  /// **'kendi kelimem'**
+  String get posOther;
 }
 
 class _AppLocalizationsDelegate
