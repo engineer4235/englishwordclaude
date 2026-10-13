@@ -37,7 +37,9 @@ final appDatabaseProvider = Provider<AppDatabase>((ref) {
 final appStartupProvider = FutureProvider<void>((ref) async {
   final db = ref.watch(appDatabaseProvider);
   final json = await rootBundle.loadString(seedContentAsset);
-  await ContentSeeder(db).seedIfEmpty(json);
+  final seeder = ContentSeeder(db);
+  // Güncellemeyle gelen yeni üniteler mevcut kurulumlara eklenir (CNT-5).
+  if (!await seeder.seedIfEmpty(json)) await seeder.addMissingUnits(json);
 });
 
 final contentRepositoryProvider = Provider<ContentRepository>(
