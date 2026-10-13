@@ -830,4 +830,29 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get nextUnitBadge => 'Sıradaki';
+
+  @override
+  String get exportData => 'Verilerimi dışa aktar';
+
+  @override
+  String get exportDataHint =>
+      'Kelime ilerlemen, notların ve listelerin panoya kopyalanır.';
+
+  @override
+  String get exportJson => 'JSON (tam yedek)';
+
+  @override
+  String get exportJsonHint =>
+      'Tüm verilerin; saklamak ya da başka bir yere taşımak için';
+
+  @override
+  String get exportCsv => 'CSV (kelime tablosu)';
+
+  @override
+  String get exportCsvHint => 'Excel veya Google E-Tablolar\'da açmak için';
+
+  @override
+  String exportCopied(int count) {
+    return '$count kelimenin verisi panoya kopyalandı';
+  }
 }

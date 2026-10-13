@@ -1527,6 +1527,48 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Sıradaki'**
   String get nextUnitBadge;
+
+  /// No description provided for @exportData.
+  ///
+  /// In tr, this message translates to:
+  /// **'Verilerimi dışa aktar'**
+  String get exportData;
+
+  /// No description provided for @exportDataHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kelime ilerlemen, notların ve listelerin panoya kopyalanır.'**
+  String get exportDataHint;
+
+  /// No description provided for @exportJson.
+  ///
+  /// In tr, this message translates to:
+  /// **'JSON (tam yedek)'**
+  String get exportJson;
+
+  /// No description provided for @exportJsonHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm verilerin; saklamak ya da başka bir yere taşımak için'**
+  String get exportJsonHint;
+
+  /// No description provided for @exportCsv.
+  ///
+  /// In tr, this message translates to:
+  /// **'CSV (kelime tablosu)'**
+  String get exportCsv;
+
+  /// No description provided for @exportCsvHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Excel veya Google E-Tablolar\'da açmak için'**
+  String get exportCsvHint;
+
+  /// No description provided for @exportCopied.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} kelimenin verisi panoya kopyalandı'**
+  String exportCopied(int count);
 }
 
 class _AppLocalizationsDelegate

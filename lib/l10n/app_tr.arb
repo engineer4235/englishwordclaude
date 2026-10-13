@@ -585,5 +585,19 @@
   },
   "showUnits": "Üniteleri göster",
   "hideUnits": "Üniteleri gizle",
-  "nextUnitBadge": "Sıradaki"
+  "nextUnitBadge": "Sıradaki",
+  "exportData": "Verilerimi dışa aktar",
+  "exportDataHint": "Kelime ilerlemen, notların ve listelerin panoya kopyalanır.",
+  "exportJson": "JSON (tam yedek)",
+  "exportJsonHint": "Tüm verilerin; saklamak ya da başka bir yere taşımak için",
+  "exportCsv": "CSV (kelime tablosu)",
+  "exportCsvHint": "Excel veya Google E-Tablolar'da açmak için",
+  "exportCopied": "{count} kelimenin verisi panoya kopyalandı",
+  "@exportCopied": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }
