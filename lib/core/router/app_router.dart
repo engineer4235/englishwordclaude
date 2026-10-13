@@ -1,9 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/home_screen.dart';
+import '../../data/providers.dart';
 import '../../features/lesson/presentation/unit_screen.dart';
 import '../../features/level_map/presentation/level_map_screen.dart';
+import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/placement/presentation/placement_screen.dart';
 import '../../features/practice/presentation/practice_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/stats/presentation/stats_screen.dart';
@@ -13,15 +17,53 @@ import 'app_shell.dart';
 
 /// go_router yapılandırması ve alt menü dalları (EWL-20).
 final routerProvider = Provider<GoRouter>((ref) {
-  final router = createRouter();
-  ref.onDispose(router.dispose);
+  final refresh = ValueNotifier<int>(0);
+  ref.listen(onboardingStatusProvider, (_, _) => refresh.value++);
+  final router = createRouter(
+    refreshListenable: refresh,
+    redirect: (location) =>
+        onboardingRedirect(ref.read(onboardingStatusProvider), location),
+  );
+  ref.onDispose(() {
+    router.dispose();
+    refresh.dispose();
+  });
   return router;
 });
 
-GoRouter createRouter() {
+/// Tanıtım tamamlanmadıysa tanıtıma, tamamlandıysa ana sayfaya yönlendirir.
+String? onboardingRedirect(AsyncValue<bool> status, String location) {
+  final done = status.value;
+  if (done == null) return null;
+  final inFlow =
+      location.startsWith(AppRoutes.onboarding) ||
+      location.startsWith(AppRoutes.placement);
+  if (!done && !inFlow) return AppRoutes.onboarding;
+  if (done && location.startsWith(AppRoutes.onboarding)) return AppRoutes.home;
+  return null;
+}
+
+GoRouter createRouter({
+  Listenable? refreshListenable,
+  String? Function(String location)? redirect,
+}) {
   return GoRouter(
     initialLocation: AppRoutes.home,
+    refreshListenable: refreshListenable,
+    redirect: redirect == null
+        ? null
+        : (context, state) => redirect(state.matchedLocation),
     routes: [
+      GoRoute(
+        path: AppRoutes.onboarding,
+        builder: (context, state) => const OnboardingScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.placement,
+        builder: (context, state) => PlacementScreen(
+          fromOnboarding: state.uri.queryParameters['ilk'] == '1',
+        ),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             AppShell(navigationShell: navigationShell),

@@ -6,10 +6,12 @@ import '../domain/models/home_summary.dart';
 import '../domain/models/level.dart';
 import '../domain/models/progress.dart';
 import '../domain/models/word.dart';
+import '../domain/placement/placement_exam.dart';
 import 'content/content_seeder.dart';
 import 'db/app_database.dart';
 import 'repositories/content_repository.dart';
 import 'repositories/favorites_repository.dart';
+import 'repositories/profile_repository.dart';
 import 'repositories/progress_repository.dart';
 import 'repositories/review_repository.dart';
 import 'repositories/study_repository.dart';
@@ -119,4 +121,42 @@ final studyRepositoryProvider = Provider<StudyRepository>(
 final homeSummaryProvider = FutureProvider<HomeSummary>((ref) async {
   await ref.watch(appStartupProvider.future);
   return ref.watch(studyRepositoryProvider).summary();
+});
+
+final profileRepositoryProvider = Provider<ProfileRepository>(
+  (ref) => ProfileRepository(ref.watch(appDatabaseProvider)),
+);
+
+/// Tanıtım tamamlandı mı (FR-01..05). Tamamlanmadıysa yönlendirici
+/// kullanıcıyı tanıtım ekranına götürür.
+class OnboardingStatus extends AsyncNotifier<bool> {
+  @override
+  Future<bool> build() async {
+    await ref.watch(appStartupProvider.future);
+    final profile = await ref.watch(profileRepositoryProvider).get();
+    return profile.onboardingDone;
+  }
+
+  Future<void> complete() async {
+    await ref.read(profileRepositoryProvider).completeOnboarding();
+    state = const AsyncData(true);
+  }
+}
+
+final onboardingStatusProvider = AsyncNotifierProvider<OnboardingStatus, bool>(
+  OnboardingStatus.new,
+);
+
+/// Seviye tespit sınavının soru havuzları (FR-11).
+final placementLevelsProvider = FutureProvider<List<PlacementLevel>>((
+  ref,
+) async {
+  final levels = await ref.watch(levelsProvider.future);
+  return [
+    for (final level in levels)
+      PlacementLevel(
+        level,
+        await ref.watch(levelWordsProvider(level.id).future),
+      ),
+  ];
 });

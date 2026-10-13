@@ -33,10 +33,7 @@ class StudyRepository {
       DateTime(d.year, d.month, d.day - 1);
 
   Future<UserProfileRow> profile() async {
-    final row = await _db.select(_db.userProfile).getSingleOrNull();
-    if (row != null) return row;
-    await _db.into(_db.userProfile).insert(const UserProfileCompanion());
-    return _db.select(_db.userProfile).getSingle();
+    return _db.ensureProfile();
   }
 
   Future<DailyStatRow?> _day(DateTime d) => (_db.select(

@@ -555,6 +555,210 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Ana sayfaya dön'**
   String get backToHome;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In tr, this message translates to:
+  /// **'Atla'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingNext.
+  ///
+  /// In tr, this message translates to:
+  /// **'İleri'**
+  String get onboardingNext;
+
+  /// No description provided for @intro1Title.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye seviye ilerle'**
+  String get intro1Title;
+
+  /// No description provided for @intro1Body.
+  ///
+  /// In tr, this message translates to:
+  /// **'A1\'den C2\'ye kadar kelimeleri ünite ünite öğren. Her seviyenin sonunda bir sınavla bir üst seviyenin kilidini aç.'**
+  String get intro1Body;
+
+  /// No description provided for @intro2Title.
+  ///
+  /// In tr, this message translates to:
+  /// **'Unutmadan öğren'**
+  String get intro2Title;
+
+  /// No description provided for @intro2Body.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aralıklı tekrar sistemi, her kelimeyi tam unutmak üzereyken karşına çıkarır.'**
+  String get intro2Body;
+
+  /// No description provided for @intro3Title.
+  ///
+  /// In tr, this message translates to:
+  /// **'Her gün biraz'**
+  String get intro3Title;
+
+  /// No description provided for @intro3Body.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük hedefini tamamla, serini koru ve XP kazan.'**
+  String get intro3Body;
+
+  /// No description provided for @goalQuestion.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizceyi ne için öğreniyorsun?'**
+  String get goalQuestion;
+
+  /// No description provided for @goalGeneral.
+  ///
+  /// In tr, this message translates to:
+  /// **'Genel'**
+  String get goalGeneral;
+
+  /// No description provided for @goalTravel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seyahat'**
+  String get goalTravel;
+
+  /// No description provided for @goalWork.
+  ///
+  /// In tr, this message translates to:
+  /// **'İş'**
+  String get goalWork;
+
+  /// No description provided for @goalExam.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınav'**
+  String get goalExam;
+
+  /// No description provided for @targetQuestion.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günde kaç yeni kelime öğrenmek istersin?'**
+  String get targetQuestion;
+
+  /// No description provided for @targetOption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günde {count} kelime'**
+  String targetOption(int count);
+
+  /// No description provided for @notifyQuestion.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sana ne zaman hatırlatalım?'**
+  String get notifyQuestion;
+
+  /// No description provided for @notifyNone.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hatırlatma istemiyorum'**
+  String get notifyNone;
+
+  /// No description provided for @notifyPick.
+  ///
+  /// In tr, this message translates to:
+  /// **'Başka bir saat seç'**
+  String get notifyPick;
+
+  /// No description provided for @startQuestion.
+  ///
+  /// In tr, this message translates to:
+  /// **'Nereden başlamak istersin?'**
+  String get startQuestion;
+
+  /// No description provided for @startPlacement.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye tespit sınavına gir'**
+  String get startPlacement;
+
+  /// No description provided for @startPlacementHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'En fazla 30 soru, yaklaşık 5 dakika.'**
+  String get startPlacementHint;
+
+  /// No description provided for @startFromA1.
+  ///
+  /// In tr, this message translates to:
+  /// **'A1\'den başla'**
+  String get startFromA1;
+
+  /// No description provided for @placementTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye tespit sınavı'**
+  String get placementTitle;
+
+  /// No description provided for @placementIntro.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sana İngilizce kelimeler göstereceğiz, Türkçe anlamını seç. Doğru bildikçe sorular zorlaşır, yanlışta kolaylaşır. Bilmediğin soruda tahmin yapmak yerine \"Bilmiyorum\"u seçebilirsin.'**
+  String get placementIntro;
+
+  /// No description provided for @placementStart.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınava başla'**
+  String get placementStart;
+
+  /// No description provided for @placementDontKnow.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bilmiyorum'**
+  String get placementDontKnow;
+
+  /// No description provided for @placementQuestion.
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru {current}'**
+  String placementQuestion(int current);
+
+  /// No description provided for @placementResultTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Önerilen seviye: {level}'**
+  String placementResultTitle(String level);
+
+  /// No description provided for @placementResultBody.
+  ///
+  /// In tr, this message translates to:
+  /// **'{correct}/{total} soruyu doğru cevapladın. Bu seviyeden başlayabilir ya da daha düşük bir seviye seçebilirsin.'**
+  String placementResultBody(int correct, int total);
+
+  /// No description provided for @placementAccept.
+  ///
+  /// In tr, this message translates to:
+  /// **'{level} seviyesinden başla'**
+  String placementAccept(String level);
+
+  /// No description provided for @placementLower.
+  ///
+  /// In tr, this message translates to:
+  /// **'Daha düşük bir seviye seç'**
+  String get placementLower;
+
+  /// No description provided for @placementNoContent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye tespiti için henüz yeterli kelime yok.'**
+  String get placementNoContent;
+
+  /// No description provided for @retakePlacement.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye tespit sınavını yeniden yap'**
+  String get retakePlacement;
+
+  /// No description provided for @retakePlacementHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir.'**
+  String get retakePlacementHint;
 }
 
 class _AppLocalizationsDelegate

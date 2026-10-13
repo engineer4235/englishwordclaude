@@ -244,5 +244,77 @@
     }
   },
   "allUnitsDone": "Açık tüm üniteleri tamamladın. Haritadan seviye sınavına girebilirsin.",
-  "backToHome": "Ana sayfaya dön"
+  "backToHome": "Ana sayfaya dön",
+  "onboardingSkip": "Atla",
+  "onboardingNext": "İleri",
+  "intro1Title": "Seviye seviye ilerle",
+  "intro1Body": "A1'den C2'ye kadar kelimeleri ünite ünite öğren. Her seviyenin sonunda bir sınavla bir üst seviyenin kilidini aç.",
+  "intro2Title": "Unutmadan öğren",
+  "intro2Body": "Aralıklı tekrar sistemi, her kelimeyi tam unutmak üzereyken karşına çıkarır.",
+  "intro3Title": "Her gün biraz",
+  "intro3Body": "Günlük hedefini tamamla, serini koru ve XP kazan.",
+  "goalQuestion": "İngilizceyi ne için öğreniyorsun?",
+  "goalGeneral": "Genel",
+  "goalTravel": "Seyahat",
+  "goalWork": "İş",
+  "goalExam": "Sınav",
+  "targetQuestion": "Günde kaç yeni kelime öğrenmek istersin?",
+  "targetOption": "Günde {count} kelime",
+  "@targetOption": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notifyQuestion": "Sana ne zaman hatırlatalım?",
+  "notifyNone": "Hatırlatma istemiyorum",
+  "notifyPick": "Başka bir saat seç",
+  "startQuestion": "Nereden başlamak istersin?",
+  "startPlacement": "Seviye tespit sınavına gir",
+  "startPlacementHint": "En fazla 30 soru, yaklaşık 5 dakika.",
+  "startFromA1": "A1'den başla",
+  "placementTitle": "Seviye tespit sınavı",
+  "placementIntro": "Sana İngilizce kelimeler göstereceğiz, Türkçe anlamını seç. Doğru bildikçe sorular zorlaşır, yanlışta kolaylaşır. Bilmediğin soruda tahmin yapmak yerine \"Bilmiyorum\"u seçebilirsin.",
+  "placementStart": "Sınava başla",
+  "placementDontKnow": "Bilmiyorum",
+  "placementQuestion": "Soru {current}",
+  "@placementQuestion": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      }
+    }
+  },
+  "placementResultTitle": "Önerilen seviye: {level}",
+  "@placementResultTitle": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "placementResultBody": "{correct}/{total} soruyu doğru cevapladın. Bu seviyeden başlayabilir ya da daha düşük bir seviye seçebilirsin.",
+  "@placementResultBody": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "placementAccept": "{level} seviyesinden başla",
+  "@placementAccept": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "placementLower": "Daha düşük bir seviye seç",
+  "placementNoContent": "Seviye tespiti için henüz yeterli kelime yok.",
+  "retakePlacement": "Seviye tespit sınavını yeniden yap",
+  "retakePlacementHint": "Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir."
 }
