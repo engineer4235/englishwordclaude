@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "note": "MVP içeriği: A1'de 13, A2'de 20, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 8,
+  "note": "MVP içeriği: A1'de 13, A2'de 25, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -4517,6 +4517,686 @@
       ]
     },
     {
+      "level": "A2",
+      "title": "Mutfak Eşyaları",
+      "theme": "kitchenware",
+      "icon": "restaurant",
+      "words": [
+        {
+          "lemma": "knife",
+          "ipa": "/naɪf/",
+          "pos": "noun",
+          "tr": "bıçak",
+          "examples": [
+            [
+              "Be careful, the knife is sharp.",
+              "Dikkat et, bıçak keskin."
+            ],
+            [
+              "Can you pass me a knife?",
+              "Bana bir bıçak uzatır mısın?"
+            ]
+          ]
+        },
+        {
+          "lemma": "fork",
+          "ipa": "/fɔːrk/",
+          "pos": "noun",
+          "tr": "çatal",
+          "examples": [
+            [
+              "He eats rice with a fork.",
+              "Pilavı çatalla yer."
+            ],
+            [
+              "There is no fork on the table.",
+              "Masada çatal yok."
+            ]
+          ]
+        },
+        {
+          "lemma": "spoon",
+          "ipa": "/spuːn/",
+          "pos": "noun",
+          "tr": "kaşık",
+          "examples": [
+            [
+              "Use a spoon for the soup.",
+              "Çorba için kaşık kullan."
+            ],
+            [
+              "Add one spoon of sugar.",
+              "Bir kaşık şeker ekle."
+            ]
+          ]
+        },
+        {
+          "lemma": "plate",
+          "ipa": "/pleɪt/",
+          "pos": "noun",
+          "tr": "tabak",
+          "examples": [
+            [
+              "Put the bread on the plate.",
+              "Ekmeği tabağa koy."
+            ],
+            [
+              "She dropped the plate and it broke.",
+              "Tabağı düşürdü ve tabak kırıldı."
+            ]
+          ]
+        },
+        {
+          "lemma": "cup",
+          "ipa": "/kʌp/",
+          "pos": "noun",
+          "tr": "fincan, bardak",
+          "examples": [
+            [
+              "Would you like a cup of tea?",
+              "Bir fincan çay ister misin?"
+            ],
+            [
+              "This cup is very hot.",
+              "Bu fincan çok sıcak."
+            ]
+          ]
+        },
+        {
+          "lemma": "glass",
+          "ipa": "/ɡlæs/",
+          "pos": "noun",
+          "tr": "bardak; cam",
+          "examples": [
+            [
+              "Can I have a glass of water?",
+              "Bir bardak su alabilir miyim?"
+            ],
+            [
+              "The window is made of glass.",
+              "Pencere camdan yapılmış."
+            ]
+          ]
+        },
+        {
+          "lemma": "bowl",
+          "ipa": "/boʊl/",
+          "pos": "noun",
+          "tr": "kâse",
+          "examples": [
+            [
+              "I eat cereal from a big bowl.",
+              "Mısır gevreğini büyük bir kâseden yerim."
+            ],
+            [
+              "Put the fruit in the bowl.",
+              "Meyveleri kâseye koy."
+            ]
+          ]
+        },
+        {
+          "lemma": "pan",
+          "ipa": "/pæn/",
+          "pos": "noun",
+          "tr": "tava",
+          "examples": [
+            [
+              "Heat some oil in the pan.",
+              "Tavada biraz yağ ısıt."
+            ],
+            [
+              "The pan is still hot.",
+              "Tava hâlâ sıcak."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Ülkeler ve Diller",
+      "theme": "countries",
+      "icon": "public",
+      "words": [
+        {
+          "lemma": "country",
+          "ipa": "/ˈkʌntri/",
+          "pos": "noun",
+          "tr": "ülke",
+          "examples": [
+            [
+              "Which country are you from?",
+              "Hangi ülkedensin?"
+            ],
+            [
+              "Japan is a beautiful country.",
+              "Japonya güzel bir ülke."
+            ]
+          ]
+        },
+        {
+          "lemma": "language",
+          "ipa": "/ˈlæŋɡwɪdʒ/",
+          "pos": "noun",
+          "tr": "dil",
+          "examples": [
+            [
+              "Turkish is my first language.",
+              "Türkçe benim ana dilim."
+            ],
+            [
+              "English is an international language.",
+              "İngilizce uluslararası bir dildir."
+            ]
+          ]
+        },
+        {
+          "lemma": "flag",
+          "ipa": "/flæɡ/",
+          "pos": "noun",
+          "tr": "bayrak",
+          "examples": [
+            [
+              "The Turkish flag is red and white.",
+              "Türk bayrağı kırmızı ve beyazdır."
+            ],
+            [
+              "They put a flag on the building.",
+              "Binaya bir bayrak astılar."
+            ]
+          ]
+        },
+        {
+          "lemma": "capital",
+          "ipa": "/ˈkæpɪtəl/",
+          "pos": "noun",
+          "tr": "başkent",
+          "examples": [
+            [
+              "Ankara is the capital of Turkey.",
+              "Ankara Türkiye'nin başkentidir."
+            ],
+            [
+              "What is the capital of Italy?",
+              "İtalya'nın başkenti neresi?"
+            ]
+          ]
+        },
+        {
+          "lemma": "foreign",
+          "ipa": "/ˈfɔːrən/",
+          "pos": "adjective",
+          "tr": "yabancı",
+          "examples": [
+            [
+              "Learning a foreign language is fun.",
+              "Yabancı dil öğrenmek eğlencelidir."
+            ],
+            [
+              "There are many foreign tourists here.",
+              "Burada çok yabancı turist var."
+            ]
+          ]
+        },
+        {
+          "lemma": "world",
+          "ipa": "/wɜːrld/",
+          "pos": "noun",
+          "tr": "dünya",
+          "examples": [
+            [
+              "I want to travel around the world.",
+              "Dünyayı dolaşmak istiyorum."
+            ],
+            [
+              "It is the biggest city in the world.",
+              "Dünyanın en büyük şehri."
+            ]
+          ]
+        },
+        {
+          "lemma": "nationality",
+          "ipa": "/ˌnæʃəˈnæləti/",
+          "pos": "noun",
+          "tr": "uyruk, milliyet",
+          "examples": [
+            [
+              "What is your nationality?",
+              "Uyruğun ne?"
+            ],
+            [
+              "Write your nationality on the form.",
+              "Uyruğunu forma yaz."
+            ]
+          ]
+        },
+        {
+          "lemma": "border",
+          "ipa": "/ˈbɔːrdər/",
+          "pos": "noun",
+          "tr": "sınır",
+          "examples": [
+            [
+              "We crossed the border by bus.",
+              "Sınırı otobüsle geçtik."
+            ],
+            [
+              "The town is near the border.",
+              "Kasaba sınırın yakınında."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Zaman İfadeleri",
+      "theme": "time_words",
+      "icon": "schedule",
+      "words": [
+        {
+          "lemma": "yesterday",
+          "ipa": "/ˈjestərdeɪ/",
+          "pos": "adverb",
+          "tr": "dün",
+          "examples": [
+            [
+              "I saw him yesterday.",
+              "Onu dün gördüm."
+            ],
+            [
+              "Yesterday was very cold.",
+              "Dün çok soğuktu."
+            ]
+          ]
+        },
+        {
+          "lemma": "tonight",
+          "ipa": "/təˈnaɪt/",
+          "pos": "adverb",
+          "tr": "bu gece, bu akşam",
+          "examples": [
+            [
+              "What are you doing tonight?",
+              "Bu akşam ne yapıyorsun?"
+            ],
+            [
+              "We are going out tonight.",
+              "Bu akşam dışarı çıkıyoruz."
+            ]
+          ]
+        },
+        {
+          "lemma": "soon",
+          "ipa": "/suːn/",
+          "pos": "adverb",
+          "tr": "yakında, birazdan",
+          "examples": [
+            [
+              "See you soon!",
+              "Yakında görüşürüz!"
+            ],
+            [
+              "The bus will come soon.",
+              "Otobüs birazdan gelecek."
+            ]
+          ]
+        },
+        {
+          "lemma": "early",
+          "ipa": "/ˈɜːrli/",
+          "pos": "adverb",
+          "tr": "erken",
+          "examples": [
+            [
+              "I get up early every day.",
+              "Her gün erken kalkarım."
+            ],
+            [
+              "We arrived early at the airport.",
+              "Havaalanına erken vardık."
+            ]
+          ]
+        },
+        {
+          "lemma": "late",
+          "ipa": "/leɪt/",
+          "pos": "adverb",
+          "tr": "geç",
+          "examples": [
+            [
+              "Sorry, I am late.",
+              "Üzgünüm, geç kaldım."
+            ],
+            [
+              "He went to bed late last night.",
+              "Dün gece geç yattı."
+            ]
+          ]
+        },
+        {
+          "lemma": "always",
+          "ipa": "/ˈɔːlweɪz/",
+          "pos": "adverb",
+          "tr": "her zaman",
+          "examples": [
+            [
+              "She always drinks coffee in the morning.",
+              "Sabahları her zaman kahve içer."
+            ],
+            [
+              "I will always remember this day.",
+              "Bu günü her zaman hatırlayacağım."
+            ]
+          ]
+        },
+        {
+          "lemma": "never",
+          "ipa": "/ˈnevər/",
+          "pos": "adverb",
+          "tr": "asla, hiç",
+          "examples": [
+            [
+              "I never eat meat.",
+              "Hiç et yemem."
+            ],
+            [
+              "He has never been to London.",
+              "Hiç Londra'ya gitmedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "sometimes",
+          "ipa": "/ˈsʌmtaɪmz/",
+          "pos": "adverb",
+          "tr": "bazen",
+          "examples": [
+            [
+              "Sometimes I walk to work.",
+              "Bazen işe yürüyerek giderim."
+            ],
+            [
+              "We sometimes eat out on Fridays.",
+              "Cuma günleri bazen dışarıda yemek yeriz."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Süpermarkette",
+      "theme": "supermarket",
+      "icon": "shopping",
+      "words": [
+        {
+          "lemma": "supermarket",
+          "ipa": "/ˈsuːpərmɑːrkɪt/",
+          "pos": "noun",
+          "tr": "süpermarket",
+          "examples": [
+            [
+              "I buy food at the supermarket.",
+              "Yiyecekleri süpermarketten alırım."
+            ],
+            [
+              "The supermarket opens at eight.",
+              "Süpermarket sekizde açılıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "bag",
+          "ipa": "/bæɡ/",
+          "pos": "noun",
+          "tr": "çanta, poşet",
+          "examples": [
+            [
+              "Do you need a bag?",
+              "Poşete ihtiyacınız var mı?"
+            ],
+            [
+              "My bag is very heavy.",
+              "Çantam çok ağır."
+            ]
+          ]
+        },
+        {
+          "lemma": "basket",
+          "ipa": "/ˈbæskɪt/",
+          "pos": "noun",
+          "tr": "sepet",
+          "examples": [
+            [
+              "Put the apples in the basket.",
+              "Elmaları sepete koy."
+            ],
+            [
+              "Take a basket at the door.",
+              "Kapıdan bir sepet al."
+            ]
+          ]
+        },
+        {
+          "lemma": "list",
+          "ipa": "/lɪst/",
+          "pos": "noun",
+          "tr": "liste",
+          "examples": [
+            [
+              "Did you write a shopping list?",
+              "Alışveriş listesi yazdın mı?"
+            ],
+            [
+              "Milk is the first thing on the list.",
+              "Listedeki ilk şey süt."
+            ]
+          ]
+        },
+        {
+          "lemma": "bottle",
+          "ipa": "/ˈbɑːtəl/",
+          "pos": "noun",
+          "tr": "şişe",
+          "examples": [
+            [
+              "I bought a bottle of water.",
+              "Bir şişe su aldım."
+            ],
+            [
+              "The bottle is empty.",
+              "Şişe boş."
+            ]
+          ]
+        },
+        {
+          "lemma": "packet",
+          "ipa": "/ˈpækɪt/",
+          "pos": "noun",
+          "tr": "paket",
+          "examples": [
+            [
+              "Get a packet of biscuits, please.",
+              "Lütfen bir paket bisküvi al."
+            ],
+            [
+              "How much is this packet of rice?",
+              "Bu paket pirinç ne kadar?"
+            ]
+          ]
+        },
+        {
+          "lemma": "queue",
+          "ipa": "/kjuː/",
+          "pos": "noun",
+          "tr": "sıra, kuyruk",
+          "examples": [
+            [
+              "There is a long queue at the checkout.",
+              "Kasada uzun bir kuyruk var."
+            ],
+            [
+              "Please wait in the queue.",
+              "Lütfen sırada bekleyin."
+            ]
+          ]
+        },
+        {
+          "lemma": "cashier",
+          "ipa": "/kæˈʃɪr/",
+          "pos": "noun",
+          "tr": "kasiyer",
+          "examples": [
+            [
+              "The cashier gave me the change.",
+              "Kasiyer bana paranın üstünü verdi."
+            ],
+            [
+              "My cousin works as a cashier.",
+              "Kuzenim kasiyer olarak çalışıyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Kişisel Bakım",
+      "theme": "personal_care",
+      "icon": "bathtub",
+      "words": [
+        {
+          "lemma": "soap",
+          "ipa": "/soʊp/",
+          "pos": "noun",
+          "tr": "sabun",
+          "examples": [
+            [
+              "Wash your hands with soap.",
+              "Ellerini sabunla yıka."
+            ],
+            [
+              "This soap smells of roses.",
+              "Bu sabun gül kokuyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "towel",
+          "ipa": "/ˈtaʊəl/",
+          "pos": "noun",
+          "tr": "havlu",
+          "examples": [
+            [
+              "Can I have a clean towel?",
+              "Temiz bir havlu alabilir miyim?"
+            ],
+            [
+              "The towel is on the chair.",
+              "Havlu sandalyenin üzerinde."
+            ]
+          ]
+        },
+        {
+          "lemma": "toothbrush",
+          "ipa": "/ˈtuːθbrʌʃ/",
+          "pos": "noun",
+          "tr": "diş fırçası",
+          "examples": [
+            [
+              "I need a new toothbrush.",
+              "Yeni bir diş fırçasına ihtiyacım var."
+            ],
+            [
+              "Don't forget your toothbrush!",
+              "Diş fırçanı unutma!"
+            ]
+          ]
+        },
+        {
+          "lemma": "toothpaste",
+          "ipa": "/ˈtuːθpeɪst/",
+          "pos": "noun",
+          "tr": "diş macunu",
+          "examples": [
+            [
+              "We are out of toothpaste.",
+              "Diş macunumuz bitti."
+            ],
+            [
+              "Put a little toothpaste on the brush.",
+              "Fırçaya biraz diş macunu koy."
+            ]
+          ]
+        },
+        {
+          "lemma": "shampoo",
+          "ipa": "/ʃæmˈpuː/",
+          "pos": "noun",
+          "tr": "şampuan",
+          "examples": [
+            [
+              "This shampoo is good for dry hair.",
+              "Bu şampuan kuru saç için iyi."
+            ],
+            [
+              "Where is the shampoo?",
+              "Şampuan nerede?"
+            ]
+          ]
+        },
+        {
+          "lemma": "shower",
+          "ipa": "/ˈʃaʊər/",
+          "pos": "noun",
+          "tr": "duş",
+          "examples": [
+            [
+              "I take a shower every morning.",
+              "Her sabah duş alırım."
+            ],
+            [
+              "The shower is broken.",
+              "Duş bozuk."
+            ]
+          ]
+        },
+        {
+          "lemma": "comb",
+          "ipa": "/koʊm/",
+          "pos": "noun",
+          "tr": "tarak",
+          "examples": [
+            [
+              "I always carry a comb in my bag.",
+              "Çantamda her zaman bir tarak taşırım."
+            ],
+            [
+              "Can I borrow your comb?",
+              "Tarağını ödünç alabilir miyim?"
+            ]
+          ]
+        },
+        {
+          "lemma": "brush",
+          "ipa": "/brʌʃ/",
+          "pos": "verb",
+          "tr": "fırçalamak, taramak",
+          "examples": [
+            [
+              "Brush your teeth twice a day.",
+              "Dişlerini günde iki kez fırçala."
+            ],
+            [
+              "She likes to brush her hair at night.",
+              "Geceleri saçını taramayı sever."
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "level": "B1",
       "title": "İş Hayatı",
       "theme": "work",
@@ -6016,6 +6696,21 @@
     [
       "sing",
       "song",
+      "family"
+    ],
+    [
+      "early",
+      "late",
+      "antonym"
+    ],
+    [
+      "always",
+      "never",
+      "antonym"
+    ],
+    [
+      "toothbrush",
+      "toothpaste",
       "family"
     ]
   ]
