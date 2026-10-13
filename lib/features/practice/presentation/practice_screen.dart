@@ -267,6 +267,13 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
                 onOutcome: onOutcome,
                 onContinue: _next,
               ),
+              ScrambleExercise() => ScrambleExerciseView(
+                key: ValueKey(_index),
+                exercise: exercise,
+                tts: tts,
+                onOutcome: onOutcome,
+                onContinue: _next,
+              ),
               MatchingExercise() => MatchingExerciseView(
                 key: ValueKey(_index),
                 exercise: exercise,

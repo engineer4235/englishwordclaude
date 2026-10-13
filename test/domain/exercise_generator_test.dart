@@ -78,6 +78,23 @@ void main() {
     );
   });
 
+  test('öğrenme aşamasında harf karıştırma sorulur (FR-47)', () {
+    final generator = ExerciseGenerator(Random(11));
+    final learning = {for (final w in family) w.id: CardState.learning};
+    final scrambles = [
+      for (var i = 0; i < 20; i++)
+        ...generator.lesson(family, learning, pool: all),
+    ].whereType<ScrambleExercise>().toList();
+    expect(scrambles, isNotEmpty);
+    for (final ex in scrambles) {
+      expect(ex.letters.join(), isNot(ex.target.lemma.toLowerCase()));
+      expect(
+        [...ex.letters]..sort(),
+        ex.target.lemma.toLowerCase().split('')..sort(),
+      );
+    }
+  });
+
   test('seviye sınavı 40 seçmeli sorudur', () {
     final exam = ExerciseGenerator(Random(5))
         .exam(all, count: levelExamQuestionCount, pool: all);
@@ -95,6 +112,7 @@ void main() {
     Word target(Exercise e) => switch (e) {
       ChoiceExercise() => e.target,
       TypingExercise() => e.target,
+      ScrambleExercise() => e.target,
       MatchingExercise() => throw StateError('eşleştirme'),
     };
     for (final word in family) {

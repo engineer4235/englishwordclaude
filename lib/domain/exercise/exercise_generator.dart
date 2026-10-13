@@ -3,6 +3,7 @@ import 'dart:math';
 import '../models/word.dart';
 import '../srs/card_state.dart';
 import 'exercise.dart';
+import 'scramble.dart';
 
 /// Seviye atlama sınavındaki soru sayısı (FR-24).
 const levelExamQuestionCount = 40;
@@ -27,7 +28,8 @@ class ExerciseGenerator {
   static const inSessionRepeats = 2;
 
   /// Ders alıştırmaları. Tür, kelimenin durumuna göre zorlaşır (FR-50):
-  /// yeni kelimede tanıma, ileri aşamada yazma ve boşluk doldurma.
+  /// yeni kelimede tanıma, öğrenme aşamasında harf karıştırma gibi
+  /// hatırlamaya yönelik türler, ileri aşamada yazma ve boşluk doldurma.
   List<Exercise> lesson(
     List<Word> words,
     Map<int, CardState> states, {
@@ -45,6 +47,7 @@ class ExerciseGenerator {
           ExerciseType.mcTrEn,
           ExerciseType.listenChoose,
           ExerciseType.fillBlank,
+          ExerciseType.scramble,
         ],
         _ => const [ExerciseType.typing, ExerciseType.fillBlank],
       };
@@ -169,6 +172,15 @@ class ExerciseGenerator {
           pool,
           prompt: target.lemma,
           answerOf: (w) => w.lemma,
+          isRepeat: isRepeat,
+        );
+      case ExerciseType.scramble:
+        if (!canScramble(target.lemma)) {
+          return _build(ExerciseType.mcTrEn, target, pool, isRepeat: isRepeat);
+        }
+        return ScrambleExercise(
+          target: target,
+          letters: scrambleLetters(target.lemma, _random),
           isRepeat: isRepeat,
         );
       case ExerciseType.matching:

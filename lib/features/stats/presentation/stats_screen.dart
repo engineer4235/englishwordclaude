@@ -388,6 +388,7 @@ String exerciseTypeLabel(AppLocalizations l10n, ExerciseType type) =>
       ExerciseType.typing => l10n.exLabelTyping,
       ExerciseType.fillBlank => l10n.exLabelFillBlank,
       ExerciseType.matching => l10n.exLabelMatching,
+      ExerciseType.scramble => l10n.exLabelScramble,
     };
 
 class _ForecastCard extends StatelessWidget {
