@@ -221,6 +221,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                   alignment: Alignment.centerLeft,
                   child: IconButton(
                     key: const ValueKey('back'),
+                    tooltip: MaterialLocalizations.of(context)
+                        .backButtonTooltip,
                     onPressed: () => setState(() => _step--),
                     icon: const Icon(Icons.arrow_back),
                   ),

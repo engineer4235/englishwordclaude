@@ -98,13 +98,17 @@ class _UnitScreenState extends ConsumerState<UnitScreen> {
           top: false,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-            child: Row(
+            // Büyük yazı boyutunda düğmeler sığmazsa alt alta dizilir (NFR-07).
+            child: OverflowBar(
+              alignment: MainAxisAlignment.spaceBetween,
+              overflowAlignment: OverflowBarAlignment.end,
+              spacing: 8,
+              overflowSpacing: 8,
               children: [
                 OutlinedButton(
                   onPressed: _index > 0 ? () => _goTo(_index - 1) : null,
                   child: Text(l10n.previous),
                 ),
-                const Spacer(),
                 FilledButton(
                   onPressed: isLast
                       ? () => context.go(AppRoutes.unitPractice(widget.unitId))
