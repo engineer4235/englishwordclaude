@@ -813,4 +813,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get backToWords => 'Kelimelerime dön';
+
+  @override
+  String get posInterjection => 'ünlem';
 }

@@ -1497,6 +1497,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Kelimelerime dön'**
   String get backToWords;
+
+  /// No description provided for @posInterjection.
+  ///
+  /// In tr, this message translates to:
+  /// **'ünlem'**
+  String get posInterjection;
 }
 
 class _AppLocalizationsDelegate

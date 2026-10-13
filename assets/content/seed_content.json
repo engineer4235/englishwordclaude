@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "note": "MVP içeriği: A1'de 13, A2'de 25, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 9,
+  "note": "MVP içeriği: A1'de 18, A2'de 25, B1'de 10 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -1791,6 +1791,686 @@
             [
               "She has a beautiful voice.",
               "Onun güzel bir sesi var."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Selamlaşma",
+      "theme": "greetings",
+      "icon": "waving_hand",
+      "words": [
+        {
+          "lemma": "hello",
+          "ipa": "/həˈloʊ/",
+          "pos": "interjection",
+          "tr": "merhaba",
+          "examples": [
+            [
+              "Hello, how are you?",
+              "Merhaba, nasılsın?"
+            ],
+            [
+              "Say hello to your mother.",
+              "Annene selam söyle."
+            ]
+          ]
+        },
+        {
+          "lemma": "goodbye",
+          "ipa": "/ɡʊdˈbaɪ/",
+          "pos": "interjection",
+          "tr": "hoşça kal, güle güle",
+          "examples": [
+            [
+              "Goodbye, see you tomorrow!",
+              "Hoşça kal, yarın görüşürüz!"
+            ],
+            [
+              "She said goodbye and left.",
+              "Hoşça kal dedi ve gitti."
+            ]
+          ]
+        },
+        {
+          "lemma": "please",
+          "ipa": "/pliːz/",
+          "pos": "adverb",
+          "tr": "lütfen",
+          "examples": [
+            [
+              "Can I have some water, please?",
+              "Biraz su alabilir miyim, lütfen?"
+            ],
+            [
+              "Please sit down.",
+              "Lütfen oturun."
+            ]
+          ]
+        },
+        {
+          "lemma": "thank",
+          "ipa": "/θæŋk/",
+          "pos": "verb",
+          "tr": "teşekkür etmek",
+          "examples": [
+            [
+              "Thank you very much!",
+              "Çok teşekkür ederim!"
+            ],
+            [
+              "I want to thank my teacher.",
+              "Öğretmenime teşekkür etmek istiyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "sorry",
+          "ipa": "/ˈsɑːri/",
+          "pos": "adjective",
+          "tr": "üzgün; özür dilerim",
+          "examples": [
+            [
+              "I am sorry, I am late.",
+              "Özür dilerim, geç kaldım."
+            ],
+            [
+              "Sorry, I don't understand.",
+              "Pardon, anlamıyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "name",
+          "ipa": "/neɪm/",
+          "pos": "noun",
+          "tr": "isim, ad",
+          "examples": [
+            [
+              "What is your name?",
+              "Adın ne?"
+            ],
+            [
+              "My name is Ali.",
+              "Benim adım Ali."
+            ]
+          ]
+        },
+        {
+          "lemma": "welcome",
+          "ipa": "/ˈwelkəm/",
+          "pos": "adjective",
+          "tr": "hoş geldin(iz)",
+          "examples": [
+            [
+              "Welcome to our home!",
+              "Evimize hoş geldiniz!"
+            ],
+            [
+              "You are always welcome here.",
+              "Burada her zaman hoş karşılanırsın."
+            ]
+          ]
+        },
+        {
+          "lemma": "meet",
+          "ipa": "/miːt/",
+          "pos": "verb",
+          "tr": "tanışmak, buluşmak",
+          "examples": [
+            [
+              "Nice to meet you.",
+              "Tanıştığımıza memnun oldum."
+            ],
+            [
+              "Let's meet at the café.",
+              "Kafede buluşalım."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Kahvaltı",
+      "theme": "breakfast",
+      "icon": "free_breakfast",
+      "words": [
+        {
+          "lemma": "breakfast",
+          "ipa": "/ˈbrekfəst/",
+          "pos": "noun",
+          "tr": "kahvaltı",
+          "examples": [
+            [
+              "I have breakfast at seven.",
+              "Saat yedide kahvaltı yaparım."
+            ],
+            [
+              "Breakfast is ready!",
+              "Kahvaltı hazır!"
+            ]
+          ]
+        },
+        {
+          "lemma": "lunch",
+          "ipa": "/lʌntʃ/",
+          "pos": "noun",
+          "tr": "öğle yemeği",
+          "examples": [
+            [
+              "We have lunch at school.",
+              "Öğle yemeğini okulda yeriz."
+            ],
+            [
+              "What's for lunch today?",
+              "Bugün öğle yemeğinde ne var?"
+            ]
+          ]
+        },
+        {
+          "lemma": "dinner",
+          "ipa": "/ˈdɪnər/",
+          "pos": "noun",
+          "tr": "akşam yemeği",
+          "examples": [
+            [
+              "Dinner is at eight.",
+              "Akşam yemeği saat sekizde."
+            ],
+            [
+              "My father cooks dinner on Sundays.",
+              "Babam pazar günleri akşam yemeği pişirir."
+            ]
+          ]
+        },
+        {
+          "lemma": "butter",
+          "ipa": "/ˈbʌtər/",
+          "pos": "noun",
+          "tr": "tereyağı",
+          "examples": [
+            [
+              "Put some butter on the bread.",
+              "Ekmeğe biraz tereyağı sür."
+            ],
+            [
+              "We need butter for the cake.",
+              "Pasta için tereyağına ihtiyacımız var."
+            ]
+          ]
+        },
+        {
+          "lemma": "honey",
+          "ipa": "/ˈhʌni/",
+          "pos": "noun",
+          "tr": "bal",
+          "examples": [
+            [
+              "I eat bread with honey.",
+              "Ekmeği balla yerim."
+            ],
+            [
+              "This honey is very sweet.",
+              "Bu bal çok tatlı."
+            ]
+          ]
+        },
+        {
+          "lemma": "jam",
+          "ipa": "/dʒæm/",
+          "pos": "noun",
+          "tr": "reçel",
+          "examples": [
+            [
+              "My grandmother makes strawberry jam.",
+              "Büyükannem çilek reçeli yapar."
+            ],
+            [
+              "Do you want jam or honey?",
+              "Reçel mi bal mı istersin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "olive",
+          "ipa": "/ˈɑːlɪv/",
+          "pos": "noun",
+          "tr": "zeytin",
+          "examples": [
+            [
+              "There is an olive on my plate.",
+              "Tabağımda bir zeytin var."
+            ],
+            [
+              "Pass me an olive, please.",
+              "Bana bir zeytin uzatır mısın lütfen?"
+            ]
+          ]
+        },
+        {
+          "lemma": "toast",
+          "ipa": "/toʊst/",
+          "pos": "noun",
+          "tr": "kızarmış ekmek, tost",
+          "examples": [
+            [
+              "I had toast for breakfast.",
+              "Kahvaltıda kızarmış ekmek yedim."
+            ],
+            [
+              "The toast is too hot.",
+              "Tost çok sıcak."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Şehirdeki Yerler",
+      "theme": "places",
+      "icon": "location_city",
+      "words": [
+        {
+          "lemma": "bank",
+          "ipa": "/bæŋk/",
+          "pos": "noun",
+          "tr": "banka",
+          "examples": [
+            [
+              "The bank opens at nine.",
+              "Banka dokuzda açılır."
+            ],
+            [
+              "I need to go to the bank.",
+              "Bankaya gitmem gerekiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "park",
+          "ipa": "/pɑːrk/",
+          "pos": "noun",
+          "tr": "park",
+          "examples": [
+            [
+              "The children play in the park.",
+              "Çocuklar parkta oynuyor."
+            ],
+            [
+              "Let's walk in the park.",
+              "Parkta yürüyelim."
+            ]
+          ]
+        },
+        {
+          "lemma": "hospital",
+          "ipa": "/ˈhɑːspɪtəl/",
+          "pos": "noun",
+          "tr": "hastane",
+          "examples": [
+            [
+              "My aunt is a nurse at the hospital.",
+              "Teyzem hastanede hemşire."
+            ],
+            [
+              "The hospital is near our house.",
+              "Hastane evimizin yakında."
+            ]
+          ]
+        },
+        {
+          "lemma": "shop",
+          "ipa": "/ʃɑːp/",
+          "pos": "noun",
+          "tr": "dükkân, mağaza",
+          "examples": [
+            [
+              "The shop is closed on Sunday.",
+              "Dükkân pazar günü kapalı."
+            ],
+            [
+              "There is a small shop on the corner.",
+              "Köşede küçük bir dükkân var."
+            ]
+          ]
+        },
+        {
+          "lemma": "restaurant",
+          "ipa": "/ˈrestərɑːnt/",
+          "pos": "noun",
+          "tr": "restoran, lokanta",
+          "examples": [
+            [
+              "We eat at a restaurant on Fridays.",
+              "Cuma günleri bir restoranda yeriz."
+            ],
+            [
+              "This restaurant is very popular.",
+              "Bu restoran çok popüler."
+            ]
+          ]
+        },
+        {
+          "lemma": "library",
+          "ipa": "/ˈlaɪbreri/",
+          "pos": "noun",
+          "tr": "kütüphane",
+          "examples": [
+            [
+              "I study at the library.",
+              "Kütüphanede ders çalışırım."
+            ],
+            [
+              "The library has many books.",
+              "Kütüphanede çok kitap var."
+            ]
+          ]
+        },
+        {
+          "lemma": "market",
+          "ipa": "/ˈmɑːrkɪt/",
+          "pos": "noun",
+          "tr": "pazar, market",
+          "examples": [
+            [
+              "We buy fruit at the market.",
+              "Meyveyi pazardan alırız."
+            ],
+            [
+              "The market is busy on Saturday.",
+              "Pazar yeri cumartesi kalabalık olur."
+            ]
+          ]
+        },
+        {
+          "lemma": "street",
+          "ipa": "/striːt/",
+          "pos": "noun",
+          "tr": "sokak, cadde",
+          "examples": [
+            [
+              "I live on this street.",
+              "Bu sokakta oturuyorum."
+            ],
+            [
+              "Be careful when you cross the street.",
+              "Caddeden karşıya geçerken dikkatli ol."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Saat",
+      "theme": "clock",
+      "icon": "schedule",
+      "words": [
+        {
+          "lemma": "clock",
+          "ipa": "/klɑːk/",
+          "pos": "noun",
+          "tr": "saat (duvar saati)",
+          "examples": [
+            [
+              "The clock is on the wall.",
+              "Saat duvarda."
+            ],
+            [
+              "This clock is five minutes fast.",
+              "Bu saat beş dakika ileri."
+            ]
+          ]
+        },
+        {
+          "lemma": "hour",
+          "ipa": "/ˈaʊər/",
+          "pos": "noun",
+          "tr": "saat (süre)",
+          "examples": [
+            [
+              "The film lasts one hour.",
+              "Film bir saat sürüyor."
+            ],
+            [
+              "I waited for an hour.",
+              "Bir saat bekledim."
+            ]
+          ]
+        },
+        {
+          "lemma": "minute",
+          "ipa": "/ˈmɪnɪt/",
+          "pos": "noun",
+          "tr": "dakika",
+          "examples": [
+            [
+              "Wait a minute, please.",
+              "Bir dakika bekle lütfen."
+            ],
+            [
+              "The bus will come in a minute.",
+              "Otobüs bir dakika içinde gelecek."
+            ]
+          ]
+        },
+        {
+          "lemma": "half",
+          "ipa": "/hæf/",
+          "pos": "noun",
+          "tr": "yarım, buçuk",
+          "examples": [
+            [
+              "It is half past three.",
+              "Saat üç buçuk."
+            ],
+            [
+              "I ate half of the pizza.",
+              "Pizzanın yarısını yedim."
+            ]
+          ]
+        },
+        {
+          "lemma": "quarter",
+          "ipa": "/ˈkwɔːrtər/",
+          "pos": "noun",
+          "tr": "çeyrek",
+          "examples": [
+            [
+              "It is a quarter to five.",
+              "Saat beşe çeyrek var."
+            ],
+            [
+              "Wait a quarter of an hour.",
+              "Çeyrek saat bekle."
+            ]
+          ]
+        },
+        {
+          "lemma": "time",
+          "ipa": "/taɪm/",
+          "pos": "noun",
+          "tr": "zaman, saat",
+          "examples": [
+            [
+              "What time is it?",
+              "Saat kaç?"
+            ],
+            [
+              "I don't have time today.",
+              "Bugün vaktim yok."
+            ]
+          ]
+        },
+        {
+          "lemma": "watch",
+          "ipa": "/wɑːtʃ/",
+          "pos": "noun",
+          "tr": "kol saati",
+          "examples": [
+            [
+              "My watch is new.",
+              "Kol saatim yeni."
+            ],
+            [
+              "He looked at his watch.",
+              "Saatine baktı."
+            ]
+          ]
+        },
+        {
+          "lemma": "noon",
+          "ipa": "/nuːn/",
+          "pos": "noun",
+          "tr": "öğle vakti",
+          "examples": [
+            [
+              "We eat lunch at noon.",
+              "Öğlen yemek yeriz."
+            ],
+            [
+              "The shop closes at noon on Saturday.",
+              "Dükkân cumartesi öğlen kapanır."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Oyuncaklar",
+      "theme": "toys",
+      "icon": "toys",
+      "words": [
+        {
+          "lemma": "toy",
+          "ipa": "/tɔɪ/",
+          "pos": "noun",
+          "tr": "oyuncak",
+          "examples": [
+            [
+              "The child has a new toy.",
+              "Çocuğun yeni bir oyuncağı var."
+            ],
+            [
+              "Put your toy in the box.",
+              "Oyuncağını kutuya koy."
+            ]
+          ]
+        },
+        {
+          "lemma": "doll",
+          "ipa": "/dɑːl/",
+          "pos": "noun",
+          "tr": "oyuncak bebek",
+          "examples": [
+            [
+              "My sister plays with her doll.",
+              "Kız kardeşim bebeğiyle oynuyor."
+            ],
+            [
+              "This doll has long hair.",
+              "Bu bebeğin uzun saçları var."
+            ]
+          ]
+        },
+        {
+          "lemma": "game",
+          "ipa": "/ɡeɪm/",
+          "pos": "noun",
+          "tr": "oyun",
+          "examples": [
+            [
+              "Let's play a game.",
+              "Bir oyun oynayalım."
+            ],
+            [
+              "This game is very fun.",
+              "Bu oyun çok eğlenceli."
+            ]
+          ]
+        },
+        {
+          "lemma": "play",
+          "ipa": "/pleɪ/",
+          "pos": "verb",
+          "tr": "oynamak",
+          "examples": [
+            [
+              "The children play in the garden.",
+              "Çocuklar bahçede oynar."
+            ],
+            [
+              "Can you play with me?",
+              "Benimle oynar mısın?"
+            ]
+          ]
+        },
+        {
+          "lemma": "kite",
+          "ipa": "/kaɪt/",
+          "pos": "noun",
+          "tr": "uçurtma",
+          "examples": [
+            [
+              "We fly a kite at the beach.",
+              "Plajda uçurtma uçururuz."
+            ],
+            [
+              "My kite is red and yellow.",
+              "Uçurtmam kırmızı ve sarı."
+            ]
+          ]
+        },
+        {
+          "lemma": "puzzle",
+          "ipa": "/ˈpʌzəl/",
+          "pos": "noun",
+          "tr": "yapboz, bulmaca",
+          "examples": [
+            [
+              "This puzzle has a thousand pieces.",
+              "Bu yapbozun bin parçası var."
+            ],
+            [
+              "We finished the puzzle together.",
+              "Yapbozu birlikte bitirdik."
+            ]
+          ]
+        },
+        {
+          "lemma": "robot",
+          "ipa": "/ˈroʊbɑːt/",
+          "pos": "noun",
+          "tr": "robot",
+          "examples": [
+            [
+              "My brother has a toy robot.",
+              "Erkek kardeşimin oyuncak bir robotu var."
+            ],
+            [
+              "The robot can walk and talk.",
+              "Robot yürüyüp konuşabiliyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "balloon",
+          "ipa": "/bəˈluːn/",
+          "pos": "noun",
+          "tr": "balon",
+          "examples": [
+            [
+              "The balloon flew into the sky.",
+              "Balon gökyüzüne uçtu."
+            ],
+            [
+              "We bought a blue balloon.",
+              "Mavi bir balon aldık."
             ]
           ]
         }
@@ -6712,6 +7392,11 @@
       "toothbrush",
       "toothpaste",
       "family"
+    ],
+    [
+      "hello",
+      "goodbye",
+      "antonym"
     ]
   ]
 }
