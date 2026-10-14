@@ -29,3 +29,7 @@ Klasör yapısı SRS 5.2'deki feature-first düzeni izler: `lib/core`, `lib/data
 
 - `assets/content/seed_content.json` — seviyeler, üniteler, kelimeler, örnek cümleler ve kelime ilişkileri. Gözden geçirme tablosu: `docs/content_review.csv`.
 - `assets/content/placement_pool.json` — seviye tespit sınavının soru havuzu (CNT-6). Her seviyede (A1–C2) en az 30 kelime, her sözcük türünde en az 4 kelime bulunur; çeldiriciler aynı seviye ve türden seçilir (FR-48). Ünitesi henüz olmayan bir seviye önerilirse kullanıcı hazır olan en yüksek seviyeden başlar.
+
+## Çevrimdışı çalışma ve dayanıklılık
+
+Uygulama tamamen yereldir: içerik pakette gelir, ilerleme cihazdaki SQLite veritabanında tutulur (NFR-03). `test/nfr/offline_test.dart` bunu kontrol listesiyle denetler: bağımlılıklarda ve kodda ağ erişimi olmadığını; "uçak modunda" (her bağlantı denemesi hata verir) tekrar, ders, ünite sınavı ve seviye tespit sınavının sonuna kadar yapılabildiğini; ders ortasında kapanıp açılan uygulamada cevapların, XP'nin ve ünite durumunun korunduğunu (REL-2). Her cevabın anında kaydedildiği `test/nfr/persistence_test.dart` ile ayrıca doğrulanır (NFR-05).
