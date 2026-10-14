@@ -14,17 +14,22 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// [finder] ile bulunan ilk öğeye dokunur; henüz oluşturulmamışsa (örneğin
+  /// büyük yazıda ekranın altında kaldıysa) önce dikey listeyi kaydırır.
   Future<void> tapAndSettle(WidgetTester tester, Finder finder) async {
-    if (finder.evaluate().isEmpty) {
-      await tester.scrollUntilVisible(
-        finder,
-        200,
-        scrollable: find.byType(Scrollable).first,
-      );
+    final vertical = find.byWidgetPredicate(
+      (w) =>
+          w is Scrollable &&
+          axisDirectionToAxis(w.axisDirection) == Axis.vertical,
+    );
+    for (var i = 0; i < 30 && finder.evaluate().isEmpty; i++) {
+      await tester.drag(vertical.first, const Offset(0, -200));
+      await tester.pumpAndSettle();
     }
-    await tester.ensureVisible(finder);
+    final target = finder.first;
+    await tester.ensureVisible(target);
     await tester.pumpAndSettle();
-    await tester.tap(finder);
+    await tester.tap(target);
     await tester.pumpAndSettle();
   }
 
@@ -47,17 +52,15 @@ void main() {
       await tapNav(t, 'Harita');
       await tapAndSettle(t, find.text('Aile'));
       await tapAndSettle(t, find.byTooltip('Ünite sınavı'));
-      await tapAndSettle(t, find.byType(OutlinedButton).first);
+      await tapAndSettle(t, find.byType(OutlinedButton));
     },
     'Kelime kartı': (t) async {
       await tapNav(t, 'Kelimelerim');
       await tapAndSettle(
         t,
-        find
-            .byWidgetPredicate(
-              (w) => w is ListTile && '${w.key}'.contains("'word-"),
-            )
-            .first,
+        find.byWidgetPredicate(
+          (w) => w is ListTile && '${w.key}'.contains("'word-"),
+        ),
       );
     },
     'Yeni kelimeler': (t) async {

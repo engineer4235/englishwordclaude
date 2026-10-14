@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../../core/tts/tts_service.dart';
 import '../../../domain/exercise/exercise.dart';
@@ -116,7 +115,6 @@ class _ChoiceExerciseViewState extends State<ChoiceExerciseView> {
     final ex = widget.exercise;
     final correct = index == ex.correctIndex;
     setState(() => _selected = index);
-    HapticFeedback.selectionClick();
     widget.onOutcome(
       ExerciseOutcome([
         WordAnswer(ex.target, correct: correct),

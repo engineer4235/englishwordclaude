@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/feedback/answer_feedback.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/tts/tts_service.dart';
 import '../../../core/widgets/badge_labels.dart';
@@ -294,7 +295,11 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     } else {
       final exercise = exercises[_index];
       final tts = ref.watch(ttsServiceProvider);
-      void onOutcome(ExerciseOutcome o) => _onOutcome(exercise, o);
+      void onOutcome(ExerciseOutcome o) {
+        ref.read(answerFeedbackProvider).play(correct: o.allCorrect);
+        _onOutcome(exercise, o);
+      }
+
       body = Column(
         children: [
           Padding(
