@@ -229,7 +229,15 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 ),
               Expanded(child: SingleChildScrollView(child: body)),
               if (_step < _startStep)
-                Row(
+                // Büyük yazı boyutunda düğmeler sığmazsa alt alta dizilir
+                // (NFR-07).
+                OverflowBar(
+                  alignment: _step < _introPages
+                      ? MainAxisAlignment.spaceBetween
+                      : MainAxisAlignment.end,
+                  overflowAlignment: OverflowBarAlignment.end,
+                  spacing: 8,
+                  overflowSpacing: 8,
                   children: [
                     if (_step < _introPages)
                       TextButton(
@@ -237,7 +245,6 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                         onPressed: () => setState(() => _step = _goalStep),
                         child: Text(l10n.onboardingSkip),
                       ),
-                    const Spacer(),
                     FilledButton(
                       key: const ValueKey('next'),
                       onPressed: _next,
