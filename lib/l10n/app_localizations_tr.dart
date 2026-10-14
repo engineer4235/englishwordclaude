@@ -433,6 +433,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get placementLower => 'Daha düşük bir seviye seç';
 
   @override
+  String placementNotReady(String level, String start) {
+    return '$level seviyesinin üniteleri henüz hazır değil. Şimdilik $start seviyesinden başlayabilirsin; sonraki seviyeler sırayla açılır.';
+  }
+
+  @override
   String get placementNoContent =>
       'Seviye tespiti için henüz yeterli kelime yok.';
 

@@ -7,10 +7,14 @@ import '../models/word.dart';
 
 /// Seviye tespit sınavındaki bir seviye ve soru havuzu.
 class PlacementLevel {
-  const PlacementLevel(this.level, this.words);
+  const PlacementLevel(this.level, this.words, {this.available = true});
 
   final Level level;
   final List<Word> words;
+
+  /// Seviyenin ünitesi var mı. Yoksa sınav bu seviyeyi ölçer ama kullanıcı
+  /// şimdilik hazır olan en yüksek seviyeden başlar.
+  final bool available;
 }
 
 /// Uyarlanabilir seviye tespit sınavı (FR-10, FR-11).

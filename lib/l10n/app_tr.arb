@@ -333,6 +333,17 @@
     }
   },
   "placementLower": "Daha düşük bir seviye seç",
+  "placementNotReady": "{level} seviyesinin üniteleri henüz hazır değil. Şimdilik {start} seviyesinden başlayabilirsin; sonraki seviyeler sırayla açılır.",
+  "@placementNotReady": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      }
+    }
+  },
   "placementNoContent": "Seviye tespiti için henüz yeterli kelime yok.",
   "retakePlacement": "Seviye tespit sınavını yeniden yap",
   "retakePlacementHint": "Atladığın seviyelerin kelimeleri bilinen olarak işaretlenir.",

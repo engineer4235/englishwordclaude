@@ -84,10 +84,18 @@ class _PlacementScreenState extends ConsumerState<PlacementScreen> {
         onAnswer: _answer,
       );
     } else {
+      // Önerilen seviyenin ünitesi yoksa hazır olan en yüksek seviyeden
+      // başlanır.
+      var start = exam.recommendedIndex;
+      while (start > 0 && !exam.levels[start].available) {
+        start--;
+      }
       body = _Result(
         recommended: exam.recommended,
+        start: exam.levels.isEmpty ? null : exam.levels[start].level,
         lower: [
-          for (final l in exam.levels.take(exam.recommendedIndex)) l.level,
+          for (final l in exam.levels.take(start))
+            if (l.available) l.level,
         ],
         correct: _correct,
         total: exam.answered,
@@ -229,6 +237,7 @@ class _Question extends StatelessWidget {
 class _Result extends StatelessWidget {
   const _Result({
     required this.recommended,
+    required this.start,
     required this.lower,
     required this.correct,
     required this.total,
@@ -237,6 +246,9 @@ class _Result extends StatelessWidget {
   });
 
   final Level? recommended;
+
+  /// Başlanacak seviye; önerilen seviyenin ünitesi yoksa daha düşüktür.
+  final Level? start;
   final List<Level> lower;
   final int correct;
   final int total;
@@ -249,6 +261,7 @@ class _Result extends StatelessWidget {
     final theme = Theme.of(context);
     final level = recommended;
     if (level == null) return Center(child: Text(l10n.placementNoContent));
+    final start = this.start ?? level;
     return ListView(
       children: [
         Icon(Icons.emoji_events, size: 80, color: theme.colorScheme.primary),
@@ -263,11 +276,19 @@ class _Result extends StatelessWidget {
           l10n.placementResultBody(correct, total),
           textAlign: TextAlign.center,
         ),
+        if (start.id != level.id) ...[
+          const SizedBox(height: 12),
+          Text(
+            l10n.placementNotReady(level.code, start.code),
+            key: const ValueKey('placement-not-ready'),
+            textAlign: TextAlign.center,
+          ),
+        ],
         const SizedBox(height: 32),
         FilledButton(
           key: const ValueKey('placement-accept'),
-          onPressed: saving ? null : () => onChoose(level),
-          child: Text(l10n.placementAccept(level.code)),
+          onPressed: saving ? null : () => onChoose(start),
+          child: Text(l10n.placementAccept(start.code)),
         ),
         if (lower.isNotEmpty) ...[
           const SizedBox(height: 24),

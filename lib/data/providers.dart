@@ -12,6 +12,7 @@ import '../domain/models/stats.dart';
 import '../domain/models/word.dart';
 import '../domain/models/word_list.dart';
 import '../domain/placement/placement_exam.dart';
+import '../domain/placement/placement_pool.dart';
 import '../domain/search/word_search.dart';
 import '../domain/srs/card_state.dart';
 import 'content/content_seeder.dart';
@@ -31,6 +32,9 @@ import 'repositories/study_repository.dart';
 
 /// Uygulamayla gelen içerik paketi.
 const seedContentAsset = 'assets/content/seed_content.json';
+
+/// Seviye tespit sınavının soru havuzu (CNT-6).
+const placementPoolAsset = 'assets/content/placement_pool.json';
 
 /// Veritabanı tek örnek olarak tutulur ve sağlayıcı kapanınca kapatılır.
 final appDatabaseProvider = Provider<AppDatabase>((ref) {
@@ -220,18 +224,32 @@ final onboardingStatusProvider = AsyncNotifierProvider<OnboardingStatus, bool>(
   OnboardingStatus.new,
 );
 
-/// Seviye tespit sınavının soru havuzları (FR-11).
+/// Seviye tespit sınavının soru havuzu (CNT-6).
+final placementPoolProvider = FutureProvider<PlacementPool>(
+  (ref) async =>
+      PlacementPool.parse(await rootBundle.loadString(placementPoolAsset)),
+);
+
+/// Seviye tespit sınavının seviyeleri (FR-11). Sorular havuzdan gelir;
+/// havuzda olmayan seviyede ünite kelimeleri kullanılır.
 final placementLevelsProvider = FutureProvider<List<PlacementLevel>>((
   ref,
 ) async {
   final levels = await ref.watch(levelsProvider.future);
-  return [
-    for (final level in levels)
+  final pool = await ref.watch(placementPoolProvider.future);
+  final result = <PlacementLevel>[];
+  for (final level in levels) {
+    final lessonWords = await ref.watch(levelWordsProvider(level.id).future);
+    final poolWords = pool.wordsOf(level.code);
+    result.add(
       PlacementLevel(
         level,
-        await ref.watch(levelWordsProvider(level.id).future),
+        poolWords.isNotEmpty ? poolWords : lessonWords,
+        available: lessonWords.isNotEmpty,
       ),
-  ];
+    );
+  }
+  return result;
 });
 
 /// Kullanıcı ayarları (FR-120..122).

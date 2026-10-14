@@ -814,6 +814,12 @@ abstract class AppLocalizations {
   /// **'Daha düşük bir seviye seç'**
   String get placementLower;
 
+  /// No description provided for @placementNotReady.
+  ///
+  /// In tr, this message translates to:
+  /// **'{level} seviyesinin üniteleri henüz hazır değil. Şimdilik {start} seviyesinden başlayabilirsin; sonraki seviyeler sırayla açılır.'**
+  String placementNotReady(String level, String start);
+
   /// No description provided for @placementNoContent.
   ///
   /// In tr, this message translates to:
