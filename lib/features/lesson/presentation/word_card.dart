@@ -54,111 +54,228 @@ class WordCard extends ConsumerWidget {
     };
     final isCustom = word.unitId == ref.watch(customUnitIdProvider).value;
 
-    return Card(
-      margin: const EdgeInsets.all(16),
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
+    final scheme = theme.colorScheme;
+    final onHero = scheme.onPrimary;
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Mor kart: kelime, tür, okunuş ve dinleme (tasarım yönü B).
+          Container(
+            padding: const EdgeInsets.fromLTRB(22, 14, 10, 22),
+            decoration: BoxDecoration(
+              color: scheme.primary,
+              borderRadius: BorderRadius.circular(28),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: onHero.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(999),
+                      ),
+                      child: Text(
+                        partOfSpeechLabel(l10n, word.partOfSpeech),
+                        style: theme.textTheme.labelLarge?.copyWith(
+                          color: onHero,
+                        ),
+                      ),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      key: const Key('add-to-list'),
+                      tooltip: l10n.addToList,
+                      color: onHero,
+                      icon: const Icon(Icons.playlist_add_rounded),
+                      onPressed: () => showModalBottomSheet<void>(
+                        context: context,
+                        showDragHandle: true,
+                        builder: (context) => AddToListSheet(wordId: word.id),
+                      ),
+                    ),
+                    IconButton(
+                      tooltip: isFavorite
+                          ? l10n.removeFavorite
+                          : l10n.addFavorite,
+                      color: onHero,
+                      icon: Icon(
+                        isFavorite
+                            ? Icons.star_rounded
+                            : Icons.star_border_rounded,
+                      ),
+                      onPressed: () async {
+                        await ref
+                            .read(favoritesRepositoryProvider)
+                            .toggle(word.id);
+                        if (!context.mounted) return;
+                        ref.invalidate(favoriteIdsProvider);
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
                   child: Text(
                     word.lemma,
-                    style: theme.textTheme.headlineMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
+                    style: theme.textTheme.displaySmall?.copyWith(
+                      color: onHero,
                     ),
                   ),
                 ),
-                IconButton(
-                  tooltip: l10n.listen,
-                  icon: const Icon(Icons.volume_up),
-                  onPressed: () => tts.speak(word.lemma),
-                ),
-                IconButton(
-                  key: const Key('add-to-list'),
-                  tooltip: l10n.addToList,
-                  icon: const Icon(Icons.playlist_add),
-                  onPressed: () => showModalBottomSheet<void>(
-                    context: context,
-                    showDragHandle: true,
-                    builder: (context) => AddToListSheet(wordId: word.id),
-                  ),
-                ),
-                IconButton(
-                  tooltip: isFavorite ? l10n.removeFavorite : l10n.addFavorite,
-                  icon: Icon(isFavorite ? Icons.star : Icons.star_border),
-                  onPressed: () async {
-                    await ref.read(favoritesRepositoryProvider).toggle(word.id);
-                    if (!context.mounted) return;
-                    ref.invalidate(favoriteIdsProvider);
-                  },
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    IconButton.filled(
+                      tooltip: l10n.listen,
+                      style: IconButton.styleFrom(
+                        backgroundColor: scheme.secondary,
+                        foregroundColor: scheme.onSecondary,
+                      ),
+                      icon: const Icon(Icons.volume_up_rounded),
+                      onPressed: () => tts.speak(word.lemma),
+                    ),
+                    if (word.ipa != null) ...[
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          word.ipa!,
+                          style: theme.textTheme.bodyLarge?.copyWith(
+                            color: onHero,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
               ],
             ),
-            if (word.ipa != null)
-              Text(
-                word.ipa!,
-                style: theme.textTheme.bodyLarge?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
-                ),
-              ),
-            const SizedBox(height: 8),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Chip(
-                label: Text(partOfSpeechLabel(l10n, word.partOfSpeech)),
+          ),
+          const SizedBox(height: 14),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(22),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(word.meaningTr, style: theme.textTheme.headlineSmall),
+                  const SizedBox(height: 8),
+                  _NoteSection(wordId: word.id),
+                  _RelationsSection(wordId: word.id),
+                  const Divider(height: 32),
+                  Text(
+                    l10n.examples,
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                  for (final example in word.examples)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text.rich(
+                                  highlightWord(
+                                    example.en,
+                                    word.lemma,
+                                    theme.textTheme.bodyLarge,
+                                    TextStyle(
+                                      color: scheme.primary,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  example.tr,
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            tooltip: l10n.listen,
+                            icon: const Icon(Icons.volume_up_outlined),
+                            onPressed: () => tts.speak(example.en),
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
               ),
             ),
-            const SizedBox(height: 16),
-            Text(word.meaningTr, style: theme.textTheme.titleLarge),
-            const SizedBox(height: 8),
-            _NoteSection(wordId: word.id),
-            _RelationsSection(wordId: word.id),
-            const Divider(height: 32),
-            Text(l10n.examples, style: theme.textTheme.titleSmall),
-            for (final example in word.examples)
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(example.en),
-                subtitle: Text(example.tr),
-                trailing: IconButton(
-                  tooltip: l10n.listen,
-                  icon: const Icon(Icons.volume_up_outlined),
-                  onPressed: () => tts.speak(example.en),
-                ),
+          ),
+          const SizedBox(height: 16),
+          if (isCustom) ...[
+            TextButton.icon(
+              key: const Key('delete-word'),
+              icon: const Icon(Icons.delete_outline),
+              label: Text(l10n.deleteWord),
+              style: TextButton.styleFrom(
+                foregroundColor: theme.colorScheme.error,
               ),
-            const SizedBox(height: 16),
-            if (isCustom) ...[
-              TextButton.icon(
-                key: const Key('delete-word'),
-                icon: const Icon(Icons.delete_outline),
-                label: Text(l10n.deleteWord),
-                style: TextButton.styleFrom(
-                  foregroundColor: theme.colorScheme.error,
-                ),
-                onPressed: () => _delete(context, ref),
-              ),
-              const SizedBox(height: 8),
-            ],
-            OutlinedButton.icon(
-              icon: const Icon(Icons.check),
-              label: Text(l10n.iKnowThis),
-              onPressed: () async {
-                await ref.read(reviewRepositoryProvider).markKnown(word.id);
-                if (!context.mounted) return;
-                ref.invalidate(levelOverviewProvider);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.markedKnown(word.lemma))),
-                );
-              },
+              onPressed: () => _delete(context, ref),
             ),
+            const SizedBox(height: 8),
           ],
-        ),
+          OutlinedButton.icon(
+            icon: const Icon(Icons.check),
+            label: Text(l10n.iKnowThis),
+            onPressed: () async {
+              await ref.read(reviewRepositoryProvider).markKnown(word.id);
+              if (!context.mounted) return;
+              ref.invalidate(levelOverviewProvider);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(l10n.markedKnown(word.lemma))),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
+}
+
+/// Örnek cümlede kelimeyi (büyük/küçük harf ayırmadan, tam kelime olarak)
+/// vurgular.
+TextSpan highlightWord(
+  String sentence,
+  String word,
+  TextStyle? base,
+  TextStyle mark,
+) {
+  final pattern = RegExp(
+    '(?<![A-Za-z])${RegExp.escape(word)}(?![A-Za-z])',
+    caseSensitive: false,
+  );
+  final spans = <TextSpan>[];
+  var start = 0;
+  for (final m in pattern.allMatches(sentence)) {
+    if (m.start > start) {
+      spans.add(TextSpan(text: sentence.substring(start, m.start)));
+    }
+    spans.add(TextSpan(text: m.group(0), style: mark));
+    start = m.end;
+  }
+  if (start < sentence.length)
+    spans.add(TextSpan(text: sentence.substring(start)));
+  return TextSpan(style: base, children: spans);
 }
 
 /// Kelimeye eklenen kişisel not ve düzenleme düğmesi (FR-36).
