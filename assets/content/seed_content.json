@@ -1,6 +1,6 @@
 {
-  "version": 14,
-  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 25, B2'de 5 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 15,
+  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 25, B2'de 10 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -10907,6 +10907,686 @@
           ]
         }
       ]
+    },
+    {
+      "level": "B2",
+      "title": "Hukuk ve Adalet",
+      "theme": "law_justice",
+      "icon": "public",
+      "words": [
+        {
+          "lemma": "court",
+          "ipa": "/kɔːrt/",
+          "pos": "noun",
+          "tr": "mahkeme",
+          "examples": [
+            [
+              "The case went to court last year.",
+              "Dava geçen yıl mahkemeye gitti."
+            ],
+            [
+              "He has to appear in court on Monday.",
+              "Pazartesi mahkemeye çıkması gerekiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "judge",
+          "ipa": "/dʒʌdʒ/",
+          "pos": "noun",
+          "tr": "yargıç, hâkim",
+          "examples": [
+            [
+              "The judge listened to both sides.",
+              "Yargıç iki tarafı da dinledi."
+            ],
+            [
+              "She became a judge at forty.",
+              "Kırk yaşında hâkim oldu."
+            ]
+          ]
+        },
+        {
+          "lemma": "lawyer",
+          "ipa": "/ˈlɔːjər/",
+          "pos": "noun",
+          "tr": "avukat",
+          "examples": [
+            [
+              "You should talk to a lawyer first.",
+              "Önce bir avukatla konuşmalısın."
+            ],
+            [
+              "Her lawyer gave good advice.",
+              "Avukatı iyi bir tavsiye verdi."
+            ]
+          ]
+        },
+        {
+          "lemma": "trial",
+          "ipa": "/ˈtraɪəl/",
+          "pos": "noun",
+          "tr": "yargılama, dava",
+          "examples": [
+            [
+              "The trial lasted three weeks.",
+              "Yargılama üç hafta sürdü."
+            ],
+            [
+              "The trial starts tomorrow.",
+              "Dava yarın başlıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "guilty",
+          "ipa": "/ˈɡɪlti/",
+          "pos": "adjective",
+          "tr": "suçlu",
+          "examples": [
+            [
+              "The court found him guilty.",
+              "Mahkeme onu suçlu buldu."
+            ],
+            [
+              "I feel guilty about forgetting her birthday.",
+              "Doğum gününü unuttuğum için kendimi suçlu hissediyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "innocent",
+          "ipa": "/ˈɪnəsənt/",
+          "pos": "adjective",
+          "tr": "masum, suçsuz",
+          "examples": [
+            [
+              "He says he is innocent.",
+              "Masum olduğunu söylüyor."
+            ],
+            [
+              "An innocent man went to prison.",
+              "Suçsuz bir adam hapse girdi."
+            ]
+          ]
+        },
+        {
+          "lemma": "sentence",
+          "ipa": "/ˈsentəns/",
+          "pos": "noun",
+          "tr": "ceza, hüküm; cümle",
+          "examples": [
+            [
+              "He got a sentence of two years.",
+              "İki yıl ceza aldı."
+            ],
+            [
+              "Write a sentence with this word.",
+              "Bu kelimeyle bir cümle yaz."
+            ]
+          ]
+        },
+        {
+          "lemma": "justice",
+          "ipa": "/ˈdʒʌstɪs/",
+          "pos": "noun",
+          "tr": "adalet",
+          "examples": [
+            [
+              "People want justice for the victims.",
+              "İnsanlar mağdurlar için adalet istiyor."
+            ],
+            [
+              "Justice must be the same for everyone.",
+              "Adalet herkes için aynı olmalı."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Dijital Dünya",
+      "theme": "digital_world",
+      "icon": "devices",
+      "words": [
+        {
+          "lemma": "innovation",
+          "ipa": "/ˌɪnəˈveɪʃən/",
+          "pos": "noun",
+          "tr": "yenilik",
+          "examples": [
+            [
+              "The company is famous for innovation.",
+              "Şirket yenilikleriyle ünlü."
+            ],
+            [
+              "This phone is a real innovation.",
+              "Bu telefon gerçek bir yenilik."
+            ]
+          ]
+        },
+        {
+          "lemma": "artificial",
+          "ipa": "/ˌɑːrtɪˈfɪʃəl/",
+          "pos": "adjective",
+          "tr": "yapay",
+          "examples": [
+            [
+              "Artificial intelligence is changing many jobs.",
+              "Yapay zekâ birçok mesleği değiştiriyor."
+            ],
+            [
+              "These flowers are artificial.",
+              "Bu çiçekler yapay."
+            ]
+          ]
+        },
+        {
+          "lemma": "digital",
+          "ipa": "/ˈdɪdʒɪtəl/",
+          "pos": "adjective",
+          "tr": "dijital",
+          "examples": [
+            [
+              "I prefer digital books to paper books.",
+              "Dijital kitapları kâğıt kitaplara tercih ederim."
+            ],
+            [
+              "We live in a digital world.",
+              "Dijital bir dünyada yaşıyoruz."
+            ]
+          ]
+        },
+        {
+          "lemma": "virtual",
+          "ipa": "/ˈvɜːrtʃuəl/",
+          "pos": "adjective",
+          "tr": "sanal",
+          "examples": [
+            [
+              "We had a virtual meeting this morning.",
+              "Bu sabah sanal bir toplantı yaptık."
+            ],
+            [
+              "The museum offers a virtual tour.",
+              "Müze sanal bir tur sunuyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "privacy",
+          "ipa": "/ˈpraɪvəsi/",
+          "pos": "noun",
+          "tr": "gizlilik, mahremiyet",
+          "examples": [
+            [
+              "Protect your privacy online.",
+              "İnternette gizliliğini koru."
+            ],
+            [
+              "Everyone has a right to privacy.",
+              "Herkesin mahremiyet hakkı vardır."
+            ]
+          ]
+        },
+        {
+          "lemma": "upgrade",
+          "ipa": "/ˈʌpɡreɪd/",
+          "pos": "verb",
+          "tr": "yükseltmek, güncellemek",
+          "examples": [
+            [
+              "I need to upgrade my computer.",
+              "Bilgisayarımı yükseltmem gerekiyor."
+            ],
+            [
+              "The airline will upgrade us to business class.",
+              "Havayolu bizi business sınıfa yükseltecek."
+            ]
+          ]
+        },
+        {
+          "lemma": "network",
+          "ipa": "/ˈnetwɜːrk/",
+          "pos": "noun",
+          "tr": "ağ",
+          "examples": [
+            [
+              "The network is down today.",
+              "Ağ bugün çalışmıyor."
+            ],
+            [
+              "She has a large network of friends.",
+              "Geniş bir arkadaş çevresi var."
+            ]
+          ]
+        },
+        {
+          "lemma": "database",
+          "ipa": "/ˈdeɪtəbeɪs/",
+          "pos": "noun",
+          "tr": "veri tabanı",
+          "examples": [
+            [
+              "All customers are in the database.",
+              "Tüm müşteriler veri tabanında."
+            ],
+            [
+              "The database stores every order.",
+              "Veri tabanı her siparişi saklar."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Çevre Sorunları",
+      "theme": "environmental_issues",
+      "icon": "eco",
+      "words": [
+        {
+          "lemma": "emission",
+          "ipa": "/ɪˈmɪʃən/",
+          "pos": "noun",
+          "tr": "salım, emisyon",
+          "examples": [
+            [
+              "The new law limits the emission of harmful gases.",
+              "Yeni yasa zararlı gazların salımını sınırlıyor."
+            ],
+            [
+              "The factory must cut its emission levels.",
+              "Fabrika emisyon düzeyini düşürmek zorunda."
+            ]
+          ]
+        },
+        {
+          "lemma": "renewable",
+          "ipa": "/rɪˈnuːəbəl/",
+          "pos": "adjective",
+          "tr": "yenilenebilir",
+          "examples": [
+            [
+              "Solar power is a renewable energy source.",
+              "Güneş enerjisi yenilenebilir bir kaynaktır."
+            ],
+            [
+              "We should use more renewable energy.",
+              "Daha çok yenilenebilir enerji kullanmalıyız."
+            ]
+          ]
+        },
+        {
+          "lemma": "sustainable",
+          "ipa": "/səˈsteɪnəbəl/",
+          "pos": "adjective",
+          "tr": "sürdürülebilir",
+          "examples": [
+            [
+              "We need a sustainable way of living.",
+              "Sürdürülebilir bir yaşam biçimine ihtiyacımız var."
+            ],
+            [
+              "The farm uses sustainable methods.",
+              "Çiftlik sürdürülebilir yöntemler kullanıyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "extinct",
+          "ipa": "/ɪkˈstɪŋkt/",
+          "pos": "adjective",
+          "tr": "nesli tükenmiş",
+          "examples": [
+            [
+              "Dinosaurs are extinct.",
+              "Dinozorların nesli tükenmiştir."
+            ],
+            [
+              "This bird may become extinct soon.",
+              "Bu kuşun nesli yakında tükenebilir."
+            ]
+          ]
+        },
+        {
+          "lemma": "drought",
+          "ipa": "/draʊt/",
+          "pos": "noun",
+          "tr": "kuraklık",
+          "examples": [
+            [
+              "The drought killed many crops.",
+              "Kuraklık birçok ürünü yok etti."
+            ],
+            [
+              "There was a long drought last summer.",
+              "Geçen yaz uzun bir kuraklık oldu."
+            ]
+          ]
+        },
+        {
+          "lemma": "deforestation",
+          "ipa": "/diːˌfɔːrɪˈsteɪʃən/",
+          "pos": "noun",
+          "tr": "ormansızlaşma",
+          "examples": [
+            [
+              "Deforestation is a serious problem in the Amazon.",
+              "Amazon'da ormansızlaşma ciddi bir sorundur."
+            ],
+            [
+              "Deforestation destroys the homes of many animals.",
+              "Ormansızlaşma birçok hayvanın yaşam alanını yok eder."
+            ]
+          ]
+        },
+        {
+          "lemma": "fossil",
+          "ipa": "/ˈfɑːsəl/",
+          "pos": "noun",
+          "tr": "fosil",
+          "examples": [
+            [
+              "Fossil fuels pollute the air.",
+              "Fosil yakıtlar havayı kirletir."
+            ],
+            [
+              "They found a fossil in the rock.",
+              "Kayada bir fosil buldular."
+            ]
+          ]
+        },
+        {
+          "lemma": "conservation",
+          "ipa": "/ˌkɑːnsərˈveɪʃən/",
+          "pos": "noun",
+          "tr": "koruma",
+          "examples": [
+            [
+              "The conservation of water is important.",
+              "Suyun korunması önemlidir."
+            ],
+            [
+              "She works for a wildlife conservation group.",
+              "Bir yaban hayatı koruma grubunda çalışıyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Duygu Dünyası",
+      "theme": "feelings_b2",
+      "icon": "mood",
+      "words": [
+        {
+          "lemma": "anxious",
+          "ipa": "/ˈæŋkʃəs/",
+          "pos": "adjective",
+          "tr": "kaygılı, endişeli",
+          "examples": [
+            [
+              "She felt anxious before the flight.",
+              "Uçuştan önce kaygılı hissetti."
+            ],
+            [
+              "Don't be anxious, everything will be fine.",
+              "Endişelenme, her şey yoluna girecek."
+            ]
+          ]
+        },
+        {
+          "lemma": "frustrated",
+          "ipa": "/ˈfrʌstreɪtɪd/",
+          "pos": "adjective",
+          "tr": "hayal kırıklığına uğramış, bıkkın",
+          "examples": [
+            [
+              "I get frustrated when my computer is slow.",
+              "Bilgisayarım yavaş olunca sinirleniyorum."
+            ],
+            [
+              "He was frustrated by the long wait.",
+              "Uzun beklemeden bıkmıştı."
+            ]
+          ]
+        },
+        {
+          "lemma": "grateful",
+          "ipa": "/ˈɡreɪtfəl/",
+          "pos": "adjective",
+          "tr": "minnettar",
+          "examples": [
+            [
+              "I am grateful for your help.",
+              "Yardımın için minnettarım."
+            ],
+            [
+              "We are grateful to our teachers.",
+              "Öğretmenlerimize minnettarız."
+            ]
+          ]
+        },
+        {
+          "lemma": "ashamed",
+          "ipa": "/əˈʃeɪmd/",
+          "pos": "adjective",
+          "tr": "utanmış",
+          "examples": [
+            [
+              "He was ashamed of his behavior.",
+              "Davranışından utanmıştı."
+            ],
+            [
+              "Don't be ashamed to ask for help.",
+              "Yardım istemekten utanma."
+            ]
+          ]
+        },
+        {
+          "lemma": "overwhelmed",
+          "ipa": "/ˌoʊvərˈwelmd/",
+          "pos": "adjective",
+          "tr": "bunalmış",
+          "examples": [
+            [
+              "I felt overwhelmed by all the work.",
+              "Bütün o işten bunalmıştım."
+            ],
+            [
+              "She was overwhelmed with joy.",
+              "Sevinçten kendinden geçti."
+            ]
+          ]
+        },
+        {
+          "lemma": "envious",
+          "ipa": "/ˈenviəs/",
+          "pos": "adjective",
+          "tr": "kıskanç, gıpta eden",
+          "examples": [
+            [
+              "He was envious of his brother's success.",
+              "Kardeşinin başarısını kıskanıyordu."
+            ],
+            [
+              "Don't be envious of other people.",
+              "Başkalarını kıskanma."
+            ]
+          ]
+        },
+        {
+          "lemma": "relieved",
+          "ipa": "/rɪˈliːvd/",
+          "pos": "adjective",
+          "tr": "rahatlamış",
+          "examples": [
+            [
+              "I was relieved to hear the good news.",
+              "İyi haberi duyunca rahatladım."
+            ],
+            [
+              "She looked relieved after the exam.",
+              "Sınavdan sonra rahatlamış görünüyordu."
+            ]
+          ]
+        },
+        {
+          "lemma": "motivated",
+          "ipa": "/ˈmoʊtɪveɪtɪd/",
+          "pos": "adjective",
+          "tr": "istekli, motive",
+          "examples": [
+            [
+              "The team is very motivated this year.",
+              "Takım bu yıl çok istekli."
+            ],
+            [
+              "How do you stay motivated?",
+              "İstekli kalmayı nasıl başarıyorsun?"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Ekonomi",
+      "theme": "economy",
+      "icon": "wallet",
+      "words": [
+        {
+          "lemma": "economy",
+          "ipa": "/ɪˈkɑːnəmi/",
+          "pos": "noun",
+          "tr": "ekonomi",
+          "examples": [
+            [
+              "The economy is growing slowly.",
+              "Ekonomi yavaş büyüyor."
+            ],
+            [
+              "Tourism is important for the economy.",
+              "Turizm ekonomi için önemlidir."
+            ]
+          ]
+        },
+        {
+          "lemma": "inflation",
+          "ipa": "/ɪnˈfleɪʃən/",
+          "pos": "noun",
+          "tr": "enflasyon",
+          "examples": [
+            [
+              "Inflation makes everything more expensive.",
+              "Enflasyon her şeyi pahalılaştırır."
+            ],
+            [
+              "The bank wants to control inflation.",
+              "Banka enflasyonu kontrol etmek istiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "debt",
+          "ipa": "/det/",
+          "pos": "noun",
+          "tr": "borç",
+          "examples": [
+            [
+              "He paid off all his debt.",
+              "Bütün borcunu ödedi."
+            ],
+            [
+              "The country has a large debt.",
+              "Ülkenin büyük bir borcu var."
+            ]
+          ]
+        },
+        {
+          "lemma": "interest",
+          "ipa": "/ˈɪntrəst/",
+          "pos": "noun",
+          "tr": "faiz; ilgi",
+          "examples": [
+            [
+              "The bank charges high interest on loans.",
+              "Banka kredilerde yüksek faiz alıyor."
+            ],
+            [
+              "She has a strong interest in art.",
+              "Sanata güçlü bir ilgisi var."
+            ]
+          ]
+        },
+        {
+          "lemma": "export",
+          "ipa": "/ˈekspɔːrt/",
+          "pos": "noun",
+          "tr": "ihracat",
+          "examples": [
+            [
+              "Cars are the country's main export.",
+              "Arabalar ülkenin başlıca ihracat ürünüdür."
+            ],
+            [
+              "Export sales went up this year.",
+              "İhracat satışları bu yıl arttı."
+            ]
+          ]
+        },
+        {
+          "lemma": "currency",
+          "ipa": "/ˈkɜːrənsi/",
+          "pos": "noun",
+          "tr": "para birimi",
+          "examples": [
+            [
+              "What is the currency of Japan?",
+              "Japonya'nın para birimi nedir?"
+            ],
+            [
+              "You can change currency at the airport.",
+              "Havaalanında döviz bozdurabilirsin."
+            ]
+          ]
+        },
+        {
+          "lemma": "recession",
+          "ipa": "/rɪˈseʃən/",
+          "pos": "noun",
+          "tr": "durgunluk, resesyon",
+          "examples": [
+            [
+              "Many people lost their jobs in the recession.",
+              "Durgunlukta birçok kişi işini kaybetti."
+            ],
+            [
+              "Experts say a recession is coming.",
+              "Uzmanlar bir resesyonun geldiğini söylüyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "wealth",
+          "ipa": "/welθ/",
+          "pos": "noun",
+          "tr": "servet, zenginlik",
+          "examples": [
+            [
+              "Health is more important than wealth.",
+              "Sağlık servetten daha önemlidir."
+            ],
+            [
+              "The family's wealth came from oil.",
+              "Ailenin serveti petrolden geldi."
+            ]
+          ]
+        }
+      ]
     }
   ],
   "relations": [
@@ -11093,6 +11773,11 @@
     [
       "agree",
       "disagree",
+      "antonym"
+    ],
+    [
+      "guilty",
+      "innocent",
       "antonym"
     ]
   ]
