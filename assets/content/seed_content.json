@@ -1,6 +1,6 @@
 {
-  "version": 12,
-  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 20 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 13,
+  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 25 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -9547,6 +9547,686 @@
           ]
         }
       ]
+    },
+    {
+      "level": "B1",
+      "title": "Kariyer",
+      "theme": "careers",
+      "icon": "business",
+      "words": [
+        {
+          "lemma": "hire",
+          "ipa": "/haɪər/",
+          "pos": "verb",
+          "tr": "işe almak",
+          "examples": [
+            [
+              "The company will hire ten new workers.",
+              "Şirket on yeni çalışan işe alacak."
+            ],
+            [
+              "They decided to hire her after the interview.",
+              "Mülakattan sonra onu işe almaya karar verdiler."
+            ]
+          ]
+        },
+        {
+          "lemma": "resign",
+          "ipa": "/rɪˈzaɪn/",
+          "pos": "verb",
+          "tr": "istifa etmek",
+          "examples": [
+            [
+              "He wants to resign from his job.",
+              "İşinden istifa etmek istiyor."
+            ],
+            [
+              "Why did the manager resign?",
+              "Müdür neden istifa etti?"
+            ]
+          ]
+        },
+        {
+          "lemma": "promote",
+          "ipa": "/prəˈmoʊt/",
+          "pos": "verb",
+          "tr": "terfi ettirmek",
+          "examples": [
+            [
+              "They will promote her to team leader.",
+              "Onu takım liderliğine terfi ettirecekler."
+            ],
+            [
+              "The boss didn't promote anyone this year.",
+              "Patron bu yıl kimseyi terfi ettirmedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "retire",
+          "ipa": "/rɪˈtaɪər/",
+          "pos": "verb",
+          "tr": "emekli olmak",
+          "examples": [
+            [
+              "My father will retire next year.",
+              "Babam gelecek yıl emekli olacak."
+            ],
+            [
+              "She wants to retire by the sea.",
+              "Deniz kenarında emekli olmak istiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "contract",
+          "ipa": "/ˈkɑːntrækt/",
+          "pos": "noun",
+          "tr": "sözleşme",
+          "examples": [
+            [
+              "Read the contract before you sign it.",
+              "İmzalamadan önce sözleşmeyi oku."
+            ],
+            [
+              "His contract ends in June.",
+              "Sözleşmesi haziranda bitiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "application",
+          "ipa": "/ˌæplɪˈkeɪʃən/",
+          "pos": "noun",
+          "tr": "başvuru",
+          "examples": [
+            [
+              "I sent my application yesterday.",
+              "Başvurumu dün gönderdim."
+            ],
+            [
+              "The application form is online.",
+              "Başvuru formu internette."
+            ]
+          ]
+        },
+        {
+          "lemma": "volunteer",
+          "ipa": "/ˌvɑːlənˈtɪr/",
+          "pos": "noun",
+          "tr": "gönüllü",
+          "examples": [
+            [
+              "She works as a volunteer at the hospital.",
+              "Hastanede gönüllü olarak çalışıyor."
+            ],
+            [
+              "We need one more volunteer for the event.",
+              "Etkinlik için bir gönüllüye daha ihtiyacımız var."
+            ]
+          ]
+        },
+        {
+          "lemma": "ambitious",
+          "ipa": "/æmˈbɪʃəs/",
+          "pos": "adjective",
+          "tr": "hırslı",
+          "examples": [
+            [
+              "He is an ambitious young lawyer.",
+              "Hırslı, genç bir avukat."
+            ],
+            [
+              "Her plan is very ambitious.",
+              "Planı çok iddialı."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Toplum",
+      "theme": "society",
+      "icon": "people",
+      "words": [
+        {
+          "lemma": "community",
+          "ipa": "/kəˈmjuːnəti/",
+          "pos": "noun",
+          "tr": "topluluk",
+          "examples": [
+            [
+              "Our community has a new library.",
+              "Topluluğumuzun yeni bir kütüphanesi var."
+            ],
+            [
+              "The whole community helped after the fire.",
+              "Yangından sonra bütün topluluk yardım etti."
+            ]
+          ]
+        },
+        {
+          "lemma": "charity",
+          "ipa": "/ˈtʃærəti/",
+          "pos": "noun",
+          "tr": "hayır kurumu",
+          "examples": [
+            [
+              "She gives money to a charity every month.",
+              "Her ay bir hayır kurumuna para veriyor."
+            ],
+            [
+              "The charity helps poor children.",
+              "Hayır kurumu yoksul çocuklara yardım ediyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "election",
+          "ipa": "/ɪˈlekʃən/",
+          "pos": "noun",
+          "tr": "seçim",
+          "examples": [
+            [
+              "The election is next Sunday.",
+              "Seçim önümüzdeki pazar."
+            ],
+            [
+              "Who won the election?",
+              "Seçimi kim kazandı?"
+            ]
+          ]
+        },
+        {
+          "lemma": "vote",
+          "ipa": "/voʊt/",
+          "pos": "verb",
+          "tr": "oy vermek",
+          "examples": [
+            [
+              "You can vote when you are eighteen.",
+              "On sekiz yaşında oy verebilirsin."
+            ],
+            [
+              "Many people didn't vote this year.",
+              "Bu yıl birçok kişi oy vermedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "government",
+          "ipa": "/ˈɡʌvərnmənt/",
+          "pos": "noun",
+          "tr": "hükümet",
+          "examples": [
+            [
+              "The government built a new hospital.",
+              "Hükümet yeni bir hastane yaptı."
+            ],
+            [
+              "The government wants to lower taxes.",
+              "Hükümet vergileri düşürmek istiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "law",
+          "ipa": "/lɔː/",
+          "pos": "noun",
+          "tr": "yasa, kanun",
+          "examples": [
+            [
+              "There is a new law about smoking.",
+              "Sigara içmeyle ilgili yeni bir yasa var."
+            ],
+            [
+              "Everyone must follow the law.",
+              "Herkes yasaya uymalı."
+            ]
+          ]
+        },
+        {
+          "lemma": "citizen",
+          "ipa": "/ˈsɪtɪzən/",
+          "pos": "noun",
+          "tr": "vatandaş",
+          "examples": [
+            [
+              "Every citizen has the right to vote.",
+              "Her vatandaşın oy verme hakkı vardır."
+            ],
+            [
+              "She became a citizen last year.",
+              "Geçen yıl vatandaş oldu."
+            ]
+          ]
+        },
+        {
+          "lemma": "tax",
+          "ipa": "/tæks/",
+          "pos": "noun",
+          "tr": "vergi",
+          "examples": [
+            [
+              "We pay tax on everything we buy.",
+              "Aldığımız her şey için vergi ödüyoruz."
+            ],
+            [
+              "The price includes tax.",
+              "Fiyata vergi dahil."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Fikir Alışverişi",
+      "theme": "discussion",
+      "icon": "phone",
+      "words": [
+        {
+          "lemma": "opinion",
+          "ipa": "/əˈpɪnjən/",
+          "pos": "noun",
+          "tr": "fikir, görüş",
+          "examples": [
+            [
+              "What is your opinion about the film?",
+              "Film hakkındaki görüşün ne?"
+            ],
+            [
+              "In my opinion, the plan is good.",
+              "Bence plan iyi."
+            ]
+          ]
+        },
+        {
+          "lemma": "decision",
+          "ipa": "/dɪˈsɪʒən/",
+          "pos": "noun",
+          "tr": "karar",
+          "examples": [
+            [
+              "It was a difficult decision.",
+              "Zor bir karardı."
+            ],
+            [
+              "We need to make a decision today.",
+              "Bugün bir karar vermemiz gerekiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "advice",
+          "ipa": "/ədˈvaɪs/",
+          "pos": "noun",
+          "tr": "tavsiye, öğüt",
+          "examples": [
+            [
+              "Can I ask you for some advice?",
+              "Sana bir konuda tavsiye sorabilir miyim?"
+            ],
+            [
+              "My teacher gave me good advice.",
+              "Öğretmenim bana iyi bir öğüt verdi."
+            ]
+          ]
+        },
+        {
+          "lemma": "suggest",
+          "ipa": "/səˈdʒest/",
+          "pos": "verb",
+          "tr": "önermek",
+          "examples": [
+            [
+              "I suggest a walk in the park.",
+              "Parkta bir yürüyüş öneriyorum."
+            ],
+            [
+              "What do you suggest for dinner?",
+              "Akşam yemeği için ne önerirsin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "agree",
+          "ipa": "/əˈɡriː/",
+          "pos": "verb",
+          "tr": "katılmak, aynı fikirde olmak",
+          "examples": [
+            [
+              "I agree with you.",
+              "Sana katılıyorum."
+            ],
+            [
+              "They don't agree about the price.",
+              "Fiyat konusunda anlaşamıyorlar."
+            ]
+          ]
+        },
+        {
+          "lemma": "disagree",
+          "ipa": "/ˌdɪsəˈɡriː/",
+          "pos": "verb",
+          "tr": "katılmamak",
+          "examples": [
+            [
+              "I disagree with this idea.",
+              "Bu fikre katılmıyorum."
+            ],
+            [
+              "It's fine to disagree politely.",
+              "Kibarca karşı çıkmak sorun değil."
+            ]
+          ]
+        },
+        {
+          "lemma": "persuade",
+          "ipa": "/pərˈsweɪd/",
+          "pos": "verb",
+          "tr": "ikna etmek",
+          "examples": [
+            [
+              "I tried to persuade him to come.",
+              "Onu gelmeye ikna etmeye çalıştım."
+            ],
+            [
+              "It is hard to persuade my father.",
+              "Babamı ikna etmek zor."
+            ]
+          ]
+        },
+        {
+          "lemma": "discuss",
+          "ipa": "/dɪˈskʌs/",
+          "pos": "verb",
+          "tr": "tartışmak, konuşmak",
+          "examples": [
+            [
+              "Let's discuss this after lunch.",
+              "Bunu öğle yemeğinden sonra konuşalım."
+            ],
+            [
+              "We need to discuss the budget.",
+              "Bütçeyi konuşmamız gerekiyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Yolculukta",
+      "theme": "on_the_move",
+      "icon": "directions_bus",
+      "words": [
+        {
+          "lemma": "passenger",
+          "ipa": "/ˈpæsɪndʒər/",
+          "pos": "noun",
+          "tr": "yolcu",
+          "examples": [
+            [
+              "Every passenger must wear a seat belt.",
+              "Her yolcu emniyet kemeri takmalı."
+            ],
+            [
+              "The bus has room for one more passenger.",
+              "Otobüste bir yolcu için daha yer var."
+            ]
+          ]
+        },
+        {
+          "lemma": "platform",
+          "ipa": "/ˈplætfɔːrm/",
+          "pos": "noun",
+          "tr": "peron",
+          "examples": [
+            [
+              "The train leaves from platform three.",
+              "Tren üç numaralı perondan kalkıyor."
+            ],
+            [
+              "Wait on the platform, please.",
+              "Lütfen peronda bekleyin."
+            ]
+          ]
+        },
+        {
+          "lemma": "timetable",
+          "ipa": "/ˈtaɪmteɪbəl/",
+          "pos": "noun",
+          "tr": "sefer tarifesi",
+          "examples": [
+            [
+              "Check the bus timetable online.",
+              "Otobüs tarifesine internetten bak."
+            ],
+            [
+              "The timetable changes in winter.",
+              "Tarife kışın değişiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "fare",
+          "ipa": "/fer/",
+          "pos": "noun",
+          "tr": "bilet ücreti",
+          "examples": [
+            [
+              "The bus fare went up again.",
+              "Otobüs ücreti yine arttı."
+            ],
+            [
+              "Children pay half fare.",
+              "Çocuklar yarım ücret öder."
+            ]
+          ]
+        },
+        {
+          "lemma": "route",
+          "ipa": "/ruːt/",
+          "pos": "noun",
+          "tr": "güzergâh, yol",
+          "examples": [
+            [
+              "This is the fastest route to the airport.",
+              "Havaalanına en hızlı yol bu."
+            ],
+            [
+              "The bus changed its route.",
+              "Otobüs güzergâhını değiştirdi."
+            ]
+          ]
+        },
+        {
+          "lemma": "arrival",
+          "ipa": "/əˈraɪvəl/",
+          "pos": "noun",
+          "tr": "varış",
+          "examples": [
+            [
+              "Our arrival time is ten o'clock.",
+              "Varış saatimiz on."
+            ],
+            [
+              "Call me after your arrival.",
+              "Vardıktan sonra beni ara."
+            ]
+          ]
+        },
+        {
+          "lemma": "seat",
+          "ipa": "/siːt/",
+          "pos": "noun",
+          "tr": "koltuk, yer",
+          "examples": [
+            [
+              "Is this seat free?",
+              "Bu koltuk boş mu?"
+            ],
+            [
+              "I always choose a window seat.",
+              "Her zaman pencere kenarı koltuk seçerim."
+            ]
+          ]
+        },
+        {
+          "lemma": "cabin",
+          "ipa": "/ˈkæbɪn/",
+          "pos": "noun",
+          "tr": "kabin",
+          "examples": [
+            [
+              "Put your bag in the cabin.",
+              "Çantanı kabine koy."
+            ],
+            [
+              "The cabin crew served drinks.",
+              "Kabin ekibi içecek ikram etti."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Karakter",
+      "theme": "character",
+      "icon": "face",
+      "words": [
+        {
+          "lemma": "brave",
+          "ipa": "/breɪv/",
+          "pos": "adjective",
+          "tr": "cesur",
+          "examples": [
+            [
+              "The brave boy saved his friend.",
+              "Cesur çocuk arkadaşını kurtardı."
+            ],
+            [
+              "You were very brave at the dentist.",
+              "Dişçide çok cesurdun."
+            ]
+          ]
+        },
+        {
+          "lemma": "selfish",
+          "ipa": "/ˈselfɪʃ/",
+          "pos": "adjective",
+          "tr": "bencil",
+          "examples": [
+            [
+              "Don't be selfish, share your toys.",
+              "Bencil olma, oyuncaklarını paylaş."
+            ],
+            [
+              "It was selfish to take the last cake.",
+              "Son pastayı almak bencilceydi."
+            ]
+          ]
+        },
+        {
+          "lemma": "sensitive",
+          "ipa": "/ˈsensətɪv/",
+          "pos": "adjective",
+          "tr": "duyarlı, hassas",
+          "examples": [
+            [
+              "She is a sensitive and kind person.",
+              "Duyarlı ve nazik bir insan."
+            ],
+            [
+              "My skin is sensitive to the sun.",
+              "Cildim güneşe karşı hassas."
+            ]
+          ]
+        },
+        {
+          "lemma": "hardworking",
+          "ipa": "/ˌhɑːrdˈwɜːrkɪŋ/",
+          "pos": "adjective",
+          "tr": "çalışkan",
+          "examples": [
+            [
+              "He is a hardworking student.",
+              "Çalışkan bir öğrenci."
+            ],
+            [
+              "Hardworking people often succeed.",
+              "Çalışkan insanlar çoğu zaman başarılı olur."
+            ]
+          ]
+        },
+        {
+          "lemma": "reliable",
+          "ipa": "/rɪˈlaɪəbəl/",
+          "pos": "adjective",
+          "tr": "güvenilir",
+          "examples": [
+            [
+              "My old car is still reliable.",
+              "Eski arabam hâlâ güvenilir."
+            ],
+            [
+              "We need a reliable person for this job.",
+              "Bu iş için güvenilir birine ihtiyacımız var."
+            ]
+          ]
+        },
+        {
+          "lemma": "cheerful",
+          "ipa": "/ˈtʃɪrfəl/",
+          "pos": "adjective",
+          "tr": "neşeli",
+          "examples": [
+            [
+              "Our neighbor is always cheerful.",
+              "Komşumuz her zaman neşelidir."
+            ],
+            [
+              "She sang a cheerful song.",
+              "Neşeli bir şarkı söyledi."
+            ]
+          ]
+        },
+        {
+          "lemma": "stubborn",
+          "ipa": "/ˈstʌbərn/",
+          "pos": "adjective",
+          "tr": "inatçı",
+          "examples": [
+            [
+              "My little brother is very stubborn.",
+              "Küçük kardeşim çok inatçı."
+            ],
+            [
+              "Don't be stubborn, listen to me.",
+              "İnat etme, beni dinle."
+            ]
+          ]
+        },
+        {
+          "lemma": "mature",
+          "ipa": "/məˈtʃʊr/",
+          "pos": "adjective",
+          "tr": "olgun",
+          "examples": [
+            [
+              "She is very mature for her age.",
+              "Yaşına göre çok olgun."
+            ],
+            [
+              "It was a mature decision.",
+              "Olgun bir karardı."
+            ]
+          ]
+        }
+      ]
     }
   ],
   "relations": [
@@ -9728,6 +10408,11 @@
     [
       "calm",
       "nervous",
+      "antonym"
+    ],
+    [
+      "agree",
+      "disagree",
       "antonym"
     ]
   ]
