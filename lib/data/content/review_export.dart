@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import '../../core/util/csv.dart';
+
 /// Çevirilerin editör tarafından kontrolü için içerik paketini CSV tablosuna
 /// dönüştürür (CNT-7).
 ///
@@ -14,7 +16,7 @@ String buildReviewCsv(String contentJson) {
       for (final word in (unit['words'] as List).cast<Map<String, dynamic>>())
         _row(unit, word),
   ];
-  return '﻿${rows.map(_line).join('\r\n')}\r\n';
+  return csvDocument(rows);
 }
 
 /// CSV başlık satırı.
@@ -52,16 +54,4 @@ List<String> _row(Map<String, dynamic> unit, Map<String, dynamic> word) {
     '',
     '',
   ];
-}
-
-String _line(List<String> cells) => cells.map(_escape).join(',');
-
-String _escape(String value) {
-  final needsQuotes =
-      value.contains(',') ||
-      value.contains('"') ||
-      value.contains('\n') ||
-      value.contains('\r');
-  if (!needsQuotes) return value;
-  return '"${value.replaceAll('"', '""')}"';
 }

@@ -1,5 +1,6 @@
 import 'package:drift/drift.dart' show Value;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +14,7 @@ import '../../../data/repositories/profile_repository.dart';
 import '../../../domain/models/badge.dart';
 import '../../../l10n/app_localizations.dart';
 
-/// Profil ve ayarlar (FR-14, FR-120..123).
+/// Profil ve ayarlar (FR-14, FR-120..124).
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
 
@@ -107,6 +108,45 @@ class _Settings extends ConsumerWidget {
       ..invalidate(earnedBadgesProvider)
       ..invalidate(profileSettingsProvider);
     messenger.showSnackBar(SnackBar(content: Text(l10n.resetDone)));
+  }
+
+  /// Verileri JSON ya da CSV olarak panoya kopyalar (FR-124).
+  Future<void> _export(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context);
+    final messenger = ScaffoldMessenger.of(context);
+    final format = await showModalBottomSheet<String>(
+      context: context,
+      showDragHandle: true,
+      builder: (context) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              key: const ValueKey('export-json'),
+              leading: const Icon(Icons.data_object),
+              title: Text(l10n.exportJson),
+              subtitle: Text(l10n.exportJsonHint),
+              onTap: () => Navigator.pop(context, 'json'),
+            ),
+            ListTile(
+              key: const ValueKey('export-csv'),
+              leading: const Icon(Icons.table_chart_outlined),
+              title: Text(l10n.exportCsv),
+              subtitle: Text(l10n.exportCsvHint),
+              onTap: () => Navigator.pop(context, 'csv'),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (format == null) return;
+    final export = await ref.read(exportRepositoryProvider).collect();
+    await Clipboard.setData(
+      ClipboardData(text: format == 'csv' ? export.toCsv() : export.toJson()),
+    );
+    messenger.showSnackBar(
+      SnackBar(content: Text(l10n.exportCopied(export.words.length))),
+    );
   }
 
   @override
@@ -286,6 +326,13 @@ class _Settings extends ConsumerWidget {
               settings.save(UserProfileCompanion(haptics: Value(v))),
         ),
         header(l10n.sectionData),
+        ListTile(
+          key: const ValueKey('export-data'),
+          leading: const Icon(Icons.download_outlined),
+          title: Text(l10n.exportData),
+          subtitle: Text(l10n.exportDataHint),
+          onTap: () => _export(context, ref),
+        ),
         ListTile(
           key: const ValueKey('reset-progress'),
           leading: Icon(Icons.restart_alt, color: theme.colorScheme.error),

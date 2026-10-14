@@ -19,6 +19,7 @@ import 'db/app_database.dart';
 import 'repositories/badge_repository.dart';
 import 'repositories/content_repository.dart';
 import 'repositories/custom_word_repository.dart';
+import 'repositories/export_repository.dart';
 import 'repositories/favorites_repository.dart';
 import 'repositories/notes_repository.dart';
 import 'repositories/word_list_repository.dart';
@@ -73,6 +74,11 @@ final customUnitIdProvider = FutureProvider<int?>((ref) async {
   await ref.watch(appStartupProvider.future);
   return ref.watch(customWordRepositoryProvider).unitId();
 });
+
+/// Verileri dışa aktarma (FR-124).
+final exportRepositoryProvider = Provider<ExportRepository>(
+  (ref) => ExportRepository(ref.watch(appDatabaseProvider)),
+);
 
 final wordListRepositoryProvider = Provider<WordListRepository>(
   (ref) => WordListRepository(ref.watch(appDatabaseProvider)),
