@@ -1,6 +1,6 @@
 {
-  "version": 13,
-  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 25 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 14,
+  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 25, B2'de 5 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -10223,6 +10223,686 @@
             [
               "It was a mature decision.",
               "Olgun bir karardı."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "İş Dünyası",
+      "theme": "business_world",
+      "icon": "business",
+      "words": [
+        {
+          "lemma": "negotiate",
+          "ipa": "/nɪˈɡoʊʃieɪt/",
+          "pos": "verb",
+          "tr": "pazarlık etmek, müzakere etmek",
+          "examples": [
+            [
+              "We need to negotiate a better price.",
+              "Daha iyi bir fiyat için pazarlık etmemiz gerekiyor."
+            ],
+            [
+              "The two companies will negotiate next week.",
+              "İki şirket gelecek hafta müzakere edecek."
+            ]
+          ]
+        },
+        {
+          "lemma": "revenue",
+          "ipa": "/ˈrevənuː/",
+          "pos": "noun",
+          "tr": "gelir, hasılat",
+          "examples": [
+            [
+              "The company's revenue grew by ten percent.",
+              "Şirketin geliri yüzde on arttı."
+            ],
+            [
+              "Most of our revenue comes from online sales.",
+              "Gelirimizin çoğu internet satışlarından geliyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "investment",
+          "ipa": "/ɪnˈvestmənt/",
+          "pos": "noun",
+          "tr": "yatırım",
+          "examples": [
+            [
+              "Buying a house is a big investment.",
+              "Ev almak büyük bir yatırımdır."
+            ],
+            [
+              "The investment paid off after five years.",
+              "Yatırım beş yıl sonra karşılığını verdi."
+            ]
+          ]
+        },
+        {
+          "lemma": "strategy",
+          "ipa": "/ˈstrætədʒi/",
+          "pos": "noun",
+          "tr": "strateji",
+          "examples": [
+            [
+              "We need a new marketing strategy.",
+              "Yeni bir pazarlama stratejisine ihtiyacımız var."
+            ],
+            [
+              "Her strategy worked very well.",
+              "Stratejisi çok iyi işe yaradı."
+            ]
+          ]
+        },
+        {
+          "lemma": "competitor",
+          "ipa": "/kəmˈpetɪtər/",
+          "pos": "noun",
+          "tr": "rakip",
+          "examples": [
+            [
+              "Our main competitor lowered its prices.",
+              "Ana rakibimiz fiyatlarını düşürdü."
+            ],
+            [
+              "Every competitor wants to win the contract.",
+              "Her rakip sözleşmeyi kazanmak istiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "profit",
+          "ipa": "/ˈprɑːfɪt/",
+          "pos": "noun",
+          "tr": "kâr",
+          "examples": [
+            [
+              "The shop made a small profit this year.",
+              "Dükkân bu yıl küçük bir kâr elde etti."
+            ],
+            [
+              "They sold the car at a profit.",
+              "Arabayı kârla sattılar."
+            ]
+          ]
+        },
+        {
+          "lemma": "launch",
+          "ipa": "/lɔːntʃ/",
+          "pos": "verb",
+          "tr": "piyasaya sürmek, başlatmak",
+          "examples": [
+            [
+              "The company will launch a new phone in May.",
+              "Şirket mayısta yeni bir telefon piyasaya sürecek."
+            ],
+            [
+              "They plan to launch the campaign next month.",
+              "Kampanyayı gelecek ay başlatmayı planlıyorlar."
+            ]
+          ]
+        },
+        {
+          "lemma": "efficient",
+          "ipa": "/ɪˈfɪʃənt/",
+          "pos": "adjective",
+          "tr": "verimli",
+          "examples": [
+            [
+              "This new machine is more efficient.",
+              "Bu yeni makine daha verimli."
+            ],
+            [
+              "She is an efficient manager.",
+              "Verimli bir yöneticidir."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Araştırma",
+      "theme": "research_b2",
+      "icon": "school",
+      "words": [
+        {
+          "lemma": "hypothesis",
+          "ipa": "/haɪˈpɑːθəsɪs/",
+          "pos": "noun",
+          "tr": "hipotez, varsayım",
+          "examples": [
+            [
+              "The scientists tested their hypothesis.",
+              "Bilim insanları hipotezlerini test etti."
+            ],
+            [
+              "The results did not support the hypothesis.",
+              "Sonuçlar hipotezi desteklemedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "evidence",
+          "ipa": "/ˈevɪdəns/",
+          "pos": "noun",
+          "tr": "kanıt",
+          "examples": [
+            [
+              "There is no evidence for this idea.",
+              "Bu fikir için hiçbir kanıt yok."
+            ],
+            [
+              "The police found new evidence.",
+              "Polis yeni kanıt buldu."
+            ]
+          ]
+        },
+        {
+          "lemma": "analyze",
+          "ipa": "/ˈænəlaɪz/",
+          "pos": "verb",
+          "tr": "incelemek, analiz etmek",
+          "examples": [
+            [
+              "We need to analyze the results carefully.",
+              "Sonuçları dikkatle incelememiz gerekiyor."
+            ],
+            [
+              "Computers can analyze data very quickly.",
+              "Bilgisayarlar verileri çok hızlı analiz edebilir."
+            ]
+          ]
+        },
+        {
+          "lemma": "conclusion",
+          "ipa": "/kənˈkluːʒən/",
+          "pos": "noun",
+          "tr": "sonuç, yargı",
+          "examples": [
+            [
+              "What conclusion did you reach?",
+              "Hangi sonuca vardın?"
+            ],
+            [
+              "Don't jump to a conclusion too quickly.",
+              "Çok çabuk bir yargıya varma."
+            ]
+          ]
+        },
+        {
+          "lemma": "sample",
+          "ipa": "/ˈsæmpəl/",
+          "pos": "noun",
+          "tr": "örnek, numune",
+          "examples": [
+            [
+              "The doctor took a blood sample.",
+              "Doktor kan örneği aldı."
+            ],
+            [
+              "The shop gave us a free sample.",
+              "Mağaza bize ücretsiz bir numune verdi."
+            ]
+          ]
+        },
+        {
+          "lemma": "accurate",
+          "ipa": "/ˈækjərət/",
+          "pos": "adjective",
+          "tr": "doğru, kesin",
+          "examples": [
+            [
+              "Is this information accurate?",
+              "Bu bilgi doğru mu?"
+            ],
+            [
+              "The clock is very accurate.",
+              "Saat çok hassas."
+            ]
+          ]
+        },
+        {
+          "lemma": "significant",
+          "ipa": "/sɪɡˈnɪfɪkənt/",
+          "pos": "adjective",
+          "tr": "önemli, kayda değer",
+          "examples": [
+            [
+              "There was a significant change in prices.",
+              "Fiyatlarda önemli bir değişiklik oldu."
+            ],
+            [
+              "This is a significant discovery.",
+              "Bu kayda değer bir keşif."
+            ]
+          ]
+        },
+        {
+          "lemma": "survey",
+          "ipa": "/ˈsɜːrveɪ/",
+          "pos": "noun",
+          "tr": "anket",
+          "examples": [
+            [
+              "We did a survey of five hundred students.",
+              "Beş yüz öğrenciyle bir anket yaptık."
+            ],
+            [
+              "The survey shows that people want more parks.",
+              "Anket, insanların daha fazla park istediğini gösteriyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Toplumsal Sorunlar",
+      "theme": "social_issues",
+      "icon": "people",
+      "words": [
+        {
+          "lemma": "poverty",
+          "ipa": "/ˈpɑːvərti/",
+          "pos": "noun",
+          "tr": "yoksulluk",
+          "examples": [
+            [
+              "Many families live in poverty.",
+              "Birçok aile yoksulluk içinde yaşıyor."
+            ],
+            [
+              "Education can help to end poverty.",
+              "Eğitim yoksulluğu bitirmeye yardım edebilir."
+            ]
+          ]
+        },
+        {
+          "lemma": "unemployment",
+          "ipa": "/ˌʌnɪmˈplɔɪmənt/",
+          "pos": "noun",
+          "tr": "işsizlik",
+          "examples": [
+            [
+              "Unemployment is high among young people.",
+              "Gençler arasında işsizlik yüksek."
+            ],
+            [
+              "The government wants to reduce unemployment.",
+              "Hükümet işsizliği azaltmak istiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "inequality",
+          "ipa": "/ˌɪnɪˈkwɑːləti/",
+          "pos": "noun",
+          "tr": "eşitsizlik",
+          "examples": [
+            [
+              "There is still inequality between men and women.",
+              "Kadınlar ve erkekler arasında hâlâ eşitsizlik var."
+            ],
+            [
+              "The report talks about income inequality.",
+              "Rapor gelir eşitsizliğinden bahsediyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "homeless",
+          "ipa": "/ˈhoʊmləs/",
+          "pos": "adjective",
+          "tr": "evsiz",
+          "examples": [
+            [
+              "The charity helps homeless people.",
+              "Hayır kurumu evsiz insanlara yardım ediyor."
+            ],
+            [
+              "He was homeless for two years.",
+              "İki yıl evsiz kaldı."
+            ]
+          ]
+        },
+        {
+          "lemma": "discrimination",
+          "ipa": "/dɪˌskrɪmɪˈneɪʃən/",
+          "pos": "noun",
+          "tr": "ayrımcılık",
+          "examples": [
+            [
+              "Discrimination at work is against the law.",
+              "İş yerinde ayrımcılık yasaya aykırıdır."
+            ],
+            [
+              "We must fight against discrimination.",
+              "Ayrımcılığa karşı mücadele etmeliyiz."
+            ]
+          ]
+        },
+        {
+          "lemma": "welfare",
+          "ipa": "/ˈwelfer/",
+          "pos": "noun",
+          "tr": "refah, sosyal yardım",
+          "examples": [
+            [
+              "The welfare of children is very important.",
+              "Çocukların refahı çok önemlidir."
+            ],
+            [
+              "The state pays welfare to poor families.",
+              "Devlet yoksul ailelere sosyal yardım ödüyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "campaign",
+          "ipa": "/kæmˈpeɪn/",
+          "pos": "noun",
+          "tr": "kampanya",
+          "examples": [
+            [
+              "They started a campaign to save the forest.",
+              "Ormanı kurtarmak için bir kampanya başlattılar."
+            ],
+            [
+              "The campaign raised a lot of money.",
+              "Kampanya çok para topladı."
+            ]
+          ]
+        },
+        {
+          "lemma": "protest",
+          "ipa": "/ˈproʊtest/",
+          "pos": "noun",
+          "tr": "protesto, eylem",
+          "examples": [
+            [
+              "Thousands of people joined the protest.",
+              "Binlerce kişi protestoya katıldı."
+            ],
+            [
+              "The protest was peaceful.",
+              "Eylem barışçıldı."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Medya Dünyası",
+      "theme": "media_world",
+      "icon": "news",
+      "words": [
+        {
+          "lemma": "influence",
+          "ipa": "/ˈɪnfluəns/",
+          "pos": "noun",
+          "tr": "etki",
+          "examples": [
+            [
+              "Social media has a big influence on teenagers.",
+              "Sosyal medyanın gençler üzerinde büyük etkisi var."
+            ],
+            [
+              "His father had a strong influence on him.",
+              "Babasının onun üzerinde güçlü bir etkisi vardı."
+            ]
+          ]
+        },
+        {
+          "lemma": "broadcast",
+          "ipa": "/ˈbrɔːdkæst/",
+          "pos": "verb",
+          "tr": "yayınlamak",
+          "examples": [
+            [
+              "They broadcast the match live.",
+              "Maçı canlı yayınladılar."
+            ],
+            [
+              "The channel will broadcast the news at nine.",
+              "Kanal haberleri dokuzda yayınlayacak."
+            ]
+          ]
+        },
+        {
+          "lemma": "criticism",
+          "ipa": "/ˈkrɪtɪsɪzəm/",
+          "pos": "noun",
+          "tr": "eleştiri",
+          "examples": [
+            [
+              "The film received a lot of criticism.",
+              "Film çok eleştiri aldı."
+            ],
+            [
+              "Try to accept criticism calmly.",
+              "Eleştiriyi sakin karşılamaya çalış."
+            ]
+          ]
+        },
+        {
+          "lemma": "viewer",
+          "ipa": "/ˈvjuːər/",
+          "pos": "noun",
+          "tr": "izleyici",
+          "examples": [
+            [
+              "Every viewer can vote for the best singer.",
+              "Her izleyici en iyi şarkıcıya oy verebilir."
+            ],
+            [
+              "One viewer called the channel to complain.",
+              "Bir izleyici şikâyet etmek için kanalı aradı."
+            ]
+          ]
+        },
+        {
+          "lemma": "controversial",
+          "ipa": "/ˌkɑːntrəˈvɜːrʃəl/",
+          "pos": "adjective",
+          "tr": "tartışmalı",
+          "examples": [
+            [
+              "It was a controversial decision.",
+              "Tartışmalı bir karardı."
+            ],
+            [
+              "The new law is very controversial.",
+              "Yeni yasa çok tartışmalı."
+            ]
+          ]
+        },
+        {
+          "lemma": "censorship",
+          "ipa": "/ˈsensərʃɪp/",
+          "pos": "noun",
+          "tr": "sansür",
+          "examples": [
+            [
+              "Many writers spoke against censorship.",
+              "Birçok yazar sansüre karşı konuştu."
+            ],
+            [
+              "Censorship of the internet is a big problem.",
+              "İnternet sansürü büyük bir sorun."
+            ]
+          ]
+        },
+        {
+          "lemma": "coverage",
+          "ipa": "/ˈkʌvərɪdʒ/",
+          "pos": "noun",
+          "tr": "haber yayını, kapsam",
+          "examples": [
+            [
+              "The election got a lot of media coverage.",
+              "Seçim medyada çok yer aldı."
+            ],
+            [
+              "The phone has good coverage in the mountains.",
+              "Telefon dağlarda iyi çekiyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "propaganda",
+          "ipa": "/ˌprɑːpəˈɡændə/",
+          "pos": "noun",
+          "tr": "propaganda",
+          "examples": [
+            [
+              "The poster was a piece of war propaganda.",
+              "Afiş bir savaş propagandasıydı."
+            ],
+            [
+              "Don't believe everything; some of it is propaganda.",
+              "Her şeye inanma; bir kısmı propaganda."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Sağlıklı Yaşam",
+      "theme": "healthy_living",
+      "icon": "nutrition",
+      "words": [
+        {
+          "lemma": "nutrition",
+          "ipa": "/nuːˈtrɪʃən/",
+          "pos": "noun",
+          "tr": "beslenme",
+          "examples": [
+            [
+              "Good nutrition is important for children.",
+              "İyi beslenme çocuklar için önemlidir."
+            ],
+            [
+              "She studies nutrition at university.",
+              "Üniversitede beslenme okuyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "habit",
+          "ipa": "/ˈhæbɪt/",
+          "pos": "noun",
+          "tr": "alışkanlık",
+          "examples": [
+            [
+              "Reading every night is a good habit.",
+              "Her gece kitap okumak iyi bir alışkanlıktır."
+            ],
+            [
+              "I want to break this bad habit.",
+              "Bu kötü alışkanlığı bırakmak istiyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "stress",
+          "ipa": "/stres/",
+          "pos": "noun",
+          "tr": "stres",
+          "examples": [
+            [
+              "Exercise helps to reduce stress.",
+              "Egzersiz stresi azaltmaya yardım eder."
+            ],
+            [
+              "He is under a lot of stress at work.",
+              "İşte çok stres altında."
+            ]
+          ]
+        },
+        {
+          "lemma": "routine",
+          "ipa": "/ruːˈtiːn/",
+          "pos": "noun",
+          "tr": "günlük düzen, rutin",
+          "examples": [
+            [
+              "My morning routine starts with coffee.",
+              "Sabah rutinim kahveyle başlar."
+            ],
+            [
+              "Children need a regular routine.",
+              "Çocukların düzenli bir günlük düzene ihtiyacı var."
+            ]
+          ]
+        },
+        {
+          "lemma": "balanced",
+          "ipa": "/ˈbælənst/",
+          "pos": "adjective",
+          "tr": "dengeli",
+          "examples": [
+            [
+              "Try to eat a balanced diet.",
+              "Dengeli beslenmeye çalış."
+            ],
+            [
+              "She has a balanced life.",
+              "Dengeli bir hayatı var."
+            ]
+          ]
+        },
+        {
+          "lemma": "mental",
+          "ipa": "/ˈmentəl/",
+          "pos": "adjective",
+          "tr": "zihinsel, ruhsal",
+          "examples": [
+            [
+              "Sleep is good for your mental health.",
+              "Uyku ruh sağlığın için iyidir."
+            ],
+            [
+              "Chess is a mental exercise.",
+              "Satranç zihinsel bir egzersizdir."
+            ]
+          ]
+        },
+        {
+          "lemma": "workout",
+          "ipa": "/ˈwɜːrkaʊt/",
+          "pos": "noun",
+          "tr": "antrenman",
+          "examples": [
+            [
+              "I do a short workout every morning.",
+              "Her sabah kısa bir antrenman yapıyorum."
+            ],
+            [
+              "That was a hard workout.",
+              "Zorlu bir antrenmandı."
+            ]
+          ]
+        },
+        {
+          "lemma": "exhausted",
+          "ipa": "/ɪɡˈzɔːstɪd/",
+          "pos": "adjective",
+          "tr": "bitkin, çok yorgun",
+          "examples": [
+            [
+              "I was exhausted after the long trip.",
+              "Uzun yolculuktan sonra bitkindim."
+            ],
+            [
+              "The players looked exhausted.",
+              "Oyuncular bitkin görünüyordu."
             ]
           ]
         }
