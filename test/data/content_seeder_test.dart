@@ -47,7 +47,7 @@ void main() {
     expect(b1, hasLength(25), reason: 'B1 içeriği (CNT-4)');
     expect(b1.first.title, 'İş Hayatı');
     final b2 = await repo.getUnits(levels[3].id);
-    expect(b2, hasLength(5), reason: 'B2 içeriği');
+    expect(b2, hasLength(10), reason: 'B2 içeriği');
     expect(b2.first.title, 'İş Dünyası');
     expect(await repo.getWords(units.first.id), hasLength(8));
 
@@ -85,7 +85,7 @@ void main() {
           ),
         );
 
-    expect(await seeder.addMissingUnits(json), 77);
+    expect(await seeder.addMissingUnits(json), 82);
     expect(await seeder.addMissingUnits(json), 0);
 
     final units = await repo.getUnits(a1.id);
