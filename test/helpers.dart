@@ -11,6 +11,7 @@ import 'package:english_word_learning/data/content/content_seeder.dart';
 import 'package:english_word_learning/data/db/app_database.dart';
 import 'package:english_word_learning/data/providers.dart';
 import 'package:english_word_learning/domain/models/word.dart';
+import 'package:english_word_learning/domain/placement/placement_pool.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -21,6 +22,11 @@ final seedJson = File('test/fixtures/seed_content.json').readAsStringSync();
 
 /// Uygulamayla gelen asıl içerik paketi.
 final appContentJson = File(seedContentAsset).readAsStringSync();
+
+/// Seviye tespit sınavının soru havuzu (asıl dosya).
+final placementPool = PlacementPool.parse(
+  File(placementPoolAsset).readAsStringSync(),
+);
 
 AppDatabase memoryDatabase() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
@@ -74,6 +80,7 @@ Widget testApp(
         await seeder.seedIfEmpty(seedJson);
         await seeder.syncRelations(seedJson);
       }),
+      placementPoolProvider.overrideWith((ref) async => placementPool),
       ttsServiceProvider.overrideWithValue(tts ?? FakeTts()),
       notificationServiceProvider.overrideWithValue(
         notifications ?? FakeNotifications(),

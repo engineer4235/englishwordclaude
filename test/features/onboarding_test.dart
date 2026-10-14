@@ -116,4 +116,40 @@ void main() {
 
     expect(find.byKey(const ValueKey('placement-start')), findsOneWidget);
   });
+
+  testWidgets('ünitesi olmayan seviye önerilirse hazır seviyeden başlanır '
+      '(CNT-6, FR-12)', (tester) async {
+    await bigScreen(tester);
+    final db = memoryDatabase();
+    addTearDown(db.close);
+    await tester.pumpWidget(testApp(db));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Profil'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('retake-placement')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('placement-start')));
+    await tester.pumpAndSettle();
+
+    final meanings = {
+      for (final w in placementPool.levels.values.expand((w) => w))
+        w.lemma: w.meaningTr,
+    };
+    var asked = 0;
+    while (find.byKey(const ValueKey('prompt')).evaluate().isNotEmpty) {
+      final lemma = tester
+          .widget<Text>(find.byKey(const ValueKey('prompt')))
+          .data!;
+      final option = find.widgetWithText(OutlinedButton, meanings[lemma]!);
+      await tester.ensureVisible(option);
+      await tester.tap(option);
+      await tester.pumpAndSettle();
+      expect(++asked, lessThanOrEqualTo(30));
+    }
+
+    expect(find.textContaining('Önerilen seviye: C2'), findsOneWidget);
+    expect(find.byKey(const ValueKey('placement-not-ready')), findsOneWidget);
+    expect(find.text('A1 seviyesinden başla'), findsOneWidget);
+  });
 }
