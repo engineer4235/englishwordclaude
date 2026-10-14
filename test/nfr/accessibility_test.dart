@@ -14,6 +14,8 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// [finder] ile bulunan ilk öğeye dokunur; henüz oluşturulmamışsa (örneğin
+  /// büyük yazıda ekranın altında kaldıysa) önce kaydırarak görünür kılar.
   Future<void> tapAndSettle(WidgetTester tester, Finder finder) async {
     if (finder.evaluate().isEmpty) {
       await tester.scrollUntilVisible(
@@ -22,9 +24,10 @@ void main() {
         scrollable: find.byType(Scrollable).first,
       );
     }
-    await tester.ensureVisible(finder);
+    final target = finder.first;
+    await tester.ensureVisible(target);
     await tester.pumpAndSettle();
-    await tester.tap(finder);
+    await tester.tap(target);
     await tester.pumpAndSettle();
   }
 
@@ -47,17 +50,15 @@ void main() {
       await tapNav(t, 'Harita');
       await tapAndSettle(t, find.text('Aile'));
       await tapAndSettle(t, find.byTooltip('Ünite sınavı'));
-      await tapAndSettle(t, find.byType(OutlinedButton).first);
+      await tapAndSettle(t, find.byType(OutlinedButton));
     },
     'Kelime kartı': (t) async {
       await tapNav(t, 'Kelimelerim');
       await tapAndSettle(
         t,
-        find
-            .byWidgetPredicate(
-              (w) => w is ListTile && '${w.key}'.contains("'word-"),
-            )
-            .first,
+        find.byWidgetPredicate(
+          (w) => w is ListTile && '${w.key}'.contains("'word-"),
+        ),
       );
     },
     'Yeni kelimeler': (t) async {

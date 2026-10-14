@@ -1,6 +1,6 @@
 {
-  "version": 11,
-  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 15 ünite. Cümleler bu proje için yazılmıştır.",
+  "version": 12,
+  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 20 ünite. Cümleler bu proje için yazılmıştır.",
   "levels": [
     {
       "code": "A1",
@@ -8863,6 +8863,686 @@
             [
               "Pollution is dangerous for wildlife.",
               "Kirlilik yaban hayatı için tehlikelidir."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Ev ve Konut",
+      "theme": "housing",
+      "icon": "home",
+      "words": [
+        {
+          "lemma": "apartment",
+          "ipa": "/əˈpɑːrtmənt/",
+          "pos": "noun",
+          "tr": "daire",
+          "examples": [
+            [
+              "They live in a small apartment.",
+              "Küçük bir dairede yaşıyorlar."
+            ],
+            [
+              "The apartment has two bedrooms.",
+              "Dairenin iki yatak odası var."
+            ]
+          ]
+        },
+        {
+          "lemma": "landlord",
+          "ipa": "/ˈlændlɔːrd/",
+          "pos": "noun",
+          "tr": "ev sahibi",
+          "examples": [
+            [
+              "The landlord wants the rent on Monday.",
+              "Ev sahibi kirayı pazartesi istiyor."
+            ],
+            [
+              "Call the landlord about the broken window.",
+              "Kırık pencere için ev sahibini ara."
+            ]
+          ]
+        },
+        {
+          "lemma": "tenant",
+          "ipa": "/ˈtenənt/",
+          "pos": "noun",
+          "tr": "kiracı",
+          "examples": [
+            [
+              "The new tenant moves in next week.",
+              "Yeni kiracı gelecek hafta taşınıyor."
+            ],
+            [
+              "Every tenant has a key to the garden.",
+              "Her kiracının bahçe anahtarı var."
+            ]
+          ]
+        },
+        {
+          "lemma": "furniture",
+          "ipa": "/ˈfɜːrnɪtʃər/",
+          "pos": "noun",
+          "tr": "mobilya",
+          "examples": [
+            [
+              "We bought new furniture for the living room.",
+              "Oturma odası için yeni mobilya aldık."
+            ],
+            [
+              "This furniture is very old.",
+              "Bu mobilya çok eski."
+            ]
+          ]
+        },
+        {
+          "lemma": "repair",
+          "ipa": "/rɪˈper/",
+          "pos": "verb",
+          "tr": "tamir etmek",
+          "examples": [
+            [
+              "Can you repair my bike?",
+              "Bisikletimi tamir edebilir misin?"
+            ],
+            [
+              "They will repair the roof tomorrow.",
+              "Çatıyı yarın tamir edecekler."
+            ]
+          ]
+        },
+        {
+          "lemma": "balcony",
+          "ipa": "/ˈbælkəni/",
+          "pos": "noun",
+          "tr": "balkon",
+          "examples": [
+            [
+              "We have breakfast on the balcony.",
+              "Kahvaltıyı balkonda yapıyoruz."
+            ],
+            [
+              "The balcony has a view of the sea.",
+              "Balkon denizi görüyor."
+            ]
+          ]
+        },
+        {
+          "lemma": "heating",
+          "ipa": "/ˈhiːtɪŋ/",
+          "pos": "noun",
+          "tr": "ısıtma",
+          "examples": [
+            [
+              "The heating doesn't work in winter.",
+              "Kışın ısıtma çalışmıyor."
+            ],
+            [
+              "Turn on the heating, please.",
+              "Lütfen ısıtmayı aç."
+            ]
+          ]
+        },
+        {
+          "lemma": "garage",
+          "ipa": "/ɡəˈrɑːʒ/",
+          "pos": "noun",
+          "tr": "garaj",
+          "examples": [
+            [
+              "He keeps his car in the garage.",
+              "Arabasını garajda tutar."
+            ],
+            [
+              "The garage is next to the house.",
+              "Garaj evin yanında."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Bilim",
+      "theme": "science",
+      "icon": "school",
+      "words": [
+        {
+          "lemma": "scientist",
+          "ipa": "/ˈsaɪəntɪst/",
+          "pos": "noun",
+          "tr": "bilim insanı",
+          "examples": [
+            [
+              "She wants to be a scientist.",
+              "Bilim insanı olmak istiyor."
+            ],
+            [
+              "The scientist explained the results.",
+              "Bilim insanı sonuçları açıkladı."
+            ]
+          ]
+        },
+        {
+          "lemma": "experiment",
+          "ipa": "/ɪkˈsperɪmənt/",
+          "pos": "noun",
+          "tr": "deney",
+          "examples": [
+            [
+              "We did an experiment in class.",
+              "Derste bir deney yaptık."
+            ],
+            [
+              "The experiment took three hours.",
+              "Deney üç saat sürdü."
+            ]
+          ]
+        },
+        {
+          "lemma": "laboratory",
+          "ipa": "/ˈlæbrətɔːri/",
+          "pos": "noun",
+          "tr": "laboratuvar",
+          "examples": [
+            [
+              "The students work in the laboratory.",
+              "Öğrenciler laboratuvarda çalışıyor."
+            ],
+            [
+              "The laboratory is on the second floor.",
+              "Laboratuvar ikinci katta."
+            ]
+          ]
+        },
+        {
+          "lemma": "discover",
+          "ipa": "/dɪˈskʌvər/",
+          "pos": "verb",
+          "tr": "keşfetmek",
+          "examples": [
+            [
+              "Scientists want to discover new medicines.",
+              "Bilim insanları yeni ilaçlar keşfetmek istiyor."
+            ],
+            [
+              "Did you discover anything interesting?",
+              "İlginç bir şey keşfettin mi?"
+            ]
+          ]
+        },
+        {
+          "lemma": "invent",
+          "ipa": "/ɪnˈvent/",
+          "pos": "verb",
+          "tr": "icat etmek",
+          "examples": [
+            [
+              "Who will invent the next great machine?",
+              "Bir sonraki büyük makineyi kim icat edecek?"
+            ],
+            [
+              "I want to invent a useful machine.",
+              "Faydalı bir makine icat etmek istiyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "theory",
+          "ipa": "/ˈθɪəri/",
+          "pos": "noun",
+          "tr": "kuram, teori",
+          "examples": [
+            [
+              "It is only a theory.",
+              "Bu sadece bir teori."
+            ],
+            [
+              "The theory explains how stars form.",
+              "Bu kuram yıldızların nasıl oluştuğunu açıklar."
+            ]
+          ]
+        },
+        {
+          "lemma": "result",
+          "ipa": "/rɪˈzʌlt/",
+          "pos": "noun",
+          "tr": "sonuç",
+          "examples": [
+            [
+              "The result was a surprise.",
+              "Sonuç bir sürprizdi."
+            ],
+            [
+              "We will know the result next week.",
+              "Sonucu gelecek hafta öğreneceğiz."
+            ]
+          ]
+        },
+        {
+          "lemma": "planet",
+          "ipa": "/ˈplænɪt/",
+          "pos": "noun",
+          "tr": "gezegen",
+          "examples": [
+            [
+              "Mars is a red planet.",
+              "Mars kızıl bir gezegendir."
+            ],
+            [
+              "We must protect our planet.",
+              "Gezegenimizi korumalıyız."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Yemek Yapmak",
+      "theme": "cooking",
+      "icon": "restaurant",
+      "words": [
+        {
+          "lemma": "recipe",
+          "ipa": "/ˈresəpi/",
+          "pos": "noun",
+          "tr": "yemek tarifi",
+          "examples": [
+            [
+              "This recipe is from my grandmother.",
+              "Bu tarif büyükannemden."
+            ],
+            [
+              "Can you give me the recipe?",
+              "Bana tarifi verebilir misin?"
+            ]
+          ]
+        },
+        {
+          "lemma": "ingredient",
+          "ipa": "/ɪnˈɡriːdiənt/",
+          "pos": "noun",
+          "tr": "malzeme",
+          "examples": [
+            [
+              "Flour is the main ingredient.",
+              "Un ana malzemedir."
+            ],
+            [
+              "We need one more ingredient.",
+              "Bir malzemeye daha ihtiyacımız var."
+            ]
+          ]
+        },
+        {
+          "lemma": "boil",
+          "ipa": "/bɔɪl/",
+          "pos": "verb",
+          "tr": "kaynatmak",
+          "examples": [
+            [
+              "Boil the water for the pasta.",
+              "Makarna için suyu kaynat."
+            ],
+            [
+              "Don't boil the milk too long.",
+              "Sütü çok uzun kaynatma."
+            ]
+          ]
+        },
+        {
+          "lemma": "fry",
+          "ipa": "/fraɪ/",
+          "pos": "verb",
+          "tr": "kızartmak",
+          "examples": [
+            [
+              "Fry the onions in a little oil.",
+              "Soğanları biraz yağda kızart."
+            ],
+            [
+              "I like to fry eggs for breakfast.",
+              "Kahvaltıda yumurta kızartmayı severim."
+            ]
+          ]
+        },
+        {
+          "lemma": "bake",
+          "ipa": "/beɪk/",
+          "pos": "verb",
+          "tr": "fırında pişirmek",
+          "examples": [
+            [
+              "Let's bake a cake for her birthday.",
+              "Doğum günü için bir pasta yapalım."
+            ],
+            [
+              "Bake the bread for forty minutes.",
+              "Ekmeği kırk dakika fırında pişir."
+            ]
+          ]
+        },
+        {
+          "lemma": "slice",
+          "ipa": "/slaɪs/",
+          "pos": "noun",
+          "tr": "dilim",
+          "examples": [
+            [
+              "Can I have a slice of pizza?",
+              "Bir dilim pizza alabilir miyim?"
+            ],
+            [
+              "He ate the last slice of bread.",
+              "Ekmeğin son dilimini yedi."
+            ]
+          ]
+        },
+        {
+          "lemma": "mix",
+          "ipa": "/mɪks/",
+          "pos": "verb",
+          "tr": "karıştırmak",
+          "examples": [
+            [
+              "Mix the eggs and the sugar.",
+              "Yumurtaları ve şekeri karıştır."
+            ],
+            [
+              "Don't mix these two colors.",
+              "Bu iki rengi karıştırma."
+            ]
+          ]
+        },
+        {
+          "lemma": "flavor",
+          "ipa": "/ˈfleɪvər/",
+          "pos": "noun",
+          "tr": "tat, lezzet",
+          "examples": [
+            [
+              "Which flavor of ice cream do you want?",
+              "Hangi tat dondurma istersin?"
+            ],
+            [
+              "Lemon gives the soup a fresh flavor.",
+              "Limon çorbaya taze bir tat verir."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Planlama",
+      "theme": "planning",
+      "icon": "schedule",
+      "words": [
+        {
+          "lemma": "schedule",
+          "ipa": "/ˈskedʒuːl/",
+          "pos": "noun",
+          "tr": "program, takvim",
+          "examples": [
+            [
+              "My schedule is very busy this week.",
+              "Bu hafta programım çok yoğun."
+            ],
+            [
+              "Check the train schedule.",
+              "Tren tarifesine bak."
+            ]
+          ]
+        },
+        {
+          "lemma": "plan",
+          "ipa": "/plæn/",
+          "pos": "noun",
+          "tr": "plan",
+          "examples": [
+            [
+              "What is your plan for the weekend?",
+              "Hafta sonu için planın ne?"
+            ],
+            [
+              "We need a better plan.",
+              "Daha iyi bir plana ihtiyacımız var."
+            ]
+          ]
+        },
+        {
+          "lemma": "arrange",
+          "ipa": "/əˈreɪndʒ/",
+          "pos": "verb",
+          "tr": "ayarlamak, düzenlemek",
+          "examples": [
+            [
+              "Can you arrange a meeting for Friday?",
+              "Cuma için bir toplantı ayarlayabilir misin?"
+            ],
+            [
+              "She will arrange everything for the trip.",
+              "Gezi için her şeyi o ayarlayacak."
+            ]
+          ]
+        },
+        {
+          "lemma": "postpone",
+          "ipa": "/poʊstˈpoʊn/",
+          "pos": "verb",
+          "tr": "ertelemek",
+          "examples": [
+            [
+              "We had to postpone the match.",
+              "Maçı ertelemek zorunda kaldık."
+            ],
+            [
+              "Let's postpone the party until Sunday.",
+              "Partiyi pazara erteleyelim."
+            ]
+          ]
+        },
+        {
+          "lemma": "cancel",
+          "ipa": "/ˈkænsəl/",
+          "pos": "verb",
+          "tr": "iptal etmek",
+          "examples": [
+            [
+              "They cancel the flight when there is fog.",
+              "Sis olunca uçuşu iptal ediyorlar."
+            ],
+            [
+              "I want to cancel my order.",
+              "Siparişimi iptal etmek istiyorum."
+            ]
+          ]
+        },
+        {
+          "lemma": "remind",
+          "ipa": "/rɪˈmaɪnd/",
+          "pos": "verb",
+          "tr": "hatırlatmak",
+          "examples": [
+            [
+              "Please remind me to call my mother.",
+              "Lütfen bana annemi aramamı hatırlat."
+            ],
+            [
+              "This song will remind you of summer.",
+              "Bu şarkı sana yazı hatırlatacak."
+            ]
+          ]
+        },
+        {
+          "lemma": "prepare",
+          "ipa": "/prɪˈper/",
+          "pos": "verb",
+          "tr": "hazırlamak, hazırlanmak",
+          "examples": [
+            [
+              "I need to prepare for the exam.",
+              "Sınava hazırlanmam gerekiyor."
+            ],
+            [
+              "She will prepare dinner tonight.",
+              "Bu akşam yemeği o hazırlayacak."
+            ]
+          ]
+        },
+        {
+          "lemma": "organize",
+          "ipa": "/ˈɔːrɡənaɪz/",
+          "pos": "verb",
+          "tr": "düzenlemek, organize etmek",
+          "examples": [
+            [
+              "Who will organize the concert?",
+              "Konseri kim düzenleyecek?"
+            ],
+            [
+              "I need to organize my desk.",
+              "Masamı düzenlemem gerekiyor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Güvenlik",
+      "theme": "safety",
+      "icon": "health",
+      "words": [
+        {
+          "lemma": "safety",
+          "ipa": "/ˈseɪfti/",
+          "pos": "noun",
+          "tr": "güvenlik",
+          "examples": [
+            [
+              "Safety is the most important thing.",
+              "Güvenlik en önemli şeydir."
+            ],
+            [
+              "Wear a helmet for your safety.",
+              "Güvenliğin için kask tak."
+            ]
+          ]
+        },
+        {
+          "lemma": "dangerous",
+          "ipa": "/ˈdeɪndʒərəs/",
+          "pos": "adjective",
+          "tr": "tehlikeli",
+          "examples": [
+            [
+              "This road is dangerous at night.",
+              "Bu yol geceleri tehlikeli."
+            ],
+            [
+              "It is dangerous to swim here.",
+              "Burada yüzmek tehlikeli."
+            ]
+          ]
+        },
+        {
+          "lemma": "steal",
+          "ipa": "/stiːl/",
+          "pos": "verb",
+          "tr": "çalmak",
+          "examples": [
+            [
+              "Someone tried to steal my bag.",
+              "Biri çantamı çalmaya çalıştı."
+            ],
+            [
+              "It is wrong to steal.",
+              "Çalmak yanlıştır."
+            ]
+          ]
+        },
+        {
+          "lemma": "thief",
+          "ipa": "/θiːf/",
+          "pos": "noun",
+          "tr": "hırsız",
+          "examples": [
+            [
+              "The police caught the thief.",
+              "Polis hırsızı yakaladı."
+            ],
+            [
+              "A thief took her phone.",
+              "Bir hırsız telefonunu aldı."
+            ]
+          ]
+        },
+        {
+          "lemma": "lock",
+          "ipa": "/lɑːk/",
+          "pos": "verb",
+          "tr": "kilitlemek",
+          "examples": [
+            [
+              "Don't forget to lock the door.",
+              "Kapıyı kilitlemeyi unutma."
+            ],
+            [
+              "I always lock my bike.",
+              "Bisikletimi her zaman kilitlerim."
+            ]
+          ]
+        },
+        {
+          "lemma": "alarm",
+          "ipa": "/əˈlɑːrm/",
+          "pos": "noun",
+          "tr": "alarm",
+          "examples": [
+            [
+              "The fire alarm rang at midnight.",
+              "Yangın alarmı gece yarısı çaldı."
+            ],
+            [
+              "Set the alarm for six o'clock.",
+              "Alarmı saat altıya kur."
+            ]
+          ]
+        },
+        {
+          "lemma": "witness",
+          "ipa": "/ˈwɪtnəs/",
+          "pos": "noun",
+          "tr": "tanık",
+          "examples": [
+            [
+              "The witness saw the accident.",
+              "Tanık kazayı gördü."
+            ],
+            [
+              "The police talked to every witness.",
+              "Polis her tanıkla konuştu."
+            ]
+          ]
+        },
+        {
+          "lemma": "rescue",
+          "ipa": "/ˈreskjuː/",
+          "pos": "verb",
+          "tr": "kurtarmak",
+          "examples": [
+            [
+              "Firefighters rescue people from fires.",
+              "İtfaiyeciler insanları yangından kurtarır."
+            ],
+            [
+              "They came to rescue the cat.",
+              "Kediyi kurtarmaya geldiler."
             ]
           ]
         }
