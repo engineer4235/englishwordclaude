@@ -15,14 +15,16 @@ void main() {
   }
 
   /// [finder] ile bulunan ilk öğeye dokunur; henüz oluşturulmamışsa (örneğin
-  /// büyük yazıda ekranın altında kaldıysa) önce kaydırarak görünür kılar.
+  /// büyük yazıda ekranın altında kaldıysa) önce dikey listeyi kaydırır.
   Future<void> tapAndSettle(WidgetTester tester, Finder finder) async {
-    if (finder.evaluate().isEmpty) {
-      await tester.scrollUntilVisible(
-        finder,
-        200,
-        scrollable: find.byType(Scrollable).first,
-      );
+    final vertical = find.byWidgetPredicate(
+      (w) =>
+          w is Scrollable &&
+          axisDirectionToAxis(w.axisDirection) == Axis.vertical,
+    );
+    for (var i = 0; i < 30 && finder.evaluate().isEmpty; i++) {
+      await tester.drag(vertical.first, const Offset(0, -200));
+      await tester.pumpAndSettle();
     }
     final target = finder.first;
     await tester.ensureVisible(target);
