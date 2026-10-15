@@ -70,93 +70,109 @@ class _LevelCardState extends State<_LevelCard> {
         .where((u) => u.status == ProgressStatus.open)
         .map((u) => u.id)
         .firstOrNull;
-    final accent = locked
-        ? scheme.outline
+    // Açık seviye mor, tamamlanan yeşil, kilitli gri başlıkla gösterilir
+    // (tasarım yönü B).
+    final (Color headerBg, Color headerFg) = locked
+        ? (scheme.surfaceContainerHigh, scheme.onSurfaceVariant)
         : completed
-        ? scheme.tertiary
-        : scheme.primary;
+        ? (scheme.tertiaryContainer, scheme.onTertiaryContainer)
+        : (scheme.primary, scheme.onPrimary);
 
     return Card(
       key: ValueKey('level-${level.level.code}'),
-      margin: const EdgeInsets.only(bottom: 12),
+      margin: const EdgeInsets.only(bottom: 16),
       clipBehavior: Clip.antiAlias,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(height: 4, color: accent),
-          Padding(
+          Container(
+            color: headerBg,
             padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            child: Row(
               children: [
-                Row(
-                  children: [
-                    _ProgressRing(
-                      value: level.progress,
-                      label: level.level.code,
-                      color: accent,
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            level.level.title,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          const SizedBox(height: 2),
-                          Text(
-                            l10n.levelProgress(percent),
-                            style: theme.textTheme.bodySmall,
-                          ),
-                          if (!locked && level.units.isNotEmpty)
-                            Text(
-                              l10n.unitsCompleted(
-                                doneUnits,
-                                level.units.length,
-                              ),
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                        ],
-                      ),
-                    ),
-                    if (completed)
-                      IconButton(
-                        key: ValueKey('toggle-${level.level.code}'),
-                        tooltip: _expanded ? l10n.hideUnits : l10n.showUnits,
-                        icon: Icon(
-                          _expanded ? Icons.expand_less : Icons.expand_more,
-                        ),
-                        onPressed: () => setState(() => _expanded = !_expanded),
-                      )
-                    else
-                      _StatusIcon(status: level.status),
-                  ],
+                _ProgressRing(
+                  value: level.progress,
+                  label: level.level.code,
+                  color: headerFg,
                 ),
-                if (locked)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 12),
-                    child: Text(
-                      l10n.levelLocked,
-                      style: theme.textTheme.bodyMedium,
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        level.level.title,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          color: headerFg,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        l10n.levelProgress(percent),
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: headerFg,
+                        ),
+                      ),
+                      if (!locked && level.units.isNotEmpty)
+                        Text(
+                          l10n.unitsCompleted(doneUnits, level.units.length),
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: headerFg,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                if (completed)
+                  IconButton(
+                    key: ValueKey('toggle-${level.level.code}'),
+                    tooltip: _expanded ? l10n.hideUnits : l10n.showUnits,
+                    color: headerFg,
+                    icon: Icon(
+                      _expanded ? Icons.expand_less : Icons.expand_more,
                     ),
+                    onPressed: () => setState(() => _expanded = !_expanded),
                   )
-                else if (_expanded) ...[
-                  const SizedBox(height: 8),
-                  for (final unit in level.units)
-                    _UnitTile(unit: unit, isNext: unit.id == nextUnitId),
-                  if (level.status == ProgressStatus.open &&
-                      level.allUnitsCompleted)
-                    _LevelExamButton(levelId: level.level.id),
-                ],
+                else
+                  _StatusIcon(status: level.status, color: headerFg),
               ],
             ),
           ),
+          if (locked)
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(l10n.levelLocked, style: theme.textTheme.bodyMedium),
+            )
+          else if (_expanded)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 12),
+              child: Stack(
+                children: [
+                  // Üniteleri birbirine bağlayan yol çizgisi.
+                  Positioned(
+                    left: 26.5,
+                    top: 28,
+                    bottom: 28,
+                    width: 3,
+                    child: ColoredBox(color: scheme.outlineVariant),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      for (final unit in level.units)
+                        _UnitTile(unit: unit, isNext: unit.id == nextUnitId),
+                      if (level.status == ProgressStatus.open &&
+                          level.allUnitsCompleted)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: _LevelExamButton(levelId: level.level.id),
+                        ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
         ],
       ),
     );
@@ -189,7 +205,7 @@ class _ProgressRing extends StatelessWidget {
               value: value,
               strokeWidth: 5,
               color: color,
-              backgroundColor: theme.colorScheme.surfaceContainerHighest,
+              backgroundColor: color.withValues(alpha: 0.25),
             ),
           ),
           Text(
@@ -277,7 +293,7 @@ class _UnitTile extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(horizontal: 8),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         tileColor: isNext ? scheme.primaryContainer.withAlpha(110) : null,
-        leading: _StatusIcon(status: unit.status),
+        leading: _UnitNode(status: unit.status, isNext: isNext),
         title: Text(
           unit.title,
           style: isNext ? const TextStyle(fontWeight: FontWeight.w600) : null,
@@ -305,6 +321,9 @@ class _UnitTile extends StatelessWidget {
             ? Chip(
                 label: Text(l10n.nextUnitBadge),
                 visualDensity: VisualDensity.compact,
+                backgroundColor: scheme.secondaryContainer,
+                labelStyle: TextStyle(color: scheme.onSecondaryContainer),
+                side: BorderSide.none,
               )
             : score != null && score > 0
             ? Text(l10n.bestScore(score))
@@ -346,9 +365,12 @@ class _UnitTile extends StatelessWidget {
 }
 
 class _StatusIcon extends StatelessWidget {
-  const _StatusIcon({required this.status});
+  const _StatusIcon({required this.status, this.color});
 
   final ProgressStatus status;
+
+  /// Verilirse tüm durumlar bu renkte çizilir (renkli başlıklar için).
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -358,18 +380,69 @@ class _StatusIcon extends StatelessWidget {
       ProgressStatus.locked => Icon(
         Icons.lock_outline,
         semanticLabel: l10n.statusLocked,
-        color: scheme.outline,
+        color: color ?? scheme.outline,
       ),
       ProgressStatus.open => Icon(
         Icons.play_circle_outline,
         semanticLabel: l10n.statusOpen,
-        color: scheme.primary,
+        color: color ?? scheme.primary,
       ),
       ProgressStatus.completed => Icon(
         Icons.check_circle,
         semanticLabel: l10n.statusCompleted,
-        color: scheme.tertiary,
+        color: color ?? scheme.tertiary,
       ),
     };
+  }
+}
+
+/// Yol üzerindeki ünite düğümü: tamamlanan yeşil, sıradaki mor, açık
+/// açık mor, kilitli gri daire.
+class _UnitNode extends StatelessWidget {
+  const _UnitNode({required this.status, required this.isNext});
+
+  final ProgressStatus status;
+  final bool isNext;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final scheme = Theme.of(context).colorScheme;
+    final (Color bg, Color fg, IconData icon, String label) = switch (status) {
+      ProgressStatus.completed => (
+        scheme.tertiary,
+        scheme.onTertiary,
+        Icons.check_rounded,
+        l10n.statusCompleted,
+      ),
+      ProgressStatus.locked => (
+        scheme.surfaceContainerHighest,
+        scheme.onSurfaceVariant,
+        Icons.lock_outline,
+        l10n.statusLocked,
+      ),
+      ProgressStatus.open when isNext => (
+        scheme.primary,
+        scheme.onPrimary,
+        Icons.play_arrow_rounded,
+        l10n.statusOpen,
+      ),
+      ProgressStatus.open => (
+        scheme.primaryContainer,
+        scheme.primary,
+        Icons.play_arrow_rounded,
+        l10n.statusOpen,
+      ),
+    };
+    return Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        color: bg,
+        shape: BoxShape.circle,
+        border: Border.all(color: scheme.surfaceContainerLowest, width: 3),
+      ),
+      child: Icon(icon, size: 22, color: fg, semanticLabel: label),
+    );
   }
 }
