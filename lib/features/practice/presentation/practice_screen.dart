@@ -319,8 +319,11 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
             child: Row(
               children: [
                 Expanded(
-                  child: LinearProgressIndicator(
-                    value: (_index + (_answered ? 1 : 0)) / exercises.length,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(999),
+                    child: LinearProgressIndicator(
+                      value: (_index + (_answered ? 1 : 0)) / exercises.length,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 12),

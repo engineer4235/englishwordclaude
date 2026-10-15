@@ -25,13 +25,10 @@ class FeedbackBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final background = correct
-        ? scheme.tertiaryContainer
-        : scheme.errorContainer;
-    final foreground = correct
-        ? scheme.onTertiaryContainer
-        : scheme.onErrorContainer;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final background = correct ? scheme.tertiary : scheme.error;
+    final foreground = correct ? scheme.onTertiary : scheme.onError;
     return Semantics(
       liveRegion: true,
       child: Container(
@@ -39,32 +36,44 @@ class FeedbackBar extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: background,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(22),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
               children: [
-                Icon(
-                  correct ? Icons.check_circle : Icons.cancel,
-                  color: foreground,
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: foreground.withValues(alpha: 0.18),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    correct ? Icons.check_rounded : Icons.close_rounded,
+                    color: foreground,
+                  ),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     message,
-                    style: TextStyle(
+                    style: theme.textTheme.titleMedium?.copyWith(
                       color: foreground,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 14),
             FilledButton(
               key: const Key('continue'),
+              style: FilledButton.styleFrom(
+                backgroundColor: scheme.surfaceContainerLowest,
+                foregroundColor: background,
+              ),
               onPressed: onContinue,
               child: Text(AppLocalizations.of(context).continueLabel),
             ),
@@ -138,56 +147,99 @@ class _ChoiceExerciseViewState extends State<ChoiceExerciseView> {
     final ex = widget.exercise;
     final answered = _selected != null;
 
+    final options = [
+      for (var i = 0; i < ex.options.length; i++)
+        _OptionButton(
+          label: ex.options[i],
+          state: !answered
+              ? _OptionState.idle
+              : i == ex.correctIndex
+              ? _OptionState.correct
+              : i == _selected
+              ? _OptionState.wrong
+              : _OptionState.disabled,
+          onPressed: answered ? null : () => _select(i),
+        ),
+    ];
+    // Kısa seçenekler 2×2 kutu olarak, uzunlar ya da büyük yazı boyutunda
+    // alt alta dizilir (NFR-07).
+    final grid =
+        options.length == 4 &&
+        MediaQuery.textScalerOf(context).scale(16) <= 20 &&
+        ex.options.every((o) => o.length <= 16);
+    final scheme = theme.colorScheme;
+
     return ListView(
       key: Key('exercise-${ex.type.id}'),
       padding: const EdgeInsets.all(16),
       children: [
-        Text(_title(l10n), style: theme.textTheme.titleMedium),
+        Container(
+          padding: const EdgeInsets.all(22),
+          decoration: BoxDecoration(
+            color: scheme.surfaceContainerLowest,
+            borderRadius: BorderRadius.circular(22),
+            border: Border.all(color: scheme.outlineVariant),
+          ),
+          child: Column(
+            children: [
+              Text(
+                _title(l10n),
+                textAlign: TextAlign.center,
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: 12),
+              if (_isListen)
+                IconButton.filled(
+                  iconSize: 40,
+                  tooltip: l10n.replay,
+                  icon: const Icon(Icons.volume_up_rounded),
+                  onPressed: () => widget.tts.speak(ex.target.lemma),
+                )
+              else
+                Text(
+                  ex.prompt,
+                  key: const Key('prompt'),
+                  textAlign: TextAlign.center,
+                  style: ex.prompt.length > 24
+                      ? theme.textTheme.titleLarge
+                      : theme.textTheme.headlineMedium,
+                ),
+              if (ex.hint != null) ...[
+                const SizedBox(height: 8),
+                Text(
+                  ex.hint!,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
         const SizedBox(height: 16),
-        if (_isListen)
-          Center(
-            child: IconButton.filledTonal(
-              iconSize: 48,
-              tooltip: l10n.replay,
-              icon: const Icon(Icons.volume_up),
-              onPressed: () => widget.tts.speak(ex.target.lemma),
-            ),
-          )
+        if (grid)
+          for (var row = 0; row < 2; row++)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: IntrinsicHeight(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(child: options[row * 2]),
+                    const SizedBox(width: 12),
+                    Expanded(child: options[row * 2 + 1]),
+                  ],
+                ),
+              ),
+            )
         else
-          Text(
-            ex.prompt,
-            key: const Key('prompt'),
-            textAlign: TextAlign.center,
-            style: theme.textTheme.headlineSmall,
-          ),
-        if (ex.hint != null) ...[
-          const SizedBox(height: 8),
-          Text(
-            ex.hint!,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
-            ),
-          ),
-        ],
-        const SizedBox(height: 24),
-        for (var i = 0; i < ex.options.length; i++)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: _OptionButton(
-              label: ex.options[i],
-              state: !answered
-                  ? _OptionState.idle
-                  : i == ex.correctIndex
-                  ? _OptionState.correct
-                  : i == _selected
-                  ? _OptionState.wrong
-                  : _OptionState.disabled,
-              onPressed: answered ? null : () => _select(i),
-            ),
-          ),
+          for (final option in options)
+            Padding(padding: const EdgeInsets.only(bottom: 10), child: option),
         if (answered) ...[
-          const SizedBox(height: 8),
+          const SizedBox(height: 4),
           FeedbackBar(
             correct: _selected == ex.correctIndex,
             message: _selected == ex.correctIndex
@@ -203,6 +255,8 @@ class _ChoiceExerciseViewState extends State<ChoiceExerciseView> {
 
 enum _OptionState { idle, correct, wrong, disabled }
 
+/// Seçenek kutusu: doğru cevap yeşil, yanlış seçim kırmızı kenarlıkla
+/// gösterilir; renk dışında simgeyle de ayırt edilir.
 class _OptionButton extends StatelessWidget {
   const _OptionButton({
     required this.label,
@@ -216,24 +270,51 @@ class _OptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final (Color? bg, IconData? icon) = switch (state) {
-      _OptionState.correct => (scheme.tertiaryContainer, Icons.check),
-      _OptionState.wrong => (scheme.errorContainer, Icons.close),
-      _ => (null, null),
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final (Color bg, Color fg, Color border, IconData? icon) = switch (state) {
+      _OptionState.correct => (
+        scheme.tertiaryContainer,
+        scheme.onTertiaryContainer,
+        scheme.tertiary,
+        Icons.check_rounded,
+      ),
+      _OptionState.wrong => (
+        scheme.errorContainer,
+        scheme.onErrorContainer,
+        scheme.error,
+        Icons.close_rounded,
+      ),
+      _OptionState.idle => (
+        scheme.surfaceContainerLowest,
+        scheme.onSurface,
+        scheme.outlineVariant,
+        null,
+      ),
+      _OptionState.disabled => (
+        scheme.surfaceContainerLowest,
+        scheme.onSurfaceVariant,
+        scheme.outlineVariant,
+        null,
+      ),
     };
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
         backgroundColor: bg,
         disabledBackgroundColor: bg,
+        foregroundColor: fg,
+        disabledForegroundColor: fg,
+        side: BorderSide(color: border, width: 2),
+        minimumSize: const Size(0, 64),
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-        alignment: Alignment.centerLeft,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+        textStyle: theme.textTheme.titleMedium,
       ),
       onPressed: onPressed,
       child: Row(
         children: [
           Expanded(child: Text(label)),
-          if (icon != null) Icon(icon, size: 20),
+          if (icon != null) ...[const SizedBox(width: 8), Icon(icon, size: 22)],
         ],
       ),
     );
