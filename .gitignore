@@ -32,3 +32,6 @@ __pycache__/
 
 # Test kapsamı çıktısı (flutter test --coverage)
 coverage/
+
+# Mağaza ekran görüntülerinin ham hali (tool/gen_store_images.py girdisi)
+test/store/raw/
