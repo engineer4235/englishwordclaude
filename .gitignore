@@ -29,3 +29,6 @@ GoogleService-Info.plist
 __pycache__/
 # macOS
 .DS_Store
+
+# Test kapsamı çıktısı (flutter test --coverage)
+coverage/

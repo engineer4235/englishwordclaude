@@ -36,8 +36,11 @@ jobs:
       - name: Statik analiz
         run: flutter analyze
 
-      - name: Testler
-        run: flutter test
+      - name: Testler (kapsam ölçümüyle)
+        run: flutter test --coverage
+
+      - name: Birim test kapsamı ≥ %70 (domain + data, NFR-10)
+        run: dart run tool/check_coverage.dart --min 70
 
   build-android:
     name: Android derlemesi
