@@ -461,6 +461,18 @@ class AppLocalizationsTr extends AppLocalizations {
   String get sectionData => 'Veri';
 
   @override
+  String get sectionLegal => 'Gizlilik ve yasal';
+
+  @override
+  String get privacyPolicy => 'Gizlilik politikası';
+
+  @override
+  String get privacyPolicyHint => 'Verilerin yalnızca bu cihazda saklanır.';
+
+  @override
+  String get kvkkNotice => 'KVKK aydınlatma metni';
+
+  @override
   String get settingDailyTarget => 'Günlük yeni kelime hedefi';
 
   @override

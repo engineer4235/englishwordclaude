@@ -114,6 +114,10 @@ void main() {
         await tapAndSettle(t, find.byKey(const ValueKey('next')));
       }
     },
+    'Gizlilik politikası': (t) async {
+      await tapNav(t, 'Profil');
+      await tapAndSettle(t, find.byKey(const ValueKey('open-privacy')));
+    },
     'Tanıtım': (t) async {},
     'Tanıtım hedef': (t) async {
       await tapAndSettle(t, find.byKey(const ValueKey('skip')));

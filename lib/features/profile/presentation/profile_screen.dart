@@ -375,6 +375,27 @@ class _Settings extends ConsumerWidget {
           ],
         ),
         const SizedBox(height: 12),
+        SectionCard(
+          icon: Icons.verified_user_rounded,
+          title: l10n.sectionLegal,
+          flush: true,
+          children: [
+            ListTile(
+              key: const ValueKey('open-privacy'),
+              leading: const Icon(Icons.privacy_tip_outlined),
+              title: Text(l10n.privacyPolicy),
+              subtitle: Text(l10n.privacyPolicyHint),
+              onTap: () => context.push(AppRoutes.privacy),
+            ),
+            ListTile(
+              key: const ValueKey('open-kvkk'),
+              leading: const Icon(Icons.gavel_rounded),
+              title: Text(l10n.kvkkNotice),
+              onTap: () => context.push(AppRoutes.kvkk),
+            ),
+          ],
+        ),
+        const SizedBox(height: 12),
       ],
     );
   }

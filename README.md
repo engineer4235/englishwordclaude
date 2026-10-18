@@ -25,6 +25,22 @@ flutter analyze && flutter test
 
 Klasör yapısı SRS 5.2'deki feature-first düzeni izler: `lib/core`, `lib/data`, `lib/domain`, `lib/features`, `lib/l10n`.
 
+## Gizlilik ve yasal metinler
+
+Gizlilik politikası ve KVKK aydınlatma metni `lib/core/legal/legal_texts.dart` dosyasındadır;
+uygulamada Profil → Gizlilik ve yasal bölümünden açılır. Aynı kaynaktan GitHub
+Pages için web sayfaları üretilir (testler ikisinin aynı olduğunu denetler):
+
+```sh
+dart run tool/gen_legal_pages.dart   # docs/gizlilik.html, docs/kvkk.html
+```
+
+Yayın adresleri (Settings → Pages → Branch: `main`, klasör: `/docs`):
+`https://engineer4235.github.io/englishwordclaude/gizlilik.html` ve `/kvkk.html`.
+Mağaza sayfasına gizlilik politikası adresi olarak ilki girilir.
+
+Yayından önce metinlerdeki `[Veri sorumlusunun adı soyadı / unvanı]` ve `[Adres]`
+yer tutucuları doldurulmalı ve metinler bir hukukçuya gözden geçirtilmelidir.
 ## Test kapsamı ve mimari kurallar
 
 İş mantığı katmanlarının (`lib/domain`, `lib/data`) birim test kapsamı en az
