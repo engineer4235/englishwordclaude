@@ -41,6 +41,8 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
   void _open(WordEntry entry) {
     showModalBottomSheet<void>(
       context: context,
+      // Tablette ortalanmış içerikten taşıp tüm ekranı kaplasın (EWL-337).
+      useRootNavigator: true,
       isScrollControlled: true,
       showDragHandle: true,
       builder: (context) => FractionallySizedBox(
@@ -233,6 +235,8 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                   },
                 )
               : ListView.builder(
+                  // Son satır ekleme düğmesinin altında kalmasın.
+                  padding: const EdgeInsets.only(bottom: 88),
                   itemCount: results.length,
                   itemBuilder: (context, i) {
                     final e = results[i];
