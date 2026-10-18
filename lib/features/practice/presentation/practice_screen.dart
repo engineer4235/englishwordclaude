@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../core/feedback/answer_feedback.dart';
-import '../../../core/router/app_routes.dart';
 import '../../../core/tts/tts_service.dart';
-import '../../../core/widgets/badge_labels.dart';
 import '../../../data/providers.dart';
-import '../../../data/repositories/progress_repository.dart';
 import '../../../domain/daily/study_time.dart';
 import '../../../domain/exercise/exercise.dart';
 import '../../../domain/exercise/exercise_generator.dart';
@@ -15,6 +11,7 @@ import '../../../domain/models/word.dart';
 import '../../../domain/srs/answer_quality.dart';
 import '../../../l10n/app_localizations.dart';
 import 'exercise_views.dart';
+import 'result_view.dart';
 
 enum PracticeMode {
   lesson,
@@ -294,7 +291,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     } else if (exercises == null) {
       body = const Center(child: CircularProgressIndicator());
     } else if (_result != null) {
-      body = _ResultView(
+      body = ResultView(
         mode: widget.mode,
         result: _result!,
         passed: _passed,
@@ -369,137 +366,6 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: body,
-    );
-  }
-}
-
-class _ResultView extends StatelessWidget {
-  const _ResultView({
-    required this.mode,
-    required this.result,
-    required this.passed,
-    required this.levelCode,
-    required this.xp,
-    this.newBadges = const [],
-  });
-
-  final PracticeMode mode;
-  final int xp;
-
-  /// Bu oturumda kazanılan rozetler (FR-73).
-  final List<String> newBadges;
-  final SessionResult result;
-  final bool? passed;
-  final String levelCode;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    final theme = Theme.of(context);
-    final celebrate = mode == PracticeMode.levelExam && passed == true;
-    final message = switch (mode) {
-      PracticeMode.lesson => l10n.resultLesson,
-      PracticeMode.review ||
-      PracticeMode.favorites ||
-      PracticeMode.difficult ||
-      PracticeMode.wordList => l10n.resultReview,
-      PracticeMode.unitExam =>
-        passed == true ? l10n.resultUnitPassed : l10n.resultUnitFailed,
-      PracticeMode.quickPass =>
-        passed == true
-            ? l10n.resultQuickPassPassed
-            : l10n.resultQuickPassFailed(ProgressRepository.quickPassScore),
-      PracticeMode.levelExam =>
-        passed == true
-            ? l10n.resultLevelPassed(levelCode)
-            : l10n.resultLevelFailed,
-    };
-    final icon = celebrate
-        ? Icons.emoji_events
-        : passed == false
-        ? Icons.refresh
-        : Icons.check_circle_outline;
-
-    return ListView(
-      padding: const EdgeInsets.all(24),
-      children: [
-        Icon(icon, size: celebrate ? 96 : 72, color: theme.colorScheme.primary),
-        const SizedBox(height: 16),
-        Text(
-          l10n.scorePercent(result.scorePercent),
-          key: const Key('score'),
-          textAlign: TextAlign.center,
-          style: theme.textTheme.displaySmall,
-        ),
-        Text(
-          l10n.correctCount(result.correct, result.total),
-          textAlign: TextAlign.center,
-        ),
-        if (xp > 0)
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: Center(
-              child: Chip(
-                avatar: const Icon(Icons.bolt),
-                label: Text(l10n.xpGained(xp)),
-              ),
-            ),
-          ),
-        const SizedBox(height: 16),
-        Text(
-          message,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.titleMedium,
-        ),
-        if (celebrate) ...[
-          const SizedBox(height: 12),
-          Center(
-            child: Chip(
-              avatar: const Icon(Icons.military_tech),
-              label: Text(l10n.levelBadge(levelCode)),
-            ),
-          ),
-        ],
-        for (final code in newBadges)
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: Center(
-              child: Chip(
-                key: ValueKey('new-badge-$code'),
-                avatar: Icon(badgeIcon(code)),
-                label: Text(l10n.newBadge(badgeName(l10n, code))),
-              ),
-            ),
-          ),
-        if (result.wrongWords.isNotEmpty) ...[
-          const SizedBox(height: 24),
-          Text(l10n.wrongWordsTitle, style: theme.textTheme.titleSmall),
-          for (final word in {
-            for (final w in result.wrongWords) w.id: w,
-          }.values)
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(word.lemma),
-              subtitle: Text(word.meaningTr),
-            ),
-        ],
-        const SizedBox(height: 24),
-        FilledButton(
-          onPressed: () => context.go(switch (mode) {
-            PracticeMode.review => AppRoutes.home,
-            PracticeMode.favorites || PracticeMode.difficult => AppRoutes.words,
-            PracticeMode.wordList => AppRoutes.wordLists,
-            _ => AppRoutes.levelMap,
-          }),
-          child: Text(switch (mode) {
-            PracticeMode.review => l10n.backToHome,
-            PracticeMode.favorites ||
-            PracticeMode.difficult ||
-            PracticeMode.wordList => l10n.backToWords,
-            _ => l10n.backToMap,
-          }),
-        ),
-      ],
     );
   }
 }
