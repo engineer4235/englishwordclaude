@@ -1384,6 +1384,18 @@ abstract class AppLocalizations {
   /// **'Henüz kazanılmadı'**
   String get badgeLocked;
 
+  /// No description provided for @badgesEarnedCount.
+  ///
+  /// In tr, this message translates to:
+  /// **'{earned}/{total} rozet'**
+  String badgesEarnedCount(int earned, int total);
+
+  /// No description provided for @longestStreak.
+  ///
+  /// In tr, this message translates to:
+  /// **'En uzun seri: {count} gün'**
+  String longestStreak(int count);
+
   /// No description provided for @matchTimeLeft.
   ///
   /// In tr, this message translates to:

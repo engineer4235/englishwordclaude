@@ -3,6 +3,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/section_card.dart';
 import '../../../data/providers.dart';
 import '../../../domain/exercise/exercise.dart';
 import '../../../domain/models/progress.dart';
@@ -82,48 +84,74 @@ class _LearnedCard extends StatelessWidget {
       CardState.mastered: l10n.stateMastered,
     };
     final total = math.max(stats.studied, 1);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.statsLearned, style: theme.textTheme.titleMedium),
-            Text(
-              '${stats.learned}',
-              key: const ValueKey('stats-learned'),
-              style: theme.textTheme.displaySmall,
+    final scheme = theme.colorScheme;
+    final colors = AppColors.of(context);
+    final onHero = scheme.onPrimary;
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: scheme.primary,
+        borderRadius: BorderRadius.circular(AppTheme.radiusLarge + 6),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l10n.statsLearned,
+            style: theme.textTheme.titleMedium?.copyWith(color: onHero),
+          ),
+          Text(
+            '${stats.learned}',
+            key: const ValueKey('stats-learned'),
+            style: theme.textTheme.displayMedium?.copyWith(
+              color: onHero,
+              fontWeight: FontWeight.w800,
             ),
-            Text(l10n.statsStudied(stats.studied)),
-            const SizedBox(height: 12),
-            for (final state in [
-              CardState.learning,
-              CardState.review,
-              CardState.mastered,
-            ])
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: Row(
-                  children: [
-                    SizedBox(width: 110, child: Text(labels[state]!)),
-                    Expanded(
-                      child: LinearProgressIndicator(
-                        value: (stats.byState[state] ?? 0) / total,
+          ),
+          Text(
+            l10n.statsStudied(stats.studied),
+            style: theme.textTheme.bodyMedium?.copyWith(color: onHero),
+          ),
+          const SizedBox(height: 16),
+          for (final state in [
+            CardState.learning,
+            CardState.review,
+            CardState.mastered,
+          ])
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 110,
+                    child: Text(
+                      labels[state]!,
+                      style: TextStyle(color: onHero),
+                    ),
+                  ),
+                  Expanded(
+                    child: RoundedBar(
+                      value: (stats.byState[state] ?? 0) / total,
+                      color: colors.streak,
+                      track: onHero.withValues(alpha: 0.2),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 40,
+                    child: Text(
+                      '${stats.byState[state] ?? 0}',
+                      key: ValueKey('stats-state-${state.dbValue}'),
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: onHero,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(
-                      width: 40,
-                      child: Text(
-                        '${stats.byState[state] ?? 0}',
-                        key: ValueKey('stats-state-${state.dbValue}'),
-                        textAlign: TextAlign.end,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-          ],
-        ),
+            ),
+        ],
       ),
     );
   }
@@ -151,80 +179,76 @@ class _ActivityCard extends StatelessWidget {
     final minutes = days.fold(0, (s, d) => s + d.minutes);
     const chartHeight = 120.0;
 
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+    return SectionCard(
+      icon: Icons.bar_chart_rounded,
+      title: l10n.statsActivity,
+      children: [
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: SegmentedButton<int>(
+            key: const ValueKey('stats-range'),
+            segments: [
+              ButtonSegment(value: 7, label: Text(l10n.stats7Days)),
+              ButtonSegment(value: 30, label: Text(l10n.stats30Days)),
+            ],
+            selected: {selected},
+            onSelectionChanged: (s) => onSelect(s.first),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Semantics(
+          label: l10n.statsActivitySummary(newWords, reviews, minutes),
+          child: SizedBox(
+            height: chartHeight,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Expanded(
-                  child: Text(
-                    l10n.statsActivity,
-                    style: theme.textTheme.titleMedium,
-                  ),
-                ),
-                SegmentedButton<int>(
-                  key: const ValueKey('stats-range'),
-                  segments: [
-                    ButtonSegment(value: 7, label: Text(l10n.stats7Days)),
-                    ButtonSegment(value: 30, label: Text(l10n.stats30Days)),
-                  ],
-                  selected: {selected},
-                  onSelectionChanged: (s) => onSelect(s.first),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Semantics(
-              label: l10n.statsActivitySummary(newWords, reviews, minutes),
-              child: SizedBox(
-                height: chartHeight,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    for (final d in days)
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 1),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Container(
-                                height: chartHeight * d.reviews / maxTotal,
-                                color: scheme.tertiary,
-                              ),
-                              Container(
-                                height: chartHeight * d.newWords / maxTotal,
-                                color: scheme.primary,
-                              ),
-                            ],
-                          ),
+                for (final d in days)
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: days.length > 7 ? 1 : 6,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(6),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              height: chartHeight * d.newWords / maxTotal,
+                              color: scheme.primary,
+                            ),
+                            Container(
+                              height: chartHeight * d.reviews / maxTotal,
+                              color: scheme.tertiary,
+                            ),
+                          ],
                         ),
                       ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Wrap(
-              spacing: 16,
-              children: [
-                _Legend(color: scheme.primary, label: l10n.statsNewWords),
-                _Legend(color: scheme.tertiary, label: l10n.statsReviews),
+                    ),
+                  ),
               ],
             ),
-            const SizedBox(height: 8),
-            Text(
-              newWords + reviews == 0
-                  ? l10n.statsNoActivity
-                  : l10n.statsActivitySummary(newWords, reviews, minutes),
-              key: const ValueKey('stats-summary'),
-            ),
+          ),
+        ),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 16,
+          children: [
+            _Legend(color: scheme.primary, label: l10n.statsNewWords),
+            _Legend(color: scheme.tertiary, label: l10n.statsReviews),
           ],
         ),
-      ),
+        const SizedBox(height: 8),
+        Text(
+          newWords + reviews == 0
+              ? l10n.statsNoActivity
+              : l10n.statsActivitySummary(newWords, reviews, minutes),
+          key: const ValueKey('stats-summary'),
+        ),
+      ],
     );
   }
 }
@@ -240,7 +264,12 @@ class _Legend extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(width: 12, height: 12, color: color),
+        Container(
+          width: 12,
+          height: 12,
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+        ),
+
         const SizedBox(width: 4),
         Text(label),
       ],
@@ -270,54 +299,44 @@ class _HeatmapCard extends StatelessWidget {
     final scheme = theme.colorScheme;
     final days = stats.history;
     final weeks = (days.length / 7).ceil();
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.statsHeatmap, style: theme.textTheme.titleMedium),
-            const SizedBox(height: 4),
-            Text(
-              l10n.statsHeatmapSummary(stats.activeDays),
-              key: const ValueKey('stats-heatmap'),
-            ),
-            const SizedBox(height: 12),
-            ExcludeSemantics(
-              child: Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    for (var w = 0; w < weeks; w++)
-                      Column(
-                        children: [
-                          for (
-                            var d = w * 7;
-                            d < w * 7 + 7 && d < days.length;
-                            d++
-                          )
-                            Container(
-                              width: 16,
-                              height: 16,
-                              margin: const EdgeInsets.all(1.5),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(3),
-                                color: days[d].total == 0
-                                    ? scheme.surfaceContainerHighest
-                                    : scheme.primary.withValues(
-                                        alpha: _intensity(days[d].total),
-                                      ),
-                              ),
-                            ),
-                        ],
-                      ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+    return SectionCard(
+      icon: Icons.calendar_month_rounded,
+      title: l10n.statsHeatmap,
+      children: [
+        Text(
+          l10n.statsHeatmapSummary(stats.activeDays),
+          key: const ValueKey('stats-heatmap'),
         ),
-      ),
+        const SizedBox(height: 12),
+        ExcludeSemantics(
+          child: Center(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (var w = 0; w < weeks; w++)
+                  Column(
+                    children: [
+                      for (var d = w * 7; d < w * 7 + 7 && d < days.length; d++)
+                        Container(
+                          width: 16,
+                          height: 16,
+                          margin: const EdgeInsets.all(1.5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(3),
+                            color: days[d].total == 0
+                                ? scheme.surfaceContainerHighest
+                                : scheme.primary.withValues(
+                                    alpha: _intensity(days[d].total),
+                                  ),
+                          ),
+                        ),
+                    ],
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -337,44 +356,43 @@ class _AccuracyCard extends StatelessWidget {
         if (stats.accuracyByType[type.id] case final a? when a.total > 0)
           (type, a),
     ];
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.statsAccuracy, style: theme.textTheme.titleMedium),
-            const SizedBox(height: 4),
-            Text(
-              overall.total == 0
-                  ? l10n.statsNoAnswers
-                  : l10n.statsAccuracyOverall(overall.percent, overall.total),
-              key: const ValueKey('stats-accuracy'),
-            ),
-            for (final (type, a) in types)
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 130,
-                      child: Text(exerciseTypeLabel(l10n, type)),
-                    ),
-                    Expanded(child: LinearProgressIndicator(value: a.ratio)),
-                    SizedBox(
-                      width: 56,
-                      child: Text(
-                        '%${a.percent}',
-                        key: ValueKey('stats-accuracy-${type.id}'),
-                        textAlign: TextAlign.end,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-          ],
+    return SectionCard(
+      icon: Icons.track_changes_rounded,
+      title: l10n.statsAccuracy,
+      children: [
+        Text(
+          overall.total == 0
+              ? l10n.statsNoAnswers
+              : l10n.statsAccuracyOverall(overall.percent, overall.total),
+          key: const ValueKey('stats-accuracy'),
         ),
-      ),
+        for (final (type, a) in types)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 130,
+                  child: Text(exerciseTypeLabel(l10n, type)),
+                ),
+                Expanded(
+                  child: RoundedBar(
+                    value: a.ratio,
+                    color: theme.colorScheme.tertiary,
+                  ),
+                ),
+                SizedBox(
+                  width: 56,
+                  child: Text(
+                    '%${a.percent}',
+                    key: ValueKey('stats-accuracy-${type.id}'),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }
@@ -405,54 +423,51 @@ class _ForecastCard extends StatelessWidget {
     final maxCount = upcoming.fold(1, (a, b) => math.max(a, b));
     final total = upcoming.fold(0, (a, b) => a + b);
     const chartHeight = 80.0;
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return SectionCard(
+      icon: Icons.event_repeat_rounded,
+      accent: true,
+      title: l10n.statsForecast,
+      children: [
+        Text(
+          l10n.statsForecastSummary(total),
+          key: const ValueKey('stats-forecast'),
+        ),
+        const SizedBox(height: 12),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(l10n.statsForecast, style: theme.textTheme.titleMedium),
-            const SizedBox(height: 4),
-            Text(
-              l10n.statsForecastSummary(total),
-              key: const ValueKey('stats-forecast'),
-            ),
-            const SizedBox(height: 12),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                for (var i = 0; i < upcoming.length; i++)
-                  Expanded(
-                    child: Semantics(
-                      label:
-                          '${_dayLabel(l10n, weekdays, today, i)}: '
-                          '${upcoming[i]}',
-                      excludeSemantics: true,
-                      child: Column(
-                        children: [
-                          Text(
-                            '${upcoming[i]}',
-                            style: theme.textTheme.bodySmall,
+            for (var i = 0; i < upcoming.length; i++)
+              Expanded(
+                child: Semantics(
+                  label:
+                      '${_dayLabel(l10n, weekdays, today, i)}: '
+                      '${upcoming[i]}',
+                  excludeSemantics: true,
+                  child: Column(
+                    children: [
+                      Text('${upcoming[i]}', style: theme.textTheme.bodySmall),
+                      Container(
+                        height: chartHeight * upcoming[i] / maxCount,
+                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        decoration: BoxDecoration(
+                          color: theme.colorScheme.secondary,
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(6),
                           ),
-                          Container(
-                            height: chartHeight * upcoming[i] / maxCount,
-                            margin: const EdgeInsets.symmetric(horizontal: 4),
-                            color: theme.colorScheme.secondary,
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            _dayLabel(l10n, weekdays, today, i),
-                            style: theme.textTheme.bodySmall,
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 4),
+                      Text(
+                        _dayLabel(l10n, weekdays, today, i),
+                        style: theme.textTheme.bodySmall,
+                      ),
+                    ],
                   ),
-              ],
-            ),
+                ),
+              ),
           ],
         ),
-      ),
+      ],
     );
   }
 
@@ -477,37 +492,44 @@ class _LevelsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.statsLevels, style: theme.textTheme.titleMedium),
-            const SizedBox(height: 8),
-            for (final level in levels)
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: Row(
-                  children: [
-                    SizedBox(width: 40, child: Text(level.level.code)),
-                    Expanded(
-                      child: LinearProgressIndicator(value: level.progress),
+    return SectionCard(
+      icon: Icons.stairs_rounded,
+      title: l10n.statsLevels,
+      children: [
+        for (final level in levels)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Row(
+              children: [
+                Container(
+                  width: 44,
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  margin: const EdgeInsetsDirectional.only(end: 10),
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.primaryContainer,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    level.level.code,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      color: theme.colorScheme.onPrimaryContainer,
                     ),
-                    SizedBox(
-                      width: 56,
-                      child: Text(
-                        '%${(level.progress * 100).round()}',
-                        key: ValueKey('stats-level-${level.level.code}'),
-                        textAlign: TextAlign.end,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-          ],
-        ),
-      ),
+                Expanded(child: RoundedBar(value: level.progress)),
+                SizedBox(
+                  width: 56,
+                  child: Text(
+                    '%${(level.progress * 100).round()}',
+                    key: ValueKey('stats-level-${level.level.code}'),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }

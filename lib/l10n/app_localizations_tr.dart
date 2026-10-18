@@ -749,6 +749,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get badgeLocked => 'Henüz kazanılmadı';
 
   @override
+  String badgesEarnedCount(int earned, int total) {
+    return '$earned/$total rozet';
+  }
+
+  @override
+  String longestStreak(int count) {
+    return 'En uzun seri: $count gün';
+  }
+
+  @override
   String matchTimeLeft(int seconds) {
     return '$seconds sn';
   }

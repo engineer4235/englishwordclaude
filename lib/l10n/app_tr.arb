@@ -524,6 +524,25 @@
   },
   "badgeEarned": "Kazanıldı",
   "badgeLocked": "Henüz kazanılmadı",
+  "badgesEarnedCount": "{earned}/{total} rozet",
+  "@badgesEarnedCount": {
+    "placeholders": {
+      "earned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "longestStreak": "En uzun seri: {count} gün",
+  "@longestStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "matchTimeLeft": "{seconds} sn",
   "@matchTimeLeft": {
     "placeholders": {
