@@ -68,6 +68,7 @@ flutter:
   generate: true
   assets:
     - assets/content/
+    - assets/branding/logo_source.webp
 
   # Lexend (SIL Open Font License, assets/fonts/OFL.txt); tasarım sistemi
   # yazı tipi (EWL-327). Pakete gömülüdür, internet gerektirmez.

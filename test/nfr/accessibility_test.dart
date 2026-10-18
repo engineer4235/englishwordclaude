@@ -100,6 +100,20 @@ void main() {
       await tapAndSettle(t, find.byKey(const ValueKey('retake-placement')));
       await tapAndSettle(t, find.byKey(const ValueKey('placement-start')));
     },
+    'Seviye tespit sonucu': (t) async {
+      await tapNav(t, 'Profil');
+      await tapAndSettle(t, find.byKey(const ValueKey('retake-placement')));
+      await tapAndSettle(t, find.byKey(const ValueKey('placement-start')));
+      while (find.byKey(const ValueKey('dont-know')).evaluate().isNotEmpty) {
+        await tapAndSettle(t, find.byKey(const ValueKey('dont-know')));
+      }
+    },
+    'Tanıtım başlangıç': (t) async {
+      await tapAndSettle(t, find.byKey(const ValueKey('skip')));
+      for (var i = 0; i < 3; i++) {
+        await tapAndSettle(t, find.byKey(const ValueKey('next')));
+      }
+    },
     'Tanıtım': (t) async {},
     'Tanıtım hedef': (t) async {
       await tapAndSettle(t, find.byKey(const ValueKey('skip')));
