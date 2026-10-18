@@ -44,6 +44,28 @@ for img in contents['images']:
     px = round(float(img['size'].split('x')[0]) * int(img['scale'][0]))
     src.resize((px, px), Image.LANCZOS).save(os.path.join(ios, img['filename']), optimize=True)
 
+# Açılış ekranı (NFR-01): mor zemin üzerinde köşeleri yuvarlatılmış logo,
+# 120dp (Android) / 120pt (iOS).
+from PIL import ImageDraw
+
+
+def rounded_logo(px):
+    img = src.resize((px, px), Image.LANCZOS).convert('RGBA')
+    mask = Image.new('L', (px, px), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, px - 1, px - 1), int(px * 0.22), fill=255)
+    img.putalpha(mask)
+    # 256 renkli palet: açılış görselleri APK boyutunu şişirmesin (NFR-04).
+    return img.quantize(256, method=Image.FASTOCTREE)
+
+
+for d, scale in {'mdpi': 1, 'hdpi': 1.5, 'xhdpi': 2, 'xxhdpi': 3, 'xxxhdpi': 4}.items():
+    out = os.path.join(res, f'drawable-{d}')
+    os.makedirs(out, exist_ok=True)
+    rounded_logo(int(120 * scale)).save(os.path.join(out, 'splash_logo.png'), optimize=True)
+launch = os.path.join(ROOT, 'ios/Runner/Assets.xcassets/LaunchImage.imageset')
+for suffix, scale in {'': 1, '@2x': 2, '@3x': 3}.items():
+    rounded_logo(120 * scale).save(os.path.join(launch, f'LaunchImage{suffix}.png'), optimize=True)
+
 # Uygulama içinde kullanılacak logo.
 src.resize((512, 512), Image.LANCZOS).save(os.path.join(ROOT, 'assets/branding/logo.png'), optimize=True)
 print('icons ok, background #%02X%02X%02X' % bg)

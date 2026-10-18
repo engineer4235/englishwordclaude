@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:drift/drift.dart' show Value;
+import 'package:drift/drift.dart' show OrderingTerm, Value;
 import 'package:drift/native.dart';
 import 'package:english_word_learning/data/content/content_seeder.dart';
 import 'package:english_word_learning/data/db/app_database.dart';
@@ -205,5 +205,50 @@ void main() {
     final repo = DriftContentRepository(db);
     final word = (await repo.getAllWords()).firstWhere((w) => w.lemma == 'red');
     expect((await repo.getRelations(word.id)).isEmpty, isTrue);
+  });
+
+  test(
+    'sync: aynı paket ikinci kez uygulanmaz, yeni paket uygulanır',
+    () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final old = File('test/fixtures/seed_content.json').readAsStringSync();
+      final seeder = ContentSeeder(db);
+
+      expect(await seeder.sync(old), isTrue);
+      expect(await seeder.sync(old), isFalse);
+      expect(
+        await db.metaValue(ContentSeeder.contentKeyName),
+        ContentSeeder.contentKey(old),
+      );
+      final before = (await db.select(db.units).get()).length;
+
+      // Uygulama güncellemesi: yeni üniteler ve ilişkiler eklenir.
+      expect(await seeder.sync(json), isTrue);
+      expect((await db.select(db.units).get()).length, greaterThan(before));
+      expect(await db.select(db.wordRelations).get(), isNotEmpty);
+      expect(await seeder.sync(json), isFalse);
+    },
+  );
+
+  test('sync: kelime kimlikleri yükleme sırasıyla verilir', () async {
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+    await ContentSeeder(db).sync(json);
+    final data = jsonDecode(json) as Map<String, dynamic>;
+    final lemmas = [
+      for (final unit in data['units'] as List)
+        for (final word in unit['words'] as List) word['lemma'] as String,
+    ];
+    final words = await (db.select(
+      db.words,
+    )..orderBy([(t) => OrderingTerm.asc(t.id)])).get();
+    expect(words.map((w) => w.lemma), lemmas);
+    expect(words.first.id, 1);
+  });
+
+  test('contentKey sürüm ve uzunluktan oluşur', () {
+    expect(ContentSeeder.contentKey('{"version": 7, "a": 1}'), '7:22');
+    expect(ContentSeeder.contentKey('{}'), '0:2');
   });
 }

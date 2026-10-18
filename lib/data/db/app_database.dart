@@ -85,6 +85,27 @@ class AppDatabase extends _$AppDatabase {
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
+      // Uygulama düzeyindeki küçük anahtar/değer kayıtları (ör. uygulanmış
+      // içerik paketi). Şema sürümü gerektirmez.
+      await customStatement(
+        'CREATE TABLE IF NOT EXISTS app_meta '
+        '(key TEXT NOT NULL PRIMARY KEY, value TEXT NOT NULL)',
+      );
     },
+  );
+
+  /// `app_meta` tablosundan [key] değerini okur; yoksa `null`.
+  Future<String?> metaValue(String key) async {
+    final row = await customSelect(
+      'SELECT value FROM app_meta WHERE key = ?',
+      variables: [Variable.withString(key)],
+    ).getSingleOrNull();
+    return row?.read<String>('value');
+  }
+
+  /// `app_meta` tablosuna [key] = [value] yazar.
+  Future<void> setMetaValue(String key, String value) => customStatement(
+    'INSERT OR REPLACE INTO app_meta (key, value) VALUES (?, ?)',
+    [key, value],
   );
 }

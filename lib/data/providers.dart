@@ -47,14 +47,13 @@ final appDatabaseProvider = Provider<AppDatabase>((ref) {
   return db;
 });
 
-/// İlk açılışta içerik paketini veritabanına yükler.
+/// Açılışta içerik paketini veritabanıyla eşitler.
 final appStartupProvider = FutureProvider<void>((ref) async {
   final db = ref.watch(appDatabaseProvider);
   final json = await rootBundle.loadString(seedContentAsset);
-  final seeder = ContentSeeder(db);
-  // Güncellemeyle gelen yeni üniteler mevcut kurulumlara eklenir (CNT-5).
-  if (!await seeder.seedIfEmpty(json)) await seeder.addMissingUnits(json);
-  await seeder.syncRelations(json);
+  // İlk kurulumda içerik yüklenir; güncellemeyle gelen yeni üniteler ve
+  // ilişkiler eklenir (CNT-5). Paket değişmediyse hiçbir şey yapılmaz (NFR-01).
+  await ContentSeeder(db).sync(json);
 });
 
 final contentRepositoryProvider = Provider<ContentRepository>(
