@@ -275,8 +275,9 @@ TextSpan highlightWord(
     spans.add(TextSpan(text: m.group(0), style: mark));
     start = m.end;
   }
-  if (start < sentence.length)
+  if (start < sentence.length) {
     spans.add(TextSpan(text: sentence.substring(start)));
+  }
   return TextSpan(style: base, children: spans);
 }
 
