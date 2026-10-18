@@ -66,5 +66,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<!-- Yalnızca işletim sisteminin standart şifrelemesi kullanılır; App Store
+	     Connect'teki ihracat uyumluluğu sorusunu her sürümde atlar (REL-4). -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

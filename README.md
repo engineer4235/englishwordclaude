@@ -66,6 +66,12 @@ tolerans vardır. Tasarımı bilerek değiştirdikten sonra görüntüleri yenil
 flutter test --update-goldens test/golden
 ```
 
+## Yayın
+
+Google Play ve TestFlight adımları, imza anahtarı ve mağaza metinleri:
+[docs/RELEASE.md](docs/RELEASE.md), `docs/store/`. İmzalı Android paketi
+Actions → **Yayın paketi (Android)** iş akışıyla üretilir.
+
 ## İçerik dosyaları
 
 - `assets/content/seed_content.json` — seviyeler, üniteler, kelimeler, örnek cümleler ve kelime ilişkileri. Gözden geçirme tablosu: `docs/content_review.csv`.
