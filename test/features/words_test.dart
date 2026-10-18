@@ -37,6 +37,12 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('filter-favorites')));
     await tester.pumpAndSettle();
     expect(find.text('Sonuç bulunamadı.'), findsOneWidget);
+
+    // Boş sonuç ekranındaki düğme arama ve filtreleri temizler (EWL-336).
+    await tester.tap(find.byKey(const ValueKey('clear-filters')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('no-results')), findsNothing);
+    expect(find.text('24 kelime'), findsOneWidget);
   });
 
   testWidgets('favori kelimelerle alıştırma başlatılır (FR-93)', (

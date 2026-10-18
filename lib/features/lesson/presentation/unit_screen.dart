@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
+import '../../../core/widgets/empty_state.dart';
 import '../../../data/providers.dart';
 import '../../../domain/models/word.dart';
 import '../../../l10n/app_localizations.dart';
@@ -57,11 +58,18 @@ class _UnitScreenState extends ConsumerState<UnitScreen> {
         ],
       ),
       body: switch (words) {
-        AsyncData(:final value) when value.isEmpty => Center(
-          child: Text(l10n.noWords),
+        AsyncData(:final value) when value.isEmpty => EmptyState(
+          icon: Icons.menu_book_rounded,
+          title: l10n.noWords,
+          actionLabel: l10n.backToMap,
+          actionIcon: Icons.map_rounded,
+          onAction: () => context.go(AppRoutes.levelMap),
         ),
         AsyncData(:final value) => _buildCards(context, value),
-        AsyncError() => Center(child: Text(l10n.loadError)),
+        AsyncError() => EmptyState.error(
+          context,
+          onRetry: () => ref.invalidate(unitWordsProvider(widget.unitId)),
+        ),
         _ => const Center(child: CircularProgressIndicator()),
       },
     );
