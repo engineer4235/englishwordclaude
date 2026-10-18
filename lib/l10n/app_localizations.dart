@@ -862,6 +862,30 @@ abstract class AppLocalizations {
   /// **'Veri'**
   String get sectionData;
 
+  /// No description provided for @sectionLegal.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gizlilik ve yasal'**
+  String get sectionLegal;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gizlilik politikası'**
+  String get privacyPolicy;
+
+  /// No description provided for @privacyPolicyHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Verilerin yalnızca bu cihazda saklanır.'**
+  String get privacyPolicyHint;
+
+  /// No description provided for @kvkkNotice.
+  ///
+  /// In tr, this message translates to:
+  /// **'KVKK aydınlatma metni'**
+  String get kvkkNotice;
+
   /// No description provided for @settingDailyTarget.
   ///
   /// In tr, this message translates to:

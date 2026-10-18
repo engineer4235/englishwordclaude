@@ -9,6 +9,10 @@ abstract final class AppRoutes {
   static const onboarding = '/hosgeldin';
   static const placement = '/seviye-tespit';
 
+  /// Gizlilik politikası ve KVKK aydınlatma metni (REL-3).
+  static const privacy = '$profile/gizlilik';
+  static const kvkk = '$profile/kvkk';
+
   /// Tanıtımın son adımından açılan seviye tespit sınavı.
   static const placementFromOnboarding = '$placement?ilk=1';
 

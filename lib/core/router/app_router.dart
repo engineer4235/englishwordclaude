@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/home_screen.dart';
 import '../../data/providers.dart';
+import '../../features/legal/presentation/legal_screen.dart';
 import '../../features/lesson/presentation/unit_screen.dart';
 import '../../features/level_map/presentation/level_map_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
@@ -13,6 +14,7 @@ import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/stats/presentation/stats_screen.dart';
 import '../../features/word_lists/presentation/word_lists_screen.dart';
 import '../../features/word_lists/presentation/words_screen.dart';
+import '../legal/legal_markup.dart';
 import 'app_routes.dart';
 import 'app_shell.dart';
 
@@ -176,6 +178,18 @@ GoRouter createRouter({
               GoRoute(
                 path: AppRoutes.profile,
                 builder: (context, state) => const ProfileScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'gizlilik',
+                    builder: (context, state) =>
+                        const LegalScreen(document: LegalDocument.privacy),
+                  ),
+                  GoRoute(
+                    path: 'kvkk',
+                    builder: (context, state) =>
+                        const LegalScreen(document: LegalDocument.kvkk),
+                  ),
+                ],
               ),
             ],
           ),
