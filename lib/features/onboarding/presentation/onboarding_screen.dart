@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/notifications/notification_service.dart';
 import '../../../core/router/app_routes.dart';
+import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/brand_logo.dart';
 import '../../../data/providers.dart';
 import '../../../data/repositories/profile_repository.dart';
 import '../../../l10n/app_localizations.dart';
@@ -77,33 +79,48 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final Widget body;
     if (_step < _introPages) {
       final (icon, title, text) = switch (_step) {
-        0 => (Icons.stairs, l10n.intro1Title, l10n.intro1Body),
-        1 => (Icons.psychology, l10n.intro2Title, l10n.intro2Body),
-        _ => (Icons.local_fire_department, l10n.intro3Title, l10n.intro3Body),
+        0 => (Icons.stairs_rounded, l10n.intro1Title, l10n.intro1Body),
+        1 => (Icons.psychology_rounded, l10n.intro2Title, l10n.intro2Body),
+        _ => (
+          Icons.local_fire_department_rounded,
+          l10n.intro3Title,
+          l10n.intro3Body,
+        ),
       };
       body = Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 96, color: theme.colorScheme.primary),
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
+          if (_step == 0)
+            const BrandLogo(size: 148)
+          else
+            _HeroIcon(icon: icon, accent: _step == 2),
+          const SizedBox(height: 32),
           Text(
             title,
-            style: theme.textTheme.headlineSmall,
+            style: theme.textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
-          Text(text, textAlign: TextAlign.center),
-          const SizedBox(height: 24),
+          Text(
+            text,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodyLarge?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: 28),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               for (var i = 0; i < _introPages; i++)
-                Container(
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 250),
                   margin: const EdgeInsets.all(4),
-                  width: 8,
+                  width: i == _step ? 24 : 8,
                   height: 8,
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+                    borderRadius: BorderRadius.circular(999),
                     color: i == _step
                         ? theme.colorScheme.primary
                         : theme.colorScheme.outlineVariant,
@@ -181,6 +198,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          const Center(child: BrandLogo(size: 96)),
+          const SizedBox(height: 24),
           Text(
             l10n.startQuestion,
             style: theme.textTheme.headlineSmall,
@@ -190,20 +209,22 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           FilledButton.icon(
             key: const ValueKey('start-placement'),
             onPressed: _saving ? null : () => _finish(placement: true),
-            icon: const Icon(Icons.quiz),
+            icon: const Icon(Icons.quiz_rounded),
             label: Text(l10n.startPlacement),
           ),
           const SizedBox(height: 4),
           Text(
             l10n.startPlacementHint,
             textAlign: TextAlign.center,
-            style: theme.textTheme.bodySmall,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
           ),
           const SizedBox(height: 24),
           OutlinedButton.icon(
             key: const ValueKey('start-a1'),
             onPressed: _saving ? null : () => _finish(placement: false),
-            icon: const Icon(Icons.play_arrow),
+            icon: const Icon(Icons.play_arrow_rounded),
             label: Text(l10n.startFromA1),
           ),
         ],
@@ -217,15 +238,33 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           child: Column(
             children: [
               if (_step > 0)
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: IconButton(
-                    key: const ValueKey('back'),
-                    tooltip: MaterialLocalizations.of(context)
-                        .backButtonTooltip,
-                    onPressed: () => setState(() => _step--),
-                    icon: const Icon(Icons.arrow_back),
-                  ),
+                Row(
+                  children: [
+                    IconButton(
+                      key: const ValueKey('back'),
+                      tooltip: MaterialLocalizations.of(context)
+                          .backButtonTooltip,
+                      onPressed: () => setState(() => _step--),
+                      icon: const Icon(Icons.arrow_back_rounded),
+                    ),
+                    if (_step >= _goalStep) ...[
+                      const SizedBox(width: 8),
+                      // Ayar adımlarında ilerleme (amaç → başlangıç).
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(999),
+                          child: LinearProgressIndicator(
+                            key: const ValueKey('setup-progress'),
+                            minHeight: 10,
+                            value:
+                                (_step - _goalStep + 1) /
+                                (_startStep - _goalStep + 1),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                    ],
+                  ],
                 ),
               Expanded(child: SingleChildScrollView(child: body)),
               if (_step < _startStep)
@@ -278,7 +317,8 @@ class _Choices extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 24),
-        ...children,
+        for (final child in children)
+          Padding(padding: const EdgeInsets.only(bottom: 10), child: child),
       ],
     );
   }
@@ -301,15 +341,63 @@ class _Option extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Card(
-      color: selected ? scheme.primaryContainer : null,
+    return Material(
+      color: selected ? scheme.primaryContainer : scheme.surfaceContainerLowest,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppTheme.radius),
+        side: BorderSide(
+          color: selected ? scheme.primary : scheme.outlineVariant,
+          width: 2,
+        ),
+      ),
       child: ListTile(
-        leading: Icon(icon),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+        leading: Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: selected ? scheme.primary : scheme.primaryContainer,
+          ),
+          child: Icon(
+            icon,
+            size: 22,
+            color: selected ? scheme.onPrimary : scheme.onPrimaryContainer,
+          ),
+        ),
         title: Text(label),
-        trailing: selected ? const Icon(Icons.check_circle) : null,
+        trailing: selected
+            ? Icon(Icons.check_circle_rounded, color: scheme.primary)
+            : null,
         selected: selected,
+        selectedColor: scheme.onPrimaryContainer,
         onTap: onTap,
       ),
+    );
+  }
+}
+
+/// Tanıtım sayfalarındaki büyük simge.
+class _HeroIcon extends StatelessWidget {
+  const _HeroIcon({required this.icon, required this.accent});
+
+  final IconData icon;
+
+  /// Kehribar vurgu (seri sayfası).
+  final bool accent;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final colors = AppColors.of(context);
+    final bg = accent ? colors.streakContainer : scheme.primaryContainer;
+    final fg = accent ? colors.streak : scheme.primary;
+    return Container(
+      width: 148,
+      height: 148,
+      decoration: BoxDecoration(color: bg, shape: BoxShape.circle),
+      child: Icon(icon, size: 76, color: fg),
     );
   }
 }

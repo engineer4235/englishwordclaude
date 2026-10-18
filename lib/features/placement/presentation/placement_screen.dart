@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
+import '../../../core/theme/app_theme.dart';
 import '../../../data/providers.dart';
 import '../../../domain/exercise/exercise.dart';
 import '../../../domain/models/level.dart';
@@ -156,15 +157,26 @@ class _Intro extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Icon(
-          Icons.quiz,
-          size: 80,
-          color: Theme.of(context).colorScheme.primary,
+        Center(
+          child: Container(
+            width: 132,
+            height: 132,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              Icons.quiz_rounded,
+              size: 64,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
         ),
-        const SizedBox(height: 24),
+        const SizedBox(height: 28),
         Text(
           hasContent ? l10n.placementIntro : l10n.placementNoContent,
           textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
         const SizedBox(height: 32),
         if (hasContent)
@@ -204,17 +216,43 @@ class _Question extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(l10n.placementQuestion(number), style: theme.textTheme.labelLarge),
-        const SizedBox(height: 8),
-        LinearProgressIndicator(value: number / PlacementExam.maxQuestions),
-        const SizedBox(height: 32),
-        Text(
-          question.prompt,
-          key: const ValueKey('prompt'),
-          style: theme.textTheme.headlineMedium,
-          textAlign: TextAlign.center,
+        Row(
+          children: [
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(999),
+                child: LinearProgressIndicator(
+                  minHeight: 10,
+                  value: number / PlacementExam.maxQuestions,
+                ),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Flexible(
+              flex: 0,
+              child: Text(
+                l10n.placementQuestion(number),
+                style: theme.textTheme.labelLarge,
+              ),
+            ),
+          ],
         ),
-        const SizedBox(height: 32),
+        const SizedBox(height: 24),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.surfaceContainerLowest,
+            borderRadius: BorderRadius.circular(AppTheme.radiusLarge),
+            border: Border.all(color: theme.colorScheme.outlineVariant),
+          ),
+          child: Text(
+            question.prompt,
+            key: const ValueKey('prompt'),
+            style: theme.textTheme.headlineMedium,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        const SizedBox(height: 24),
         for (var i = 0; i < question.options.length; i++)
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
@@ -259,22 +297,62 @@ class _Result extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final colors = AppColors.of(context);
     final level = recommended;
     if (level == null) return Center(child: Text(l10n.placementNoContent));
     final start = this.start ?? level;
     return ListView(
       children: [
-        Icon(Icons.emoji_events, size: 80, color: theme.colorScheme.primary),
-        const SizedBox(height: 16),
-        Text(
-          l10n.placementResultTitle('${level.code} – ${level.title}'),
-          style: theme.textTheme.headlineSmall,
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 12),
-        Text(
-          l10n.placementResultBody(correct, total),
-          textAlign: TextAlign.center,
+        Container(
+          key: const ValueKey('placement-hero'),
+          padding: const EdgeInsets.fromLTRB(20, 28, 20, 24),
+          decoration: BoxDecoration(
+            color: scheme.primary,
+            borderRadius: BorderRadius.circular(AppTheme.radiusLarge + 6),
+          ),
+          child: Column(
+            children: [
+              Container(
+                width: 96,
+                height: 96,
+                decoration: BoxDecoration(
+                  color: colors.streakContainer,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: colors.streak, width: 4),
+                ),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: FittedBox(
+                      child: Text(
+                        level.code,
+                        style: theme.textTheme.headlineMedium?.copyWith(
+                          color: colors.onStreakContainer,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                l10n.placementResultTitle('${level.code} – ${level.title}'),
+                style: theme.textTheme.titleLarge?.copyWith(
+                  color: scheme.onPrimary,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                l10n.placementResultBody(correct, total),
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  color: scheme.onPrimary,
+                ),
+              ),
+            ],
+          ),
         ),
         if (start.id != level.id) ...[
           const SizedBox(height: 12),
@@ -296,6 +374,7 @@ class _Result extends StatelessWidget {
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
+            runSpacing: 8,
             children: [
               for (final l in lower)
                 OutlinedButton(
