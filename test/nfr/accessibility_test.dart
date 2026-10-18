@@ -54,6 +54,15 @@ void main() {
       await tapAndSettle(t, find.byTooltip('Ünite sınavı'));
       await tapAndSettle(t, find.byType(OutlinedButton));
     },
+    'Sınav sonucu': (t) async {
+      await tapNav(t, 'Harita');
+      await tapAndSettle(t, find.text('Aile'));
+      await tapAndSettle(t, find.byTooltip('Ünite sınavı'));
+      while (find.byKey(const Key('score')).evaluate().isEmpty) {
+        await tapAndSettle(t, find.byType(OutlinedButton));
+        await tapAndSettle(t, find.byKey(const Key('continue')));
+      }
+    },
     'Kelime kartı': (t) async {
       await tapNav(t, 'Kelimelerim');
       await tapAndSettle(
