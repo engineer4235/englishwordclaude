@@ -97,7 +97,7 @@ abstract class AppLocalizations {
   /// Uygulama adı
   ///
   /// In tr, this message translates to:
-  /// **'İngilizce Kelime'**
+  /// **'Learn English at Home'**
   String get appTitle;
 
   /// No description provided for @navHome.

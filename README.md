@@ -33,3 +33,8 @@ Klasör yapısı SRS 5.2'deki feature-first düzeni izler: `lib/core`, `lib/data
 ## Çevrimdışı çalışma ve dayanıklılık
 
 Uygulama tamamen yereldir: içerik pakette gelir, ilerleme cihazdaki SQLite veritabanında tutulur (NFR-03). `test/nfr/offline_test.dart` bunu kontrol listesiyle denetler: bağımlılıklarda ve kodda ağ erişimi olmadığını; "uçak modunda" (her bağlantı denemesi hata verir) tekrar, ders, ünite sınavı ve seviye tespit sınavının sonuna kadar yapılabildiğini; ders ortasında kapanıp açılan uygulamada cevapların, XP'nin ve ünite durumunun korunduğunu (REL-2). Her cevabın anında kaydedildiği `test/nfr/persistence_test.dart` ile ayrıca doğrulanır (NFR-05).
+
+## Uygulama kimliği
+
+- Ad: **Learn English at Home** (Android `android:label`, iOS `CFBundleDisplayName`, uygulama başlığı `appTitle`).
+- Logo kaynağı: `assets/branding/logo_source.webp` (şimdilik 256 px; mağaza öncesi asıl çözünürlükteki görselle değiştirilecek). Android (klasik ve uyarlanabilir) ve iOS simgeleri ile `assets/branding/logo.png` şu komutla yeniden üretilir: `pip install pillow && python3 tool/gen_icons.py`.

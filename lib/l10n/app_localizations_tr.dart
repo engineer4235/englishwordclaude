@@ -10,7 +10,7 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get appTitle => 'İngilizce Kelime';
+  String get appTitle => 'Learn English at Home';
 
   @override
   String get navHome => 'Ana Sayfa';
