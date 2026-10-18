@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/tts/tts_service.dart';
+import '../../../core/widgets/empty_state.dart';
 import '../../../data/providers.dart';
 import '../../../domain/models/home_summary.dart';
 import '../../../domain/models/progress.dart';
@@ -40,8 +41,13 @@ class HomeScreen extends ConsumerWidget {
             },
             child: _HomeBody(summary: s, nextUnit: _nextUnit(l)),
           ),
-        (AsyncError(), _) ||
-        (_, AsyncError()) => Center(child: Text(l10n.loadError)),
+        (AsyncError(), _) || (_, AsyncError()) => EmptyState.error(
+          context,
+          onRetry: () {
+            ref.invalidate(homeSummaryProvider);
+            ref.invalidate(levelOverviewProvider);
+          },
+        ),
         _ => const Center(child: CircularProgressIndicator()),
       },
     );

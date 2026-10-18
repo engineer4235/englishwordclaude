@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
+import '../../../core/widgets/empty_state.dart';
 import '../../../data/providers.dart';
 import '../../../data/repositories/word_list_repository.dart';
 import '../../../domain/models/word_list.dart';
@@ -31,17 +32,20 @@ class WordListsScreen extends ConsumerWidget {
         },
       ),
       body: switch (lists) {
-        AsyncData(:final value) when value.isEmpty => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(32),
-            child: Text(l10n.noLists, textAlign: TextAlign.center),
-          ),
+        AsyncData(:final value) when value.isEmpty => EmptyState(
+          key: const ValueKey('no-lists'),
+          icon: Icons.collections_bookmark_rounded,
+          title: l10n.noListsTitle,
+          message: l10n.noLists,
         ),
         AsyncData(:final value) => ListView(
           padding: const EdgeInsets.only(bottom: 88),
           children: [for (final list in value) _ListTile(list: list)],
         ),
-        AsyncError() => Center(child: Text(l10n.loadError)),
+        AsyncError() => EmptyState.error(
+          context,
+          onRetry: () => ref.invalidate(wordListsProvider),
+        ),
         _ => const Center(child: CircularProgressIndicator()),
       },
     );

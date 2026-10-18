@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
+import '../../../core/widgets/empty_state.dart';
 import '../../../data/providers.dart';
 import '../../../data/repositories/progress_repository.dart';
 import '../../../domain/models/progress.dart';
@@ -24,7 +25,10 @@ class LevelMapScreen extends ConsumerWidget {
           itemCount: value.length,
           itemBuilder: (context, i) => _LevelCard(level: value[i]),
         ),
-        AsyncError() => Center(child: Text(l10n.loadError)),
+        AsyncError() => EmptyState.error(
+          context,
+          onRetry: () => ref.invalidate(levelOverviewProvider),
+        ),
         _ => const Center(child: CircularProgressIndicator()),
       },
     );

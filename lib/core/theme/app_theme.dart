@@ -175,6 +175,16 @@ abstract final class AppTheme {
           textStyle: buttonText,
         ),
       ),
+      // Sayfa geçişleri (EWL-336): Android'de ileri doğru kayarak solma;
+      // diğer platformlar Flutter varsayılanında (iOS'ta yerel kaydırma).
+      pageTransitionsTheme: PageTransitionsTheme(
+        builders: {
+          ...const PageTransitionsTheme().builders,
+          TargetPlatform.android: FadeForwardsPageTransitionsBuilder(
+            backgroundColor: scheme.surface,
+          ),
+        },
+      ),
       navigationBarTheme: NavigationBarThemeData(
         height: 72,
         elevation: 0,

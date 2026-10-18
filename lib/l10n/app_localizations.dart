@@ -1237,7 +1237,7 @@ abstract class AppLocalizations {
   /// No description provided for @noLists.
   ///
   /// In tr, this message translates to:
-  /// **'Henüz listen yok. Kelimeleri kendi listelerinde toplamak için yeni bir liste oluştur.'**
+  /// **'Kelimeleri kendi listelerinde toplamak için yeni bir liste oluştur.'**
   String get noLists;
 
   /// No description provided for @searchHint.
@@ -1281,6 +1281,30 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Sonuç bulunamadı.'**
   String get noResults;
+
+  /// No description provided for @noResultsHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aramanı ya da filtreleri değiştirmeyi dene.'**
+  String get noResultsHint;
+
+  /// No description provided for @clearFilters.
+  ///
+  /// In tr, this message translates to:
+  /// **'Filtreleri temizle'**
+  String get clearFilters;
+
+  /// No description provided for @noListsTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz listen yok'**
+  String get noListsTitle;
+
+  /// No description provided for @retry.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar dene'**
+  String get retry;
 
   /// No description provided for @notifReminderTitle.
   ///

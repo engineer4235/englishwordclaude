@@ -661,7 +661,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get noLists =>
-      'Henüz listen yok. Kelimeleri kendi listelerinde toplamak için yeni bir liste oluştur.';
+      'Kelimeleri kendi listelerinde toplamak için yeni bir liste oluştur.';
 
   @override
   String get searchHint => 'İngilizce ya da Türkçe ara';
@@ -685,6 +685,18 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get noResults => 'Sonuç bulunamadı.';
+
+  @override
+  String get noResultsHint => 'Aramanı ya da filtreleri değiştirmeyi dene.';
+
+  @override
+  String get clearFilters => 'Filtreleri temizle';
+
+  @override
+  String get noListsTitle => 'Henüz listen yok';
+
+  @override
+  String get retry => 'Tekrar dene';
 
   @override
   String get notifReminderTitle => 'Kelime zamanı!';
