@@ -38,6 +38,18 @@ dart run tool/check_coverage.dart --min 70
 `test/architecture_test.dart` katman kurallarını denetler: domain saf Dart'tır,
 veri katmanı arayüze bağımlı değildir, ekranlar veritabanına doğrudan erişmez.
 
+## Ekran görüntüsü (golden) testleri
+
+`test/golden/` ana ekranların açık/koyu tema, küçük telefon (büyük yazı) ve
+tablet görüntülerini `test/golden/goldens/` altındaki PNG'lerle karşılaştırır.
+Uygulama saati sabit bir güne bağlıdır (`clockProvider`), böylece görüntüler
+günden güne değişmez. Flutter sürümleri arasındaki küçük farklar için %1,5
+tolerans vardır. Tasarımı bilerek değiştirdikten sonra görüntüleri yenileyin:
+
+```sh
+flutter test --update-goldens test/golden
+```
+
 ## İçerik dosyaları
 
 - `assets/content/seed_content.json` — seviyeler, üniteler, kelimeler, örnek cümleler ve kelime ilişkileri. Gözden geçirme tablosu: `docs/content_review.csv`.

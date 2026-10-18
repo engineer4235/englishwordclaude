@@ -63,17 +63,20 @@ class _Onboarded extends OnboardingStatus {
 }
 
 /// Bellek içi veritabanı ve sahte TTS ile uygulama. [onboarded] `false`
-/// verilirse tanıtım ekranı gösterilir.
+/// verilirse tanıtım ekranı gösterilir; [now] verilirse uygulama saati o ana
+/// sabitlenir.
 Widget testApp(
   AppDatabase db, {
   FakeTts? tts,
   FakeNotifications? notifications,
   Widget? child,
   bool onboarded = true,
+  DateTime? now,
 }) {
   return ProviderScope(
     overrides: [
       if (onboarded) onboardingStatusProvider.overrideWith(_Onboarded.new),
+      if (now != null) clockProvider.overrideWithValue(() => now),
       appDatabaseProvider.overrideWithValue(db),
       appStartupProvider.overrideWith((ref) async {
         final seeder = ContentSeeder(db);

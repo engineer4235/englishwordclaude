@@ -54,7 +54,10 @@ class _StatsScreenState extends ConsumerState<StatsScreen> {
                 const SizedBox(height: 12),
                 _AccuracyCard(stats: s),
                 const SizedBox(height: 12),
-                _ForecastCard(upcoming: s.upcoming),
+                _ForecastCard(
+                  upcoming: s.upcoming,
+                  today: ref.watch(clockProvider)(),
+                ),
                 const SizedBox(height: 12),
                 _LevelsCard(levels: l),
               ],
@@ -410,16 +413,18 @@ String exerciseTypeLabel(AppLocalizations l10n, ExerciseType type) =>
     };
 
 class _ForecastCard extends StatelessWidget {
-  const _ForecastCard({required this.upcoming});
+  const _ForecastCard({required this.upcoming, required this.today});
 
   final List<int> upcoming;
+
+  /// Gün adları için bugünün tarihi.
+  final DateTime today;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final weekdays = MaterialLocalizations.of(context).narrowWeekdays;
-    final today = DateTime.now();
     final maxCount = upcoming.fold(1, (a, b) => math.max(a, b));
     final total = upcoming.fold(0, (a, b) => a + b);
     const chartHeight = 80.0;
