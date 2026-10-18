@@ -25,6 +25,19 @@ flutter analyze && flutter test
 
 Klasör yapısı SRS 5.2'deki feature-first düzeni izler: `lib/core`, `lib/data`, `lib/domain`, `lib/features`, `lib/l10n`.
 
+## Test kapsamı ve mimari kurallar
+
+İş mantığı katmanlarının (`lib/domain`, `lib/data`) birim test kapsamı en az
+%70 olmalıdır (NFR-10). CI her çalışmada ölçer; yerelde:
+
+```sh
+flutter test --coverage
+dart run tool/check_coverage.dart --min 70
+```
+
+`test/architecture_test.dart` katman kurallarını denetler: domain saf Dart'tır,
+veri katmanı arayüze bağımlı değildir, ekranlar veritabanına doğrudan erişmez.
+
 ## İçerik dosyaları
 
 - `assets/content/seed_content.json` — seviyeler, üniteler, kelimeler, örnek cümleler ve kelime ilişkileri. Gözden geçirme tablosu: `docs/content_review.csv`.
