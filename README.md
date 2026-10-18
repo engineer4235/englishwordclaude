@@ -41,6 +41,30 @@ Mağaza sayfasına gizlilik politikası adresi olarak ilki girilir.
 
 Yayından önce metinlerdeki `[Veri sorumlusunun adı soyadı / unvanı]` ve `[Adres]`
 yer tutucuları doldurulmalı ve metinler bir hukukçuya gözden geçirtilmelidir.
+## Test kapsamı ve mimari kurallar
+
+İş mantığı katmanlarının (`lib/domain`, `lib/data`) birim test kapsamı en az
+%70 olmalıdır (NFR-10). CI her çalışmada ölçer; yerelde:
+
+```sh
+flutter test --coverage
+dart run tool/check_coverage.dart --min 70
+```
+
+`test/architecture_test.dart` katman kurallarını denetler: domain saf Dart'tır,
+veri katmanı arayüze bağımlı değildir, ekranlar veritabanına doğrudan erişmez.
+
+## Ekran görüntüsü (golden) testleri
+
+`test/golden/` ana ekranların açık/koyu tema, küçük telefon (büyük yazı) ve
+tablet görüntülerini `test/golden/goldens/` altındaki PNG'lerle karşılaştırır.
+Uygulama saati sabit bir güne bağlıdır (`clockProvider`), böylece görüntüler
+günden güne değişmez. Flutter sürümleri arasındaki küçük farklar için %1,5
+tolerans vardır. Tasarımı bilerek değiştirdikten sonra görüntüleri yenileyin:
+
+```sh
+flutter test --update-goldens test/golden
+```
 
 ## İçerik dosyaları
 

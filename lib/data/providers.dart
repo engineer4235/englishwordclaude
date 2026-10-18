@@ -37,6 +37,10 @@ const seedContentAsset = 'assets/content/seed_content.json';
 const placementPoolAsset = 'assets/content/placement_pool.json';
 
 /// Veritabanı tek örnek olarak tutulur ve sağlayıcı kapanınca kapatılır.
+/// Şimdiki zaman. Testlerde (ör. ekran görüntüsü testleri) sabit bir güne
+/// bağlanabilsin diye sağlayıcı üzerinden okunur.
+final clockProvider = Provider<DateTime Function()>((ref) => DateTime.now);
+
 final appDatabaseProvider = Provider<AppDatabase>((ref) {
   final db = AppDatabase();
   ref.onDispose(db.close);
@@ -319,7 +323,10 @@ final wordOfDayProvider = FutureProvider<Word?>((ref) async {
     for (final w in words)
       if (openUnits.contains(w.unitId)) w,
   ];
-  return pickWordOfDay(candidates.isEmpty ? words : candidates, DateTime.now());
+  return pickWordOfDay(
+    candidates.isEmpty ? words : candidates,
+    ref.watch(clockProvider)(),
+  );
 });
 
 /// Ayarlara ve bugünkü duruma göre planlanan bildirimler (FR-100..102).

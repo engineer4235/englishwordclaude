@@ -118,6 +118,8 @@ class _Settings extends ConsumerWidget {
     final messenger = ScaffoldMessenger.of(context);
     final format = await showModalBottomSheet<String>(
       context: context,
+      // Tablette ortalanmış içerikten taşıp tüm ekranı kaplasın (EWL-337).
+      useRootNavigator: true,
       showDragHandle: true,
       builder: (context) => SafeArea(
         child: Column(

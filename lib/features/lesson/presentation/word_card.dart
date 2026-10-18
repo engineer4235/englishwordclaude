@@ -98,6 +98,8 @@ class WordCard extends ConsumerWidget {
                       icon: const Icon(Icons.playlist_add_rounded),
                       onPressed: () => showModalBottomSheet<void>(
                         context: context,
+                        // Tablette ortalanmış içerikten taşıp tüm ekranı kaplasın (EWL-337).
+                        useRootNavigator: true,
                         showDragHandle: true,
                         builder: (context) => AddToListSheet(wordId: word.id),
                       ),
@@ -273,8 +275,9 @@ TextSpan highlightWord(
     spans.add(TextSpan(text: m.group(0), style: mark));
     start = m.end;
   }
-  if (start < sentence.length)
+  if (start < sentence.length) {
     spans.add(TextSpan(text: sentence.substring(start)));
+  }
   return TextSpan(style: base, children: spans);
 }
 
