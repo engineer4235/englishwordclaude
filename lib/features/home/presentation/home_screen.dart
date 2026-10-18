@@ -385,6 +385,8 @@ class _WordOfDayCard extends ConsumerWidget {
       child: InkWell(
         onTap: () => showModalBottomSheet<void>(
           context: context,
+          // Tablette ortalanmış içerikten taşıp tüm ekranı kaplasın (EWL-337).
+          useRootNavigator: true,
           isScrollControlled: true,
           showDragHandle: true,
           builder: (context) => FractionallySizedBox(

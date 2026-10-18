@@ -98,6 +98,8 @@ class WordCard extends ConsumerWidget {
                       icon: const Icon(Icons.playlist_add_rounded),
                       onPressed: () => showModalBottomSheet<void>(
                         context: context,
+                        // Tablette ortalanmış içerikten taşıp tüm ekranı kaplasın (EWL-337).
+                        useRootNavigator: true,
                         showDragHandle: true,
                         builder: (context) => AddToListSheet(wordId: word.id),
                       ),

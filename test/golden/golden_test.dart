@@ -53,10 +53,19 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  Future<void> snapshot(WidgetTester tester, String name) => expectLater(
-    find.byType(MaterialApp),
-    matchesGoldenFile('goldens/$name.png'),
-  );
+  Future<void> snapshot(WidgetTester tester, String name) async {
+    // Görseller (ör. logo) testte eşzamansız çözülür; görüntüden önce yükle.
+    await tester.runAsync(() async {
+      for (final element in find.byType(Image).evaluate()) {
+        await precacheImage((element.widget as Image).image, element);
+      }
+    });
+    await tester.pumpAndSettle();
+    await expectLater(
+      find.byType(MaterialApp),
+      matchesGoldenFile('goldens/$name.png'),
+    );
+  }
 
   const phone = Size(390, 844);
   const smallPhone = Size(320, 568);
@@ -98,6 +107,26 @@ void main() {
       });
     }
 
+    testWidgets('alt menü etiketleri tek satırda kalır', (tester) async {
+      await open(tester, size: smallPhone, textScale: 1.3);
+      Size label(String text) => tester.getSize(
+        find.descendant(
+          of: find.byType(NavigationBar),
+          matching: find.text(text),
+        ),
+      );
+      // "Profil" her zaman tek satırdır; uzun etiketler de aynı yükseklikte
+      // olmalı (bölünmemeli).
+      final oneLine = label('Profil').height;
+      for (final text in ['Ana Sayfa', 'Harita', 'Kelimelerim', 'İstatistik']) {
+        expect(
+          label(text).height,
+          lessThanOrEqualTo(oneLine + 1),
+          reason: text,
+        );
+      }
+    });
+
     testWidgets('ana sayfa görüntüsü', (tester) async {
       await open(tester, size: smallPhone, textScale: 1.3);
       await snapshot(tester, 'home_small_text130');
@@ -105,6 +134,13 @@ void main() {
   });
 
   group('tablet', () {
+    testWidgets('içerik okunabilir genişlikte ortalanır', (tester) async {
+      await open(tester, size: tablet);
+      final appBar = tester.getRect(find.byType(AppBar).first);
+      expect(appBar.width, lessThanOrEqualTo(840));
+      expect(appBar.center.dx, closeTo(tablet.width / 2, 1));
+    });
+
     for (final screen in screens.entries) {
       testWidgets('${screen.key} taşmaz', (tester) async {
         await open(tester, size: tablet);
