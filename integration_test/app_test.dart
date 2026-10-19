@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:english_word_learning/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
@@ -116,7 +117,12 @@ void main() {
       await tester.pumpAndSettle();
     }
     var slowest = 0;
-    await binding.watchPerformance(() async {
+    // Kare süreleri motorun kendi ölçümünden (FrameTiming) toplanır; VM
+    // servisi gerektirmez, her cihazda çalışır.
+    final timings = <FrameTiming>[];
+    void onTimings(List<FrameTiming> t) => timings.addAll(t);
+    SchedulerBinding.instance.addTimingsCallback(onTimings);
+    await (() async {
       for (final tab in [
         'Harita',
         'Kelimelerim',
@@ -132,16 +138,22 @@ void main() {
         if (sw.elapsedMilliseconds > slowest) slowest = sw.elapsedMilliseconds;
         await tester.pumpAndSettle();
       }
-    }, reportKey: 'gecis_kareleri');
+    })();
+    SchedulerBinding.instance.removeTimingsCallback(onTimings);
     check('en_yavas_gecis_ms', slowest, 100);
 
-    final frames = binding.reportData?['gecis_kareleri'];
-    if (frames is Map) {
-      final build = frames['90th_percentile_frame_build_time_millis'];
-      final raster = frames['90th_percentile_frame_rasterizer_time_millis'];
-      if (build is num) check('kare_build_p90_ms', build, 16.7);
-      if (raster is num) check('kare_raster_p90_ms', raster, 16.7);
+    double p90(Iterable<Duration> d) {
+      final ms = [for (final x in d) x.inMicroseconds / 1000]..sort();
+      return ms.isEmpty ? 0 : ms[((ms.length - 1) * 0.9).round()];
     }
+
+    report['kare_sayisi'] = timings.length;
+    check('kare_build_p90_ms', p90(timings.map((t) => t.buildDuration)), 16.7);
+    check(
+      'kare_raster_p90_ms',
+      p90(timings.map((t) => t.rasterDuration)),
+      16.7,
+    );
     binding.reportData = {...?binding.reportData, 'olcumler': report};
     // ignore: avoid_print
     print('Platform: ${Platform.operatingSystem} — ölçümler: $report');
