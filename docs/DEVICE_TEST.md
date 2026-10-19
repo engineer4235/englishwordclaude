@@ -6,11 +6,20 @@ uygulanır. Otomatik kısım her birleştirmede CI'da da çalışır
 
 ## 1. Otomatik ölçüm (NFR-01, NFR-02, NFR-06, NFR-11)
 
-Uygulamayı silip (temiz kurulum) telefonu USB ile bağlayın:
+Uygulamayı silip (temiz kurulum) telefonu USB ile bağlayın. Süreler
+**profil modunda** ölçülmelidir; hata ayıklama (debug) derlemesi birkaç kat
+yavaştır ve sınırları her zaman aşar:
 
 ```sh
-flutter test integration_test --dart-define=STRICT_PERF=true -d <cihaz>
+flutter drive --profile -d <cihaz> \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  --dart-define=STRICT_PERF=true
 ```
+
+CI'daki emülatör/simülatör çalışması hata ayıklama derlemesiyle ve yazılımla
+çizimle yapılır; orada yalnız akışın çalıştığı doğrulanır, süreler bilgi
+amaçlıdır.
 
 Test, tanıtımı geçip ilk derse girer ve sekmeler arasında gezinir. Çıktıda
 şu satırlar görünür; `STRICT_PERF` ile sınır aşılırsa test kırmızı olur:
