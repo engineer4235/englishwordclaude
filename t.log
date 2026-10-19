@@ -1,0 +1,724 @@
+Resolving dependencies...
+Downloading packages...
+  build 4.0.11 (5.0.0 available)
+  build_config 1.3.3 (1.4.0 available)
+  build_daemon 4.1.6 (4.1.7 available)
+  build_runner 2.16.2 (2.17.1 available)
+  code_assets 1.2.02:48 +437 ~6 -1: Some tests failed.
+02:34 +345 ~6 -1: /workspaces/englishwordclaude/test/core/licenses_test.dart: profilden lisans sayfası açılır [E]
+0.2 (18.1.0 available)
+  hooks 2.0.2 (2.2.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  material_ui 1.6.0 (1.7.0 available)
+  meta 1.18.3 (1.19.0 available)
+  native_toolchain_c 0.19.2 (0.19.5 available)
+  objective_c 9.5.0 (9.6.2 available)
+  petitparser 7.0.2 (7.1.0 available)
+  record_use 0.6.0 (1.1.1 available)
+  shelf 1.4.2 (1.4.3 available)
+  source_gen 4.3.0 (4.3.1 available)
+  sqlite3 3.5.2 (3.7.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.3 available)
+  vm_service 15.3.0 (15.4.0 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+24 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /workspaces/englishwordclaude/test/store/store_screenshots_test.dart
+00:00 +0: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: (setUpAll)
+00:00 +0: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: 1 ana sayfa
+00:00 +0 ~1: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: 2 harita
+00:00 +0 ~2: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: 3 alıştırma
+00:00 +0 ~3: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: 4 istatistik
+00:00 +0 ~4: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: 5 profil
+00:00 +0 ~5: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: 6 koyu tema
+00:00 +0 ~6: /workspaces/englishwordclaude/test/store/store_screenshots_test.dart: (tearDownAll)
+00:00 +0 ~6: loading /workspaces/englishwordclaude/test/data/migration_test.dart
+00:00 +0 ~6: /workspaces/englishwordclaude/test/data/migration_test.dart: şema 1 → güncel: veri korunur, yeni alanlar varsayılanla gelir
+00:00 +1 ~6: /workspaces/englishwordclaude/test/data/migration_test.dart: güncel şemada yeniden açmak veriyi değiştirmez
+00:00 +2 ~6: loading /workspaces/englishwordclaude/test/data/review_repository_test.dart
+00:01 +2 ~6: /workspaces/englishwordclaude/test/data/review_repository_test.dart: yeni kelimenin durumu başlangıç durumudur
+00:01 +3 ~6: /workspaces/englishwordclaude/test/data/review_repository_test.dart: cevap kaydedilir ve günlüğe yazılır
+00:02 +4 ~6: /workspaces/englishwordclaude/test/data/review_repository_test.dart: doğru cevapta tarih ileri, yanlışta 1 gün sonraya alınır (kabul 4)
+00:02 +5 ~6: /workspaces/englishwordclaude/test/data/review_repository_test.dart: "biliyorum" kelimeyi 21 gün sonraya alır (FR-34)
+00:02 +6 ~6: /workspaces/englishwordclaude/test/data/review_repository_test.dart: zamanı gelen tekrarlar sayılır (FR-64)
+00:02 +7 ~6: loading /workspaces/englishwordclaude/test/data/study_repository_test.dart
+00:02 +7 ~6: /workspaces/englishwordclaude/test/data/study_repository_test.dart: XP: yeni kelime 15, tekrar 10, sınav 20, yanlış 0 (FR-70)
+00:03 +8 ~6: /workspaces/englishwordclaude/test/data/study_repository_test.dart: günlük hedef tamamlanınca seri 1 olur (FR-71)
+00:03 +9 ~6: /workspaces/englishwordclaude/test/data/study_repository_test.dart: art arda günlerde seri artar, gün kaçınca 0 görünür (kabul 7)
+00:03 +10 ~6: /workspaces/englishwordclaude/test/data/study_repository_test.dart: 7 günlük seri koruma kazandırır, kaçırılan gün kurtarılır (FR-72)
+00:03 +11 ~6: /workspaces/englishwordclaude/test/data/study_repository_test.dart: en fazla 2 seri koruması birikir
+00:03 +12 ~6: /workspaces/englishwordclaude/test/data/study_repository_test.dart: zamanı gelen tekrarlar sayılır (FR-64)
+00:03 +13 ~6: loading /workspaces/englishwordclaude/test/data/stats_repository_test.dart
+00:04 +13 ~6: /workspaces/englishwordclaude/test/data/stats_repository_test.dart: durum dağılımı ve son 30 günlük aktivite (FR-80, FR-81)
+00:04 +14 ~6: /workspaces/englishwordclaude/test/data/stats_repository_test.dart: doğruluk oranı ve gelecek tekrar yükü (FR-83, FR-85)
+00:04 +15 ~6: /workspaces/englishwordclaude/test/data/stats_repository_test.dart: ilerleme sıfırlanır, ayarlar korunur (FR-123)
+00:04 +16 ~6: loading /workspaces/englishwordclaude/test/data/placement_profile_test.dart
+00:05 +16 ~6: /workspaces/englishwordclaude/test/data/placement_profile_test.dart: seviye tespiti alt seviyeleri tamamlar ve kelimeleri bilinen sayar (FR-12, FR-13)
+00:05 +17 ~6: /workspaces/englishwordclaude/test/data/placement_profile_test.dart: A1 seçilince hiçbir kelime bilinen sayılmaz
+00:05 +18 ~6: /workspaces/englishwordclaude/test/data/placement_profile_test.dart: tanıtım seçimleri profile kaydedilir (FR-02..04)
+00:05 +19 ~6: loading /workspaces/englishwordclaude/test/data/content_repository_test.dart
+00:05 +19 ~6: /workspaces/englishwordclaude/test/data/content_repository_test.dart: seviyeler sıralarına göre döner
+00:06 +20 ~6: /workspaces/englishwordclaude/test/data/content_repository_test.dart: bir ünitenin kelimeleri döner
+00:06 +21 ~6: /workspaces/englishwordclaude/test/data/content_repository_test.dart: yeni kelime kartı varsayılan SM-2 değerleriyle oluşur
+00:06 +22 ~6: loading /workspaces/englishwordclaude/test/data/notes_repository_test.dart
+00:06 +22 ~6: /workspaces/englishwordclaude/test/data/notes_repository_test.dart: not kaydedilir, güncellenir ve boş not silinir (FR-36)
+00:06 +23 ~6: /workspaces/englishwordclaude/test/data/notes_repository_test.dart: uzun not en fazla uzunlukta kesilir
+00:06 +24 ~6: loading /workspaces/englishwordclaude/test/data/word_list_repository_test.dart
+00:07 +24 ~6: /workspaces/englishwordclaude/test/data/word_list_repository_test.dart: liste oluşturulur, kelime eklenir ve sayılır (FR-91)
+00:07 +25 ~6: /workspaces/englishwordclaude/test/data/word_list_repository_test.dart: yeniden adlandırma ve silme; kelimeler etkilenmez
+00:07 +26 ~6: /workspaces/englishwordclaude/test/data/word_list_repository_test.dart: boş ad kabul edilmez, uzun ad kısaltılır
+00:07 +27 ~6: loading /workspaces/englishwordclaude/test/data/content_seeder_test.dart
+00:08 +27 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: içerik paketinde her kelimenin anlamı ve en az 2 örneği var (FR-30)
+00:08 +28 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: içerik yüklenir, ilk seviye ve ilk ünite açık başlar
+00:08 +29 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: içerik paketinde kelimeler tekrar etmez
+00:08 +30 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: güncellemeyle gelen yeni üniteler eklenir (CNT-5)
+00:09 +31 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: açık ama ünitesiz seviyeye gelen ilk ünite açılır
+00:09 +32 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: kilitli seviyeye gelen üniteler kilitli kalır
+00:09 +33 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: kelime ilişkileri iki yönlü eklenir ve tekrar edilmez (FR-33)
+00:09 +34 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: ilişkisi olmayan kelimede boş küme döner
+00:09 +35 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: sync: aynı paket ikinci kez uygulanmaz, yeni paket uygulanır
+00:09 +36 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: sync: kelime kimlikleri yükleme sırasıyla verilir
+00:09 +37 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: contentKey sürüm ve uzunluktan oluşur
+00:09 +38 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: güncellemeyle mevcut ünitelere gelen kelimeler eklenir
+00:09 +39 ~6: /workspaces/englishwordclaude/test/data/content_seeder_test.dart: sync: eski kurulum yeni kelime ve üniteleri birlikte alır
+00:09 +40 ~6: loading /workspaces/englishwordclaude/test/data/progress_repository_test.dart
+00:10 +40 ~6: /workspaces/englishwordclaude/test/data/progress_repository_test.dart: başlangıçta yalnız A1 ve ilk ünitesi açık
+00:10 +41 ~6: /workspaces/englishwordclaude/test/data/progress_repository_test.dart: %70 altı sonraki üniteyi açmaz, %70 ve üzeri açar (kabul 2)
+00:10 +42 ~6: /workspaces/englishwordclaude/test/data/progress_repository_test.dart: hızlı geçiş: %90 altı kilitli üniteyi değiştirmez (FR-27)
+00:10 +43 ~6: /workspaces/englishwordclaude/test/data/progress_repository_test.dart: seviye sınavı koşulları ve 24 saat bekleme (kabul 3, FR-24)
+00:10 +44 ~6: /workspaces/englishwordclaude/test/data/progress_repository_test.dart: favori ekle/çıkar (FR-35)
+00:10 +45 ~6: loading /workspaces/englishwordclaude/test/data/custom_word_repository_test.dart
+00:11 +45 ~6: /workspaces/englishwordclaude/test/data/custom_word_repository_test.dart: kelime eklenir ve varsayılan listeye konur (FR-92)
+00:11 +46 ~6: /workspaces/englishwordclaude/test/data/custom_word_repository_test.dart: aynı kelime ikinci kez eklenemez
+00:11 +47 ~6: /workspaces/englishwordclaude/test/data/custom_word_repository_test.dart: gizli seviye haritada ve seviye listesinde görünmez
+00:11 +48 ~6: /workspaces/englishwordclaude/test/data/custom_word_repository_test.dart: silme yalnız kendi kelimelere uygulanır ve izleri temizler
+00:11 +49 ~6: loading /workspaces/englishwordclaude/test/data/export_repository_test.dart
+00:12 +49 ~6: /workspaces/englishwordclaude/test/data/export_repository_test.dart: yalnız kullanıcı verisi olan kelimeler dışa aktarılır (FR-124)
+00:12 +50 ~6: /workspaces/englishwordclaude/test/data/export_repository_test.dart: hiç veri yoksa boş ama geçerli dışa aktarım üretilir
+00:12 +51 ~6: loading /workspaces/englishwordclaude/test/data/badge_repository_test.dart
+00:13 +51 ~6: /workspaces/englishwordclaude/test/data/badge_repository_test.dart: rozetler bir kez verilir (FR-73)
+00:13 +52 ~6: loading /workspaces/englishwordclaude/test/data/review_export_test.dart
+00:14 +52 ~6: /workspaces/englishwordclaude/test/data/review_export_test.dart: CSV her kelime için bir satır ve kaçışlı alanlar içerir (CNT-7)
+00:14 +53 ~6: /workspaces/englishwordclaude/test/data/review_export_test.dart: docs/content_review.csv içerik paketiyle güncel
+00:14 +54 ~6: loading /workspaces/englishwordclaude/test/golden/golden_test.dart
+00:15 +54 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: (setUpAll)
+00:15 +54 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon home (dark)
+00:16 +55 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon map (dark)
+00:16 +56 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon words (dark)
+00:17 +57 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon stats (dark)
+00:17 +58 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon profile (dark)
+00:18 +59 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon home (light)
+00:18 +60 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon map (light)
+00:18 +61 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon words (light)
+00:18 +62 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon stats (light)
+00:19 +63 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon profile (light)
+00:19 +64 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon kelime kartı
+00:19 +65 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: telefon tanıtım
+00:20 +66 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: küçük telefon, büyük yazı home taşmaz
+00:20 +67 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: küçük telefon, büyük yazı map taşmaz
+00:20 +68 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: küçük telefon, büyük yazı words taşmaz
+00:20 +69 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: küçük telefon, büyük yazı stats taşmaz
+00:21 +70 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: küçük telefon, büyük yazı profile taşmaz
+00:21 +71 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: küçük telefon, büyük yazı alt menü etiketleri tek satırda kalır
+00:21 +72 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: küçük telefon, büyük yazı ana sayfa görüntüsü
+00:21 +73 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet içerik okunabilir genişlikte ortalanır
+00:21 +74 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet home taşmaz
+00:21 +75 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet map taşmaz
+00:21 +76 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet words taşmaz
+00:22 +77 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet stats taşmaz
+00:22 +78 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet profile taşmaz
+00:22 +79 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet home görüntüsü
+00:22 +80 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: tablet map görüntüsü
+00:23 +81 ~6: /workspaces/englishwordclaude/test/golden/golden_test.dart: (tearDownAll)
+00:23 +81 ~6: loading /workspaces/englishwordclaude/test/app_test.dart
+00:23 +81 ~6: /workspaces/englishwordclaude/test/app_test.dart: uygulama açılır ve alt menüde 5 sekme vardır
+00:24 +82 ~6: /workspaces/englishwordclaude/test/app_test.dart: alt menüden Harita sekmesine geçilir
+00:25 +83 ~6: loading /workspaces/englishwordclaude/test/architecture_test.dart
+00:25 +83 ~6: /workspaces/englishwordclaude/test/architecture_test.dart: domain katmanı saf Dart
+00:25 +84 ~6: /workspaces/englishwordclaude/test/architecture_test.dart: veri katmanı arayüze bağımlı değil
+00:25 +85 ~6: /workspaces/englishwordclaude/test/architecture_test.dart: ekranlar veritabanına doğrudan erişmez
+00:25 +86 ~6: /workspaces/englishwordclaude/test/architecture_test.dart: ortak katman ekranlara bağımlı değil (yönlendirici hariç)
+00:25 +87 ~6: loading /workspaces/englishwordclaude/test/nfr/accessibility_test.dart
+00:26 +87 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa ekran okuyucu etiketi (dark)
+00:27 +88 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa Android dokunma alanı (dark)
+00:28 +89 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa iOS dokunma alanı (dark)
+00:28 +90 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa renk kontrastı (dark)
+00:28 +91 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa ekran okuyucu etiketi (light)
+00:28 +92 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa Android dokunma alanı (light)
+00:28 +93 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa iOS dokunma alanı (light)
+00:28 +94 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa renk kontrastı (light)
+00:28 +95 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ana Sayfa 2 kat yazı boyutunda taşma yok
+00:28 +96 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita ekran okuyucu etiketi (dark)
+00:29 +97 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita Android dokunma alanı (dark)
+00:29 +98 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita iOS dokunma alanı (dark)
+00:29 +99 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita renk kontrastı (dark)
+00:30 +100 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita ekran okuyucu etiketi (light)
+00:30 +101 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita Android dokunma alanı (light)
+00:30 +102 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita iOS dokunma alanı (light)
+00:30 +103 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita renk kontrastı (light)
+00:30 +104 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Harita 2 kat yazı boyutunda taşma yok
+00:31 +105 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim ekran okuyucu etiketi (dark)
+00:31 +106 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim Android dokunma alanı (dark)
+00:31 +107 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim iOS dokunma alanı (dark)
+00:32 +108 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim renk kontrastı (dark)
+00:32 +109 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim ekran okuyucu etiketi (light)
+00:32 +110 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim Android dokunma alanı (light)
+00:32 +111 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim iOS dokunma alanı (light)
+00:33 +112 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim renk kontrastı (light)
+00:33 +113 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelimelerim 2 kat yazı boyutunda taşma yok
+00:33 +114 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik ekran okuyucu etiketi (dark)
+00:33 +115 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik Android dokunma alanı (dark)
+00:33 +116 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik iOS dokunma alanı (dark)
+00:33 +117 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik renk kontrastı (dark)
+00:34 +118 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik ekran okuyucu etiketi (light)
+00:34 +119 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik Android dokunma alanı (light)
+00:34 +120 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik iOS dokunma alanı (light)
+00:34 +121 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik renk kontrastı (light)
+00:34 +122 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: İstatistik 2 kat yazı boyutunda taşma yok
+00:35 +123 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil ekran okuyucu etiketi (dark)
+00:35 +124 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil Android dokunma alanı (dark)
+00:35 +125 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil iOS dokunma alanı (dark)
+00:35 +126 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil renk kontrastı (dark)
+00:35 +127 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil ekran okuyucu etiketi (light)
+00:35 +128 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil Android dokunma alanı (light)
+00:35 +129 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil iOS dokunma alanı (light)
+00:36 +130 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil renk kontrastı (light)
+00:36 +131 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Profil 2 kat yazı boyutunda taşma yok
+00:36 +132 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite ekran okuyucu etiketi (dark)
+00:36 +133 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite Android dokunma alanı (dark)
+00:37 +134 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite iOS dokunma alanı (dark)
+00:37 +135 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite renk kontrastı (dark)
+00:37 +136 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite ekran okuyucu etiketi (light)
+00:37 +137 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite Android dokunma alanı (light)
+00:38 +138 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite iOS dokunma alanı (light)
+00:38 +139 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite renk kontrastı (light)
+00:38 +140 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Ünite 2 kat yazı boyutunda taşma yok
+
+Warning: A call to tap() with finder "Found 1 widget with text "Aile" (ignoring all but first): [
+  Text("Aile", inherit: true, weight: 600, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery, _ScrollableScope]),
+]" derived an Offset (Offset(88.0, 152.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+The finder corresponds to this RenderBox: RenderParagraph#9ff4e relayoutBoundary=up24
+The hit test result at that offset is: HitTestResult(_RenderListTile#95326@Offset(56.0, 104.0), RenderPadding#3c066@Offset(64.0, 104.0), RenderPadding#887c6@Offset(64.0, 104.0), RenderSemanticsAnnotations#e007e@Offset(64.0, 104.0), RenderPointerListener#5a572@Offset(64.0, 104.0), RenderSemanticsAnnotations#d9c2f@Offset(64.0, 104.0), RenderMouseRegion#7379e@Offset(64.0, 104.0), RenderSemanticsAnnotations#fed16@Offset(64.0, 104.0), RenderPadding#a7983@Offset(64.0, 106.0), RenderFlex#823af@Offset(64.0, 106.0), RenderStack#aca54@Offset(64.0, 106.0), RenderPadding#52c5a@Offset(72.0, 114.0), RenderFlex#19ea5@Offset(72.0, 436.0), RenderSemanticsAnnotations#ab5ae@Offset(72.0, 436.0), _RenderInkFeatures#abf84@Offset(72.0, 436.0), RenderCustomPaint#1e1c4@Offset(72.0, 436.0), RenderPhysicalShape#f9e6c@Offset(72.0, 436.0), RenderPadding#b8230@Offset(72.0, 436.0), RenderSemanticsAnnotations#1937c@Offset(72.0, 436.0), RenderRepaintBoundary#cca15@Offset(72.0, 436.0), RenderIndexedSemantics#49d27@Offset(72.0, 436.0), RenderSliverList@(mainAxis: 96.0, crossAxis: 72.0), RenderSliverPadding@(mainAxis: 96.0, crossAxis: 88.0), RenderViewport#f087c@Offset(88.0, 96.0), RenderIgnorePointer#bc670@Offset(88.0, 96.0), RenderSemanticsAnnotations#d9245@Offset(88.0, 96.0), RenderPointerListener#8a9e5@Offset(88.0, 96.0), RenderSemanticsGestureHandler#d44da@Offset(88.0, 96.0), RenderPointerListener#9ef66@Offset(88.0, 96.0), _RenderScrollSemantics#d79b9@Offset(88.0, 96.0), RenderClipRect#50bb6@Offset(88.0, 96.0), RenderCustomMultiChildLayoutBox#dc4a3@Offset(88.0, 152.0), _RenderInkFeatures#39d23@Offset(88.0, 152.0), RenderPhysicalModel#50099@Offset(88.0, 152.0), RenderSemanticsAnnotations#90632@Offset(88.0, 152.0), RenderRepaintBoundary#9708f@Offset(88.0, 152.0), RenderIgnorePointer#9b293@Offset(88.0, 152.0), RenderRepaintBoundary#33b34@Offset(88.0, 152.0), RenderSemanticsAnnotations#1687a@Offset(88.0, 152.0), RenderOffstage#ee1a5@Offset(88.0, 152.0), RenderSemanticsAnnotations#dfa33@Offset(88.0, 152.0), _RenderTheater#4aa9e@Offset(88.0, 152.0), RenderAbsorbPointer#2f16b@Offset(88.0, 152.0), RenderPointerListener#c9ccb@Offset(88.0, 152.0), RenderSemanticsAnnotations#580e1@Offset(88.0, 152.0), RenderOffstage#e1ccf@Offset(88.0, 152.0), RenderIndexedStack#42970@Offset(88.0, 152.0), RenderConstrainedBox#7c540@Offset(88.0, 152.0), RenderPositionedBox#71943@Offset(88.0, 152.0), RenderCustomMultiChildLayoutBox#f0a9a@Offset(88.0, 152.0), _RenderInkFeatures#f2268@Offset(88.0, 152.0), RenderPhysicalModel#66d85@Offset(88.0, 152.0), RenderSemanticsAnnotations#02835@Offset(88.0, 152.0), RenderRepaintBoundary#81374@Offset(88.0, 152.0), RenderIgnorePointer#38b8f@Offset(88.0, 152.0), RenderRepaintBoundary#1e62b@Offset(88.0, 152.0), RenderSemanticsAnnotations#cb24a@Offset(88.0, 152.0), RenderOffstage#d86cb@Offset(88.0, 152.0), RenderSemanticsAnnotations#1e18e@Offset(88.0, 152.0), _RenderTheater#c2f7f@Offset(88.0, 152.0), RenderAbsorbPointer#58a7d@Offset(88.0, 152.0), RenderPointerListener#93982@Offset(88.0, 152.0), RenderSemanticsAnnotations#588d4@Offset(88.0, 152.0), RenderSemanticsAnnotations#a6a73@Offset(88.0, 152.0), RenderSemanticsAnnotations#5fd6b@Offset(88.0, 152.0), RenderTapRegionSurface#48331@Offset(88.0, 152.0), RenderSemanticsAnnotations#8e5f7@Offset(88.0, 152.0), RenderSemanticsAnnotations#85a6b@Offset(88.0, 152.0), HitTestEntry<HitTestTarget>#e1c26(_ReusableRenderView#6a7c9), HitTestEntry<HitTestTarget>#cb370(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      main.tapAndSettle (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:32:18)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:44:7)
+<asynchronous suspension>
+#5      main.open (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:144:5)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:174:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#9      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+00:38 +141 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav ekran okuyucu etiketi (dark)
+00:38 +142 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav Android dokunma alanı (dark)
+00:39 +143 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav iOS dokunma alanı (dark)
+00:39 +144 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav renk kontrastı (dark)
+00:39 +145 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav ekran okuyucu etiketi (light)
+00:40 +146 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav Android dokunma alanı (light)
+00:40 +147 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav iOS dokunma alanı (light)
+00:40 +148 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav renk kontrastı (light)
+00:41 +149 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav 2 kat yazı boyutunda taşma yok
+
+Warning: A call to tap() with finder "Found 1 widget with text "Aile" (ignoring all but first): [
+  Text("Aile", inherit: true, weight: 600, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery, _ScrollableScope]),
+]" derived an Offset (Offset(88.0, 152.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+The finder corresponds to this RenderBox: RenderParagraph#ae5a2 relayoutBoundary=up24
+The hit test result at that offset is: HitTestResult(_RenderListTile#3febc@Offset(56.0, 104.0), RenderPadding#b97a3@Offset(64.0, 104.0), RenderPadding#b29cd@Offset(64.0, 104.0), RenderSemanticsAnnotations#b2ba7@Offset(64.0, 104.0), RenderPointerListener#62a10@Offset(64.0, 104.0), RenderSemanticsAnnotations#3875e@Offset(64.0, 104.0), RenderMouseRegion#11698@Offset(64.0, 104.0), RenderSemanticsAnnotations#25fb1@Offset(64.0, 104.0), RenderPadding#70548@Offset(64.0, 106.0), RenderFlex#100bc@Offset(64.0, 106.0), RenderStack#d9f7a@Offset(64.0, 106.0), RenderPadding#706d9@Offset(72.0, 114.0), RenderFlex#97ae9@Offset(72.0, 436.0), RenderSemanticsAnnotations#0003f@Offset(72.0, 436.0), _RenderInkFeatures#2dd5c@Offset(72.0, 436.0), RenderCustomPaint#925ae@Offset(72.0, 436.0), RenderPhysicalShape#12f31@Offset(72.0, 436.0), RenderPadding#50f02@Offset(72.0, 436.0), RenderSemanticsAnnotations#41958@Offset(72.0, 436.0), RenderRepaintBoundary#17d1c@Offset(72.0, 436.0), RenderIndexedSemantics#75c5d@Offset(72.0, 436.0), RenderSliverList@(mainAxis: 96.0, crossAxis: 72.0), RenderSliverPadding@(mainAxis: 96.0, crossAxis: 88.0), RenderViewport#e7ff5@Offset(88.0, 96.0), RenderIgnorePointer#87db4@Offset(88.0, 96.0), RenderSemanticsAnnotations#f9f1d@Offset(88.0, 96.0), RenderPointerListener#4cc91@Offset(88.0, 96.0), RenderSemanticsGestureHandler#78d89@Offset(88.0, 96.0), RenderPointerListener#aa0f6@Offset(88.0, 96.0), _RenderScrollSemantics#5ff91@Offset(88.0, 96.0), RenderClipRect#ad1ee@Offset(88.0, 96.0), RenderCustomMultiChildLayoutBox#d2976@Offset(88.0, 152.0), _RenderInkFeatures#0aa6d@Offset(88.0, 152.0), RenderPhysicalModel#fd78a@Offset(88.0, 152.0), RenderSemanticsAnnotations#83c94@Offset(88.0, 152.0), RenderRepaintBoundary#6f4ce@Offset(88.0, 152.0), RenderIgnorePointer#4a1d6@Offset(88.0, 152.0), RenderRepaintBoundary#2642c@Offset(88.0, 152.0), RenderSemanticsAnnotations#dfae2@Offset(88.0, 152.0), RenderOffstage#7b883@Offset(88.0, 152.0), RenderSemanticsAnnotations#0bc7c@Offset(88.0, 152.0), _RenderTheater#09c2f@Offset(88.0, 152.0), RenderAbsorbPointer#89f75@Offset(88.0, 152.0), RenderPointerListener#dc8a3@Offset(88.0, 152.0), RenderSemanticsAnnotations#7e885@Offset(88.0, 152.0), RenderOffstage#0ce79@Offset(88.0, 152.0), RenderIndexedStack#2020b@Offset(88.0, 152.0), RenderConstrainedBox#8776f@Offset(88.0, 152.0), RenderPositionedBox#f7ec3@Offset(88.0, 152.0), RenderCustomMultiChildLayoutBox#34a91@Offset(88.0, 152.0), _RenderInkFeatures#08358@Offset(88.0, 152.0), RenderPhysicalModel#9864d@Offset(88.0, 152.0), RenderSemanticsAnnotations#22e3e@Offset(88.0, 152.0), RenderRepaintBoundary#8843f@Offset(88.0, 152.0), RenderIgnorePointer#35b5c@Offset(88.0, 152.0), RenderRepaintBoundary#455f8@Offset(88.0, 152.0), RenderSemanticsAnnotations#b21b2@Offset(88.0, 152.0), RenderOffstage#f73e3@Offset(88.0, 152.0), RenderSemanticsAnnotations#75553@Offset(88.0, 152.0), _RenderTheater#4fdcd@Offset(88.0, 152.0), RenderAbsorbPointer#94e29@Offset(88.0, 152.0), RenderPointerListener#c0e84@Offset(88.0, 152.0), RenderSemanticsAnnotations#b03c0@Offset(88.0, 152.0), RenderSemanticsAnnotations#ec616@Offset(88.0, 152.0), RenderSemanticsAnnotations#7fbca@Offset(88.0, 152.0), RenderTapRegionSurface#9ee26@Offset(88.0, 152.0), RenderSemanticsAnnotations#f2c2c@Offset(88.0, 152.0), RenderSemanticsAnnotations#5a671@Offset(88.0, 152.0), HitTestEntry<HitTestTarget>#0287d(_ReusableRenderView#6a7c9), HitTestEntry<HitTestTarget>#12081(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      main.tapAndSettle (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:32:18)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:48:7)
+<asynchronous suspension>
+#5      main.open (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:144:5)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:174:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#9      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+00:41 +150 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi ekran okuyucu etiketi (dark)
+00:41 +151 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi Android dokunma alanı (dark)
+00:41 +152 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi iOS dokunma alanı (dark)
+00:42 +153 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi renk kontrastı (dark)
+00:42 +154 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi ekran okuyucu etiketi (light)
+00:42 +155 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi Android dokunma alanı (light)
+00:43 +156 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi iOS dokunma alanı (light)
+00:43 +157 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi renk kontrastı (light)
+00:43 +158 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav geri bildirimi 2 kat yazı boyutunda taşma yok
+
+Warning: A call to tap() with finder "Found 1 widget with text "Aile" (ignoring all but first): [
+  Text("Aile", inherit: true, weight: 600, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery, _ScrollableScope]),
+]" derived an Offset (Offset(88.0, 152.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+The finder corresponds to this RenderBox: RenderParagraph#b6041 relayoutBoundary=up24
+The hit test result at that offset is: HitTestResult(_RenderListTile#a16ae@Offset(56.0, 104.0), RenderPadding#7d461@Offset(64.0, 104.0), RenderPadding#08bac@Offset(64.0, 104.0), RenderSemanticsAnnotations#8d53e@Offset(64.0, 104.0), RenderPointerListener#44855@Offset(64.0, 104.0), RenderSemanticsAnnotations#588d1@Offset(64.0, 104.0), RenderMouseRegion#08819@Offset(64.0, 104.0), RenderSemanticsAnnotations#e328e@Offset(64.0, 104.0), RenderPadding#ab8a0@Offset(64.0, 106.0), RenderFlex#fcee2@Offset(64.0, 106.0), RenderStack#66b9f@Offset(64.0, 106.0), RenderPadding#c1a38@Offset(72.0, 114.0), RenderFlex#2b662@Offset(72.0, 436.0), RenderSemanticsAnnotations#0eb04@Offset(72.0, 436.0), _RenderInkFeatures#c4dd9@Offset(72.0, 436.0), RenderCustomPaint#1b6d8@Offset(72.0, 436.0), RenderPhysicalShape#e46df@Offset(72.0, 436.0), RenderPadding#00db6@Offset(72.0, 436.0), RenderSemanticsAnnotations#9224d@Offset(72.0, 436.0), RenderRepaintBoundary#2eeb0@Offset(72.0, 436.0), RenderIndexedSemantics#7e02b@Offset(72.0, 436.0), RenderSliverList@(mainAxis: 96.0, crossAxis: 72.0), RenderSliverPadding@(mainAxis: 96.0, crossAxis: 88.0), RenderViewport#cfe58@Offset(88.0, 96.0), RenderIgnorePointer#8ec60@Offset(88.0, 96.0), RenderSemanticsAnnotations#1d316@Offset(88.0, 96.0), RenderPointerListener#3a39c@Offset(88.0, 96.0), RenderSemanticsGestureHandler#58497@Offset(88.0, 96.0), RenderPointerListener#aee85@Offset(88.0, 96.0), _RenderScrollSemantics#2f917@Offset(88.0, 96.0), RenderClipRect#2856d@Offset(88.0, 96.0), RenderCustomMultiChildLayoutBox#ba03f@Offset(88.0, 152.0), _RenderInkFeatures#a6330@Offset(88.0, 152.0), RenderPhysicalModel#ba56b@Offset(88.0, 152.0), RenderSemanticsAnnotations#611b8@Offset(88.0, 152.0), RenderRepaintBoundary#5e873@Offset(88.0, 152.0), RenderIgnorePointer#93933@Offset(88.0, 152.0), RenderRepaintBoundary#46adb@Offset(88.0, 152.0), RenderSemanticsAnnotations#7f13c@Offset(88.0, 152.0), RenderOffstage#72f23@Offset(88.0, 152.0), RenderSemanticsAnnotations#36899@Offset(88.0, 152.0), _RenderTheater#f7de9@Offset(88.0, 152.0), RenderAbsorbPointer#37206@Offset(88.0, 152.0), RenderPointerListener#93802@Offset(88.0, 152.0), RenderSemanticsAnnotations#f4786@Offset(88.0, 152.0), RenderOffstage#1dca2@Offset(88.0, 152.0), RenderIndexedStack#4ee29@Offset(88.0, 152.0), RenderConstrainedBox#02ae0@Offset(88.0, 152.0), RenderPositionedBox#8ce4c@Offset(88.0, 152.0), RenderCustomMultiChildLayoutBox#a8f5a@Offset(88.0, 152.0), _RenderInkFeatures#03e59@Offset(88.0, 152.0), RenderPhysicalModel#13e02@Offset(88.0, 152.0), RenderSemanticsAnnotations#63ef4@Offset(88.0, 152.0), RenderRepaintBoundary#6349a@Offset(88.0, 152.0), RenderIgnorePointer#609a7@Offset(88.0, 152.0), RenderRepaintBoundary#95bb2@Offset(88.0, 152.0), RenderSemanticsAnnotations#9f597@Offset(88.0, 152.0), RenderOffstage#c4de9@Offset(88.0, 152.0), RenderSemanticsAnnotations#005bd@Offset(88.0, 152.0), _RenderTheater#a126c@Offset(88.0, 152.0), RenderAbsorbPointer#64f88@Offset(88.0, 152.0), RenderPointerListener#7f6c2@Offset(88.0, 152.0), RenderSemanticsAnnotations#2e0ac@Offset(88.0, 152.0), RenderSemanticsAnnotations#55771@Offset(88.0, 152.0), RenderSemanticsAnnotations#ca90e@Offset(88.0, 152.0), RenderTapRegionSurface#3cfa7@Offset(88.0, 152.0), RenderSemanticsAnnotations#32f6e@Offset(88.0, 152.0), RenderSemanticsAnnotations#fdf11@Offset(88.0, 152.0), HitTestEntry<HitTestTarget>#eb39c(_ReusableRenderView#6a7c9), HitTestEntry<HitTestTarget>#c2b98(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      main.tapAndSettle (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:32:18)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:53:7)
+<asynchronous suspension>
+#5      main.open (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:144:5)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:174:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#9      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+00:43 +159 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu ekran okuyucu etiketi (dark)
+00:44 +160 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu Android dokunma alanı (dark)
+00:45 +161 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu iOS dokunma alanı (dark)
+00:46 +162 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu renk kontrastı (dark)
+00:47 +163 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu ekran okuyucu etiketi (light)
+00:47 +164 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu Android dokunma alanı (light)
+00:48 +165 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu iOS dokunma alanı (light)
+00:48 +166 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu renk kontrastı (light)
+00:49 +167 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Sınav sonucu 2 kat yazı boyutunda taşma yok
+
+Warning: A call to tap() with finder "Found 1 widget with text "Aile" (ignoring all but first): [
+  Text("Aile", inherit: true, weight: 600, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery, _ScrollableScope]),
+]" derived an Offset (Offset(88.0, 152.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+The finder corresponds to this RenderBox: RenderParagraph#cc2ab relayoutBoundary=up24
+The hit test result at that offset is: HitTestResult(_RenderListTile#0d71c@Offset(56.0, 104.0), RenderPadding#de5ef@Offset(64.0, 104.0), RenderPadding#0a7a6@Offset(64.0, 104.0), RenderSemanticsAnnotations#2f2fb@Offset(64.0, 104.0), RenderPointerListener#5949a@Offset(64.0, 104.0), RenderSemanticsAnnotations#7442c@Offset(64.0, 104.0), RenderMouseRegion#2f4a1@Offset(64.0, 104.0), RenderSemanticsAnnotations#88683@Offset(64.0, 104.0), RenderPadding#12953@Offset(64.0, 106.0), RenderFlex#146ed@Offset(64.0, 106.0), RenderStack#50882@Offset(64.0, 106.0), RenderPadding#d74f9@Offset(72.0, 114.0), RenderFlex#2096d@Offset(72.0, 436.0), RenderSemanticsAnnotations#955f3@Offset(72.0, 436.0), _RenderInkFeatures#aaedc@Offset(72.0, 436.0), RenderCustomPaint#37f19@Offset(72.0, 436.0), RenderPhysicalShape#9b02f@Offset(72.0, 436.0), RenderPadding#7a936@Offset(72.0, 436.0), RenderSemanticsAnnotations#4b07f@Offset(72.0, 436.0), RenderRepaintBoundary#3d278@Offset(72.0, 436.0), RenderIndexedSemantics#01a95@Offset(72.0, 436.0), RenderSliverList@(mainAxis: 96.0, crossAxis: 72.0), RenderSliverPadding@(mainAxis: 96.0, crossAxis: 88.0), RenderViewport#da4d9@Offset(88.0, 96.0), RenderIgnorePointer#56bb1@Offset(88.0, 96.0), RenderSemanticsAnnotations#c1dc5@Offset(88.0, 96.0), RenderPointerListener#dd179@Offset(88.0, 96.0), RenderSemanticsGestureHandler#52407@Offset(88.0, 96.0), RenderPointerListener#435d3@Offset(88.0, 96.0), _RenderScrollSemantics#9f12e@Offset(88.0, 96.0), RenderClipRect#e5f18@Offset(88.0, 96.0), RenderCustomMultiChildLayoutBox#5cce2@Offset(88.0, 152.0), _RenderInkFeatures#8e35a@Offset(88.0, 152.0), RenderPhysicalModel#3e4e8@Offset(88.0, 152.0), RenderSemanticsAnnotations#2720f@Offset(88.0, 152.0), RenderRepaintBoundary#2020a@Offset(88.0, 152.0), RenderIgnorePointer#69707@Offset(88.0, 152.0), RenderRepaintBoundary#ce79e@Offset(88.0, 152.0), RenderSemanticsAnnotations#b8a41@Offset(88.0, 152.0), RenderOffstage#d82da@Offset(88.0, 152.0), RenderSemanticsAnnotations#9a86d@Offset(88.0, 152.0), _RenderTheater#11a22@Offset(88.0, 152.0), RenderAbsorbPointer#8d2a0@Offset(88.0, 152.0), RenderPointerListener#bec49@Offset(88.0, 152.0), RenderSemanticsAnnotations#f8666@Offset(88.0, 152.0), RenderOffstage#f1c41@Offset(88.0, 152.0), RenderIndexedStack#d7b98@Offset(88.0, 152.0), RenderConstrainedBox#84212@Offset(88.0, 152.0), RenderPositionedBox#d0c03@Offset(88.0, 152.0), RenderCustomMultiChildLayoutBox#18183@Offset(88.0, 152.0), _RenderInkFeatures#54f26@Offset(88.0, 152.0), RenderPhysicalModel#01c53@Offset(88.0, 152.0), RenderSemanticsAnnotations#934b6@Offset(88.0, 152.0), RenderRepaintBoundary#8b35a@Offset(88.0, 152.0), RenderIgnorePointer#76b45@Offset(88.0, 152.0), RenderRepaintBoundary#cb43a@Offset(88.0, 152.0), RenderSemanticsAnnotations#8d8bf@Offset(88.0, 152.0), RenderOffstage#931dd@Offset(88.0, 152.0), RenderSemanticsAnnotations#05304@Offset(88.0, 152.0), _RenderTheater#00996@Offset(88.0, 152.0), RenderAbsorbPointer#f4ac8@Offset(88.0, 152.0), RenderPointerListener#83092@Offset(88.0, 152.0), RenderSemanticsAnnotations#228a5@Offset(88.0, 152.0), RenderSemanticsAnnotations#83c29@Offset(88.0, 152.0), RenderSemanticsAnnotations#5406a@Offset(88.0, 152.0), RenderTapRegionSurface#3bb09@Offset(88.0, 152.0), RenderSemanticsAnnotations#22216@Offset(88.0, 152.0), RenderSemanticsAnnotations#fcf09@Offset(88.0, 152.0), HitTestEntry<HitTestTarget>#8ee6a(_ReusableRenderView#6a7c9), HitTestEntry<HitTestTarget>#4cce3(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      main.tapAndSettle (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:32:18)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:59:7)
+<asynchronous suspension>
+#5      main.open (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:144:5)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:174:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#9      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+00:49 +168 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı ekran okuyucu etiketi (dark)
+00:49 +169 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı Android dokunma alanı (dark)
+00:50 +170 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı iOS dokunma alanı (dark)
+00:50 +171 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı renk kontrastı (dark)
+00:50 +172 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı ekran okuyucu etiketi (light)
+00:51 +173 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı Android dokunma alanı (light)
+00:51 +174 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı iOS dokunma alanı (light)
+00:51 +175 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı renk kontrastı (light)
+00:51 +176 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime kartı 2 kat yazı boyutunda taşma yok
+00:51 +177 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler ekran okuyucu etiketi (dark)
+00:52 +178 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler Android dokunma alanı (dark)
+00:52 +179 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler iOS dokunma alanı (dark)
+00:52 +180 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler renk kontrastı (dark)
+00:52 +181 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler ekran okuyucu etiketi (light)
+00:52 +182 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler Android dokunma alanı (light)
+00:52 +183 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler iOS dokunma alanı (light)
+00:52 +184 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler renk kontrastı (light)
+00:53 +185 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Yeni kelimeler 2 kat yazı boyutunda taşma yok
+00:53 +186 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma ekran okuyucu etiketi (dark)
+00:53 +187 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma Android dokunma alanı (dark)
+00:54 +188 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma iOS dokunma alanı (dark)
+00:54 +189 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma renk kontrastı (dark)
+00:55 +190 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma ekran okuyucu etiketi (light)
+00:55 +191 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma Android dokunma alanı (light)
+00:56 +192 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma iOS dokunma alanı (light)
+00:56 +193 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma renk kontrastı (light)
+00:57 +194 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Alıştırma 2 kat yazı boyutunda taşma yok
+
+Warning: A call to tap() with finder "Found 1 widget with text "Aile" (ignoring all but first): [
+  Text("Aile", inherit: true, weight: 600, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery, _ScrollableScope]),
+]" derived an Offset (Offset(88.0, 152.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+The finder corresponds to this RenderBox: RenderParagraph#2feb1 relayoutBoundary=up24
+The hit test result at that offset is: HitTestResult(_RenderListTile#a1a94@Offset(56.0, 104.0), RenderPadding#9516b@Offset(64.0, 104.0), RenderPadding#53459@Offset(64.0, 104.0), RenderSemanticsAnnotations#f3890@Offset(64.0, 104.0), RenderPointerListener#e8f35@Offset(64.0, 104.0), RenderSemanticsAnnotations#4bf93@Offset(64.0, 104.0), RenderMouseRegion#0f180@Offset(64.0, 104.0), RenderSemanticsAnnotations#ec75b@Offset(64.0, 104.0), RenderPadding#d7293@Offset(64.0, 106.0), RenderFlex#4bfdb@Offset(64.0, 106.0), RenderStack#eea5c@Offset(64.0, 106.0), RenderPadding#852f9@Offset(72.0, 114.0), RenderFlex#c75b6@Offset(72.0, 436.0), RenderSemanticsAnnotations#70c70@Offset(72.0, 436.0), _RenderInkFeatures#96c89@Offset(72.0, 436.0), RenderCustomPaint#9400f@Offset(72.0, 436.0), RenderPhysicalShape#68bbd@Offset(72.0, 436.0), RenderPadding#57b06@Offset(72.0, 436.0), RenderSemanticsAnnotations#ff618@Offset(72.0, 436.0), RenderRepaintBoundary#8a693@Offset(72.0, 436.0), RenderIndexedSemantics#d6a9c@Offset(72.0, 436.0), RenderSliverList@(mainAxis: 96.0, crossAxis: 72.0), RenderSliverPadding@(mainAxis: 96.0, crossAxis: 88.0), RenderViewport#877e5@Offset(88.0, 96.0), RenderIgnorePointer#8c2b0@Offset(88.0, 96.0), RenderSemanticsAnnotations#ce31d@Offset(88.0, 96.0), RenderPointerListener#c9221@Offset(88.0, 96.0), RenderSemanticsGestureHandler#ab1da@Offset(88.0, 96.0), RenderPointerListener#59207@Offset(88.0, 96.0), _RenderScrollSemantics#64485@Offset(88.0, 96.0), RenderClipRect#b94c4@Offset(88.0, 96.0), RenderCustomMultiChildLayoutBox#6af9f@Offset(88.0, 152.0), _RenderInkFeatures#1a76c@Offset(88.0, 152.0), RenderPhysicalModel#fbdf1@Offset(88.0, 152.0), RenderSemanticsAnnotations#2090e@Offset(88.0, 152.0), RenderRepaintBoundary#240ae@Offset(88.0, 152.0), RenderIgnorePointer#2ba5d@Offset(88.0, 152.0), RenderRepaintBoundary#6860f@Offset(88.0, 152.0), RenderSemanticsAnnotations#a1168@Offset(88.0, 152.0), RenderOffstage#e6746@Offset(88.0, 152.0), RenderSemanticsAnnotations#a064c@Offset(88.0, 152.0), _RenderTheater#c796f@Offset(88.0, 152.0), RenderAbsorbPointer#eeb50@Offset(88.0, 152.0), RenderPointerListener#2c352@Offset(88.0, 152.0), RenderSemanticsAnnotations#f16ea@Offset(88.0, 152.0), RenderOffstage#6e65f@Offset(88.0, 152.0), RenderIndexedStack#dd0b1@Offset(88.0, 152.0), RenderConstrainedBox#1f1ed@Offset(88.0, 152.0), RenderPositionedBox#e2b71@Offset(88.0, 152.0), RenderCustomMultiChildLayoutBox#a92bf@Offset(88.0, 152.0), _RenderInkFeatures#16ba0@Offset(88.0, 152.0), RenderPhysicalModel#a0730@Offset(88.0, 152.0), RenderSemanticsAnnotations#ca195@Offset(88.0, 152.0), RenderRepaintBoundary#b49a7@Offset(88.0, 152.0), RenderIgnorePointer#ff452@Offset(88.0, 152.0), RenderRepaintBoundary#5b178@Offset(88.0, 152.0), RenderSemanticsAnnotations#0a2ef@Offset(88.0, 152.0), RenderOffstage#171cd@Offset(88.0, 152.0), RenderSemanticsAnnotations#9a686@Offset(88.0, 152.0), _RenderTheater#ba01e@Offset(88.0, 152.0), RenderAbsorbPointer#82f40@Offset(88.0, 152.0), RenderPointerListener#1a584@Offset(88.0, 152.0), RenderSemanticsAnnotations#72649@Offset(88.0, 152.0), RenderSemanticsAnnotations#a59c2@Offset(88.0, 152.0), RenderSemanticsAnnotations#15de7@Offset(88.0, 152.0), RenderTapRegionSurface#ccbef@Offset(88.0, 152.0), RenderSemanticsAnnotations#f1f26@Offset(88.0, 152.0), RenderSemanticsAnnotations#3322c@Offset(88.0, 152.0), HitTestEntry<HitTestTarget>#77d35(_ReusableRenderView#6a7c9), HitTestEntry<HitTestTarget>#ddec9(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      main.tapAndSettle (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:32:18)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:80:7)
+<asynchronous suspension>
+#5      main.open (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:144:5)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///workspaces/englishwordclaude/test/nfr/accessibility_test.dart:174:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#9      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+00:57 +195 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim ekran okuyucu etiketi (dark)
+00:58 +196 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim Android dokunma alanı (dark)
+00:58 +197 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim iOS dokunma alanı (dark)
+00:58 +198 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim renk kontrastı (dark)
+00:58 +199 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim ekran okuyucu etiketi (light)
+00:58 +200 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim Android dokunma alanı (light)
+00:59 +201 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim iOS dokunma alanı (light)
+00:59 +202 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim renk kontrastı (light)
+00:59 +203 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Listelerim 2 kat yazı boyutunda taşma yok
+00:59 +204 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme ekran okuyucu etiketi (dark)
+00:59 +205 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme Android dokunma alanı (dark)
+01:00 +206 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme iOS dokunma alanı (dark)
+01:00 +207 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme renk kontrastı (dark)
+01:00 +208 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme ekran okuyucu etiketi (light)
+01:00 +209 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme Android dokunma alanı (light)
+01:01 +210 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme iOS dokunma alanı (light)
+01:01 +211 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme renk kontrastı (light)
+01:01 +212 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Kelime ekleme 2 kat yazı boyutunda taşma yok
+01:01 +213 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit ekran okuyucu etiketi (dark)
+01:01 +214 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit Android dokunma alanı (dark)
+01:02 +215 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit iOS dokunma alanı (dark)
+01:02 +216 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit renk kontrastı (dark)
+01:02 +217 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit ekran okuyucu etiketi (light)
+01:03 +218 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit Android dokunma alanı (light)
+01:03 +219 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit iOS dokunma alanı (light)
+01:03 +220 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit renk kontrastı (light)
+01:03 +221 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit 2 kat yazı boyutunda taşma yok
+01:03 +222 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu ekran okuyucu etiketi (dark)
+01:04 +223 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu Android dokunma alanı (dark)
+01:04 +224 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu iOS dokunma alanı (dark)
+01:04 +225 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu renk kontrastı (dark)
+01:04 +226 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu ekran okuyucu etiketi (light)
+01:05 +227 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu Android dokunma alanı (light)
+01:05 +228 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu iOS dokunma alanı (light)
+01:05 +229 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu renk kontrastı (light)
+01:05 +230 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sorusu 2 kat yazı boyutunda taşma yok
+01:05 +231 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu ekran okuyucu etiketi (dark)
+01:06 +232 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu Android dokunma alanı (dark)
+01:06 +233 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu iOS dokunma alanı (dark)
+01:06 +234 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu renk kontrastı (dark)
+01:06 +235 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu ekran okuyucu etiketi (light)
+01:07 +236 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu Android dokunma alanı (light)
+01:07 +237 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu iOS dokunma alanı (light)
+01:07 +238 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu renk kontrastı (light)
+01:07 +239 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Seviye tespit sonucu 2 kat yazı boyutunda taşma yok
+01:08 +240 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç ekran okuyucu etiketi (dark)
+01:08 +241 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç Android dokunma alanı (dark)
+01:08 +242 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç iOS dokunma alanı (dark)
+01:08 +243 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç renk kontrastı (dark)
+01:08 +244 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç ekran okuyucu etiketi (light)
+01:08 +245 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç Android dokunma alanı (light)
+01:08 +246 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç iOS dokunma alanı (light)
+01:08 +247 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç renk kontrastı (light)
+01:09 +248 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım başlangıç 2 kat yazı boyutunda taşma yok
+01:09 +249 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası ekran okuyucu etiketi (dark)
+01:09 +250 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası Android dokunma alanı (dark)
+01:09 +251 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası iOS dokunma alanı (dark)
+01:10 +252 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası renk kontrastı (dark)
+01:10 +253 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası ekran okuyucu etiketi (light)
+01:11 +254 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası Android dokunma alanı (light)
+01:11 +255 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası iOS dokunma alanı (light)
+01:11 +256 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası renk kontrastı (light)
+01:11 +257 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Gizlilik politikası 2 kat yazı boyutunda taşma yok
+01:12 +258 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım ekran okuyucu etiketi (dark)
+01:12 +259 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım Android dokunma alanı (dark)
+01:12 +260 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım iOS dokunma alanı (dark)
+01:12 +261 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım renk kontrastı (dark)
+01:12 +262 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım ekran okuyucu etiketi (light)
+01:12 +263 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım Android dokunma alanı (light)
+01:12 +264 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım iOS dokunma alanı (light)
+01:12 +265 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım renk kontrastı (light)
+01:12 +266 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım 2 kat yazı boyutunda taşma yok
+01:12 +267 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef ekran okuyucu etiketi (dark)
+01:12 +268 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef Android dokunma alanı (dark)
+01:12 +269 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef iOS dokunma alanı (dark)
+01:12 +270 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef renk kontrastı (dark)
+01:12 +271 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef ekran okuyucu etiketi (light)
+01:13 +272 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef Android dokunma alanı (light)
+01:13 +273 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef iOS dokunma alanı (light)
+01:13 +274 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef renk kontrastı (light)
+01:13 +275 ~6: /workspaces/englishwordclaude/test/nfr/accessibility_test.dart: Tanıtım hedef 2 kat yazı boyutunda taşma yok
+01:13 +276 ~6: loading /workspaces/englishwordclaude/test/nfr/persistence_test.dart
+01:14 +276 ~6: /workspaces/englishwordclaude/test/nfr/persistence_test.dart: kapatılıp yeniden açılan veritabanında ilerleme durur
+01:14 +277 ~6: /workspaces/englishwordclaude/test/nfr/persistence_test.dart: oturum yarıda kalsa da verilen cevap kayıtlıdır
+01:16 +278 ~6: loading /workspaces/englishwordclaude/test/nfr/first_lesson_test.dart
+01:17 +278 ~6: /workspaces/englishwordclaude/test/nfr/first_lesson_test.dart: ilk açılıştan ilk kelime kartına 6 dokunuşta varılır
+01:19 +279 ~6: loading /workspaces/englishwordclaude/test/nfr/startup_test.dart
+01:19 +279 ~6: /workspaces/englishwordclaude/test/nfr/startup_test.dart: ilk kurulum içerik yüklemesi bütçe içinde
+İlk kurulum içerik yüklemesi: 328 ms
+01:20 +280 ~6: /workspaces/englishwordclaude/test/nfr/startup_test.dart: sonraki açılışta içerik eşitlemesi neredeyse anında
+Sonraki açılış içerik eşitlemesi: 1 ms
+01:20 +281 ~6: loading /workspaces/englishwordclaude/test/nfr/localization_test.dart
+01:20 +281 ~6: /workspaces/englishwordclaude/test/nfr/localization_test.dart: arayüz kodunda sabit metin yok (NFR-12)
+01:20 +282 ~6: loading /workspaces/englishwordclaude/test/nfr/offline_test.dart
+01:21 +282 ~6: /workspaces/englishwordclaude/test/nfr/offline_test.dart: bağımlılıklarda ve kodda ağ erişimi yok (NFR-03)
+01:21 +283 ~6: /workspaces/englishwordclaude/test/nfr/offline_test.dart: uçak modunda ders, tekrar ve sınavlar tamamlanır (REL-2)
+01:29 +284 ~6: /workspaces/englishwordclaude/test/nfr/offline_test.dart: ders ortasında kapanan uygulama ilerlemeyi korur (REL-2)
+01:30 +285 ~6: loading /workspaces/englishwordclaude/test/features/settings_stats_test.dart
+01:31 +285 ~6: /workspaces/englishwordclaude/test/features/settings_stats_test.dart: istatistik ekranı öğrenilenleri ve aktiviteyi gösterir (FR-80..82)
+01:32 +286 ~6: /workspaces/englishwordclaude/test/features/settings_stats_test.dart: ayarlar kaydedilir ve uygulanır (FR-120, FR-121)
+01:34 +287 ~6: /workspaces/englishwordclaude/test/features/settings_stats_test.dart: ilerleme onayla sıfırlanır (FR-123)
+01:34 +288 ~6: loading /workspaces/englishwordclaude/test/features/word_note_test.dart
+01:35 +288 ~6: /workspaces/englishwordclaude/test/features/word_note_test.dart: kelime kartına kişisel not eklenir (FR-36)
+01:37 +289 ~6: loading /workspaces/englishwordclaude/test/features/custom_words_test.dart
+01:37 +289 ~6: /workspaces/englishwordclaude/test/features/custom_words_test.dart: kendi kelimeni ekleyip silebilirsin (FR-92)
+01:40 +290 ~6: /workspaces/englishwordclaude/test/features/custom_words_test.dart: içerik kelimelerinde silme düğmesi yok
+01:41 +291 ~6: loading /workspaces/englishwordclaude/test/features/result_view_test.dart
+01:42 +291 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: seviye geçilince ödül, XP ve rozet kartları görünür
+01:43 +292 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: başarısız sınavda yanlış kelimeler bir kez listelenir
+01:43 +293 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: animasyon kapalıyken her şey hemen görünür
+01:43 +294 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: renk kontrastı: geçti (dark)
+01:43 +295 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: renk kontrastı: kaldı (dark)
+01:43 +296 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: renk kontrastı: geçti (light)
+01:43 +297 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: renk kontrastı: kaldı (light)
+01:43 +298 ~6: /workspaces/englishwordclaude/test/features/result_view_test.dart: 2 kat yazı boyutunda taşma yok
+01:43 +299 ~6: loading /workspaces/englishwordclaude/test/features/matching_timer_test.dart
+01:44 +299 ~6: /workspaces/englishwordclaude/test/features/matching_timer_test.dart: eşleştirme süre dolunca biter (FR-45)
+01:46 +300 ~6: loading /workspaces/englishwordclaude/test/features/words_test.dart
+01:47 +300 ~6: /workspaces/englishwordclaude/test/features/words_test.dart: Kelimelerim ekranında arama ve filtre (FR-90)
+01:49 +301 ~6: /workspaces/englishwordclaude/test/features/words_test.dart: favori kelimelerle alıştırma başlatılır (FR-93)
+01:50 +302 ~6: loading /workspaces/englishwordclaude/test/features/scramble_view_test.dart
+01:50 +302 ~6: /workspaces/englishwordclaude/test/features/scramble_view_test.dart: harfler doğru sıraya dizilince doğru sayılır (FR-47)
+01:52 +303 ~6: /workspaces/englishwordclaude/test/features/scramble_view_test.dart: yanlış sıra yanlış sayılır ve doğrusu gösterilir
+01:52 +304 ~6: loading /workspaces/englishwordclaude/test/features/word_lists_test.dart
+01:53 +304 ~6: /workspaces/englishwordclaude/test/features/word_lists_test.dart: liste oluşturulur ve kelime karttan eklenir (FR-91)
+01:55 +305 ~6: /workspaces/englishwordclaude/test/features/word_lists_test.dart: listeyle alıştırma başlatılır (FR-93)
+01:56 +306 ~6: loading /workspaces/englishwordclaude/test/features/notifications_test.dart
+01:57 +306 ~6: /workspaces/englishwordclaude/test/features/notifications_test.dart: açılışta bildirim planı kurulur, sessiz saat uygulanır (FR-100, FR-102)
+01:58 +307 ~6: /workspaces/englishwordclaude/test/features/notifications_test.dart: hatırlatma açılınca bildirim izni istenir (FR-04)
+01:59 +308 ~6: /workspaces/englishwordclaude/test/features/notifications_test.dart: tanıtımda saat seçilince izin istenir (FR-04)
+01:59 +309 ~6: loading /workspaces/englishwordclaude/test/features/level_map_test.dart
+02:00 +309 ~6: /workspaces/englishwordclaude/test/features/level_map_test.dart: haritada A1 açık, ilk ünite açık, diğerleri kilitli
+02:02 +310 ~6: /workspaces/englishwordclaude/test/features/level_map_test.dart: üniteye girilir, kart gezilir ve kelime seslendirilir
+02:03 +311 ~6: /workspaces/englishwordclaude/test/features/level_map_test.dart: ünite sınavı geçilince sonraki ünite açılır (FR-22)
+02:03 +312 ~6: /workspaces/englishwordclaude/test/features/level_map_test.dart: sıradaki ünite vurgulanır, tamamlanan seviye katlanır
+02:03 +313 ~6: loading /workspaces/englishwordclaude/test/features/word_relations_test.dart
+02:04 +313 ~6: /workspaces/englishwordclaude/test/features/word_relations_test.dart: kelime kartında zıt anlamlı kelime gösterilir (FR-33)
+02:05 +314 ~6: loading /workspaces/englishwordclaude/test/features/word_image_test.dart
+02:06 +314 ~6: /workspaces/englishwordclaude/test/features/word_image_test.dart: somut kelimede görsel var
+02:07 +315 ~6: /workspaces/englishwordclaude/test/features/word_image_test.dart: görseli olmayan kelimede kutu yok
+02:07 +316 ~6: /workspaces/englishwordclaude/test/features/word_image_test.dart: görsel ekran okuyucuya okunmaz
+02:07 +317 ~6: /workspaces/englishwordclaude/test/features/word_image_test.dart: 2 kat yazı boyutunda taşma yok
+02:07 +318 ~6: loading /workspaces/englishwordclaude/test/features/onboarding_test.dart
+02:08 +318 ~6: /workspaces/englishwordclaude/test/features/onboarding_test.dart: ilk açılışta tanıtım gösterilir ve A1 ile başlanır (FR-01..05)
+02:10 +319 ~6: /workspaces/englishwordclaude/test/features/onboarding_test.dart: tanıtımdan seviye tespit sınavına girilir (FR-05, FR-10..12)
+02:11 +320 ~6: /workspaces/englishwordclaude/test/features/onboarding_test.dart: tanıtım tamamlanmışsa doğrudan ana sayfa açılır
+02:11 +321 ~6: /workspaces/englishwordclaude/test/features/onboarding_test.dart: seviye tespit sınavı profilden yeniden yapılır (FR-14)
+02:11 +322 ~6: /workspaces/englishwordclaude/test/features/onboarding_test.dart: ünitesi olmayan seviye önerilirse hazır seviyeden başlanır (CNT-6, FR-12)
+02:12 +323 ~6: loading /workspaces/englishwordclaude/test/features/practice_test.dart
+02:13 +323 ~6: /workspaces/englishwordclaude/test/features/practice_test.dart: ünite sınavı %100 ile geçilir ve sıradaki ünite açılır
+02:16 +324 ~6: /workspaces/englishwordclaude/test/features/practice_test.dart: kilitli ünite hızlı geçiş sınavıyla tamamlanır (FR-27)
+02:17 +325 ~6: /workspaces/englishwordclaude/test/features/practice_test.dart: cevaptan sonra geri bildirim ve Devam düğmesi gösterilir
+02:18 +326 ~6: loading /workspaces/englishwordclaude/test/features/export_test.dart
+02:18 +326 ~6: /workspaces/englishwordclaude/test/features/export_test.dart: veriler CSV ve JSON olarak panoya kopyalanır (FR-124)
+02:21 +327 ~6: loading /workspaces/englishwordclaude/test/features/home_test.dart
+02:21 +327 ~6: /workspaces/englishwordclaude/test/features/home_test.dart: ana ekran seri, XP, hedef ve sıradaki üniteyi gösterir
+02:23 +328 ~6: /workspaces/englishwordclaude/test/features/home_test.dart: tekrar zamanı gelince tekrar oturumu açılır (FR-64)
+02:23 +329 ~6: /workspaces/englishwordclaude/test/features/home_test.dart: ana ekranda günün kelimesi gösterilir (FR-75)
+02:24 +330 ~6: loading /workspaces/englishwordclaude/test/tool/build_content_test.dart
+02:24 +330 ~6: /workspaces/englishwordclaude/test/tool/build_content_test.dart: içerik paketi kaynak dosyalarla güncel
+02:25 +331 ~6: /workspaces/englishwordclaude/test/tool/build_content_test.dart: hatalı kaynak geçerli kaynak derlenir
+02:25 +332 ~6: /workspaces/englishwordclaude/test/tool/build_content_test.dart: hatalı kaynak yinelenen kelime reddedilir
+02:25 +333 ~6: /workspaces/englishwordclaude/test/tool/build_content_test.dart: hatalı kaynak eksik örnek reddedilir
+02:25 +334 ~6: /workspaces/englishwordclaude/test/tool/build_content_test.dart: hatalı kaynak bilinmeyen sözcük türü reddedilir
+02:25 +335 ~6: /workspaces/englishwordclaude/test/tool/build_content_test.dart: hatalı kaynak bilinmeyen kelimeye ilişki reddedilir
+02:25 +336 ~6: loading /workspaces/englishwordclaude/test/core/answer_feedback_test.dart
+02:25 +336 ~6: /workspaces/englishwordclaude/test/core/answer_feedback_test.dart: doğru ve yanlış cevap farklı geri bildirim verir (FR-122)
+02:25 +337 ~6: /workspaces/englishwordclaude/test/core/answer_feedback_test.dart: kapatılan kanal kullanılmaz
+02:25 +338 ~6: /workspaces/englishwordclaude/test/core/answer_feedback_test.dart: alıştırmada ayarlara uyulur (açık: true) (variant: TargetPlatform.iOS)
+02:27 +339 ~6: /workspaces/englishwordclaude/test/core/answer_feedback_test.dart: alıştırmada ayarlara uyulur (açık: false) (variant: TargetPlatform.iOS)
+02:28 +340 ~6: loading /workspaces/englishwordclaude/test/core/focused_routes_test.dart
+02:29 +340 ~6: /workspaces/englishwordclaude/test/core/focused_routes_test.dart: alıştırma, sınav ve tekrarda alt menü gizlenir
+02:29 +341 ~6: /workspaces/englishwordclaude/test/core/focused_routes_test.dart: ana sekmelerde ve kelime kartlarında alt menü görünür
+02:29 +342 ~6: loading /workspaces/englishwordclaude/test/core/theme_mode_test.dart
+02:29 +342 ~6: /workspaces/englishwordclaude/test/core/theme_mode_test.dart: tema varsayılan olarak sistem ayarını izler ve değiştirilebilir
+02:29 +343 ~6: /workspaces/englishwordclaude/test/core/theme_mode_test.dart: açık ve koyu temalar Material 3 kullanır
+02:29 +344 ~6: loading /workspaces/englishwordclaude/test/core/licenses_test.dart
+02:30 +344 ~6: /workspaces/englishwordclaude/test/core/licenses_test.dart: Lexend yazı tipinin lisansı kayıtlı
+02:30 +345 ~6: /workspaces/englishwordclaude/test/core/licenses_test.dart: profilden lisans sayfası açılır
+
+Warning: A call to tap() with finder "Found 1 widget with key [<'open-licenses'>]: [
+  ListTile-[<'open-licenses'>](onTap: Closure: () => void, dependencies: [Directionality, InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#3c7ef], _ScrollableScope]),
+]" derived an Offset (Offset(400.0, 588.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+The finder corresponds to this RenderBox: RenderSemanticsAnnotations#4ead0 relayoutBoundary=up12
+The hit test result at that offset is: HitTestResult(RenderParagraph#36a7b@Offset(67.4, 14.5), RenderPadding#6d113@Offset(67.4, 18.5), RenderAnimatedOpacity#c2032@Offset(67.4, 18.5), RenderCustomMultiChildLayoutBox#b5615@Offset(80.0, 60.0), RenderFlex#736cf@Offset(80.0, 60.0), RenderPointerListener#5370b@Offset(80.0, 60.0), RenderSemanticsAnnotations#19f95@Offset(80.0, 60.0), RenderMouseRegion#61f80@Offset(80.0, 60.0), RenderSemanticsAnnotations#2ab91@Offset(80.0, 60.0), RenderMouseRegion#7be79@Offset(80.0, 60.0), RenderSemanticsAnnotations#57a68@Offset(80.0, 60.0), RenderPointerListener#65166@Offset(80.0, 60.0), _RenderExclusiveMouseRegion#5e781@Offset(80.0, 60.0), RenderSemanticsAnnotations#6d469@Offset(80.0, 60.0), _RenderLayoutSurrogateProxyBox#71ec4@Offset(80.0, 60.0), RenderStack#555d7@Offset(80.0, 60.0), RenderSemanticsAnnotations#7bd93@Offset(80.0, 60.0), RenderSemanticsAnnotations#5c6b3@Offset(80.0, 60.0), RenderMergeSemantics#7c888@Offset(80.0, 60.0), RenderFlex#b19c9@Offset(400.0, 60.0), RenderConstrainedBox#28711@Offset(400.0, 60.0), RenderSemanticsAnnotations#28a1b@Offset(400.0, 60.0), RenderPadding#c584c@Offset(400.0, 60.0), _RenderInkFeatures#0716d@Offset(400.0, 60.0), RenderPhysicalModel#6dd90@Offset(400.0, 60.0), RenderCustomMultiChildLayoutBox#efd90@Offset(400.0, 588.0), _RenderInkFeatures#665a3@Offset(400.0, 588.0), RenderPhysicalModel#5f383@Offset(400.0, 588.0), RenderSemanticsAnnotations#aaf50@Offset(400.0, 588.0), RenderRepaintBoundary#c00f5@Offset(400.0, 588.0), RenderIgnorePointer#022ea@Offset(400.0, 588.0), RenderRepaintBoundary#e0c73@Offset(400.0, 588.0), RenderSemanticsAnnotations#3472d@Offset(400.0, 588.0), RenderOffstage#1faf6@Offset(400.0, 588.0), RenderSemanticsAnnotations#f8f11@Offset(400.0, 588.0), _RenderTheater#bd34b@Offset(400.0, 588.0), RenderAbsorbPointer#2b82c@Offset(400.0, 588.0), RenderPointerListener#a58e8@Offset(400.0, 588.0), RenderSemanticsAnnotations#c1c6c@Offset(400.0, 588.0), RenderSemanticsAnnotations#ca5d2@Offset(400.0, 588.0), RenderSemanticsAnnotations#4e66c@Offset(400.0, 588.0), RenderTapRegionSurface#ca29e@Offset(400.0, 588.0), RenderSemanticsAnnotations#e7b22@Offset(400.0, 588.0), RenderSemanticsAnnotations#b9498@Offset(400.0, 588.0), HitTestEntry<HitTestTarget>#12933(_ReusableRenderView#42191), HitTestEntry<HitTestTarget>#889b8(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      main.<anonymous closure> (file:///workspaces/englishwordclaude/test/core/licenses_test.dart:35:18)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#6      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TypeWidgetFinder:<Found 0 widgets with type "LicensePage": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///workspaces/englishwordclaude/test/core/licenses_test.dart:38:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///workspaces/englishwordclaude/test/core/licenses_test.dart line 38
+The test description was:
+  profilden lisans sayfası açılır
+════════════════════════════════════════════════════════════════════════════════════════════════════
+02:34 +345 ~6 -1: /workspaces/englishwordclaude/test/core/licenses_test.dart: profilden lisans sayfası açılır [E]
+  Test failed. See exception logs above.
+  The test description was: profilden lisans sayfası açılır
+  
+02:34 +345 ~6 -1: loading /workspaces/englishwordclaude/test/core/empty_state_test.dart
+02:35 +345 ~6 -1: /workspaces/englishwordclaude/test/core/empty_state_test.dart: başlık, açıklama ve eylem düğmesi gösterilir
+02:35 +346 ~6 -1: /workspaces/englishwordclaude/test/core/empty_state_test.dart: hata durumu yeniden deneme düğmesi sunar
+02:35 +347 ~6 -1: /workspaces/englishwordclaude/test/core/empty_state_test.dart: kontrast ve dokunma alanı (dark)
+02:35 +348 ~6 -1: /workspaces/englishwordclaude/test/core/empty_state_test.dart: kontrast ve dokunma alanı (light)
+02:36 +349 ~6 -1: /workspaces/englishwordclaude/test/core/empty_state_test.dart: 2 kat yazıda ve kısa ekranda taşma yok
+02:36 +350 ~6 -1: /workspaces/englishwordclaude/test/core/empty_state_test.dart: Android sayfa geçişi tanımlı
+02:36 +351 ~6 -1: loading /workspaces/englishwordclaude/test/core/app_theme_test.dart
+02:36 +351 ~6 -1: /workspaces/englishwordclaude/test/core/app_theme_test.dart: açık temada metin ve zemin çiftleri WCAG AA (NFR-07)
+02:36 +352 ~6 -1: /workspaces/englishwordclaude/test/core/app_theme_test.dart: açık tema Lexend yazı tipini ve marka renklerini kullanır
+02:36 +353 ~6 -1: /workspaces/englishwordclaude/test/core/app_theme_test.dart: koyu temada metin ve zemin çiftleri WCAG AA (NFR-07)
+02:36 +354 ~6 -1: /workspaces/englishwordclaude/test/core/app_theme_test.dart: koyu tema Lexend yazı tipini ve marka renklerini kullanır
+02:36 +355 ~6 -1: /workspaces/englishwordclaude/test/core/app_theme_test.dart: marka renkleri açık temada
+02:36 +356 ~6 -1: /workspaces/englishwordclaude/test/core/app_theme_test.dart: yazı tipi dosyaları pakette (çevrimdışı)
+02:36 +357 ~6 -1: loading /workspaces/englishwordclaude/test/core/notification_plan_test.dart
+02:37 +357 ~6 -1: /workspaces/englishwordclaude/test/core/notification_plan_test.dart: saat çözümleme
+02:37 +358 ~6 -1: /workspaces/englishwordclaude/test/core/notification_plan_test.dart: sessiz saatler gece yarısını aşabilir (FR-102)
+02:37 +359 ~6 -1: /workspaces/englishwordclaude/test/core/notification_plan_test.dart: günlük hatırlatma seçilen saatte kurulur (FR-100)
+02:37 +360 ~6 -1: /workspaces/englishwordclaude/test/core/notification_plan_test.dart: sessiz saate denk gelen hatırlatma bitişe kaydırılır
+02:37 +361 ~6 -1: /workspaces/englishwordclaude/test/core/notification_plan_test.dart: seri uyarısı yalnız hedef tamamlanmadıysa kurulur (FR-101)
+02:37 +362 ~6 -1: loading /workspaces/englishwordclaude/test/core/legal_test.dart
+02:38 +362 ~6 -1: /workspaces/englishwordclaude/test/core/legal_test.dart: basit biçim ayrıştırılır
+02:38 +363 ~6 -1: /workspaces/englishwordclaude/test/core/legal_test.dart: HTML çıktısı kaçışlı ve listeler kapalı
+02:38 +364 ~6 -1: /workspaces/englishwordclaude/test/core/legal_test.dart: privacy başlık, iletişim ve yürürlük tarihi var
+02:38 +365 ~6 -1: /workspaces/englishwordclaude/test/core/legal_test.dart: privacy web sayfası kaynakla aynı (dart run tool/gen_legal_pages.dart)
+02:38 +366 ~6 -1: /workspaces/englishwordclaude/test/core/legal_test.dart: kvkk başlık, iletişim ve yürürlük tarihi var
+02:38 +367 ~6 -1: /workspaces/englishwordclaude/test/core/legal_test.dart: kvkk web sayfası kaynakla aynı (dart run tool/gen_legal_pages.dart)
+02:38 +368 ~6 -1: /workspaces/englishwordclaude/test/core/legal_test.dart: metinler profil ekranından açılır
+02:40 +369 ~6 -1: loading /workspaces/englishwordclaude/test/domain/word_search_test.dart
+02:40 +369 ~6 -1: /workspaces/englishwordclaude/test/domain/word_search_test.dart: boş aramada tüm kelimeler alfabetik gelir
+02:40 +370 ~6 -1: /workspaces/englishwordclaude/test/domain/word_search_test.dart: İngilizce ve Türkçe arar, Türkçe karakterleri yok sayar (FR-90)
+02:40 +371 ~6 -1: /workspaces/englishwordclaude/test/domain/word_search_test.dart: tam eşleşme önce, sonra baştan eşleşme
+02:40 +372 ~6 -1: /workspaces/englishwordclaude/test/domain/word_search_test.dart: seviye, durum ve favori filtreleri
+02:40 +373 ~6 -1: /workspaces/englishwordclaude/test/domain/word_search_test.dart: zorlanılan kelime filtresi (FR-66)
+02:40 +374 ~6 -1: /workspaces/englishwordclaude/test/domain/word_search_test.dart: foldText büyük harf ve Türkçe harfleri sadeleştirir
+02:40 +375 ~6 -1: loading /workspaces/englishwordclaude/test/domain/placement_exam_test.dart
+02:41 +375 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_exam_test.dart: sorular Türkçe anlam seçme türündedir (FR-11)
+02:41 +376 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_exam_test.dart: doğruda zorlaşır, yanlışta kolaylaşır (FR-10)
+02:41 +377 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_exam_test.dart: en fazla 30 soru sorulur ve sınav biter
+02:41 +378 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_exam_test.dart: bilgi seviyesine göre seviye önerir (FR-12)
+02:41 +379 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_exam_test.dart: kelimesi olmayan seviyeler atlanır
+02:41 +380 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_exam_test.dart: hiç kelime yoksa sınav baştan biter
+02:41 +381 ~6 -1: loading /workspaces/englishwordclaude/test/domain/scramble_test.dart
+02:42 +381 ~6 -1: /workspaces/englishwordclaude/test/domain/scramble_test.dart: yalnız 3–12 harfli tek sözcükler karıştırılır (FR-47)
+02:42 +382 ~6 -1: /workspaces/englishwordclaude/test/domain/scramble_test.dart: karışık harfler aynı harflerdir ama kelimenin kendisi değildir
+02:42 +383 ~6 -1: /workspaces/englishwordclaude/test/domain/scramble_test.dart: tek harften oluşan kelime olduğu gibi döner
+02:42 +384 ~6 -1: loading /workspaces/englishwordclaude/test/domain/study_time_test.dart
+02:42 +384 ~6 -1: /workspaces/englishwordclaude/test/domain/study_time_test.dart: oturum sürerken yalnız tam dakikalar kaydedilir (NFR-05)
+02:42 +385 ~6 -1: /workspaces/englishwordclaude/test/domain/study_time_test.dart: oturum bitince kalanın tamamı kaydedilir
+02:42 +386 ~6 -1: /workspaces/englishwordclaude/test/domain/study_time_test.dart: parça parça kayıt toplamı tek seferde kayıtla aynı dakikayı verir
+02:42 +387 ~6 -1: /workspaces/englishwordclaude/test/domain/study_time_test.dart: sıfır ya da negatif süre kaydedilmez
+02:42 +388 ~6 -1: loading /workspaces/englishwordclaude/test/domain/word_of_day_test.dart
+02:43 +388 ~6 -1: /workspaces/englishwordclaude/test/domain/word_of_day_test.dart: aynı gün aynı kelime, ertesi gün farklı kelime (FR-75)
+02:43 +389 ~6 -1: /workspaces/englishwordclaude/test/domain/word_of_day_test.dart: sıralama girdiye bağlı değildir
+02:43 +390 ~6 -1: /workspaces/englishwordclaude/test/domain/word_of_day_test.dart: bir hafta boyunca kelimeler tekrarlanmaz
+02:43 +391 ~6 -1: /workspaces/englishwordclaude/test/domain/word_of_day_test.dart: aday yoksa null döner
+02:43 +392 ~6 -1: loading /workspaces/englishwordclaude/test/domain/review_state_test.dart
+02:44 +392 ~6 -1: /workspaces/englishwordclaude/test/domain/review_state_test.dart: ReviewState.isDue hiç planlanmamış kart hemen tekrar edilir
+02:44 +393 ~6 -1: /workspaces/englishwordclaude/test/domain/review_state_test.dart: ReviewState.isDue vakti gelen ya da geçen kart tekrar edilir
+02:44 +394 ~6 -1: /workspaces/englishwordclaude/test/domain/review_state_test.dart: ReviewState.isDue vakti gelmeyen kart beklenir
+02:44 +395 ~6 -1: /workspaces/englishwordclaude/test/domain/review_state_test.dart: başlangıç durumu SM-2 varsayılanlarıdır
+02:44 +396 ~6 -1: /workspaces/englishwordclaude/test/domain/review_state_test.dart: toString hata ayıklama için alanları içerir
+02:44 +397 ~6 -1: /workspaces/englishwordclaude/test/domain/review_state_test.dart: CardState veritabanı değeri her durum kendi değerine gidip geri gelir
+02:44 +398 ~6 -1: /workspaces/englishwordclaude/test/domain/review_state_test.dart: CardState veritabanı değeri bilinmeyen değer yeni kart sayılır
+02:44 +399 ~6 -1: loading /workspaces/englishwordclaude/test/domain/difficulty_test.dart
+02:44 +399 ~6 -1: /workspaces/englishwordclaude/test/domain/difficulty_test.dart: yeni ve sorunsuz kartlar zor sayılmaz (FR-66)
+02:44 +400 ~6 -1: /workspaces/englishwordclaude/test/domain/difficulty_test.dart: yanlış cevap kolaylığı düşürür ve kartı zor yapar
+02:44 +401 ~6 -1: /workspaces/englishwordclaude/test/domain/difficulty_test.dart: iki kez unutulan kart zordur, ustalaşılan kart değildir
+02:44 +402 ~6 -1: loading /workspaces/englishwordclaude/test/domain/badge_test.dart
+02:45 +402 ~6 -1: /workspaces/englishwordclaude/test/domain/badge_test.dart: rozet koşulları (FR-73)
+02:45 +403 ~6 -1: loading /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart
+02:46 +403 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: boşluk doldurma kelime sınırına bakar
+02:46 +404 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: seçmeli soruda 4 farklı seçenek ve doğru cevap var
+02:46 +405 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: çeldiriciler aynı sözcük türünden seçilir (FR-48)
+02:46 +406 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: boşluk doldurmada cümlede boşluk ve ipucu var
+02:46 +407 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: alıştırma türü kelime durumuna göre zorlaşır (FR-50)
+02:46 +408 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: öğrenme aşamasında harf karıştırma sorulur (FR-47)
+02:46 +409 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: seviye sınavı 40 seçmeli sorudur
+02:46 +410 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: yeni kelimeler oturum içinde iki kez daha sorulur (FR-62)
+02:46 +411 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: pickLessonWords ilk derste sıradaki 8 yeni kelime gelir
+02:46 +412 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: pickLessonWords sonraki derste yeni kelimeler ve pekiştirme birlikte
+02:46 +413 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: pickLessonWords bütün kelimeler görüldüyse ünite tekrar edilir
+02:46 +414 ~6 -1: /workspaces/englishwordclaude/test/domain/exercise_generator_test.dart: pickLessonWords ders uzunluğu makul kalır
+02:46 +415 ~6 -1: loading /workspaces/englishwordclaude/test/domain/word_images_test.dart
+02:46 +415 ~6 -1: /workspaces/englishwordclaude/test/domain/word_images_test.dart: somut isimlerin görseli var, diğerlerinin yok
+02:46 +416 ~6 -1: /workspaces/englishwordclaude/test/domain/word_images_test.dart: görseli olan her kelime içerik paketinde isim olarak var
+02:46 +417 ~6 -1: /workspaces/englishwordclaude/test/domain/word_images_test.dart: görseller tek emoji: birleşik (ZWJ) dizi yok
+02:46 +418 ~6 -1: loading /workspaces/englishwordclaude/test/domain/placement_pool_test.dart
+02:47 +418 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_pool_test.dart: her seviyede en az 30 soru vardır (CNT-6)
+02:47 +419 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_pool_test.dart: kelimeler tekrarlanmaz, anlamlar seviye içinde ayırt edilir
+02:47 +420 ~6 -1: /workspaces/englishwordclaude/test/domain/placement_pool_test.dart: çeldiriciler aynı seviye ve aynı türdendir (FR-48)
+02:47 +421 ~6 -1: loading /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart
+02:48 +421 ~6 -1: /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart: ilk doğru cevap: 1 gün sonra, durum Öğreniliyor
+02:48 +422 ~6 -1: /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart: ikinci doğru cevap: 6 gün sonra, durum Tekrarda
+02:48 +423 ~6 -1: /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart: üçüncü doğru cevapta aralık ease factor ile çarpılır
+02:48 +424 ~6 -1: /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart: aralık 21 günü geçince durum Öğrenildi olur
+02:48 +425 ~6 -1: /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart: yanlış cevap: 1 gün sonra, tekrar sayısı sıfırlanır, durum Öğreniliyor
+02:48 +426 ~6 -1: /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart: ease factor 1.3 altına düşmez
+02:48 +427 ~6 -1: /workspaces/englishwordclaude/test/domain/sm2_scheduler_test.dart: kalite 0–5 dışındaysa hata verir
+02:48 +428 ~6 -1: loading /workspaces/englishwordclaude/test/domain/answer_test.dart
+02:48 +428 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: cevap kalitesi (FR-61) doğru ve hızlı = 5
+02:48 +429 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: cevap kalitesi (FR-61) doğru ve yavaş = 4
+02:48 +430 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: cevap kalitesi (FR-61) neredeyse doğru = 3
+02:48 +431 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: cevap kalitesi (FR-61) yanlış = 1
+02:48 +432 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: yazılı cevap eşleştirme (FR-43) büyük/küçük harf ve boşluklar önemsenmez
+02:48 +433 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: yazılı cevap eşleştirme (FR-43) tek harf hatası neredeyse doğrudur
+02:48 +434 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: yazılı cevap eşleştirme (FR-43) iki harf hatası yanlıştır
+02:48 +435 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: yazılı cevap eşleştirme (FR-43) kısa kelimelerde tolerans yoktur
+02:48 +436 ~6 -1: /workspaces/englishwordclaude/test/domain/answer_test.dart: yazılı cevap eşleştirme (FR-43) boş cevap yanlıştır
+02:48 +437 ~6 -1: Some tests failed.
+
+Failing tests:
+  /workspaces/englishwordclaude/test/core/licenses_test.dart: profilden lisans sayfası açılır
