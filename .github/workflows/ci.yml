@@ -58,7 +58,21 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: flutter build apk --debug
+      - name: Sürüm APK'ları (ABI başına)
+        run: flutter build apk --release --split-per-abi
+      - name: Boyut bütçesi (NFR-04, en fazla 60 MB)
+        run: |
+          limit=$((60 * 1024 * 1024))
+          fail=0
+          for apk in build/app/outputs/flutter-apk/app-*-release.apk; do
+            size=$(stat -c %s "$apk")
+            echo "$(basename "$apk"): $((size / 1024 / 1024)) MB"
+            if [ "$size" -gt "$limit" ]; then
+              echo "::error::$(basename "$apk") 60 MB sınırını aşıyor"
+              fail=1
+            fi
+          done
+          exit $fail
 
   build-ios:
     name: iOS derlemesi
