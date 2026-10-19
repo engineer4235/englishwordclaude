@@ -67,5 +67,15 @@ jobs:
                      for d in ds if d['name'].startswith('iPhone')))")
           echo "UDID=$UDID" >> "$GITHUB_ENV"
           xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
       - name: Simülatörde uçtan uca test
-        run: flutter test integration_test -d "$UDID" --reporter expanded
+        # Simülatörde test bazen uygulamaya bağlanamadan asılı kalıyor;
+        # her deneme 15 dakikayla sınırlı, asılırsa bir kez daha denenir.
+        run: |
+          for i in 1 2; do
+            perl -e 'alarm shift; exec @ARGV' 900 \
+              flutter test integration_test -d "$UDID" --reporter expanded \
+              && exit 0
+            echo "::warning::Deneme $i başarısız (çıkış $?)"
+          done
+          exit 1
