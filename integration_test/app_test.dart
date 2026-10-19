@@ -82,11 +82,16 @@ void main() {
 
     // İlk kurulumda tanıtım, daha önce kurulduysa ana sayfa açılır.
     final skip = find.byKey(const ValueKey('skip'));
+    // Tanıtım durumu veritabanından okunana kadar alt menü kısa süre
+    // görünebilir; bu yüzden tanıtımın ya da ana sayfanın kendisi beklenir.
+    final home = find.text('Yeni kelimeler');
     await pumpUntil(
       tester,
-      find.byWidgetPredicate((w) {
-        return w.key == const ValueKey('skip') || w is NavigationBar;
-      }),
+      find.byWidgetPredicate(
+        (w) =>
+            w.key == const ValueKey('skip') ||
+            (w is Text && w.data == 'Yeni kelimeler'),
+      ),
     );
     check('soguk_acilis_ms', total.elapsedMilliseconds, 2000);
 
@@ -100,7 +105,7 @@ void main() {
       await tap(tester, find.byKey(const ValueKey('next')));
       await tap(tester, find.byKey(const ValueKey('start-a1')));
     }
-    await tap(tester, find.text('Yeni kelimeler'));
+    await tap(tester, home);
     await pumpUntil(tester, find.text('mother'));
     check('ilk_derse_kadar_ms', total.elapsedMilliseconds, 90000);
 
