@@ -9,14 +9,14 @@ Learn English at Home
 
 ## Kısa açıklama (80)
 
-İngilizce kelimeleri A1'den C2'ye seviye seviye, internetsiz ve reklamsız öğren.
+İngilizce kelimeleri A1'den B2'ye seviye seviye, internetsiz ve reklamsız öğren.
 
 ## Tam açıklama (4000)
 
 Learn English at Home, İngilizce kelime dağarcığını sıfırdan ileri seviyeye kadar adım adım geliştirmen için hazırlandı. Her gün birkaç dakika ayır, gerisini uygulama planlasın.
 
 SEVİYE SEVİYE İLERLE
-• A1'den C2'ye kadar seviyeler, her seviyede konulara ayrılmış üniteler
+• A1'den B2'ye 1.280 kelime, her seviyede konulara ayrılmış üniteler
 • Başlangıçta kısa bir seviye tespit sınavıyla sana uygun yerden başla
 • Her ünitenin ve seviyenin sonunda sınav; geçtikçe yeni üniteler açılır
 
@@ -88,4 +88,4 @@ GİZLİLİĞİNE SAYGILI
 
 ## Sürüm notları (ilk sürüm, 500)
 
-İlk sürüm: A1–C2 kelime üniteleri, seviye tespit sınavı, aralıklı tekrar, alıştırmalar, seri ve rozetler, kişisel listeler. Tamamen çevrimdışı ve reklamsız.
+İlk sürüm: A1–B2 seviyelerinde 1.280 kelime, seviye tespit sınavı, aralıklı tekrar, alıştırmalar, seri ve rozetler, kişisel listeler. Tamamen çevrimdışı ve reklamsız.

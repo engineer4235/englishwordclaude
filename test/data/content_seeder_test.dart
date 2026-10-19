@@ -49,7 +49,11 @@ void main() {
     final b2 = await repo.getUnits(levels[3].id);
     expect(b2, hasLength(10), reason: 'B2 içeriği');
     expect(b2.first.title, 'İş Dünyası');
-    expect(await repo.getWords(units.first.id), hasLength(8));
+    expect(
+      await repo.getWords(units.first.id),
+      hasLength(20),
+      reason: 'A1/A2 ünitelerinde 20 kelime (SRS: seviye başına 500)',
+    );
 
     final openUnits = await db.select(db.unitProgress).get();
     expect(openUnits.single.unitId, units.first.id);
@@ -96,7 +100,7 @@ void main() {
     };
     expect(progress[units[3].id]?.status, 'open');
     expect(progress[units[4].id], isNull, reason: 'sonraki yeni ünite kilitli');
-    expect(await repo.getWords(units[3].id), hasLength(8));
+    expect(await repo.getWords(units[3].id), hasLength(20));
   });
 
   test('açık ama ünitesiz seviyeye gelen ilk ünite açılır', () async {
@@ -250,5 +254,41 @@ void main() {
   test('contentKey sürüm ve uzunluktan oluşur', () {
     expect(ContentSeeder.contentKey('{"version": 7, "a": 1}'), '7:22');
     expect(ContentSeeder.contentKey('{}'), '0:2');
+  });
+
+  test('güncellemeyle mevcut ünitelere gelen kelimeler eklenir', () async {
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+    final old = File('test/fixtures/seed_content.json').readAsStringSync();
+    final seeder = ContentSeeder(db);
+    await seeder.seedIfEmpty(old);
+    final repo = DriftContentRepository(db);
+    final a1 = (await repo.getLevels()).first;
+    final family = (await repo.getUnits(a1.id)).first;
+    final before = await repo.getWords(family.id);
+    expect(before, hasLength(8));
+
+    expect(await seeder.addMissingWords(json), greaterThan(0));
+    expect(await seeder.addMissingWords(json), 0);
+
+    final after = await repo.getWords(family.id);
+    expect(after, hasLength(20));
+    expect(after.take(8).map((w) => w.id), before.map((w) => w.id));
+    expect(after.map((w) => w.lemma), contains('grandmother'));
+  });
+
+  test('sync: eski kurulum yeni kelime ve üniteleri birlikte alır', () async {
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+    final old = File('test/fixtures/seed_content.json').readAsStringSync();
+    final seeder = ContentSeeder(db);
+    await seeder.sync(old);
+    await seeder.sync(json);
+
+    final data = jsonDecode(json) as Map<String, dynamic>;
+    final total = [
+      for (final unit in data['units'] as List) ...unit['words'] as List,
+    ].length;
+    expect(await db.select(db.words).get(), hasLength(total));
   });
 }

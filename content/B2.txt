@@ -1,0 +1,101 @@
+# B2 seviyesi. Biçim için content/README.md dosyasına bakın.
+
+## İş Dünyası | business_world | business
+negotiate|/nɪˈɡoʊʃieɪt/|verb|pazarlık etmek, müzakere etmek|We need to negotiate a better price.|Daha iyi bir fiyat için pazarlık etmemiz gerekiyor.|The two companies will negotiate next week.|İki şirket gelecek hafta müzakere edecek.
+revenue|/ˈrevənuː/|noun|gelir, hasılat|The company's revenue grew by ten percent.|Şirketin geliri yüzde on arttı.|Most of our revenue comes from online sales.|Gelirimizin çoğu internet satışlarından geliyor.
+investment|/ɪnˈvestmənt/|noun|yatırım|Buying a house is a big investment.|Ev almak büyük bir yatırımdır.|The investment paid off after five years.|Yatırım beş yıl sonra karşılığını verdi.
+strategy|/ˈstrætədʒi/|noun|strateji|We need a new marketing strategy.|Yeni bir pazarlama stratejisine ihtiyacımız var.|Her strategy worked very well.|Stratejisi çok iyi işe yaradı.
+competitor|/kəmˈpetɪtər/|noun|rakip|Our main competitor lowered its prices.|Ana rakibimiz fiyatlarını düşürdü.|Every competitor wants to win the contract.|Her rakip sözleşmeyi kazanmak istiyor.
+profit|/ˈprɑːfɪt/|noun|kâr|The shop made a small profit this year.|Dükkân bu yıl küçük bir kâr elde etti.|They sold the car at a profit.|Arabayı kârla sattılar.
+launch|/lɔːntʃ/|verb|piyasaya sürmek, başlatmak|The company will launch a new phone in May.|Şirket mayısta yeni bir telefon piyasaya sürecek.|They plan to launch the campaign next month.|Kampanyayı gelecek ay başlatmayı planlıyorlar.
+efficient|/ɪˈfɪʃənt/|adjective|verimli|This new machine is more efficient.|Bu yeni makine daha verimli.|She is an efficient manager.|Verimli bir yöneticidir.
+
+## Araştırma | research_b2 | school
+hypothesis|/haɪˈpɑːθəsɪs/|noun|hipotez, varsayım|The scientists tested their hypothesis.|Bilim insanları hipotezlerini test etti.|The results did not support the hypothesis.|Sonuçlar hipotezi desteklemedi.
+evidence|/ˈevɪdəns/|noun|kanıt|There is no evidence for this idea.|Bu fikir için hiçbir kanıt yok.|The police found new evidence.|Polis yeni kanıt buldu.
+analyze|/ˈænəlaɪz/|verb|incelemek, analiz etmek|We need to analyze the results carefully.|Sonuçları dikkatle incelememiz gerekiyor.|Computers can analyze data very quickly.|Bilgisayarlar verileri çok hızlı analiz edebilir.
+conclusion|/kənˈkluːʒən/|noun|sonuç, yargı|What conclusion did you reach?|Hangi sonuca vardın?|Don't jump to a conclusion too quickly.|Çok çabuk bir yargıya varma.
+sample|/ˈsæmpəl/|noun|örnek, numune|The doctor took a blood sample.|Doktor kan örneği aldı.|The shop gave us a free sample.|Mağaza bize ücretsiz bir numune verdi.
+accurate|/ˈækjərət/|adjective|doğru, kesin|Is this information accurate?|Bu bilgi doğru mu?|The clock is very accurate.|Saat çok hassas.
+significant|/sɪɡˈnɪfɪkənt/|adjective|önemli, kayda değer|There was a significant change in prices.|Fiyatlarda önemli bir değişiklik oldu.|This is a significant discovery.|Bu kayda değer bir keşif.
+survey|/ˈsɜːrveɪ/|noun|anket|We did a survey of five hundred students.|Beş yüz öğrenciyle bir anket yaptık.|The survey shows that people want more parks.|Anket, insanların daha fazla park istediğini gösteriyor.
+
+## Toplumsal Sorunlar | social_issues | people
+poverty|/ˈpɑːvərti/|noun|yoksulluk|Many families live in poverty.|Birçok aile yoksulluk içinde yaşıyor.|Education can help to end poverty.|Eğitim yoksulluğu bitirmeye yardım edebilir.
+unemployment|/ˌʌnɪmˈplɔɪmənt/|noun|işsizlik|Unemployment is high among young people.|Gençler arasında işsizlik yüksek.|The government wants to reduce unemployment.|Hükümet işsizliği azaltmak istiyor.
+inequality|/ˌɪnɪˈkwɑːləti/|noun|eşitsizlik|There is still inequality between men and women.|Kadınlar ve erkekler arasında hâlâ eşitsizlik var.|The report talks about income inequality.|Rapor gelir eşitsizliğinden bahsediyor.
+homeless|/ˈhoʊmləs/|adjective|evsiz|The charity helps homeless people.|Hayır kurumu evsiz insanlara yardım ediyor.|He was homeless for two years.|İki yıl evsiz kaldı.
+discrimination|/dɪˌskrɪmɪˈneɪʃən/|noun|ayrımcılık|Discrimination at work is against the law.|İş yerinde ayrımcılık yasaya aykırıdır.|We must fight against discrimination.|Ayrımcılığa karşı mücadele etmeliyiz.
+welfare|/ˈwelfer/|noun|refah, sosyal yardım|The welfare of children is very important.|Çocukların refahı çok önemlidir.|The state pays welfare to poor families.|Devlet yoksul ailelere sosyal yardım ödüyor.
+campaign|/kæmˈpeɪn/|noun|kampanya|They started a campaign to save the forest.|Ormanı kurtarmak için bir kampanya başlattılar.|The campaign raised a lot of money.|Kampanya çok para topladı.
+protest|/ˈproʊtest/|noun|protesto, eylem|Thousands of people joined the protest.|Binlerce kişi protestoya katıldı.|The protest was peaceful.|Eylem barışçıldı.
+
+## Medya Dünyası | media_world | news
+influence|/ˈɪnfluəns/|noun|etki|Social media has a big influence on teenagers.|Sosyal medyanın gençler üzerinde büyük etkisi var.|His father had a strong influence on him.|Babasının onun üzerinde güçlü bir etkisi vardı.
+broadcast|/ˈbrɔːdkæst/|verb|yayınlamak|They broadcast the match live.|Maçı canlı yayınladılar.|The channel will broadcast the news at nine.|Kanal haberleri dokuzda yayınlayacak.
+criticism|/ˈkrɪtɪsɪzəm/|noun|eleştiri|The film received a lot of criticism.|Film çok eleştiri aldı.|Try to accept criticism calmly.|Eleştiriyi sakin karşılamaya çalış.
+viewer|/ˈvjuːər/|noun|izleyici|Every viewer can vote for the best singer.|Her izleyici en iyi şarkıcıya oy verebilir.|One viewer called the channel to complain.|Bir izleyici şikâyet etmek için kanalı aradı.
+controversial|/ˌkɑːntrəˈvɜːrʃəl/|adjective|tartışmalı|It was a controversial decision.|Tartışmalı bir karardı.|The new law is very controversial.|Yeni yasa çok tartışmalı.
+censorship|/ˈsensərʃɪp/|noun|sansür|Many writers spoke against censorship.|Birçok yazar sansüre karşı konuştu.|Censorship of the internet is a big problem.|İnternet sansürü büyük bir sorun.
+coverage|/ˈkʌvərɪdʒ/|noun|haber yayını, kapsam|The election got a lot of media coverage.|Seçim medyada çok yer aldı.|The phone has good coverage in the mountains.|Telefon dağlarda iyi çekiyor.
+propaganda|/ˌprɑːpəˈɡændə/|noun|propaganda|The poster was a piece of war propaganda.|Afiş bir savaş propagandasıydı.|Don't believe everything; some of it is propaganda.|Her şeye inanma; bir kısmı propaganda.
+
+## Sağlıklı Yaşam | healthy_living | nutrition
+nutrition|/nuːˈtrɪʃən/|noun|beslenme|Good nutrition is important for children.|İyi beslenme çocuklar için önemlidir.|She studies nutrition at university.|Üniversitede beslenme okuyor.
+habit|/ˈhæbɪt/|noun|alışkanlık|Reading every night is a good habit.|Her gece kitap okumak iyi bir alışkanlıktır.|I want to break this bad habit.|Bu kötü alışkanlığı bırakmak istiyorum.
+stress|/stres/|noun|stres|Exercise helps to reduce stress.|Egzersiz stresi azaltmaya yardım eder.|He is under a lot of stress at work.|İşte çok stres altında.
+routine|/ruːˈtiːn/|noun|günlük düzen, rutin|My morning routine starts with coffee.|Sabah rutinim kahveyle başlar.|Children need a regular routine.|Çocukların düzenli bir günlük düzene ihtiyacı var.
+balanced|/ˈbælənst/|adjective|dengeli|Try to eat a balanced diet.|Dengeli beslenmeye çalış.|She has a balanced life.|Dengeli bir hayatı var.
+mental|/ˈmentəl/|adjective|zihinsel, ruhsal|Sleep is good for your mental health.|Uyku ruh sağlığın için iyidir.|Chess is a mental exercise.|Satranç zihinsel bir egzersizdir.
+workout|/ˈwɜːrkaʊt/|noun|antrenman|I do a short workout every morning.|Her sabah kısa bir antrenman yapıyorum.|That was a hard workout.|Zorlu bir antrenmandı.
+exhausted|/ɪɡˈzɔːstɪd/|adjective|bitkin, çok yorgun|I was exhausted after the long trip.|Uzun yolculuktan sonra bitkindim.|The players looked exhausted.|Oyuncular bitkin görünüyordu.
+
+## Hukuk ve Adalet | law_justice | public
+court|/kɔːrt/|noun|mahkeme|The case went to court last year.|Dava geçen yıl mahkemeye gitti.|He has to appear in court on Monday.|Pazartesi mahkemeye çıkması gerekiyor.
+judge|/dʒʌdʒ/|noun|yargıç, hâkim|The judge listened to both sides.|Yargıç iki tarafı da dinledi.|She became a judge at forty.|Kırk yaşında hâkim oldu.
+lawyer|/ˈlɔːjər/|noun|avukat|You should talk to a lawyer first.|Önce bir avukatla konuşmalısın.|Her lawyer gave good advice.|Avukatı iyi bir tavsiye verdi.
+trial|/ˈtraɪəl/|noun|yargılama, dava|The trial lasted three weeks.|Yargılama üç hafta sürdü.|The trial starts tomorrow.|Dava yarın başlıyor.
+guilty|/ˈɡɪlti/|adjective|suçlu|The court found him guilty.|Mahkeme onu suçlu buldu.|I feel guilty about forgetting her birthday.|Doğum gününü unuttuğum için kendimi suçlu hissediyorum.
+innocent|/ˈɪnəsənt/|adjective|masum, suçsuz|He says he is innocent.|Masum olduğunu söylüyor.|An innocent man went to prison.|Suçsuz bir adam hapse girdi.
+sentence|/ˈsentəns/|noun|ceza, hüküm; cümle|He got a sentence of two years.|İki yıl ceza aldı.|Write a sentence with this word.|Bu kelimeyle bir cümle yaz.
+justice|/ˈdʒʌstɪs/|noun|adalet|People want justice for the victims.|İnsanlar mağdurlar için adalet istiyor.|Justice must be the same for everyone.|Adalet herkes için aynı olmalı.
+
+## Dijital Dünya | digital_world | devices
+innovation|/ˌɪnəˈveɪʃən/|noun|yenilik|The company is famous for innovation.|Şirket yenilikleriyle ünlü.|This phone is a real innovation.|Bu telefon gerçek bir yenilik.
+artificial|/ˌɑːrtɪˈfɪʃəl/|adjective|yapay|Artificial intelligence is changing many jobs.|Yapay zekâ birçok mesleği değiştiriyor.|These flowers are artificial.|Bu çiçekler yapay.
+digital|/ˈdɪdʒɪtəl/|adjective|dijital|I prefer digital books to paper books.|Dijital kitapları kâğıt kitaplara tercih ederim.|We live in a digital world.|Dijital bir dünyada yaşıyoruz.
+virtual|/ˈvɜːrtʃuəl/|adjective|sanal|We had a virtual meeting this morning.|Bu sabah sanal bir toplantı yaptık.|The museum offers a virtual tour.|Müze sanal bir tur sunuyor.
+privacy|/ˈpraɪvəsi/|noun|gizlilik, mahremiyet|Protect your privacy online.|İnternette gizliliğini koru.|Everyone has a right to privacy.|Herkesin mahremiyet hakkı vardır.
+upgrade|/ˈʌpɡreɪd/|verb|yükseltmek, güncellemek|I need to upgrade my computer.|Bilgisayarımı yükseltmem gerekiyor.|The airline will upgrade us to business class.|Havayolu bizi business sınıfa yükseltecek.
+network|/ˈnetwɜːrk/|noun|ağ|The network is down today.|Ağ bugün çalışmıyor.|She has a large network of friends.|Geniş bir arkadaş çevresi var.
+database|/ˈdeɪtəbeɪs/|noun|veri tabanı|All customers are in the database.|Tüm müşteriler veri tabanında.|The database stores every order.|Veri tabanı her siparişi saklar.
+
+## Çevre Sorunları | environmental_issues | eco
+emission|/ɪˈmɪʃən/|noun|salım, emisyon|The new law limits the emission of harmful gases.|Yeni yasa zararlı gazların salımını sınırlıyor.|The factory must cut its emission levels.|Fabrika emisyon düzeyini düşürmek zorunda.
+renewable|/rɪˈnuːəbəl/|adjective|yenilenebilir|Solar power is a renewable energy source.|Güneş enerjisi yenilenebilir bir kaynaktır.|We should use more renewable energy.|Daha çok yenilenebilir enerji kullanmalıyız.
+sustainable|/səˈsteɪnəbəl/|adjective|sürdürülebilir|We need a sustainable way of living.|Sürdürülebilir bir yaşam biçimine ihtiyacımız var.|The farm uses sustainable methods.|Çiftlik sürdürülebilir yöntemler kullanıyor.
+extinct|/ɪkˈstɪŋkt/|adjective|nesli tükenmiş|Dinosaurs are extinct.|Dinozorların nesli tükenmiştir.|This bird may become extinct soon.|Bu kuşun nesli yakında tükenebilir.
+drought|/draʊt/|noun|kuraklık|The drought killed many crops.|Kuraklık birçok ürünü yok etti.|There was a long drought last summer.|Geçen yaz uzun bir kuraklık oldu.
+deforestation|/diːˌfɔːrɪˈsteɪʃən/|noun|ormansızlaşma|Deforestation is a serious problem in the Amazon.|Amazon'da ormansızlaşma ciddi bir sorundur.|Deforestation destroys the homes of many animals.|Ormansızlaşma birçok hayvanın yaşam alanını yok eder.
+fossil|/ˈfɑːsəl/|noun|fosil|Fossil fuels pollute the air.|Fosil yakıtlar havayı kirletir.|They found a fossil in the rock.|Kayada bir fosil buldular.
+conservation|/ˌkɑːnsərˈveɪʃən/|noun|koruma|The conservation of water is important.|Suyun korunması önemlidir.|She works for a wildlife conservation group.|Bir yaban hayatı koruma grubunda çalışıyor.
+
+## Duygu Dünyası | feelings_b2 | mood
+anxious|/ˈæŋkʃəs/|adjective|kaygılı, endişeli|She felt anxious before the flight.|Uçuştan önce kaygılı hissetti.|Don't be anxious, everything will be fine.|Endişelenme, her şey yoluna girecek.
+frustrated|/ˈfrʌstreɪtɪd/|adjective|hayal kırıklığına uğramış, bıkkın|I get frustrated when my computer is slow.|Bilgisayarım yavaş olunca sinirleniyorum.|He was frustrated by the long wait.|Uzun beklemeden bıkmıştı.
+grateful|/ˈɡreɪtfəl/|adjective|minnettar|I am grateful for your help.|Yardımın için minnettarım.|We are grateful to our teachers.|Öğretmenlerimize minnettarız.
+ashamed|/əˈʃeɪmd/|adjective|utanmış|He was ashamed of his behavior.|Davranışından utanmıştı.|Don't be ashamed to ask for help.|Yardım istemekten utanma.
+overwhelmed|/ˌoʊvərˈwelmd/|adjective|bunalmış|I felt overwhelmed by all the work.|Bütün o işten bunalmıştım.|She was overwhelmed with joy.|Sevinçten kendinden geçti.
+envious|/ˈenviəs/|adjective|kıskanç, gıpta eden|He was envious of his brother's success.|Kardeşinin başarısını kıskanıyordu.|Don't be envious of other people.|Başkalarını kıskanma.
+relieved|/rɪˈliːvd/|adjective|rahatlamış|I was relieved to hear the good news.|İyi haberi duyunca rahatladım.|She looked relieved after the exam.|Sınavdan sonra rahatlamış görünüyordu.
+motivated|/ˈmoʊtɪveɪtɪd/|adjective|istekli, motive|The team is very motivated this year.|Takım bu yıl çok istekli.|How do you stay motivated?|İstekli kalmayı nasıl başarıyorsun?
+
+## Ekonomi | economy | wallet
+economy|/ɪˈkɑːnəmi/|noun|ekonomi|The economy is growing slowly.|Ekonomi yavaş büyüyor.|Tourism is important for the economy.|Turizm ekonomi için önemlidir.
+inflation|/ɪnˈfleɪʃən/|noun|enflasyon|Inflation makes everything more expensive.|Enflasyon her şeyi pahalılaştırır.|The bank wants to control inflation.|Banka enflasyonu kontrol etmek istiyor.
+debt|/det/|noun|borç|He paid off all his debt.|Bütün borcunu ödedi.|The country has a large debt.|Ülkenin büyük bir borcu var.
+interest|/ˈɪntrəst/|noun|faiz; ilgi|The bank charges high interest on loans.|Banka kredilerde yüksek faiz alıyor.|She has a strong interest in art.|Sanata güçlü bir ilgisi var.
+export|/ˈekspɔːrt/|noun|ihracat|Cars are the country's main export.|Arabalar ülkenin başlıca ihracat ürünüdür.|Export sales went up this year.|İhracat satışları bu yıl arttı.
+currency|/ˈkɜːrənsi/|noun|para birimi|What is the currency of Japan?|Japonya'nın para birimi nedir?|You can change currency at the airport.|Havaalanında döviz bozdurabilirsin.
+recession|/rɪˈseʃən/|noun|durgunluk, resesyon|Many people lost their jobs in the recession.|Durgunlukta birçok kişi işini kaybetti.|Experts say a recession is coming.|Uzmanlar bir resesyonun geldiğini söylüyor.
+wealth|/welθ/|noun|servet, zenginlik|Health is more important than wealth.|Sağlık servetten daha önemlidir.|The family's wealth came from oil.|Ailenin serveti petrolden geldi.

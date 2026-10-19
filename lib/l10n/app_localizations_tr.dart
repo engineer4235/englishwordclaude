@@ -473,6 +473,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get kvkkNotice => 'KVKK aydınlatma metni';
 
   @override
+  String get openSourceLicenses => 'Açık kaynak lisansları';
+
+  @override
+  String get openSourceLicensesHint => 'Kullanılan yazı tipi ve kütüphaneler';
+
+  @override
   String get settingDailyTarget => 'Günlük yeni kelime hedefi';
 
   @override

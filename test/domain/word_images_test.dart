@@ -15,6 +15,7 @@ void main() {
     expect(wordImage(word('Apple')), '🍎', reason: 'büyük harf fark etmez');
     expect(wordImage(word('watch', 'verb')), isNull, reason: 'yalnız isimler');
     expect(wordImage(word('decision')), isNull, reason: 'soyut kelime');
+    expect(wordImage(word('T-shirt')), '👕', reason: 'büyük harfli kelime');
   });
 
   test('görseli olan her kelime içerik paketinde isim olarak var', () {
@@ -24,7 +25,7 @@ void main() {
     final nouns = {
       for (final unit in data['units'] as List)
         for (final w in unit['words'] as List)
-          if (w['pos'] == 'noun') w['lemma'] as String,
+          if (w['pos'] == 'noun') (w['lemma'] as String).toLowerCase(),
     };
     for (final lemma in wordImages.keys) {
       expect(nouns, contains(lemma));

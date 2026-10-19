@@ -8,6 +8,28 @@ import 'scramble.dart';
 /// Seviye atlama sınavındaki soru sayısı (FR-24).
 const levelExamQuestionCount = 40;
 
+/// Bir derste en fazla kaç yeni kelime sunulur. Ünitede 20 kelime olduğundan
+/// ünite birkaç derste öğrenilir; ders uzunluğu ~25 soruda kalır.
+const newWordsPerLesson = 8;
+
+/// Bir dersteki en fazla kelime sayısı (yeni + pekiştirilecek).
+const wordsPerLesson = 10;
+
+/// Ünitenin [words] kelimelerinden bu derste çalışılacakları seçer: önce
+/// sıradaki yeni kelimeler (en fazla [newWordsPerLesson]), kalan yere daha
+/// önce görülmüş kelimeler. Bütün kelimeler görülmüşse ünite tekrar edilir.
+List<Word> pickLessonWords(
+  List<Word> words,
+  Map<int, CardState> states, [
+  Random? random,
+]) {
+  bool isNew(Word w) =>
+      (states[w.id] ?? CardState.newCard) == CardState.newCard;
+  final fresh = words.where(isNew).take(newWordsPerLesson).toList();
+  final seen = words.where((w) => !isNew(w)).toList()..shuffle(random);
+  return [...fresh, ...seen.take(wordsPerLesson - fresh.length)];
+}
+
 /// Cümledeki kelimeyi boşlukla değiştirir. Kelime cümlede yoksa `null`.
 String? blankOut(String sentence, String lemma) {
   final pattern = RegExp('\\b${RegExp.escape(lemma)}\\b', caseSensitive: false);

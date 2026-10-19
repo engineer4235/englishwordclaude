@@ -74,7 +74,8 @@ Actions → **Yayın paketi (Android)** iş akışıyla üretilir.
 
 ## İçerik dosyaları
 
-- `assets/content/seed_content.json` — seviyeler, üniteler, kelimeler, örnek cümleler ve kelime ilişkileri. Gözden geçirme tablosu: `docs/content_review.csv`.
+- `content/` — içeriğin düzenlenen kaynağı (seviye başına bir metin dosyası, ilişkiler, sürüm). Biçim: [content/README.md](content/README.md).
+- `assets/content/seed_content.json` — kaynaklardan `dart run tool/build_content.dart` ile üretilen paket: seviyeler, üniteler, kelimeler, örnek cümleler ve kelime ilişkileri (A1 ve A2'de 500'er, B1'de 200, B2'de 80 kelime). Gözden geçirme tablosu: `docs/content_review.csv` (`dart run tool/export_review.dart`).
 - `assets/content/placement_pool.json` — seviye tespit sınavının soru havuzu (CNT-6). Her seviyede (A1–C2) en az 30 kelime, her sözcük türünde en az 4 kelime bulunur; çeldiriciler aynı seviye ve türden seçilir (FR-48). Ünitesi henüz olmayan bir seviye önerilirse kullanıcı hazır olan en yüksek seviyeden başlar.
 
 ## Çevrimdışı çalışma ve dayanıklılık

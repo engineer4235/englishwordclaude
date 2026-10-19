@@ -13,7 +13,7 @@ Seviye seviye kelime öğren
 
 ## Tanıtım metni (170)
 
-İngilizce kelimeleri A1'den C2'ye adım adım öğren. Aralıklı tekrar, eğlenceli alıştırmalar ve günlük hedeflerle; internetsiz ve reklamsız.
+İngilizce kelimeleri A1'den B2'ye adım adım öğren. Aralıklı tekrar, eğlenceli alıştırmalar ve günlük hedeflerle; internetsiz ve reklamsız.
 
 ## Anahtar kelimeler (100, virgülle)
 

@@ -153,13 +153,16 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
       _levelCode = levels.firstWhere((l) => l.level.id == levelId).level.code;
       final pool = await ref.read(levelWordsProvider(levelId).future);
       final exercises = switch (widget.mode) {
-        PracticeMode.lesson => generator.lesson(
-          words,
-          await ref.read(reviewRepositoryProvider).statesFor([
+        PracticeMode.lesson => await () async {
+          final states = await ref.read(reviewRepositoryProvider).statesFor([
             for (final w in words) w.id,
-          ]),
-          pool: pool,
-        ),
+          ]);
+          return generator.lesson(
+            pickLessonWords(words, states),
+            states,
+            pool: pool,
+          );
+        }(),
         PracticeMode.unitExam ||
         PracticeMode.quickPass => generator.exam(words, pool: pool),
         _ => generator.exam(words, count: levelExamQuestionCount, pool: pool),

@@ -1,0 +1,251 @@
+# B1 seviyesi. Biçim için content/README.md dosyasına bakın.
+
+## İş Hayatı | work | business
+career|/kəˈrɪr/|noun|kariyer|She wants a career in medicine.|Tıp alanında bir kariyer istiyor.|He started his career as a teacher.|Kariyerine öğretmen olarak başladı.
+salary|/ˈsæləri/|noun|maaş|The salary is paid every month.|Maaş her ay ödenir.|She asked for a higher salary.|Daha yüksek bir maaş istedi.
+colleague|/ˈkɑːliːɡ/|noun|iş arkadaşı|My colleague helped me with the report.|İş arkadaşım rapor konusunda bana yardım etti.|I had lunch with a colleague.|Bir iş arkadaşımla öğle yemeği yedim.
+interview|/ˈɪntərvjuː/|noun|mülakat, görüşme|I have a job interview tomorrow.|Yarın bir iş mülakatım var.|The interview lasted one hour.|Mülakat bir saat sürdü.
+employ|/ɪmˈplɔɪ/|verb|istihdam etmek, işe almak|The factory will employ fifty workers.|Fabrika elli işçi istihdam edecek.|Small shops often employ students.|Küçük dükkânlar çoğu zaman öğrencileri işe alır.
+deadline|/ˈdedlaɪn/|noun|son teslim tarihi|The deadline for the project is Friday.|Projenin son teslim tarihi cuma.|We worked late to meet the deadline.|Son teslim tarihine yetişmek için geç saate kadar çalıştık.
+manage|/ˈmænɪdʒ/|verb|yönetmek|She will manage the new team.|Yeni ekibi o yönetecek.|It is hard to manage a big hotel.|Büyük bir oteli yönetmek zordur.
+experience|/ɪkˈspɪriəns/|noun|deneyim|He has a lot of experience in sales.|Satışta çok deneyimi var.|Do you have any experience with children?|Çocuklarla ilgili deneyimin var mı?
+
+## Teknoloji | technology | devices
+device|/dɪˈvaɪs/|noun|cihaz|Turn off every device before the exam.|Sınavdan önce her cihazı kapat.|This small device measures the temperature.|Bu küçük cihaz sıcaklığı ölçer.
+download|/ˈdaʊnloʊd/|verb|indirmek|You can download the app for free.|Uygulamayı ücretsiz indirebilirsin.|It takes a minute to download the file.|Dosyayı indirmek bir dakika sürer.
+password|/ˈpæswɜːrd/|noun|şifre, parola|Never share your password with anyone.|Şifreni asla kimseyle paylaşma.|I forgot my password again.|Şifremi yine unuttum.
+screen|/skriːn/|noun|ekran|The screen on this phone is very bright.|Bu telefonun ekranı çok parlak.|Don't sit too close to the screen.|Ekrana çok yakın oturma.
+software|/ˈsɔːftwer/|noun|yazılım|The company makes software for schools.|Şirket okullar için yazılım yapıyor.|Please update the software tonight.|Lütfen yazılımı bu akşam güncelle.
+connect|/kəˈnekt/|verb|bağlamak, bağlanmak|You need to connect the printer to your laptop.|Yazıcıyı dizüstü bilgisayarına bağlaman gerekiyor.|I can't connect to the internet.|İnternete bağlanamıyorum.
+battery|/ˈbætəri/|noun|pil, batarya|My phone battery is almost empty.|Telefonumun pili neredeyse bitti.|This battery lasts two days.|Bu pil iki gün dayanıyor.
+online|/ˌɑːnˈlaɪn/|adverb|çevrimiçi, internette|I usually buy books online.|Kitapları genellikle internetten alırım.|We met online last year.|Geçen yıl internette tanıştık.
+
+## Çevre | environment | eco
+pollution|/pəˈluːʃən/|noun|kirlilik|Air pollution is a big problem in cities.|Hava kirliliği şehirlerde büyük bir sorundur.|Cars cause a lot of pollution.|Arabalar çok fazla kirliliğe neden olur.
+recycle|/ˌriːˈsaɪkəl/|verb|geri dönüştürmek|We recycle paper and glass at home.|Evde kâğıt ve camı geri dönüştürüyoruz.|It is easy to recycle plastic bottles.|Plastik şişeleri geri dönüştürmek kolaydır.
+climate|/ˈklaɪmət/|noun|iklim|The climate here is warm and dry.|Buranın iklimi sıcak ve kurudur.|Scientists study the changing climate.|Bilim insanları değişen iklimi inceliyor.
+energy|/ˈenərdʒi/|noun|enerji|Solar energy is clean and cheap.|Güneş enerjisi temiz ve ucuzdur.|Turn off the lights to save energy.|Enerji tasarrufu için ışıkları kapat.
+waste|/weɪst/|noun|atık, çöp|The factory puts its waste into the river.|Fabrika atığını nehre bırakıyor.|We should reduce plastic waste.|Plastik atığı azaltmalıyız.
+protect|/prəˈtekt/|verb|korumak|Trees protect the soil from rain.|Ağaçlar toprağı yağmurdan korur.|We must protect wild animals.|Vahşi hayvanları korumalıyız.
+forest|/ˈfɔːrɪst/|noun|orman|They walked through the forest.|Ormanın içinden yürüdüler.|The forest is home to many birds.|Orman birçok kuşa ev sahipliği yapar.
+natural|/ˈnætʃərəl/|adjective|doğal|This juice has only natural sugar.|Bu meyve suyunda yalnızca doğal şeker var.|The park keeps its natural beauty.|Park doğal güzelliğini koruyor.
+
+## İlişkiler | relationships | people
+trust|/trʌst/|noun|güven|A friendship needs trust.|Bir arkadaşlık güvene ihtiyaç duyar.|She lost my trust after that lie.|O yalandan sonra güvenimi kaybetti.
+argue|/ˈɑːrɡjuː/|verb|tartışmak|My brothers argue about everything.|Erkek kardeşlerim her şey hakkında tartışır.|Let's not argue about money.|Para konusunda tartışmayalım.
+support|/səˈpɔːrt/|verb|desteklemek|My parents always support my decisions.|Annem ve babam kararlarımı her zaman destekler.|Friends support each other in hard times.|Arkadaşlar zor zamanlarda birbirini destekler.
+relationship|/rɪˈleɪʃənʃɪp/|noun|ilişki|They have a good relationship with their neighbors.|Komşularıyla iyi bir ilişkileri var.|Their relationship started at university.|İlişkileri üniversitede başladı.
+neighbor|/ˈneɪbər/|noun|komşu|Our neighbor has a big dog.|Komşumuzun büyük bir köpeği var.|I asked my neighbor for some salt.|Komşumdan biraz tuz istedim.
+apologize|/əˈpɑːlədʒaɪz/|verb|özür dilemek|You should apologize to your sister.|Kız kardeşinden özür dilemelisin.|He did not apologize for being late.|Geç kaldığı için özür dilemedi.
+respect|/rɪˈspekt/|noun|saygı|Students show respect to their teachers.|Öğrenciler öğretmenlerine saygı gösterir.|Everyone deserves respect.|Herkes saygıyı hak eder.
+honest|/ˈɑːnɪst/|adjective|dürüst|Please give me an honest answer.|Lütfen bana dürüst bir cevap ver.|He is an honest and kind man.|O dürüst ve nazik bir adam.
+
+## Eğitim | education | school
+degree|/dɪˈɡriː/|noun|diploma, derece|She has a degree in chemistry.|Kimya alanında bir diploması var.|He finished his degree last summer.|Diplomasını geçen yaz tamamladı.
+research|/ˈriːsɜːrtʃ/|noun|araştırma|The research took three years.|Araştırma üç yıl sürdü.|She is doing research on sleep.|Uyku üzerine araştırma yapıyor.
+knowledge|/ˈnɑːlɪdʒ/|noun|bilgi|He has a good knowledge of history.|Tarih konusunda iyi bir bilgisi var.|Reading is the best way to gain knowledge.|Okumak bilgi edinmenin en iyi yoludur.
+graduate|/ˈɡrædʒueɪt/|verb|mezun olmak|She will graduate from university next year.|Gelecek yıl üniversiteden mezun olacak.|Many students graduate in June.|Birçok öğrenci haziranda mezun olur.
+lecture|/ˈlektʃər/|noun|ders, konferans|The lecture starts at nine o'clock.|Ders saat dokuzda başlıyor.|I took notes during the lecture.|Ders sırasında not aldım.
+improve|/ɪmˈpruːv/|verb|geliştirmek, iyileştirmek|I want to improve my English.|İngilizcemi geliştirmek istiyorum.|Exercise can improve your mood.|Egzersiz ruh halini iyileştirebilir.
+skill|/skɪl/|noun|beceri|Cooking is a useful skill.|Yemek yapmak faydalı bir beceridir.|This job needs good computer skill.|Bu iş iyi bilgisayar becerisi gerektirir.
+subject|/ˈsʌbdʒɪkt/|noun|ders, konu|Math is my favorite subject.|Matematik en sevdiğim derstir.|Let's change the subject.|Konuyu değiştirelim.
+
+## Medya ve Haberler | media | news
+news|/nuːz/|noun|haber(ler)|I watch the news every evening.|Her akşam haberleri izlerim.|That is good news!|Bu iyi bir haber!
+article|/ˈɑːrtɪkəl/|noun|makale, yazı|I read an interesting article about space.|Uzay hakkında ilginç bir makale okudum.|She writes an article every week.|Her hafta bir makale yazıyor.
+journalist|/ˈdʒɜːrnəlɪst/|noun|gazeteci|The journalist asked the minister a question.|Gazeteci bakana bir soru sordu.|My aunt works as a journalist.|Teyzem gazeteci olarak çalışıyor.
+advertisement|/ˌædvərˈtaɪzmənt/|noun|reklam, ilan|I saw an advertisement for a new phone.|Yeni bir telefonun reklamını gördüm.|They put an advertisement in the newspaper.|Gazeteye bir ilan verdiler.
+channel|/ˈtʃænəl/|noun|kanal|Which channel is the match on?|Maç hangi kanalda?|He started a cooking channel online.|İnternette bir yemek kanalı açtı.
+publish|/ˈpʌblɪʃ/|verb|yayımlamak|They will publish her first book in May.|İlk kitabını mayısta yayımlayacaklar.|The newspaper did not publish the photo.|Gazete fotoğrafı yayımlamadı.
+audience|/ˈɔːdiəns/|noun|seyirci, izleyici kitlesi|The audience clapped for a long time.|Seyirciler uzun süre alkışladı.|The show has a young audience.|Programın genç bir izleyici kitlesi var.
+headline|/ˈhedlaɪn/|noun|manşet, başlık|The headline was about the election.|Manşet seçimle ilgiliydi.|I only read the headline.|Sadece başlığı okudum.
+
+## Şehir Hayatı | city | city
+traffic|/ˈtræfɪk/|noun|trafik|The traffic is terrible in the morning.|Sabahları trafik berbat.|We were late because of the traffic.|Trafik yüzünden geç kaldık.
+crowded|/ˈkraʊdɪd/|adjective|kalabalık|The bus was very crowded today.|Otobüs bugün çok kalabalıktı.|I don't like crowded places.|Kalabalık yerleri sevmem.
+district|/ˈdɪstrɪkt/|noun|semt, ilçe|We live in a quiet district.|Sakin bir semtte yaşıyoruz.|This district has many old houses.|Bu ilçede çok sayıda eski ev var.
+public|/ˈpʌblɪk/|adjective|halka açık, kamu|The library is open to the public.|Kütüphane halka açıktır.|There is a public park near my office.|Ofisimin yakınında bir halk parkı var.
+transport|/ˈtrænspɔːrt/|noun|ulaşım|Public transport is cheap in this city.|Bu şehirde toplu ulaşım ucuzdur.|What kind of transport do you use?|Ne tür bir ulaşım aracı kullanıyorsun?
+rent|/rent/|noun|kira|The rent is due on the first day of the month.|Kira ayın ilk günü ödenir.|Our rent went up this year.|Bu yıl kiramız arttı.
+noise|/nɔɪz/|noun|gürültü|I can't sleep because of the noise.|Gürültü yüzünden uyuyamıyorum.|The children made a lot of noise.|Çocuklar çok gürültü yaptı.
+building|/ˈbɪldɪŋ/|noun|bina|Our office is in a tall building.|Ofisimiz yüksek bir binada.|They are building a new school.|Yeni bir okul inşa ediyorlar.
+
+## Para | money | wallet
+budget|/ˈbʌdʒɪt/|noun|bütçe|We need to plan our budget for the trip.|Gezi için bütçemizi planlamamız gerekiyor.|The project is over budget.|Proje bütçeyi aştı.
+loan|/loʊn/|noun|kredi, borç|They took a loan to buy a car.|Araba almak için kredi çektiler.|He paid back the loan in two years.|Borcu iki yılda geri ödedi.
+borrow|/ˈbɑːroʊ/|verb|ödünç almak|Can I borrow your pen?|Kalemini ödünç alabilir miyim?|She had to borrow money from her brother.|Kardeşinden borç para almak zorunda kaldı.
+earn|/ɜːrn/|verb|kazanmak|How much do you earn a month?|Ayda ne kadar kazanıyorsun?|Students can earn money in the summer.|Öğrenciler yazın para kazanabilir.
+afford|/əˈfɔːrd/|verb|(parası) yetmek, karşılayabilmek|We can't afford a new car.|Yeni bir arabaya paramız yetmez.|Can you afford to travel this year?|Bu yıl seyahat etmeye gücün yetiyor mu?
+cash|/kæʃ/|noun|nakit|Do you have any cash?|Hiç nakit paran var mı?|This shop only takes cash.|Bu dükkân yalnızca nakit kabul ediyor.
+discount|/ˈdɪskaʊnt/|noun|indirim|Students get a discount at the cinema.|Öğrenciler sinemada indirim alır.|Is there a discount on these shoes?|Bu ayakkabılarda indirim var mı?
+save|/seɪv/|verb|biriktirmek, tasarruf etmek|I save some money every month.|Her ay biraz para biriktiriyorum.|We save time by taking the train.|Trene binerek zaman kazanıyoruz.
+
+## Spor | sports | sports
+competition|/ˌkɑːmpəˈtɪʃən/|noun|yarışma, rekabet|She won the swimming competition.|Yüzme yarışmasını kazandı.|There is a lot of competition for this job.|Bu iş için çok fazla rekabet var.
+coach|/koʊtʃ/|noun|antrenör, koç|The coach was happy with the team.|Antrenör takımdan memnundu.|Our coach makes us run every day.|Koçumuz bizi her gün koşturuyor.
+compete|/kəmˈpiːt/|verb|yarışmak|Twenty runners will compete in the race.|Yarışta yirmi koşucu yarışacak.|Small shops can't compete with big stores.|Küçük dükkânlar büyük mağazalarla rekabet edemez.
+score|/skɔːr/|noun|skor, puan|What was the final score?|Son skor neydi?|Her score on the test was very high.|Sınavdaki puanı çok yüksekti.
+injury|/ˈɪndʒəri/|noun|sakatlık, yaralanma|He missed the game because of an injury.|Bir sakatlık yüzünden maçı kaçırdı.|The injury was not serious.|Yaralanma ciddi değildi.
+fit|/fɪt/|adjective|formda, zinde|I go to the gym to stay fit.|Formda kalmak için spor salonuna gidiyorum.|My grandfather is still very fit.|Dedem hâlâ çok zinde.
+team|/tiːm/|noun|takım, ekip|Which team do you support?|Hangi takımı tutuyorsun?|Our team won the cup.|Takımımız kupayı kazandı.
+champion|/ˈtʃæmpiən/|noun|şampiyon|She is the national tennis champion.|Ulusal tenis şampiyonu o.|The champion lifted the trophy.|Şampiyon kupayı kaldırdı.
+
+## Kültür ve Sanat | culture | museum
+exhibition|/ˌeksɪˈbɪʃən/|noun|sergi|We visited a photo exhibition.|Bir fotoğraf sergisini gezdik.|The exhibition opens on Monday.|Sergi pazartesi açılıyor.
+festival|/ˈfestɪvəl/|noun|festival|The music festival lasts three days.|Müzik festivali üç gün sürüyor.|Thousands of people came to the festival.|Festivale binlerce kişi geldi.
+tradition|/trəˈdɪʃən/|noun|gelenek|It is a tradition to eat sweets at the holiday.|Bayramda tatlı yemek bir gelenektir.|Every country has its own tradition.|Her ülkenin kendi geleneği vardır.
+painting|/ˈpeɪntɪŋ/|noun|tablo, resim|There is a beautiful painting on the wall.|Duvarda güzel bir tablo var.|This painting is two hundred years old.|Bu tablo iki yüz yıllık.
+author|/ˈɔːθər/|noun|yazar|Who is the author of this book?|Bu kitabın yazarı kim?|The author signed my copy.|Yazar kitabımı imzaladı.
+perform|/pərˈfɔːrm/|verb|sahne almak, icra etmek|The band will perform tonight.|Grup bu akşam sahne alacak.|The students perform a play every year.|Öğrenciler her yıl bir oyun sahneler.
+gallery|/ˈɡæləri/|noun|galeri|The gallery is free on Sundays.|Galeri pazar günleri ücretsizdir.|Her photos are in a small gallery.|Fotoğrafları küçük bir galeride.
+museum|/mjuˈziːəm/|noun|müze|We went to the museum on Saturday.|Cumartesi müzeye gittik.|The museum has many old coins.|Müzede çok sayıda eski sikke var.
+
+## Sağlık ve Tedavi | medical | health
+patient|/ˈpeɪʃənt/|noun|hasta|The doctor is talking to a patient.|Doktor bir hastayla konuşuyor.|Every patient waits in this room.|Her hasta bu odada bekler.
+symptom|/ˈsɪmptəm/|noun|belirti|A cough is a common symptom of a cold.|Öksürük, soğuk algınlığının yaygın bir belirtisidir.|Tell the doctor about every symptom.|Doktora her belirtiyi anlat.
+treatment|/ˈtriːtmənt/|noun|tedavi|The treatment takes two weeks.|Tedavi iki hafta sürüyor.|She is happy with her treatment.|Tedavisinden memnun.
+recover|/rɪˈkʌvər/|verb|iyileşmek|It takes time to recover from the flu.|Gripten iyileşmek zaman alır.|I hope you recover soon.|Umarım yakında iyileşirsin.
+emergency|/ɪˈmɜːrdʒənsi/|noun|acil durum|Call this number in an emergency.|Acil bir durumda bu numarayı ara.|The emergency room is open all night.|Acil servis bütün gece açık.
+prescription|/prɪˈskrɪpʃən/|noun|reçete|You need a prescription for this medicine.|Bu ilaç için reçeteye ihtiyacın var.|The doctor wrote a prescription.|Doktor bir reçete yazdı.
+pain|/peɪn/|noun|ağrı, acı|I have a pain in my back.|Sırtımda bir ağrı var.|The pain stopped after an hour.|Ağrı bir saat sonra geçti.
+cure|/kjʊr/|noun|çare, şifa|There is no cure for the common cold.|Soğuk algınlığının bir çaresi yok.|Scientists are looking for a cure.|Bilim insanları bir çare arıyor.
+
+## Turizm | tourism | flight
+destination|/ˌdestɪˈneɪʃən/|noun|varış yeri, gidilecek yer|Rome is a popular destination for tourists.|Roma, turistlerin gözde gidilecek yerlerinden biri.|We reached our destination at night.|Varış yerimize gece ulaştık.
+reservation|/ˌrezərˈveɪʃən/|noun|rezervasyon|I made a reservation for two nights.|İki gecelik rezervasyon yaptım.|Do you have a reservation?|Rezervasyonunuz var mı?
+tourist|/ˈtʊrɪst/|noun|turist|Every tourist visits the old castle.|Her turist eski kaleyi ziyaret eder.|A tourist asked me for directions.|Bir turist bana yol sordu.
+guide|/ɡaɪd/|noun|rehber|Our guide speaks three languages.|Rehberimiz üç dil konuşuyor.|We bought a guide to the city.|Bir şehir rehberi aldık.
+delay|/dɪˈleɪ/|noun|gecikme|There is a delay because of the snow.|Kar yüzünden bir gecikme var.|Sorry for the delay.|Gecikme için özür dileriz.
+departure|/dɪˈpɑːrtʃər/|noun|kalkış, hareket|Our departure time is six o'clock.|Kalkış saatimiz altı.|Check the departure board.|Kalkış panosuna bak.
+souvenir|/ˌsuːvəˈnɪr/|noun|hediyelik eşya|I bought a souvenir for my mother.|Annem için hediyelik bir eşya aldım.|This souvenir is from Japan.|Bu hediyelik eşya Japonya'dan.
+sightseeing|/ˈsaɪtsiːɪŋ/|noun|gezip görme|We went sightseeing in Rome.|Roma'da gezip görmeye çıktık.|Sightseeing is tiring but fun.|Gezip görmek yorucu ama eğlenceli.
+
+## Duygu Durumları | emotions | mood
+confident|/ˈkɑːnfɪdənt/|adjective|kendinden emin|She feels confident before the exam.|Sınavdan önce kendinden emin hissediyor.|Be confident when you speak.|Konuşurken kendinden emin ol.
+nervous|/ˈnɜːrvəs/|adjective|gergin, endişeli|I am nervous about the interview.|Mülakat yüzünden gerginim.|He gets nervous on planes.|Uçakta gerginleşir.
+jealous|/ˈdʒeləs/|adjective|kıskanç|My brother is jealous of my new bike.|Kardeşim yeni bisikletimi kıskanıyor.|Don't be jealous of your friends.|Arkadaşlarını kıskanma.
+proud|/praʊd/|adjective|gururlu|Her parents are proud of her.|Ailesi onunla gurur duyuyor.|I am proud of my team.|Takımımla gurur duyuyorum.
+disappointed|/ˌdɪsəˈpɔɪntɪd/|adjective|hayal kırıklığına uğramış|He was disappointed with the result.|Sonuç yüzünden hayal kırıklığına uğradı.|Don't be disappointed, try again.|Hayal kırıklığına uğrama, yeniden dene.
+generous|/ˈdʒenərəs/|adjective|cömert|My grandfather is very generous.|Dedem çok cömerttir.|It was generous of you to pay for dinner.|Akşam yemeğini ödemen çok cömertçeydi.
+calm|/kɑːm/|adjective|sakin|Stay calm and listen to me.|Sakin ol ve beni dinle.|The sea is calm today.|Deniz bugün sakin.
+curious|/ˈkjʊriəs/|adjective|meraklı|Children are curious about everything.|Çocuklar her şeyi merak eder.|I am curious about your trip.|Geziyi çok merak ediyorum.
+
+## Tüketici Hayatı | consumer | shopping
+customer|/ˈkʌstəmər/|noun|müşteri|The customer wants to speak to the manager.|Müşteri müdürle konuşmak istiyor.|Every customer gets a free coffee.|Her müşteri bedava kahve alır.
+refund|/ˈriːfʌnd/|noun|para iadesi|Can I get a refund for these shoes?|Bu ayakkabılar için para iadesi alabilir miyim?|The shop gave me a full refund.|Mağaza paramın tamamını iade etti.
+brand|/brænd/|noun|marka|What brand is your phone?|Telefonun hangi marka?|This brand is very popular.|Bu marka çok popüler.
+quality|/ˈkwɑːləti/|noun|kalite|The quality of this bag is excellent.|Bu çantanın kalitesi mükemmel.|Good quality costs more.|İyi kalite daha pahalıdır.
+deliver|/dɪˈlɪvər/|verb|teslim etmek|They deliver the sofa on Friday.|Kanepeyi cuma günü teslim ediyorlar.|Can you deliver it to my office?|Ofisime teslim edebilir misiniz?
+compare|/kəmˈper/|verb|karşılaştırmak|Always compare prices before you buy.|Satın almadan önce her zaman fiyatları karşılaştır.|Let's compare these two phones.|Bu iki telefonu karşılaştıralım.
+bargain|/ˈbɑːrɡən/|noun|kelepir|This jacket was a real bargain.|Bu ceket tam bir kelepirdi.|I found a bargain at the market.|Pazarda bir kelepir buldum.
+available|/əˈveɪləbəl/|adjective|mevcut, satışta|This size is not available.|Bu beden mevcut değil.|The new model is available online.|Yeni model internette satışta.
+
+## Doğal Olaylar | nature_events | park
+temperature|/ˈtemprətʃər/|noun|sıcaklık|The temperature will drop tonight.|Sıcaklık bu gece düşecek.|What is the temperature outside?|Dışarıda sıcaklık kaç derece?
+storm|/stɔːrm/|noun|fırtına|The storm closed the roads.|Fırtına yolları kapattı.|A big storm is coming.|Büyük bir fırtına geliyor.
+flood|/flʌd/|noun|sel|The flood destroyed many houses.|Sel birçok evi yıktı.|There was a flood in the village last year.|Geçen yıl köyde sel oldu.
+earthquake|/ˈɜːrθkweɪk/|noun|deprem|The earthquake happened at night.|Deprem gece oldu.|Our school has an earthquake drill every year.|Okulumuzda her yıl deprem tatbikatı yapılır.
+desert|/ˈdezərt/|noun|çöl|It rarely rains in the desert.|Çölde nadiren yağmur yağar.|Camels can live in the desert.|Develer çölde yaşayabilir.
+valley|/ˈvæli/|noun|vadi|A small river runs through the valley.|Vadiden küçük bir nehir geçer.|The village is in a green valley.|Köy yeşil bir vadide.
+coast|/koʊst/|noun|kıyı, sahil|We drove along the coast.|Sahil boyunca araba sürdük.|The town is on the south coast.|Kasaba güney kıyısında.
+wildlife|/ˈwaɪldlaɪf/|noun|yaban hayatı|The park protects local wildlife.|Park, bölgedeki yaban hayatını korur.|Pollution is dangerous for wildlife.|Kirlilik yaban hayatı için tehlikelidir.
+
+## Ev ve Konut | housing | home
+apartment|/əˈpɑːrtmənt/|noun|daire|They live in a small apartment.|Küçük bir dairede yaşıyorlar.|The apartment has two bedrooms.|Dairenin iki yatak odası var.
+landlord|/ˈlændlɔːrd/|noun|ev sahibi|The landlord wants the rent on Monday.|Ev sahibi kirayı pazartesi istiyor.|Call the landlord about the broken window.|Kırık pencere için ev sahibini ara.
+tenant|/ˈtenənt/|noun|kiracı|The new tenant moves in next week.|Yeni kiracı gelecek hafta taşınıyor.|Every tenant has a key to the garden.|Her kiracının bahçe anahtarı var.
+furniture|/ˈfɜːrnɪtʃər/|noun|mobilya|We bought new furniture for the living room.|Oturma odası için yeni mobilya aldık.|This furniture is very old.|Bu mobilya çok eski.
+repair|/rɪˈper/|verb|tamir etmek|Can you repair my bike?|Bisikletimi tamir edebilir misin?|They will repair the roof tomorrow.|Çatıyı yarın tamir edecekler.
+balcony|/ˈbælkəni/|noun|balkon|We have breakfast on the balcony.|Kahvaltıyı balkonda yapıyoruz.|The balcony has a view of the sea.|Balkon denizi görüyor.
+heating|/ˈhiːtɪŋ/|noun|ısıtma|The heating doesn't work in winter.|Kışın ısıtma çalışmıyor.|Turn on the heating, please.|Lütfen ısıtmayı aç.
+garage|/ɡəˈrɑːʒ/|noun|garaj|He keeps his car in the garage.|Arabasını garajda tutar.|The garage is next to the house.|Garaj evin yanında.
+
+## Bilim | science | school
+scientist|/ˈsaɪəntɪst/|noun|bilim insanı|She wants to be a scientist.|Bilim insanı olmak istiyor.|The scientist explained the results.|Bilim insanı sonuçları açıkladı.
+experiment|/ɪkˈsperɪmənt/|noun|deney|We did an experiment in class.|Derste bir deney yaptık.|The experiment took three hours.|Deney üç saat sürdü.
+laboratory|/ˈlæbrətɔːri/|noun|laboratuvar|The students work in the laboratory.|Öğrenciler laboratuvarda çalışıyor.|The laboratory is on the second floor.|Laboratuvar ikinci katta.
+discover|/dɪˈskʌvər/|verb|keşfetmek|Scientists want to discover new medicines.|Bilim insanları yeni ilaçlar keşfetmek istiyor.|Did you discover anything interesting?|İlginç bir şey keşfettin mi?
+invent|/ɪnˈvent/|verb|icat etmek|Who will invent the next great machine?|Bir sonraki büyük makineyi kim icat edecek?|I want to invent a useful machine.|Faydalı bir makine icat etmek istiyorum.
+theory|/ˈθɪəri/|noun|kuram, teori|It is only a theory.|Bu sadece bir teori.|The theory explains how stars form.|Bu kuram yıldızların nasıl oluştuğunu açıklar.
+result|/rɪˈzʌlt/|noun|sonuç|The result was a surprise.|Sonuç bir sürprizdi.|We will know the result next week.|Sonucu gelecek hafta öğreneceğiz.
+planet|/ˈplænɪt/|noun|gezegen|Mars is a red planet.|Mars kızıl bir gezegendir.|We must protect our planet.|Gezegenimizi korumalıyız.
+
+## Yemek Yapmak | cooking | restaurant
+recipe|/ˈresəpi/|noun|yemek tarifi|This recipe is from my grandmother.|Bu tarif büyükannemden.|Can you give me the recipe?|Bana tarifi verebilir misin?
+ingredient|/ɪnˈɡriːdiənt/|noun|malzeme|Flour is the main ingredient.|Un ana malzemedir.|We need one more ingredient.|Bir malzemeye daha ihtiyacımız var.
+boil|/bɔɪl/|verb|kaynatmak|Boil the water for the pasta.|Makarna için suyu kaynat.|Don't boil the milk too long.|Sütü çok uzun kaynatma.
+fry|/fraɪ/|verb|kızartmak|Fry the onions in a little oil.|Soğanları biraz yağda kızart.|I like to fry eggs for breakfast.|Kahvaltıda yumurta kızartmayı severim.
+bake|/beɪk/|verb|fırında pişirmek|Let's bake a cake for her birthday.|Doğum günü için bir pasta yapalım.|Bake the bread for forty minutes.|Ekmeği kırk dakika fırında pişir.
+slice|/slaɪs/|noun|dilim|Can I have a slice of pizza?|Bir dilim pizza alabilir miyim?|He ate the last slice of bread.|Ekmeğin son dilimini yedi.
+mix|/mɪks/|verb|karıştırmak|Mix the eggs and the sugar.|Yumurtaları ve şekeri karıştır.|Don't mix these two colors.|Bu iki rengi karıştırma.
+flavor|/ˈfleɪvər/|noun|tat, lezzet|Which flavor of ice cream do you want?|Hangi tat dondurma istersin?|Lemon gives the soup a fresh flavor.|Limon çorbaya taze bir tat verir.
+
+## Planlama | planning | schedule
+schedule|/ˈskedʒuːl/|noun|program, takvim|My schedule is very busy this week.|Bu hafta programım çok yoğun.|Check the train schedule.|Tren tarifesine bak.
+plan|/plæn/|noun|plan|What is your plan for the weekend?|Hafta sonu için planın ne?|We need a better plan.|Daha iyi bir plana ihtiyacımız var.
+arrange|/əˈreɪndʒ/|verb|ayarlamak, düzenlemek|Can you arrange a meeting for Friday?|Cuma için bir toplantı ayarlayabilir misin?|She will arrange everything for the trip.|Gezi için her şeyi o ayarlayacak.
+postpone|/poʊstˈpoʊn/|verb|ertelemek|We had to postpone the match.|Maçı ertelemek zorunda kaldık.|Let's postpone the party until Sunday.|Partiyi pazara erteleyelim.
+cancel|/ˈkænsəl/|verb|iptal etmek|They cancel the flight when there is fog.|Sis olunca uçuşu iptal ediyorlar.|I want to cancel my order.|Siparişimi iptal etmek istiyorum.
+remind|/rɪˈmaɪnd/|verb|hatırlatmak|Please remind me to call my mother.|Lütfen bana annemi aramamı hatırlat.|This song will remind you of summer.|Bu şarkı sana yazı hatırlatacak.
+prepare|/prɪˈper/|verb|hazırlamak, hazırlanmak|I need to prepare for the exam.|Sınava hazırlanmam gerekiyor.|She will prepare dinner tonight.|Bu akşam yemeği o hazırlayacak.
+organize|/ˈɔːrɡənaɪz/|verb|düzenlemek, organize etmek|Who will organize the concert?|Konseri kim düzenleyecek?|I need to organize my desk.|Masamı düzenlemem gerekiyor.
+
+## Güvenlik | safety | health
+safety|/ˈseɪfti/|noun|güvenlik|Safety is the most important thing.|Güvenlik en önemli şeydir.|Wear a helmet for your safety.|Güvenliğin için kask tak.
+dangerous|/ˈdeɪndʒərəs/|adjective|tehlikeli|This road is dangerous at night.|Bu yol geceleri tehlikeli.|It is dangerous to swim here.|Burada yüzmek tehlikeli.
+steal|/stiːl/|verb|çalmak|Someone tried to steal my bag.|Biri çantamı çalmaya çalıştı.|It is wrong to steal.|Çalmak yanlıştır.
+thief|/θiːf/|noun|hırsız|The police caught the thief.|Polis hırsızı yakaladı.|A thief took her phone.|Bir hırsız telefonunu aldı.
+lock|/lɑːk/|verb|kilitlemek|Don't forget to lock the door.|Kapıyı kilitlemeyi unutma.|I always lock my bike.|Bisikletimi her zaman kilitlerim.
+alarm|/əˈlɑːrm/|noun|alarm|The fire alarm rang at midnight.|Yangın alarmı gece yarısı çaldı.|Set the alarm for six o'clock.|Alarmı saat altıya kur.
+witness|/ˈwɪtnəs/|noun|tanık|The witness saw the accident.|Tanık kazayı gördü.|The police talked to every witness.|Polis her tanıkla konuştu.
+rescue|/ˈreskjuː/|verb|kurtarmak|Firefighters rescue people from fires.|İtfaiyeciler insanları yangından kurtarır.|They came to rescue the cat.|Kediyi kurtarmaya geldiler.
+
+## Kariyer | careers | business
+hire|/haɪər/|verb|işe almak|The company will hire ten new workers.|Şirket on yeni çalışan işe alacak.|They decided to hire her after the interview.|Mülakattan sonra onu işe almaya karar verdiler.
+resign|/rɪˈzaɪn/|verb|istifa etmek|He wants to resign from his job.|İşinden istifa etmek istiyor.|Why did the manager resign?|Müdür neden istifa etti?
+promote|/prəˈmoʊt/|verb|terfi ettirmek|They will promote her to team leader.|Onu takım liderliğine terfi ettirecekler.|The boss didn't promote anyone this year.|Patron bu yıl kimseyi terfi ettirmedi.
+retire|/rɪˈtaɪər/|verb|emekli olmak|My father will retire next year.|Babam gelecek yıl emekli olacak.|She wants to retire by the sea.|Deniz kenarında emekli olmak istiyor.
+contract|/ˈkɑːntrækt/|noun|sözleşme|Read the contract before you sign it.|İmzalamadan önce sözleşmeyi oku.|His contract ends in June.|Sözleşmesi haziranda bitiyor.
+application|/ˌæplɪˈkeɪʃən/|noun|başvuru|I sent my application yesterday.|Başvurumu dün gönderdim.|The application form is online.|Başvuru formu internette.
+volunteer|/ˌvɑːlənˈtɪr/|noun|gönüllü|She works as a volunteer at the hospital.|Hastanede gönüllü olarak çalışıyor.|We need one more volunteer for the event.|Etkinlik için bir gönüllüye daha ihtiyacımız var.
+ambitious|/æmˈbɪʃəs/|adjective|hırslı|He is an ambitious young lawyer.|Hırslı, genç bir avukat.|Her plan is very ambitious.|Planı çok iddialı.
+
+## Toplum | society | people
+community|/kəˈmjuːnəti/|noun|topluluk|Our community has a new library.|Topluluğumuzun yeni bir kütüphanesi var.|The whole community helped after the fire.|Yangından sonra bütün topluluk yardım etti.
+charity|/ˈtʃærəti/|noun|hayır kurumu|She gives money to a charity every month.|Her ay bir hayır kurumuna para veriyor.|The charity helps poor children.|Hayır kurumu yoksul çocuklara yardım ediyor.
+election|/ɪˈlekʃən/|noun|seçim|The election is next Sunday.|Seçim önümüzdeki pazar.|Who won the election?|Seçimi kim kazandı?
+vote|/voʊt/|verb|oy vermek|You can vote when you are eighteen.|On sekiz yaşında oy verebilirsin.|Many people didn't vote this year.|Bu yıl birçok kişi oy vermedi.
+government|/ˈɡʌvərnmənt/|noun|hükümet|The government built a new hospital.|Hükümet yeni bir hastane yaptı.|The government wants to lower taxes.|Hükümet vergileri düşürmek istiyor.
+law|/lɔː/|noun|yasa, kanun|There is a new law about smoking.|Sigara içmeyle ilgili yeni bir yasa var.|Everyone must follow the law.|Herkes yasaya uymalı.
+citizen|/ˈsɪtɪzən/|noun|vatandaş|Every citizen has the right to vote.|Her vatandaşın oy verme hakkı vardır.|She became a citizen last year.|Geçen yıl vatandaş oldu.
+tax|/tæks/|noun|vergi|We pay tax on everything we buy.|Aldığımız her şey için vergi ödüyoruz.|The price includes tax.|Fiyata vergi dahil.
+
+## Fikir Alışverişi | discussion | phone
+opinion|/əˈpɪnjən/|noun|fikir, görüş|What is your opinion about the film?|Film hakkındaki görüşün ne?|In my opinion, the plan is good.|Bence plan iyi.
+decision|/dɪˈsɪʒən/|noun|karar|It was a difficult decision.|Zor bir karardı.|We need to make a decision today.|Bugün bir karar vermemiz gerekiyor.
+advice|/ədˈvaɪs/|noun|tavsiye, öğüt|Can I ask you for some advice?|Sana bir konuda tavsiye sorabilir miyim?|My teacher gave me good advice.|Öğretmenim bana iyi bir öğüt verdi.
+suggest|/səˈdʒest/|verb|önermek|I suggest a walk in the park.|Parkta bir yürüyüş öneriyorum.|What do you suggest for dinner?|Akşam yemeği için ne önerirsin?
+agree|/əˈɡriː/|verb|katılmak, aynı fikirde olmak|I agree with you.|Sana katılıyorum.|They don't agree about the price.|Fiyat konusunda anlaşamıyorlar.
+disagree|/ˌdɪsəˈɡriː/|verb|katılmamak|I disagree with this idea.|Bu fikre katılmıyorum.|It's fine to disagree politely.|Kibarca karşı çıkmak sorun değil.
+persuade|/pərˈsweɪd/|verb|ikna etmek|I tried to persuade him to come.|Onu gelmeye ikna etmeye çalıştım.|It is hard to persuade my father.|Babamı ikna etmek zor.
+discuss|/dɪˈskʌs/|verb|tartışmak, konuşmak|Let's discuss this after lunch.|Bunu öğle yemeğinden sonra konuşalım.|We need to discuss the budget.|Bütçeyi konuşmamız gerekiyor.
+
+## Yolculukta | on_the_move | directions_bus
+passenger|/ˈpæsɪndʒər/|noun|yolcu|Every passenger must wear a seat belt.|Her yolcu emniyet kemeri takmalı.|The bus has room for one more passenger.|Otobüste bir yolcu için daha yer var.
+platform|/ˈplætfɔːrm/|noun|peron|The train leaves from platform three.|Tren üç numaralı perondan kalkıyor.|Wait on the platform, please.|Lütfen peronda bekleyin.
+timetable|/ˈtaɪmteɪbəl/|noun|sefer tarifesi|Check the bus timetable online.|Otobüs tarifesine internetten bak.|The timetable changes in winter.|Tarife kışın değişiyor.
+fare|/fer/|noun|bilet ücreti|The bus fare went up again.|Otobüs ücreti yine arttı.|Children pay half fare.|Çocuklar yarım ücret öder.
+route|/ruːt/|noun|güzergâh, yol|This is the fastest route to the airport.|Havaalanına en hızlı yol bu.|The bus changed its route.|Otobüs güzergâhını değiştirdi.
+arrival|/əˈraɪvəl/|noun|varış|Our arrival time is ten o'clock.|Varış saatimiz on.|Call me after your arrival.|Vardıktan sonra beni ara.
+seat|/siːt/|noun|koltuk, yer|Is this seat free?|Bu koltuk boş mu?|I always choose a window seat.|Her zaman pencere kenarı koltuk seçerim.
+cabin|/ˈkæbɪn/|noun|kabin|Put your bag in the cabin.|Çantanı kabine koy.|The cabin crew served drinks.|Kabin ekibi içecek ikram etti.
+
+## Karakter | character | face
+brave|/breɪv/|adjective|cesur|The brave boy saved his friend.|Cesur çocuk arkadaşını kurtardı.|You were very brave at the dentist.|Dişçide çok cesurdun.
+selfish|/ˈselfɪʃ/|adjective|bencil|Don't be selfish, share your toys.|Bencil olma, oyuncaklarını paylaş.|It was selfish to take the last cake.|Son pastayı almak bencilceydi.
+sensitive|/ˈsensətɪv/|adjective|duyarlı, hassas|She is a sensitive and kind person.|Duyarlı ve nazik bir insan.|My skin is sensitive to the sun.|Cildim güneşe karşı hassas.
+hardworking|/ˌhɑːrdˈwɜːrkɪŋ/|adjective|çalışkan|He is a hardworking student.|Çalışkan bir öğrenci.|Hardworking people often succeed.|Çalışkan insanlar çoğu zaman başarılı olur.
+reliable|/rɪˈlaɪəbəl/|adjective|güvenilir|My old car is still reliable.|Eski arabam hâlâ güvenilir.|We need a reliable person for this job.|Bu iş için güvenilir birine ihtiyacımız var.
+cheerful|/ˈtʃɪrfəl/|adjective|neşeli|Our neighbor is always cheerful.|Komşumuz her zaman neşelidir.|She sang a cheerful song.|Neşeli bir şarkı söyledi.
+stubborn|/ˈstʌbərn/|adjective|inatçı|My little brother is very stubborn.|Küçük kardeşim çok inatçı.|Don't be stubborn, listen to me.|İnat etme, beni dinle.
+mature|/məˈtʃʊr/|adjective|olgun|She is very mature for her age.|Yaşına göre çok olgun.|It was a mature decision.|Olgun bir karardı.

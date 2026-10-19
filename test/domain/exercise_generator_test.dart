@@ -131,4 +131,43 @@ void main() {
     }, pool: all);
     expect(reviewed.where((e) => e.isRepeat), isEmpty);
   });
+
+  group('pickLessonWords', () {
+    final words = [
+      for (var i = 1; i <= 20; i++)
+        Word(
+          id: i,
+          unitId: 1,
+          lemma: 'w$i',
+          partOfSpeech: 'noun',
+          meaningTr: 'k$i',
+        ),
+    ];
+
+    test('ilk derste sıradaki 8 yeni kelime gelir', () {
+      final picked = pickLessonWords(words, const {});
+      expect(picked.map((w) => w.id), [1, 2, 3, 4, 5, 6, 7, 8]);
+    });
+
+    test('sonraki derste yeni kelimeler ve pekiştirme birlikte', () {
+      final states = {for (var i = 1; i <= 8; i++) i: CardState.learning};
+      final picked = pickLessonWords(words, states, Random(1));
+      expect(picked.take(8).map((w) => w.id), [9, 10, 11, 12, 13, 14, 15, 16]);
+      expect(picked, hasLength(wordsPerLesson));
+      expect(picked.skip(8).every((w) => w.id <= 8), isTrue);
+    });
+
+    test('bütün kelimeler görüldüyse ünite tekrar edilir', () {
+      final states = {for (final w in words) w.id: CardState.review};
+      final picked = pickLessonWords(words, states, Random(2));
+      expect(picked, hasLength(wordsPerLesson));
+      expect(picked.toSet(), hasLength(wordsPerLesson));
+    });
+
+    test('ders uzunluğu makul kalır', () {
+      final lesson = ExerciseGenerator(Random(3))
+          .lesson(pickLessonWords(words, const {}), const {}, pool: words);
+      expect(lesson.length, lessThanOrEqualTo(30));
+    });
+  });
 }

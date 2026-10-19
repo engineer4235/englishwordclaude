@@ -393,6 +393,17 @@ class _Settings extends ConsumerWidget {
               title: Text(l10n.kvkkNotice),
               onTap: () => context.push(AppRoutes.kvkk),
             ),
+            ListTile(
+              key: const ValueKey('open-licenses'),
+              leading: const Icon(Icons.description_outlined),
+              title: Text(l10n.openSourceLicenses),
+              subtitle: Text(l10n.openSourceLicensesHint),
+              onTap: () => showLicensePage(
+                context: context,
+                applicationName: l10n.appTitle,
+                useRootNavigator: true,
+              ),
+            ),
           ],
         ),
         const SizedBox(height: 12),

@@ -1,0 +1,30 @@
+{
+  "version": 16,
+  "note": "MVP içeriği: A1'de 25, A2'de 25, B1'de 25, B2'de 10 ünite; A1 ve A2 ünitelerinde 20'şer kelime. Cümleler bu proje için yazılmıştır.",
+  "levels": [
+    {
+      "code": "A1",
+      "title": "Başlangıç"
+    },
+    {
+      "code": "A2",
+      "title": "Temel"
+    },
+    {
+      "code": "B1",
+      "title": "Orta Öncesi"
+    },
+    {
+      "code": "B2",
+      "title": "Orta"
+    },
+    {
+      "code": "C1",
+      "title": "İleri"
+    },
+    {
+      "code": "C2",
+      "title": "Ustalık"
+    }
+  ]
+}
