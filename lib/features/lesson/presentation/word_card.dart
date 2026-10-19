@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/tts/tts_service.dart';
 import '../../../data/providers.dart';
 import '../../../data/repositories/notes_repository.dart';
+import '../../../domain/content/word_images.dart';
 import '../../../domain/models/word.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../word_lists/presentation/add_word_dialog.dart';
@@ -127,11 +128,19 @@ class WordCard extends ConsumerWidget {
                 const SizedBox(height: 8),
                 Padding(
                   padding: const EdgeInsets.only(right: 12),
-                  child: Text(
-                    word.lemma,
-                    style: theme.textTheme.displaySmall?.copyWith(
-                      color: onHero,
-                    ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          word.lemma,
+                          style: theme.textTheme.displaySmall?.copyWith(
+                            color: onHero,
+                          ),
+                        ),
+                      ),
+                      if (wordImage(word) case final image?)
+                        _WordImage(image: image, background: onHero),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -447,3 +456,35 @@ String partOfSpeechLabel(AppLocalizations l10n, String pos) => switch (pos) {
   'other' => l10n.posOther,
   _ => pos,
 };
+
+/// Somut kelimenin görseli (FR-32). Anlam metinde zaten yazdığı için ekran
+/// okuyucuya ayrıca okunmaz.
+class _WordImage extends StatelessWidget {
+  const _WordImage({required this.image, required this.background});
+
+  final String image;
+  final Color background;
+
+  @override
+  Widget build(BuildContext context) {
+    return ExcludeSemantics(
+      child: Container(
+        key: const ValueKey('word-image'),
+        width: 72,
+        height: 72,
+        margin: const EdgeInsets.only(left: 12),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: background.withValues(alpha: 0.16),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        // Yazı boyutu büyütülse de kutudan taşmasın.
+        child: Text(
+          image,
+          textScaler: TextScaler.noScaling,
+          style: const TextStyle(fontSize: 40, height: 1.1),
+        ),
+      ),
+    );
+  }
+}
