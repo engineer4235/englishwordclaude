@@ -44,12 +44,24 @@ void main() {
     }
   }
 
+  /// Ekranda gerçekten dokunulabilir olan öğeye dokunur. Tanıtım gibi
+  /// sayfalı ekranlarda görünmeyen sayfaların öğeleri de ağaçta bulunduğundan
+  /// yalnız isabet alan öğe aranır.
   Future<void> tap(WidgetTester tester, Finder finder) async {
     await pumpUntil(tester, finder);
     await tester.ensureVisible(finder.first);
     await tester.pumpAndSettle();
-    await tester.tap(finder.first);
+    final target = finder.hitTestable();
+    await pumpUntil(tester, target);
+    await tester.tap(target.first);
     await tester.pumpAndSettle();
+    // Teşhis için her adımdan sonra ekrandaki metinler yazılır.
+    final texts = [
+      for (final e in find.byType(RichText).hitTestable().evaluate())
+        (e.widget as RichText).text.toPlainText(),
+    ].where((t) => t.trim().isNotEmpty).take(12).join(' | ');
+    // ignore: avoid_print
+    print('[adım] ${finder.describeMatch(Plurality.one)} -> $texts');
   }
 
   Finder nav(String label) => find.descendant(
