@@ -34,7 +34,11 @@ void main() {
     final end = DateTime.now().add(timeout);
     while (finder.evaluate().isEmpty) {
       if (DateTime.now().isAfter(end)) {
-        throw TestFailure('Görünmedi: $finder');
+        final texts = [
+          for (final e in find.byType(Text).evaluate())
+            (e.widget as Text).data ?? '',
+        ].where((t) => t.isNotEmpty).take(40).join(' | ');
+        throw TestFailure('Görünmedi: $finder — Ekrandaki metinler: $texts');
       }
       await tester.pump(const Duration(milliseconds: 50));
     }
