@@ -1,0 +1,81 @@
+# Uçtan uca testler gerçek platformlarda (NFR-01/02/06/11): aynı test
+# (integration_test/app_test.dart) Android emülatöründe ve iOS simülatöründe
+# çalışır. Ana dala her birleştirmede, bu testi değiştiren PR'larda ve elle
+# (Actions → Cihaz testleri → Run workflow) çalışır; zorunlu kontrol değildir.
+name: Cihaz testleri
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'integration_test/**'
+      - '.github/workflows/device.yml'
+
+concurrency:
+  group: device-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  android:
+    name: Android emülatörü
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: KVM erişimi
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Emülatörde uçtan uca test
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          target: google_apis
+          profile: pixel_6
+          script: flutter test integration_test -d emulator-5554 --reporter expanded
+
+  ios:
+    name: iOS simülatörü
+    runs-on: macos-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Simülatörü başlat
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          devices = json.load(sys.stdin)['devices']
+          print(next(d['udid'] for runtime, ds in devices.items() if 'iOS' in runtime
+                     for d in ds if d['name'].startswith('iPhone')))")
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+      - name: Simülatörde uçtan uca test
+        # Simülatörde test bazen uygulamaya bağlanamadan asılı kalıyor;
+        # her deneme 15 dakikayla sınırlı, asılırsa bir kez daha denenir.
+        run: |
+          for i in 1 2; do
+            perl -e 'alarm shift; exec @ARGV' 900 \
+              flutter test integration_test -d "$UDID" --reporter expanded \
+              && exit 0
+            echo "::warning::Deneme $i başarısız (çıkış $?)"
+          done
+          exit 1

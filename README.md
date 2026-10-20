@@ -66,6 +66,10 @@ tolerans vardır. Tasarımı bilerek değiştirdikten sonra görüntüleri yenil
 flutter test --update-goldens test/golden
 ```
 
+## Cihaz testleri
+
+`integration_test/app_test.dart` uygulamayı gerçek cihazda / emülatörde baştan sona çalıştırır ve açılış süresi, ilk derse kadar geçen süre, ekran geçiş tepkisi ve kare sürelerini ölçer (NFR-01/02/06/11). CI'da ana dala her birleştirmede Android emülatöründe ve iOS simülatöründe çalışır (`.github/workflows/device.yml`). Yayın öncesi elle kontrol listesi: [docs/DEVICE_TEST.md](docs/DEVICE_TEST.md).
+
 ## Yayın
 
 Google Play ve TestFlight adımları, imza anahtarı ve mağaza metinleri:
