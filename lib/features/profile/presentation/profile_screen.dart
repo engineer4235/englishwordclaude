@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/growth/share_service.dart';
 import '../../../core/notifications/notification_service.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
@@ -392,6 +393,15 @@ class _Settings extends ConsumerWidget {
               leading: const Icon(Icons.gavel_rounded),
               title: Text(l10n.kvkkNotice),
               onTap: () => context.push(AppRoutes.kvkk),
+            ),
+            ListTile(
+              key: const ValueKey('share-app'),
+              leading: const Icon(Icons.share_outlined),
+              title: Text(l10n.shareApp),
+              subtitle: Text(l10n.shareAppHint),
+              onTap: () => ref
+                  .read(shareServiceProvider)
+                  .shareText(l10n.shareAppText(storeLink())),
             ),
             ListTile(
               key: const ValueKey('open-licenses'),

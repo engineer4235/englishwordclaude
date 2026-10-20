@@ -886,6 +886,36 @@ abstract class AppLocalizations {
   /// **'KVKK aydınlatma metni'**
   String get kvkkNotice;
 
+  /// No description provided for @shareApp.
+  ///
+  /// In tr, this message translates to:
+  /// **'Uygulamayı paylaş'**
+  String get shareApp;
+
+  /// No description provided for @shareAppHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Arkadaşlarına Learn English at Home\'u öner'**
+  String get shareAppHint;
+
+  /// No description provided for @shareAppText.
+  ///
+  /// In tr, this message translates to:
+  /// **'İngilizce kelimeleri reklamsız ve internetsiz öğrendiğim uygulama: Learn English at Home\n{link}'**
+  String shareAppText(String link);
+
+  /// No description provided for @shareWord.
+  ///
+  /// In tr, this message translates to:
+  /// **'Paylaş'**
+  String get shareWord;
+
+  /// No description provided for @shareWordText.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günün kelimesi: {lemma} = {meaning}\nLearn English at Home ile her gün yeni kelimeler öğreniyorum: {link}'**
+  String shareWordText(String lemma, String meaning, String link);
+
   /// No description provided for @openSourceLicenses.
   ///
   /// In tr, this message translates to:

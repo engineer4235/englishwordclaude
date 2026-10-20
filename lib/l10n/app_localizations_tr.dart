@@ -473,6 +473,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String get kvkkNotice => 'KVKK aydınlatma metni';
 
   @override
+  String get shareApp => 'Uygulamayı paylaş';
+
+  @override
+  String get shareAppHint => 'Arkadaşlarına Learn English at Home\'u öner';
+
+  @override
+  String shareAppText(String link) {
+    return 'İngilizce kelimeleri reklamsız ve internetsiz öğrendiğim uygulama: Learn English at Home\n$link';
+  }
+
+  @override
+  String get shareWord => 'Paylaş';
+
+  @override
+  String shareWordText(String lemma, String meaning, String link) {
+    return 'Günün kelimesi: $lemma = $meaning\nLearn English at Home ile her gün yeni kelimeler öğreniyorum: $link';
+  }
+
+  @override
   String get openSourceLicenses => 'Açık kaynak lisansları';
 
   @override

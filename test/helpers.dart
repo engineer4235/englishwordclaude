@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:english_word_learning/app.dart';
+import 'package:english_word_learning/core/growth/review_prompt.dart';
+import 'package:english_word_learning/core/growth/share_service.dart';
 import 'package:english_word_learning/core/notifications/notification_plan.dart';
 import 'package:english_word_learning/core/notifications/notification_service.dart';
 import 'package:english_word_learning/core/tts/tts_service.dart';
@@ -40,6 +42,20 @@ class FakeTts implements TtsService {
   Future<void> speak(String text) async => spoken.add(text);
 }
 
+class FakeShare implements ShareService {
+  final shared = <String>[];
+
+  @override
+  Future<void> shareText(String text) async => shared.add(text);
+}
+
+class FakeReview implements ReviewRequester {
+  int requests = 0;
+
+  @override
+  Future<void> request() async => requests++;
+}
+
 class FakeNotifications implements NotificationService {
   final plans = <NotificationPlan>[];
   int permissionRequests = 0;
@@ -69,6 +85,8 @@ Widget testApp(
   AppDatabase db, {
   FakeTts? tts,
   FakeNotifications? notifications,
+  FakeShare? share,
+  FakeReview? review,
   Widget? child,
   bool onboarded = true,
   DateTime? now,
@@ -88,6 +106,8 @@ Widget testApp(
       notificationServiceProvider.overrideWithValue(
         notifications ?? FakeNotifications(),
       ),
+      shareServiceProvider.overrideWithValue(share ?? FakeShare()),
+      reviewRequesterProvider.overrideWithValue(review ?? FakeReview()),
     ],
     child: child ?? const EnglishWordApp(),
   );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/growth/share_service.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/tts/tts_service.dart';
@@ -418,6 +419,20 @@ class _WordOfDayCard extends ConsumerWidget {
                     ),
                   ],
                 ),
+              ),
+              IconButton(
+                key: const ValueKey('share-word'),
+                icon: const Icon(Icons.share_rounded),
+                tooltip: l10n.shareWord,
+                onPressed: () => ref
+                    .read(shareServiceProvider)
+                    .shareText(
+                      l10n.shareWordText(
+                        word.lemma,
+                        word.meaningTr,
+                        storeLink(),
+                      ),
+                    ),
               ),
               IconButton.filledTonal(
                 icon: const Icon(Icons.volume_up_rounded),
