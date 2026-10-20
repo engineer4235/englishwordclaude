@@ -886,6 +886,18 @@ abstract class AppLocalizations {
   /// **'KVKK aydınlatma metni'**
   String get kvkkNotice;
 
+  /// No description provided for @openSourceLicenses.
+  ///
+  /// In tr, this message translates to:
+  /// **'Açık kaynak lisansları'**
+  String get openSourceLicenses;
+
+  /// No description provided for @openSourceLicensesHint.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanılan yazı tipi ve kütüphaneler'**
+  String get openSourceLicensesHint;
+
   /// No description provided for @settingDailyTarget.
   ///
   /// In tr, this message translates to:

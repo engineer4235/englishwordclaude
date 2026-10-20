@@ -31,7 +31,10 @@ class ContentSeeder {
     final key = contentKey(json);
     if (await _db.metaValue(contentKeyName) == key) return false;
     final data = _decode(json);
-    if (!await _seed(data)) await _addMissingUnits(data);
+    if (!await _seed(data)) {
+      await _addMissingUnits(data);
+      await _addMissingWords(data);
+    }
     await _syncRelations(data);
     await _db.setMetaValue(contentKeyName, key);
     return true;
@@ -219,6 +222,46 @@ class ContentSeeder {
                 ),
               );
         }
+      }
+    });
+    return added;
+  }
+
+  /// İçerik paketinde olup veritabanındaki ünitelerde olmayan kelimeleri
+  /// (seviye kodu ve ünite başlığına göre) ekler; güncellemeyle mevcut
+  /// ünitelere gelen kelimeler böyle eklenir. Kullanıcının kendi eklediği
+  /// aynı yazımlı kelime varsa içerikteki atlanır. Eklenen kelime sayısını
+  /// döner.
+  Future<int> addMissingWords(String json) => _addMissingWords(_decode(json));
+
+  Future<int> _addMissingWords(Map<String, dynamic> data) async {
+    final units = (data['units'] as List).cast<Map<String, dynamic>>();
+    final levelCodes = {
+      for (final l in await _db.select(_db.levels).get()) l.id: l.code,
+    };
+    final unitIds = {
+      for (final u in await _db.select(_db.units).get())
+        '${levelCodes[u.levelId]}|${u.titleTr}': u.id,
+    };
+    final existing = {
+      for (final w in await _db.select(_db.words).get()) w.lemma.toLowerCase(),
+    };
+    final maxWordId = await _db
+        .customSelect('SELECT COALESCE(MAX(id), 0) AS m FROM words')
+        .getSingle();
+    var wordId = maxWordId.read<int>('m');
+    var added = 0;
+    await _db.batch((b) {
+      for (final unit in units) {
+        final unitId = unitIds['${unit['level']}|${unit['title']}'];
+        if (unitId == null) continue;
+        final missing = [
+          for (final w in (unit['words'] as List).cast<Map<String, dynamic>>())
+            if (!existing.contains((w['lemma'] as String).toLowerCase())) w,
+        ];
+        if (missing.isEmpty) continue;
+        wordId = _addWords(b, unitId, {'words': missing}, wordId);
+        added += missing.length;
       }
     });
     return added;

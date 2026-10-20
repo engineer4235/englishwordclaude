@@ -1,0 +1,551 @@
+# A1 seviyesi. Biçim için content/README.md dosyasına bakın.
+
+## Aile | family | family
+mother|/ˈmʌðər/|noun|anne|My mother works in a hospital.|Annem bir hastanede çalışıyor.|Call your mother tonight.|Bu akşam anneni ara.
+father|/ˈfɑːðər/|noun|baba|My father likes coffee.|Babam kahveyi sever.|His father is very tall.|Onun babası çok uzun.
+sister|/ˈsɪstər/|noun|kız kardeş|I have one sister.|Bir kız kardeşim var.|My sister lives in Ankara.|Kız kardeşim Ankara'da yaşıyor.
+brother|/ˈbrʌðər/|noun|erkek kardeş|My brother is ten years old.|Erkek kardeşim on yaşında.|Do you have a brother?|Erkek kardeşin var mı?
+son|/sʌn/|noun|oğul|Their son plays football.|Oğulları futbol oynuyor.|She has a son and a daughter.|Onun bir oğlu ve bir kızı var.
+daughter|/ˈdɔːtər/|noun|kız evlat|Our daughter loves books.|Kızımız kitapları çok seviyor.|His daughter is a doctor.|Onun kızı doktor.
+baby|/ˈbeɪbi/|noun|bebek|The baby is sleeping.|Bebek uyuyor.|They have a new baby.|Yeni bir bebekleri var.
+family|/ˈfæməli/|noun|aile|My family is big.|Ailem kalabalık.|We eat dinner as a family.|Akşam yemeğini aile olarak yeriz.
+parent|/ˈperənt/|noun|ebeveyn|Every parent wants a happy child.|Her ebeveyn mutlu bir çocuk ister.|My parents live in a small town.|Annem ve babam küçük bir kasabada yaşıyor.
+grandmother|/ˈɡrænˌmʌðər/|noun|büyükanne|My grandmother makes good soup.|Büyükannem güzel çorba yapar.|We visit our grandmother on Sundays.|Pazar günleri büyükannemizi ziyaret ederiz.
+grandfather|/ˈɡrænˌfɑːðər/|noun|büyükbaba, dede|My grandfather has a big garden.|Dedemin büyük bir bahçesi var.|Her grandfather is eighty years old.|Onun dedesi seksen yaşında.
+uncle|/ˈʌŋkəl/|noun|amca, dayı|My uncle lives in Ankara.|Amcam Ankara'da yaşıyor.|Our uncle gave us a present.|Dayımız bize bir hediye verdi.
+aunt|/ænt/|noun|teyze, hala|My aunt is a teacher.|Teyzem öğretmen.|We stayed with our aunt in the summer.|Yazın halamızda kaldık.
+cousin|/ˈkʌzən/|noun|kuzen|My cousin is the same age as me.|Kuzenim benimle aynı yaşta.|I play football with my cousins.|Kuzenlerimle futbol oynarım.
+husband|/ˈhʌzbənd/|noun|koca, eş (erkek)|Her husband is a doctor.|Onun kocası doktor.|My husband cooks dinner on Fridays.|Eşim cuma günleri akşam yemeğini pişirir.
+wife|/waɪf/|noun|karı, eş (kadın)|His wife works in a bank.|Onun karısı bir bankada çalışıyor.|My wife and I like old films.|Eşim ve ben eski filmleri severiz.
+twin|/twɪn/|noun|ikiz|My sister has a twin.|Kız kardeşimin bir ikizi var.|The twins look the same.|İkizler aynı görünüyor.
+grandchild|/ˈɡræntʃaɪld/|noun|torun|She has three grandchildren.|Onun üç torunu var.|Our grandchild visits us every week.|Torunumuz bizi her hafta ziyaret eder.
+married|/ˈmærid/|adjective|evli|My brother is married.|Erkek kardeşim evli.|They got married last year.|Geçen yıl evlendiler.
+love|/lʌv/|verb|sevmek|I love my family.|Ailemi seviyorum.|She loves her little brother.|O, küçük kardeşini çok sever.
+
+## Renkler | colors | palette
+red|/red/|adjective|kırmızı|I have a red bag.|Kırmızı bir çantam var.|The apple is red.|Elma kırmızı.
+blue|/bluː/|adjective|mavi|The sky is blue today.|Bugün gökyüzü mavi.|She wears a blue dress.|Mavi bir elbise giyiyor.
+green|/ɡriːn/|adjective|yeşil|The grass is green.|Çimen yeşil.|I like green tea.|Yeşil çayı severim.
+yellow|/ˈjeləʊ/|adjective|sarı|The taxi is yellow.|Taksi sarı.|She has a yellow pencil.|Sarı bir kalemi var.
+black|/blæk/|adjective|siyah|My cat is black.|Kedim siyah.|He drinks black coffee.|Sade kahve içer.
+white|/waɪt/|adjective|beyaz|The wall is white.|Duvar beyaz.|I need a white shirt.|Beyaz bir gömleğe ihtiyacım var.
+orange|/ˈɒrɪndʒ/|adjective|turuncu|The leaves are orange in autumn.|Sonbaharda yapraklar turuncu olur.|He has an orange car.|Turuncu bir arabası var.
+brown|/braʊn/|adjective|kahverengi|Her eyes are brown.|Gözleri kahverengi.|The table is brown.|Masa kahverengi.
+pink|/pɪŋk/|adjective|pembe|She has a pink bag.|Onun pembe bir çantası var.|The sky is pink in the evening.|Akşam gökyüzü pembe.
+purple|/ˈpɜːrpəl/|adjective|mor|I like purple flowers.|Mor çiçekleri severim.|His new car is purple.|Onun yeni arabası mor.
+gray|/ɡreɪ/|adjective|gri|The sky is gray today.|Bugün gökyüzü gri.|My grandfather has gray hair.|Dedemin saçları gri.
+gold|/ɡoʊld/|adjective|altın rengi|She wore a gold dress.|Altın rengi bir elbise giydi.|The cup has a gold line.|Fincanın altın rengi bir çizgisi var.
+silver|/ˈsɪlvər/|adjective|gümüş rengi|He has a silver watch.|Onun gümüş rengi bir saati var.|The car is silver.|Araba gümüş rengi.
+dark|/dɑːrk/|adjective|koyu; karanlık|I want a dark blue shirt.|Koyu mavi bir gömlek istiyorum.|It is dark outside.|Dışarısı karanlık.
+light|/laɪt/|adjective|açık (renk)|She painted the room light green.|Odayı açık yeşile boyadı.|I like light colors.|Açık renkleri severim.
+color|/ˈkʌlər/|noun|renk|What is your favorite color?|En sevdiğin renk ne?|This shirt comes in three colors.|Bu gömleğin üç rengi var.
+bright|/braɪt/|adjective|parlak, canlı|The room has bright colors.|Odanın canlı renkleri var.|The sun is very bright today.|Güneş bugün çok parlak.
+colorful|/ˈkʌlərfəl/|adjective|renkli|Children like colorful books.|Çocuklar renkli kitapları sever.|The market is busy and colorful.|Pazar kalabalık ve renkli.
+turquoise|/tɜːrˈkwɔɪz/|adjective|turkuaz|The sea is turquoise here.|Deniz burada turkuaz.|She bought a turquoise scarf.|Turkuaz bir eşarp aldı.
+rainbow|/ˈreɪnˌboʊ/|noun|gökkuşağı|Look, there is a rainbow!|Bak, gökkuşağı var!|A rainbow has seven colors.|Gökkuşağının yedi rengi vardır.
+
+## Sayılar | numbers | numbers
+one|/wʌn/|number|bir|I have one brother.|Bir erkek kardeşim var.|Wait one minute, please.|Bir dakika bekleyin lütfen.
+two|/tuː/|number|iki|We have two cats.|İki kedimiz var.|The film starts at two.|Film saat ikide başlıyor.
+three|/θriː/|number|üç|She has three children.|Üç çocuğu var.|I drink three glasses of water.|Üç bardak su içerim.
+four|/fɔːr/|number|dört|A car has four wheels.|Bir arabanın dört tekerleği vardır.|The class ends at four.|Ders saat dörtte bitiyor.
+five|/faɪv/|number|beş|I work five days a week.|Haftada beş gün çalışırım.|Give me five apples, please.|Bana beş elma verin lütfen.
+six|/sɪks/|number|altı|The shop opens at six.|Dükkan altıda açılıyor.|There are six eggs in the box.|Kutuda altı yumurta var.
+ten|/ten/|number|on|I have ten fingers.|On parmağım var.|The bus comes in ten minutes.|Otobüs on dakika içinde geliyor.
+hundred|/ˈhʌndrəd/|number|yüz|The book has a hundred pages.|Kitap yüz sayfa.|It costs one hundred lira.|Yüz lira tutuyor.
+seven|/ˈsevən/|number|yedi|There are seven days in a week.|Bir haftada yedi gün vardır.|My brother is seven.|Erkek kardeşim yedi yaşında.
+eight|/eɪt/|number|sekiz|School starts at eight.|Okul sekizde başlar.|A spider has eight legs.|Örümceğin sekiz bacağı vardır.
+nine|/naɪn/|number|dokuz|I go to bed at nine.|Dokuzda yatarım.|There are nine apples in the bag.|Torbada dokuz elma var.
+eleven|/ɪˈlevən/|number|on bir|A football team has eleven players.|Bir futbol takımında on bir oyuncu vardır.|She is eleven years old.|O, on bir yaşında.
+twelve|/twelv/|number|on iki|There are twelve months in a year.|Bir yılda on iki ay vardır.|We have lunch at twelve.|On ikide öğle yemeği yeriz.
+twenty|/ˈtwenti/|number|yirmi|There are twenty students in the class.|Sınıfta yirmi öğrenci var.|The ticket costs twenty lira.|Bilet yirmi lira.
+thirty|/ˈθɜːrti/|number|otuz|My mother is thirty-five.|Annem otuz beş yaşında.|The bus comes in thirty minutes.|Otobüs otuz dakika içinde gelir.
+fifty|/ˈfɪfti/|number|elli|My father is fifty.|Babam elli yaşında.|The shop is fifty meters away.|Dükkân elli metre uzakta.
+thousand|/ˈθaʊzənd/|number|bin|A thousand people came to the concert.|Konsere bin kişi geldi.|The phone costs ten thousand lira.|Telefon on bin lira.
+zero|/ˈzɪroʊ/|number|sıfır|The temperature is zero today.|Bugün sıcaklık sıfır.|My phone number starts with zero.|Telefon numaram sıfırla başlar.
+first|/fɜːrst/|adjective|birinci, ilk|This is my first day at school.|Bu, okuldaki ilk günüm.|She was first in the race.|Yarışta birinci oldu.
+number|/ˈnʌmbər/|noun|sayı, numara|What is your phone number?|Telefon numaran ne?|Write the numbers from one to ten.|Birden ona kadar sayıları yaz.
+
+## Yiyecek ve İçecek | food | restaurant
+bread|/bred/|noun|ekmek|We buy fresh bread every morning.|Her sabah taze ekmek alırız.|Can you pass the bread?|Ekmeği uzatır mısın?
+water|/ˈwɔːtər/|noun|su|I drink a lot of water.|Çok su içerim.|This water is cold.|Bu su soğuk.
+milk|/mɪlk/|noun|süt|The baby drinks milk.|Bebek süt içiyor.|There is no milk in the fridge.|Buzdolabında süt yok.
+apple|/ˈæpəl/|noun|elma|She eats an apple every day.|Her gün bir elma yer.|This apple is red.|Bu elma kırmızı.
+egg|/eɡ/|noun|yumurta|I want two eggs for breakfast.|Kahvaltıda iki yumurta istiyorum.|The egg is on the table.|Yumurta masanın üstünde.
+cheese|/tʃiːz/|noun|peynir|Turkish breakfast has white cheese.|Türk kahvaltısında beyaz peynir olur.|Do you like cheese?|Peynir sever misin?
+tea|/tiː/|noun|çay|My grandfather drinks tea all day.|Dedem bütün gün çay içer.|Would you like some tea?|Biraz çay ister misin?
+rice|/raɪs/|noun|pirinç|We cook rice for dinner.|Akşam yemeği için pirinç pişiriyoruz.|Rice is cheap here.|Burada pirinç ucuz.
+juice|/dʒuːs/|noun|meyve suyu|I drink orange juice every morning.|Her sabah portakal suyu içerim.|Can I have a glass of juice?|Bir bardak meyve suyu alabilir miyim?
+coffee|/ˈkɔːfi/|noun|kahve|My father drinks coffee after lunch.|Babam öğle yemeğinden sonra kahve içer.|This coffee is too hot.|Bu kahve çok sıcak.
+meat|/miːt/|noun|et|We eat meat on Sundays.|Pazar günleri et yeriz.|She doesn't eat meat.|O, et yemez.
+sugar|/ˈʃʊɡər/|noun|şeker|Do you want sugar in your tea?|Çayına şeker ister misin?|Too much sugar is bad for your teeth.|Çok fazla şeker dişlere zararlı.
+salt|/sɔːlt/|noun|tuz|Can you pass the salt, please?|Tuzu uzatır mısın lütfen?|The soup needs more salt.|Çorbanın daha fazla tuza ihtiyacı var.
+pasta|/ˈpɑːstə/|noun|makarna|We have pasta for dinner.|Akşam yemeğinde makarna var.|My little sister loves pasta.|Küçük kız kardeşim makarnaya bayılır.
+chocolate|/ˈtʃɔːklət/|noun|çikolata|I bought a bar of chocolate.|Bir kalıp çikolata aldım.|Children love chocolate.|Çocuklar çikolatayı çok sever.
+sandwich|/ˈsænwɪtʃ/|noun|sandviç|I have a cheese sandwich for lunch.|Öğle yemeğinde peynirli sandviç yerim.|She made sandwiches for the trip.|Gezi için sandviç yaptı.
+food|/fuːd/|noun|yiyecek, yemek|The food in this restaurant is good.|Bu restoranın yemekleri güzel.|We need to buy food.|Yiyecek almamız gerekiyor.
+hungry|/ˈhʌŋɡri/|adjective|aç|I am hungry. Let's eat.|Açım. Hadi yemek yiyelim.|The children are hungry after school.|Çocuklar okuldan sonra aç oluyor.
+thirsty|/ˈθɜːrsti/|adjective|susamış|I am thirsty. Is there any water?|Susadım. Hiç su var mı?|Dogs get thirsty in summer.|Köpekler yazın susar.
+lemonade|/ˌleməˈneɪd/|noun|limonata|We drink cold lemonade in summer.|Yazın soğuk limonata içeriz.|My grandmother makes fresh lemonade.|Büyükannem taze limonata yapar.
+
+## Ev | home | home
+house|/haʊs/|noun|ev|Their house is near the sea.|Onların evi denize yakın.|This house has three rooms.|Bu evin üç odası var.
+room|/ruːm/|noun|oda|My room is small.|Odam küçük.|Please clean your room.|Lütfen odanı temizle.
+kitchen|/ˈkɪtʃɪn/|noun|mutfak|Mom is in the kitchen.|Annem mutfakta.|The kitchen is very clean.|Mutfak çok temiz.
+door|/dɔːr/|noun|kapı|Close the door, please.|Kapıyı kapat lütfen.|Someone is at the door.|Kapıda biri var.
+window|/ˈwɪndoʊ/|noun|pencere|Open the window, it is hot.|Pencereyi aç, hava sıcak.|I can see the park from my window.|Penceremden parkı görebiliyorum.
+bed|/bed/|noun|yatak|The cat is sleeping on my bed.|Kedi yatağımda uyuyor.|I go to bed at eleven.|On birde yatarım.
+table|/ˈteɪbəl/|noun|masa|The keys are on the table.|Anahtarlar masanın üstünde.|We need a bigger table.|Daha büyük bir masaya ihtiyacımız var.
+chair|/tʃer/|noun|sandalye|Sit on this chair.|Bu sandalyeye otur.|The chair is broken.|Sandalye kırık.
+bathroom|/ˈbæθruːm/|noun|banyo|The bathroom is upstairs.|Banyo üst katta.|I clean the bathroom on Saturdays.|Cumartesileri banyoyu temizlerim.
+bedroom|/ˈbedruːm/|noun|yatak odası|My bedroom is small but nice.|Yatak odam küçük ama güzel.|The house has three bedrooms.|Evin üç yatak odası var.
+living room|/ˈlɪvɪŋ ruːm/|noun|oturma odası|We watch TV in the living room.|Oturma odasında televizyon izleriz.|The living room is very bright.|Oturma odası çok aydınlık.
+wall|/wɔːl/|noun|duvar|There is a picture on the wall.|Duvarda bir resim var.|The walls are white.|Duvarlar beyaz.
+roof|/ruːf/|noun|çatı|The cat is on the roof.|Kedi çatıda.|Our house has a red roof.|Evimizin kırmızı bir çatısı var.
+stairs|/sterz/|noun|merdiven|Be careful on the stairs.|Merdivende dikkatli ol.|He ran up the stairs.|Merdivenleri koşarak çıktı.
+key|/kiː/|noun|anahtar|I can't find my keys.|Anahtarlarımı bulamıyorum.|This key opens the front door.|Bu anahtar ön kapıyı açar.
+toilet|/ˈtɔɪlət/|noun|tuvalet|Where is the toilet, please?|Tuvalet nerede lütfen?|The toilet is next to the bathroom.|Tuvalet banyonun yanında.
+home|/hoʊm/|noun|ev, yuva|I go home at six.|Altıda eve giderim.|There's no place like home.|Ev gibisi yok.
+television|/ˈteləˌvɪʒən/|noun|televizyon|The television is in the living room.|Televizyon oturma odasında.|We don't watch much television.|Çok fazla televizyon izlemeyiz.
+live|/lɪv/|verb|yaşamak, oturmak|I live in a flat in Izmir.|İzmir'de bir dairede oturuyorum.|Where do you live?|Nerede yaşıyorsun?
+flat|/flæt/|noun|daire|Our flat is on the third floor.|Dairemiz üçüncü katta.|They rent a small flat.|Küçük bir daire kiralıyorlar.
+
+## Vücut | body | body
+head|/hed/|noun|baş|My head hurts.|Başım ağrıyor.|He shook his head.|Başını iki yana salladı.
+eye|/aɪ/|noun|göz|She has green eyes.|Onun yeşil gözleri var.|Close your eyes.|Gözlerini kapat.
+ear|/ɪr/|noun|kulak|The rabbit has long ears.|Tavşanın uzun kulakları var.|My left ear is cold.|Sol kulağım üşüyor.
+mouth|/maʊθ/|noun|ağız|Open your mouth, please.|Ağzını aç lütfen.|Don't talk with your mouth full.|Ağzın doluyken konuşma.
+hand|/hænd/|noun|el|Wash your hands before dinner.|Yemekten önce ellerini yıka.|Raise your hand.|Elini kaldır.
+foot|/fʊt/|noun|ayak|My foot is wet.|Ayağım ıslak.|We went there on foot.|Oraya yürüyerek gittik.
+arm|/ɑːrm/|noun|kol|He broke his arm.|Kolunu kırdı.|She has a bag under her arm.|Kolunun altında bir çanta var.
+leg|/leɡ/|noun|bacak|My legs are tired.|Bacaklarım yorgun.|A spider has eight legs.|Örümceğin sekiz bacağı vardır.
+face|/feɪs/|noun|yüz|Wash your face with cold water.|Yüzünü soğuk suyla yıka.|She has a happy face.|Mutlu bir yüzü var.
+nose|/noʊz/|noun|burun|My nose is cold.|Burnum soğuk.|The dog has a black nose.|Köpeğin siyah bir burnu var.
+hair|/her/|noun|saç|She has long hair.|Onun uzun saçları var.|I wash my hair every day.|Saçımı her gün yıkarım.
+tooth|/tuːθ/|noun|diş|Brush your teeth twice a day.|Dişlerini günde iki kez fırçala.|My tooth hurts.|Dişim ağrıyor.
+finger|/ˈfɪŋɡər/|noun|parmak|We have ten fingers.|On parmağımız var.|She cut her finger.|Parmağını kesti.
+back|/bæk/|noun|sırt|My back hurts.|Sırtım ağrıyor.|He carries his bag on his back.|Çantasını sırtında taşıyor.
+neck|/nek/|noun|boyun|A giraffe has a long neck.|Zürafanın uzun bir boynu vardır.|She wears a scarf around her neck.|Boynuna bir atkı takıyor.
+shoulder|/ˈʃoʊldər/|noun|omuz|He put his hand on my shoulder.|Elini omzuma koydu.|My shoulder is tired.|Omzum yoruldu.
+knee|/niː/|noun|diz|I hurt my knee playing football.|Futbol oynarken dizimi incittim.|The water came up to my knees.|Su dizlerime kadar geldi.
+stomach|/ˈstʌmək/|noun|mide, karın|My stomach hurts.|Midem ağrıyor.|Don't swim on a full stomach.|Tok karnına yüzme.
+heart|/hɑːrt/|noun|kalp|The heart is a strong muscle.|Kalp güçlü bir kastır.|My heart is beating fast.|Kalbim hızlı atıyor.
+body|/ˈbɑːdi/|noun|vücut|Exercise is good for your body.|Egzersiz vücudun için iyidir.|The human body has many bones.|İnsan vücudunda çok sayıda kemik vardır.
+
+## Günler ve Zaman | time | calendar
+day|/deɪ/|noun|gün|Have a nice day!|İyi günler!|I work five days a week.|Haftada beş gün çalışırım.
+week|/wiːk/|noun|hafta|See you next week.|Gelecek hafta görüşürüz.|A week has seven days.|Bir haftada yedi gün vardır.
+month|/mʌnθ/|noun|ay|My birthday is next month.|Doğum günüm gelecek ay.|He visits us every month.|Bizi her ay ziyaret eder.
+year|/jɪr/|noun|yıl|Happy new year!|Mutlu yıllar!|She is twenty years old.|O yirmi yaşında.
+today|/təˈdeɪ/|adverb|bugün|Today is Monday.|Bugün pazartesi.|I am very busy today.|Bugün çok meşgulüm.
+tomorrow|/təˈmɑːroʊ/|adverb|yarın|We have an exam tomorrow.|Yarın sınavımız var.|Call me tomorrow.|Yarın beni ara.
+morning|/ˈmɔːrnɪŋ/|noun|sabah|Good morning!|Günaydın!|I run every morning.|Her sabah koşarım.
+night|/naɪt/|noun|gece|Good night!|İyi geceler!|The city is quiet at night.|Şehir gece sessizdir.
+Monday|/ˈmʌndeɪ/|noun|pazartesi|School starts on Monday.|Okul pazartesi başlıyor.|I have English on Mondays.|Pazartesileri İngilizce dersim var.
+Friday|/ˈfraɪdeɪ/|noun|cuma|We go to the cinema on Friday.|Cuma günü sinemaya gidiyoruz.|Friday is my favorite day.|Cuma en sevdiğim gün.
+Sunday|/ˈsʌndeɪ/|noun|pazar|On Sunday we visit my grandmother.|Pazar günü büyükannemi ziyaret ederiz.|The shops are closed on Sunday.|Dükkânlar pazar günü kapalı.
+weekend|/ˈwiːkend/|noun|hafta sonu|What do you do at the weekend?|Hafta sonu ne yaparsın?|We went to the sea last weekend.|Geçen hafta sonu denize gittik.
+afternoon|/ˌæftərˈnuːn/|noun|öğleden sonra|I study in the afternoon.|Öğleden sonra ders çalışırım.|See you this afternoon!|Bu öğleden sonra görüşürüz!
+evening|/ˈiːvnɪŋ/|noun|akşam|We have dinner in the evening.|Akşam yemeğini akşam yeriz.|Good evening, everyone.|Herkese iyi akşamlar.
+date|/deɪt/|noun|tarih|What is the date today?|Bugün tarih ne?|Write the date at the top of the page.|Tarihi sayfanın üstüne yaz.
+calendar|/ˈkæləndər/|noun|takvim|There is a calendar on the wall.|Duvarda bir takvim var.|Check the calendar for the holiday.|Tatil için takvime bak.
+now|/naʊ/|adverb|şimdi|I am busy now.|Şimdi meşgulüm.|Let's go now.|Hadi şimdi gidelim.
+later|/ˈleɪtər/|adverb|sonra, daha sonra|I will call you later.|Seni daha sonra arayacağım.|See you later!|Sonra görüşürüz!
+every day|/ˈevri deɪ/|adverb|her gün|I walk to school every day.|Her gün okula yürüyerek giderim.|She drinks milk every day.|O, her gün süt içer.
+Saturday|/ˈsætərdeɪ/|noun|cumartesi|We don't have school on Saturday.|Cumartesi okulumuz yok.|I clean my room on Saturdays.|Cumartesileri odamı temizlerim.
+
+## Hava Durumu | weather | weather
+sun|/sʌn/|noun|güneş|The sun is very hot today.|Bugün güneş çok sıcak.|We sat in the sun.|Güneşte oturduk.
+rain|/reɪn/|noun|yağmur|Take an umbrella, there is rain.|Şemsiye al, yağmur var.|I like the sound of rain.|Yağmurun sesini severim.
+snow|/snoʊ/|noun|kar|The children play in the snow.|Çocuklar karda oynuyor.|There is a lot of snow in Erzurum.|Erzurum'da çok kar var.
+wind|/wɪnd/|noun|rüzgâr|The wind is strong today.|Bugün rüzgâr kuvvetli.|The wind opened the door.|Rüzgâr kapıyı açtı.
+cloud|/klaʊd/|noun|bulut|There are no clouds in the sky.|Gökyüzünde hiç bulut yok.|That cloud looks like a dog.|O bulut bir köpeğe benziyor.
+hot|/hɑːt/|adjective|sıcak|It is hot in July.|Temmuzda hava sıcaktır.|Be careful, the soup is hot.|Dikkat et, çorba sıcak.
+cold|/koʊld/|adjective|soğuk|It is cold outside.|Dışarısı soğuk.|I want a cold drink.|Soğuk bir içecek istiyorum.
+warm|/wɔːrm/|adjective|ılık|The water is warm.|Su ılık.|Spring days are warm.|Bahar günleri ılıktır.
+weather|/ˈweðər/|noun|hava (durumu)|The weather is nice today.|Bugün hava güzel.|What's the weather like in Istanbul?|İstanbul'da hava nasıl?
+sky|/skaɪ/|noun|gökyüzü|The sky is blue and clear.|Gökyüzü mavi ve açık.|There are many stars in the sky.|Gökyüzünde çok yıldız var.
+ice|/aɪs/|noun|buz|There is ice on the road.|Yolda buz var.|Do you want ice in your drink?|İçeceğine buz ister misin?
+fog|/fɑːɡ/|noun|sis|We can't see the road in the fog.|Siste yolu göremiyoruz.|The fog is heavy this morning.|Bu sabah sis yoğun.
+rainy|/ˈreɪni/|adjective|yağmurlu|It's a rainy day. Take an umbrella.|Yağmurlu bir gün. Şemsiye al.|London is often rainy.|Londra sık sık yağmurludur.
+cloudy|/ˈklaʊdi/|adjective|bulutlu|It is cloudy but not cold.|Hava bulutlu ama soğuk değil.|The sky was cloudy all day.|Gökyüzü bütün gün bulutluydu.
+wet|/wet/|adjective|ıslak|My shoes are wet.|Ayakkabılarım ıslak.|The grass is wet after the rain.|Yağmurdan sonra çimenler ıslak.
+dry|/draɪ/|adjective|kuru|The weather is hot and dry.|Hava sıcak ve kuru.|Are the clothes dry yet?|Çamaşırlar kurudu mu?
+umbrella|/ʌmˈbrelə/|noun|şemsiye|Don't forget your umbrella.|Şemsiyeni unutma.|I left my umbrella on the bus.|Şemsiyemi otobüste unuttum.
+star|/stɑːr/|noun|yıldız|We can see the stars at night.|Geceleri yıldızları görebiliriz.|The sun is a star.|Güneş bir yıldızdır.
+moon|/muːn/|noun|ay (gök cismi)|The moon is full tonight.|Bu gece ay dolunay.|People walked on the moon in 1969.|İnsanlar 1969'da ayda yürüdü.
+cool|/kuːl/|adjective|serin|The evenings are cool in autumn.|Sonbaharda akşamlar serindir.|Keep the milk in a cool place.|Sütü serin bir yerde sakla.
+
+## Okul | school | school
+school|/skuːl/|noun|okul|My school starts at eight.|Okulum sekizde başlar.|We walk to school.|Okula yürüyerek gideriz.
+teacher|/ˈtiːtʃər/|noun|öğretmen|Our teacher is very kind.|Öğretmenimiz çok nazik.|Ask your teacher.|Öğretmenine sor.
+student|/ˈstuːdənt/|noun|öğrenci|There are thirty students in the class.|Sınıfta otuz öğrenci var.|She is a good student.|O iyi bir öğrenci.
+book|/bʊk/|noun|kitap|I am reading a book.|Bir kitap okuyorum.|Open your books, please.|Kitaplarınızı açın lütfen.
+pen|/pen/|noun|tükenmez kalem|Can I borrow your pen?|Kalemini ödünç alabilir miyim?|Write your name with a pen.|Adını tükenmez kalemle yaz.
+lesson|/ˈlesən/|noun|ders|Our English lesson is on Tuesday.|İngilizce dersimiz salı günü.|The lesson was easy.|Ders kolaydı.
+class|/klæs/|noun|sınıf|Our class has a big window.|Sınıfımızın büyük bir penceresi var.|He is in my class.|O benim sınıfımda.
+homework|/ˈhoʊmwɜːrk/|noun|ödev|Did you finish your homework?|Ödevini bitirdin mi?|We have a lot of homework today.|Bugün çok ödevimiz var.
+classroom|/ˈklæsruːm/|noun|sınıf (oda)|Our classroom is on the first floor.|Sınıfımız birinci katta.|The classroom has big windows.|Sınıfın büyük pencereleri var.
+exam|/ɪɡˈzæm/|noun|sınav|The exam starts at nine.|Sınav dokuzda başlıyor.|I studied hard for the exam.|Sınava çok çalıştım.
+uniform|/ˈjuːnəfɔːrm/|noun|okul forması, üniforma|We wear a uniform at school.|Okulda forma giyeriz.|My uniform is blue and white.|Formam mavi beyaz.
+test|/test/|noun|sınav, test|We have a math test tomorrow.|Yarın matematik sınavımız var.|I passed the test!|Sınavı geçtim!
+question|/ˈkwestʃən/|noun|soru|Can I ask a question?|Bir soru sorabilir miyim?|Answer all the questions.|Bütün soruları cevapla.
+answer|/ˈænsər/|noun|cevap|I know the answer.|Cevabı biliyorum.|Your answer is correct.|Cevabın doğru.
+word|/wɜːrd/|noun|kelime|Learn ten new words every day.|Her gün on yeni kelime öğren.|What does this word mean?|Bu kelime ne anlama geliyor?
+learn|/lɜːrn/|verb|öğrenmek|I want to learn English.|İngilizce öğrenmek istiyorum.|Children learn fast.|Çocuklar hızlı öğrenir.
+study|/ˈstʌdi/|verb|ders çalışmak|I study in the library.|Kütüphanede ders çalışırım.|She studies every evening.|O, her akşam ders çalışır.
+teach|/tiːtʃ/|verb|öğretmek|My mother teaches music.|Annem müzik öğretiyor.|Can you teach me to swim?|Bana yüzmeyi öğretebilir misin?
+break|/breɪk/|noun|teneffüs, mola|We play in the garden at break.|Teneffüste bahçede oynarız.|Let's take a short break.|Kısa bir mola verelim.
+math|/mæθ/|noun|matematik|Math is my favorite subject.|Matematik en sevdiğim ders.|We have math on Tuesday.|Salı günü matematiğimiz var.
+
+## Hayvanlar | animals | pets
+dog|/dɔːɡ/|noun|köpek|The dog is barking.|Köpek havlıyor.|We have a small dog.|Küçük bir köpeğimiz var.
+cat|/kæt/|noun|kedi|The cat drinks milk.|Kedi süt içiyor.|There are many cats in Istanbul.|İstanbul'da çok kedi var.
+bird|/bɜːrd/|noun|kuş|A bird is singing in the tree.|Ağaçta bir kuş ötüyor.|Birds can fly.|Kuşlar uçabilir.
+fish|/fɪʃ/|noun|balık|We eat fish on Fridays.|Cuma günleri balık yeriz.|The fish is in the water.|Balık suyun içinde.
+horse|/hɔːrs/|noun|at|She can ride a horse.|Ata binebilir.|The horse runs fast.|At hızlı koşar.
+cow|/kaʊ/|noun|inek|The cow gives milk.|İnek süt verir.|There are cows on the farm.|Çiftlikte inekler var.
+sheep|/ʃiːp/|noun|koyun|The sheep are eating grass.|Koyunlar ot yiyor.|My uncle has fifty sheep.|Amcamın elli koyunu var.
+chicken|/ˈtʃɪkɪn/|noun|tavuk|The chicken lays eggs.|Tavuk yumurtlar.|We had chicken for lunch.|Öğle yemeğinde tavuk yedik.
+mouse|/maʊs/|noun|fare|The cat is chasing a mouse.|Kedi bir fareyi kovalıyor.|A mouse is very small.|Fare çok küçüktür.
+rabbit|/ˈræbɪt/|noun|tavşan|The rabbit has long ears.|Tavşanın uzun kulakları vardır.|My cousin has a white rabbit.|Kuzenimin beyaz bir tavşanı var.
+duck|/dʌk/|noun|ördek|There are ducks on the lake.|Gölde ördekler var.|The duck is swimming.|Ördek yüzüyor.
+lion|/ˈlaɪən/|noun|aslan|The lion is the king of animals.|Aslan hayvanlar kralıdır.|We saw a lion at the zoo.|Hayvanat bahçesinde bir aslan gördük.
+elephant|/ˈeləfənt/|noun|fil|An elephant is very big.|Fil çok büyüktür.|Elephants have long noses.|Fillerin uzun burunları vardır.
+monkey|/ˈmʌŋki/|noun|maymun|The monkey is eating a banana.|Maymun muz yiyor.|Monkeys live in trees.|Maymunlar ağaçlarda yaşar.
+bear|/ber/|noun|ayı|Bears sleep in winter.|Ayılar kışın uyur.|The bear is big and brown.|Ayı büyük ve kahverengi.
+tiger|/ˈtaɪɡər/|noun|kaplan|A tiger has orange and black stripes.|Kaplanın turuncu ve siyah çizgileri vardır.|Tigers are fast and strong.|Kaplanlar hızlı ve güçlüdür.
+pet|/pet/|noun|evcil hayvan|Do you have a pet?|Evcil hayvanın var mı?|My pet is a small dog.|Evcil hayvanım küçük bir köpek.
+zoo|/zuː/|noun|hayvanat bahçesi|We went to the zoo on Saturday.|Cumartesi hayvanat bahçesine gittik.|The zoo has many animals.|Hayvanat bahçesinde çok hayvan var.
+animal|/ˈænəməl/|noun|hayvan|What is your favorite animal?|En sevdiğin hayvan ne?|Some animals live in the sea.|Bazı hayvanlar denizde yaşar.
+goat|/ɡoʊt/|noun|keçi|The farmer has ten goats.|Çiftçinin on keçisi var.|Goat milk is good for cheese.|Keçi sütü peynir için iyidir.
+
+## Meslekler | jobs | work
+doctor|/ˈdɑːktər/|noun|doktor|You should see a doctor.|Bir doktora görünmelisin.|Her mother is a doctor.|Annesi doktor.
+nurse|/nɜːrs/|noun|hemşire|The nurse is very helpful.|Hemşire çok yardımsever.|He works as a nurse.|Hemşire olarak çalışıyor.
+driver|/ˈdraɪvər/|noun|şoför|The bus driver stopped the bus.|Otobüs şoförü otobüsü durdurdu.|My uncle is a taxi driver.|Amcam taksi şoförü.
+cook|/kʊk/|noun|aşçı|The cook makes great soup.|Aşçı harika çorba yapıyor.|He wants to be a cook.|Aşçı olmak istiyor.
+farmer|/ˈfɑːrmər/|noun|çiftçi|The farmer works in the field.|Çiftçi tarlada çalışıyor.|My grandfather was a farmer.|Dedem çiftçiydi.
+police officer|/pəˈliːs ˌɔːfɪsər/|noun|polis memuru|Ask the police officer for help.|Polis memurundan yardım iste.|A police officer is standing at the corner.|Köşede bir polis memuru duruyor.
+engineer|/ˌendʒɪˈnɪr/|noun|mühendis|My sister is an engineer.|Kız kardeşim mühendis.|Engineers build bridges.|Mühendisler köprü yapar.
+waiter|/ˈweɪtər/|noun|garson|The waiter brought our food.|Garson yemeğimizi getirdi.|Can we call the waiter?|Garsonu çağırabilir miyiz?
+dentist|/ˈdentɪst/|noun|diş hekimi|I go to the dentist twice a year.|Yılda iki kez diş hekimine giderim.|The dentist looked at my teeth.|Diş hekimi dişlerime baktı.
+pilot|/ˈpaɪlət/|noun|pilot|The pilot flies the plane.|Pilot uçağı uçurur.|My uncle is a pilot.|Amcam pilot.
+builder|/ˈbɪldər/|noun|inşaat işçisi|The builders are working on the new house.|İnşaat işçileri yeni ev üzerinde çalışıyor.|My cousin is a builder.|Kuzenim inşaat işçisi.
+artist|/ˈɑːrtɪst/|noun|sanatçı, ressam|The artist paints the sea.|Sanatçı denizi resmediyor.|My sister wants to be an artist.|Kız kardeşim sanatçı olmak istiyor.
+worker|/ˈwɜːrkər/|noun|işçi, çalışan|The factory has two hundred workers.|Fabrikanın iki yüz işçisi var.|He is a hard worker.|O, çalışkan bir işçi.
+secretary|/ˈsekrəˌteri/|noun|sekreter|The secretary answers the phone.|Sekreter telefona cevap verir.|Ask the secretary for help.|Sekreterden yardım iste.
+firefighter|/ˈfaɪərˌfaɪtər/|noun|itfaiyeci|The firefighters saved the family.|İtfaiyeciler aileyi kurtardı.|Firefighters are very brave.|İtfaiyeciler çok cesurdur.
+vet|/vet/|noun|veteriner|We took our cat to the vet.|Kedimizi veterinere götürdük.|The vet helps sick animals.|Veteriner hasta hayvanlara yardım eder.
+mechanic|/məˈkænɪk/|noun|tamirci|The mechanic repaired our car.|Tamirci arabamızı tamir etti.|My father is a mechanic.|Babam tamirci.
+shop assistant|/ˈʃɑːp əˌsɪstənt/|noun|satış görevlisi|The shop assistant was very helpful.|Satış görevlisi çok yardımseverdi.|Ask the shop assistant about the price.|Fiyatı satış görevlisine sor.
+pharmacist|/ˈfɑːrməsɪst/|noun|eczacı|The pharmacist gave me some medicine.|Eczacı bana biraz ilaç verdi.|Ask the pharmacist for advice.|Eczacıya danış.
+tailor|/ˈteɪlər/|noun|terzi|The tailor made my new suit.|Terzi yeni takımımı dikti.|Take your trousers to the tailor.|Pantolonunu terziye götür.
+
+## Temel Fiiller | verbs | run
+eat|/iːt/|verb|yemek|We eat dinner at seven.|Akşam yemeğini yedide yeriz.|Don't eat too fast.|Çok hızlı yeme.
+drink|/drɪŋk/|verb|içmek|I drink coffee in the morning.|Sabahları kahve içerim.|Drink some water.|Biraz su iç.
+go|/ɡoʊ/|verb|gitmek|Let's go to the park.|Parka gidelim.|They go to work by bus.|İşe otobüsle giderler.
+come|/kʌm/|verb|gelmek|Come here, please.|Buraya gel lütfen.|When do you come home?|Eve ne zaman geliyorsun?
+sleep|/sliːp/|verb|uyumak|The baby sleeps a lot.|Bebek çok uyur.|I can't sleep at night.|Geceleri uyuyamıyorum.
+read|/riːd/|verb|okumak|I read the news every day.|Her gün haberleri okurum.|Can you read this word?|Bu kelimeyi okuyabilir misin?
+write|/raɪt/|verb|yazmak|Write your answer here.|Cevabını buraya yaz.|She writes letters to her friend.|Arkadaşına mektup yazar.
+speak|/spiːk/|verb|konuşmak|Do you speak English?|İngilizce konuşuyor musun?|Please speak slowly.|Lütfen yavaş konuş.
+do|/duː/|verb|yapmak|What do you do on Sundays?|Pazar günleri ne yaparsın?|I do my homework after dinner.|Ödevimi akşam yemeğinden sonra yaparım.
+make|/meɪk/|verb|yapmak, hazırlamak|She makes a cake every weekend.|Her hafta sonu kek yapar.|Let's make a plan.|Bir plan yapalım.
+have|/hæv/|verb|sahip olmak; yemek|I have two brothers.|İki erkek kardeşim var.|We have breakfast at seven.|Yedide kahvaltı yaparız.
+get|/ɡet/|verb|almak, elde etmek|I get up at seven.|Yedide kalkarım.|Did you get my message?|Mesajımı aldın mı?
+give|/ɡɪv/|verb|vermek|Give me the book, please.|Kitabı bana ver lütfen.|My aunt gave me a present.|Teyzem bana bir hediye verdi.
+take|/teɪk/|verb|almak, götürmek|Take an umbrella with you.|Yanına bir şemsiye al.|I take the bus to work.|İşe otobüsle giderim.
+know|/noʊ/|verb|bilmek, tanımak|I know the answer.|Cevabı biliyorum.|Do you know my brother?|Erkek kardeşimi tanıyor musun?
+want|/wɑːnt/|verb|istemek|I want a glass of water.|Bir bardak su istiyorum.|What do you want for your birthday?|Doğum günün için ne istiyorsun?
+like|/laɪk/|verb|sevmek, hoşlanmak|I like apples.|Elmayı severim.|Do you like music?|Müzik sever misin?
+help|/help/|verb|yardım etmek|Can you help me, please?|Bana yardım edebilir misin lütfen?|I help my mother in the kitchen.|Mutfakta anneme yardım ederim.
+find|/faɪnd/|verb|bulmak|I can't find my pen.|Kalemimi bulamıyorum.|She found a coin in the street.|Sokakta bir bozuk para buldu.
+use|/juːz/|verb|kullanmak|Can I use your phone?|Telefonunu kullanabilir miyim?|We use a computer at school.|Okulda bilgisayar kullanırız.
+
+## Temel Sıfatlar | adjectives | palette
+big|/bɪɡ/|adjective|büyük|They live in a big city.|Büyük bir şehirde yaşıyorlar.|That is a big dog.|O büyük bir köpek.
+small|/smɔːl/|adjective|küçük|I have a small car.|Küçük bir arabam var.|The room is too small.|Oda çok küçük.
+new|/nuː/|adjective|yeni|I bought a new phone.|Yeni bir telefon aldım.|Is this book new?|Bu kitap yeni mi?
+old|/oʊld/|adjective|eski; yaşlı|This is an old building.|Bu eski bir bina.|My grandmother is old but strong.|Büyükannem yaşlı ama güçlü.
+good|/ɡʊd/|adjective|iyi|This is a good idea.|Bu iyi bir fikir.|She is good at math.|Matematikte iyidir.
+bad|/bæd/|adjective|kötü|The weather is bad today.|Bugün hava kötü.|That was a bad day.|Kötü bir gündü.
+happy|/ˈhæpi/|adjective|mutlu|The children are happy.|Çocuklar mutlu.|I am happy to see you.|Seni gördüğüme sevindim.
+beautiful|/ˈbjuːtɪfəl/|adjective|güzel|What a beautiful garden!|Ne güzel bir bahçe!|She has a beautiful voice.|Onun güzel bir sesi var.
+young|/jʌŋ/|adjective|genç|My aunt is young.|Teyzem genç.|He was a young teacher.|O, genç bir öğretmendi.
+ugly|/ˈʌɡli/|adjective|çirkin|That old building is ugly.|O eski bina çirkin.|I don't think the dog is ugly.|Köpeğin çirkin olduğunu düşünmüyorum.
+fast|/fæst/|adjective|hızlı|This car is very fast.|Bu araba çok hızlı.|She is a fast runner.|O, hızlı bir koşucu.
+slow|/sloʊ/|adjective|yavaş|The old bus is slow.|Eski otobüs yavaş.|The internet is slow today.|İnternet bugün yavaş.
+easy|/ˈiːzi/|adjective|kolay|The test was easy.|Sınav kolaydı.|English is not always easy.|İngilizce her zaman kolay değildir.
+difficult|/ˈdɪfɪkəlt/|adjective|zor|This question is difficult.|Bu soru zor.|It is difficult to wake up early.|Erken kalkmak zor.
+dirty|/ˈdɜːrti/|adjective|kirli|Your hands are dirty.|Ellerin kirli.|Put the dirty clothes in the basket.|Kirli giysileri sepete koy.
+full|/fʊl/|adjective|dolu; tok|The bus is full.|Otobüs dolu.|No more cake, thanks. I'm full.|Daha fazla kek istemem, teşekkürler. Tokum.
+empty|/ˈempti/|adjective|boş|The fridge is empty.|Buzdolabı boş.|The street is empty at night.|Sokak gece boş.
+heavy|/ˈhevi/|adjective|ağır|This box is heavy.|Bu kutu ağır.|My bag is too heavy.|Çantam çok ağır.
+strong|/strɔːŋ/|adjective|güçlü, kuvvetli|My father is very strong.|Babam çok güçlü.|I like strong tea.|Demli çayı severim.
+weak|/wiːk/|adjective|zayıf, güçsüz|I feel weak today.|Bugün kendimi güçsüz hissediyorum.|The coffee is too weak.|Kahve çok hafif.
+
+## Selamlaşma | greetings | waving_hand
+hello|/həˈloʊ/|interjection|merhaba|Hello, how are you?|Merhaba, nasılsın?|Say hello to your mother.|Annene selam söyle.
+goodbye|/ɡʊdˈbaɪ/|interjection|hoşça kal, güle güle|Goodbye, see you tomorrow!|Hoşça kal, yarın görüşürüz!|She said goodbye and left.|Hoşça kal dedi ve gitti.
+please|/pliːz/|adverb|lütfen|Can I have some water, please?|Biraz su alabilir miyim, lütfen?|Please sit down.|Lütfen oturun.
+thank|/θæŋk/|verb|teşekkür etmek|Thank you very much!|Çok teşekkür ederim!|I want to thank my teacher.|Öğretmenime teşekkür etmek istiyorum.
+sorry|/ˈsɑːri/|adjective|üzgün; özür dilerim|I am sorry, I am late.|Özür dilerim, geç kaldım.|Sorry, I don't understand.|Pardon, anlamıyorum.
+name|/neɪm/|noun|isim, ad|What is your name?|Adın ne?|My name is Ali.|Benim adım Ali.
+welcome|/ˈwelkəm/|adjective|hoş geldin(iz)|Welcome to our home!|Evimize hoş geldiniz!|You are always welcome here.|Burada her zaman hoş karşılanırsın.
+meet|/miːt/|verb|tanışmak, buluşmak|Nice to meet you.|Tanıştığımıza memnun oldum.|Let's meet at the café.|Kafede buluşalım.
+hi|/haɪ/|interjection|selam|Hi, how are you?|Selam, nasılsın?|Say hi to your mother.|Annene selam söyle.
+yes|/jes/|interjection|evet|Yes, I am a student.|Evet, öğrenciyim.|Yes, please. I'd like some tea.|Evet, lütfen. Biraz çay isterim.
+no|/noʊ/|interjection|hayır|No, thank you.|Hayır, teşekkür ederim.|No, I don't like coffee.|Hayır, kahve sevmem.
+okay|/oʊˈkeɪ/|interjection|tamam|Okay, see you at six.|Tamam, altıda görüşürüz.|Is everything okay?|Her şey yolunda mı?
+excuse me|/ɪkˈskjuːz miː/|interjection|affedersiniz|Excuse me, where is the station?|Affedersiniz, istasyon nerede?|Excuse me, can I sit here?|Affedersiniz, buraya oturabilir miyim?
+good morning|/ɡʊd ˈmɔːrnɪŋ/|interjection|günaydın|Good morning, class!|Günaydın sınıf!|She says good morning to everyone.|Herkese günaydın der.
+good night|/ɡʊd naɪt/|interjection|iyi geceler|Good night, sleep well.|İyi geceler, iyi uykular.|I said good night and went to bed.|İyi geceler deyip yattım.
+see you|/ˈsiː juː/|interjection|görüşürüz|See you tomorrow!|Yarın görüşürüz!|See you at school.|Okulda görüşürüz.
+fine|/faɪn/|adjective|iyi|I'm fine, thank you.|İyiyim, teşekkür ederim.|Everything is fine.|Her şey iyi.
+nice|/naɪs/|adjective|hoş, güzel|Nice to meet you.|Tanıştığıma memnun oldum.|It is a nice day.|Güzel bir gün.
+introduce|/ˌɪntrəˈduːs/|verb|tanıtmak|Let me introduce my friend Ali.|Arkadaşım Ali'yi tanıtayım.|She introduced herself to the class.|Kendini sınıfa tanıttı.
+greet|/ɡriːt/|verb|selamlamak, karşılamak|We greet our teacher every morning.|Her sabah öğretmenimizi selamlarız.|He greeted the guests at the door.|Misafirleri kapıda karşıladı.
+
+## Kahvaltı | breakfast | free_breakfast
+breakfast|/ˈbrekfəst/|noun|kahvaltı|I have breakfast at seven.|Saat yedide kahvaltı yaparım.|Breakfast is ready!|Kahvaltı hazır!
+lunch|/lʌntʃ/|noun|öğle yemeği|We have lunch at school.|Öğle yemeğini okulda yeriz.|What's for lunch today?|Bugün öğle yemeğinde ne var?
+dinner|/ˈdɪnər/|noun|akşam yemeği|Dinner is at eight.|Akşam yemeği saat sekizde.|My father cooks dinner on Sundays.|Babam pazar günleri akşam yemeği pişirir.
+butter|/ˈbʌtər/|noun|tereyağı|Put some butter on the bread.|Ekmeğe biraz tereyağı sür.|We need butter for the cake.|Pasta için tereyağına ihtiyacımız var.
+honey|/ˈhʌni/|noun|bal|I eat bread with honey.|Ekmeği balla yerim.|This honey is very sweet.|Bu bal çok tatlı.
+jam|/dʒæm/|noun|reçel|My grandmother makes strawberry jam.|Büyükannem çilek reçeli yapar.|Do you want jam or honey?|Reçel mi bal mı istersin?
+olive|/ˈɑːlɪv/|noun|zeytin|There is an olive on my plate.|Tabağımda bir zeytin var.|Pass me an olive, please.|Bana bir zeytin uzatır mısın lütfen?
+toast|/toʊst/|noun|kızarmış ekmek, tost|I had toast for breakfast.|Kahvaltıda kızarmış ekmek yedim.|The toast is too hot.|Tost çok sıcak.
+cereal|/ˈsɪriəl/|noun|tahıl gevreği|I eat cereal with milk.|Sütle tahıl gevreği yerim.|The children like chocolate cereal.|Çocuklar çikolatalı gevreği sever.
+yogurt|/ˈjoʊɡərt/|noun|yoğurt|I eat yogurt every day.|Her gün yoğurt yerim.|My grandmother makes her own yogurt.|Büyükannem kendi yoğurdunu yapar.
+sausage|/ˈsɔːsɪdʒ/|noun|sosis, sucuk|We had eggs and sausage for breakfast.|Kahvaltıda yumurta ve sucuk yedik.|The sausages are on the grill.|Sosisler ızgarada.
+pancake|/ˈpænkeɪk/|noun|krep, pankek|My father makes pancakes on Sundays.|Babam pazarları pankek yapar.|I like pancakes with honey.|Ballı pankeki severim.
+omelette|/ˈɑːmlət/|noun|omlet|I made an omelette with cheese.|Peynirli omlet yaptım.|An omelette is quick and easy.|Omlet hızlı ve kolaydır.
+cream|/kriːm/|noun|krema, kaymak|We eat honey and cream for breakfast.|Kahvaltıda bal kaymak yeriz.|Do you want cream in your coffee?|Kahvene krema ister misin?
+biscuit|/ˈbɪskɪt/|noun|bisküvi|I have a biscuit with my tea.|Çayımla bir bisküvi yerim.|The biscuits are in the cupboard.|Bisküviler dolapta.
+tray|/treɪ/|noun|tepsi|She brought the tea on a tray.|Çayı tepsiyle getirdi.|Put the cups on the tray.|Fincanları tepsiye koy.
+kettle|/ˈketəl/|noun|çaydanlık, su ısıtıcı|The kettle is on the stove.|Çaydanlık ocakta.|Can you fill the kettle?|Su ısıtıcısını doldurur musun?
+pour|/pɔːr/|verb|dökmek, koymak (sıvı)|Can you pour me some tea?|Bana biraz çay koyar mısın?|She poured milk into the glass.|Bardağa süt döktü.
+fresh|/freʃ/|adjective|taze|This bread is fresh.|Bu ekmek taze.|We buy fresh fruit at the market.|Pazardan taze meyve alırız.
+spread|/spred/|verb|sürmek (ekmeğe)|I spread butter on my toast.|Kızarmış ekmeğime tereyağı sürerim.|She spread jam on the bread.|Ekmeğe reçel sürdü.
+
+## Şehirdeki Yerler | places | location_city
+bank|/bæŋk/|noun|banka|The bank opens at nine.|Banka dokuzda açılır.|I need to go to the bank.|Bankaya gitmem gerekiyor.
+park|/pɑːrk/|noun|park|The children play in the park.|Çocuklar parkta oynuyor.|Let's walk in the park.|Parkta yürüyelim.
+hospital|/ˈhɑːspɪtəl/|noun|hastane|My aunt is a nurse at the hospital.|Teyzem hastanede hemşire.|The hospital is near our house.|Hastane evimizin yakında.
+shop|/ʃɑːp/|noun|dükkân, mağaza|The shop is closed on Sunday.|Dükkân pazar günü kapalı.|There is a small shop on the corner.|Köşede küçük bir dükkân var.
+restaurant|/ˈrestərɑːnt/|noun|restoran, lokanta|We eat at a restaurant on Fridays.|Cuma günleri bir restoranda yeriz.|This restaurant is very popular.|Bu restoran çok popüler.
+library|/ˈlaɪbreri/|noun|kütüphane|I study at the library.|Kütüphanede ders çalışırım.|The library has many books.|Kütüphanede çok kitap var.
+market|/ˈmɑːrkɪt/|noun|pazar, market|We buy fruit at the market.|Meyveyi pazardan alırız.|The market is busy on Saturday.|Pazar yeri cumartesi kalabalık olur.
+street|/striːt/|noun|sokak, cadde|I live on this street.|Bu sokakta oturuyorum.|Be careful when you cross the street.|Caddeden karşıya geçerken dikkatli ol.
+post office|/ˈpoʊst ˌɔːfɪs/|noun|postane|The post office is next to the bank.|Postane bankanın yanında.|I sent a letter from the post office.|Postaneden bir mektup gönderdim.
+mosque|/mɑːsk/|noun|cami|There is an old mosque in the town square.|Kasaba meydanında eski bir cami var.|The mosque has two tall towers.|Caminin iki yüksek minaresi var.
+bakery|/ˈbeɪkəri/|noun|fırın, unlu mamuller dükkânı|I buy bread from the bakery.|Ekmeği fırından alırım.|The bakery opens at six.|Fırın altıda açılır.
+police station|/pəˈliːs ˌsteɪʃən/|noun|karakol|The police station is on Main Street.|Karakol ana caddede.|She went to the police station.|Karakola gitti.
+bus stop|/ˈbʌs stɑːp/|noun|otobüs durağı|I'm waiting at the bus stop.|Otobüs durağında bekliyorum.|The bus stop is in front of the school.|Otobüs durağı okulun önünde.
+hairdresser|/ˈherˌdresər/|noun|kuaför, berber|I go to the hairdresser every month.|Her ay kuaföre giderim.|The hairdresser cut my hair short.|Kuaför saçımı kısa kesti.
+cafe|/kæˈfeɪ/|noun|kafe|Let's meet at the cafe.|Kafede buluşalım.|This cafe has great cakes.|Bu kafenin harika kekleri var.
+church|/tʃɜːrtʃ/|noun|kilise|There is an old church in the village.|Köyde eski bir kilise var.|The church is very beautiful.|Kilise çok güzel.
+city|/ˈsɪti/|noun|şehir|Istanbul is a big city.|İstanbul büyük bir şehir.|I live in the city center.|Şehir merkezinde yaşıyorum.
+town|/taʊn/|noun|kasaba|My grandparents live in a small town.|Büyükannemle büyükbabam küçük bir kasabada yaşıyor.|The town has one school.|Kasabanın bir okulu var.
+village|/ˈvɪlɪdʒ/|noun|köy|My father grew up in a village.|Babam bir köyde büyüdü.|The village is near the mountains.|Köy dağların yakınında.
+factory|/ˈfæktəri/|noun|fabrika|My uncle works in a factory.|Amcam bir fabrikada çalışıyor.|The factory makes cars.|Fabrika araba üretiyor.
+
+## Saat | clock | schedule
+clock|/klɑːk/|noun|saat (duvar saati)|The clock is on the wall.|Saat duvarda.|This clock is five minutes fast.|Bu saat beş dakika ileri.
+hour|/ˈaʊər/|noun|saat (süre)|The film lasts one hour.|Film bir saat sürüyor.|I waited for an hour.|Bir saat bekledim.
+minute|/ˈmɪnɪt/|noun|dakika|Wait a minute, please.|Bir dakika bekle lütfen.|The bus will come in a minute.|Otobüs bir dakika içinde gelecek.
+half|/hæf/|noun|yarım, buçuk|It is half past three.|Saat üç buçuk.|I ate half of the pizza.|Pizzanın yarısını yedim.
+quarter|/ˈkwɔːrtər/|noun|çeyrek|It is a quarter to five.|Saat beşe çeyrek var.|Wait a quarter of an hour.|Çeyrek saat bekle.
+time|/taɪm/|noun|zaman, saat|What time is it?|Saat kaç?|I don't have time today.|Bugün vaktim yok.
+watch|/wɑːtʃ/|noun|kol saati|My watch is new.|Kol saatim yeni.|He looked at his watch.|Saatine baktı.
+noon|/nuːn/|noun|öğle vakti|We eat lunch at noon.|Öğlen yemek yeriz.|The shop closes at noon on Saturday.|Dükkân cumartesi öğlen kapanır.
+o'clock|/əˈklɑːk/|adverb|saat (tam)|It is three o'clock.|Saat üç.|The lesson starts at nine o'clock.|Ders saat dokuzda başlar.
+second|/ˈsekənd/|noun|saniye|A minute has sixty seconds.|Bir dakikada altmış saniye vardır.|Wait a second, please.|Bir saniye bekle lütfen.
+midnight|/ˈmɪdnaɪt/|noun|gece yarısı|The party ended at midnight.|Parti gece yarısı bitti.|I never go to bed before midnight.|Gece yarısından önce asla yatmam.
+alarm clock|/əˈlɑːrm klɑːk/|noun|çalar saat|My alarm clock rings at seven.|Çalar saatim yedide çalar.|I didn't hear the alarm clock.|Çalar saati duymadım.
+wake up|/ˈweɪk ʌp/|verb|uyanmak|I wake up at seven every day.|Her gün yedide uyanırım.|Wake up! It's late.|Uyan! Geç oldu.
+get up|/ˈɡet ʌp/|verb|kalkmak (yataktan)|I get up early on Mondays.|Pazartesileri erken kalkarım.|What time do you get up?|Saat kaçta kalkarsın?
+start|/stɑːrt/|verb|başlamak|The film starts at eight.|Film sekizde başlıyor.|Let's start the lesson.|Derse başlayalım.
+finish|/ˈfɪnɪʃ/|verb|bitirmek, bitmek|I finish work at five.|İşi beşte bitiririm.|Did you finish your homework?|Ödevini bitirdin mi?
+busy|/ˈbɪzi/|adjective|meşgul, yoğun|I'm busy this morning.|Bu sabah meşgulüm.|The street is busy at noon.|Sokak öğlen kalabalık.
+free|/friː/|adjective|boş, serbest; bedava|Are you free on Saturday?|Cumartesi boş musun?|The museum is free on Mondays.|Müze pazartesileri ücretsiz.
+ago|/əˈɡoʊ/|adverb|önce|I saw him two days ago.|Onu iki gün önce gördüm.|We moved here a year ago.|Buraya bir yıl önce taşındık.
+on time|/ɑːn taɪm/|adverb|zamanında|The train arrived on time.|Tren zamanında geldi.|Please come on time.|Lütfen zamanında gel.
+
+## Oyuncaklar | toys | toys
+toy|/tɔɪ/|noun|oyuncak|The child has a new toy.|Çocuğun yeni bir oyuncağı var.|Put your toy in the box.|Oyuncağını kutuya koy.
+doll|/dɑːl/|noun|oyuncak bebek|My sister plays with her doll.|Kız kardeşim bebeğiyle oynuyor.|This doll has long hair.|Bu bebeğin uzun saçları var.
+game|/ɡeɪm/|noun|oyun|Let's play a game.|Bir oyun oynayalım.|This game is very fun.|Bu oyun çok eğlenceli.
+play|/pleɪ/|verb|oynamak|The children play in the garden.|Çocuklar bahçede oynar.|Can you play with me?|Benimle oynar mısın?
+kite|/kaɪt/|noun|uçurtma|We fly a kite at the beach.|Plajda uçurtma uçururuz.|My kite is red and yellow.|Uçurtmam kırmızı ve sarı.
+puzzle|/ˈpʌzəl/|noun|yapboz, bulmaca|This puzzle has a thousand pieces.|Bu yapbozun bin parçası var.|We finished the puzzle together.|Yapbozu birlikte bitirdik.
+robot|/ˈroʊbɑːt/|noun|robot|My brother has a toy robot.|Erkek kardeşimin oyuncak bir robotu var.|The robot can walk and talk.|Robot yürüyüp konuşabiliyor.
+balloon|/bəˈluːn/|noun|balon|The balloon flew into the sky.|Balon gökyüzüne uçtu.|We bought a blue balloon.|Mavi bir balon aldık.
+teddy bear|/ˈtedi ber/|noun|oyuncak ayı|My little sister sleeps with her teddy bear.|Küçük kız kardeşim oyuncak ayısıyla uyur.|He got a teddy bear for his birthday.|Doğum gününde bir oyuncak ayı aldı.
+block|/blɑːk/|noun|blok, yapı küpü|The baby is playing with blocks.|Bebek bloklarla oynuyor.|We built a tower with blocks.|Bloklarla bir kule yaptık.
+yo-yo|/ˈjoʊjoʊ/|noun|yoyo|Can you play with a yo-yo?|Yoyo oynayabilir misin?|My yo-yo is red and blue.|Yoyom kırmızı ve mavi.
+marble|/ˈmɑːrbəl/|noun|bilye, misket|The boys are playing marbles.|Oğlanlar misket oynuyor.|I have a bag of marbles.|Bir torba bilyem var.
+card|/kɑːrd/|noun|kart, iskambil kâğıdı|Let's play cards.|Hadi kâğıt oynayalım.|She sent me a birthday card.|Bana bir doğum günü kartı gönderdi.
+dice|/daɪs/|noun|zar|Throw the dice!|Zarı at!|You need two dice for this game.|Bu oyun için iki zar gerekiyor.
+crayon|/ˈkreɪɑːn/|noun|mum boya|The child drew a house with crayons.|Çocuk mum boyalarla bir ev çizdi.|I need a green crayon.|Yeşil bir mum boyaya ihtiyacım var.
+swing|/swɪŋ/|noun|salıncak|The children are on the swings.|Çocuklar salıncakta.|There is a swing in our garden.|Bahçemizde bir salıncak var.
+slide|/slaɪd/|noun|kaydırak|The slide in the park is very high.|Parktaki kaydırak çok yüksek.|My brother loves the slide.|Erkek kardeşim kaydırağa bayılır.
+hide-and-seek|/ˌhaɪd ən ˈsiːk/|noun|saklambaç|Let's play hide-and-seek!|Hadi saklambaç oynayalım!|We played hide-and-seek in the garden.|Bahçede saklambaç oynadık.
+fun|/fʌn/|adjective|eğlenceli|This game is fun.|Bu oyun eğlenceli.|The party was really fun.|Parti gerçekten eğlenceliydi.
+share|/ʃer/|verb|paylaşmak|Please share your toys.|Lütfen oyuncaklarını paylaş.|We share a room.|Aynı odayı paylaşıyoruz.
+
+## Sebzeler | vegetables | eco
+tomato|/təˈmeɪtoʊ/|noun|domates|This tomato is very red.|Bu domates çok kırmızı.|Cut a tomato for the salad.|Salata için bir domates doğra.
+potato|/pəˈteɪtoʊ/|noun|patates|I like potato soup.|Patates çorbasını severim.|Peel the potato first.|Önce patatesi soy.
+carrot|/ˈkærət/|noun|havuç|The rabbit is eating a carrot.|Tavşan havuç yiyor.|A carrot is orange.|Havuç turuncudur.
+onion|/ˈʌnjən/|noun|soğan|Cutting an onion makes me cry.|Soğan doğramak beni ağlatır.|Put one onion in the pot.|Tencereye bir soğan koy.
+cucumber|/ˈkjuːkʌmbər/|noun|salatalık|I eat cucumber with cheese.|Salatalığı peynirle yerim.|This cucumber is fresh.|Bu salatalık taze.
+pepper|/ˈpepər/|noun|biber|The green pepper is not hot.|Yeşil biber acı değil.|Add some black pepper.|Biraz karabiber ekle.
+salad|/ˈsæləd/|noun|salata|I want a salad for lunch.|Öğle yemeğinde salata istiyorum.|The salad is very fresh.|Salata çok taze.
+bean|/biːn/|noun|fasulye|My mother cooks bean soup.|Annem fasulye çorbası pişirir.|This bean is green.|Bu fasulye yeşil.
+lettuce|/ˈletɪs/|noun|marul|Wash the lettuce for the salad.|Salata için marulu yıka.|We grow lettuce in the garden.|Bahçede marul yetiştiriyoruz.
+cabbage|/ˈkæbɪdʒ/|noun|lahana|My grandmother makes cabbage rolls.|Büyükannem lahana sarması yapar.|Cabbage is cheap in winter.|Lahana kışın ucuzdur.
+garlic|/ˈɡɑːrlɪk/|noun|sarımsak|Add some garlic to the yogurt.|Yoğurda biraz sarımsak ekle.|Garlic has a strong smell.|Sarımsağın kokusu güçlüdür.
+corn|/kɔːrn/|noun|mısır|We ate corn at the beach.|Plajda mısır yedik.|The farmer grows corn.|Çiftçi mısır yetiştiriyor.
+pea|/piː/|noun|bezelye|I don't like peas.|Bezelyeyi sevmem.|The soup has peas and carrots.|Çorbada bezelye ve havuç var.
+mushroom|/ˈmʌʃruːm/|noun|mantar|I want a pizza with mushrooms.|Mantarlı bir pizza istiyorum.|Don't eat wild mushrooms.|Yabani mantar yeme.
+spinach|/ˈspɪnɪtʃ/|noun|ıspanak|Spinach is good for you.|Ispanak sağlığa yararlıdır.|We had spinach with yogurt.|Yoğurtlu ıspanak yedik.
+eggplant|/ˈeɡplænt/|noun|patlıcan|My mother cooks eggplant in summer.|Annem yazın patlıcan pişirir.|Eggplants are purple.|Patlıcanlar mordur.
+broccoli|/ˈbrɑːkəli/|noun|brokoli|Children often don't like broccoli.|Çocuklar çoğu zaman brokoliyi sevmez.|Cook the broccoli for five minutes.|Brokoliyi beş dakika pişir.
+pumpkin|/ˈpʌmpkɪn/|noun|bal kabağı|We made a dessert with pumpkin.|Bal kabağıyla tatlı yaptık.|The pumpkin is big and orange.|Bal kabağı büyük ve turuncu.
+lentil|/ˈlentəl/|noun|mercimek|Lentil soup is popular in Turkey.|Mercimek çorbası Türkiye'de sevilir.|Buy a kilo of red lentils.|Bir kilo kırmızı mercimek al.
+zucchini|/zuˈkiːni/|noun|kabak|I like stuffed zucchini.|Kabak dolmasını severim.|The zucchini is green.|Kabak yeşil.
+
+## Sınıf Eşyaları | classroom | edit
+pencil|/ˈpensəl/|noun|kurşun kalem|Write your name with a pencil.|Adını kurşun kalemle yaz.|My pencil is broken.|Kalemim kırık.
+eraser|/ɪˈreɪsər/|noun|silgi|Can I use your eraser?|Silgini kullanabilir miyim?|The eraser is under the desk.|Silgi sıranın altında.
+ruler|/ˈruːlər/|noun|cetvel|Draw a line with a ruler.|Cetvelle bir çizgi çiz.|My ruler is thirty centimeters long.|Cetvelim otuz santimetre uzunluğunda.
+notebook|/ˈnoʊtbʊk/|noun|defter|Open your notebook, please.|Lütfen defterini aç.|I have a blue notebook.|Mavi bir defterim var.
+board|/bɔːrd/|noun|tahta, pano|The teacher writes on the board.|Öğretmen tahtaya yazıyor.|Look at the board, please.|Lütfen tahtaya bakın.
+paper|/ˈpeɪpər/|noun|kâğıt|Give me a piece of paper.|Bana bir parça kâğıt ver.|Write it on the paper.|Onu kâğıda yaz.
+scissors|/ˈsɪzərz/|noun|makas|Cut the paper with scissors.|Kâğıdı makasla kes.|Where are the scissors?|Makas nerede?
+glue|/ɡluː/|noun|yapıştırıcı|I need some glue for my project.|Projem için biraz yapıştırıcıya ihtiyacım var.|The glue is on the table.|Yapıştırıcı masanın üstünde.
+pencil case|/ˈpensəl keɪs/|noun|kalem kutusu|My pencil case is blue.|Kalem kutum mavi.|Put your pens in your pencil case.|Kalemlerini kalem kutusuna koy.
+sharpener|/ˈʃɑːrpənər/|noun|kalemtıraş|Can I borrow your sharpener?|Kalemtıraşını ödünç alabilir miyim?|My sharpener is broken.|Kalemtıraşım kırık.
+marker|/ˈmɑːrkər/|noun|keçeli kalem|The teacher writes with a marker.|Öğretmen keçeli kalemle yazar.|I need a red marker.|Kırmızı bir keçeli kaleme ihtiyacım var.
+chalk|/tʃɔːk/|noun|tebeşir|Old classrooms used chalk.|Eski sınıflarda tebeşir kullanılırdı.|The children drew on the ground with chalk.|Çocuklar yere tebeşirle çizdi.
+dictionary|/ˈdɪkʃəˌneri/|noun|sözlük|Look up the word in the dictionary.|Kelimeye sözlükte bak.|I have an English–Turkish dictionary.|İngilizce–Türkçe bir sözlüğüm var.
+page|/peɪdʒ/|noun|sayfa|Open your books at page ten.|Kitaplarınızı onuncu sayfada açın.|This book has two hundred pages.|Bu kitap iki yüz sayfa.
+folder|/ˈfoʊldər/|noun|dosya, klasör|Put the papers in the folder.|Kâğıtları dosyaya koy.|My homework is in the green folder.|Ödevim yeşil dosyada.
+calculator|/ˈkælkjəˌleɪtər/|noun|hesap makinesi|You can't use a calculator in the test.|Sınavda hesap makinesi kullanamazsın.|My phone has a calculator.|Telefonumda hesap makinesi var.
+globe|/ɡloʊb/|noun|küre (dünya maketi)|Find Turkey on the globe.|Küre üzerinde Türkiye'yi bul.|There is a globe on the teacher's desk.|Öğretmenin masasında bir küre var.
+sticker|/ˈstɪkər/|noun|çıkartma|The teacher gave me a star sticker.|Öğretmen bana yıldız çıkartması verdi.|My notebook is full of stickers.|Defterim çıkartmalarla dolu.
+tape|/teɪp/|noun|bant|Fix the paper with some tape.|Kâğıdı biraz bantla tuttur.|We need more tape.|Daha fazla banta ihtiyacımız var.
+drawer|/drɔːr/|noun|çekmece|The scissors are in the drawer.|Makas çekmecede.|Open the top drawer.|Üst çekmeceyi aç.
+
+## Hareket Fiilleri | actions | directions_walk
+walk|/wɔːk/|verb|yürümek|I walk to school every day.|Her gün okula yürürüm.|Let's walk in the park.|Parkta yürüyelim.
+sit|/sɪt/|verb|oturmak|Please sit here.|Lütfen buraya otur.|We sit next to the window.|Pencerenin yanında otururuz.
+stand|/stænd/|verb|ayakta durmak|Please stand up.|Lütfen ayağa kalkın.|Don't stand in the door.|Kapıda durma.
+open|/ˈoʊpən/|verb|açmak|Open the window, please.|Pencereyi aç lütfen.|Can you open this box?|Bu kutuyu açabilir misin?
+close|/kloʊz/|verb|kapatmak|Close the door, please.|Kapıyı kapat lütfen.|Close your eyes.|Gözlerini kapat.
+jump|/dʒʌmp/|verb|zıplamak, atlamak|The children jump in the garden.|Çocuklar bahçede zıplıyor.|Can you jump over the wall?|Duvarın üzerinden atlayabilir misin?
+wait|/weɪt/|verb|beklemek|Wait for me!|Beni bekle!|We wait for the bus every morning.|Her sabah otobüsü bekleriz.
+climb|/klaɪm/|verb|tırmanmak|Cats can climb trees.|Kediler ağaçlara tırmanabilir.|Don't climb on the table!|Masanın üstüne tırmanma!
+push|/pʊʃ/|verb|itmek|Push the door to open it.|Açmak için kapıyı it.|Don't push your brother!|Kardeşini itme!
+pull|/pʊl/|verb|çekmek|Pull the rope, please.|İpi çek lütfen.|The horse pulls the cart.|At arabayı çekiyor.
+carry|/ˈkæri/|verb|taşımak|Can you carry this box?|Bu kutuyu taşıyabilir misin?|She carries her baby on her back.|Bebeğini sırtında taşıyor.
+throw|/θroʊ/|verb|atmak, fırlatmak|Throw the ball to me.|Topu bana at.|Don't throw paper on the floor.|Yere kâğıt atma.
+catch|/kætʃ/|verb|yakalamak|Can you catch the ball?|Topu yakalayabilir misin?|The cat caught a mouse.|Kedi bir fare yakaladı.
+fall|/fɔːl/|verb|düşmek|Be careful, don't fall.|Dikkat et, düşme.|The leaves fall in autumn.|Yapraklar sonbaharda düşer.
+kick|/kɪk/|verb|tekmelemek, vurmak (ayakla)|Kick the ball into the goal.|Topu kaleye vur.|The horse kicked the door.|At kapıyı tekmeledi.
+stop|/stɑːp/|verb|durmak, durdurmak|Stop at the red light.|Kırmızı ışıkta dur.|The rain stopped at noon.|Yağmur öğlen durdu.
+move|/muːv/|verb|hareket etmek; taşınmak|Don't move! I'm taking a photo.|Kımıldama! Fotoğraf çekiyorum.|We moved to a new house.|Yeni bir eve taşındık.
+follow|/ˈfɑːloʊ/|verb|takip etmek|Follow me, please.|Beni takip edin lütfen.|The dog followed us home.|Köpek bizi eve kadar takip etti.
+ride|/raɪd/|verb|binmek, sürmek (bisiklet, at)|I ride my bike to school.|Okula bisikletle giderim.|Can you ride a horse?|Ata binebilir misin?
+fly|/flaɪ/|verb|uçmak|Birds fly south in winter.|Kuşlar kışın güneye uçar.|We flew to Antalya.|Antalya'ya uçtuk.
+
+## Böcekler | insects | bug_report
+insect|/ˈɪnsekt/|noun|böcek|An ant is a small insect.|Karınca küçük bir böcektir.|There is an insect on the window.|Pencerede bir böcek var.
+bee|/biː/|noun|arı|A bee makes honey.|Arı bal yapar.|Be careful, there is a bee!|Dikkat et, arı var!
+butterfly|/ˈbʌtərflaɪ/|noun|kelebek|A butterfly is on the flower.|Çiçeğin üzerinde bir kelebek var.|This butterfly is yellow.|Bu kelebek sarı.
+ant|/ænt/|noun|karınca|The ant is carrying food.|Karınca yiyecek taşıyor.|I saw an ant in the kitchen.|Mutfakta bir karınca gördüm.
+spider|/ˈspaɪdər/|noun|örümcek|I am afraid of the spider.|Örümcekten korkuyorum.|The spider is very big.|Örümcek çok büyük.
+mosquito|/məˈskiːtoʊ/|noun|sivrisinek|A mosquito bit me.|Beni bir sivrisinek ısırdı.|There is a mosquito in my room.|Odamda bir sivrisinek var.
+frog|/frɑːɡ/|noun|kurbağa|The frog is green.|Kurbağa yeşil.|A frog lives in the pond.|Gölette bir kurbağa yaşıyor.
+snake|/sneɪk/|noun|yılan|The snake is long and thin.|Yılan uzun ve ince.|I saw a snake in the garden.|Bahçede bir yılan gördüm.
+worm|/wɜːrm/|noun|solucan|The bird is eating a worm.|Kuş bir solucan yiyor.|There are worms in the garden.|Bahçede solucanlar var.
+ladybird|/ˈleɪdiˌbɜːrd/|noun|uğur böceği|A ladybird is red with black spots.|Uğur böceği siyah benekli ve kırmızıdır.|A ladybird landed on my hand.|Elime bir uğur böceği kondu.
+beetle|/ˈbiːtəl/|noun|böcek (kın kanatlı)|There is a black beetle on the wall.|Duvarda siyah bir böcek var.|Beetles have hard wings.|Kın kanatlı böceklerin sert kanatları vardır.
+cockroach|/ˈkɑːkroʊtʃ/|noun|hamamböceği|I saw a cockroach in the kitchen.|Mutfakta bir hamamböceği gördüm.|Cockroaches like dark places.|Hamamböcekleri karanlık yerleri sever.
+grasshopper|/ˈɡræsˌhɑːpər/|noun|çekirge|A grasshopper can jump very high.|Çekirge çok yükseğe zıplayabilir.|The grasshopper is green.|Çekirge yeşil.
+snail|/sneɪl/|noun|salyangoz|The snail is very slow.|Salyangoz çok yavaştır.|Snails come out after the rain.|Salyangozlar yağmurdan sonra çıkar.
+lizard|/ˈlɪzərd/|noun|kertenkele|A lizard is sitting on the rock.|Bir kertenkele kayanın üstünde duruyor.|Lizards like the sun.|Kertenkeleler güneşi sever.
+turtle|/ˈtɜːrtəl/|noun|kaplumbağa|The turtle is in its shell.|Kaplumbağa kabuğunun içinde.|Sea turtles lay eggs on the beach.|Deniz kaplumbağaları plaja yumurta bırakır.
+caterpillar|/ˈkætərˌpɪlər/|noun|tırtıl|A caterpillar becomes a butterfly.|Tırtıl kelebeğe dönüşür.|The caterpillar is eating a leaf.|Tırtıl bir yaprak yiyor.
+wing|/wɪŋ/|noun|kanat|A butterfly has beautiful wings.|Kelebeğin güzel kanatları vardır.|The bird hurt its wing.|Kuş kanadını incitti.
+sting|/stɪŋ/|verb|sokmak (arı vb.)|Be careful, the bee can sting you.|Dikkat et, arı seni sokabilir.|A wasp stung my arm.|Bir eşek arısı kolumu soktu.
+bite|/baɪt/|verb|ısırmak|Does your dog bite?|Köpeğin ısırır mı?|A mosquito bit me last night.|Dün gece beni bir sivrisinek ısırdı.
+
+## İnsanlar | people | group
+man|/mæn/|noun|adam|The man is tall.|Adam uzun boylu.|That man is my uncle.|O adam benim amcam.
+woman|/ˈwʊmən/|noun|kadın|The woman is a doctor.|Kadın bir doktor.|Who is that woman?|O kadın kim?
+boy|/bɔɪ/|noun|erkek çocuk|The boy is playing football.|Çocuk futbol oynuyor.|He is a happy boy.|O mutlu bir çocuk.
+girl|/ɡɜːrl/|noun|kız çocuk|The girl has long hair.|Kızın uzun saçları var.|That girl is my sister.|O kız benim kız kardeşim.
+child|/tʃaɪld/|noun|çocuk|The child is sleeping.|Çocuk uyuyor.|Every child likes toys.|Her çocuk oyuncakları sever.
+person|/ˈpɜːrsən/|noun|kişi|She is a very kind person.|O çok nazik bir kişi.|Only one person came.|Sadece bir kişi geldi.
+people|/ˈpiːpəl/|noun|insanlar|Many people live in this city.|Bu şehirde çok insan yaşıyor.|The people here are friendly.|Buradaki insanlar cana yakın.
+friend|/frend/|noun|arkadaş|He is my best friend.|O benim en iyi arkadaşım.|I am going out with a friend.|Bir arkadaşımla dışarı çıkıyorum.
+adult|/əˈdʌlt/|noun|yetişkin|The ticket is ten lira for adults.|Bilet yetişkinler için on lira.|Children must come with an adult.|Çocuklar bir yetişkinle gelmelidir.
+teenager|/ˈtiːnˌeɪdʒər/|noun|genç, ergen|My brother is a teenager.|Erkek kardeşim bir ergen.|Many teenagers like video games.|Birçok genç video oyunlarını sever.
+lady|/ˈleɪdi/|noun|hanımefendi, bayan|The lady in the red coat is my teacher.|Kırmızı paltolu hanım benim öğretmenim.|Ladies and gentlemen, welcome!|Hanımlar beyler, hoş geldiniz!
+gentleman|/ˈdʒentəlmən/|noun|beyefendi|A gentleman opened the door for me.|Bir beyefendi bana kapıyı açtı.|Who is that gentleman?|O beyefendi kim?
+kid|/kɪd/|noun|çocuk|The kids are playing outside.|Çocuklar dışarıda oynuyor.|She has two kids.|Onun iki çocuğu var.
+classmate|/ˈklæsmeɪt/|noun|sınıf arkadaşı|Ali is my classmate.|Ali sınıf arkadaşım.|I study with my classmates.|Sınıf arkadaşlarımla ders çalışırım.
+stranger|/ˈstreɪndʒər/|noun|yabancı (kişi)|Don't talk to strangers.|Yabancılarla konuşma.|A stranger asked me the way.|Bir yabancı bana yolu sordu.
+crowd|/kraʊd/|noun|kalabalık|There was a big crowd at the concert.|Konserde büyük bir kalabalık vardı.|I lost my friend in the crowd.|Arkadaşımı kalabalıkta kaybettim.
+group|/ɡruːp/|noun|grup|We work in groups of four.|Dörder kişilik gruplar hâlinde çalışırız.|A group of tourists is at the museum.|Müzede bir grup turist var.
+everybody|/ˈevriˌbɑːdi/|noun|herkes|Everybody likes ice cream.|Herkes dondurmayı sever.|Good morning, everybody!|Herkese günaydın!
+nobody|/ˈnoʊˌbɑːdi/|noun|hiç kimse|Nobody is at home.|Evde kimse yok.|Nobody knows the answer.|Cevabı kimse bilmiyor.
+together|/təˈɡeðər/|adverb|birlikte|We walk to school together.|Okula birlikte yürürüz.|Let's do it together.|Bunu birlikte yapalım.
+
+## Şekiller | shapes | category
+circle|/ˈsɜːrkəl/|noun|daire|Draw a circle on the paper.|Kâğıda bir daire çiz.|The children sit in a circle.|Çocuklar daire şeklinde oturuyor.
+square|/skwer/|noun|kare|A square has four sides.|Karenin dört kenarı vardır.|The box is a square.|Kutu kare şeklinde.
+triangle|/ˈtraɪæŋɡəl/|noun|üçgen|A triangle has three sides.|Üçgenin üç kenarı vardır.|Cut the paper into a triangle.|Kâğıdı üçgen şeklinde kes.
+line|/laɪn/|noun|çizgi; sıra|Draw a straight line.|Düz bir çizgi çiz.|Wait in line, please.|Lütfen sırada bekleyin.
+long|/lɔːŋ/|adjective|uzun|This road is very long.|Bu yol çok uzun.|She has long hair.|Uzun saçları var.
+short|/ʃɔːrt/|adjective|kısa|The film was short.|Film kısaydı.|My brother is short.|Erkek kardeşim kısa boylu.
+tall|/tɔːl/|adjective|uzun boylu, yüksek|My father is very tall.|Babam çok uzun boylu.|There is a tall tree in the park.|Parkta yüksek bir ağaç var.
+round|/raʊnd/|adjective|yuvarlak|The table is round.|Masa yuvarlak.|The ball is round.|Top yuvarlaktır.
+shape|/ʃeɪp/|noun|şekil|What shape is the window?|Pencere ne şekilde?|The cake is in the shape of a heart.|Kek kalp şeklinde.
+rectangle|/ˈrekˌtæŋɡəl/|noun|dikdörtgen|A door is a rectangle.|Kapı bir dikdörtgendir.|Draw a rectangle on the paper.|Kâğıda bir dikdörtgen çiz.
+oval|/ˈoʊvəl/|adjective|oval|The mirror is oval.|Ayna oval.|An egg has an oval shape.|Yumurtanın oval bir şekli vardır.
+cube|/kjuːb/|noun|küp|A dice is a small cube.|Zar küçük bir küptür.|Put two ice cubes in my drink.|İçeceğime iki buz küpü koy.
+dot|/dɑːt/|noun|nokta, benek|Her dress has white dots.|Elbisesinde beyaz benekler var.|Join the dots to draw a star.|Yıldız çizmek için noktaları birleştir.
+edge|/edʒ/|noun|kenar|Don't stand near the edge.|Kenara yakın durma.|The glass is on the edge of the table.|Bardak masanın kenarında.
+side|/saɪd/|noun|yan, kenar|A square has four sides.|Karenin dört kenarı vardır.|The shop is on the left side of the street.|Dükkân sokağın sol tarafında.
+middle|/ˈmɪdəl/|noun|orta|The table is in the middle of the room.|Masa odanın ortasında.|Write your name in the middle.|Adını ortaya yaz.
+thick|/θɪk/|adjective|kalın|This book is very thick.|Bu kitap çok kalın.|She has thick hair.|Onun gür saçları var.
+thin|/θɪn/|adjective|ince; zayıf|Cut the bread into thin slices.|Ekmeği ince dilimler hâlinde kes.|The cat is very thin.|Kedi çok zayıf.
+wide|/waɪd/|adjective|geniş|The river is wide here.|Nehir burada geniş.|Open your mouth wide.|Ağzını iyice aç.
+narrow|/ˈnæroʊ/|adjective|dar|The streets in the old town are narrow.|Eski şehrin sokakları dar.|This bridge is too narrow for cars.|Bu köprü arabalar için çok dar.
+
+## Duyular | senses | visibility
+see|/siː/|verb|görmek|I can see the sea from my window.|Penceremden denizi görebiliyorum.|Did you see my keys?|Anahtarlarımı gördün mü?
+hear|/hɪr/|verb|duymak|Can you hear me?|Beni duyabiliyor musun?|I hear music.|Müzik duyuyorum.
+smell|/smel/|verb|koklamak; kokmak|I smell something nice.|Güzel bir şey kokluyorum.|The flowers smell good.|Çiçekler güzel kokuyor.
+taste|/teɪst/|verb|tadına bakmak|Taste this soup.|Bu çorbanın tadına bak.|The cake will taste sweet.|Pastanın tadı tatlı olacak.
+touch|/tʌtʃ/|verb|dokunmak|Don't touch the oven!|Fırına dokunma!|Can I touch your cat?|Kedine dokunabilir miyim?
+look|/lʊk/|verb|bakmak|Look at the sky!|Gökyüzüne bak!|I look at the photos.|Fotoğraflara bakıyorum.
+listen|/ˈlɪsən/|verb|dinlemek|Listen to the teacher.|Öğretmeni dinle.|I listen to the radio.|Radyo dinlerim.
+feel|/fiːl/|verb|hissetmek|I feel happy today.|Bugün kendimi mutlu hissediyorum.|How do you feel?|Kendini nasıl hissediyorsun?
+sound|/saʊnd/|noun|ses|I heard a strange sound.|Garip bir ses duydum.|Turn the sound down, please.|Sesi kıs lütfen.
+voice|/vɔɪs/|noun|ses (insan sesi)|She has a beautiful voice.|Onun güzel bir sesi var.|Please speak in a quiet voice.|Lütfen alçak sesle konuş.
+loud|/laʊd/|adjective|yüksek sesli|The music is too loud.|Müzik çok yüksek.|He has a loud voice.|Onun gür bir sesi var.
+quiet|/ˈkwaɪət/|adjective|sessiz|Please be quiet in the library.|Kütüphanede lütfen sessiz olun.|Our street is very quiet.|Sokağımız çok sessiz.
+soft|/sɔːft/|adjective|yumuşak|The cat's fur is soft.|Kedinin tüyü yumuşak.|I want a soft pillow.|Yumuşak bir yastık istiyorum.
+hard|/hɑːrd/|adjective|sert; zor|This bed is too hard.|Bu yatak çok sert.|The exam was hard.|Sınav zordu.
+sweet|/swiːt/|adjective|tatlı|This cake is very sweet.|Bu kek çok tatlı.|I don't like sweet tea.|Şekerli çayı sevmem.
+sour|/saʊər/|adjective|ekşi|Lemons are sour.|Limonlar ekşidir.|This milk is sour.|Bu süt ekşimiş.
+bitter|/ˈbɪtər/|adjective|acı (tat)|Black coffee is bitter.|Sade kahve acıdır.|The medicine tastes bitter.|İlacın tadı acı.
+salty|/ˈsɔːlti/|adjective|tuzlu|The sea water is salty.|Deniz suyu tuzludur.|These chips are too salty.|Bu cipsler çok tuzlu.
+notice|/ˈnoʊtɪs/|verb|fark etmek|Did you notice his new haircut?|Yeni saç kesimini fark ettin mi?|I didn't notice the time.|Saatin farkına varmadım.
+sense|/sens/|noun|duyu|We have five senses.|Beş duyumuz vardır.|Dogs have a strong sense of smell.|Köpeklerin güçlü bir koku alma duyusu vardır.

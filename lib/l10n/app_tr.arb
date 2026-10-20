@@ -355,6 +355,8 @@
   "privacyPolicy": "Gizlilik politikası",
   "privacyPolicyHint": "Verilerin yalnızca bu cihazda saklanır.",
   "kvkkNotice": "KVKK aydınlatma metni",
+  "openSourceLicenses": "Açık kaynak lisansları",
+  "openSourceLicensesHint": "Kullanılan yazı tipi ve kütüphaneler",
   "settingDailyTarget": "Günlük yeni kelime hedefi",
   "settingReminder": "Günlük hatırlatma",
   "settingReminderTime": "Hatırlatma saati",
