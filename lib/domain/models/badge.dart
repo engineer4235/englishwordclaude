@@ -15,7 +15,8 @@ class BadgeDef {
   final String? levelCode;
 }
 
-/// Uygulamadaki tüm rozetler, gösterim sırasıyla.
+/// Uygulamadaki tüm rozetler, gösterim sırasıyla. Seviye rozetleri içeriği
+/// olan seviyeler içindir (A1–B2); C1–C2 içerikle birlikte eklenecek.
 const badgeDefs = <BadgeDef>[
   BadgeDef('first_word', BadgeKind.words, threshold: 1),
   BadgeDef('words_100', BadgeKind.words, threshold: 100),
@@ -27,8 +28,6 @@ const badgeDefs = <BadgeDef>[
   BadgeDef('level_A2', BadgeKind.level, levelCode: 'A2'),
   BadgeDef('level_B1', BadgeKind.level, levelCode: 'B1'),
   BadgeDef('level_B2', BadgeKind.level, levelCode: 'B2'),
-  BadgeDef('level_C1', BadgeKind.level, levelCode: 'C1'),
-  BadgeDef('level_C2', BadgeKind.level, levelCode: 'C2'),
 ];
 
 /// Koşulları sağlanan rozetler (FR-73).

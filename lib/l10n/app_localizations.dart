@@ -649,7 +649,7 @@ abstract class AppLocalizations {
   /// No description provided for @intro1Body.
   ///
   /// In tr, this message translates to:
-  /// **'A1\'den C2\'ye kadar kelimeleri ünite ünite öğren. Her seviyenin sonunda bir sınavla bir üst seviyenin kilidini aç.'**
+  /// **'A1\'den B2\'ye kadar 1.280 kelimeyi ünite ünite öğren. Her seviyenin sonunda bir sınavla bir üst seviyenin kilidini aç.'**
   String get intro1Body;
 
   /// No description provided for @intro2Title.
