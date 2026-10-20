@@ -1,8 +1,10 @@
 """Mağaza görsellerini üretir (REL-4).
 
 Girdi:  test/store/raw/*.png  (store_screenshots_test.dart çıktısı, 1080x1920)
+        test/store/raw/ios/*.png  (STORE_DEVICE=ios ile, 1290x2796)
         assets/branding/logo.png, assets/fonts/Lexend-*.ttf
 Çıktı:  docs/store/screenshots/*.png  1080x1920, üstte açıklama, mor zemin
+        docs/store/screenshots_ios/*.png  1290x2796 (App Store 6,9" iPhone)
         docs/store/feature_graphic.png  1024x500 (Google Play öne çıkan görsel)
         docs/store/icon_512.png  512x512 RGBA (Google Play uygulama simgesi)
 
@@ -22,7 +24,7 @@ WHITE = (255, 255, 255)
 
 CAPTIONS = {
     '1_home': ('Her gün birkaç dakika', 'Günlük hedef, seri ve hatırlatmalarla düzenli çalış'),
-    '2_map': ("A1'den C2'ye", 'Seviye seviye, ünite ünite ilerle'),
+    '2_map': ("A1'den B2'ye", '1.280 kelime, seviye seviye, ünite ünite'),
     '3_practice': ('Eğlenceli alıştırmalar', 'Seçmeli, dinleme, yazma ve eşleştirme'),
     '4_stats': ('İlerlemeni gör', 'Öğrendiğin kelimeler, doğruluk ve tekrar planı'),
     '5_profile': ('Rozetler kazan', 'Hedefini, temanı ve sesini kendin seç'),
@@ -47,18 +49,25 @@ def centered(draw, y, text, fnt, fill, width):
     draw.text(((width - w) / 2, y), text, font=fnt, fill=fill)
 
 
-def screenshot(name, title, subtitle):
-    raw = Image.open(RAW / f'{name}.png').convert('RGB')
-    canvas = Image.new('RGB', (1080, 1920), PURPLE)
+def screenshot(name, title, subtitle, raw_dir=RAW, out_dir=OUT / 'screenshots', size=(1080, 1920)):
+    raw = Image.open(raw_dir / f'{name}.png').convert('RGB')
+    w, h = size
+    s = w / 1080
+    canvas = Image.new('RGB', size, PURPLE)
     draw = ImageDraw.Draw(canvas)
-    centered(draw, 110, title, font('ExtraBold', 74), WHITE, 1080)
-    centered(draw, 215, subtitle, font('Medium', 38), (233, 225, 255), 1080)
-    draw.rounded_rectangle((470, 290, 610, 300), 5, fill=AMBER)
-    height = 1920 - 360
+    centered(draw, round(110 * s), title, font('ExtraBold', round(74 * s)), WHITE, w)
+    centered(draw, round(215 * s), subtitle, font('Medium', round(38 * s)), (233, 225, 255), w)
+    draw.rounded_rectangle((w / 2 - 70 * s, 290 * s, w / 2 + 70 * s, 300 * s), 5 * s, fill=AMBER)
+    top = round(360 * s)
+    height = h - top
     width = round(raw.width * height / raw.height)
-    phone = rounded(raw.resize((width, height), Image.LANCZOS), 48)
-    canvas.paste(phone, ((1080 - width) // 2, 360), phone)
-    canvas.save(OUT / 'screenshots' / f'{name}.png', optimize=True)
+    if width > w - round(80 * s):
+        width = w - round(80 * s)
+        height = round(raw.height * width / raw.width)
+    phone = rounded(raw.resize((width, height), Image.LANCZOS), round(48 * s))
+    canvas.paste(phone, ((w - width) // 2, top), phone)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    canvas.save(out_dir / f'{name}.png', optimize=True)
 
 
 def feature_graphic():
@@ -89,6 +98,11 @@ def main():
             print('docs/store/screenshots/%s.png' % name)
         else:
             print('eksik ham görüntü: %s (önce store_screenshots_test)' % name)
+    ios_raw = RAW / 'ios'
+    for name, (title, subtitle) in CAPTIONS.items():
+        if (ios_raw / f'{name}.png').exists():
+            screenshot(name, title, subtitle, ios_raw, OUT / 'screenshots_ios', (1290, 2796))
+            print('docs/store/screenshots_ios/%s.png' % name)
     feature_graphic()
     icon()
     print('docs/store/feature_graphic.png, docs/store/icon_512.png')

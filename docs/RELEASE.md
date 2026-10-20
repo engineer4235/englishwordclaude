@@ -81,6 +81,8 @@ Tasarım değişince:
 
 ```sh
 flutter test --update-goldens --dart-define=STORE_SHOTS=true test/store
+flutter test --update-goldens --dart-define=STORE_SHOTS=true \
+  --dart-define=STORE_DEVICE=ios test/store
 pip install pillow && python3 tool/gen_store_images.py
 ```
 
