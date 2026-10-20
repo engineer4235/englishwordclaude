@@ -12,11 +12,14 @@ import '../helpers.dart';
 ///     flutter test --update-goldens --dart-define=STORE_SHOTS=true test/store
 ///     python3 tool/gen_store_images.py
 ///
-/// Ham görüntüler 1080×1920 (360×640, 3x) olarak `test/store/raw/` altına
-/// yazılır; çerçeveli ve açıklamalı mağaza görselleri `docs/store/` altına
-/// üretilir.
+/// Ham görüntüler Google Play için 1080×1920 (360×640, 3x) olarak
+/// `test/store/raw/` altına yazılır. App Store (6,9" iPhone) için
+/// `--dart-define=STORE_DEVICE=ios` eklenirse 1290×2796 (430×932, 3x) olarak
+/// `test/store/raw/ios/` altına yazılır. Çerçeveli ve açıklamalı mağaza
+/// görselleri `docs/store/` altına üretilir.
 void main() {
   const enabled = bool.fromEnvironment('STORE_SHOTS');
+  const ios = String.fromEnvironment('STORE_DEVICE') == 'ios';
 
   setUpAll(() async {
     if (enabled) await loadAppFonts();
@@ -26,7 +29,9 @@ void main() {
     WidgetTester tester, {
     Brightness brightness = Brightness.light,
   }) async {
-    tester.view.physicalSize = const Size(1080, 1920);
+    tester.view.physicalSize = ios
+        ? const Size(1290, 2796)
+        : const Size(1080, 1920);
     tester.view.devicePixelRatio = 3;
     tester.platformDispatcher.platformBrightnessTestValue = brightness;
     addTearDown(tester.view.reset);
@@ -59,8 +64,10 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  Future<void> shot(WidgetTester tester, String name) =>
-      expectLater(find.byType(MaterialApp), matchesGoldenFile('raw/$name.png'));
+  Future<void> shot(WidgetTester tester, String name) => expectLater(
+    find.byType(MaterialApp),
+    matchesGoldenFile(ios ? 'raw/ios/$name.png' : 'raw/$name.png'),
+  );
 
   testWidgets('1 ana sayfa', skip: !enabled, (tester) async {
     await open(tester);
