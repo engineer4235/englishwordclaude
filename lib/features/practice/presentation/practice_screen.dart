@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/feedback/answer_feedback.dart';
+import '../../../core/growth/review_prompt.dart';
 import '../../../core/tts/tts_service.dart';
 import '../../../data/providers.dart';
 import '../../../domain/daily/study_time.dart';
@@ -271,6 +274,15 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
       _passed = passed;
       _newBadges = badges;
     });
+    // Sınav geçildiğinde ya da seri rozeti kazanıldığında, seyrek olarak
+    // mağaza değerlendirmesi istenir (ReviewPolicy).
+    unawaited(
+      ref
+          .read(reviewPrompterProvider)
+          .maybeAsk(
+            happyMoment: isHappyMoment(passed: passed, newBadges: badges),
+          ),
+    );
   }
 
   @override

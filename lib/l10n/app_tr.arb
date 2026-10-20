@@ -355,6 +355,31 @@
   "privacyPolicy": "Gizlilik politikası",
   "privacyPolicyHint": "Verilerin yalnızca bu cihazda saklanır.",
   "kvkkNotice": "KVKK aydınlatma metni",
+  "shareApp": "Uygulamayı paylaş",
+  "shareAppHint": "Arkadaşlarına Learn English at Home'u öner",
+  "shareAppText": "İngilizce kelimeleri reklamsız ve internetsiz öğrendiğim uygulama: Learn English at Home\n{link}",
+  "@shareAppText": {
+    "placeholders": {
+      "link": {
+        "type": "String"
+      }
+    }
+  },
+  "shareWord": "Paylaş",
+  "shareWordText": "Günün kelimesi: {lemma} = {meaning}\nLearn English at Home ile her gün yeni kelimeler öğreniyorum: {link}",
+  "@shareWordText": {
+    "placeholders": {
+      "lemma": {
+        "type": "String"
+      },
+      "meaning": {
+        "type": "String"
+      },
+      "link": {
+        "type": "String"
+      }
+    }
+  },
   "openSourceLicenses": "Açık kaynak lisansları",
   "openSourceLicensesHint": "Kullanılan yazı tipi ve kütüphaneler",
   "settingDailyTarget": "Günlük yeni kelime hedefi",
