@@ -47,7 +47,7 @@ Son paragraf.
 
       test('başlık, iletişim ve yürürlük tarihi var', () {
         expect(blocks.first, isA<LegalTitle>());
-        expect(source, contains('engineer4235@gmail.com'));
+        expect(source, contains('aikafalari@gmail.com'));
         expect(source, contains('Yürürlük tarihi'));
       });
 
