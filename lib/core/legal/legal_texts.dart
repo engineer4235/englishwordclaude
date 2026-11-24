@@ -10,9 +10,9 @@
 const privacyPolicyTr = r'''
 # Gizlilik Politikası
 
-Yürürlük tarihi: 18 Ekim 2026
+Yürürlük tarihi: 24 Kasım 2026
 
-Bu politika, Learn English at Home uygulamasının (bundan sonra "Uygulama") hangi bilgileri nasıl kullandığını açıklar. Uygulama [Veri sorumlusunun adı soyadı / unvanı] tarafından yayınlanır.
+Bu politika, Learn English at Home uygulamasının (Google Play'deki adıyla "English Word Learning"; bundan sonra "Uygulama") hangi bilgileri nasıl kullandığını açıklar. Uygulama Fırat Erel (Ankara, Türkiye) tarafından yayınlanır.
 
 ## Kısaca
 
@@ -58,21 +58,21 @@ Bu politika değişirse güncel metin uygulamada ve mağaza sayfasındaki bağla
 
 ## İletişim
 
-Sorularınız için: engineer4235@gmail.com
+Sorularınız için: aikafalari@gmail.com
 ''';
 
 const kvkkNoticeTr = r'''
 # KVKK Aydınlatma Metni
 
-Yürürlük tarihi: 18 Ekim 2026
+Yürürlük tarihi: 24 Kasım 2026
 
-6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi uyarınca, Learn English at Home uygulaması (bundan sonra "Uygulama") kapsamında kişisel verilerinizin işlenmesine ilişkin sizi bilgilendirmek isteriz.
+6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi uyarınca, Learn English at Home uygulaması (Google Play'deki adıyla "English Word Learning"; bundan sonra "Uygulama") kapsamında kişisel verilerinizin işlenmesine ilişkin sizi bilgilendirmek isteriz.
 
 ## Veri sorumlusu
 
-[Veri sorumlusunun adı soyadı / unvanı]
-Adres: [Adres]
-E-posta: engineer4235@gmail.com
+Fırat Erel
+Adres: Ankara, Türkiye
+E-posta: aikafalari@gmail.com
 
 ## İşlenen kişisel veriler
 

@@ -101,7 +101,7 @@ PRIVATE BY DESIGN
 
 ## İletişim bilgileri
 
-- E-posta: engineer4235@gmail.com
+- E-posta: aikafalari@gmail.com
 - Gizlilik politikası: https://engineer4235.github.io/englishwordclaude/gizlilik.html
 
 ## Grafikler

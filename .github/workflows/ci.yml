@@ -34,7 +34,9 @@ jobs:
         run: dart format --output=none --set-exit-if-changed lib test
 
       - name: Statik analiz
-        run: flutter analyze
+        # Yeni Flutter sürümlerinin "deprecated" bilgi notları derlemeyi kırmasın;
+        # uyarı ve hatalar yine derlemeyi durdurur.
+        run: flutter analyze --no-fatal-infos
 
       - name: Testler (kapsam ölçümüyle)
         run: flutter test --coverage

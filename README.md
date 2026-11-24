@@ -39,8 +39,8 @@ Yayın adresleri (Settings → Pages → Branch: `main`, klasör: `/docs`):
 `https://engineer4235.github.io/englishwordclaude/gizlilik.html` ve `/kvkk.html`.
 Mağaza sayfasına gizlilik politikası adresi olarak ilki girilir.
 
-Yayından önce metinlerdeki `[Veri sorumlusunun adı soyadı / unvanı]` ve `[Adres]`
-yer tutucuları doldurulmalı ve metinler bir hukukçuya gözden geçirtilmelidir.
+Veri sorumlusu: Fırat Erel (Ankara, Türkiye), iletişim: aikafalari@gmail.com.
+Metinlerin bir hukukçuya gözden geçirtilmesi önerilir.
 ## Test kapsamı ve mimari kurallar
 
 İş mantığı katmanlarının (`lib/domain`, `lib/data`) birim test kapsamı en az

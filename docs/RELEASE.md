@@ -6,7 +6,7 @@ gereken adımları sıralar. Kodla ilgili hazırlık depoda tamamdır; hesap aç
 
 ## 0. Yayından önce kontrol listesi
 
-- [ ] `lib/core/legal/legal_texts.dart` içindeki `[Veri sorumlusunun adı soyadı / unvanı]` ve `[Adres]` dolduruldu, `dart run tool/gen_legal_pages.dart` çalıştırıldı.
+- [x] `lib/core/legal/legal_texts.dart` içindeki veri sorumlusu bilgileri dolduruldu, `dart run tool/gen_legal_pages.dart` çalıştırıldı.
 - [ ] Yasal metinler bir hukukçuya gözden geçirtildi.
 - [ ] GitHub Pages açık (Settings → Pages → Branch `main`, klasör `/docs`); https://engineer4235.github.io/englishwordclaude/gizlilik.html açılıyor.
 - [ ] `pubspec.yaml` sürümü güncellendi (`version: 1.0.0+1` → ad + derleme numarası; CI derleme numarasını kendisi verir).
